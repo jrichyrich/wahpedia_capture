@@ -1,5 +1,6 @@
 import argparse
 import json
+import re
 import time
 from pathlib import Path
 
@@ -50,12 +51,17 @@ def set_selects_by_text(driver: Firefox, visible_text: str) -> bool:
     changed = driver.execute_script(
         """
         const visibleText = arguments[0];
+        const normalizedVisibleText = visibleText.trim().toLowerCase();
         let changed = false;
 
         for (const select of document.querySelectorAll("select")) {
-            const option = Array.from(select.options).find(
-                (candidate) => candidate.text.trim() === visibleText
-            );
+            const options = Array.from(select.options);
+            const option =
+                options.find((candidate) => candidate.text.trim() === visibleText) ??
+                options.find(
+                    (candidate) =>
+                        candidate.text.trim().toLowerCase() === normalizedVisibleText
+                );
             if (!option || select.value === option.value) {
                 continue;
             }
@@ -182,6 +188,44 @@ def cleanup_page(driver: Firefox) -> None:
     time.sleep(0.3)
 
 
+def normalize_slug(value: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "-", value.lower()).strip("-")
+
+
+def wait_for_expected_datasheet(
+    driver: Firefox, wait: WebDriverWait, expected_slug: str
+) -> None:
+    normalized_expected = normalize_slug(expected_slug)
+
+    def matches_expected_target(current_driver: Firefox) -> bool:
+        title = (current_driver.title or "").strip()
+        if normalize_slug(title) != normalized_expected:
+            return False
+
+        if not current_driver.find_elements(By.CSS_SELECTOR, "div.dsOuterFrame.datasheet"):
+            return False
+
+        body_text = current_driver.execute_script(
+            "return (document.body && document.body.innerText) || '';"
+        )
+        return "This datasheet does not meet the selection criteria" not in body_text
+
+    wait.until(matches_expected_target)
+
+
+def wait_for_filtered_army_list(
+    driver: Firefox, wait: WebDriverWait, baseline_title: str, baseline_count: int
+) -> None:
+    def has_refreshed(current_driver: Firefox) -> bool:
+        current_title = (current_driver.title or "").strip()
+        current_count = len(
+            current_driver.find_elements(By.CSS_SELECTOR, "#tooltip_contentArmyList a")
+        )
+        return current_title != baseline_title or current_count != baseline_count
+
+    wait.until(has_refreshed)
+
+
 def fit_window_to_card(driver: Firefox) -> None:
     card = WebDriverWait(driver, 20).until(
         EC.presence_of_element_located((By.CSS_SELECTOR, "div.dsOuterFrame.datasheet"))
@@ -242,18 +286,24 @@ def main() -> int:
     options.add_argument("--headless")
     options.add_argument("--width=1800")
     options.add_argument("--height=2200")
-    options.page_load_strategy = "eager"
+    # `none` avoids long waits on Wahapedia assets, but we must verify the page title
+    # before saving so we don't capture the previous datasheet during navigation.
+    options.page_load_strategy = "none"
 
     driver = Firefox(options=options)
     driver.set_page_load_timeout(30)
-    wait = WebDriverWait(driver, 20)
+    wait = WebDriverWait(driver, 40)
 
     try:
         print(f"Opening {args.url}", flush=True)
         driver.get(args.url)
         maybe_accept_consent(driver)
+        baseline_title = (driver.title or "").strip()
+        baseline_count = len(driver.find_elements(By.CSS_SELECTOR, "#tooltip_contentArmyList a"))
         for filter_text in args.filter:
             set_selects_by_text(driver, filter_text)
+        if args.filter:
+            wait_for_filtered_army_list(driver, wait, baseline_title, baseline_count)
         wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "#tooltip_contentArmyList a")))
 
         links = unique_links(driver)
@@ -273,11 +323,7 @@ def main() -> int:
                 maybe_accept_consent(driver)
                 for filter_text in args.filter:
                     set_selects_by_text(driver, filter_text)
-                wait.until(
-                    EC.presence_of_element_located(
-                        (By.CSS_SELECTOR, "div.dsOuterFrame.datasheet")
-                    )
-                )
+                wait_for_expected_datasheet(driver, wait, slug)
                 fit_window_to_card(driver)
                 cleanup_page(driver)
                 fit_window_to_card(driver)
