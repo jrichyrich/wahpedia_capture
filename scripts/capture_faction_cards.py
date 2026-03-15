@@ -33,6 +33,11 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="Delete existing screenshots and manifests for the output slug before capture.",
     )
+    parser.add_argument(
+        "--fresh-browser-per-card",
+        action="store_true",
+        help="Use a new browser instance for each datasheet capture.",
+    )
     return parser.parse_args()
 
 
@@ -52,16 +57,26 @@ def set_selects_by_text(driver: Firefox, visible_text: str) -> bool:
         """
         const visibleText = arguments[0];
         const normalizedVisibleText = visibleText.trim().toLowerCase();
+        const selects = Array.from(document.querySelectorAll("select"));
+        const exactMatches = selects
+            .map((select) => ({
+                select,
+                option: Array.from(select.options).find(
+                    (candidate) => candidate.text.trim() === visibleText
+                ),
+            }))
+            .filter((item) => item.option);
         let changed = false;
 
-        for (const select of document.querySelectorAll("select")) {
+        for (const select of selects) {
             const options = Array.from(select.options);
             const option =
-                options.find((candidate) => candidate.text.trim() === visibleText) ??
-                options.find(
-                    (candidate) =>
-                        candidate.text.trim().toLowerCase() === normalizedVisibleText
-                );
+                exactMatches.length > 0
+                    ? exactMatches.find((item) => item.select === select)?.option
+                    : options.find(
+                        (candidate) =>
+                            candidate.text.trim().toLowerCase() === normalizedVisibleText
+                    );
             if (!option || select.value === option.value) {
                 continue;
             }
@@ -164,7 +179,23 @@ def cleanup_page(driver: Firefox) -> None:
             if (text.startsWith("Privacy Preferences")) {
                 element.remove();
             }
+            if (
+                text.includes("Do Not Sell My Information") ||
+                text.includes("help improve your experience")
+            ) {
+                element.remove();
+            }
         });
+
+        document
+            .querySelectorAll(
+                "[id*='consent'], [class*='consent'], [id*='privacy'], [class*='privacy']"
+            )
+            .forEach((element) => {
+                if (!element.closest(".dsOuterFrame.datasheet")) {
+                    element.remove();
+                }
+            });
 
         const card = document.querySelector("div.dsOuterFrame.datasheet");
         if (card) {
@@ -192,14 +223,23 @@ def normalize_slug(value: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", value.lower()).strip("-")
 
 
+def canonicalize_expected_slug(value: str) -> str:
+    value = re.sub(r"-(?:ul|legendary)?-?\d+$", "", value, flags=re.IGNORECASE)
+    value = re.sub(r"-legendary-?$", "", value, flags=re.IGNORECASE)
+    value = re.sub(r"-ul$", "", value, flags=re.IGNORECASE)
+    return normalize_slug(value)
+
+
 def wait_for_expected_datasheet(
     driver: Firefox, wait: WebDriverWait, expected_slug: str
 ) -> None:
     normalized_expected = normalize_slug(expected_slug)
+    canonical_expected = canonicalize_expected_slug(expected_slug)
 
     def matches_expected_target(current_driver: Firefox) -> bool:
         title = (current_driver.title or "").strip()
-        if normalize_slug(title) != normalized_expected:
+        normalized_title = normalize_slug(title)
+        if normalized_title not in {normalized_expected, canonical_expected}:
             return False
 
         if not current_driver.find_elements(By.CSS_SELECTOR, "div.dsOuterFrame.datasheet"):
@@ -213,17 +253,112 @@ def wait_for_expected_datasheet(
     wait.until(matches_expected_target)
 
 
-def wait_for_filtered_army_list(
-    driver: Firefox, wait: WebDriverWait, baseline_title: str, baseline_count: int
+def wait_for_rendered_datasheet(
+    driver: Firefox, wait: WebDriverWait, expected_slug: str
 ) -> None:
+    normalized_expected = normalize_slug(expected_slug)
+    canonical_expected = canonicalize_expected_slug(expected_slug)
+
+    def is_fully_rendered(current_driver: Firefox) -> bool:
+        if not current_driver.find_elements(By.CSS_SELECTOR, "div.dsOuterFrame.datasheet"):
+            return False
+
+        details = current_driver.execute_script(
+            """
+            const card = document.querySelector("div.dsOuterFrame.datasheet");
+            const title = (document.title || "").trim();
+            const text = (card?.innerText || "").trim();
+            const stats = Array.from(card?.querySelectorAll("div, span") || [])
+                .map((element) => (element.innerText || "").trim())
+                .filter(Boolean)
+                .slice(0, 40);
+            return {
+                title,
+                textLength: text.length,
+                placeholderCount: (text.match(/-{6,}/g) || []).length,
+                fontsLoaded:
+                    !document.fonts || document.fonts.status === "loaded",
+                stats,
+            };
+            """
+        )
+
+        normalized_title = normalize_slug(details["title"])
+        if normalized_title not in {normalized_expected, canonical_expected}:
+            return False
+
+        if not details["fontsLoaded"]:
+            return False
+
+        if details["textLength"] < 200:
+            return False
+
+        if details["placeholderCount"] > 8:
+            return False
+
+        visible_stats = [
+            value
+            for value in details["stats"]
+            if value
+            and value not in {"M", "T", "Sv", "W", "Ld", "OC"}
+            and len(value) <= 4
+        ]
+        return len(visible_stats) >= 6
+
+    wait.until(is_fully_rendered)
+
+
+def wait_for_filtered_army_list(
+    driver: Firefox,
+    wait: WebDriverWait,
+    baseline_title: str,
+    baseline_count: int,
+    requested_filters: list[str],
+) -> None:
+    normalized_filters = {item.strip().lower() for item in requested_filters if item.strip()}
+
     def has_refreshed(current_driver: Firefox) -> bool:
         current_title = (current_driver.title or "").strip()
         current_count = len(
             current_driver.find_elements(By.CSS_SELECTOR, "#tooltip_contentArmyList a")
         )
+        selected_options = {
+            option.text.strip().lower()
+            for option in current_driver.find_elements(By.CSS_SELECTOR, "select option:checked")
+            if option.text.strip()
+        }
+
+        missing_filters = normalized_filters.difference(selected_options)
+        if missing_filters:
+            for missing_filter in requested_filters:
+                if missing_filter.strip().lower() in missing_filters:
+                    set_selects_by_text(current_driver, missing_filter)
+            return False
+
+        if current_count <= 0:
+            return False
+
         return current_title != baseline_title or current_count != baseline_count
 
     wait.until(has_refreshed)
+
+
+def wait_for_filter_options(
+    driver: Firefox, wait: WebDriverWait, requested_filters: list[str]
+) -> None:
+    normalized_filters = {item.strip().lower() for item in requested_filters if item.strip()}
+    if not normalized_filters:
+        return
+
+    def filter_options_ready(current_driver: Firefox) -> bool:
+        available_options = {
+            option.text.strip().lower()
+            for option in current_driver.find_elements(By.CSS_SELECTOR, "select option")
+            if option.text.strip()
+        }
+        return normalized_filters.issubset(available_options)
+
+    wait.until(filter_options_ready)
 
 
 def fit_window_to_card(driver: Firefox) -> None:
@@ -270,6 +405,46 @@ def clear_outputs(output_dir: Path, source_dir: Path, output_slug: str) -> None:
         path.unlink(missing_ok=True)
 
 
+def build_driver() -> tuple[Firefox, WebDriverWait]:
+    options = FirefoxOptions()
+    options.add_argument("--headless")
+    options.add_argument("--width=1800")
+    options.add_argument("--height=2200")
+    # `none` avoids long waits on Wahapedia assets, but we must verify the page title
+    # before saving so we don't capture the previous datasheet during navigation.
+    options.page_load_strategy = "none"
+
+    driver = Firefox(options=options)
+    driver.set_page_load_timeout(30)
+    wait = WebDriverWait(driver, 60)
+    return driver, wait
+
+
+def capture_datasheet(
+    driver: Firefox,
+    wait: WebDriverWait,
+    href: str,
+    slug: str,
+    filters: list[str],
+    destination: Path,
+) -> None:
+    driver.get(href)
+    maybe_accept_consent(driver)
+    wait_for_filter_options(driver, wait, filters)
+    for filter_text in filters:
+        set_selects_by_text(driver, filter_text)
+    wait_for_expected_datasheet(driver, wait, slug)
+    wait_for_rendered_datasheet(driver, wait, slug)
+    fit_window_to_card(driver)
+    cleanup_page(driver)
+    wait_for_rendered_datasheet(driver, wait, slug)
+    fit_window_to_card(driver)
+    cleanup_page(driver)
+    wait_for_rendered_datasheet(driver, wait, slug)
+    card = driver.find_element(By.CSS_SELECTOR, "div.dsOuterFrame.datasheet")
+    card.screenshot(str(destination))
+
+
 def main() -> int:
     args = parse_args()
 
@@ -282,29 +457,27 @@ def main() -> int:
     if args.clear:
         clear_outputs(output_dir, source_dir, args.output_slug)
 
-    options = FirefoxOptions()
-    options.add_argument("--headless")
-    options.add_argument("--width=1800")
-    options.add_argument("--height=2200")
-    # `none` avoids long waits on Wahapedia assets, but we must verify the page title
-    # before saving so we don't capture the previous datasheet during navigation.
-    options.page_load_strategy = "none"
-
-    driver = Firefox(options=options)
-    driver.set_page_load_timeout(30)
-    wait = WebDriverWait(driver, 40)
+    driver, wait = build_driver()
 
     try:
         print(f"Opening {args.url}", flush=True)
         driver.get(args.url)
         maybe_accept_consent(driver)
+        wait_for_filter_options(driver, wait, args.filter)
         baseline_title = (driver.title or "").strip()
         baseline_count = len(driver.find_elements(By.CSS_SELECTOR, "#tooltip_contentArmyList a"))
         for filter_text in args.filter:
             set_selects_by_text(driver, filter_text)
         if args.filter:
-            wait_for_filtered_army_list(driver, wait, baseline_title, baseline_count)
-        wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "#tooltip_contentArmyList a")))
+            wait_for_filtered_army_list(
+                driver, wait, baseline_title, baseline_count, args.filter
+            )
+        wait.until(
+            lambda current_driver: len(
+                current_driver.find_elements(By.CSS_SELECTOR, "#tooltip_contentArmyList a")
+            )
+            > 0
+        )
 
         links = unique_links(driver)
         print(f"Found {len(links)} {args.output_slug} unit links", flush=True)
@@ -319,17 +492,28 @@ def main() -> int:
 
             print(f"[{index}/{len(links)}] fetch {slug}", flush=True)
             try:
-                driver.get(item["href"])
-                maybe_accept_consent(driver)
-                for filter_text in args.filter:
-                    set_selects_by_text(driver, filter_text)
-                wait_for_expected_datasheet(driver, wait, slug)
-                fit_window_to_card(driver)
-                cleanup_page(driver)
-                fit_window_to_card(driver)
-                cleanup_page(driver)
-                card = driver.find_element(By.CSS_SELECTOR, "div.dsOuterFrame.datasheet")
-                card.screenshot(str(destination))
+                if args.fresh_browser_per_card:
+                    card_driver, card_wait = build_driver()
+                    try:
+                        capture_datasheet(
+                            card_driver,
+                            card_wait,
+                            item["href"],
+                            slug,
+                            args.filter,
+                            destination,
+                        )
+                    finally:
+                        card_driver.quit()
+                else:
+                    capture_datasheet(
+                        driver,
+                        wait,
+                        item["href"],
+                        slug,
+                        args.filter,
+                        destination,
+                    )
             except Exception as error:
                 failures.append(
                     {"slug": slug, "href": item["href"], "error": str(error)}
