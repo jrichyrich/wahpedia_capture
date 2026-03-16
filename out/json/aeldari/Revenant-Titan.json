@@ -1,0 +1,205 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Revenant-Titan",
+    "faction_slug": "aeldari",
+    "datasheet_slug": "Revenant-Titan",
+    "output_slug": "aeldari"
+  },
+  "name": "Revenant Titan",
+  "base_size": "\u2300Use model",
+  "characteristics": {
+    "M": "16\"",
+    "T": "13",
+    "Sv": "2+",
+    "W": "30",
+    "Ld": "6+",
+    "OC": "16",
+    "Invulnerable Save": "4+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Cloudburst missile launcher",
+        "abilities": [
+          "blast"
+        ],
+        "range": "36\"",
+        "a": "2D6",
+        "bs": "3+",
+        "s": "8",
+        "ap": "-2",
+        "d": "2"
+      },
+      {
+        "name": "Revenant pulsar",
+        "abilities": [
+          "assault"
+        ],
+        "range": "60\"",
+        "a": "6",
+        "bs": "3+",
+        "s": "14",
+        "ap": "-3",
+        "d": "4"
+      },
+      {
+        "name": "Sonic lance",
+        "abilities": [
+          "anti-monster 4+",
+          "anti-vehicle 4+",
+          "assault",
+          "torrent"
+        ],
+        "range": "18\"",
+        "a": "D6+6",
+        "bs": "N/A",
+        "s": "8",
+        "ap": "-3",
+        "d": "2"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Revenant feet",
+        "abilities": [],
+        "range": "Melee",
+        "a": "8",
+        "ws": "3+",
+        "s": "10",
+        "ap": "-1",
+        "d": "3"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise 2D6"
+    ],
+    "faction": [
+      "Battle Focus"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this model makes a Normal , Advance or Fall Back move, it can move over models (excluding TITANIC models) and terrain features that are 4\" or less in height as if they were not there.",
+        "name": "Titanic Advance"
+      },
+      {
+        "type": "rule",
+        "text": "Each time you target this model with a Stratagem , you must spend twice that Stratagem\u2019s stated CP cost to do so.",
+        "name": "Towering Wraith Construct"
+      },
+      {
+        "type": "rule",
+        "text": "Each time this model Advances , do not make an Advance roll for it. Instead, until the end of the phase, add 8\" to the Move characteristic of this model.",
+        "name": "Revenant Jet Pack"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Revenant Titan"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "cloudburst missile launcher; Revenant pulsar; sonic lance; Revenant feet.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "1100"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "MONSTER",
+    "TITANIC",
+    "TOWERING",
+    "WALKER",
+    "FLY",
+    "WRAITH CONSTRUCT",
+    "AELDARI",
+    "REVENANT TITAN"
+  ],
+  "faction_keywords": [
+    "ASURYANI"
+  ],
+  "sections": [
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise 2D6"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Battle Focus"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model makes a Normal , Advance or Fall Back move, it can move over models (excluding TITANIC models) and terrain features that are 4\" or less in height as if they were not there.",
+          "name": "Titanic Advance"
+        },
+        {
+          "type": "rule",
+          "text": "Each time you target this model with a Stratagem , you must spend twice that Stratagem\u2019s stated CP cost to do so.",
+          "name": "Towering Wraith Construct"
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model Advances , do not make an Advance roll for it. Instead, until the end of the phase, add 8\" to the Move characteristic of this model.",
+          "name": "Revenant Jet Pack"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Revenant Titan"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "cloudburst missile launcher; Revenant pulsar; sonic lance; Revenant feet.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "1100"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DAMAGED: 1-10 WOUNDS REMAINING",
+      "entries": [
+        {
+          "type": "text",
+          "text": "While this model has 1-10 wounds remaining, subtract 8 from this model\u2019s Objective Control characteristic and each time this model makes an attack, subtract 1 from the Hit roll ."
+        }
+      ]
+    }
+  ]
+}

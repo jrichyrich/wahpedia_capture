@@ -1,0 +1,171 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Ravenwing-Dark-Talon",
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Ravenwing-Dark-Talon",
+    "output_slug": "dark-angels"
+  },
+  "name": "Ravenwing Dark Talon",
+  "base_size": "\u2300120 x 92mm flying base",
+  "characteristics": {
+    "M": "20+\"",
+    "T": "8",
+    "Sv": "3+",
+    "W": "11",
+    "Ld": "6+",
+    "OC": "0",
+    "Invulnerable Save": "5+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Hurricane bolter",
+        "abilities": [
+          "rapid fire 6",
+          "twin-linked"
+        ],
+        "range": "24\"",
+        "a": "6",
+        "bs": "3+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Rift cannon",
+        "abilities": [
+          "blast",
+          "devastating wounds"
+        ],
+        "range": "18\"",
+        "a": "D3+1",
+        "bs": "3+",
+        "s": "16",
+        "ap": "-4",
+        "d": "3"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Armoured hull",
+        "abilities": [],
+        "range": "Melee",
+        "a": "3",
+        "ws": "4+",
+        "s": "6",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise D3 , Hover"
+    ],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Once per turn, one model from your army with this ability can use it after it ends a Normal move . If it does, you can select one enemy unit (excluding AIRCRAFT ) that model moved over this phase. That unit suffers D3 mortal wounds and you must roll one D6: on a 1-3, that unit cannot Advance or Fall Back in your opponent\u2019s next Movement phase ; on a 4-6, that unit must Remain Stationary in your opponent\u2019s next Movement phase. Each model can only use this ability once per battle.",
+        "name": "Stasis Bomb"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Ravenwing Dark Talon"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "rift cannon; 2 hurricane bolters; armoured hull.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "210"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "VEHICLE",
+    "AIRCRAFT",
+    "FLY",
+    "IMPERIUM",
+    "RAVENWING",
+    "DARK TALON"
+  ],
+  "faction_keywords": [
+    "ADEPTUS ASTARTES",
+    "DARK ANGELS"
+  ],
+  "sections": [
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise D3 , Hover"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Once per turn, one model from your army with this ability can use it after it ends a Normal move . If it does, you can select one enemy unit (excluding AIRCRAFT ) that model moved over this phase. That unit suffers D3 mortal wounds and you must roll one D6: on a 1-3, that unit cannot Advance or Fall Back in your opponent\u2019s next Movement phase ; on a 4-6, that unit must Remain Stationary in your opponent\u2019s next Movement phase. Each model can only use this ability once per battle.",
+          "name": "Stasis Bomb"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Ravenwing Dark Talon"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "rift cannon; 2 hurricane bolters; armoured hull.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "210"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DAMAGED: 1-3 WOUNDS REMAINING",
+      "entries": [
+        {
+          "type": "text",
+          "text": "While this model has 1-3 wounds remaining, each time this model makes an attack, subtract 1 from the Hit roll ."
+        }
+      ]
+    }
+  ]
+}

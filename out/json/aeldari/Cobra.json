@@ -1,0 +1,220 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Cobra",
+    "faction_slug": "aeldari",
+    "datasheet_slug": "Cobra",
+    "output_slug": "aeldari"
+  },
+  "name": "Cobra",
+  "base_size": "\u2300Use model",
+  "characteristics": {
+    "M": "14\"",
+    "T": "11",
+    "Sv": "2+",
+    "W": "24",
+    "Ld": "6+",
+    "OC": "8",
+    "Invulnerable Save": "5+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Aeldari missile launcher \u2013 sunburst",
+        "abilities": [
+          "blast"
+        ],
+        "range": "48\"",
+        "a": "D6",
+        "bs": "3+",
+        "s": "4",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Aeldari missile launcher \u2013 starshot",
+        "abilities": [],
+        "range": "48\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "10",
+        "ap": "-2",
+        "d": "D6"
+      },
+      {
+        "name": "Bright lance",
+        "abilities": [],
+        "range": "36\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "12",
+        "ap": "-3",
+        "d": "D6+2"
+      },
+      {
+        "name": "D-impaler",
+        "abilities": [
+          "blast",
+          "devastating wounds"
+        ],
+        "range": "36\"",
+        "a": "D6+3",
+        "bs": "3+",
+        "s": "16",
+        "ap": "-4",
+        "d": "4"
+      },
+      {
+        "name": "Scatter laser",
+        "abilities": [],
+        "range": "36\"",
+        "a": "6",
+        "bs": "3+",
+        "s": "5",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Shuriken cannon",
+        "abilities": [
+          "sustained hits 1"
+        ],
+        "range": "24\"",
+        "a": "3",
+        "bs": "3+",
+        "s": "6",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Starcannon",
+        "abilities": [],
+        "range": "36\"",
+        "a": "2",
+        "bs": "3+",
+        "s": "8",
+        "ap": "-3",
+        "d": "2"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Wraithbone hull",
+        "abilities": [],
+        "range": "Melee",
+        "a": "6",
+        "ws": "4+",
+        "s": "6",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise D6+2"
+    ],
+    "faction": [
+      "Battle Focus"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "In your Shooting phase , just after selecting a target for this model\u2019s D-impaler, roll one D6 for the target unit and every other unit within 3\" of that unit: on a 5+, the unit being rolled for is struck by a D-rift. After this model has finished making its attacks against that target unit this phase, each unit struck by a D-rift this phase suffers D3 mortal wounds .",
+        "name": "D-rift"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Cobra"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "D-impaler; shuriken cannon; wraithbone hull.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "415"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "VEHICLE",
+    "TITANIC",
+    "FLY",
+    "AELDARI",
+    "COBRA"
+  ],
+  "faction_keywords": [
+    "ASURYANI"
+  ],
+  "sections": [
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise D6+2"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Battle Focus"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "In your Shooting phase , just after selecting a target for this model\u2019s D-impaler, roll one D6 for the target unit and every other unit within 3\" of that unit: on a 5+, the unit being rolled for is struck by a D-rift. After this model has finished making its attacks against that target unit this phase, each unit struck by a D-rift this phase suffers D3 mortal wounds .",
+          "name": "D-rift"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Cobra"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "D-impaler; shuriken cannon; wraithbone hull.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "415"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DAMAGED: 1-8 WOUNDS REMAINING",
+      "entries": [
+        {
+          "type": "text",
+          "text": "While this model has 1-8 wounds remaining, subtract 4 from its Objective Control characteristic and each time this model makes an attack, subtract 1 from the Hit roll ."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,172 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Ynnari-Venom",
+    "faction_slug": "aeldari",
+    "datasheet_slug": "Ynnari-Venom",
+    "output_slug": "aeldari"
+  },
+  "name": "Ynnari Venom",
+  "base_size": "\u230060mm flying base",
+  "characteristics": {
+    "M": "14\"",
+    "T": "6",
+    "Sv": "4+",
+    "W": "6",
+    "Ld": "6+",
+    "OC": "1",
+    "Invulnerable Save": "6+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Splinter cannon",
+        "abilities": [
+          "anti-infantry 3+",
+          "sustained hits 1"
+        ],
+        "range": "36\"",
+        "a": "3",
+        "bs": "3+",
+        "s": "3",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Twin splinter rifle",
+        "abilities": [
+          "anti-infantry 3+",
+          "assault",
+          "rapid fire 1",
+          "twin-linked"
+        ],
+        "range": "24\"",
+        "a": "2",
+        "bs": "3+",
+        "s": "2",
+        "ap": "0",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Bladevanes",
+        "abilities": [],
+        "range": "Melee",
+        "a": "3",
+        "ws": "4+",
+        "s": "5",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise 1 , Deep Strike , Firing Deck 6 , Stealth"
+    ],
+    "faction": [
+      "Battle Focus , Disparate Paths"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "At the end of the Fight phase , if there are no models currently embarked within this TRANSPORT , you can select one friendly YNNARI INFANTRY unit that only includes models from the units listed in this unit\u2019s Transport section, that has 6 or fewer models and that is wholly within 6\" of this TRANSPORT . Unless that unit is within Engagement Range of one or more enemy units, it can embark within this TRANSPORT .",
+        "name": "Lithe Embarkation"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Venom"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "splinter cannon; twin splinter rifle; bladevanes.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "70"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "VEHICLE",
+    "AELDARI",
+    "TRANSPORT",
+    "DEDICATED TRANSPORT",
+    "FLY",
+    "VENOM"
+  ],
+  "faction_keywords": [
+    "YNNARI"
+  ],
+  "sections": [
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise 1 , Deep Strike , Firing Deck 6 , Stealth"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Battle Focus , Disparate Paths"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "At the end of the Fight phase , if there are no models currently embarked within this TRANSPORT , you can select one friendly YNNARI INFANTRY unit that only includes models from the units listed in this unit\u2019s Transport section, that has 6 or fewer models and that is wholly within 6\" of this TRANSPORT . Unless that unit is within Engagement Range of one or more enemy units, it can embark within this TRANSPORT .",
+          "name": "Lithe Embarkation"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Venom"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "splinter cannon; twin splinter rifle; bladevanes.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "70"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "TRANSPORT",
+      "entries": [
+        {
+          "type": "text",
+          "text": "This model has a transport capacity of 6 models from the following units: THE VISARCH , YNNARI ARCHON , YNNARI INCUBI , YNNARI KABALITE WARRIORS , YNNARI SUCCUBUS , YNNARI WYCHES , YVRAINE . Before the battle, at the start of the Declare Battle Formations step, you can select one YNNARI KABALITE WARRIORS or YNNARI WYCHES unit from your army that has not already been split. If you do, that unit is split into two units, each containing as equal a number of models as possible (when splitting a unit in this way, make a note of which models form each of the two new units). One of these units must start the battle embarked within this TRANSPORT ; the other can start the battle embarked within another TRANSPORT , or it can be deployed as a separate unit."
+        }
+      ]
+    }
+  ]
+}

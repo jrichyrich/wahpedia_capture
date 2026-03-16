@@ -1,0 +1,203 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Thunderwolf-Cavalry",
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Thunderwolf-Cavalry",
+    "output_slug": "space-wolves"
+  },
+  "name": "Thunderwolf Cavalry",
+  "base_size": "\u230060mm",
+  "characteristics": {
+    "M": "12\"",
+    "T": "6",
+    "Sv": "3+",
+    "W": "4",
+    "Ld": "6+",
+    "OC": "2"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Bolt pistol",
+        "abilities": [
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Boltgun",
+        "abilities": [],
+        "range": "24\"",
+        "a": "2",
+        "bs": "3+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Plasma pistol \u2013 standard",
+        "abilities": [
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "7",
+        "ap": "-2",
+        "d": "1"
+      },
+      {
+        "name": "Plasma pistol \u2013 supercharge",
+        "abilities": [
+          "hazardous",
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "8",
+        "ap": "-3",
+        "d": "2"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Teeth and claws",
+        "abilities": [
+          "extra attacks"
+        ],
+        "range": "Melee",
+        "a": "3",
+        "ws": "4+",
+        "s": "5",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Wolf Guard weapon",
+        "abilities": [],
+        "range": "Melee",
+        "a": "4",
+        "ws": "3+",
+        "s": "5",
+        "ap": "-2",
+        "d": "2"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time a model in this unit makes a melee attack with its Wolf Guard weapon, if it made a Charge move this turn, add 1 to the Damage characteristic of that attack.",
+        "name": "Thunderous Charge"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Thunderwolf Cavalry Pack Leader",
+        "2-5 Thunderwolf Cavalry"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "bolt pistol; teeth and claws; Wolf Guard weapon.",
+      "label": "Every model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "3 models",
+          "points": "115"
+        },
+        {
+          "label": "6 models",
+          "points": "230"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "MOUNTED",
+    "GRENADES",
+    "IMPERIUM",
+    "THUNDERWOLF CAVALRY"
+  ],
+  "faction_keywords": [
+    "ADEPTUS ASTARTES",
+    "SPACE WOLVES"
+  ],
+  "sections": [
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time a model in this unit makes a melee attack with its Wolf Guard weapon, if it made a Charge move this turn, add 1 to the Damage characteristic of that attack.",
+          "name": "Thunderous Charge"
+        }
+      ]
+    },
+    {
+      "title": "WARGEAR ABILITIES",
+      "entries": [
+        {
+          "type": "statement",
+          "text": "The bearer has a 4+ invulnerable save .",
+          "label": "Storm Shield"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Thunderwolf Cavalry Pack Leader",
+            "2-5 Thunderwolf Cavalry"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "bolt pistol; teeth and claws; Wolf Guard weapon.",
+          "label": "Every model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "3 models",
+              "points": "115"
+            },
+            {
+              "label": "6 models",
+              "points": "230"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

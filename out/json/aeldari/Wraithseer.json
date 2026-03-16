@@ -1,0 +1,241 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Wraithseer",
+    "faction_slug": "aeldari",
+    "datasheet_slug": "Wraithseer",
+    "output_slug": "aeldari"
+  },
+  "name": "Wraithseer",
+  "base_size": "\u230060mm",
+  "characteristics": {
+    "M": "8\"",
+    "T": "11",
+    "Sv": "2+",
+    "W": "10",
+    "Ld": "6+",
+    "OC": "3",
+    "Invulnerable Save": "5+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Aeldari missile launcher \u2013 sunburst",
+        "abilities": [
+          "blast"
+        ],
+        "range": "48\"",
+        "a": "D6",
+        "bs": "4+",
+        "s": "4",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Aeldari missile launcher \u2013 starshot",
+        "abilities": [],
+        "range": "48\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "10",
+        "ap": "-2",
+        "d": "D6"
+      },
+      {
+        "name": "Bright lance",
+        "abilities": [],
+        "range": "36\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "12",
+        "ap": "-3",
+        "d": "D6+2"
+      },
+      {
+        "name": "Destructor",
+        "abilities": [
+          "psychic",
+          "torrent"
+        ],
+        "range": "12\"",
+        "a": "D6",
+        "bs": "N/A",
+        "s": "5",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Scatter laser",
+        "abilities": [],
+        "range": "36\"",
+        "a": "6",
+        "bs": "4+",
+        "s": "5",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Shuriken cannon",
+        "abilities": [
+          "sustained hits 1"
+        ],
+        "range": "24\"",
+        "a": "3",
+        "bs": "4+",
+        "s": "6",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Starcannon",
+        "abilities": [],
+        "range": "36\"",
+        "a": "2",
+        "bs": "4+",
+        "s": "8",
+        "ap": "-3",
+        "d": "2"
+      },
+      {
+        "name": "Wraithseer D-cannon",
+        "abilities": [
+          "devastating wounds"
+        ],
+        "range": "24\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "14",
+        "ap": "-4",
+        "d": "D6"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Ghostspear \u2013 sweep",
+        "abilities": [
+          "anti-infantry 2+",
+          "psychic"
+        ],
+        "range": "Melee",
+        "a": "12",
+        "ws": "4+",
+        "s": "7",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Ghostspear \u2013 strike",
+        "abilities": [
+          "anti-infantry 2+",
+          "precision",
+          "psychic"
+        ],
+        "range": "Melee",
+        "a": "4",
+        "ws": "4+",
+        "s": "10",
+        "ap": "-2",
+        "d": "3"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise 1"
+    ],
+    "faction": [
+      "Battle Focus"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "In your Shooting phase , after this model has shot, select one enemy unit hit by one or more of those attacks. That enemy unit must take a Battle-shock test .",
+        "name": "Horrify (Psychic)"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Wraithseer"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "destructor; ghostspear.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "160"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "MONSTER",
+    "PSYKER",
+    "WALKER",
+    "WRAITH CONSTRUCT",
+    "AELDARI",
+    "WRAITHSEER"
+  ],
+  "faction_keywords": [
+    "ASURYANI"
+  ],
+  "sections": [
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise 1"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Battle Focus"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "In your Shooting phase , after this model has shot, select one enemy unit hit by one or more of those attacks. That enemy unit must take a Battle-shock test .",
+          "name": "Horrify (Psychic)"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Wraithseer"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "destructor; ghostspear.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "160"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

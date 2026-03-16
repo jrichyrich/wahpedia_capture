@@ -385,6 +385,8 @@ def unique_links(driver: Firefox) -> list[dict[str, str]]:
 
     for element in driver.find_elements(By.CSS_SELECTOR, "#tooltip_contentArmyList a"):
         href = element.get_attribute("href")
+        if href and href.startswith("https://wahapedia.ru/"):
+            href = "http://wahapedia.ru/" + href.removeprefix("https://wahapedia.ru/")
         text = element.text.strip()
         if not href or href.endswith("datasheets.html") or href in seen:
             continue

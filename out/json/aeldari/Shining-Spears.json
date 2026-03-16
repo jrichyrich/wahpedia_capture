@@ -1,0 +1,222 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Shining-Spears",
+    "faction_slug": "aeldari",
+    "datasheet_slug": "Shining-Spears",
+    "output_slug": "aeldari"
+  },
+  "name": "Shining Spears",
+  "base_size": "",
+  "characteristics": {
+    "M": "14\"",
+    "T": "4",
+    "Sv": "3+",
+    "W": "2",
+    "Ld": "6+",
+    "OC": "2",
+    "Invulnerable Save": "5+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Laser lance",
+        "abilities": [
+          "assault"
+        ],
+        "range": "6\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "6",
+        "ap": "-2",
+        "d": "3"
+      },
+      {
+        "name": "Shuriken cannon",
+        "abilities": [
+          "lethal hits"
+        ],
+        "range": "24\"",
+        "a": "3",
+        "bs": "3+",
+        "s": "6",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Star lance",
+        "abilities": [
+          "assault"
+        ],
+        "range": "6\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "9",
+        "ap": "-3",
+        "d": "3"
+      },
+      {
+        "name": "Twin shuriken catapult",
+        "abilities": [
+          "assault",
+          "twin-linked"
+        ],
+        "range": "18\"",
+        "a": "2",
+        "bs": "3+",
+        "s": "4",
+        "ap": "-1",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Laser lance",
+        "abilities": [
+          "anti-monster 3+",
+          "anti-vehicle 3+",
+          "lance"
+        ],
+        "range": "Melee",
+        "a": "3",
+        "ws": "3+",
+        "s": "5",
+        "ap": "-2",
+        "d": "3"
+      },
+      {
+        "name": "Paragon sabre",
+        "abilities": [],
+        "range": "Melee",
+        "a": "6",
+        "ws": "3+",
+        "s": "5",
+        "ap": "-2",
+        "d": "2"
+      },
+      {
+        "name": "Star lance",
+        "abilities": [
+          "anti-monster 3+",
+          "anti-vehicle 3+",
+          "lance"
+        ],
+        "range": "Melee",
+        "a": "4",
+        "ws": "3+",
+        "s": "5",
+        "ap": "-3",
+        "d": "3"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [],
+    "faction": [
+      "Battle Focus"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this unit makes a Normal , Advance , Fall Back or Charge move , ignore any vertical distance when determining the total distance models in this unit can be moved during that move.",
+        "name": "Extreme Mobility"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Shining Spear Exarch",
+        "2-5 Shining Spears"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "laser lance; twin shuriken catapult.",
+      "label": "Every model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "3 models",
+          "points": "110"
+        },
+        {
+          "label": "6 models",
+          "points": "220"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "MOUNTED",
+    "AELDARI",
+    "FLY",
+    "ASPECT WARRIORS",
+    "SHINING SPEARS"
+  ],
+  "faction_keywords": [
+    "ASURYANI"
+  ],
+  "sections": [
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Battle Focus"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this unit makes a Normal , Advance , Fall Back or Charge move , ignore any vertical distance when determining the total distance models in this unit can be moved during that move.",
+          "name": "Extreme Mobility"
+        }
+      ]
+    },
+    {
+      "title": "WARGEAR ABILITIES",
+      "entries": [
+        {
+          "type": "statement",
+          "text": "The bearer has a 4+ invulnerable save .",
+          "label": "Shimmershield"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Shining Spear Exarch",
+            "2-5 Shining Spears"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "laser lance; twin shuriken catapult.",
+          "label": "Every model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "3 models",
+              "points": "110"
+            },
+            {
+              "label": "6 models",
+              "points": "220"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

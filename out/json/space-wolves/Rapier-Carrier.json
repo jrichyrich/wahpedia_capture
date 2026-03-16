@@ -1,0 +1,199 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Rapier-Carrier",
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Rapier-Carrier",
+    "output_slug": "space-wolves"
+  },
+  "name": "Rapier Carrier",
+  "base_size": "\u2300Use model",
+  "characteristics": {
+    "M": "3\"",
+    "T": "6",
+    "Sv": "2+",
+    "W": "6",
+    "Ld": "6+",
+    "OC": "2"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Boltgun",
+        "abilities": [],
+        "range": "24\"",
+        "a": "2",
+        "bs": "3+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Graviton cannon",
+        "abilities": [
+          "anti-vehicle 2+",
+          "blast",
+          "heavy"
+        ],
+        "range": "36\"",
+        "a": "D6",
+        "bs": "3+",
+        "s": "6",
+        "ap": "-2",
+        "d": "2"
+      },
+      {
+        "name": "Laser destroyer",
+        "abilities": [
+          "heavy"
+        ],
+        "range": "36\"",
+        "a": "3",
+        "bs": "3+",
+        "s": "14",
+        "ap": "-4",
+        "d": "D6+1"
+      },
+      {
+        "name": "Quad heavy bolter",
+        "abilities": [
+          "heavy",
+          "twin-linked",
+          "sustained hits 1"
+        ],
+        "range": "36\"",
+        "a": "6",
+        "bs": "3+",
+        "s": "5",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Quad launcher \u2013 shatter shells",
+        "abilities": [
+          "heavy"
+        ],
+        "range": "24\"",
+        "a": "4",
+        "bs": "3+",
+        "s": "9",
+        "ap": "-2",
+        "d": "3"
+      },
+      {
+        "name": "Quad launcher \u2013 thunderfire shells",
+        "abilities": [
+          "blast",
+          "heavy",
+          "indirect fire"
+        ],
+        "range": "60\"",
+        "a": "D6+4",
+        "bs": "3+",
+        "s": "5",
+        "ap": "0",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Close combat weapon",
+        "abilities": [],
+        "range": "Melee",
+        "a": "2",
+        "ws": "3+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this model shoots in your Shooting phase , provided it Remained Stationary this turn, all [HEAVY] weapons equipped by models in this unit have the [LETHAL HITS] ability.",
+        "name": "Powerful Volley"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Rapier Carrier"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "boltgun; quad heavy bolter; close combat weapon.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "90"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "ARTILLERY",
+    "VEHICLE",
+    "IMPERIUM",
+    "RAPIER CARRIER"
+  ],
+  "faction_keywords": [
+    "ADEPTUS ASTARTES"
+  ],
+  "sections": [
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model shoots in your Shooting phase , provided it Remained Stationary this turn, all [HEAVY] weapons equipped by models in this unit have the [LETHAL HITS] ability.",
+          "name": "Powerful Volley"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Rapier Carrier"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "boltgun; quad heavy bolter; close combat weapon.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "90"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

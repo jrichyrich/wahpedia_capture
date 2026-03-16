@@ -1,0 +1,196 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Knight-centura",
+    "faction_slug": "adeptus-custodes",
+    "datasheet_slug": "Knight-centura",
+    "output_slug": "adeptus-custodes"
+  },
+  "name": "Knight-centura",
+  "base_size": "\u230032mm",
+  "characteristics": {
+    "M": "6\"",
+    "T": "3",
+    "Sv": "3+",
+    "W": "4",
+    "Ld": "6+",
+    "OC": "1",
+    "Invulnerable Save": "5+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Master-crafted boltgun",
+        "abilities": [
+          "rapid fire 1"
+        ],
+        "range": "24\"",
+        "a": "1",
+        "bs": "2+",
+        "s": "4",
+        "ap": "0",
+        "d": "2"
+      },
+      {
+        "name": "Witchseeker flamer",
+        "abilities": [
+          "ignores cover",
+          "torrent"
+        ],
+        "range": "12\"",
+        "a": "D6",
+        "bs": "N/A",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Close combat weapon",
+        "abilities": [],
+        "range": "Melee",
+        "a": "3",
+        "ws": "2+",
+        "s": "3",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Executioner greatblade",
+        "abilities": [
+          "anti-psyker 5+",
+          "devastating wounds"
+        ],
+        "range": "Melee",
+        "a": "3",
+        "ws": "2+",
+        "s": "5",
+        "ap": "-2",
+        "d": "2"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Leader , Scouts 6\""
+    ],
+    "faction": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, add 2\" to the Move characteristic of models in that unit and add 2 to Advance and Charge rolls made for that unit.",
+        "name": "Seeker\u2019s Instincts"
+      },
+      {
+        "type": "rule",
+        "text": "This model has the Feel No Pain 3+ ability against Psychic Attacks and mortal wounds .",
+        "name": "Daughter of the Abyss"
+      },
+      {
+        "type": "rule",
+        "text": "Each time an enemy unit (excluding MONSTERS and VEHICLES ) that is within Engagement Range of this model\u2019s unit Falls Back , all models in that enemy unit must take a Desperate Escape test. When doing so, if that enemy unit is Battle-shocked , subtract 1 from each of those tests.",
+        "name": "Corner the Quarry"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Knight-Centura"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "executioner greatblade.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "55"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "CHARACTER",
+    "IMPERIUM",
+    "ANATHEMA PSYKANA",
+    "KNIGHT-CENTURA"
+  ],
+  "faction_keywords": [
+    "ADEPTUS CUSTODES"
+  ],
+  "sections": [
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Leader , Scouts 6\""
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, add 2\" to the Move characteristic of models in that unit and add 2 to Advance and Charge rolls made for that unit.",
+          "name": "Seeker\u2019s Instincts"
+        },
+        {
+          "type": "rule",
+          "text": "This model has the Feel No Pain 3+ ability against Psychic Attacks and mortal wounds .",
+          "name": "Daughter of the Abyss"
+        },
+        {
+          "type": "rule",
+          "text": "Each time an enemy unit (excluding MONSTERS and VEHICLES ) that is within Engagement Range of this model\u2019s unit Falls Back , all models in that enemy unit must take a Desperate Escape test. When doing so, if that enemy unit is Battle-shocked , subtract 1 from each of those tests.",
+          "name": "Corner the Quarry"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Knight-Centura"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "executioner greatblade.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "55"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "LEADER",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "Prosecutors",
+            "Vigilators",
+            "Witchseekers"
+          ]
+        }
+      ]
+    }
+  ]
+}

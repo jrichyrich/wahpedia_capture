@@ -1,0 +1,169 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Windriders",
+    "faction_slug": "aeldari",
+    "datasheet_slug": "Windriders",
+    "output_slug": "aeldari"
+  },
+  "name": "Windriders",
+  "base_size": "\u230032mm flying base",
+  "characteristics": {
+    "M": "14\"",
+    "T": "4",
+    "Sv": "4+",
+    "W": "2",
+    "Ld": "7+",
+    "OC": "2",
+    "Invulnerable Save": "6+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Scatter laser",
+        "abilities": [
+          "sustained hits 1"
+        ],
+        "range": "36\"",
+        "a": "6",
+        "bs": "3+",
+        "s": "5",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Shuriken cannon",
+        "abilities": [
+          "lethal hits"
+        ],
+        "range": "24\"",
+        "a": "3",
+        "bs": "3+",
+        "s": "6",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Twin shuriken catapult",
+        "abilities": [
+          "assault",
+          "twin-linked"
+        ],
+        "range": "18\"",
+        "a": "2",
+        "bs": "3+",
+        "s": "4",
+        "ap": "-1",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Close combat weapon",
+        "abilities": [],
+        "range": "Melee",
+        "a": "3",
+        "ws": "3+",
+        "s": "3",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [],
+    "faction": [
+      "Battle Focus"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time a model in this unit makes a ranged attack, re-roll a Hit roll of 1. If the target of that attack is the closest eligible target, you can re-roll the Hit roll instead.",
+        "name": "Swift Demise"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "3-6 Windriders"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "twin shuriken catapult; close combat weapon.",
+      "label": "Every model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "3 models",
+          "points": "80"
+        },
+        {
+          "label": "6 models",
+          "points": "160"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "MOUNTED",
+    "AELDARI",
+    "FLY",
+    "WINDRIDERS"
+  ],
+  "faction_keywords": [
+    "ASURYANI"
+  ],
+  "sections": [
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Battle Focus"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time a model in this unit makes a ranged attack, re-roll a Hit roll of 1. If the target of that attack is the closest eligible target, you can re-roll the Hit roll instead.",
+          "name": "Swift Demise"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "3-6 Windriders"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "twin shuriken catapult; close combat weapon.",
+          "label": "Every model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "3 models",
+              "points": "80"
+            },
+            {
+              "label": "6 models",
+              "points": "160"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

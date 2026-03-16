@@ -1,0 +1,176 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Avatar-of-Khaine",
+    "faction_slug": "aeldari",
+    "datasheet_slug": "Avatar-of-Khaine",
+    "output_slug": "aeldari"
+  },
+  "name": "Avatar of Khaine",
+  "base_size": "\u230080mm",
+  "characteristics": {
+    "M": "10\"",
+    "T": "11",
+    "Sv": "2+",
+    "W": "14",
+    "Ld": "6+",
+    "OC": "5",
+    "Invulnerable Save": "4+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "The Wailing Doom",
+        "abilities": [
+          "sustained hits d3"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "2+",
+        "s": "16",
+        "ap": "-4",
+        "d": "D6+2"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "The Wailing Doom \u2013 strike",
+        "abilities": [],
+        "range": "Melee",
+        "a": "6",
+        "ws": "2+",
+        "s": "16",
+        "ap": "-4",
+        "d": "D6+2"
+      },
+      {
+        "name": "The Wailing Doom \u2013 sweep",
+        "abilities": [],
+        "range": "Melee",
+        "a": "12",
+        "ws": "2+",
+        "s": "8",
+        "ap": "-2",
+        "d": "2"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise D3"
+    ],
+    "faction": [
+      "Battle Focus"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time an attack is allocated to this model, halve the Damage characteristic of that attack.",
+        "name": "Molten Form"
+      },
+      {
+        "type": "rule",
+        "text": "While a friendly AELDARI unit is within 6\" of this model, add 1 to Advance and Charge rolls made for that unit.",
+        "name": "The Bloody-Handed (Aura)"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Avatar of Khaine \u2013 EPIC HERO"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "the Wailing Doom",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "280"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "MONSTER",
+    "CHARACTER",
+    "EPIC HERO",
+    "AELDARI",
+    "DAEMON",
+    "AVATAR OF KHAINE"
+  ],
+  "faction_keywords": [
+    "ASURYANI"
+  ],
+  "sections": [
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise D3"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Battle Focus"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time an attack is allocated to this model, halve the Damage characteristic of that attack.",
+          "name": "Molten Form"
+        },
+        {
+          "type": "rule",
+          "text": "While a friendly AELDARI unit is within 6\" of this model, add 1 to Advance and Charge rolls made for that unit.",
+          "name": "The Bloody-Handed (Aura)"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Avatar of Khaine \u2013 EPIC HERO"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "the Wailing Doom",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "280"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DAMAGED: 1-5 WOUNDS REMAINING",
+      "entries": [
+        {
+          "type": "text",
+          "text": "While this model has 1-5 wounds remaining, each time this model makes an attack, subtract 1 from the Hit roll ."
+        }
+      ]
+    }
+  ]
+}

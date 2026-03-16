@@ -1,0 +1,192 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Warp-Hunter",
+    "faction_slug": "aeldari",
+    "datasheet_slug": "Warp-Hunter",
+    "output_slug": "aeldari"
+  },
+  "name": "Warp Hunter",
+  "base_size": "\u2300Use model",
+  "characteristics": {
+    "M": "14\"",
+    "T": "9",
+    "Sv": "3+",
+    "W": "12",
+    "Ld": "6+",
+    "OC": "3"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "D-flail \u2013 blast",
+        "abilities": [
+          "blast",
+          "devastating wounds"
+        ],
+        "range": "24\"",
+        "a": "D3",
+        "bs": "3+",
+        "s": "12",
+        "ap": "-4",
+        "d": "3"
+      },
+      {
+        "name": "D-flail \u2013 rift",
+        "abilities": [
+          "devastating wounds",
+          "torrent"
+        ],
+        "range": "12\"",
+        "a": "D3",
+        "bs": "N/A",
+        "s": "12",
+        "ap": "-4",
+        "d": "3"
+      },
+      {
+        "name": "Shuriken cannon",
+        "abilities": [
+          "sustained hits 1"
+        ],
+        "range": "24\"",
+        "a": "3",
+        "bs": "3+",
+        "s": "6",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Twin shuriken catapult",
+        "abilities": [
+          "assault",
+          "twin-linked"
+        ],
+        "range": "18\"",
+        "a": "2",
+        "bs": "3+",
+        "s": "4",
+        "ap": "-3",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Wraithbone hull",
+        "abilities": [],
+        "range": "Melee",
+        "a": "3",
+        "ws": "4+",
+        "s": "6",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise D3"
+    ],
+    "faction": [
+      "Battle Focus"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "In your Shooting phase , after this model has shot, select one enemy unit hit by one or more of those attacks. That enemy unit must take a Battle-shock test .",
+        "name": "Devastating Assault"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Warp Hunter"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "D-flail; twin shuriken catapult; wraithbone hull.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "145"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "VEHICLE",
+    "FLY",
+    "AELDARI",
+    "WARP HUNTER"
+  ],
+  "faction_keywords": [
+    "ASURYANI"
+  ],
+  "sections": [
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise D3"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Battle Focus"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "In your Shooting phase , after this model has shot, select one enemy unit hit by one or more of those attacks. That enemy unit must take a Battle-shock test .",
+          "name": "Devastating Assault"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Warp Hunter"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "D-flail; twin shuriken catapult; wraithbone hull.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "145"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DAMAGED: 1-4 WOUNDS REMAINING",
+      "entries": [
+        {
+          "type": "text",
+          "text": "While this model has 1-4 wounds remaining, each time this model makes an attack, subtract 1 from the Hit roll ."
+        }
+      ]
+    }
+  ]
+}

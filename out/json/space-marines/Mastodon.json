@@ -1,0 +1,222 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Mastodon",
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Mastodon"
+  },
+  "name": "Mastodon",
+  "base_size": "\u2300Use model",
+  "characteristics": {
+    "M": "9\"",
+    "T": "14",
+    "Sv": "2+",
+    "W": "30",
+    "Ld": "6+",
+    "OC": "12"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Heavy bolter",
+        "abilities": [
+          "sustained hits 1"
+        ],
+        "range": "36\"",
+        "a": "3",
+        "bs": "3+",
+        "s": "5",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Heavy flamer",
+        "abilities": [
+          "ignores cover",
+          "torrent"
+        ],
+        "range": "12\"",
+        "a": "D6",
+        "bs": "N/A",
+        "s": "5",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Lascannon",
+        "abilities": [],
+        "range": "48\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "12",
+        "ap": "-3",
+        "d": "D6+1"
+      },
+      {
+        "name": "Siege melta array",
+        "abilities": [
+          "melta 2"
+        ],
+        "range": "24\"",
+        "a": "6",
+        "bs": "3+",
+        "s": "9",
+        "ap": "-4",
+        "d": "D6"
+      },
+      {
+        "name": "Skyreaper battery",
+        "abilities": [
+          "anti-fly 4+"
+        ],
+        "range": "48\"",
+        "a": "8",
+        "bs": "3+",
+        "s": "7",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Volkite culverin",
+        "abilities": [
+          "devastating wounds"
+        ],
+        "range": "36\"",
+        "a": "4",
+        "bs": "3+",
+        "s": "6",
+        "ap": "0",
+        "d": "2"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Armoured tracks",
+        "abilities": [],
+        "range": "Melee",
+        "a": "6",
+        "ws": "4+",
+        "s": "8",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise 2D6"
+    ],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Once per battle round , when an attack is allocated to this model, you can change the Damage characteristic of that attack to 0.",
+        "name": "Inviolable Transport"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Mastodon"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "2 heavy flamers; 2 lascannons; siege melta array; skyreaper battery; armoured tracks.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "540"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "VEHICLE",
+    "TITANIC",
+    "IMPERIUM",
+    "TRANSPORT",
+    "SMOKE",
+    "MASTODON"
+  ],
+  "faction_keywords": [
+    "ADEPTUS ASTARTES"
+  ],
+  "sections": [
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise 2D6"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Once per battle round , when an attack is allocated to this model, you can change the Damage characteristic of that attack to 0.",
+          "name": "Inviolable Transport"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Mastodon"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "2 heavy flamers; 2 lascannons; siege melta array; skyreaper battery; armoured tracks.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "540"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DAMAGED: 1-10 WOUNDS REMAINING",
+      "entries": [
+        {
+          "type": "text",
+          "text": "While this model has 1-10 wounds remaining, subtract 6 from this model\u2019s Objective Control characteristic and each time this model makes an attack, subtract 1 from the Hit roll ."
+        }
+      ]
+    },
+    {
+      "title": "TRANSPORT",
+      "entries": [
+        {
+          "type": "text",
+          "text": "This model has a transport capacity of 45 Adeptus Astartes Infantry models. Each JUMP PACK , WULFEN , GRAVIS , POSSESSED or TERMINATOR model takes up the space of 2 models and each CENTURION or OBLITERATOR model takes up the space of 3 models. This model can also transport up to 2 DREADNOUGHT or HELBRUTE models (these models take up the space of a number of models equal to their Wounds characteristic e.g. A DREADNOUGHT with a Wounds characteristic of 8 would take up the space of 8 models)."
+        }
+      ]
+    }
+  ]
+}

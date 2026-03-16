@@ -1,0 +1,194 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Centurion-Devastator-Squad",
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Centurion-Devastator-Squad"
+  },
+  "name": "Centurion Devastator Squad",
+  "base_size": "\u230050mm",
+  "characteristics": {
+    "M": "4\"",
+    "T": "7",
+    "Sv": "2+",
+    "W": "4",
+    "Ld": "6+",
+    "OC": "2"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Centurion bolters",
+        "abilities": [
+          "rapid fire 3",
+          "twin-linked"
+        ],
+        "range": "24\"",
+        "a": "3",
+        "bs": "3+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Centurion missile launcher",
+        "abilities": [
+          "blast"
+        ],
+        "range": "36\"",
+        "a": "D3",
+        "bs": "3+",
+        "s": "9",
+        "ap": "-2",
+        "d": "D3"
+      },
+      {
+        "name": "Grav-cannon",
+        "abilities": [
+          "anti-vehicle 2+"
+        ],
+        "range": "24\"",
+        "a": "3",
+        "bs": "3+",
+        "s": "6",
+        "ap": "-1",
+        "d": "3"
+      },
+      {
+        "name": "Twin heavy bolter",
+        "abilities": [
+          "sustained hits 1",
+          "twin-linked"
+        ],
+        "range": "36\"",
+        "a": "3",
+        "bs": "3+",
+        "s": "5",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Twin lascannon",
+        "abilities": [
+          "twin-linked"
+        ],
+        "range": "48\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "12",
+        "ap": "-3",
+        "d": "D6+1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Centurion fists",
+        "abilities": [],
+        "range": "Melee",
+        "a": "3",
+        "ws": "4+",
+        "s": "5",
+        "ap": "-1",
+        "d": "2"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time a model in this unit makes a ranged attack, re-roll a Hit roll of 1. If the target of that attack is an enemy unit within range of an objective marker , you can re-roll the Hit roll instead.",
+        "name": "Decimator Protocols"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Devastator Centurion Sergeant",
+        "2-5 Devastator Centurions"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "grav-cannon; Centurion bolters; Centurion fists.",
+      "label": "Every model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "3 models",
+          "points": "175"
+        },
+        {
+          "label": "6 models",
+          "points": "350"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "IMPERIUM",
+    "CENTURION",
+    "CENTURION DEVASTATOR SQUAD"
+  ],
+  "faction_keywords": [
+    "ADEPTUS ASTARTES"
+  ],
+  "sections": [
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time a model in this unit makes a ranged attack, re-roll a Hit roll of 1. If the target of that attack is an enemy unit within range of an objective marker , you can re-roll the Hit roll instead.",
+          "name": "Decimator Protocols"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Devastator Centurion Sergeant",
+            "2-5 Devastator Centurions"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "grav-cannon; Centurion bolters; Centurion fists.",
+          "label": "Every model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "3 models",
+              "points": "175"
+            },
+            {
+              "label": "6 models",
+              "points": "350"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

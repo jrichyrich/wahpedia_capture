@@ -1,0 +1,184 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Centurion-Assault-Squad",
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Centurion-Assault-Squad"
+  },
+  "name": "Centurion Assault Squad",
+  "base_size": "\u230050mm",
+  "characteristics": {
+    "M": "4\"",
+    "T": "7",
+    "Sv": "2+",
+    "W": "4",
+    "Ld": "6+",
+    "OC": "2"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Centurion bolters",
+        "abilities": [
+          "rapid fire 3",
+          "twin-linked"
+        ],
+        "range": "24\"",
+        "a": "3",
+        "bs": "3+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Twin flamer",
+        "abilities": [
+          "ignores cover",
+          "torrent",
+          "twin-linked"
+        ],
+        "range": "12\"",
+        "a": "D6",
+        "bs": "N/A",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Twin meltagun",
+        "abilities": [
+          "melta 2",
+          "twin-linked"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "9",
+        "ap": "-4",
+        "d": "D6"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Siege drills",
+        "abilities": [
+          "twin-linked"
+        ],
+        "range": "Melee",
+        "a": "3",
+        "ws": "3+",
+        "s": "10",
+        "ap": "-2",
+        "d": "3"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Melee weapons equipped by models in this unit have the [SUSTAINED HITS 2] ability when targeting MONSTER , VEHICLE or FORTIFICATION units.",
+        "name": "Annihilator Protocols"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Assault Centurion Sergeant",
+        "2-5 Assault Centurions"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "twin flamer; siege drills; Centurion bolters.",
+      "label": "Every model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "3 models",
+          "points": "150"
+        },
+        {
+          "label": "6 models",
+          "points": "300"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "IMPERIUM",
+    "CENTURION",
+    "CENTURION ASSAULT SQUAD"
+  ],
+  "faction_keywords": [
+    "ADEPTUS ASTARTES"
+  ],
+  "sections": [
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Melee weapons equipped by models in this unit have the [SUSTAINED HITS 2] ability when targeting MONSTER , VEHICLE or FORTIFICATION units.",
+          "name": "Annihilator Protocols"
+        }
+      ]
+    },
+    {
+      "title": "WARGEAR ABILITIES",
+      "entries": [
+        {
+          "type": "statement",
+          "text": "The bearer has the Grenades keyword.",
+          "label": "Centurion Assault Launcher"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Assault Centurion Sergeant",
+            "2-5 Assault Centurions"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "twin flamer; siege drills; Centurion bolters.",
+          "label": "Every model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "3 models",
+              "points": "150"
+            },
+            {
+              "label": "6 models",
+              "points": "300"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

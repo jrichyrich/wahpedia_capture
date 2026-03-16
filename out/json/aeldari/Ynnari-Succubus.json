@@ -1,0 +1,182 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Ynnari-Succubus",
+    "faction_slug": "aeldari",
+    "datasheet_slug": "Ynnari-Succubus",
+    "output_slug": "aeldari"
+  },
+  "name": "Ynnari Succubus",
+  "base_size": "\u230025mm",
+  "characteristics": {
+    "M": "8\"",
+    "T": "3",
+    "Sv": "6+",
+    "W": "4",
+    "Ld": "6+",
+    "OC": "1",
+    "Invulnerable Save": "4+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Blast pistol",
+        "abilities": [
+          "pistol"
+        ],
+        "range": "6\"",
+        "a": "1",
+        "bs": "2+",
+        "s": "8",
+        "ap": "-3",
+        "d": "D3"
+      },
+      {
+        "name": "Splinter pistol",
+        "abilities": [
+          "anti-infantry 3+",
+          "assault",
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "2+",
+        "s": "2",
+        "ap": "0",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Succubus weapons",
+        "abilities": [
+          "anti-infantry 3+"
+        ],
+        "range": "Melee",
+        "a": "6",
+        "ws": "2+",
+        "s": "3",
+        "ap": "-2",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Leader"
+    ],
+    "faction": [
+      "Battle Focus , Disparate Paths"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, melee weapons equipped by models in that unit have the [SUSTAINED HITS 1] ability.",
+        "name": "Storm of Blades"
+      },
+      {
+        "type": "rule",
+        "text": "At the start of the Fight phase , if this model\u2019s unit is below its Starting Strength , until the end of the phase, models in that unit have the Fights First ability.",
+        "name": "Empowered by Death"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Succubus"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "Succubus weapons.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "45"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "CHARACTER",
+    "AELDARI",
+    "SUCCUBUS"
+  ],
+  "faction_keywords": [
+    "YNNARI"
+  ],
+  "sections": [
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Leader"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Battle Focus , Disparate Paths"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, melee weapons equipped by models in that unit have the [SUSTAINED HITS 1] ability.",
+          "name": "Storm of Blades"
+        },
+        {
+          "type": "rule",
+          "text": "At the start of the Fight phase , if this model\u2019s unit is below its Starting Strength , until the end of the phase, models in that unit have the Fights First ability.",
+          "name": "Empowered by Death"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Succubus"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "Succubus weapons.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "45"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "LEADER",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "Ynnari Wyches"
+          ]
+        }
+      ]
+    }
+  ]
+}

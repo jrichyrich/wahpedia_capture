@@ -1,0 +1,245 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Swooping-Hawks",
+    "faction_slug": "aeldari",
+    "datasheet_slug": "Swooping-Hawks",
+    "output_slug": "aeldari"
+  },
+  "name": "Swooping Hawks",
+  "base_size": "",
+  "characteristics": {
+    "M": "14\"",
+    "T": "3",
+    "Sv": "4+",
+    "W": "1",
+    "Ld": "6+",
+    "OC": "1",
+    "Invulnerable Save": "5+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Exarch\u2019s lasblaster",
+        "abilities": [
+          "assault",
+          "lethal hits"
+        ],
+        "range": "24\"",
+        "a": "4",
+        "bs": "3+",
+        "s": "5",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Hawk\u2019s talon",
+        "abilities": [
+          "lethal hits"
+        ],
+        "range": "24\"",
+        "a": "2",
+        "bs": "3+",
+        "s": "6",
+        "ap": "-2",
+        "d": "2"
+      },
+      {
+        "name": "Lasblaster",
+        "abilities": [
+          "assault",
+          "lethal hits"
+        ],
+        "range": "24\"",
+        "a": "4",
+        "bs": "3+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Scatter laser",
+        "abilities": [
+          "sustained hits 1"
+        ],
+        "range": "36\"",
+        "a": "6",
+        "bs": "3+",
+        "s": "5",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Sunpistol",
+        "abilities": [
+          "assault",
+          "lethal hits",
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "2",
+        "bs": "3+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Close combat weapon",
+        "abilities": [],
+        "range": "Melee",
+        "a": "2",
+        "ws": "3+",
+        "s": "3",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Power sword",
+        "abilities": [],
+        "range": "Melee",
+        "a": "5",
+        "ws": "3+",
+        "s": "4",
+        "ap": "-2",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deep Strike"
+    ],
+    "faction": [
+      "Battle Focus"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Once per turn, in your Movement phase , when this unit is set up on the battlefield or ends a Normal , Advance or Fall Back move , it can use this ability. If it does, select one enemy unit within 8\" of and visible to this unit and roll one D6 for each SWOOPING HAWKS model in this unit: for each 4+, that enemy unit suffers 1 mortal wound (to a maximum of 6 mortal wounds). Each time this unit uses this ability, until the end of the turn, you cannot target this unit with the Grenade Stratagem.",
+        "name": "Grenade Pack Flyover"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Swooping Hawk Exarch",
+        "4-9 Swooping Hawks"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "Hawk\u2019s talon; close combat weapon.",
+      "label": "The Swooping Hawk Exarch is equipped with"
+    },
+    {
+      "type": "statement",
+      "text": "lasblaster; close combat weapon.",
+      "label": "Every Swooping Hawk is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "5 models",
+          "points": "95"
+        },
+        {
+          "label": "10 models",
+          "points": "190"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "AELDARI",
+    "JUMP PACK",
+    "FLY",
+    "GRENADES",
+    "ASPECT WARRIORS",
+    "SWOOPING HAWKS"
+  ],
+  "faction_keywords": [
+    "ASURYANI"
+  ],
+  "sections": [
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deep Strike"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Battle Focus"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Once per turn, in your Movement phase , when this unit is set up on the battlefield or ends a Normal , Advance or Fall Back move , it can use this ability. If it does, select one enemy unit within 8\" of and visible to this unit and roll one D6 for each SWOOPING HAWKS model in this unit: for each 4+, that enemy unit suffers 1 mortal wound (to a maximum of 6 mortal wounds). Each time this unit uses this ability, until the end of the turn, you cannot target this unit with the Grenade Stratagem.",
+          "name": "Grenade Pack Flyover"
+        }
+      ]
+    },
+    {
+      "title": "WARGEAR ABILITIES",
+      "entries": [
+        {
+          "type": "statement",
+          "text": "Once per battle for each Aspect Shrine token this unit has, you can change the result of one Hit roll or one Wound roll made for a model in this unit (excluding CHARACTER models) to an unmodified 6.",
+          "label": "Aspect Shrine Token"
+        },
+        {
+          "type": "statement",
+          "text": "Place an Aspect Shrine token next to the unit for each Aspect Shrine token it has, removing one each time this ability is used.",
+          "label": "Designer\u2019s Note"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Swooping Hawk Exarch",
+            "4-9 Swooping Hawks"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "Hawk\u2019s talon; close combat weapon.",
+          "label": "The Swooping Hawk Exarch is equipped with"
+        },
+        {
+          "type": "statement",
+          "text": "lasblaster; close combat weapon.",
+          "label": "Every Swooping Hawk is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "5 models",
+              "points": "95"
+            },
+            {
+              "label": "10 models",
+              "points": "190"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

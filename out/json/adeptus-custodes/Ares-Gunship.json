@@ -1,0 +1,163 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Ares-Gunship",
+    "faction_slug": "adeptus-custodes",
+    "datasheet_slug": "Ares-Gunship",
+    "output_slug": "adeptus-custodes"
+  },
+  "name": "Ares Gunship",
+  "base_size": "\u2300160mm",
+  "characteristics": {
+    "M": "20+\"",
+    "T": "12",
+    "Sv": "2+",
+    "W": "22",
+    "Ld": "6+",
+    "OC": "0",
+    "Invulnerable Save": "5+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Arachnus heavy blaze cannon",
+        "abilities": [],
+        "range": "36\"",
+        "a": "4",
+        "bs": "2+",
+        "s": "12",
+        "ap": "-3",
+        "d": "D6+1"
+      },
+      {
+        "name": "Arachnus magna-blaze cannon",
+        "abilities": [],
+        "range": "48\"",
+        "a": "3",
+        "bs": "2+",
+        "s": "18",
+        "ap": "-4",
+        "d": "D6+6"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Armoured hull",
+        "abilities": [],
+        "range": "Melee",
+        "a": "9",
+        "ws": "4+",
+        "s": "9",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise D6 , Hover"
+    ],
+    "faction": [
+      "Martial Ka\u2019tah"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this model ends a Normal move , you can select one enemy unit it moved over during that move. Until the end of the turn, models in that unit cannot have the Benefit of Cover . In addition, roll one D6 for each model in that unit: for each 6, that unit suffers 1 mortal wound .",
+        "name": "Infernus Firebombs"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Ares Gunship"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "2 arachnus heavy blaze cannons; arachnus magna-blaze cannon; armoured hull.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "580"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "VEHICLE",
+    "AIRCRAFT",
+    "FLY",
+    "IMPERIUM",
+    "ARES GUNSHIP"
+  ],
+  "faction_keywords": [
+    "ADEPTUS CUSTODES"
+  ],
+  "sections": [
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise D6 , Hover"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Martial Ka\u2019tah"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model ends a Normal move , you can select one enemy unit it moved over during that move. Until the end of the turn, models in that unit cannot have the Benefit of Cover . In addition, roll one D6 for each model in that unit: for each 6, that unit suffers 1 mortal wound .",
+          "name": "Infernus Firebombs"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Ares Gunship"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "2 arachnus heavy blaze cannons; arachnus magna-blaze cannon; armoured hull.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "580"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DAMAGED: 1-7 WOUNDS REMAINING",
+      "entries": [
+        {
+          "type": "text",
+          "text": "While this model has 1-7 wounds remaining, each time this model makes an attack, subtract 1 from the Hit roll ."
+        }
+      ]
+    }
+  ]
+}

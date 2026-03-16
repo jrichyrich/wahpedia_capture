@@ -1,0 +1,150 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/D-cannon-Platform",
+    "faction_slug": "aeldari",
+    "datasheet_slug": "D-cannon-Platform",
+    "output_slug": "aeldari"
+  },
+  "name": "D-cannon Platform",
+  "base_size": "\u230040mm",
+  "characteristics": {
+    "M": "7\"",
+    "T": "6",
+    "Sv": "4+",
+    "W": "5",
+    "Ld": "7+",
+    "OC": "1"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "D-cannon",
+        "abilities": [
+          "blast",
+          "devastating wounds",
+          "indirect fire"
+        ],
+        "range": "24\"",
+        "a": "D3",
+        "bs": "3+",
+        "s": "16",
+        "ap": "-4",
+        "d": "D6+2"
+      },
+      {
+        "name": "Shuriken catapult",
+        "abilities": [
+          "assault"
+        ],
+        "range": "18\"",
+        "a": "2",
+        "bs": "3+",
+        "s": "4",
+        "ap": "-1",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Close combat weapon",
+        "abilities": [],
+        "range": "Melee",
+        "a": "2",
+        "ws": "3+",
+        "s": "3",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [],
+    "faction": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time an attack targets this model\u2019s unit, if that unit contains one or more other models, until that attack is resolved, this model has a Toughness characteristic of 3.",
+        "name": "Support Weapon"
+      },
+      {
+        "type": "rule",
+        "text": "Each time this model makes an attack with its D-cannon, re-roll a Damage roll of 1. If that attack targets a TITANIC unit, you can re-roll the Damage roll instead.",
+        "name": "Structural Collapse"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 D-cannon Platform"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "D-cannon; shuriken catapult; close combat weapon.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "125"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "AELDARI",
+    "SUPPORT WEAPON",
+    "D-CANNON PLATFORM"
+  ],
+  "faction_keywords": [
+    "ASURYANI"
+  ],
+  "sections": [
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "rule",
+          "text": "Each time an attack targets this model\u2019s unit, if that unit contains one or more other models, until that attack is resolved, this model has a Toughness characteristic of 3.",
+          "name": "Support Weapon"
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model makes an attack with its D-cannon, re-roll a Damage roll of 1. If that attack targets a TITANIC unit, you can re-roll the Damage roll instead.",
+          "name": "Structural Collapse"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 D-cannon Platform"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "D-cannon; shuriken catapult; close combat weapon.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "125"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

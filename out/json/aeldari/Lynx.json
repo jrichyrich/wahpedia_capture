@@ -1,0 +1,218 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Lynx",
+    "faction_slug": "aeldari",
+    "datasheet_slug": "Lynx",
+    "output_slug": "aeldari"
+  },
+  "name": "Lynx",
+  "base_size": "\u2300Use model",
+  "characteristics": {
+    "M": "14\"",
+    "T": "9",
+    "Sv": "3+",
+    "W": "16",
+    "Ld": "6+",
+    "OC": "4",
+    "Invulnerable Save": "5+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Aeldari missile launcher \u2013 sunburst",
+        "abilities": [
+          "blast"
+        ],
+        "range": "48\"",
+        "a": "D6",
+        "bs": "3+",
+        "s": "4",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Aeldari missile launcher \u2013 starshot",
+        "abilities": [],
+        "range": "48\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "10",
+        "ap": "-2",
+        "d": "D6"
+      },
+      {
+        "name": "Bright lance",
+        "abilities": [],
+        "range": "36\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "12",
+        "ap": "-3",
+        "d": "D6+2"
+      },
+      {
+        "name": "Lynx pulsar",
+        "abilities": [
+          "assault"
+        ],
+        "range": "48\"",
+        "a": "4",
+        "bs": "3+",
+        "s": "16",
+        "ap": "-3",
+        "d": "D6"
+      },
+      {
+        "name": "Scatter laser",
+        "abilities": [],
+        "range": "36\"",
+        "a": "6",
+        "bs": "3+",
+        "s": "5",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Shuriken cannon",
+        "abilities": [
+          "sustained hits 1"
+        ],
+        "range": "24\"",
+        "a": "3",
+        "bs": "3+",
+        "s": "6",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Starcannon",
+        "abilities": [],
+        "range": "36\"",
+        "a": "2",
+        "bs": "3+",
+        "s": "8",
+        "ap": "-3",
+        "d": "2"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Wraithbone hull",
+        "abilities": [],
+        "range": "Melee",
+        "a": "3",
+        "ws": "4+",
+        "s": "6",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise D6"
+    ],
+    "faction": [
+      "Battle Focus"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this model Advances , do not make an Advance roll for it. Instead, until the end of the phase, add 9\" to the Move characteristic of this model.",
+        "name": "Speed of Vaul"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Lynx"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "Lynx pulsar; shuriken cannon; wraithbone hull.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "180"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "VEHICLE",
+    "FLY",
+    "AELDARI",
+    "LYNX"
+  ],
+  "faction_keywords": [
+    "ASURYANI"
+  ],
+  "sections": [
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise D6"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Battle Focus"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model Advances , do not make an Advance roll for it. Instead, until the end of the phase, add 9\" to the Move characteristic of this model.",
+          "name": "Speed of Vaul"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Lynx"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "Lynx pulsar; shuriken cannon; wraithbone hull.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "180"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DAMAGED: 1-5 WOUNDS REMAINING",
+      "entries": [
+        {
+          "type": "text",
+          "text": "While this model has 1-5 wounds remaining, each time this model makes an attack, subtract 1 from the Hit roll ."
+        }
+      ]
+    }
+  ]
+}

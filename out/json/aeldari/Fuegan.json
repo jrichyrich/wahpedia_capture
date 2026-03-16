@@ -1,0 +1,185 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Fuegan",
+    "faction_slug": "aeldari",
+    "datasheet_slug": "Fuegan",
+    "output_slug": "aeldari"
+  },
+  "name": "Fuegan",
+  "base_size": "\u230040mm",
+  "characteristics": {
+    "M": "7\"",
+    "T": "3",
+    "Sv": "2+",
+    "W": "5",
+    "Ld": "6+",
+    "OC": "1",
+    "Invulnerable Save": "4+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Searsong \u2013 beam",
+        "abilities": [
+          "assault",
+          "melta 1",
+          "sustained hits 2"
+        ],
+        "range": "12\"",
+        "a": "3",
+        "bs": "2+",
+        "s": "8",
+        "ap": "-3",
+        "d": "2"
+      },
+      {
+        "name": "Searsong \u2013 lance",
+        "abilities": [
+          "assault",
+          "melta 6"
+        ],
+        "range": "18\"",
+        "a": "1",
+        "bs": "2+",
+        "s": "14",
+        "ap": "-4",
+        "d": "D6"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Fire Axe",
+        "abilities": [],
+        "range": "Melee",
+        "a": "6",
+        "ws": "2+",
+        "s": "5",
+        "ap": "-4",
+        "d": "3"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Leader"
+    ],
+    "faction": [
+      "Battle Focus"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, add 6\" to the Range characteristic of Melta weapons equipped by models in that unit.",
+        "name": "Burning Lance"
+      },
+      {
+        "type": "rule",
+        "text": "The first time this model is destroyed, at the end of the phase, roll one D6: on a 2+, set this model back up on the battlefield as close as possible to where it was destroyed and not within Engagement Range of one or more enemy units, with its full wounds remaining.",
+        "name": "Unquenchable Resolve"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Fuegan \u2013 EPIC HERO"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "Searsong; Fire Axe.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "120"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "CHARACTER",
+    "EPIC HERO",
+    "AELDARI",
+    "GRENADES",
+    "ASPECT WARRIOR",
+    "PHOENIX LORD",
+    "FUEGAN"
+  ],
+  "faction_keywords": [
+    "ASURYANI"
+  ],
+  "sections": [
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Leader"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Battle Focus"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, add 6\" to the Range characteristic of Melta weapons equipped by models in that unit.",
+          "name": "Burning Lance"
+        },
+        {
+          "type": "rule",
+          "text": "The first time this model is destroyed, at the end of the phase, roll one D6: on a 2+, set this model back up on the battlefield as close as possible to where it was destroyed and not within Engagement Range of one or more enemy units, with its full wounds remaining.",
+          "name": "Unquenchable Resolve"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Fuegan \u2013 EPIC HERO"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "Searsong; Fire Axe.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "120"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "LEADER",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "Fire Dragons"
+          ]
+        }
+      ]
+    }
+  ]
+}

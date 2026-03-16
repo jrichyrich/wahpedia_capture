@@ -1,0 +1,246 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Wraithlord",
+    "faction_slug": "aeldari",
+    "datasheet_slug": "Wraithlord",
+    "output_slug": "aeldari"
+  },
+  "name": "Wraithlord",
+  "base_size": "\u230060mm",
+  "characteristics": {
+    "M": "8\"",
+    "T": "10",
+    "Sv": "2+",
+    "W": "10",
+    "Ld": "8+",
+    "OC": "3"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Bright lance",
+        "abilities": [],
+        "range": "36\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "12",
+        "ap": "-3",
+        "d": "D6+2"
+      },
+      {
+        "name": "Flamer",
+        "abilities": [
+          "assault",
+          "ignores cover",
+          "torrent"
+        ],
+        "range": "12\"",
+        "a": "D6",
+        "bs": "N/A",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Missile launcher \u2013 starshot",
+        "abilities": [],
+        "range": "48\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "10",
+        "ap": "-2",
+        "d": "D6"
+      },
+      {
+        "name": "Missile launcher \u2013 sunburst",
+        "abilities": [
+          "blast"
+        ],
+        "range": "48\"",
+        "a": "D6",
+        "bs": "4+",
+        "s": "4",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Scatter laser",
+        "abilities": [
+          "sustained hits 1"
+        ],
+        "range": "36\"",
+        "a": "6",
+        "bs": "4+",
+        "s": "5",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Shuriken cannon",
+        "abilities": [
+          "lethal hits"
+        ],
+        "range": "24\"",
+        "a": "3",
+        "bs": "4+",
+        "s": "6",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Shuriken catapult",
+        "abilities": [
+          "assault"
+        ],
+        "range": "18\"",
+        "a": "2",
+        "bs": "4+",
+        "s": "4",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Starcannon",
+        "abilities": [],
+        "range": "36\"",
+        "a": "2",
+        "bs": "4+",
+        "s": "8",
+        "ap": "-3",
+        "d": "2"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Ghostglaive \u2013 strike",
+        "abilities": [],
+        "range": "Melee",
+        "a": "4",
+        "ws": "4+",
+        "s": "10",
+        "ap": "-3",
+        "d": "D6+1"
+      },
+      {
+        "name": "Ghostglaive \u2013 sweep",
+        "abilities": [],
+        "range": "Melee",
+        "a": "8",
+        "ws": "4+",
+        "s": "7",
+        "ap": "-2",
+        "d": "2"
+      },
+      {
+        "name": "Wraithbone fists",
+        "abilities": [],
+        "range": "Melee",
+        "a": "4",
+        "ws": "4+",
+        "s": "7",
+        "ap": "-2",
+        "d": "2"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise 1"
+    ],
+    "faction": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "At the start of the battle, select one of the following keywords: INFANTRY ; MONSTER ; MOUNTED ; VEHICLE . Each time this model makes an attack that targets a unit with the selected keyword, re-roll a Hit roll of 1 and re-roll a Wound roll of 1.",
+        "name": "Fated Hero"
+      },
+      {
+        "type": "rule",
+        "text": "While this model is within 12\" of one or more friendly AELDARI PSYKER models, improve the Ballistic Skill and Weapon Skill characteristics of weapons equipped by this model by 1 and it has a Leadership characteristic of 6+.",
+        "name": "Psychic Guidance"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Wraithlord"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "2 shuriken catapults; wraithbone fists.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "130"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "MONSTER",
+    "AELDARI",
+    "WALKER",
+    "WRAITH CONSTRUCT",
+    "WRAITHLORD"
+  ],
+  "faction_keywords": [
+    "ASURYANI"
+  ],
+  "sections": [
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise 1"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "At the start of the battle, select one of the following keywords: INFANTRY ; MONSTER ; MOUNTED ; VEHICLE . Each time this model makes an attack that targets a unit with the selected keyword, re-roll a Hit roll of 1 and re-roll a Wound roll of 1.",
+          "name": "Fated Hero"
+        },
+        {
+          "type": "rule",
+          "text": "While this model is within 12\" of one or more friendly AELDARI PSYKER models, improve the Ballistic Skill and Weapon Skill characteristics of weapons equipped by this model by 1 and it has a Leadership characteristic of 6+.",
+          "name": "Psychic Guidance"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Wraithlord"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "2 shuriken catapults; wraithbone fists.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "130"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

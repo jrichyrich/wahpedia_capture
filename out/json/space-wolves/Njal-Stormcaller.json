@@ -1,0 +1,202 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Njal-Stormcaller",
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Njal-Stormcaller",
+    "output_slug": "space-wolves"
+  },
+  "name": "Njal Stormcaller",
+  "base_size": "\u230040mm",
+  "characteristics": {
+    "M": "7\"",
+    "T": "4",
+    "Sv": "3+",
+    "W": "4",
+    "Ld": "6+",
+    "OC": "1",
+    "Invulnerable Save": "4+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Bolt pistol",
+        "abilities": [
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Living Lightning \u2013 witchfire",
+        "abilities": [
+          "psychic",
+          "sustained hits 2"
+        ],
+        "range": "24\"",
+        "a": "D6",
+        "bs": "3+",
+        "s": "7",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Living Lightning \u2013 focused witchfire",
+        "abilities": [
+          "hazardous",
+          "psychic",
+          "sustained hits 2"
+        ],
+        "range": "24\"",
+        "a": "2D6",
+        "bs": "3+",
+        "s": "7",
+        "ap": "-1",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Staff of the Stormcaller",
+        "abilities": [
+          "psychic",
+          "sustained hits 2"
+        ],
+        "range": "Melee",
+        "a": "4",
+        "ws": "3+",
+        "s": "7",
+        "ap": "-1",
+        "d": "D3"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Leader"
+    ],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, ranged weapons equipped by models in that unit have the [ASSAULT] ability and each time that unit Advances, do not make an Advance roll . Instead, until the end of the phase, add 6\" to the Move characteristic of models in this unit.",
+        "name": "Wind Walker (Psychic)"
+      },
+      {
+        "type": "rule",
+        "text": "In your Shooting phase , after this model\u2019s unit has shot, select one enemy unit (excluding MONSTERS and VEHICLES ) hit by one or more of those attacks made with this model\u2019s Living Lightning weapon. Until the start of your next turn, that enemy unit is stormwracked. While a unit is stormwracked, subtract 6\" from the Range characteristic of ranged weapons equipped by models in that unit (to a minimum of 12\").",
+        "name": "Tempest\u2019s Wrath (Psychic)"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Njal Stormcaller \u2013 EPIC HERO"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "bolt pistol; Living Lightning; Staff of the Stormcaller.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "85"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "CHARACTER",
+    "EPIC HERO",
+    "PSYKER",
+    "IMPERIUM",
+    "TACTICUS",
+    "NJAL STORMCALLER"
+  ],
+  "faction_keywords": [
+    "ADEPTUS ASTARTES",
+    "SPACE WOLVES"
+  ],
+  "sections": [
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Leader"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, ranged weapons equipped by models in that unit have the [ASSAULT] ability and each time that unit Advances, do not make an Advance roll . Instead, until the end of the phase, add 6\" to the Move characteristic of models in this unit.",
+          "name": "Wind Walker (Psychic)"
+        },
+        {
+          "type": "rule",
+          "text": "In your Shooting phase , after this model\u2019s unit has shot, select one enemy unit (excluding MONSTERS and VEHICLES ) hit by one or more of those attacks made with this model\u2019s Living Lightning weapon. Until the start of your next turn, that enemy unit is stormwracked. While a unit is stormwracked, subtract 6\" from the Range characteristic of ranged weapons equipped by models in that unit (to a minimum of 12\").",
+          "name": "Tempest\u2019s Wrath (Psychic)"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Njal Stormcaller \u2013 EPIC HERO"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "bolt pistol; Living Lightning; Staff of the Stormcaller.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "85"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "LEADER",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "Blood Claws",
+            "Grey Hunters",
+            "Wolf Guard Headtakers"
+          ]
+        }
+      ]
+    }
+  ]
+}

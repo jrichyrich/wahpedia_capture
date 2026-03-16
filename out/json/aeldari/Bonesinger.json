@@ -1,0 +1,167 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Bonesinger",
+    "faction_slug": "aeldari",
+    "datasheet_slug": "Bonesinger",
+    "output_slug": "aeldari"
+  },
+  "name": "Bonesinger",
+  "base_size": "\u230025mm",
+  "characteristics": {
+    "M": "7\"",
+    "T": "3",
+    "Sv": "6+",
+    "W": "3",
+    "Ld": "6+",
+    "OC": "1",
+    "Invulnerable Save": "4+"
+  },
+  "weapons": {
+    "melee_weapons": [
+      {
+        "name": "Psytronome shaper",
+        "abilities": [
+          "psychic"
+        ],
+        "range": "Melee",
+        "a": "2",
+        "ws": "2+",
+        "s": "3",
+        "ap": "0",
+        "d": "D3"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Leader"
+    ],
+    "faction": [
+      "Battle Focus"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, WRAITH CONSTRUCT models in that unit have the Feel No Pain 6+ ability.",
+        "name": "Way of the Shaper (Psychic)"
+      },
+      {
+        "type": "rule",
+        "text": "While this model is within 3\" of one or more friendly WRAITH CONSTRUCT or ASURYANI VEHICLE units, unless it is leading a unit, this model has the Lone Operative ability.",
+        "name": "Bonesinger"
+      },
+      {
+        "type": "rule",
+        "text": "In your Command phase , you can select one friendly WRAITH CONSTRUCT or ASURYANI VEHICLE model within 3\" of this model. That WRAITH CONSTRUCT or ASURYANI VEHICLE model regains up to D3 lost wounds.",
+        "name": "Psytronome Shaper"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Bonesinger"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "psytronome shaper.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "45"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "CHARACTER",
+    "INFANTRY",
+    "PSYKER",
+    "AELDARI",
+    "BONESINGER"
+  ],
+  "faction_keywords": [
+    "ASURYANI"
+  ],
+  "sections": [
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Leader"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Battle Focus"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, WRAITH CONSTRUCT models in that unit have the Feel No Pain 6+ ability.",
+          "name": "Way of the Shaper (Psychic)"
+        },
+        {
+          "type": "rule",
+          "text": "While this model is within 3\" of one or more friendly WRAITH CONSTRUCT or ASURYANI VEHICLE units, unless it is leading a unit, this model has the Lone Operative ability.",
+          "name": "Bonesinger"
+        },
+        {
+          "type": "rule",
+          "text": "In your Command phase , you can select one friendly WRAITH CONSTRUCT or ASURYANI VEHICLE model within 3\" of this model. That WRAITH CONSTRUCT or ASURYANI VEHICLE model regains up to D3 lost wounds.",
+          "name": "Psytronome Shaper"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Bonesinger"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "psytronome shaper.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "45"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "LEADER",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "Wraithblades",
+            "Wraithguard",
+            "Wraithlord"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,213 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Ynnari-Reavers",
+    "faction_slug": "aeldari",
+    "datasheet_slug": "Ynnari-Reavers",
+    "output_slug": "aeldari"
+  },
+  "name": "Ynnari Reavers",
+  "base_size": "\u230032mm flying base",
+  "characteristics": {
+    "M": "16\"",
+    "T": "4",
+    "Sv": "4+",
+    "W": "2",
+    "Ld": "6+",
+    "OC": "2",
+    "Invulnerable Save": "6+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Blaster",
+        "abilities": [
+          "assault"
+        ],
+        "range": "18\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "8",
+        "ap": "-4",
+        "d": "D6+1"
+      },
+      {
+        "name": "Heat lance",
+        "abilities": [
+          "assault",
+          "melta 3"
+        ],
+        "range": "18\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "14",
+        "ap": "-4",
+        "d": "D6"
+      },
+      {
+        "name": "Splinter pistol",
+        "abilities": [
+          "anti-infantry 3+",
+          "assault",
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "2",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Splinter rifle",
+        "abilities": [
+          "anti-infantry 3+",
+          "assault"
+        ],
+        "range": "24\"",
+        "a": "2",
+        "bs": "3+",
+        "s": "2",
+        "ap": "0",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Agoniser",
+        "abilities": [
+          "anti-infantry 3+"
+        ],
+        "range": "Melee",
+        "a": "4",
+        "ws": "3+",
+        "s": "3",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Bladevanes",
+        "abilities": [],
+        "range": "Melee",
+        "a": "3",
+        "ws": "3+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [],
+    "faction": [
+      "Battle Focus , Disparate Paths"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this unit ends a Normal move , you can select one enemy unit (excluding MONSTERS and VEHICLES ) that it moved over during that move. If you do, roll one D6 for each model in this unit: for each 4+, that enemy unit suffers 1 mortal wound .",
+        "name": "Eviscerating Fly-by"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Arena Champion",
+        "2-5 Reavers"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "splinter pistol; splinter rifle; bladevanes.",
+      "label": "Every model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "3 models",
+          "points": "65"
+        },
+        {
+          "label": "3 models",
+          "points": "120"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "MOUNTED",
+    "AELDARI",
+    "FLY",
+    "REAVERS"
+  ],
+  "faction_keywords": [
+    "YNNARI"
+  ],
+  "sections": [
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Battle Focus , Disparate Paths"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this unit ends a Normal move , you can select one enemy unit (excluding MONSTERS and VEHICLES ) that it moved over during that move. If you do, roll one D6 for each model in this unit: for each 4+, that enemy unit suffers 1 mortal wound .",
+          "name": "Eviscerating Fly-by"
+        }
+      ]
+    },
+    {
+      "title": "WARGEAR ABILITIES",
+      "entries": [
+        {
+          "type": "statement",
+          "text": "Each time you roll a D6 for the bearer while resolving this unit\u2019s Eviscerating Fly-by ability, you can re-roll the result.",
+          "label": "Cluster Caltrops"
+        },
+        {
+          "type": "statement",
+          "text": "The bearer\u2019s melee weapons have the [LANCE] ability.",
+          "label": "Grav-talon"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Arena Champion",
+            "2-5 Reavers"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "splinter pistol; splinter rifle; bladevanes.",
+          "label": "Every model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "3 models",
+              "points": "65"
+            },
+            {
+              "label": "3 models",
+              "points": "120"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

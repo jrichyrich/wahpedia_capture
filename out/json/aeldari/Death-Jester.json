@@ -1,0 +1,180 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Death-Jester",
+    "faction_slug": "aeldari",
+    "datasheet_slug": "Death-Jester",
+    "output_slug": "aeldari"
+  },
+  "name": "Death Jester",
+  "base_size": "\u230025mm",
+  "characteristics": {
+    "M": "8\"",
+    "T": "3",
+    "Sv": "6+",
+    "W": "4",
+    "Ld": "6+",
+    "OC": "1",
+    "Invulnerable Save": "4+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Shrieker cannon",
+        "abilities": [],
+        "range": "24\"",
+        "a": "3",
+        "bs": "2+",
+        "s": "6",
+        "ap": "-2",
+        "d": "2"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Jester\u2019s blade",
+        "abilities": [],
+        "range": "Melee",
+        "a": "4",
+        "ws": "2+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Lone Operative"
+    ],
+    "faction": [
+      "Battle Focus , Disparate Paths"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "In your Shooting phase , after this model has shot, select one enemy unit (excluding MONSTERS and VEHICLES ) hit by one or more of those attacks. That enemy unit must take a Battle-shock test . If one or more of those attacks destroyed a model in that enemy unit, subtract 1 from that test.",
+        "name": "Death is Not Enough"
+      },
+      {
+        "type": "rule",
+        "text": "In your Shooting phase , each time this model is selected to shoot, select one of the abilities below. Until the end of the phase, this model\u2019s shrieker cannon has that ability. [IGNORES COVER] [PRECISION] [SUSTAINED HITS 3]",
+        "name": "Cruel Amusement"
+      }
+    ],
+    "other": [
+      {
+        "type": "list",
+        "items": [
+          "[IGNORES COVER]",
+          "[PRECISION]",
+          "[SUSTAINED HITS 3]"
+        ]
+      }
+    ]
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Death Jester"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "shrieker cannon; Jester\u2019s blade; flip belt.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "90"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "CHARACTER",
+    "AELDARI",
+    "DEATH JESTER"
+  ],
+  "faction_keywords": [
+    "HARLEQUINS"
+  ],
+  "sections": [
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Lone Operative"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Battle Focus , Disparate Paths"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "[IGNORES COVER]",
+            "[PRECISION]",
+            "[SUSTAINED HITS 3]"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "In your Shooting phase , after this model has shot, select one enemy unit (excluding MONSTERS and VEHICLES ) hit by one or more of those attacks. That enemy unit must take a Battle-shock test . If one or more of those attacks destroyed a model in that enemy unit, subtract 1 from that test.",
+          "name": "Death is Not Enough"
+        },
+        {
+          "type": "rule",
+          "text": "In your Shooting phase , each time this model is selected to shoot, select one of the abilities below. Until the end of the phase, this model\u2019s shrieker cannon has that ability. [IGNORES COVER] [PRECISION] [SUSTAINED HITS 3]",
+          "name": "Cruel Amusement"
+        }
+      ]
+    },
+    {
+      "title": "WARGEAR ABILITIES",
+      "entries": [
+        {
+          "type": "statement",
+          "text": "Each time the bearer\u2019s unit makes a Normal , Advance , Fall Back or Charge move , ignore any vertical distance when determining the total distance the bearer can be moved during that move.",
+          "label": "Flip Belt"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Death Jester"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "shrieker cannon; Jester\u2019s blade; flip belt.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "90"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

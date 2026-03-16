@@ -1,0 +1,159 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Wulfen-with-Storm-Shields",
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Wulfen-with-Storm-Shields",
+    "output_slug": "space-wolves"
+  },
+  "name": "Wulfen with Storm Shields",
+  "base_size": "\u230040mm",
+  "characteristics": {
+    "M": "9\"",
+    "T": "6",
+    "Sv": "4+",
+    "W": "2",
+    "Ld": "7+",
+    "OC": "0",
+    "Invulnerable Save": "4+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Stormfrag auto-launcher",
+        "abilities": [
+          "assault",
+          "blast"
+        ],
+        "range": "12\"",
+        "a": "D3",
+        "bs": "4+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Thunder hammer",
+        "abilities": [
+          "anti-monster 3+",
+          "anti-vehicle 3+"
+        ],
+        "range": "Melee",
+        "a": "2",
+        "ws": "3+",
+        "s": "5",
+        "ap": "-2",
+        "d": "3"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [],
+    "faction": [
+      "Curse of the Wulfen , Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "In the Fight phase , after this unit has fought, select one enemy MONSTER or VEHICLE unit hit by one or more of those attacks. Until the end of the next turn, that enemy unit is suppressed. While a unit is suppressed, each time a model in that unit makes an attack, subtract 1 from the Hit roll .",
+        "name": "Hammer Blow"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "5-10 Wulfen"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "thunder hammer; death totem.",
+      "label": "Every model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "5 models",
+          "points": "100"
+        },
+        {
+          "label": "10 models",
+          "points": "200"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "IMPERIUM",
+    "WULFEN",
+    "WULFEN WITH STORM SHIELDS"
+  ],
+  "faction_keywords": [
+    "ADEPTUS ASTARTES",
+    "SPACE WOLVES"
+  ],
+  "sections": [
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Curse of the Wulfen , Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "In the Fight phase , after this unit has fought, select one enemy MONSTER or VEHICLE unit hit by one or more of those attacks. Until the end of the next turn, that enemy unit is suppressed. While a unit is suppressed, each time a model in that unit makes an attack, subtract 1 from the Hit roll .",
+          "name": "Hammer Blow"
+        }
+      ]
+    },
+    {
+      "title": "WARGEAR ABILITIES",
+      "entries": [
+        {
+          "type": "statement",
+          "text": "Each time the bearer makes a melee attack, re-roll a Hit roll of 1.",
+          "label": "Death Totem"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "5-10 Wulfen"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "thunder hammer; death totem.",
+          "label": "Every model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "5 models",
+              "points": "100"
+            },
+            {
+              "label": "10 models",
+              "points": "200"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

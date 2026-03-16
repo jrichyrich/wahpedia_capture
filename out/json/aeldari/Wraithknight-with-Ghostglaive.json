@@ -1,0 +1,210 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Wraithknight-with-Ghostglaive",
+    "faction_slug": "aeldari",
+    "datasheet_slug": "Wraithknight-with-Ghostglaive",
+    "output_slug": "aeldari"
+  },
+  "name": "Wraithknight with Ghostglaive",
+  "base_size": "\u2300120 x 92mm",
+  "characteristics": {
+    "M": "12\"",
+    "T": "12",
+    "Sv": "2+",
+    "W": "18",
+    "Ld": "6+",
+    "OC": "10"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Heavy wraithcannon",
+        "abilities": [
+          "devastating wounds"
+        ],
+        "range": "36\"",
+        "a": "D3",
+        "bs": "3+",
+        "s": "20",
+        "ap": "-4",
+        "d": "2D6"
+      },
+      {
+        "name": "Scatter laser",
+        "abilities": [
+          "sustained hits 1"
+        ],
+        "range": "36\"",
+        "a": "6",
+        "bs": "3+",
+        "s": "5",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Shuriken cannon",
+        "abilities": [
+          "lethal hits"
+        ],
+        "range": "24\"",
+        "a": "3",
+        "bs": "3+",
+        "s": "6",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Starcannon",
+        "abilities": [],
+        "range": "36\"",
+        "a": "2",
+        "bs": "3+",
+        "s": "8",
+        "ap": "-3",
+        "d": "2"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Titanic ghostglaive \u2013 strike",
+        "abilities": [],
+        "range": "Melee",
+        "a": "5",
+        "ws": "3+",
+        "s": "16",
+        "ap": "-3",
+        "d": "6"
+      },
+      {
+        "name": "Titanic ghostglaive \u2013 sweep",
+        "abilities": [],
+        "range": "Melee",
+        "a": "15",
+        "ws": "3+",
+        "s": "8",
+        "ap": "-2",
+        "d": "2"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise D6"
+    ],
+    "faction": [
+      "Battle Focus"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this model makes a Normal , Advance or Fall Back move , it can move through models and terrain features . When doing so, it can move within Engagement Range of enemy models, but cannot end that move within Engagement Range of them.",
+        "name": "Titanic Agility"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Wraithknight with Ghostglaive"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "titanic ghostglaive; scattershield.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "420"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "MONSTER",
+    "TITANIC",
+    "TOWERING",
+    "AELDARI",
+    "WALKER",
+    "WRAITH CONSTRUCT",
+    "WRAITHKNIGHT WITH GHOSTGLAIVE"
+  ],
+  "faction_keywords": [
+    "ASURYANI"
+  ],
+  "sections": [
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise D6"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Battle Focus"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model makes a Normal , Advance or Fall Back move , it can move through models and terrain features . When doing so, it can move within Engagement Range of enemy models, but cannot end that move within Engagement Range of them.",
+          "name": "Titanic Agility"
+        }
+      ]
+    },
+    {
+      "title": "WARGEAR ABILITIES",
+      "entries": [
+        {
+          "type": "statement",
+          "text": "The bearer has a 4+ invulnerable save and each time an attack is allocated to the bearer, subtract 1 from the Damage characteristic of that attack.",
+          "label": "Scattershield"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Wraithknight with Ghostglaive"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "titanic ghostglaive; scattershield.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "420"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DAMAGED: 1-6 WOUNDS REMAINING",
+      "entries": [
+        {
+          "type": "text",
+          "text": "While this model has 1-6 wounds remaining, subtract 5 from this model\u2019s Objective Control characteristic and each time this model makes an attack, subtract 1 from the Hit roll ."
+        }
+      ]
+    }
+  ]
+}

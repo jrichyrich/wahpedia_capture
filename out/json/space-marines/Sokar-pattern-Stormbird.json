@@ -1,0 +1,192 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Sokar-pattern-Stormbird",
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Sokar-pattern-Stormbird",
+    "output_slug": "space-marines"
+  },
+  "name": "Sokar-pattern Stormbird",
+  "base_size": "\u2300Use model",
+  "characteristics": {
+    "M": "20+\"",
+    "T": "13",
+    "Sv": "2+",
+    "W": "40",
+    "Ld": "6+",
+    "OC": "0",
+    "Invulnerable Save": "4+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Hellstrike missile battery",
+        "abilities": [
+          "anti-fly 3+"
+        ],
+        "range": "48\"",
+        "a": "4",
+        "bs": "3+",
+        "s": "10",
+        "ap": "-3",
+        "d": "D6"
+      },
+      {
+        "name": "Twin heavy bolter",
+        "abilities": [
+          "sustained hits 1",
+          "twin-linked"
+        ],
+        "range": "36\"",
+        "a": "3",
+        "bs": "3+",
+        "s": "5",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Twin lascannon",
+        "abilities": [
+          "twin-linked"
+        ],
+        "range": "48\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "12",
+        "ap": "-3",
+        "d": "D6+1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Armoured hull",
+        "abilities": [],
+        "range": "Melee",
+        "a": "9",
+        "ws": "4+",
+        "s": "9",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise 2D6 , Hover"
+    ],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time a unit with the Deep Strike ability disembarks from this model after it has made a Normal move , that unit is still eligible to declare a charge this turn.",
+        "name": "Aerial Assault"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Sokar-pattern Stormbird"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "hellstrike missile battery; 3 twin heavy bolters; 4 twin lascannons; armoured hull.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "900"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "VEHICLE",
+    "TITANIC",
+    "FLY",
+    "AIRCRAFT",
+    "TRANSPORT",
+    "IMPERIUM",
+    "SOKAR-PATTERN STORMBIRD",
+    "RAVENWING"
+  ],
+  "faction_keywords": [
+    "ADEPTUS ASTARTES"
+  ],
+  "sections": [
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise 2D6 , Hover"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time a unit with the Deep Strike ability disembarks from this model after it has made a Normal move , that unit is still eligible to declare a charge this turn.",
+          "name": "Aerial Assault"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Sokar-pattern Stormbird"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "hellstrike missile battery; 3 twin heavy bolters; 4 twin lascannons; armoured hull.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "900"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DAMAGED: 1-13 WOUNDS REMAINING",
+      "entries": [
+        {
+          "type": "text",
+          "text": "While this model has 1-13 wounds remaining, each time this model makes an attack, subtract 1 from the Hit roll ."
+        }
+      ]
+    },
+    {
+      "title": "TRANSPORT",
+      "entries": [
+        {
+          "type": "text",
+          "text": "This model has a transport capacity of 55 ADEPTUS ASTARTES INFANTRY or ADEPTUS ASTARTES MOUNTED models. Each JUMP PACK , WULFEN , GRAVIS , POSSESSED or TERMINATOR model takes up the space of 2 models and each MOUNTED , CENTURION or OBLITERATOR model takes up the space of 3 models. This model can also transport up to 1 RHINO model (this model \u2013 and any models embarked within it \u2013 take up the space of 25 models)."
+        }
+      ]
+    }
+  ]
+}

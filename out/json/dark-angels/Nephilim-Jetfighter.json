@@ -1,0 +1,192 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Nephilim-Jetfighter",
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Nephilim-Jetfighter",
+    "output_slug": "dark-angels"
+  },
+  "name": "Nephilim Jetfighter",
+  "base_size": "\u2300120 x 92mm flying base",
+  "characteristics": {
+    "M": "20+\"",
+    "T": "8",
+    "Sv": "3+",
+    "W": "11",
+    "Ld": "6+",
+    "OC": "0",
+    "Invulnerable Save": "5+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Avenger mega bolter",
+        "abilities": [
+          "sustained hits 1"
+        ],
+        "range": "36\"",
+        "a": "10",
+        "bs": "3+",
+        "s": "5",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Blacksword missiles",
+        "abilities": [
+          "anti-fly 2+"
+        ],
+        "range": "36\"",
+        "a": "2",
+        "bs": "3+",
+        "s": "8",
+        "ap": "-2",
+        "d": "D6"
+      },
+      {
+        "name": "Nephilim lascannons",
+        "abilities": [],
+        "range": "48\"",
+        "a": "2",
+        "bs": "3+",
+        "s": "12",
+        "ap": "-3",
+        "d": "D6+1"
+      },
+      {
+        "name": "Twin heavy bolter",
+        "abilities": [
+          "sustained hits 1",
+          "twin-linked"
+        ],
+        "range": "36\"",
+        "a": "3",
+        "bs": "3+",
+        "s": "5",
+        "ap": "-1",
+        "d": "2"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Armoured hull",
+        "abilities": [],
+        "range": "Melee",
+        "a": "3",
+        "ws": "4+",
+        "s": "6",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise D3 , Hover"
+    ],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time a ranged attack targets this model, subtract 1 from the Hit roll . If that attack was made by a model that can Fly , subtract 1 from the Wound roll as well.",
+        "name": "Lightning-fast Manoeuvres"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Nephilim Jetfighter"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "avenger mega bolter; blacksword missiles; twin heavy bolter; armoured hull.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "195"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "VEHICLE",
+    "AIRCRAFT",
+    "FLY",
+    "IMPERIUM",
+    "RAVENWING",
+    "NEPHILIM JETFIGHTER"
+  ],
+  "faction_keywords": [
+    "ADEPTUS ASTARTES",
+    "DARK ANGELS"
+  ],
+  "sections": [
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise D3 , Hover"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time a ranged attack targets this model, subtract 1 from the Hit roll . If that attack was made by a model that can Fly , subtract 1 from the Wound roll as well.",
+          "name": "Lightning-fast Manoeuvres"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Nephilim Jetfighter"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "avenger mega bolter; blacksword missiles; twin heavy bolter; armoured hull.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "195"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DAMAGED: 1-3 WOUNDS REMAINING",
+      "entries": [
+        {
+          "type": "text",
+          "text": "While this model has 1-3 wounds remaining, each time this model makes an attack, subtract 1 from the Hit roll ."
+        }
+      ]
+    }
+  ]
+}

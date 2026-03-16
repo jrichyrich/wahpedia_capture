@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wahpedia Capture Army Builder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@700;900&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./card_renderer.css">
+    <style>
+        :root {
+            --screen-bg: #d8d3c7;
+            --panel: #f8f5eb;
+            --panel-2: #ffffff;
+            --ink: #171717;
+            --line: #cfc8b9;
+            --accent: #8c2f39;
+            --accent-soft: #f6e4df;
+            --shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at top left, rgba(140, 47, 57, 0.08), transparent 28%),
+                linear-gradient(180deg, #e6e1d6 0%, var(--screen-bg) 100%);
+            color: var(--ink);
+            font-family: "Roboto Condensed", sans-serif;
+        }
+
+        .app-shell {
+            display: grid;
+            grid-template-columns: 360px minmax(0, 1fr);
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            border-right: 2px solid var(--ink);
+            background: linear-gradient(180deg, #faf7f0 0%, #efe9db 100%);
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .brand h1,
+        .section-heading,
+        .roster-header h2 {
+            margin: 0;
+            font-family: "Exo 2", sans-serif;
+            text-transform: uppercase;
+        }
+
+        .brand h1 {
+            font-size: 28px;
+            font-weight: 900;
+            letter-spacing: 0.04em;
+        }
+
+        .brand p {
+            margin: 8px 0 0;
+            color: #5c5348;
+            font-size: 14px;
+        }
+
+        .field-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .field-label,
+        .section-heading,
+        .sidebar-meta-label {
+            font-size: 12px;
+            font-weight: 900;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        select,
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            border: 1.5px solid var(--ink);
+            border-radius: 0;
+            padding: 10px 12px;
+            font: inherit;
+            background: var(--panel-2);
+            color: var(--ink);
+        }
+
+        .status-box,
+        .unit-list,
+        .roster-card,
+        .preview-card {
+            background: var(--panel);
+            border: 1.5px solid var(--ink);
+            box-shadow: var(--shadow);
+        }
+
+        .status-box {
+            padding: 14px 16px;
+            font-size: 14px;
+            line-height: 1.45;
+        }
+
+        .sidebar-meta {
+            display: grid;
+            gap: 10px;
+        }
+
+        .sidebar-meta-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .sidebar-meta-value {
+            font-weight: 700;
+            text-align: right;
+        }
+
+        .unit-list {
+            min-height: 220px;
+            max-height: calc(100vh - 420px);
+            overflow: auto;
+        }
+
+        .unit-row {
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--line);
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            align-items: flex-start;
+        }
+
+        .unit-row:last-child {
+            border-bottom: 0;
+        }
+
+        .unit-name {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 900;
+        }
+
+        .unit-meta {
+            margin-top: 4px;
+            color: #5d5448;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .pill {
+            display: inline-block;
+            padding: 4px 8px;
+            margin-top: 8px;
+            background: var(--accent-soft);
+            border: 1px solid #d1a493;
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .pill-warning {
+            background: #fdebd2;
+            border-color: #d8a866;
+        }
+
+        .pill-danger {
+            background: #f7dfe0;
+            border-color: #bf7a80;
+        }
+
+        .btn {
+            border: 1.5px solid var(--ink);
+            background: var(--panel-2);
+            color: var(--ink);
+            padding: 10px 12px;
+            font: inherit;
+            font-weight: 900;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #f0ece3;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        .btn-remove {
+            padding: 8px 10px;
+            line-height: 1;
+        }
+
+        .main {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .roster-card,
+        .preview-card {
+            padding: 20px;
+        }
+
+        .roster-header {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            align-items: flex-end;
+            border-bottom: 2px solid var(--ink);
+            padding-bottom: 14px;
+            margin-bottom: 18px;
+        }
+
+        .roster-subtitle {
+            margin-top: 6px;
+            color: #5d5448;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .points-tally {
+            font-family: "Exo 2", sans-serif;
+            font-size: clamp(30px, 4vw, 44px);
+            font-weight: 900;
+            color: var(--accent);
+            line-height: 1;
+            text-align: right;
+        }
+
+        .points-caption {
+            margin-top: 4px;
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            text-align: right;
+        }
+
+        .roster-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .roster-table th,
+        .roster-table td {
+            padding: 12px 10px;
+            border-bottom: 1px solid var(--line);
+            vertical-align: top;
+        }
+
+        .roster-table th {
+            text-align: left;
+            font-size: 12px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .table-empty {
+            padding: 24px 10px;
+            color: #5d5448;
+        }
+
+        .roster-actions {
+            margin-top: 18px;
+            display: flex;
+            justify-content: flex-end;
+            gap: 12px;
+        }
+
+        .preview-header {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            align-items: baseline;
+            margin-bottom: 18px;
+        }
+
+        .preview-body {
+            display: grid;
+            gap: 24px;
+        }
+
+        .inline-note {
+            margin-top: 6px;
+            color: #5d5448;
+            font-size: 12px;
+        }
+
+        .inline-note-warning {
+            color: #8c2f39;
+            font-weight: 700;
+        }
+
+        .status-error {
+            color: #8c2f39;
+            font-weight: 700;
+        }
+
+        @media (max-width: 1120px) {
+            .app-shell {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                border-right: 0;
+                border-bottom: 2px solid var(--ink);
+            }
+
+            .unit-list {
+                max-height: 360px;
+            }
+        }
+
+        @media print {
+            .sidebar,
+            .roster-card,
+            .preview-header .btn {
+                display: none !important;
+            }
+
+            .app-shell,
+            .main,
+            .preview-card {
+                display: block;
+                padding: 0;
+                border: 0;
+                box-shadow: none;
+                background: white;
+            }
+
+            body {
+                background: white;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-shell">
+        <aside class="sidebar">
+            <div class="brand">
+                <h1>Wahpedia Capture</h1>
+                <p>Roster builder and printable datasheets built from the exported faction JSON in this repo.</p>
+            </div>
+
+            <div class="field-group">
+                <label class="field-label" for="faction-select">Faction</label>
+                <select id="faction-select" disabled>
+                    <option>Loading manifest...</option>
+                </select>
+            </div>
+
+            <div class="field-group">
+                <label class="field-label" for="unit-search">Search Units</label>
+                <input id="unit-search" type="text" placeholder="Avatar, Custodian Guard, Ragnar..." disabled>
+            </div>
+
+            <div id="status-box" class="status-box">Loading <code>./data/manifest.json</code>...</div>
+
+            <div class="sidebar-meta">
+                <div class="sidebar-meta-row">
+                    <span class="sidebar-meta-label">Units</span>
+                    <span id="catalog-unit-count" class="sidebar-meta-value">0</span>
+                </div>
+                <div class="sidebar-meta-row">
+                    <span class="sidebar-meta-label">Manual Labels</span>
+                    <span id="catalog-manual-count" class="sidebar-meta-value">0</span>
+                </div>
+                <div class="sidebar-meta-row">
+                    <span class="sidebar-meta-label">Missing Stats</span>
+                    <span id="catalog-missing-count" class="sidebar-meta-value">0</span>
+                </div>
+            </div>
+
+            <div>
+                <div class="section-heading">Catalog Units</div>
+                <div id="unit-list" class="unit-list"></div>
+            </div>
+        </aside>
+
+        <main class="main">
+            <section class="roster-card">
+                <div class="roster-header">
+                    <div>
+                        <h2 id="roster-title">No faction loaded</h2>
+                        <div id="roster-subtitle" class="roster-subtitle">Build `out/builder` first, then serve the repo over HTTP so the browser can fetch the generated catalogs.</div>
+                    </div>
+                    <div>
+                        <div id="total-points" class="points-tally">0</div>
+                        <div class="points-caption">Total points</div>
+                    </div>
+                </div>
+
+                <table class="roster-table">
+                    <thead>
+                        <tr>
+                            <th>Unit</th>
+                            <th style="width: 280px;">Configuration</th>
+                            <th style="width: 90px;">Qty</th>
+                            <th style="width: 120px;">Line Pts</th>
+                            <th style="width: 72px;"></th>
+                        </tr>
+                    </thead>
+                    <tbody id="roster-body">
+                        <tr><td colspan="5" class="table-empty">No roster entries yet.</td></tr>
+                    </tbody>
+                </table>
+
+                <div class="roster-actions">
+                    <button id="clear-roster" class="btn">Clear roster</button>
+                    <button id="print-roster" class="btn btn-primary">Print roster cards</button>
+                </div>
+            </section>
+
+            <section class="preview-card">
+                <div class="preview-header">
+                    <div>
+                        <h2 class="section-heading">Card Preview</h2>
+                        <div class="inline-note">Cards render directly from the normalized builder catalog and the current roster selections.</div>
+                    </div>
+                </div>
+                <div id="preview-body" class="preview-body"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="./card_renderer.js"></script>
+    <script>
+        const state = {
+            manifest: null,
+            factionSlug: "",
+            catalog: null,
+            roster: [],
+        };
+
+        const els = {
+            factionSelect: document.getElementById("faction-select"),
+            unitSearch: document.getElementById("unit-search"),
+            unitList: document.getElementById("unit-list"),
+            statusBox: document.getElementById("status-box"),
+            catalogUnitCount: document.getElementById("catalog-unit-count"),
+            catalogManualCount: document.getElementById("catalog-manual-count"),
+            catalogMissingCount: document.getElementById("catalog-missing-count"),
+            rosterTitle: document.getElementById("roster-title"),
+            rosterSubtitle: document.getElementById("roster-subtitle"),
+            rosterBody: document.getElementById("roster-body"),
+            totalPoints: document.getElementById("total-points"),
+            previewBody: document.getElementById("preview-body"),
+            clearRoster: document.getElementById("clear-roster"),
+            printRoster: document.getElementById("print-roster"),
+        };
+
+        function setStatus(message, isError) {
+            els.statusBox.innerHTML = isError ? `<span class="status-error">${message}</span>` : message;
+        }
+
+        async function fetchJson(path) {
+            const response = await fetch(path);
+            if (!response.ok) {
+                throw new Error(`Failed to load ${path} (${response.status})`);
+            }
+            return response.json();
+        }
+
+        function catalogUnitById(unitId) {
+            return (state.catalog && state.catalog.units ? state.catalog.units : []).find((unit) => unit.unitId === unitId) || null;
+        }
+
+        function missingStats(unit) {
+            if (!unit) {
+                return [];
+            }
+            if (unit.quality && Array.isArray(unit.quality.missingStats)) {
+                return unit.quality.missingStats;
+            }
+            const stats = unit.stats || {};
+            return ["M", "T", "Sv", "W", "Ld", "OC"].filter((stat) => !stats[stat]);
+        }
+
+        function qualityPills(unit) {
+            const pills = [];
+            if (unit.selectionMode === "manual") {
+                pills.push(`<div class="pill">Manual option labels</div>`);
+            }
+            const missing = missingStats(unit);
+            if (missing.length) {
+                pills.push(`<div class="pill pill-warning">Missing stats: ${missing.join(", ")}</div>`);
+            }
+            return pills.join("");
+        }
+
+        function selectedOption(entry) {
+            const unit = catalogUnitById(entry.unitId);
+            if (!unit) {
+                return null;
+            }
+            return unit.pointsOptions[entry.optionIndex] || unit.pointsOptions[0] || null;
+        }
+
+        function linePoints(entry) {
+            const option = selectedOption(entry);
+            if (!option || typeof option.points !== "number") {
+                return 0;
+            }
+            return option.points * entry.quantity;
+        }
+
+        function nextInstanceId() {
+            return `${Date.now()}-${Math.random().toString(16).slice(2)}`;
+        }
+
+        function renderFactionOptions() {
+            const factions = state.manifest && state.manifest.factions ? state.manifest.factions : [];
+            els.factionSelect.innerHTML = factions
+                .map((entry) => `<option value="${entry.slug}">${entry.name}</option>`)
+                .join("");
+            els.factionSelect.disabled = factions.length === 0;
+            els.unitSearch.disabled = factions.length === 0;
+        }
+
+        async function loadManifest() {
+            const manifest = await fetchJson("./data/manifest.json");
+            state.manifest = manifest;
+            renderFactionOptions();
+            if (manifest.factions.length) {
+                state.factionSlug = manifest.factions[0].slug;
+                els.factionSelect.value = state.factionSlug;
+                await loadCatalog(state.factionSlug);
+            }
+        }
+
+        async function loadCatalog(factionSlug) {
+            const manifestEntry = (state.manifest && state.manifest.factions ? state.manifest.factions : []).find((entry) => entry.slug === factionSlug);
+            if (!manifestEntry) {
+                return;
+            }
+            const catalog = await fetchJson(`./data/${manifestEntry.catalogFile}`);
+            state.factionSlug = factionSlug;
+            state.catalog = catalog;
+            state.roster = [];
+            els.catalogUnitCount.textContent = String(catalog.faction.unitCount);
+            els.catalogManualCount.textContent = String(catalog.build.manualSelectionUnits.length);
+            els.catalogMissingCount.textContent = String(catalog.build.missingStats.length);
+            els.rosterTitle.textContent = catalog.faction.name;
+            const healthBits = [];
+            if (catalog.build.manualSelectionUnits.length) {
+                healthBits.push(`${catalog.build.manualSelectionUnits.length} unit(s) still use source labels verbatim`);
+            }
+            if (catalog.build.missingStats.length) {
+                healthBits.push(`${catalog.build.missingStats.length} unit(s) still have missing exported stats`);
+            }
+            els.rosterSubtitle.textContent = healthBits.length
+                ? `${catalog.build.catalogUnitCount} units loaded. Data health: ${healthBits.join(" | ")}.`
+                : `${catalog.build.catalogUnitCount} units loaded. Data health: clean.`;
+
+            const statusBits = [
+                `${catalog.faction.name}: ${catalog.faction.unitCount} units`,
+                `${catalog.build.manualSelectionUnits.length} manual selection labels`,
+                `${catalog.build.missingStats.length} units with missing stats`,
+            ];
+            setStatus(statusBits.join(" | "), false);
+            renderUnitList();
+            renderRoster();
+            renderPreview();
+        }
+
+        function renderUnitList() {
+            if (!state.catalog) {
+                els.unitList.innerHTML = "";
+                return;
+            }
+            const query = els.unitSearch.value.trim().toLowerCase();
+            const units = state.catalog.units.filter((unit) => {
+                if (!query) {
+                    return true;
+                }
+                const haystack = [
+                    unit.name,
+                    ...(unit.keywords || []),
+                    ...(unit.factionKeywords || []),
+                ].join(" ").toLowerCase();
+                return haystack.includes(query);
+            });
+
+            if (!units.length) {
+                els.unitList.innerHTML = `<div class="unit-row">No units match the current search.</div>`;
+                return;
+            }
+
+            els.unitList.innerHTML = units.map((unit) => {
+                const defaultOption = window.WahBuilderCardRenderer.defaultPointsOption(unit);
+                const price = defaultOption ? `${defaultOption.points} pts` : "No points";
+                return `
+                    <div class="unit-row">
+                        <div>
+                            <p class="unit-name">${unit.name}</p>
+                            <div class="unit-meta">${price} | ${unit.factionKeywords.join(", ")}</div>
+                            ${qualityPills(unit)}
+                        </div>
+                        <button class="btn btn-primary" data-action="add-unit" data-unit-id="${unit.unitId}">Add</button>
+                    </div>
+                `;
+            }).join("");
+        }
+
+        function addToRoster(unitId) {
+            const unit = catalogUnitById(unitId);
+            if (!unit) {
+                return;
+            }
+            state.roster.push({
+                instanceId: nextInstanceId(),
+                unitId: unitId,
+                optionIndex: 0,
+                quantity: 1,
+            });
+            renderRoster();
+            renderPreview();
+        }
+
+        function updateRosterOption(instanceId, optionIndex) {
+            const entry = state.roster.find((item) => item.instanceId === instanceId);
+            if (!entry) {
+                return;
+            }
+            entry.optionIndex = Number(optionIndex) || 0;
+            renderRoster();
+            renderPreview();
+        }
+
+        function updateRosterQuantity(instanceId, quantity) {
+            const entry = state.roster.find((item) => item.instanceId === instanceId);
+            if (!entry) {
+                return;
+            }
+            entry.quantity = Math.max(1, Number(quantity) || 1);
+            renderRoster();
+            renderPreview();
+        }
+
+        function removeFromRoster(instanceId) {
+            state.roster = state.roster.filter((item) => item.instanceId !== instanceId);
+            renderRoster();
+            renderPreview();
+        }
+
+        function clearRoster() {
+            state.roster = [];
+            renderRoster();
+            renderPreview();
+        }
+
+        function renderRoster() {
+            if (!state.catalog || !state.roster.length) {
+                els.rosterBody.innerHTML = `<tr><td colspan="5" class="table-empty">No roster entries yet.</td></tr>`;
+                els.totalPoints.textContent = "0";
+                return;
+            }
+
+            let total = 0;
+            els.rosterBody.innerHTML = state.roster.map((entry) => {
+                const unit = catalogUnitById(entry.unitId);
+                const lineTotal = linePoints(entry);
+                total += lineTotal;
+
+                const optionsHtml = (unit.pointsOptions || []).map((pointsOption, index) => `
+                    <option value="${index}" ${index === entry.optionIndex ? "selected" : ""}>
+                        ${pointsOption.label} | ${pointsOption.points} pts
+                    </option>
+                `).join("");
+
+                return `
+                    <tr>
+                        <td>
+                            <strong>${unit.name}</strong>
+                            ${unit.selectionMode === "manual" ? `<div class="inline-note inline-note-warning">Source labels are preserved verbatim for this unit.</div>` : ""}
+                            ${missingStats(unit).length ? `<div class="inline-note inline-note-warning">Missing stats: ${missingStats(unit).join(", ")}.</div>` : ""}
+                        </td>
+                        <td>
+                            <select data-action="option-select" data-instance-id="${entry.instanceId}">
+                                ${optionsHtml}
+                            </select>
+                        </td>
+                        <td>
+                            <input
+                                type="number"
+                                min="1"
+                                step="1"
+                                value="${entry.quantity}"
+                                data-action="quantity-input"
+                                data-instance-id="${entry.instanceId}"
+                            >
+                        </td>
+                        <td><strong>${lineTotal}</strong></td>
+                        <td><button class="btn btn-remove" data-action="remove-entry" data-instance-id="${entry.instanceId}">x</button></td>
+                    </tr>
+                `;
+            }).join("");
+
+            els.totalPoints.textContent = String(total);
+        }
+
+        function renderPreview() {
+            if (!state.catalog || !state.roster.length) {
+                els.previewBody.innerHTML = `<div class="inline-note">Add one or more units to preview printable datacards.</div>`;
+                return;
+            }
+
+            els.previewBody.innerHTML = state.roster.map((entry) => {
+                const unit = catalogUnitById(entry.unitId);
+                const option = selectedOption(entry);
+                return window.WahBuilderCardRenderer.renderCard(unit, {
+                    selectedOption: option,
+                    selectedPoints: linePoints(entry),
+                    quantity: entry.quantity,
+                });
+            }).join("");
+        }
+
+        async function init() {
+            if (window.location.protocol === "file:") {
+                setStatus(
+                    "This page cannot load builder data over file://. Serve the repo over HTTP, or use the published docs/builder/data output.",
+                    true
+                );
+                els.unitList.innerHTML = `<div class="unit-row">Open this page through a local web server instead of double-clicking the HTML file.</div>`;
+                return;
+            }
+            try {
+                await loadManifest();
+            } catch (error) {
+                setStatus(
+                    `Unable to load the builder manifest. Run <code>python scripts/build_builder_catalog.py --clean</code> and serve the repo over HTTP before opening this page.<br><br>${error.message}`,
+                    true
+                );
+                els.unitList.innerHTML = `<div class="unit-row">Builder manifest not available.</div>`;
+            }
+        }
+
+        els.factionSelect.addEventListener("change", async (event) => {
+            try {
+                await loadCatalog(event.target.value);
+            } catch (error) {
+                setStatus(error.message, true);
+            }
+        });
+
+        els.unitSearch.addEventListener("input", renderUnitList);
+
+        els.unitList.addEventListener("click", (event) => {
+            const addButton = event.target.closest('[data-action="add-unit"]');
+            if (addButton) {
+                addToRoster(addButton.dataset.unitId);
+            }
+        });
+
+        els.rosterBody.addEventListener("change", (event) => {
+            const select = event.target.closest('[data-action="option-select"]');
+            const quantity = event.target.closest('[data-action="quantity-input"]');
+            if (select) {
+                updateRosterOption(select.dataset.instanceId, select.value);
+            } else if (quantity) {
+                updateRosterQuantity(quantity.dataset.instanceId, quantity.value);
+            }
+        });
+
+        els.rosterBody.addEventListener("click", (event) => {
+            const button = event.target.closest('[data-action="remove-entry"]');
+            if (button) {
+                removeFromRoster(button.dataset.instanceId);
+            }
+        });
+
+        els.clearRoster.addEventListener("click", clearRoster);
+        els.printRoster.addEventListener("click", () => {
+            if (!state.roster.length) {
+                alert("Add at least one unit before printing.");
+                return;
+            }
+            window.print();
+        });
+
+        init();
+    </script>
+</body>
+</html>

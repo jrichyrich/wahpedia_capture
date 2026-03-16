@@ -1,0 +1,188 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Ballistus-Dreadnought",
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Ballistus-Dreadnought",
+    "output_slug": "space-wolves"
+  },
+  "name": "Ballistus Dreadnought",
+  "base_size": "\u230090mm",
+  "characteristics": {
+    "M": "8\"",
+    "T": "10",
+    "Sv": "2+",
+    "W": "12",
+    "Ld": "6+",
+    "OC": "4"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Ballistus missile launcher \u2013 frag",
+        "abilities": [
+          "blast"
+        ],
+        "range": "48\"",
+        "a": "2D6",
+        "bs": "3+",
+        "s": "5",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Ballistus missile launcher \u2013 krak",
+        "abilities": [],
+        "range": "48\"",
+        "a": "2",
+        "bs": "3+",
+        "s": "10",
+        "ap": "-2",
+        "d": "D6"
+      },
+      {
+        "name": "Ballistus lascannon",
+        "abilities": [],
+        "range": "48\"",
+        "a": "2",
+        "bs": "3+",
+        "s": "12",
+        "ap": "-3",
+        "d": "D6+1"
+      },
+      {
+        "name": "Twin storm bolter",
+        "abilities": [
+          "rapid fire 2",
+          "twin-linked"
+        ],
+        "range": "24\"",
+        "a": "2",
+        "bs": "3+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Armoured feet",
+        "abilities": [],
+        "range": "Melee",
+        "a": "5",
+        "ws": "3+",
+        "s": "7",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise D3"
+    ],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this model makes a ranged attack that targets a unit that is not Below Half-strength , you can re-roll the Hit roll .",
+        "name": "Ballistus Strike"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Ballistus Dreadnought"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "Ballistus missile launcher; Ballistus lascannon; twin storm bolter; armoured feet.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "150"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "VEHICLE",
+    "WALKER",
+    "IMPERIUM",
+    "DREADNOUGHT",
+    "BALLISTUS DREADNOUGHT",
+    "DEATHWING"
+  ],
+  "faction_keywords": [
+    "ADEPTUS ASTARTES"
+  ],
+  "sections": [
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise D3"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model makes a ranged attack that targets a unit that is not Below Half-strength , you can re-roll the Hit roll .",
+          "name": "Ballistus Strike"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Ballistus Dreadnought"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "Ballistus missile launcher; Ballistus lascannon; twin storm bolter; armoured feet.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "150"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DAMAGED: 1-4 WOUNDS REMAINING",
+      "entries": [
+        {
+          "type": "text",
+          "text": "While this model has 1-4 wounds remaining, each time this model makes an attack, subtract 1 from the Hit roll ."
+        }
+      ]
+    }
+  ]
+}

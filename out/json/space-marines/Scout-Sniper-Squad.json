@@ -1,0 +1,192 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Scout-Sniper-Squad",
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Scout-Sniper-Squad"
+  },
+  "name": "Scout Sniper Squad",
+  "base_size": "\u230025mm",
+  "characteristics": {
+    "M": "6\"",
+    "T": "4",
+    "Sv": "4+",
+    "W": "2",
+    "Ld": "6+",
+    "OC": "1"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Bolt pistol",
+        "abilities": [
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Missile launcher \u2013 frag",
+        "abilities": [
+          "blast",
+          "heavy"
+        ],
+        "range": "48\"",
+        "a": "D6",
+        "bs": "4+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Missile launcher \u2013 krak",
+        "abilities": [
+          "heavy"
+        ],
+        "range": "48\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "9",
+        "ap": "-2",
+        "d": "D6"
+      },
+      {
+        "name": "Scout sniper rifle",
+        "abilities": [
+          "heavy",
+          "precision"
+        ],
+        "range": "36\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "4",
+        "ap": "-2",
+        "d": "2"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Close combat weapon",
+        "abilities": [],
+        "range": "Melee",
+        "a": "2",
+        "ws": "3+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Infiltrators , Stealth"
+    ],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "This unit can only be selected as the target of a ranged attack if the attacking model is within 12\".",
+        "name": "Concealed Positions"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Scout Sniper Sergeant",
+        "4-9 Scout Snipers"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "bolt pistol; sniper rifle; close combat weapon.",
+      "label": "Every model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "5 models",
+          "points": "75"
+        },
+        {
+          "label": "10 models",
+          "points": "150"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "GRENADES",
+    "SMOKE",
+    "IMPERIUM",
+    "SCOUT SNIPER SQUAD"
+  ],
+  "faction_keywords": [
+    "ADEPTUS ASTARTES"
+  ],
+  "sections": [
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Infiltrators , Stealth"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "This unit can only be selected as the target of a ranged attack if the attacking model is within 12\".",
+          "name": "Concealed Positions"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Scout Sniper Sergeant",
+            "4-9 Scout Snipers"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "bolt pistol; sniper rifle; close combat weapon.",
+          "label": "Every model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "5 models",
+              "points": "75"
+            },
+            {
+              "label": "10 models",
+              "points": "150"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

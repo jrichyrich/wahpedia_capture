@@ -1,0 +1,178 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Inner-Circle-Companions",
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Inner-Circle-Companions",
+    "output_slug": "dark-angels"
+  },
+  "name": "Inner Circle Companions",
+  "base_size": "\u230040mm",
+  "characteristics": {
+    "M": "6\"",
+    "T": "4",
+    "Sv": "3+",
+    "W": "3",
+    "Ld": "6+",
+    "OC": "2"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Heavy bolt pistol",
+        "abilities": [
+          "Pistol"
+        ],
+        "range": "18\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "4",
+        "ap": "-1",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Calibanite greatsword - strike",
+        "abilities": [
+          "lethal hits"
+        ],
+        "range": "Melee",
+        "a": "4",
+        "ws": "3+",
+        "s": "6",
+        "ap": "-2",
+        "d": "2"
+      },
+      {
+        "name": "Calibanite greatsword - sweep",
+        "abilities": [
+          "sustained hits 2"
+        ],
+        "range": "Melee",
+        "a": "5",
+        "ws": "3+",
+        "s": "6",
+        "ap": "-2",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While a CHARACTER model is leading this unit, each time an attack targets this unit, subtract 1 from the Hit roll .",
+        "name": "Braziers of Judgement"
+      },
+      {
+        "type": "rule",
+        "text": "Each time a model in this unit makes an attack that targets a CHARACTER unit, add 1 to the Hit roll .",
+        "name": "Enmity for the Unworthy"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "3-6 Inner Circle Companions"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "heavy bolt pistol; Calibanite greatsword.",
+      "label": "Every Inner Circle Companion is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "3 models",
+          "points": "90"
+        },
+        {
+          "label": "6 models",
+          "points": "180"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "IMPERIUM",
+    "DEATHWING",
+    "TACTICUS",
+    "INNER CIRCLE COMPANIONS"
+  ],
+  "faction_keywords": [
+    "ADEPTUS ASTARTES",
+    "DARK ANGELS"
+  ],
+  "sections": [
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While a CHARACTER model is leading this unit, each time an attack targets this unit, subtract 1 from the Hit roll .",
+          "name": "Braziers of Judgement"
+        },
+        {
+          "type": "rule",
+          "text": "Each time a model in this unit makes an attack that targets a CHARACTER unit, add 1 to the Hit roll .",
+          "name": "Enmity for the Unworthy"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "3-6 Inner Circle Companions"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "heavy bolt pistol; Calibanite greatsword.",
+          "label": "Every Inner Circle Companion is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "3 models",
+              "points": "90"
+            },
+            {
+              "label": "6 models",
+              "points": "180"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Attached Unit",
+      "entries": [
+        {
+          "type": "text",
+          "text": "If a CHARACTER unit from your army with the Leader ability can be attached to a STERNGUARD VETERAN SQUAD , it can be attached to this unit instead."
+        }
+      ]
+    }
+  ]
+}

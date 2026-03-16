@@ -1,0 +1,170 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Spiritseer",
+    "faction_slug": "aeldari",
+    "datasheet_slug": "Spiritseer",
+    "output_slug": "aeldari"
+  },
+  "name": "Spiritseer",
+  "base_size": "\u230025mm",
+  "characteristics": {
+    "M": "7\"",
+    "T": "3",
+    "Sv": "6+",
+    "W": "3",
+    "Ld": "6+",
+    "OC": "1",
+    "Invulnerable Save": "4+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Shuriken pistol",
+        "abilities": [
+          "assault",
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "2+",
+        "s": "4",
+        "ap": "-1",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Witch staff",
+        "abilities": [
+          "anti-infantry 2+",
+          "psychic"
+        ],
+        "range": "Melee",
+        "a": "2",
+        "ws": "2+",
+        "s": "3",
+        "ap": "0",
+        "d": "D3"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Stealth"
+    ],
+    "faction": [
+      "Battle Focus"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this model is within 3\" of one or more friendly WRAITH CONSTRUCT units, this model has the Lone Operative ability.",
+        "name": "Spiritseer"
+      },
+      {
+        "type": "rule",
+        "text": "Once per turn, in your Movement phase , when this model starts or ends a move, select one friendly WRAITH CONSTRUCT unit within 6\" of this model (excluding TITANIC units) and one enemy unit visible to this model. Until the start of your next Movement phase, weapons equipped by models in that friendly unit have the [SUSTAINED HITS 1] ability while targeting that enemy unit.",
+        "name": "Spirit Mark (Psychic)"
+      },
+      {
+        "type": "rule",
+        "text": "In your Command phase , select one friendly WRAITH CONSTRUCT unit within 6\" of this model. If one or more models in that unit are destroyed, you can return one destroyed model to that unit. Otherwise, one model in that unit regains up to D3 lost wounds. Each unit can only be selected for this ability once per turn.",
+        "name": "Tears of Isha (Psychic)"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Spiritseer"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "shuriken pistol; witch staff.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "65"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "CHARACTER",
+    "AELDARI",
+    "PSYKER",
+    "SPIRITSEER"
+  ],
+  "faction_keywords": [
+    "ASURYANI"
+  ],
+  "sections": [
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Stealth"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Battle Focus"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is within 3\" of one or more friendly WRAITH CONSTRUCT units, this model has the Lone Operative ability.",
+          "name": "Spiritseer"
+        },
+        {
+          "type": "rule",
+          "text": "Once per turn, in your Movement phase , when this model starts or ends a move, select one friendly WRAITH CONSTRUCT unit within 6\" of this model (excluding TITANIC units) and one enemy unit visible to this model. Until the start of your next Movement phase, weapons equipped by models in that friendly unit have the [SUSTAINED HITS 1] ability while targeting that enemy unit.",
+          "name": "Spirit Mark (Psychic)"
+        },
+        {
+          "type": "rule",
+          "text": "In your Command phase , select one friendly WRAITH CONSTRUCT unit within 6\" of this model. If one or more models in that unit are destroyed, you can return one destroyed model to that unit. Otherwise, one model in that unit regains up to D3 lost wounds. Each unit can only be selected for this ability once per turn.",
+          "name": "Tears of Isha (Psychic)"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Spiritseer"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "shuriken pistol; witch staff.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "65"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

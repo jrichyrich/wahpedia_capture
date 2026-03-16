@@ -1,0 +1,216 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Autarch-Skyrunner",
+    "faction_slug": "aeldari",
+    "datasheet_slug": "Autarch-Skyrunner",
+    "output_slug": "aeldari"
+  },
+  "name": "Autarch Skyrunner",
+  "base_size": "\u230032mm flying base",
+  "characteristics": {
+    "M": "14\"",
+    "T": "4",
+    "Sv": "3+",
+    "W": "5",
+    "Ld": "6+",
+    "OC": "2",
+    "Invulnerable Save": "4+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Dragon fusion gun",
+        "abilities": [
+          "assault",
+          "melta 3"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "2+",
+        "s": "9",
+        "ap": "-4",
+        "d": "D6"
+      },
+      {
+        "name": "Laser lance",
+        "abilities": [
+          "assault"
+        ],
+        "range": "6\"",
+        "a": "1",
+        "bs": "2+",
+        "s": "6",
+        "ap": "-3",
+        "d": "2"
+      },
+      {
+        "name": "Twin shuriken catapult",
+        "abilities": [
+          "assault",
+          "twin-linked"
+        ],
+        "range": "18\"",
+        "a": "2",
+        "bs": "2+",
+        "s": "4",
+        "ap": "-1",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Laser lance",
+        "abilities": [
+          "lance"
+        ],
+        "range": "Melee",
+        "a": "4",
+        "ws": "2+",
+        "s": "4",
+        "ap": "-3",
+        "d": "2"
+      },
+      {
+        "name": "Banshee blade",
+        "abilities": [],
+        "range": "Melee",
+        "a": "5",
+        "ws": "2+",
+        "s": "4",
+        "ap": "-3",
+        "d": "1"
+      },
+      {
+        "name": "Close combat weapon",
+        "abilities": [],
+        "range": "Melee",
+        "a": "3",
+        "ws": "2+",
+        "s": "3",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Leader"
+    ],
+    "faction": [
+      "Battle Focus"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, each time that unit Advances , do not make an Advance roll for it. Instead, until the end of the phase, add 6\" to the Move characteristic of models in that unit.",
+        "name": "Ride the Wind"
+      },
+      {
+        "type": "rule",
+        "text": "Once per battle round , one model from your army with this ability can use it when its unit is targeted with a Stratagem . If it does, reduce the CP cost of that usage of that Stratagem by 1CP.",
+        "name": "Path of Command"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Autarch Skyrunner"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "close combat weapon; laser lance; twin shuriken catapult.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "90"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "MOUNTED",
+    "CHARACTER",
+    "FLY",
+    "AELDARI",
+    "AUTARCH",
+    "AUTARCH SKYRUNNER"
+  ],
+  "faction_keywords": [
+    "ASURYANI"
+  ],
+  "sections": [
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Leader"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Battle Focus"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, each time that unit Advances , do not make an Advance roll for it. Instead, until the end of the phase, add 6\" to the Move characteristic of models in that unit.",
+          "name": "Ride the Wind"
+        },
+        {
+          "type": "rule",
+          "text": "Once per battle round , one model from your army with this ability can use it when its unit is targeted with a Stratagem . If it does, reduce the CP cost of that usage of that Stratagem by 1CP.",
+          "name": "Path of Command"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Autarch Skyrunner"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "close combat weapon; laser lance; twin shuriken catapult.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "90"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "LEADER",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "Windriders"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,206 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Reiver-Squad",
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Reiver-Squad",
+    "output_slug": "space-wolves"
+  },
+  "name": "Reiver Squad",
+  "base_size": "\u230032mm",
+  "characteristics": {
+    "M": "6\"",
+    "T": "4",
+    "Sv": "3+",
+    "W": "2",
+    "Ld": "6+",
+    "OC": "1"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Bolt carbine",
+        "abilities": [
+          "precision"
+        ],
+        "range": "24\"",
+        "a": "2",
+        "bs": "3+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Special issue bolt pistol",
+        "abilities": [
+          "pistol",
+          "precision"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "4",
+        "ap": "-1",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Close combat weapon",
+        "abilities": [],
+        "range": "Melee",
+        "a": "3",
+        "ws": "3+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Combat knife",
+        "abilities": [
+          "precision"
+        ],
+        "range": "Melee",
+        "a": "4",
+        "ws": "3+",
+        "s": "4",
+        "ap": "-1",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Scouts 6\""
+    ],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "At the start of the Fight phase , each enemy unit within Engagement Range of one or more units with this ability must take a Battle-shock test , subtracting 1 from that test.",
+        "name": "Fearsome Assault"
+      },
+      {
+        "type": "rule",
+        "text": "While an enemy unit (excluding MONSTERS and VEHICLES ) is within 3\" of one or more units with this ability, subtract 1 from the Objective Control characteristic of models in that enemy unit.",
+        "name": "Terror Troops (Aura)"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Reiver Sergeant",
+        "4-9 Reivers"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "special issue bolt pistol; combat knife.",
+      "label": "Every model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "5 models",
+          "points": "80"
+        },
+        {
+          "label": "10 models",
+          "points": "160"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "GRENADES",
+    "SMOKE",
+    "IMPERIUM",
+    "PHOBOS",
+    "REIVER SQUAD"
+  ],
+  "faction_keywords": [
+    "ADEPTUS ASTARTES"
+  ],
+  "sections": [
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Scouts 6\""
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "At the start of the Fight phase , each enemy unit within Engagement Range of one or more units with this ability must take a Battle-shock test , subtracting 1 from that test.",
+          "name": "Fearsome Assault"
+        },
+        {
+          "type": "rule",
+          "text": "While an enemy unit (excluding MONSTERS and VEHICLES ) is within 3\" of one or more units with this ability, subtract 1 from the Objective Control characteristic of models in that enemy unit.",
+          "name": "Terror Troops (Aura)"
+        }
+      ]
+    },
+    {
+      "title": "WARGEAR ABILITIES",
+      "entries": [
+        {
+          "type": "statement",
+          "text": "Each time the bearer\u2019s unit makes a Normal , Advance , Fall Back or Charge move , ignore any vertical distance when determining the total distance the bearer can be moved during that move.",
+          "label": "Grapnel Launcher"
+        },
+        {
+          "type": "statement",
+          "text": "The bearer has the Deep Strike ability.",
+          "label": "Reiver Grav-chute"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Reiver Sergeant",
+            "4-9 Reivers"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "special issue bolt pistol; combat knife.",
+          "label": "Every model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "5 models",
+              "points": "80"
+            },
+            {
+              "label": "10 models",
+              "points": "160"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

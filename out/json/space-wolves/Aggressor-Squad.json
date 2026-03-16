@@ -1,0 +1,173 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Aggressor-Squad",
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Aggressor-Squad",
+    "output_slug": "space-wolves"
+  },
+  "name": "Aggressor Squad",
+  "base_size": "\u230040mm",
+  "characteristics": {
+    "M": "5\"",
+    "T": "6",
+    "Sv": "3+",
+    "W": "3",
+    "Ld": "6+",
+    "OC": "1"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Auto boltstorm gauntlets",
+        "abilities": [
+          "twin-linked"
+        ],
+        "range": "18\"",
+        "a": "3",
+        "bs": "3+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Flamestorm gauntlets",
+        "abilities": [
+          "ignores cover",
+          "torrent",
+          "twin-linked"
+        ],
+        "range": "12\"",
+        "a": "D6+1",
+        "bs": "N/A",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Fragstorm grenade launcher",
+        "abilities": [
+          "blast"
+        ],
+        "range": "18\"",
+        "a": "D6",
+        "bs": "3+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Twin power fists",
+        "abilities": [
+          "twin-linked"
+        ],
+        "range": "Melee",
+        "a": "3",
+        "ws": "3+",
+        "s": "8",
+        "ap": "-2",
+        "d": "2"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time a model in this unit makes a ranged attack that targets the closest eligible target, improve the Armour Penetration characteristic of that attack by 1.",
+        "name": "Close-quarters Firepower"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Aggressor Sergeant",
+        "2-5 Aggressors"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "flamestorm gauntlets; twin power fist.",
+      "label": "Every model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "3 models",
+          "points": "95"
+        },
+        {
+          "label": "6 models",
+          "points": "190"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "IMPERIUM",
+    "GRAVIS",
+    "AGGRESSOR SQUAD"
+  ],
+  "faction_keywords": [
+    "ADEPTUS ASTARTES"
+  ],
+  "sections": [
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time a model in this unit makes a ranged attack that targets the closest eligible target, improve the Armour Penetration characteristic of that attack by 1.",
+          "name": "Close-quarters Firepower"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Aggressor Sergeant",
+            "2-5 Aggressors"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "flamestorm gauntlets; twin power fist.",
+          "label": "Every model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "3 models",
+              "points": "95"
+            },
+            {
+              "label": "6 models",
+              "points": "190"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

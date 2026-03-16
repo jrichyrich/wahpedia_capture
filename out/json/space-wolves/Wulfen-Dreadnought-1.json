@@ -1,0 +1,199 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Wulfen-Dreadnought-1",
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Wulfen-Dreadnought-1",
+    "output_slug": "space-wolves"
+  },
+  "name": "Wulfen Dreadnought",
+  "base_size": "\u230060mm",
+  "characteristics": {
+    "M": "9\"",
+    "T": "9",
+    "Sv": "2+",
+    "W": "8",
+    "Ld": "6+",
+    "OC": "0"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Heavy flamer",
+        "abilities": [
+          "ignores cover",
+          "torrent"
+        ],
+        "range": "12\"",
+        "a": "D6",
+        "bs": "N/A",
+        "s": "5",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Storm bolter",
+        "abilities": [
+          "rapid fire 2"
+        ],
+        "range": "24\"",
+        "a": "2",
+        "bs": "3+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Fenrisian greataxe \u2013 strike",
+        "abilities": [],
+        "range": "Melee",
+        "a": "6",
+        "ws": "3+",
+        "s": "10",
+        "ap": "-2",
+        "d": "D6+1"
+      },
+      {
+        "name": "Fenrisian greataxe \u2013 sweep",
+        "abilities": [],
+        "range": "Melee",
+        "a": "12",
+        "ws": "3+",
+        "s": "6",
+        "ap": "-2",
+        "d": "1"
+      },
+      {
+        "name": "Great wolf claw",
+        "abilities": [],
+        "range": "Melee",
+        "a": "6",
+        "ws": "3+",
+        "s": "10",
+        "ap": "-3",
+        "d": "3"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise 1 , Feel No Pain 6+"
+    ],
+    "faction": [
+      "Curse of the Wulfen , Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time an enemy unit is selected to shoot, after that unit has shot, if this model lost one or more wounds as a result of those attacks, this model can make a Bestial Rage move. To do so, roll one D6, adding 2 to the result: this model can be moved a number of inches up to the result, but must finish that move as close as possible to the closest enemy unit (excluding AIRCRAFT ), When doing so, this model can be moved within Engagement Range of that enemy unit. Each model can only make one Bestial Rage move per phase.",
+        "name": "Bestial Rage"
+      },
+      {
+        "type": "rule",
+        "text": "If this model is equipped with two melee weapons, those weapon profiles have the [TWIN-LINKED] ability.",
+        "name": "Violent Fury"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Wulfen Dreadnought"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "storm bolter; Fenrisian greataxe; great wolf claw.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "145"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "VEHICLE",
+    "WALKER",
+    "IMPERIUM",
+    "WULFEN",
+    "DREADNOUGHT"
+  ],
+  "faction_keywords": [
+    "ADEPTUS ASTARTES",
+    "SPACE WOLVES"
+  ],
+  "sections": [
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise 1 , Feel No Pain 6+"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Curse of the Wulfen , Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time an enemy unit is selected to shoot, after that unit has shot, if this model lost one or more wounds as a result of those attacks, this model can make a Bestial Rage move. To do so, roll one D6, adding 2 to the result: this model can be moved a number of inches up to the result, but must finish that move as close as possible to the closest enemy unit (excluding AIRCRAFT ), When doing so, this model can be moved within Engagement Range of that enemy unit. Each model can only make one Bestial Rage move per phase.",
+          "name": "Bestial Rage"
+        },
+        {
+          "type": "rule",
+          "text": "If this model is equipped with two melee weapons, those weapon profiles have the [TWIN-LINKED] ability.",
+          "name": "Violent Fury"
+        }
+      ]
+    },
+    {
+      "title": "WARGEAR ABILITIES",
+      "entries": [
+        {
+          "type": "statement",
+          "text": "The bearer has a 4+ invulnerable save .",
+          "label": "Blizzard Shield"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Wulfen Dreadnought"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "storm bolter; Fenrisian greataxe; great wolf claw.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "145"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

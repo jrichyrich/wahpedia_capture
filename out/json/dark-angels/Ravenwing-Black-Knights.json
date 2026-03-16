@@ -1,0 +1,206 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Ravenwing-Black-Knights",
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Ravenwing-Black-Knights",
+    "output_slug": "dark-angels"
+  },
+  "name": "Ravenwing Black Knights",
+  "base_size": "\u230075 x 42mm",
+  "characteristics": {
+    "M": "12\"",
+    "T": "5",
+    "Sv": "3+",
+    "W": "3",
+    "Ld": "6+",
+    "OC": "2",
+    "Invulnerable Save": "5+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Astartes grenade launcher \u2013 frag",
+        "abilities": [
+          "blast"
+        ],
+        "range": "24\"",
+        "a": "D3",
+        "bs": "3+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Astartes grenade launcher \u2013 krak",
+        "abilities": [],
+        "range": "24\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "9",
+        "ap": "-2",
+        "d": "D3"
+      },
+      {
+        "name": "Bolt pistol",
+        "abilities": [
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Plasma talon \u2013 standard",
+        "abilities": [
+          "rapid fire 1"
+        ],
+        "range": "18\"",
+        "a": "2",
+        "bs": "3+",
+        "s": "7",
+        "ap": "-2",
+        "d": "1"
+      },
+      {
+        "name": "Plasma talon \u2013 supercharge",
+        "abilities": [
+          "hazardous",
+          "rapid fire 1"
+        ],
+        "range": "18\"",
+        "a": "2",
+        "bs": "3+",
+        "s": "8",
+        "ap": "-3",
+        "d": "2"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Black Knight combat weapon",
+        "abilities": [
+          "devastating wounds"
+        ],
+        "range": "Melee",
+        "a": "3",
+        "ws": "3+",
+        "s": "5",
+        "ap": "-2",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this unit is selected to fight, if it made a Charge move this turn, until the end of the phase, melee weapons equipped by models in this unit have the [ANTI-MONSTER 4+] and [ANTI-VEHICLE 4+] abilities.",
+        "name": "Knights of Caliban"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Ravenwing Huntmaster",
+        "2-5 Ravenwing Black Knights"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "bolt pistol; plasma talon; Black Knight combat weapon.",
+      "label": "Every model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "3 models",
+          "points": "80"
+        },
+        {
+          "label": "6 models",
+          "points": "160"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "MOUNTED",
+    "GRENADES",
+    "IMPERIUM",
+    "RAVENWING",
+    "RAVENWING BLACK KNIGHTS"
+  ],
+  "faction_keywords": [
+    "ADEPTUS ASTARTES",
+    "DARK ANGELS"
+  ],
+  "sections": [
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this unit is selected to fight, if it made a Charge move this turn, until the end of the phase, melee weapons equipped by models in this unit have the [ANTI-MONSTER 4+] and [ANTI-VEHICLE 4+] abilities.",
+          "name": "Knights of Caliban"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Ravenwing Huntmaster",
+            "2-5 Ravenwing Black Knights"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "bolt pistol; plasma talon; Black Knight combat weapon.",
+          "label": "Every model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "3 models",
+              "points": "80"
+            },
+            {
+              "label": "6 models",
+              "points": "160"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ATTACHED UNIT",
+      "entries": [
+        {
+          "type": "text",
+          "text": "If a CHARACTER unit from your army with the Leader ability can be attached to an OUTRIDER SQUAD , it can be attached to this unit instead."
+        }
+      ]
+    }
+  ]
+}

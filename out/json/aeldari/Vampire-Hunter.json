@@ -1,0 +1,178 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Vampire-Hunter",
+    "faction_slug": "aeldari",
+    "datasheet_slug": "Vampire-Hunter",
+    "output_slug": "aeldari"
+  },
+  "name": "Vampire Hunter",
+  "base_size": "\u2300170 x 109mm flying base",
+  "characteristics": {
+    "M": "20+\"",
+    "T": "12",
+    "Sv": "3+",
+    "W": "30",
+    "Ld": "6+",
+    "OC": "0",
+    "Invulnerable Save": "4+*"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Scatter laser",
+        "abilities": [],
+        "range": "36\"",
+        "a": "6",
+        "bs": "3+",
+        "s": "5",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Twin pulse laser",
+        "abilities": [
+          "twin-linked"
+        ],
+        "range": "48\"",
+        "a": "3",
+        "bs": "3+",
+        "s": "9",
+        "ap": "-2",
+        "d": "D6"
+      },
+      {
+        "name": "Twin Vampire pulsar",
+        "abilities": [
+          "twin-linked"
+        ],
+        "range": "60\"",
+        "a": "3",
+        "bs": "3+",
+        "s": "12",
+        "ap": "-3",
+        "d": "4"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Wraithbone hull",
+        "abilities": [],
+        "range": "Melee",
+        "a": "6",
+        "ws": "4+",
+        "s": "6",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise D6+2 , Hover"
+    ],
+    "faction": [
+      "Battle Focus"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time a ranged attack made by this model is allocated to a MONSTER or VEHICLE model, re-roll a Damage roll of 1.",
+        "name": "Titan Hunter"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Vampire Hunter"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "scatter laser; 2 twin pulse lasers; twin Vampire pulsar; wraithbone hull.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "460"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "VEHICLE",
+    "FLY",
+    "AIRCRAFT",
+    "TITANIC",
+    "AELDARI",
+    "VAMPIRE HUNTER"
+  ],
+  "faction_keywords": [
+    "ASURYANI"
+  ],
+  "sections": [
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise D6+2 , Hover"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Battle Focus"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time a ranged attack made by this model is allocated to a MONSTER or VEHICLE model, re-roll a Damage roll of 1.",
+          "name": "Titan Hunter"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Vampire Hunter"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "scatter laser; 2 twin pulse lasers; twin Vampire pulsar; wraithbone hull.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "460"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DAMAGED: 1-10 WOUNDS REMAINING",
+      "entries": [
+        {
+          "type": "text",
+          "text": "While this model has 1-10 wounds remaining, each time this model makes an attack, subtract 1 from the Hit roll ."
+        }
+      ]
+    }
+  ]
+}

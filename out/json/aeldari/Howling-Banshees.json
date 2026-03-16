@@ -1,0 +1,222 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Howling-Banshees",
+    "faction_slug": "aeldari",
+    "datasheet_slug": "Howling-Banshees",
+    "output_slug": "aeldari"
+  },
+  "name": "Howling Banshees",
+  "base_size": "",
+  "characteristics": {
+    "M": "8\"",
+    "T": "3",
+    "Sv": "4+",
+    "W": "1",
+    "Ld": "6+",
+    "OC": "1",
+    "Invulnerable Save": "5+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Shuriken pistol",
+        "abilities": [
+          "assault",
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "4",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Triskele",
+        "abilities": [
+          "anti-infantry 3+",
+          "assault"
+        ],
+        "range": "12\"",
+        "a": "3",
+        "bs": "3+",
+        "s": "3",
+        "ap": "-1",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Banshee blade",
+        "abilities": [
+          "anti-infantry 3+"
+        ],
+        "range": "Melee",
+        "a": "2",
+        "ws": "2+",
+        "s": "4",
+        "ap": "-2",
+        "d": "2"
+      },
+      {
+        "name": "Executioner",
+        "abilities": [
+          "anti-infantry 3+"
+        ],
+        "range": "Melee",
+        "a": "3",
+        "ws": "2+",
+        "s": "6",
+        "ap": "-3",
+        "d": "3"
+      },
+      {
+        "name": "Mirrorswords",
+        "abilities": [
+          "anti-infantry 3+"
+        ],
+        "range": "Melee",
+        "a": "4",
+        "ws": "2+",
+        "s": "4",
+        "ap": "-2",
+        "d": "2"
+      },
+      {
+        "name": "Triskele",
+        "abilities": [
+          "anti-infantry 3+"
+        ],
+        "range": "Melee",
+        "a": "6",
+        "ws": "2+",
+        "s": "3",
+        "ap": "-1",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Fights First"
+    ],
+    "faction": [
+      "Battle Focus"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "This unit is eligible to declare a charge in a turn in which it Advanced or Fell Back .",
+        "name": "Acrobatic"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Howling Banshee Exarch",
+        "4-9 Howling Banshees"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "shuriken pistol; Banshee blade.",
+      "label": "Every model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "5 models",
+          "points": "95"
+        },
+        {
+          "label": "10 models",
+          "points": "190"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "AELDARI",
+    "ASPECT WARRIORS",
+    "HOWLING BANSHEES"
+  ],
+  "faction_keywords": [
+    "ASURYANI"
+  ],
+  "sections": [
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Fights First"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Battle Focus"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "This unit is eligible to declare a charge in a turn in which it Advanced or Fell Back .",
+          "name": "Acrobatic"
+        }
+      ]
+    },
+    {
+      "title": "WARGEAR ABILITIES",
+      "entries": [
+        {
+          "type": "statement",
+          "text": "Once per battle for each Aspect Shrine token this unit has, you can change the result of one Hit roll or one Wound roll made for a model in this unit (excluding CHARACTER models) to an unmodified 6.",
+          "label": "Aspect Shrine Token"
+        },
+        {
+          "type": "statement",
+          "text": "Place an Aspect Shrine token next to the unit for each Aspect Shrine token it has, removing one each time this ability is used.",
+          "label": "Designer\u2019s Note"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Howling Banshee Exarch",
+            "4-9 Howling Banshees"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "shuriken pistol; Banshee blade.",
+          "label": "Every model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "5 models",
+              "points": "95"
+            },
+            {
+              "label": "10 models",
+              "points": "190"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

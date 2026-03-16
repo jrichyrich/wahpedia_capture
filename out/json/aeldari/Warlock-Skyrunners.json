@@ -1,0 +1,229 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Warlock-Skyrunners",
+    "faction_slug": "aeldari",
+    "datasheet_slug": "Warlock-Skyrunners",
+    "output_slug": "aeldari"
+  },
+  "name": "Warlock Skyrunners",
+  "base_size": "\u230032mm flying base",
+  "characteristics": {
+    "M": "14\"",
+    "T": "4",
+    "Sv": "6+",
+    "W": "3",
+    "Ld": "6+",
+    "OC": "2",
+    "Invulnerable Save": "4+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Destructor",
+        "abilities": [
+          "psychic",
+          "torrent"
+        ],
+        "range": "12\"",
+        "a": "D6",
+        "bs": "N/A",
+        "s": "5",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Shuriken pistol",
+        "abilities": [
+          "assault",
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "4",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Singing spear",
+        "abilities": [
+          "assault",
+          "psychic"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "9",
+        "ap": "0",
+        "d": "3"
+      },
+      {
+        "name": "Twin shuriken catapult",
+        "abilities": [
+          "assault",
+          "twin-linked"
+        ],
+        "range": "18\"",
+        "a": "2",
+        "bs": "3+",
+        "s": "4",
+        "ap": "-1",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Singing spear",
+        "abilities": [
+          "psychic"
+        ],
+        "range": "Melee",
+        "a": "2",
+        "ws": "3+",
+        "s": "3",
+        "ap": "0",
+        "d": "3"
+      },
+      {
+        "name": "Witchblade",
+        "abilities": [
+          "anti-infantry 2+",
+          "psychic"
+        ],
+        "range": "Melee",
+        "a": "2",
+        "ws": "3+",
+        "s": "3",
+        "ap": "0",
+        "d": "2"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Leader"
+    ],
+    "faction": [
+      "Battle Focus"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Weapons equipped by models in this unit have the [IGNORES COVER] ability.",
+        "name": "Runes of Battle (Psychic)"
+      },
+      {
+        "type": "rule",
+        "text": "Each time this unit is selected to shoot, for each WARLOCK model in this unit, until the end of the phase, add 1 to the Attacks and Strength characteristics of that model\u2019s Destructor weapon for each other friendly AELDARI PSYKER model within 6\" of that model (to a maximum of +2).",
+        "name": "Psychic Communion (Psychic)"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1-2 Warlock Skyrunners"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "Destructor; shuriken pistol; twin shuriken catapult; witchblade.",
+      "label": "Every model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "45"
+        },
+        {
+          "label": "2 models",
+          "points": "90"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "MOUNTED",
+    "AELDARI",
+    "FLY",
+    "PSYKER",
+    "WARLOCKS",
+    "WARLOCK SKYRUNNERS"
+  ],
+  "faction_keywords": [
+    "ASURYANI"
+  ],
+  "sections": [
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Leader"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Battle Focus"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Weapons equipped by models in this unit have the [IGNORES COVER] ability.",
+          "name": "Runes of Battle (Psychic)"
+        },
+        {
+          "type": "rule",
+          "text": "Each time this unit is selected to shoot, for each WARLOCK model in this unit, until the end of the phase, add 1 to the Attacks and Strength characteristics of that model\u2019s Destructor weapon for each other friendly AELDARI PSYKER model within 6\" of that model (to a maximum of +2).",
+          "name": "Psychic Communion (Psychic)"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1-2 Warlock Skyrunners"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "Destructor; shuriken pistol; twin shuriken catapult; witchblade.",
+          "label": "Every model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "45"
+            },
+            {
+              "label": "2 models",
+              "points": "90"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "LEADER",
+      "entries": [
+        {
+          "type": "text",
+          "text": "At the start of the Declare Battle Formations step, if this unit is not an Attached unit , this unit can join one WINDRIDERS unit from your army (a unit cannot have more than one WARLOCK SKYRUNNERS unit joined to it). If it does, until the end of the battle, every model in this unit counts as being part of that Bodyguard unit, and that Bodyguard unit\u2019s Starting Strength is increased accordingly."
+        }
+      ]
+    }
+  ]
+}

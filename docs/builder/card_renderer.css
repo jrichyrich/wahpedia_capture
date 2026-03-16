@@ -1,0 +1,329 @@
+:root {
+    --builder-ink: #171717;
+    --builder-panel: #ffffff;
+    --builder-muted: #f1efe8;
+    --builder-muted-2: #dfdbd0;
+    --builder-accent: #8c2f39;
+    --builder-accent-soft: #f6e4df;
+}
+
+.datasheet-card {
+    width: min(100%, 1050px);
+    background: var(--builder-panel);
+    border: 2px solid var(--builder-ink);
+    color: var(--builder-ink);
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    page-break-inside: avoid;
+}
+
+.datasheet-card + .datasheet-card {
+    margin-top: 32px;
+}
+
+.datasheet-header {
+    border-bottom: 2px solid var(--builder-ink);
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    align-items: flex-end;
+}
+
+.datasheet-title {
+    margin: 0;
+    font-family: "Exo 2", sans-serif;
+    font-size: clamp(28px, 3vw, 40px);
+    font-weight: 900;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.datasheet-meta {
+    text-align: right;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #555;
+}
+
+.datasheet-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 18px 24px 10px;
+}
+
+.datasheet-quality {
+    margin: 0 24px;
+    padding: 10px 14px;
+    border: 1.5px solid #bf7a80;
+    background: #f7dfe0;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.datasheet-quality-row + .datasheet-quality-row {
+    margin-top: 4px;
+}
+
+.datasheet-stat {
+    min-width: 72px;
+    border: 1.5px solid var(--builder-ink);
+    text-align: center;
+    background: linear-gradient(180deg, #fff 0%, var(--builder-muted) 100%);
+}
+
+.datasheet-stat-label {
+    padding: 4px 8px;
+    border-bottom: 1.5px solid var(--builder-ink);
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.datasheet-stat-value {
+    padding: 8px 10px;
+    font-family: "Exo 2", sans-serif;
+    font-size: 26px;
+    font-weight: 900;
+}
+
+.datasheet-invuln {
+    padding: 0 24px 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.datasheet-invuln-shield {
+    width: 48px;
+    height: 48px;
+    border: 1.5px solid var(--builder-ink);
+    display: grid;
+    place-items: center;
+    clip-path: polygon(0 0, 100% 0, 100% 72%, 50% 100%, 0 72%);
+    font-family: "Exo 2", sans-serif;
+    font-weight: 900;
+    font-size: 22px;
+    background: var(--builder-panel);
+}
+
+.datasheet-invuln-label {
+    font-size: 12px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.datasheet-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+    border-top: 2px solid var(--builder-ink);
+}
+
+.datasheet-left {
+    border-right: 2px solid var(--builder-ink);
+}
+
+.datasheet-section-title {
+    background: var(--builder-muted);
+    border-bottom: 1px solid var(--builder-ink);
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.weapon-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.weapon-table th {
+    background: #faf9f5;
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--builder-ink);
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.weapon-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd7ca;
+    vertical-align: top;
+}
+
+.weapon-name {
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 1.1;
+}
+
+.weapon-tags {
+    margin-top: 6px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.weapon-tag {
+    display: inline-block;
+    padding: 2px 6px;
+    border: 1px solid var(--builder-ink);
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: var(--builder-panel);
+}
+
+.weapon-stat {
+    width: 48px;
+    text-align: center;
+    font-family: "Exo 2", sans-serif;
+    font-size: 22px;
+    font-weight: 900;
+}
+
+.datasheet-right {
+    display: flex;
+    flex-direction: column;
+}
+
+.datasheet-section-content {
+    padding: 14px 16px;
+    font-size: 14px;
+    line-height: 1.45;
+}
+
+.ability-group + .ability-group,
+.render-entry + .render-entry {
+    margin-top: 10px;
+}
+
+.ability-heading,
+.entry-label {
+    display: inline-block;
+    margin-right: 6px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.entry-list,
+.datasheet-lines {
+    margin: 0;
+    padding-left: 18px;
+}
+
+.datasheet-lines li + li,
+.entry-list li + li {
+    margin-top: 4px;
+}
+
+.damaged-block {
+    background: #272727;
+    color: white;
+    padding: 14px 16px;
+    border-top: 1px solid var(--builder-ink);
+}
+
+.damaged-title {
+    font-family: "Exo 2", sans-serif;
+    font-size: 14px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.damaged-text {
+    margin-top: 6px;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.composition-box {
+    position: relative;
+    min-height: 128px;
+    padding-bottom: 72px;
+}
+
+.points-badge {
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+    border: 2px solid var(--builder-ink);
+    background: var(--builder-panel);
+    clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+    padding: 10px 20px;
+    font-family: "Exo 2", sans-serif;
+    font-size: 24px;
+    font-weight: 900;
+    min-width: 110px;
+    text-align: center;
+}
+
+.selection-summary {
+    margin-top: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.selection-chip {
+    display: inline-flex;
+    gap: 6px;
+    align-items: center;
+    padding: 4px 8px;
+    background: var(--builder-accent-soft);
+    border: 1px solid #d1a493;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.selection-chip-warning {
+    background: #fdebd2;
+    border-color: #d8a866;
+}
+
+.datasheet-footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    border-top: 2px solid var(--builder-ink);
+    padding: 12px 24px;
+    background: #faf9f5;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.datasheet-footer-label {
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-right: 6px;
+}
+
+@media (max-width: 960px) {
+    .datasheet-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .datasheet-left {
+        border-right: 0;
+        border-bottom: 2px solid var(--builder-ink);
+    }
+
+    .datasheet-footer {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media print {
+    .datasheet-card {
+        box-shadow: none;
+        margin: 0 0 20px;
+    }
+}

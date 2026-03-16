@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thunderfire Cannon</title>
+  <style>
+    :root {
+      --ink: #111111;
+      --panel: #f5f1e8;
+      --line: #222222;
+      --shade: #dfd7c8;
+      --accent: #2d2d2d;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 24px;
+      background:
+        radial-gradient(circle at top left, #f8f4eb, #e6ddcf 60%, #d7cebf);
+      color: var(--ink);
+      font-family: "Arial Narrow", Arial, sans-serif;
+    }
+    .card {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: var(--panel);
+      border: 2px solid var(--line);
+      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.14);
+    }
+    .title-row, .banner, .detail-grid, .keywords {
+      padding: 18px 24px;
+    }
+    .title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 2px solid var(--line);
+    }
+    h1, h2, h3, h4 {
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+    h1 { font-size: 2.35rem; }
+    h2, h3 { font-size: 1.1rem; }
+    h4 { font-size: 1rem; margin-bottom: 6px; }
+    .base-size {
+      font-size: 0.95rem;
+      text-transform: uppercase;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(88px, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .stat-box {
+      border-top: 2px solid var(--line);
+      border-left: 1px solid var(--line);
+      border-right: 1px solid var(--line);
+      padding: 8px 10px 10px;
+      background: #fbf9f4;
+      text-align: center;
+    }
+    .stat-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+    }
+    .stat-value {
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+    .invul-row {
+      margin-top: 14px;
+      display: inline-flex;
+      border: 1px solid var(--line);
+      align-items: center;
+      background: #fbf9f4;
+    }
+    .invul-value {
+      padding: 8px 12px;
+      font-size: 1.35rem;
+      font-weight: 700;
+      border-right: 1px solid var(--line);
+    }
+    .invul-label {
+      padding: 8px 12px;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .detail-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 0;
+      border-top: 1px solid var(--line);
+    }
+    .left-pane {
+      border-right: 1px solid var(--line);
+    }
+    .weapon-section h2,
+    .detail-section h3 {
+      padding: 10px 20px;
+      background: #ece6da;
+      border-bottom: 1px solid var(--line);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    thead th {
+      background: #f0ebe1;
+      border-bottom: 1px solid var(--line);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+    }
+    th, td {
+      padding: 10px 12px;
+      border-bottom: 1px solid rgba(17, 17, 17, 0.16);
+      text-align: left;
+      vertical-align: top;
+    }
+    .weapon-name {
+      width: 45%;
+      font-weight: 700;
+    }
+    .weapon-abilities {
+      margin-top: 4px;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+    }
+    .section-entry {
+      padding: 14px 20px;
+      border-bottom: 1px solid rgba(17, 17, 17, 0.12);
+    }
+    .section-entry p,
+    .section-entry ul {
+      margin: 0;
+      line-height: 1.45;
+    }
+    .section-entry ul {
+      padding-left: 18px;
+    }
+    .points-table td:last-child {
+      text-align: right;
+      font-weight: 700;
+    }
+    .keywords {
+      display: grid;
+      gap: 8px;
+      border-top: 2px solid var(--line);
+      font-size: 0.92rem;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+    @media (max-width: 820px) {
+      body { padding: 12px; }
+      .detail-grid { grid-template-columns: 1fr; }
+      .left-pane { border-right: 0; border-bottom: 1px solid var(--line); }
+      .title-row { flex-direction: column; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    
+    <section class="banner">
+      <div class="title-row">
+        <h1>Thunderfire Cannon</h1>
+        <span class='base-size'>⌀Use model</span>
+      </div>
+      <div class="stats-grid">
+        
+            <div class="stat-box">
+              <div class="stat-label">M</div>
+              <div class="stat-value">3&quot;</div>
+            </div>
+            
+            <div class="stat-box">
+              <div class="stat-label">T</div>
+              <div class="stat-value">6</div>
+            </div>
+            
+            <div class="stat-box">
+              <div class="stat-label">Sv</div>
+              <div class="stat-value">2+</div>
+            </div>
+            
+            <div class="stat-box">
+              <div class="stat-label">W</div>
+              <div class="stat-value">6</div>
+            </div>
+            
+            <div class="stat-box">
+              <div class="stat-label">Ld</div>
+              <div class="stat-value">6+</div>
+            </div>
+            
+            <div class="stat-box">
+              <div class="stat-label">OC</div>
+              <div class="stat-value">2</div>
+            </div>
+            
+      </div>
+      
+    </section>
+    
+    <section class="detail-grid">
+      <div class="left-pane">
+        
+    <section class="weapon-section">
+      <h2>Ranged Weapons</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Weapon</th>
+            <th>RANGE</th><th>A</th><th>BS</th><th>S</th><th>AP</th><th>D</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            <tr>
+              <td class="weapon-name">
+                <div>Bolt pistol</div>
+                <div class='weapon-abilities'>pistol</div>
+              </td>
+              <td>12&quot;</td><td>1</td><td>2+</td><td>4</td><td>0</td><td>1</td>
+            </tr>
+            
+            <tr>
+              <td class="weapon-name">
+                <div>Flamer</div>
+                <div class='weapon-abilities'>ignores cover, torrent</div>
+              </td>
+              <td>12&quot;</td><td>D6</td><td>N/A</td><td>4</td><td>0</td><td>1</td>
+            </tr>
+            
+            <tr>
+              <td class="weapon-name">
+                <div>Thunderfire cannon</div>
+                <div class='weapon-abilities'>blast, indirect fire</div>
+              </td>
+              <td>48&quot;</td><td>D6+4</td><td>3+</td><td>5</td><td>0</td><td>1</td>
+            </tr>
+            
+        </tbody>
+      </table>
+    </section>
+    
+        
+    <section class="weapon-section">
+      <h2>Melee Weapons</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Weapon</th>
+            <th>RANGE</th><th>A</th><th>WS</th><th>S</th><th>AP</th><th>D</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            <tr>
+              <td class="weapon-name">
+                <div>Close combat weapon</div>
+                
+              </td>
+              <td>Melee</td><td>3</td><td>3+</td><td>4</td><td>0</td><td>1</td>
+            </tr>
+            
+            <tr>
+              <td class="weapon-name">
+                <div>Gunner’s servo-arms</div>
+                <div class='weapon-abilities'>extra attacks</div>
+              </td>
+              <td>Melee</td><td>2</td><td>3+</td><td>8</td><td>-2</td><td>3</td>
+            </tr>
+            
+            <tr>
+              <td class="weapon-name">
+                <div>Plasma cutter</div>
+                <div class='weapon-abilities'>extra attacks</div>
+              </td>
+              <td>Melee</td><td>2</td><td>3+</td><td>8</td><td>-2</td><td>1</td>
+            </tr>
+            
+        </tbody>
+      </table>
+    </section>
+    
+      </div>
+      <div class="right-pane">
+        
+            <section class="detail-section">
+              <h3>ABILITIES</h3>
+              
+        <div class="section-entry">
+          <h4>Faction</h4>
+          <ul><li>Oath of Moment</li></ul>
+        </div>
+        
+        <div class="section-entry">
+          <h4>Tremor Shells</h4>
+          <p>In your Shooting phase , after this unit has shot, if an enemy INFANTRY unit was hit by one or more attacks made by this unit’s thunderfire cannon this phase, until the end of your opponent’s next turn, that enemy unit is shaken. While a unit is shaken, subtract 2 from that unit’s Move characteristic, and subtract 2 from Advance and Charge rolls made for that unit.</p>
+        </div>
+        
+        <div class="section-entry">
+          <h4>Crewed Artillery</h4>
+          <p>If one model in this unit is destroyed, the remaining model in this unit is also destroyed.</p>
+        </div>
+        
+            </section>
+            
+            <section class="detail-section">
+              <h3>UNIT COMPOSITION</h3>
+              <div class='section-entry'><ul><li>1 Techmarine Gunner</li><li>1 Thunderfire Cannon</li></ul></div>
+        <div class="section-entry">
+          <h4>The Techmarine Gunner is equipped with</h4>
+          <p>bolt pistol; flamer; plasma cutter; Gunner’s servo-arms; close combat weapon.</p>
+        </div>
+        
+        <div class="section-entry">
+          <h4>The Thunderfire Cannon is equipped with</h4>
+          <p>thunderfire cannon; close combat weapon.</p>
+        </div>
+        
+        <div class="section-entry">
+          <table class="points-table">
+            <tbody><tr><td>2 models</td><td>90</td></tr></tbody>
+          </table>
+        </div>
+        
+            </section>
+            
+      </div>
+    </section>
+    
+    <footer class="keywords">
+      <div><strong>Keywords:</strong> ARTILLERY, VEHICLE, IMPERIUM, THUNDERFIRE CANNON</div>
+      <div><strong>Faction Keywords:</strong> ADEPTUS ASTARTES</div>
+    </footer>
+    
+  </main>
+</body>
+</html>
