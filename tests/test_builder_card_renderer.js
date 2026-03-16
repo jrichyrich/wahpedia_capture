@@ -61,3 +61,43 @@ test("renderCard shows current loadout chips and weapon highlight badges", () =>
     assert.match(html, /Singing spear/);
     assert.match(html, /Witchblade/);
 });
+
+test("renderCard print-clean mode hides replaced weapon rows when selection is resolved", () => {
+    const renderer = loadRenderer();
+    const unit = {
+        name: "Farseer",
+        stats: { M: '7"', T: "3", Sv: "6+", W: "3", Ld: "6+", OC: "1" },
+        quality: { missingStats: [] },
+        selectionMode: "parsed",
+        pointsOptions: [{ id: "1-model", label: "1 model", points: 70, selectionKind: "models" }],
+        weapons: {
+            ranged: [{ name: "Singing spear", range: '12"', a: "1", skill: "3+", s: "9", ap: "-2", d: "3", abilities: [] }],
+            melee: [
+                { name: "Singing spear", range: "Melee", a: "3", skill: "3+", s: "9", ap: "-2", d: "3", abilities: [] },
+                { name: "Witchblade", range: "Melee", a: "3", skill: "3+", s: "3", ap: "0", d: "D3", abilities: [] },
+            ],
+        },
+        abilities: { core: [], faction: [], datasheet: [], other: [] },
+        renderBlocks: [],
+        composition: { rawLines: ["1 Farseer"] },
+        keywords: [],
+        factionKeywords: ["AELDARI"],
+    };
+
+    const html = renderer.renderCard(unit, {
+        renderMode: "print-clean",
+        selectedOption: unit.pointsOptions[0],
+        selectedWargear: [
+            {
+                group: { target: "This model’s witchblade", label: "Witchblade swap" },
+                selectedChoice: { id: "spear", label: "1 singing spear" },
+            },
+        ],
+        manualWargearGroups: [],
+    });
+
+    assert.match(html, /Current Loadout/);
+    assert.match(html, /Singing spear/);
+    assert.doesNotMatch(html, /Witchblade/);
+    assert.doesNotMatch(html, /weapon-choice-badge-replaced/);
+});

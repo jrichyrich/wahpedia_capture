@@ -319,6 +319,22 @@
             margin-bottom: 18px;
         }
 
+        .preview-mode-toggle {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            font-weight: 900;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .preview-mode-toggle input {
+            width: 16px;
+            height: 16px;
+            margin: 0;
+        }
+
         .preview-body {
             display: grid;
             gap: 24px;
@@ -497,6 +513,10 @@
                         <h2 class="section-heading">Card Preview</h2>
                         <div class="inline-note">Cards render directly from the normalized builder catalog and the current roster selections.</div>
                     </div>
+                    <label class="preview-mode-toggle">
+                        <input id="print-clean-toggle" type="checkbox">
+                        <span>Print-clean mode</span>
+                    </label>
                 </div>
                 <div id="preview-body" class="preview-body"></div>
             </section>
@@ -521,6 +541,7 @@
             lastSavedAt: null,
             storageAvailable: false,
             saveTimer: null,
+            previewRenderMode: "default",
         };
 
         const els = {
@@ -536,6 +557,7 @@
             rosterBody: document.getElementById("roster-body"),
             totalPoints: document.getElementById("total-points"),
             previewBody: document.getElementById("preview-body"),
+            printCleanToggle: document.getElementById("print-clean-toggle"),
             clearRoster: document.getElementById("clear-roster"),
             printRoster: document.getElementById("print-roster"),
             rosterName: document.getElementById("roster-name"),
@@ -1098,6 +1120,7 @@
                     selectedUpgrades: entry.selectedUpgrades,
                     selectedPoints: entry.linePoints,
                     quantity: entry.quantity,
+                    renderMode: state.previewRenderMode,
                     selectedWargear: entry.wargearSelections,
                     manualWargearGroups: entry.unit && entry.unit.wargear ? entry.unit.wargear.options.filter((group) => group.selectionMode !== "single") : [],
                 });
@@ -1277,6 +1300,10 @@
         });
 
         els.clearRoster.addEventListener("click", clearRoster);
+        els.printCleanToggle.addEventListener("change", (event) => {
+            state.previewRenderMode = event.target.checked ? "print-clean" : "default";
+            renderPreview();
+        });
         els.printRoster.addEventListener("click", () => {
             const derived = deriveRoster();
             if (!derived.validEntries.length) {

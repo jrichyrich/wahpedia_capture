@@ -116,6 +116,7 @@
             currentLoadout,
             selectedReferences,
             replacedReferences,
+            hasManualSelections: manualWargearGroups.length > 0,
         };
     }
 
@@ -212,20 +213,24 @@
         return groups.join("");
     }
 
-    function renderWeaponTable(title, skillLabel, weapons, loadoutState) {
+    function renderWeaponTable(title, skillLabel, weapons, loadoutState, options) {
         if (!Array.isArray(weapons) || weapons.length === 0) {
             return "";
         }
+        const renderMode = options && options.renderMode ? options.renderMode : "default";
         const rows = weapons.map((weapon) => {
             const tags = (weapon.abilities || [])
                 .map((tag) => `<span class="weapon-tag">${escapeHtml(tag)}</span>`)
                 .join("");
             const isSelected = loadoutState.selectedReferences.some((reference) => nameMatchesReference(weapon.name, reference));
             const isReplaced = !isSelected && loadoutState.replacedReferences.some((reference) => nameMatchesReference(weapon.name, reference));
+            if (renderMode === "print-clean" && isReplaced && !loadoutState.hasManualSelections) {
+                return "";
+            }
             const rowClass = isSelected ? " weapon-row-selected" : (isReplaced ? " weapon-row-replaced" : "");
             const choiceBadges = [
                 isSelected ? `<span class="weapon-choice-badge weapon-choice-badge-selected">Selected</span>` : "",
-                isReplaced ? `<span class="weapon-choice-badge weapon-choice-badge-replaced">Replaced</span>` : "",
+                (isReplaced && renderMode !== "print-clean") ? `<span class="weapon-choice-badge weapon-choice-badge-replaced">Replaced</span>` : "",
             ].join("");
             return `
                 <tr class="${rowClass.trim()}">
@@ -386,6 +391,7 @@
 
     function renderCard(unit, options) {
         const opts = options || {};
+        const renderMode = opts.renderMode || "default";
         const selectedOption = opts.selectedOption || defaultPointsOption(unit);
         const selectedUpgrades = Array.isArray(opts.selectedUpgrades) ? opts.selectedUpgrades : [];
         const loadoutState = buildLoadoutState(unit, opts);
@@ -431,8 +437,8 @@
                 ` : ""}
                 <div class="datasheet-grid">
                     <div class="datasheet-left">
-                        ${renderWeaponTable("Ranged Weapons", "BS", unit.weapons ? unit.weapons.ranged || [] : [], loadoutState)}
-                        ${renderWeaponTable("Melee Weapons", "WS", unit.weapons ? unit.weapons.melee || [] : [], loadoutState)}
+                        ${renderWeaponTable("Ranged Weapons", "BS", unit.weapons ? unit.weapons.ranged || [] : [], loadoutState, { renderMode })}
+                        ${renderWeaponTable("Melee Weapons", "WS", unit.weapons ? unit.weapons.melee || [] : [], loadoutState, { renderMode })}
                     </div>
                     <div class="datasheet-right">
                         <section>
