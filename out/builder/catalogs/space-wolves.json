@@ -1,6 +1,6 @@
 {
-  "schemaVersion": 3,
-  "generatedAt": "2026-03-16T15:59:07+00:00",
+  "schemaVersion": 4,
+  "generatedAt": "2026-03-16T16:12:42+00:00",
   "faction": {
     "slug": "space-wolves",
     "name": "Space Wolves",
@@ -10,7 +10,17 @@
     "sourceIndexCount": 191,
     "catalogUnitCount": 191,
     "missingStats": [],
-    "manualSelectionUnits": []
+    "manualSelectionUnits": [],
+    "manualWargearUnits": [
+      {
+        "unitId": "wolf-guard-pack-leader-in-terminator-armour",
+        "name": "Wolf Guard Pack Leader In Terminator Armour"
+      },
+      {
+        "unitId": "wolf-guard",
+        "name": "Wolf Guard"
+      }
+    ]
   },
   "units": [
     {
@@ -3923,29 +3933,39 @@
           {
             "id": "the-blood-claw-pack-leader-s-bolt-pistol-can-be-replaced-with-1-plasma-pistol-1",
             "label": "The Blood Claw Pack Leader\u2019s bolt pistol can be replaced with 1 plasma pistol.",
-            "target": "The Blood Claw Pack Leader\u2019s bolt pistol can be replaced with 1 plasma pistol.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "The Blood Claw Pack Leader\u2019s bolt pistol",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-plasma-pistol",
+                "label": "1 plasma pistol"
+              }
+            ]
           },
           {
             "id": "the-blood-claw-pack-leader-s-astartes-chainsword-can-be-replaced-with-1-power-weapon-2",
             "label": "The Blood Claw Pack Leader\u2019s Astartes chainsword can be replaced with 1 power weapon.",
-            "target": "The Blood Claw Pack Leader\u2019s Astartes chainsword can be replaced with 1 power weapon.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "The Blood Claw Pack Leader\u2019s Astartes chainsword",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-power-weapon",
+                "label": "1 power weapon"
+              }
+            ]
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -36054,15 +36074,20 @@
           {
             "id": "this-model-s-storm-bolter-and-power-weapon-can-be-replaced-with-1-twin-lightning-claws-1",
             "label": "This model\u2019s storm bolter and power weapon can be replaced with 1 twin lightning claws.",
-            "target": "This model\u2019s storm bolter and power weapon can be replaced with 1 twin lightning claws.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "This model\u2019s storm bolter and power weapon",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-twin-lightning-claws",
+                "label": "1 twin lightning claws"
+              }
+            ]
           },
           {
             "id": "this-model-s-storm-bolter-and-power-weapon-can-be-replaced-with-two-different-options-from-the-following-list-2",
             "label": "This model\u2019s storm bolter and power weapon can be replaced with two different options from the following list:*",
-            "target": "This model\u2019s storm bolter and power weapon can be replaced with two different options from the following list:*",
+            "target": "This model\u2019s storm bolter and power weapon can be replaced with two different options from the following list:",
             "action": "manual",
             "selectionMode": "manual",
             "choices": [
@@ -36103,10 +36128,15 @@
           {
             "id": "this-model-s-storm-bolter-can-be-replaced-with-1-combi-weapon-3",
             "label": "This model\u2019s storm bolter can be replaced with 1 combi-weapon.",
-            "target": "This model\u2019s storm bolter can be replaced with 1 combi-weapon.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "This model\u2019s storm bolter",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-combi-weapon",
+                "label": "1 combi-weapon"
+              }
+            ]
           }
         ],
         "manualNotes": [

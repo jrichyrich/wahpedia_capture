@@ -7,7 +7,7 @@
 })(typeof globalThis !== "undefined" ? globalThis : this, function () {
     "use strict";
 
-    const ROSTER_SCHEMA_VERSION = 2;
+    const ROSTER_SCHEMA_VERSION = 3;
     const STORAGE_NAMESPACE = "wahpediaCapture.builder.v1";
     const INDEX_KEY = `${STORAGE_NAMESPACE}.savedRosters`;
     const ACTIVE_KEY = `${STORAGE_NAMESPACE}.activeRosterId`;
@@ -103,6 +103,11 @@
             unitId,
             optionId: entry.optionId ? String(entry.optionId).trim() : null,
             optionIndex: Number.isInteger(entry.optionIndex) ? entry.optionIndex : null,
+            upgradeOptionIds: Array.isArray(entry.upgradeOptionIds)
+                ? entry.upgradeOptionIds
+                    .map((value) => String(value || "").trim())
+                    .filter(Boolean)
+                : [],
             quantity: normalizeQuantity(entry.quantity),
             wargearSelections,
         };
@@ -148,6 +153,7 @@
             unitId: entry.unitId,
             optionId: entry.optionId || null,
             optionIndex: Number.isInteger(entry.optionIndex) ? entry.optionIndex : null,
+            upgradeOptionIds: Array.isArray(entry.upgradeOptionIds) ? [...entry.upgradeOptionIds] : [],
             quantity: normalizeQuantity(entry.quantity),
             wargearSelections: { ...(entry.wargearSelections || {}) },
         };
@@ -162,6 +168,7 @@
             unitId: entry.unitId,
             optionId: entry.optionId || null,
             optionIndex: Number.isInteger(entry.optionIndex) ? entry.optionIndex : null,
+            upgradeOptionIds: Array.isArray(entry.upgradeOptionIds) ? entry.upgradeOptionIds : [],
             quantity: entry.quantity,
             wargearSelections: entry.wargearSelections || {},
         });
@@ -284,21 +291,89 @@
         return (catalog && Array.isArray(catalog.units) ? catalog.units : []).find((unit) => unit.unitId === unitId) || null;
     }
 
-    function resolvePointsOption(unit, entry) {
-        const options = unit && Array.isArray(unit.pointsOptions) ? unit.pointsOptions : [];
-        if (!options.length) {
-            return null;
+    function splitPointsOptions(unit) {
+        const all = unit && Array.isArray(unit.pointsOptions) ? unit.pointsOptions : [];
+        const upgrades = all.filter((option) => option.selectionKind === "upgrade");
+        const base = all.filter((option) => option.selectionKind !== "upgrade");
+        return { all, base, upgrades };
+    }
+
+    function defaultPointsOption(unit) {
+        const { all, base } = splitPointsOptions(unit);
+        return base[0] || all[0] || null;
+    }
+
+    function resolvePointsSelection(unit, entry) {
+        const { all, base, upgrades } = splitPointsOptions(unit);
+        const issues = [];
+        if (!all.length) {
+            return {
+                selectedOption: null,
+                selectedUpgrades: [],
+                issues,
+                options: all,
+                upgradeOptions: upgrades,
+            };
         }
+
+        let selectedOption = null;
+        let explicitBaseRequested = false;
+        let legacySelection = null;
+        const selectedUpgradeIds = new Set(
+            Array.isArray(entry.upgradeOptionIds)
+                ? entry.upgradeOptionIds.map((value) => String(value || "").trim()).filter(Boolean)
+                : []
+        );
+
         if (entry.optionId) {
-            const byId = options.find((option) => option.id === entry.optionId);
-            if (byId) {
-                return byId;
+            legacySelection = all.find((option) => option.id === entry.optionId) || null;
+            if (legacySelection && legacySelection.selectionKind !== "upgrade") {
+                selectedOption = legacySelection;
+                explicitBaseRequested = true;
+            } else if (legacySelection && legacySelection.selectionKind === "upgrade") {
+                selectedUpgradeIds.add(legacySelection.id);
             }
         }
-        if (Number.isInteger(entry.optionIndex) && options[entry.optionIndex]) {
-            return options[entry.optionIndex];
+
+        if (!selectedOption && Number.isInteger(entry.optionIndex) && all[entry.optionIndex]) {
+            legacySelection = all[entry.optionIndex];
+            if (legacySelection.selectionKind !== "upgrade") {
+                selectedOption = legacySelection;
+                explicitBaseRequested = true;
+            } else {
+                selectedUpgradeIds.add(legacySelection.id);
+            }
         }
-        return null;
+
+        if (!selectedOption) {
+            selectedOption = defaultPointsOption(unit);
+        }
+
+        if (explicitBaseRequested && !selectedOption) {
+            issues.push(`Saved configuration is no longer available for ${unit.name}.`);
+        }
+
+        if (selectedOption && selectedOption.selectionKind === "upgrade") {
+            selectedUpgradeIds.delete(selectedOption.id);
+        }
+
+        const selectedUpgrades = [];
+        Array.from(selectedUpgradeIds).forEach((upgradeId) => {
+            const upgrade = upgrades.find((option) => option.id === upgradeId) || null;
+            if (!upgrade) {
+                issues.push(`Saved upgrade is no longer available for ${unit.name}: ${upgradeId}.`);
+                return;
+            }
+            selectedUpgrades.push(upgrade);
+        });
+
+        return {
+            selectedOption,
+            selectedUpgrades,
+            issues,
+            options: base.length ? base : all,
+            upgradeOptions: upgrades,
+        };
     }
 
     function resolveWargearSelections(unit, entry) {
@@ -359,15 +434,21 @@
                 issues.push(`Unit not found in current catalog: ${entry.unitId}.`);
             }
 
-            const selectedOption = unit ? resolvePointsOption(unit, entry) : null;
-            if (unit && !selectedOption) {
-                issues.push(`Saved configuration is no longer available for ${unit.name}.`);
-            }
+            const pointsResolution = unit
+                ? resolvePointsSelection(unit, entry)
+                : { selectedOption: null, selectedUpgrades: [], issues: [], options: [], upgradeOptions: [] };
+            const selectedOption = pointsResolution.selectedOption;
+            issues.push(...pointsResolution.issues);
             const wargearResolution = unit ? resolveWargearSelections(unit, entry) : { selections: [], issues: [] };
             issues.push(...wargearResolution.issues);
 
-            const linePoints = !issues.length && selectedOption && typeof selectedOption.points === "number"
-                ? selectedOption.points * entry.quantity
+            const unitPoints = !issues.length && selectedOption && typeof selectedOption.points === "number"
+                ? selectedOption.points + pointsResolution.selectedUpgrades.reduce((sum, option) => {
+                    return typeof option.points === "number" ? sum + option.points : sum;
+                }, 0)
+                : 0;
+            const linePoints = !issues.length
+                ? unitPoints * entry.quantity
                 : 0;
             totalPoints += linePoints;
 
@@ -378,10 +459,13 @@
                 quantity: entry.quantity,
                 unit,
                 selectedOption,
-                options: unit && Array.isArray(unit.pointsOptions) ? unit.pointsOptions : [],
+                selectedUpgrades: pointsResolution.selectedUpgrades,
+                options: pointsResolution.options,
+                upgradeOptions: pointsResolution.upgradeOptions,
                 wargearSelections: wargearResolution.selections,
                 issues,
                 isValid: issues.length === 0,
+                unitPoints,
                 linePoints,
                 entry,
             });
@@ -418,5 +502,7 @@
         serializeRuntimeEntry,
         serializeRuntimeRoster,
         setActiveRosterId,
+        splitPointsOptions,
+        defaultPointsOption,
     };
 });

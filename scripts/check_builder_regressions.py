@@ -9,6 +9,7 @@ from build_builder_catalog import build_all, default_source_root
 EXPECTED_WARNING_BASELINE = {
     "missingStatsCount": 0,
     "manualSelectionCount": 0,
+    "manualWargearCount": 54,
 }
 
 
@@ -26,6 +27,11 @@ def parse_args() -> argparse.Namespace:
         "--expected-manual-selection",
         type=int,
         default=EXPECTED_WARNING_BASELINE["manualSelectionCount"],
+    )
+    parser.add_argument(
+        "--expected-manual-wargear",
+        type=int,
+        default=EXPECTED_WARNING_BASELINE["manualWargearCount"],
     )
     return parser.parse_args()
 
@@ -60,6 +66,10 @@ def main() -> int:
         failures.append(
             f"manualSelectionCount regressed: {totals['manualSelectionCount']} > {args.expected_manual_selection}"
         )
+    if totals["manualWargearCount"] > args.expected_manual_wargear:
+        failures.append(
+            f"manualWargearCount regressed: {totals['manualWargearCount']} > {args.expected_manual_wargear}"
+        )
 
     manifest_counts = {entry["slug"]: entry["unitCount"] for entry in manifest["factions"]}
     if manifest_counts != expected_counts:
@@ -77,7 +87,8 @@ def main() -> int:
         "Builder regression check passed: "
         f"{totals['unitCount']} units across {totals['factionCount']} factions, "
         f"{totals['missingStatsCount']} missing-stat units, "
-        f"{totals['manualSelectionCount']} manual-selection units."
+        f"{totals['manualSelectionCount']} manual-selection units, "
+        f"{totals['manualWargearCount']} manual-wargear units."
     )
     return 0
 

@@ -119,7 +119,31 @@ class BuilderCatalogTests(unittest.TestCase):
         self.assertEqual(unit["renderBlocks"][0]["displayStyle"], "damaged")
         self.assertEqual(unit["renderBlocks"][1]["title"], "LEADER")
         self.assertEqual(diagnostics["missingStats"], [])
+        self.assertTrue(diagnostics["manualWargear"])
         self.assertFalse(unit["quality"]["hasMissingStats"])
+
+    def test_parse_wargear_prompt_supports_fixed_replacements(self):
+        fixed_replace = build_builder_catalog.parse_wargear_prompt(
+            "This model’s witchblade can be replaced with 1 singing spear."
+        )
+        self.assertEqual(fixed_replace["selectionMode"], "single")
+        self.assertEqual(fixed_replace["action"], "replace")
+        self.assertEqual(fixed_replace["choices"][0]["label"], "1 singing spear")
+
+        unit_wide_replace = build_builder_catalog.parse_wargear_prompt(
+            "All Eliminators in this unit can each have their bolt sniper rifle replaced with 1 las fusil."
+        )
+        self.assertEqual(unit_wide_replace["selectionMode"], "single")
+        self.assertEqual(unit_wide_replace["action"], "replace")
+        self.assertEqual(unit_wide_replace["target"], "All Eliminators in this unit")
+        self.assertEqual(unit_wide_replace["choices"][0]["label"], "1 las fusil")
+
+        unit_wide_equip = build_builder_catalog.parse_wargear_prompt(
+            "All models in this unit can each be equipped with 1 grapnel launcher."
+        )
+        self.assertEqual(unit_wide_equip["selectionMode"], "single")
+        self.assertEqual(unit_wide_equip["action"], "equip")
+        self.assertEqual(unit_wide_equip["choices"][0]["label"], "1 grapnel launcher")
 
     def test_build_composition_parses_upgrade_point_labels(self):
         composition = build_builder_catalog.build_composition(
@@ -220,6 +244,7 @@ class BuilderCatalogTests(unittest.TestCase):
             self.assertEqual(manifest["report"]["totals"]["unitCount"], 2)
             self.assertEqual(manifest["report"]["totals"]["missingStatsCount"], 1)
             self.assertEqual(manifest["report"]["totals"]["manualSelectionCount"], 0)
+            self.assertEqual(manifest["report"]["totals"]["manualWargearCount"], 0)
             self.assertTrue((output_root / "catalogs" / "test-faction.json").exists())
             self.assertTrue((output_root / "reports" / "build-report.json").exists())
             self.assertTrue((output_root / "manifest.json").exists())
@@ -271,6 +296,13 @@ class BuilderCatalogTests(unittest.TestCase):
         self.assertTrue(unit["wargear"]["options"])
         self.assertEqual(unit["wargear"]["options"][0]["selectionMode"], "single")
         self.assertTrue(unit["wargear"]["hasManualOptions"])
+
+    def test_real_repo_fixed_wargear_prompt_is_structured(self):
+        card = json.loads((ROOT / "out" / "json" / "aeldari" / "Farseer.json").read_text(encoding="utf-8"))
+        unit, diagnostics = build_builder_catalog.normalize_card("aeldari", card)
+        self.assertEqual(unit["wargear"]["options"][0]["selectionMode"], "single")
+        self.assertEqual(unit["wargear"]["options"][0]["choices"][0]["label"], "1 singing spear")
+        self.assertFalse(diagnostics["manualWargear"])
 
 
 class BuilderAppSmokeTests(unittest.TestCase):

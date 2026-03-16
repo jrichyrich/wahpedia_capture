@@ -7,7 +7,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 
-SCHEMA_VERSION = 3
+SCHEMA_VERSION = 4
 STATS_ORDER = ("M", "T", "Sv", "W", "Ld", "OC")
 SECTION_EXCLUDES = {"ABILITIES", "UNIT COMPOSITION", "WARGEAR OPTIONS"}
 POINTS_LABEL_HINTS = ("model", "models")
@@ -260,13 +260,14 @@ def section_entries(card: dict[str, object], title: str) -> list[dict[str, objec
     return []
 
 
-def parse_wargear_prompt(label: str) -> dict[str, object]:
-    text = normalize_space(label)
+def parse_wargear_prompt(label: str, items: list[str] | None = None) -> dict[str, object]:
+    text = normalize_space(label).rstrip("*").strip()
     lowered = normalize_label_key(text)
     result = {
         "target": text,
         "action": "manual",
         "selectionMode": "manual",
+        "choices": [],
     }
 
     complex_markers = (
@@ -282,7 +283,11 @@ def parse_wargear_prompt(label: str) -> dict[str, object]:
     patterns = [
         (r"^(.*?) can be replaced with one of the following:?$", "replace", "single"),
         (r"^(.*?) can be equipped with one of the following:?$", "equip", "single"),
+        (r"^(.*?) must be equipped with one of the following:?$", "equip", "single"),
         (r"^(.*?) can have its .* replaced with one of the following:?$", "replace", "single"),
+        (r"^(All .*?) can each be equipped with one of the following:?$", "equip", "single"),
+        (r"^(.*?) can be replaced with:?$", "replace", "single"),
+        (r"^(.*?) can be equipped with:?$", "equip", "single"),
     ]
 
     for pattern, action, selection_mode in patterns:
@@ -291,6 +296,48 @@ def parse_wargear_prompt(label: str) -> dict[str, object]:
             result["target"] = normalize_space(match.group(1))
             result["action"] = action
             result["selectionMode"] = selection_mode
+            return result
+
+    fixed_patterns = [
+        (
+            r"^(.*?) can be equipped with (\d+ .+?)\.?$",
+            "equip",
+            lambda match: normalize_space(match.group(1)),
+            lambda match: [normalize_wargear_choice(match.group(2))],
+        ),
+        (
+            r"^(.*?) can be replaced with (?:either )?(\d+ .+?)\.?$",
+            "replace",
+            lambda match: normalize_space(match.group(1)),
+            lambda match: [normalize_wargear_choice(match.group(2))],
+        ),
+        (
+            r"^(.*?)[’']s (.+?) can be replaced with (?:either )?(\d+ .+?)\.?$",
+            "replace",
+            lambda match: normalize_space(f"{match.group(1)}'s {match.group(2)}"),
+            lambda match: [normalize_wargear_choice(match.group(3))],
+        ),
+        (
+            r"^(All .*?) can each have their (.+?) replaced with (\d+ .+?)\.?$",
+            "replace",
+            lambda match: normalize_space(match.group(1)),
+            lambda match: [normalize_wargear_choice(match.group(3))],
+        ),
+        (
+            r"^(All .*?) can each be equipped with (\d+ .+?)\.?$",
+            "equip",
+            lambda match: normalize_space(match.group(1)),
+            lambda match: [normalize_wargear_choice(match.group(2))],
+        ),
+    ]
+
+    for pattern, action, target_builder, choices_builder in fixed_patterns:
+        match = re.match(pattern, text, flags=re.IGNORECASE)
+        if match:
+            result["target"] = target_builder(match)
+            result["action"] = action
+            result["selectionMode"] = "single"
+            result["choices"] = choices_builder(match)
             return result
 
     return result
@@ -318,8 +365,10 @@ def build_wargear(card: dict[str, object]) -> dict[str, object]:
         entry_type = entry.get("type")
         if entry_type == "option_group":
             label = normalize_space(entry.get("label"))
-            parsed = parse_wargear_prompt(label)
+            parsed = parse_wargear_prompt(label, list(entry.get("items", [])))
             choices = [normalize_wargear_choice(item) for item in entry.get("items", []) if normalize_space(item)]
+            if not choices and parsed["choices"]:
+                choices = list(parsed["choices"])
             if label == "None" and not choices:
                 continue
             option_id = slugify(f"{label}-{len(options) + 1}")
@@ -436,6 +485,7 @@ def normalize_card(faction_slug: str, card: dict[str, object]) -> tuple[dict[str
         "name": normalized["name"],
         "missingStats": list(normalized["quality"]["missingStats"]),
         "manualSelection": normalized["selectionMode"] == "manual",
+        "manualWargear": wargear["hasManualOptions"],
     }
     return normalized, diagnostics
 
@@ -444,6 +494,7 @@ def build_faction_catalog(faction_slug: str, cards: list[dict[str, object]], out
     units: list[dict[str, object]] = []
     missing_stats: list[dict[str, object]] = []
     manual_units: list[dict[str, object]] = []
+    manual_wargear_units: list[dict[str, object]] = []
 
     for card in cards:
         unit, diagnostics = normalize_card(faction_slug, card)
@@ -458,6 +509,13 @@ def build_faction_catalog(faction_slug: str, cards: list[dict[str, object]], out
             )
         if diagnostics["manualSelection"]:
             manual_units.append(
+                {
+                    "unitId": diagnostics["unitId"],
+                    "name": diagnostics["name"],
+                }
+            )
+        if diagnostics["manualWargear"]:
+            manual_wargear_units.append(
                 {
                     "unitId": diagnostics["unitId"],
                     "name": diagnostics["name"],
@@ -478,6 +536,7 @@ def build_faction_catalog(faction_slug: str, cards: list[dict[str, object]], out
             "catalogUnitCount": len(units),
             "missingStats": missing_stats,
             "manualSelectionUnits": manual_units,
+            "manualWargearUnits": manual_wargear_units,
         },
         "units": units,
     }
@@ -502,6 +561,7 @@ def write_report(output_root: Path, manifest: dict[str, object]) -> None:
         f"- Total units: {manifest['report']['totals']['unitCount']}",
         f"- Units with missing stats: {manifest['report']['totals']['missingStatsCount']}",
         f"- Manual selection units: {manifest['report']['totals']['manualSelectionCount']}",
+        f"- Units with manual wargear: {manifest['report']['totals']['manualWargearCount']}",
         "",
         "## Factions",
         "",
@@ -516,6 +576,7 @@ def write_report(output_root: Path, manifest: dict[str, object]) -> None:
                 f"- Units: {faction['unitCount']}",
                 f"- Missing stats: {faction['missingStatsCount']}",
                 f"- Manual selection units: {faction['manualSelectionCount']}",
+                f"- Manual wargear units: {faction['manualWargearCount']}",
                 "",
             ]
         )
@@ -555,6 +616,7 @@ def build_all(source_root: Path, output_root: Path, factions: list[str] | None =
     total_units = 0
     total_missing_stats = 0
     total_manual_selection = 0
+    total_manual_wargear = 0
 
     for faction_slug in target_factions:
         index_path = source_root / faction_slug / "index.json"
@@ -573,6 +635,7 @@ def build_all(source_root: Path, output_root: Path, factions: list[str] | None =
                 "catalogFile": f"catalogs/{faction_slug}.json",
                 "missingStatsCount": len(build_info["missingStats"]),
                 "manualSelectionCount": len(build_info["manualSelectionUnits"]),
+                "manualWargearCount": len(build_info["manualWargearUnits"]),
             }
         )
         report_factions.append(
@@ -582,11 +645,13 @@ def build_all(source_root: Path, output_root: Path, factions: list[str] | None =
                 "unitCount": catalog["faction"]["unitCount"],
                 "missingStats": build_info["missingStats"],
                 "manualSelectionUnits": build_info["manualSelectionUnits"],
+                "manualWargearUnits": build_info["manualWargearUnits"],
             }
         )
         total_units += catalog["faction"]["unitCount"]
         total_missing_stats += len(build_info["missingStats"])
         total_manual_selection += len(build_info["manualSelectionUnits"])
+        total_manual_wargear += len(build_info["manualWargearUnits"])
 
     manifest = {
         "schemaVersion": SCHEMA_VERSION,
@@ -601,6 +666,7 @@ def build_all(source_root: Path, output_root: Path, factions: list[str] | None =
                 "unitCount": total_units,
                 "missingStatsCount": total_missing_stats,
                 "manualSelectionCount": total_manual_selection,
+                "manualWargearCount": total_manual_wargear,
             },
             "factions": report_factions,
         },

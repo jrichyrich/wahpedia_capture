@@ -1,6 +1,6 @@
 {
-  "schemaVersion": 3,
-  "generatedAt": "2026-03-16T15:59:07+00:00",
+  "schemaVersion": 4,
+  "generatedAt": "2026-03-16T16:12:42+00:00",
   "faction": {
     "slug": "adeptus-custodes",
     "name": "Adeptus Custodes",
@@ -10,7 +10,41 @@
     "sourceIndexCount": 31,
     "catalogUnitCount": 31,
     "missingStats": [],
-    "manualSelectionUnits": []
+    "manualSelectionUnits": [],
+    "manualWargearUnits": [
+      {
+        "unitId": "agamatus-custodians",
+        "name": "Agamatus Custodians"
+      },
+      {
+        "unitId": "allarus-custodians",
+        "name": "Allarus Custodians"
+      },
+      {
+        "unitId": "aquilon-custodians",
+        "name": "Aquilon Custodians"
+      },
+      {
+        "unitId": "custodian-guard-with-adrasite-and-pyrithite-spears",
+        "name": "Custodian Guard With Adrasite And Pyrithite Spears"
+      },
+      {
+        "unitId": "custodian-guard",
+        "name": "Custodian Guard"
+      },
+      {
+        "unitId": "custodian-wardens",
+        "name": "Custodian Wardens"
+      },
+      {
+        "unitId": "venatari-custodians",
+        "name": "Venatari Custodians"
+      },
+      {
+        "unitId": "vertus-praetors",
+        "name": "Vertus Praetors"
+      }
+    ]
   },
   "units": [
     {
@@ -516,10 +550,15 @@
           {
             "id": "1-model-s-guardian-spear-can-be-replaced-with-1-vexilla-and-1-misericordia-2",
             "label": "1 model\u2019s guardian spear can be replaced with 1 vexilla and 1 misericordia.",
-            "target": "1 model\u2019s guardian spear can be replaced with 1 vexilla and 1 misericordia.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "1 model\u2019s guardian spear",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-vexilla-and-1-misericordia",
+                "label": "1 vexilla and 1 misericordia"
+              }
+            ]
           }
         ],
         "manualNotes": [],
@@ -669,21 +708,26 @@
           {
             "id": "this-model-can-be-equipped-with-1-hunter-killer-missile-1",
             "label": "This model can be equipped with 1 hunter-killer missile.",
-            "target": "This model can be equipped with 1 hunter-killer missile.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "This model",
+            "action": "equip",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-hunter-killer-missile",
+                "label": "1 hunter-killer missile"
+              }
+            ]
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -1332,21 +1376,26 @@
           {
             "id": "this-model-s-twin-iliastus-accelerator-cannon-can-be-replaced-with-1-twin-arachnus-heavy-blaze-cannon-1",
             "label": "This model\u2019s twin iliastus accelerator cannon can be replaced with 1 twin arachnus heavy blaze cannon.",
-            "target": "This model\u2019s twin iliastus accelerator cannon can be replaced with 1 twin arachnus heavy blaze cannon.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "This model\u2019s twin iliastus accelerator cannon",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-twin-arachnus-heavy-blaze-cannon",
+                "label": "1 twin arachnus heavy blaze cannon"
+              }
+            ]
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -2366,10 +2415,15 @@
           {
             "id": "1-model-can-be-equipped-with-1-vexilla-2",
             "label": "1 model can be equipped with 1 vexilla.",
-            "target": "1 model can be equipped with 1 vexilla.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "1 model",
+            "action": "equip",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-vexilla",
+                "label": "1 vexilla"
+              }
+            ]
           }
         ],
         "manualNotes": [],
@@ -3550,21 +3604,26 @@
           {
             "id": "this-model-s-guardian-spear-can-be-replaced-with-1-castellan-axe-1",
             "label": "This model\u2019s guardian spear can be replaced with 1 castellan axe.",
-            "target": "This model\u2019s guardian spear can be replaced with 1 castellan axe.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "This model\u2019s guardian spear",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-castellan-axe",
+                "label": "1 castellan axe"
+              }
+            ]
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -3712,21 +3771,26 @@
           {
             "id": "this-model-s-salvo-launcher-can-be-replaced-with-1-vertus-hurricane-bolter-1",
             "label": "This model\u2019s salvo launcher can be replaced with 1 Vertus hurricane bolter.",
-            "target": "This model\u2019s salvo launcher can be replaced with 1 Vertus hurricane bolter.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "This model\u2019s salvo launcher",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-vertus-hurricane-bolter",
+                "label": "1 Vertus hurricane bolter"
+              }
+            ]
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "MOUNTED",
@@ -4583,21 +4647,26 @@
           {
             "id": "this-model-s-multi-melta-can-be-replaced-with-1-kheres-pattern-assault-cannon-1",
             "label": "This model\u2019s multi-melta can be replaced with 1 Kheres-pattern assault cannon.",
-            "target": "This model\u2019s multi-melta can be replaced with 1 Kheres-pattern assault cannon.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "This model\u2019s multi-melta",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-kheres-pattern-assault-cannon",
+                "label": "1 Kheres-pattern assault cannon"
+              }
+            ]
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -4746,29 +4815,39 @@
           {
             "id": "this-model-can-be-equipped-with-1-hunter-killer-missile-1",
             "label": "This model can be equipped with 1 hunter-killer missile.",
-            "target": "This model can be equipped with 1 hunter-killer missile.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "This model",
+            "action": "equip",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-hunter-killer-missile",
+                "label": "1 hunter-killer missile"
+              }
+            ]
           },
           {
             "id": "this-model-can-be-equipped-with-1-storm-bolter-2",
             "label": "This model can be equipped with 1 storm bolter.",
-            "target": "This model can be equipped with 1 storm bolter.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "This model",
+            "action": "equip",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-storm-bolter",
+                "label": "1 storm bolter"
+              }
+            ]
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",

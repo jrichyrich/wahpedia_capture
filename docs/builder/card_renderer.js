@@ -14,7 +14,12 @@
 
     function defaultPointsOption(unit) {
         const options = Array.isArray(unit.pointsOptions) ? unit.pointsOptions : [];
-        return options[0] || null;
+        return options.find((option) => option.selectionKind !== "upgrade") || options[0] || null;
+    }
+
+    function upgradePointsOptions(unit) {
+        return (Array.isArray(unit.pointsOptions) ? unit.pointsOptions : [])
+            .filter((option) => option.selectionKind === "upgrade");
     }
 
     function missingStats(unit) {
@@ -30,6 +35,88 @@
             return "None";
         }
         return values.join(", ");
+    }
+
+    function normalizeComparison(value) {
+        return String(value || "")
+            .toLowerCase()
+            .replace(/[–—-]/g, " ")
+            .replace(/\b\d+\b/g, " ")
+            .replace(/[^a-z0-9+ ]+/g, " ")
+            .replace(/\s+/g, " ")
+            .trim();
+    }
+
+    function normalizeLoadoutLabel(value) {
+        return normalizeComparison(String(value || "").replace(/^\d+\s+/, ""));
+    }
+
+    function extractTargetFragment(value) {
+        const normalized = String(value || "")
+            .replace(/[’']/g, "'")
+            .replace(/^\s*(?:this model|the [^']+|an [^']+|a [^']+|all [^']+|any number of models|up to \d+ [^']+)(?:'s)?\s+/i, "")
+            .replace(/\.$/, "")
+            .trim();
+        return normalizeLoadoutLabel(normalized);
+    }
+
+    function nameMatchesReference(weaponName, reference) {
+        const weaponKey = normalizeComparison(weaponName);
+        const referenceKey = normalizeComparison(reference);
+        if (!weaponKey || !referenceKey) {
+            return false;
+        }
+        return weaponKey === referenceKey
+            || weaponKey.includes(referenceKey)
+            || referenceKey.includes(weaponKey);
+    }
+
+    function buildLoadoutState(unit, options) {
+        const selectedWargear = Array.isArray(options.selectedWargear) ? options.selectedWargear : [];
+        const selectedUpgrades = Array.isArray(options.selectedUpgrades) ? options.selectedUpgrades : [];
+        const manualWargearGroups = Array.isArray(options.manualWargearGroups) ? options.manualWargearGroups : [];
+        const selectedReferences = [];
+        const replacedReferences = [];
+        const currentLoadout = [];
+
+        selectedWargear.forEach((entry) => {
+            if (!entry || !entry.selectedChoice || !entry.group) {
+                return;
+            }
+            const selectedLabel = entry.selectedChoice.label;
+            const targetLabel = entry.group.target || entry.group.label;
+            currentLoadout.push({
+                type: "wargear",
+                label: selectedLabel,
+                detail: targetLabel ? `Replaces ${targetLabel}` : "Selected wargear",
+            });
+            selectedReferences.push(normalizeLoadoutLabel(selectedLabel));
+            if (targetLabel) {
+                replacedReferences.push(extractTargetFragment(targetLabel));
+            }
+        });
+
+        selectedUpgrades.forEach((upgrade) => {
+            currentLoadout.push({
+                type: "upgrade",
+                label: upgrade.label,
+                detail: `+${upgrade.points} pts upgrade`,
+            });
+        });
+
+        manualWargearGroups.forEach((group) => {
+            currentLoadout.push({
+                type: "manual",
+                label: group.label,
+                detail: "Manual selection still required",
+            });
+        });
+
+        return {
+            currentLoadout,
+            selectedReferences,
+            replacedReferences,
+        };
     }
 
     function renderEntry(entry) {
@@ -125,7 +212,7 @@
         return groups.join("");
     }
 
-    function renderWeaponTable(title, skillLabel, weapons) {
+    function renderWeaponTable(title, skillLabel, weapons, loadoutState) {
         if (!Array.isArray(weapons) || weapons.length === 0) {
             return "";
         }
@@ -133,10 +220,20 @@
             const tags = (weapon.abilities || [])
                 .map((tag) => `<span class="weapon-tag">${escapeHtml(tag)}</span>`)
                 .join("");
+            const isSelected = loadoutState.selectedReferences.some((reference) => nameMatchesReference(weapon.name, reference));
+            const isReplaced = !isSelected && loadoutState.replacedReferences.some((reference) => nameMatchesReference(weapon.name, reference));
+            const rowClass = isSelected ? " weapon-row-selected" : (isReplaced ? " weapon-row-replaced" : "");
+            const choiceBadges = [
+                isSelected ? `<span class="weapon-choice-badge weapon-choice-badge-selected">Selected</span>` : "",
+                isReplaced ? `<span class="weapon-choice-badge weapon-choice-badge-replaced">Replaced</span>` : "",
+            ].join("");
             return `
-                <tr>
+                <tr class="${rowClass.trim()}">
                     <td>
-                        <div class="weapon-name">${escapeHtml(weapon.name)}</div>
+                        <div class="weapon-name">
+                            <span>${escapeHtml(weapon.name)}</span>
+                            ${choiceBadges ? `<span class="weapon-choice-badges">${choiceBadges}</span>` : ""}
+                        </div>
                         ${tags ? `<div class="weapon-tags">${tags}</div>` : ""}
                     </td>
                     <td class="weapon-stat">${escapeHtml(weapon.range || "-")}</td>
@@ -195,6 +292,7 @@
             .map((line) => `<li>${escapeHtml(line)}</li>`)
             .join("");
         const selectedOption = options.selectedOption || defaultPointsOption(unit);
+        const selectedUpgrades = Array.isArray(options.selectedUpgrades) ? options.selectedUpgrades : [];
         const quantity = options.quantity || 1;
         const selectedPoints = typeof options.selectedPoints === "number"
             ? options.selectedPoints
@@ -210,6 +308,9 @@
         if (selectedOption && selectedOption.selectionKind) {
             chips.push(`<span class="selection-chip">Type: ${escapeHtml(selectedOption.selectionKind)}</span>`);
         }
+        selectedUpgrades.forEach((upgrade) => {
+            chips.push(`<span class="selection-chip">Upgrade: ${escapeHtml(upgrade.label)}</span>`);
+        });
         if (unit.selectionMode === "manual") {
             chips.push(`<span class="selection-chip">Manual labels</span>`);
         }
@@ -230,46 +331,71 @@
         `;
     }
 
-    function renderSelectedWargear(options) {
-        const selections = Array.isArray(options.selectedWargear) ? options.selectedWargear : [];
-        const manualGroups = Array.isArray(options.manualWargearGroups) ? options.manualWargearGroups : [];
-        const selectedItems = selections
-            .filter((entry) => entry && entry.selectedChoice)
-            .map((entry) => `
-                <div class="render-entry">
-                    <span class="entry-label">${escapeHtml(entry.group.target || entry.group.label)}:</span>
-                    <span>${escapeHtml(entry.selectedChoice.label)}</span>
-                </div>
-            `)
-            .join("");
-        const manualItems = manualGroups
-            .map((group) => `
-                <div class="render-entry">
-                    <span class="entry-label">${escapeHtml(group.label)}:</span>
-                    <span>Manual wargear selection</span>
-                </div>
-            `)
-            .join("");
-
-        if (!selectedItems && !manualItems) {
+    function renderCurrentLoadout(loadoutState) {
+        const items = loadoutState.currentLoadout || [];
+        if (!items.length) {
             return "";
         }
 
+        const body = items.map((item) => `
+            <div class="loadout-row loadout-row-${escapeHtml(item.type)}">
+                <span class="loadout-pill loadout-pill-${escapeHtml(item.type)}">${escapeHtml(item.type)}</span>
+                <div>
+                    <div class="loadout-label">${escapeHtml(item.label)}</div>
+                    <div class="loadout-detail">${escapeHtml(item.detail)}</div>
+                </div>
+            </div>
+        `).join("");
+
         return `
             <section>
-                <div class="datasheet-section-title">Selected Wargear</div>
-                <div class="datasheet-section-content">${selectedItems}${manualItems}</div>
+                <div class="datasheet-section-title">Current Loadout</div>
+                <div class="datasheet-section-content">${body}</div>
             </section>
         `;
+    }
+
+    function renderConfigurationStrip(unit, options, loadoutState) {
+        const chips = [];
+        const selectedOption = options.selectedOption || defaultPointsOption(unit);
+        const selectedUpgrades = Array.isArray(options.selectedUpgrades) ? options.selectedUpgrades : [];
+
+        if (selectedOption && selectedOption.label) {
+            chips.push(`<span class="config-chip">Config: ${escapeHtml(selectedOption.label)}</span>`);
+        }
+        selectedUpgrades.forEach((upgrade) => {
+            chips.push(`<span class="config-chip config-chip-upgrade">+ ${escapeHtml(upgrade.label)}</span>`);
+        });
+        loadoutState.currentLoadout
+            .filter((item) => item.type === "wargear")
+            .forEach((item) => {
+                chips.push(`<span class="config-chip config-chip-selected">${escapeHtml(item.label)}</span>`);
+            });
+        loadoutState.currentLoadout
+            .filter((item) => item.type === "manual")
+            .forEach(() => {
+                chips.push(`<span class="config-chip config-chip-warning">Manual wargear</span>`);
+            });
+
+        if (!chips.length) {
+            return "";
+        }
+
+        return `<div class="datasheet-config-strip">${chips.join("")}</div>`;
     }
 
     function renderCard(unit, options) {
         const opts = options || {};
         const selectedOption = opts.selectedOption || defaultPointsOption(unit);
+        const selectedUpgrades = Array.isArray(opts.selectedUpgrades) ? opts.selectedUpgrades : [];
+        const loadoutState = buildLoadoutState(unit, opts);
         const quantity = opts.quantity || 1;
         const meta = [];
         if (selectedOption && selectedOption.label) {
             meta.push(`Config: ${selectedOption.label}`);
+        }
+        if (selectedUpgrades.length) {
+            meta.push(`Upgrades: ${selectedUpgrades.map((upgrade) => upgrade.label).join(", ")}`);
         }
         if (quantity > 1) {
             meta.push(`Qty ${quantity}`);
@@ -282,6 +408,7 @@
                     <h1 class="datasheet-title">${escapeHtml(unit.name)}</h1>
                     ${meta.length ? `<div class="datasheet-meta">${escapeHtml(meta.join(" | "))}</div>` : ""}
                 </header>
+                ${renderConfigurationStrip(unit, opts, loadoutState)}
                 ${unitMissingStats.length || unit.selectionMode === "manual" ? `
                     <div class="datasheet-quality">
                         ${unitMissingStats.length ? `<div class="datasheet-quality-row"><strong>Missing stats:</strong> ${escapeHtml(unitMissingStats.join(", "))}</div>` : ""}
@@ -304,15 +431,15 @@
                 ` : ""}
                 <div class="datasheet-grid">
                     <div class="datasheet-left">
-                        ${renderWeaponTable("Ranged Weapons", "BS", unit.weapons ? unit.weapons.ranged || [] : [])}
-                        ${renderWeaponTable("Melee Weapons", "WS", unit.weapons ? unit.weapons.melee || [] : [])}
+                        ${renderWeaponTable("Ranged Weapons", "BS", unit.weapons ? unit.weapons.ranged || [] : [], loadoutState)}
+                        ${renderWeaponTable("Melee Weapons", "WS", unit.weapons ? unit.weapons.melee || [] : [], loadoutState)}
                     </div>
                     <div class="datasheet-right">
                         <section>
                             <div class="datasheet-section-title">Abilities</div>
                             <div class="datasheet-section-content">${renderAbilities(unit)}</div>
                         </section>
-                        ${renderSelectedWargear(opts)}
+                        ${renderCurrentLoadout(loadoutState)}
                         ${(unit.renderBlocks || []).map(renderRenderBlock).join("")}
                         ${renderComposition(unit, opts)}
                     </div>
@@ -335,5 +462,6 @@
         defaultPointsOption,
         renderCard,
         renderCardList,
+        upgradePointsOptions,
     };
 })();

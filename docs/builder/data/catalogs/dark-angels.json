@@ -1,6 +1,6 @@
 {
-  "schemaVersion": 3,
-  "generatedAt": "2026-03-16T15:59:07+00:00",
+  "schemaVersion": 4,
+  "generatedAt": "2026-03-16T16:12:42+00:00",
   "faction": {
     "slug": "dark-angels",
     "name": "Dark Angels",
@@ -10,7 +10,69 @@
     "sourceIndexCount": 174,
     "catalogUnitCount": 174,
     "missingStats": [],
-    "manualSelectionUnits": []
+    "manualSelectionUnits": [],
+    "manualWargearUnits": [
+      {
+        "unitId": "assault-intercessors-with-jump-packs",
+        "name": "Assault Intercessors With Jump Packs"
+      },
+      {
+        "unitId": "bike-squad",
+        "name": "Bike Squad"
+      },
+      {
+        "unitId": "captain-on-bike",
+        "name": "Captain On Bike"
+      },
+      {
+        "unitId": "centurion-assault-squad",
+        "name": "Centurion Assault Squad"
+      },
+      {
+        "unitId": "centurion-devastator-squad",
+        "name": "Centurion Devastator Squad"
+      },
+      {
+        "unitId": "deathwing-strikemaster",
+        "name": "Deathwing Strikemaster"
+      },
+      {
+        "unitId": "devastator-squad",
+        "name": "Devastator Squad"
+      },
+      {
+        "unitId": "eradicator-squad",
+        "name": "Eradicator Squad"
+      },
+      {
+        "unitId": "firestrike-servo-turrets",
+        "name": "Firestrike Servo-turrets"
+      },
+      {
+        "unitId": "heavy-intercessor-squad",
+        "name": "Heavy Intercessor Squad"
+      },
+      {
+        "unitId": "infiltrator-squad",
+        "name": "Infiltrator Squad"
+      },
+      {
+        "unitId": "intercessor-squad",
+        "name": "Intercessor Squad"
+      },
+      {
+        "unitId": "ravenwing-command-squad",
+        "name": "Ravenwing Command Squad"
+      },
+      {
+        "unitId": "scout-squad",
+        "name": "Scout Squad"
+      },
+      {
+        "unitId": "tactical-squad",
+        "name": "Tactical Squad"
+      }
+    ]
   },
   "units": [
     {
@@ -154,21 +216,26 @@
           {
             "id": "all-models-in-this-unit-can-each-have-their-flamestorm-gauntlets-replaced-with-1-auto-boltstorm-gauntlets-and-1-fragstorm-grenade-launcher-1",
             "label": "All models in this unit can each have their flamestorm gauntlets replaced with 1 auto boltstorm gauntlets and 1 fragstorm grenade launcher.",
-            "target": "All models in this unit can each have their flamestorm gauntlets replaced with 1 auto boltstorm gauntlets and 1 fragstorm grenade launcher.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "All models in this unit",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-auto-boltstorm-gauntlets-and-1-fragstorm-grenade-launcher",
+                "label": "1 auto boltstorm gauntlets and 1 fragstorm grenade launcher"
+              }
+            ]
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -4291,10 +4358,15 @@
           {
             "id": "an-attack-bike-s-heavy-bolter-can-be-replaced-with-1-multi-melta-4",
             "label": "An Attack Bike\u2019s heavy bolter can be replaced with 1 multi-melta.",
-            "target": "An Attack Bike\u2019s heavy bolter can be replaced with 1 multi-melta.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "An Attack Bike\u2019s heavy bolter",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-multi-melta",
+                "label": "1 multi-melta"
+              }
+            ]
           }
         ],
         "manualNotes": [],
@@ -4821,29 +4893,39 @@
           {
             "id": "this-model-s-twin-heavy-bolter-can-be-replaced-with-1-twin-multi-melta-1",
             "label": "This model\u2019s twin heavy bolter can be replaced with 1 twin multi-melta.",
-            "target": "This model\u2019s twin heavy bolter can be replaced with 1 twin multi-melta.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "This model\u2019s twin heavy bolter",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-twin-multi-melta",
+                "label": "1 twin multi-melta"
+              }
+            ]
           },
           {
             "id": "this-model-s-brutalis-fists-and-brutalis-bolt-rifles-can-be-replaced-with-1-brutalis-talons-2",
             "label": "This model\u2019s Brutalis fists and Brutalis bolt rifles can be replaced with 1 Brutalis talons.",
-            "target": "This model\u2019s Brutalis fists and Brutalis bolt rifles can be replaced with 1 Brutalis talons.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "This model\u2019s Brutalis fists and Brutalis bolt rifles",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-brutalis-talons",
+                "label": "1 Brutalis talons"
+              }
+            ]
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -5514,9 +5596,9 @@
           {
             "id": "this-model-s-master-crafted-heavy-bolt-rifle-and-master-crafted-power-weapon-can-be-replaced-with-1",
             "label": "This model\u2019s master-crafted heavy bolt rifle and master-crafted power weapon can be replaced with:",
-            "target": "This model\u2019s master-crafted heavy bolt rifle and master-crafted power weapon can be replaced with:",
-            "action": "manual",
-            "selectionMode": "manual",
+            "target": "This model\u2019s master-crafted heavy bolt rifle and master-crafted power weapon",
+            "action": "replace",
+            "selectionMode": "single",
             "choices": [
               {
                 "id": "1-boltstorm-gauntlet-1-power-fist-and-1-relic-chainsword",
@@ -5534,14 +5616,14 @@
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -5861,29 +5943,39 @@
           {
             "id": "this-model-s-storm-bolter-can-be-replaced-with-1-combi-weapon-1",
             "label": "This model\u2019s storm bolter can be replaced with 1 combi-weapon",
-            "target": "This model\u2019s storm bolter can be replaced with 1 combi-weapon",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "This model\u2019s storm bolter",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-combi-weapon",
+                "label": "1 combi-weapon"
+              }
+            ]
           },
           {
             "id": "this-model-s-relic-weapon-can-be-replaced-with-1-relic-fist-2",
             "label": "This model\u2019s relic weapon can be replaced with 1 relic fist",
-            "target": "This model\u2019s relic weapon can be replaced with 1 relic fist",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "This model\u2019s relic weapon",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-relic-fist",
+                "label": "1 relic fist"
+              }
+            ]
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -6280,10 +6372,15 @@
           {
             "id": "this-model-s-bolt-pistol-and-astartes-chainsword-can-be-replaced-with-1-twin-lightning-claws-3",
             "label": "This model\u2019s bolt pistol and Astartes chainsword can be replaced with 1 twin lightning claws.",
-            "target": "This model\u2019s bolt pistol and Astartes chainsword can be replaced with 1 twin lightning claws.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "This model\u2019s bolt pistol and Astartes chainsword",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-twin-lightning-claws",
+                "label": "1 twin lightning claws"
+              }
+            ]
           }
         ],
         "manualNotes": [
@@ -7623,21 +7720,26 @@
           {
             "id": "this-model-s-storm-bolter-can-be-replaced-with-1-relic-shield-1",
             "label": "This model\u2019s storm bolter can be replaced with 1 relic shield.",
-            "target": "This model\u2019s storm bolter can be replaced with 1 relic shield.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "This model\u2019s storm bolter",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-relic-shield",
+                "label": "1 relic shield"
+              }
+            ]
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -11488,29 +11590,39 @@
           {
             "id": "all-of-the-models-in-this-unit-can-each-have-their-superfrag-rocket-launcher-replaced-with-1-superkrak-rocket-launcher-1",
             "label": "All of the models in this unit can each have their superfrag rocket launcher replaced with 1 superkrak rocket launcher.",
-            "target": "All of the models in this unit can each have their superfrag rocket launcher replaced with 1 superkrak rocket launcher.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "All of the models in this unit",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-superkrak-rocket-launcher",
+                "label": "1 superkrak rocket launcher"
+              }
+            ]
           },
           {
             "id": "the-desolation-sergeant-s-superfrag-rocket-launcher-or-superkrak-rocket-launcher-can-be-replaced-with-1-vengor-launcher-2",
             "label": "The Desolation Sergeant\u2019s superfrag rocket launcher or superkrak rocket launcher can be replaced with 1 vengor launcher.",
-            "target": "The Desolation Sergeant\u2019s superfrag rocket launcher or superkrak rocket launcher can be replaced with 1 vengor launcher.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "The Desolation Sergeant\u2019s superfrag rocket launcher or superkrak rocket launcher",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-vengor-launcher",
+                "label": "1 vengor launcher"
+              }
+            ]
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -11915,7 +12027,7 @@
           {
             "id": "the-devastator-sergeant-s-bolt-pistol-and-boltgun-can-be-replaced-with-two-different-weapons-from-the-following-list-2",
             "label": "The Devastator Sergeant\u2019s bolt pistol and boltgun can be replaced with two different weapons from the following list:*",
-            "target": "The Devastator Sergeant\u2019s bolt pistol and boltgun can be replaced with two different weapons from the following list:*",
+            "target": "The Devastator Sergeant\u2019s bolt pistol and boltgun can be replaced with two different weapons from the following list:",
             "action": "manual",
             "selectionMode": "manual",
             "choices": [
@@ -12634,21 +12746,26 @@
           {
             "id": "all-eliminators-in-this-unit-can-each-have-their-bolt-sniper-rifle-replaced-with-1-las-fusil-2",
             "label": "All Eliminators in this unit can each have their bolt sniper rifle replaced with 1 las fusil.",
-            "target": "All Eliminators in this unit can each have their bolt sniper rifle replaced with 1 las fusil.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "All Eliminators in this unit",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-las-fusil",
+                "label": "1 las fusil"
+              }
+            ]
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -14233,37 +14350,52 @@
           {
             "id": "this-model-s-2-storm-bolters-can-be-replaced-with-2-fragstorm-grenade-launchers-1",
             "label": "This model\u2019s 2 storm bolters can be replaced with 2 fragstorm grenade launchers.",
-            "target": "This model\u2019s 2 storm bolters can be replaced with 2 fragstorm grenade launchers.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "This model\u2019s 2 storm bolters",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "2-fragstorm-grenade-launchers",
+                "label": "2 fragstorm grenade launchers"
+              }
+            ]
           },
           {
             "id": "this-model-can-be-equipped-with-1-ironhail-heavy-stubber-2",
             "label": "This model can be equipped with 1 ironhail heavy stubber.",
-            "target": "This model can be equipped with 1 ironhail heavy stubber.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "This model",
+            "action": "equip",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-ironhail-heavy-stubber",
+                "label": "1 ironhail heavy stubber"
+              }
+            ]
           },
           {
             "id": "this-model-can-be-equipped-with-1-icarus-rocket-pod-3",
             "label": "This model can be equipped with 1 Icarus rocket pod.",
-            "target": "This model can be equipped with 1 Icarus rocket pod.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "This model",
+            "action": "equip",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-icarus-rocket-pod",
+                "label": "1 Icarus rocket pod"
+              }
+            ]
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -14427,29 +14559,39 @@
           {
             "id": "this-model-can-be-equipped-with-1-ironhail-heavy-stubber-1",
             "label": "This model can be equipped with 1 ironhail heavy stubber.",
-            "target": "This model can be equipped with 1 ironhail heavy stubber.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "This model",
+            "action": "equip",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-ironhail-heavy-stubber",
+                "label": "1 ironhail heavy stubber"
+              }
+            ]
           },
           {
             "id": "this-model-can-be-equipped-with-1-icarus-rocket-pod-2",
             "label": "This model can be equipped with 1 Icarus rocket pod.",
-            "target": "This model can be equipped with 1 Icarus rocket pod.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "This model",
+            "action": "equip",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-icarus-rocket-pod",
+                "label": "1 Icarus rocket pod"
+              }
+            ]
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -14612,29 +14754,39 @@
           {
             "id": "this-model-can-be-equipped-with-1-ironhail-heavy-stubber-1",
             "label": "This model can be equipped with 1 ironhail heavy stubber.",
-            "target": "This model can be equipped with 1 ironhail heavy stubber.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "This model",
+            "action": "equip",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-ironhail-heavy-stubber",
+                "label": "1 ironhail heavy stubber"
+              }
+            ]
           },
           {
             "id": "this-model-can-be-equipped-with-1-icarus-rocket-pod-2",
             "label": "This model can be equipped with 1 Icarus rocket pod.",
-            "target": "This model can be equipped with 1 Icarus rocket pod.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "This model",
+            "action": "equip",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-icarus-rocket-pod",
+                "label": "1 Icarus rocket pod"
+              }
+            ]
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -14804,21 +14956,26 @@
           {
             "id": "this-model-s-hammerfall-heavy-bolter-array-can-be-replaced-with-1-hammerfall-heavy-flamer-array-1",
             "label": "This model\u2019s Hammerfall heavy bolter array can be replaced with 1 Hammerfall heavy flamer array.",
-            "target": "This model\u2019s Hammerfall heavy bolter array can be replaced with 1 Hammerfall heavy flamer array.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "This model\u2019s Hammerfall heavy bolter array",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-hammerfall-heavy-flamer-array",
+                "label": "1 Hammerfall heavy flamer array"
+              }
+            ]
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "FORTIFICATION",
@@ -15183,21 +15340,26 @@
           {
             "id": "the-hellblaster-sergeant-s-bolt-pistol-can-be-replaced-with-1-plasma-pistol-1",
             "label": "The Hellblaster Sergeant\u2019s bolt pistol can be replaced with 1 plasma pistol.",
-            "target": "The Hellblaster Sergeant\u2019s bolt pistol can be replaced with 1 plasma pistol.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "The Hellblaster Sergeant\u2019s bolt pistol",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-plasma-pistol",
+                "label": "1 plasma pistol"
+              }
+            ]
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -15716,18 +15878,28 @@
           {
             "id": "this-model-can-be-equipped-with-1-ironhail-heavy-stubber-1",
             "label": "This model can be equipped with 1 ironhail heavy stubber.",
-            "target": "This model can be equipped with 1 ironhail heavy stubber.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "This model",
+            "action": "equip",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-ironhail-heavy-stubber",
+                "label": "1 ironhail heavy stubber"
+              }
+            ]
           },
           {
             "id": "this-model-s-2-storm-bolters-can-be-replaced-with-2-fragstorm-grenade-launchers-2",
             "label": "This model\u2019s 2 storm bolters can be replaced with 2 fragstorm grenade launchers.",
-            "target": "This model\u2019s 2 storm bolters can be replaced with 2 fragstorm grenade launchers.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "This model\u2019s 2 storm bolters",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "2-fragstorm-grenade-launchers",
+                "label": "2 fragstorm grenade launchers"
+              }
+            ]
           },
           {
             "id": "this-model-can-be-equipped-with-one-of-the-following-3",
@@ -15756,14 +15928,14 @@
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -15951,21 +16123,26 @@
           {
             "id": "all-models-in-this-unit-can-each-have-their-assault-bolters-replaced-with-1-plasma-exterminators-1",
             "label": "All models in this unit can each have their assault bolters replaced with 1 plasma exterminators.",
-            "target": "All models in this unit can each have their assault bolters replaced with 1 plasma exterminators.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "All models in this unit",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-plasma-exterminators",
+                "label": "1 plasma exterminators"
+              }
+            ]
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -16115,21 +16292,26 @@
           {
             "id": "one-incursor-can-be-equipped-with-1-haywire-mine-1",
             "label": "One Incursor can be equipped with 1 haywire mine.",
-            "target": "One Incursor can be equipped with 1 haywire mine.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "One Incursor",
+            "action": "equip",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-haywire-mine",
+                "label": "1 haywire mine"
+              }
+            ]
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -16437,18 +16619,28 @@
           {
             "id": "1-infiltrator-can-be-equipped-with-1-helix-gauntlet-1",
             "label": "1 Infiltrator can be equipped with 1 helix gauntlet.*",
-            "target": "1 Infiltrator can be equipped with 1 helix gauntlet.*",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "1 Infiltrator",
+            "action": "equip",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-helix-gauntlet",
+                "label": "1 helix gauntlet"
+              }
+            ]
           },
           {
             "id": "1-infiltrator-can-be-equipped-with-1-infiltrator-comms-array-2",
             "label": "1 Infiltrator can be equipped with 1 Infiltrator comms array.*",
-            "target": "1 Infiltrator can be equipped with 1 Infiltrator comms array.*",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "1 Infiltrator",
+            "action": "equip",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-infiltrator-comms-array",
+                "label": "1 Infiltrator comms array"
+              }
+            ]
           }
         ],
         "manualNotes": [
@@ -17107,21 +17299,26 @@
           {
             "id": "this-model-s-onslaught-gatling-cannon-can-be-replaced-with-1-multi-melta-1",
             "label": "This model\u2019s onslaught gatling cannon can be replaced with 1 multi-melta.",
-            "target": "This model\u2019s onslaught gatling cannon can be replaced with 1 multi-melta.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "This model\u2019s onslaught gatling cannon",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-multi-melta",
+                "label": "1 multi-melta"
+              }
+            ]
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "MOUNTED",
@@ -17289,21 +17486,26 @@
           {
             "id": "this-model-s-incendium-cannon-can-be-replaced-with-1-twin-ironhail-autocannon-1",
             "label": "This model\u2019s incendium cannon can be replaced with 1 twin ironhail autocannon.",
-            "target": "This model\u2019s incendium cannon can be replaced with 1 twin ironhail autocannon.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "This model\u2019s incendium cannon",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-twin-ironhail-autocannon",
+                "label": "1 twin ironhail autocannon"
+              }
+            ]
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -18334,37 +18536,52 @@
           {
             "id": "this-model-can-be-equipped-with-1-hunter-killer-missile-1",
             "label": "This model can be equipped with 1 hunter-killer missile.",
-            "target": "This model can be equipped with 1 hunter-killer missile.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "This model",
+            "action": "equip",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-hunter-killer-missile",
+                "label": "1 hunter-killer missile"
+              }
+            ]
           },
           {
             "id": "this-model-can-be-equipped-with-1-multi-melta-2",
             "label": "This model can be equipped with 1 multi-melta.",
-            "target": "This model can be equipped with 1 multi-melta.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "This model",
+            "action": "equip",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-multi-melta",
+                "label": "1 multi-melta"
+              }
+            ]
           },
           {
             "id": "this-model-can-be-equipped-with-1-storm-bolter-3",
             "label": "This model can be equipped with 1 storm bolter.",
-            "target": "This model can be equipped with 1 storm bolter.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "This model",
+            "action": "equip",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-storm-bolter",
+                "label": "1 storm bolter"
+              }
+            ]
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -18756,37 +18973,52 @@
           {
             "id": "this-model-can-be-equipped-with-1-hunter-killer-missile-1",
             "label": "This model can be equipped with 1 hunter-killer missile.",
-            "target": "This model can be equipped with 1 hunter-killer missile.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "This model",
+            "action": "equip",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-hunter-killer-missile",
+                "label": "1 hunter-killer missile"
+              }
+            ]
           },
           {
             "id": "this-model-can-be-equipped-with-1-multi-melta-2",
             "label": "This model can be equipped with 1 multi-melta.",
-            "target": "This model can be equipped with 1 multi-melta.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "This model",
+            "action": "equip",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-multi-melta",
+                "label": "1 multi-melta"
+              }
+            ]
           },
           {
             "id": "this-model-can-be-equipped-with-1-storm-bolter-3",
             "label": "This model can be equipped with 1 storm bolter.",
-            "target": "This model can be equipped with 1 storm bolter.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "This model",
+            "action": "equip",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-storm-bolter",
+                "label": "1 storm bolter"
+              }
+            ]
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -19773,37 +20005,52 @@
           {
             "id": "this-model-can-be-equipped-with-1-hunter-killer-missile-1",
             "label": "This model can be equipped with 1 hunter-killer missile.",
-            "target": "This model can be equipped with 1 hunter-killer missile.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "This model",
+            "action": "equip",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-hunter-killer-missile",
+                "label": "1 hunter-killer missile"
+              }
+            ]
           },
           {
             "id": "this-model-can-be-equipped-with-1-multi-melta-2",
             "label": "This model can be equipped with 1 multi-melta.",
-            "target": "This model can be equipped with 1 multi-melta.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "This model",
+            "action": "equip",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-multi-melta",
+                "label": "1 multi-melta"
+              }
+            ]
           },
           {
             "id": "this-model-can-be-equipped-with-1-storm-bolter-3",
             "label": "This model can be equipped with 1 storm bolter.",
-            "target": "This model can be equipped with 1 storm bolter.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "This model",
+            "action": "equip",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-storm-bolter",
+                "label": "1 storm bolter"
+              }
+            ]
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -22543,18 +22790,28 @@
           {
             "id": "this-model-s-bolt-pistol-master-crafted-bolter-and-close-combat-weapon-can-be-replaced-with-1-neo-volkite-pistol-1-master-crafted-power-weapon-and-1-storm-shield-2",
             "label": "This model\u2019s bolt pistol, master-crafted bolter and close combat weapon can be replaced with 1 neo volkite pistol, 1 master-crafted power weapon and 1 storm shield.",
-            "target": "This model\u2019s bolt pistol, master-crafted bolter and close combat weapon can be replaced with 1 neo volkite pistol, 1 master-crafted power weapon and 1 storm shield.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "This model\u2019s bolt pistol, master-crafted bolter and close combat weapon",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-neo-volkite-pistol-1-master-crafted-power-weapon-and-1-storm-shield",
+                "label": "1 neo volkite pistol, 1 master-crafted power weapon and 1 storm shield"
+              }
+            ]
           },
           {
             "id": "this-model-s-bolt-pistol-can-be-replaced-with-1-heavy-bolt-pistol-3",
             "label": "This model\u2019s bolt pistol can be replaced with 1 heavy bolt pistol.",
-            "target": "This model\u2019s bolt pistol can be replaced with 1 heavy bolt pistol.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "This model\u2019s bolt pistol",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-heavy-bolt-pistol",
+                "label": "1 heavy bolt pistol"
+              }
+            ]
           },
           {
             "id": "this-model-s-close-combat-weapon-can-be-replaced-with-one-of-the-following-4",
@@ -22575,14 +22832,14 @@
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -24066,21 +24323,26 @@
           {
             "id": "an-invader-atv-s-onslaught-gatling-cannon-can-be-replaced-with-1-multi-melta-1",
             "label": "An Invader ATV\u2019s onslaught gatling cannon can be replaced with 1 multi-melta.",
-            "target": "An Invader ATV\u2019s onslaught gatling cannon can be replaced with 1 multi-melta.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "An Invader ATV\u2019s onslaught gatling cannon",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-multi-melta",
+                "label": "1 multi-melta"
+              }
+            ]
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "MOUNTED",
@@ -24259,29 +24521,39 @@
           {
             "id": "this-model-can-be-equipped-with-1-hunter-killer-missile-2",
             "label": "This model can be equipped with 1 hunter-killer missile.",
-            "target": "This model can be equipped with 1 hunter-killer missile.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "This model",
+            "action": "equip",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-hunter-killer-missile",
+                "label": "1 hunter-killer missile"
+              }
+            ]
           },
           {
             "id": "this-model-can-be-equipped-with-1-storm-bolter-3",
             "label": "This model can be equipped with 1 storm bolter.",
-            "target": "This model can be equipped with 1 storm bolter.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "This model",
+            "action": "equip",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-storm-bolter",
+                "label": "1 storm bolter"
+              }
+            ]
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -24470,29 +24742,39 @@
           {
             "id": "this-model-can-be-equipped-with-1-hunter-killer-missile-2",
             "label": "This model can be equipped with 1 hunter-killer missile.",
-            "target": "This model can be equipped with 1 hunter-killer missile.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "This model",
+            "action": "equip",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-hunter-killer-missile",
+                "label": "1 hunter-killer missile"
+              }
+            ]
           },
           {
             "id": "this-model-can-be-equipped-with-1-storm-bolter-3",
             "label": "This model can be equipped with 1 storm bolter.",
-            "target": "This model can be equipped with 1 storm bolter.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "This model",
+            "action": "equip",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-storm-bolter",
+                "label": "1 storm bolter"
+              }
+            ]
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -25850,37 +26132,52 @@
           {
             "id": "this-model-s-twin-heavy-bolter-can-be-replaced-with-1-twin-lascannon-1",
             "label": "This model\u2019s twin heavy bolter can be replaced with 1 twin lascannon.",
-            "target": "This model\u2019s twin heavy bolter can be replaced with 1 twin lascannon.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "This model\u2019s twin heavy bolter",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-twin-lascannon",
+                "label": "1 twin lascannon"
+              }
+            ]
           },
           {
             "id": "this-model-can-be-equipped-with-1-hunter-killer-missile-2",
             "label": "This model can be equipped with 1 hunter-killer missile.",
-            "target": "This model can be equipped with 1 hunter-killer missile.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "This model",
+            "action": "equip",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-hunter-killer-missile",
+                "label": "1 hunter-killer missile"
+              }
+            ]
           },
           {
             "id": "this-model-can-be-equipped-with-1-storm-bolter-3",
             "label": "This model can be equipped with 1 storm bolter.",
-            "target": "This model can be equipped with 1 storm bolter.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "This model",
+            "action": "equip",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-storm-bolter",
+                "label": "1 storm bolter"
+              }
+            ]
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -26101,45 +26398,65 @@
           {
             "id": "this-model-can-be-equipped-with-1-icarus-rocket-pod-1",
             "label": "This model can be equipped with 1 Icarus rocket pod.",
-            "target": "This model can be equipped with 1 Icarus rocket pod.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "This model",
+            "action": "equip",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-icarus-rocket-pod",
+                "label": "1 Icarus rocket pod"
+              }
+            ]
           },
           {
             "id": "this-model-s-heavy-flamer-can-be-replaced-with-1-onslaught-gatling-cannon-2",
             "label": "This model\u2019s heavy flamer can be replaced with 1 onslaught gatling cannon.",
-            "target": "This model\u2019s heavy flamer can be replaced with 1 onslaught gatling cannon.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "This model\u2019s heavy flamer",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-onslaught-gatling-cannon",
+                "label": "1 onslaught gatling cannon"
+              }
+            ]
           },
           {
             "id": "this-model-s-heavy-onslaught-gatling-cannon-can-be-replaced-with-1-macro-plasma-incinerator-3",
             "label": "This model\u2019s heavy onslaught gatling cannon can be replaced with 1 macro plasma incinerator.",
-            "target": "This model\u2019s heavy onslaught gatling cannon can be replaced with 1 macro plasma incinerator.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "This model\u2019s heavy onslaught gatling cannon",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-macro-plasma-incinerator",
+                "label": "1 macro plasma incinerator"
+              }
+            ]
           },
           {
             "id": "this-model-s-twin-fragstorm-grenade-launcher-can-be-replaced-with-1-twin-storm-bolter-4",
             "label": "This model\u2019s twin fragstorm grenade launcher can be replaced with 1 twin storm bolter.",
-            "target": "This model\u2019s twin fragstorm grenade launcher can be replaced with 1 twin storm bolter.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "This model\u2019s twin fragstorm grenade launcher",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-twin-storm-bolter",
+                "label": "1 twin storm bolter"
+              }
+            ]
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -26321,45 +26638,65 @@
           {
             "id": "all-models-in-this-unit-can-each-have-their-combat-knife-replaced-with-1-bolt-carbine-and-1-close-combat-weapon-1",
             "label": "All models in this unit can each have their combat knife replaced with 1 bolt carbine and 1 close combat weapon.",
-            "target": "All models in this unit can each have their combat knife replaced with 1 bolt carbine and 1 close combat weapon.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "All models in this unit",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-bolt-carbine-and-1-close-combat-weapon",
+                "label": "1 bolt carbine and 1 close combat weapon"
+              }
+            ]
           },
           {
             "id": "if-the-reiver-sergeant-is-equipped-with-1-bolt-carbine-it-can-be-equipped-with-1-combat-knife-2",
             "label": "If the Reiver Sergeant is equipped with 1 bolt carbine, it can be equipped with 1 combat knife.",
-            "target": "If the Reiver Sergeant is equipped with 1 bolt carbine, it can be equipped with 1 combat knife.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "If the Reiver Sergeant is equipped with 1 bolt carbine, it",
+            "action": "equip",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-combat-knife",
+                "label": "1 combat knife"
+              }
+            ]
           },
           {
             "id": "all-models-in-this-unit-can-each-be-equipped-with-1-reiver-grav-chute-3",
             "label": "All models in this unit can each be equipped with 1 Reiver grav-chute.",
-            "target": "All models in this unit can each be equipped with 1 Reiver grav-chute.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "All models in this unit",
+            "action": "equip",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-reiver-grav-chute",
+                "label": "1 Reiver grav-chute"
+              }
+            ]
           },
           {
             "id": "all-models-in-this-unit-can-each-be-equipped-with-1-grapnel-launcher-4",
             "label": "All models in this unit can each be equipped with 1 grapnel launcher.",
-            "target": "All models in this unit can each be equipped with 1 grapnel launcher.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "All models in this unit",
+            "action": "equip",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-grapnel-launcher",
+                "label": "1 grapnel launcher"
+              }
+            ]
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -26916,29 +27253,39 @@
           {
             "id": "this-model-can-be-equipped-with-1-hunter-killer-missile-2",
             "label": "This model can be equipped with 1 hunter-killer missile.",
-            "target": "This model can be equipped with 1 hunter-killer missile.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "This model",
+            "action": "equip",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-hunter-killer-missile",
+                "label": "1 hunter-killer missile"
+              }
+            ]
           },
           {
             "id": "this-model-can-be-equipped-with-1-storm-bolter-3",
             "label": "This model can be equipped with 1 storm bolter.",
-            "target": "This model can be equipped with 1 storm bolter.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "This model",
+            "action": "equip",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-storm-bolter",
+                "label": "1 storm bolter"
+              }
+            ]
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -27388,29 +27735,39 @@
           {
             "id": "this-model-s-twin-heavy-bolter-can-be-replaced-with-1-twin-lascannon-1",
             "label": "This model\u2019s twin heavy bolter can be replaced with 1 twin lascannon.",
-            "target": "This model\u2019s twin heavy bolter can be replaced with 1 twin lascannon.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "This model\u2019s twin heavy bolter",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-twin-lascannon",
+                "label": "1 twin lascannon"
+              }
+            ]
           },
           {
             "id": "this-model-s-heavy-onslaught-gatling-cannon-can-be-replaced-with-1-las-talon-2",
             "label": "This model\u2019s heavy onslaught gatling cannon can be replaced with 1 las-talon.",
-            "target": "This model\u2019s heavy onslaught gatling cannon can be replaced with 1 las-talon.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "This model\u2019s heavy onslaught gatling cannon",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-las-talon",
+                "label": "1 las-talon"
+              }
+            ]
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -27652,37 +28009,52 @@
           {
             "id": "this-model-s-macro-plasma-incinerator-can-be-replaced-with-1-heavy-laser-destroyer-1",
             "label": "This model\u2019s macro plasma incinerator can be replaced with 1 heavy laser destroyer.",
-            "target": "This model\u2019s macro plasma incinerator can be replaced with 1 heavy laser destroyer.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "This model\u2019s macro plasma incinerator",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-heavy-laser-destroyer",
+                "label": "1 heavy laser destroyer"
+              }
+            ]
           },
           {
             "id": "this-model-can-be-equipped-with-1-ironhail-heavy-stubber-2",
             "label": "This model can be equipped with 1 ironhail heavy stubber.",
-            "target": "This model can be equipped with 1 ironhail heavy stubber.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "This model",
+            "action": "equip",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-ironhail-heavy-stubber",
+                "label": "1 ironhail heavy stubber"
+              }
+            ]
           },
           {
             "id": "this-model-can-be-equipped-with-1-icarus-rocket-pod-3",
             "label": "This model can be equipped with 1 Icarus rocket pod.",
-            "target": "This model can be equipped with 1 Icarus rocket pod.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "This model",
+            "action": "equip",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-icarus-rocket-pod",
+                "label": "1 Icarus rocket pod"
+              }
+            ]
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -27829,21 +28201,26 @@
           {
             "id": "this-model-can-be-equipped-with-1-hunter-killer-missile-1",
             "label": "This model can be equipped with 1 hunter-killer missile.",
-            "target": "This model can be equipped with 1 hunter-killer missile.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "This model",
+            "action": "equip",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-hunter-killer-missile",
+                "label": "1 hunter-killer missile"
+              }
+            ]
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -28930,10 +29307,15 @@
           {
             "id": "the-scout-sergeant-s-boltgun-can-be-replaced-with-1-astartes-chainsword-1",
             "label": "The Scout Sergeant's boltgun can be replaced with 1 Astartes chainsword.",
-            "target": "The Scout Sergeant's boltgun can be replaced with 1 Astartes chainsword.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "The Scout Sergeant's boltgun",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-astartes-chainsword",
+                "label": "1 Astartes chainsword"
+              }
+            ]
           },
           {
             "id": "any-number-of-models-can-each-have-their-boltgun-replaced-with-one-of-the-following-2",
@@ -32607,7 +32989,7 @@
           {
             "id": "the-tactical-sergeant-s-bolt-pistol-and-boltgun-can-be-replaced-with-1-twin-lightning-claws-or-two-different-weapons-from-the-following-list-3",
             "label": "The Tactical Sergeant\u2019s bolt pistol and boltgun can be replaced with 1 twin lightning claws, or two different weapons from the following list:*",
-            "target": "The Tactical Sergeant\u2019s bolt pistol and boltgun can be replaced with 1 twin lightning claws, or two different weapons from the following list:*",
+            "target": "The Tactical Sergeant\u2019s bolt pistol and boltgun can be replaced with 1 twin lightning claws, or two different weapons from the following list:",
             "action": "manual",
             "selectionMode": "manual",
             "choices": [
@@ -33458,9 +33840,9 @@
           {
             "id": "this-model-must-be-equipped-with-one-of-the-following-3",
             "label": "This model must be equipped with one of the following:",
-            "target": "This model must be equipped with one of the following:",
-            "action": "manual",
-            "selectionMode": "manual",
+            "target": "This model",
+            "action": "equip",
+            "selectionMode": "single",
             "choices": [
               {
                 "id": "1-servo-arm",
@@ -33478,14 +33860,14 @@
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "MOUNTED",

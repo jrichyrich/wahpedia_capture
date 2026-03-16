@@ -193,14 +193,21 @@ Then visit:
 
 The builder reads `docs/builder/data/manifest.json`, lets you browse a faction catalog, add units to a roster, choose points/config options, total the roster, and print the rendered datacards.
 
-The static builder now also persists the active roster in browser storage, supports JSON import/export for roster saves, and can render basic structured wargear selections where those options have been normalized. Saved rosters only store roster metadata plus unit/config references; they do not embed faction catalog data.
+The static builder now also persists the active roster in browser storage, supports JSON import/export for roster saves, supports additive point upgrades where the catalog exposes them, and can render structured wargear selections where those options have been normalized. Saved rosters only store roster metadata plus unit/config references; they do not embed faction catalog data.
 
-The generated builder report currently tracks two quality buckets directly:
+The generated builder report currently tracks three quality buckets directly:
 
 - units with missing exported stats
 - units whose points/config labels could not be normalized confidently
+- units whose wargear still requires manual interpretation
 
-`python scripts/check_builder_regressions.py` currently expects both counts to stay at `0`.
+`python scripts/check_builder_regressions.py` currently expects:
+
+- `0` missing-stat units
+- `0` manual-selection units
+- `54` manual-wargear units
+
+That wargear baseline is temporary and should keep shrinking as the parser gains support for count-based and multi-pick equipment patterns.
 
 > [!IMPORTANT]
 > Do not open `docs/builder/index.html` directly from disk with `file://`. The app uses `fetch`, so it must be served over HTTP.

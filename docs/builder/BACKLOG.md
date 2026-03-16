@@ -41,8 +41,12 @@ Current progress:
 
 - `WARGEAR OPTIONS` are now exported from Wahapedia into structured section entries.
 - Builder catalogs now normalize simple single-choice wargear groups and preserve complex cases as manual instructions.
+- Builder now supports additive points upgrades for unit families like `Bike Squad`, `Outrider Squad`, and `Shadow Spectres` instead of forcing all points into one selector.
+- Fixed single-toggle and unit-wide toggle prompts such as `This model can be equipped with...` and `All models in this unit can each...` now normalize into structured selections.
 - Saved rosters now persist selected wargear choices.
-- Static builder UI now shows simple wargear selectors on roster entries and carries those selections into preview rendering.
+- Saved rosters now also persist additive upgrade selections.
+- Static builder UI now shows simple wargear selectors plus additive upgrade toggles on roster entries and carries those selections into preview rendering.
+- Remaining unsupported wargear is mostly the genuinely harder set: count-based allocations, ratio-based options, and multi-pick/two-weapon prompts.
 
 ### 2. Rules-Aware Legality Checks
 

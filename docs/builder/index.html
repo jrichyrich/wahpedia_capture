@@ -655,11 +655,22 @@
             if (unit.wargear && unit.wargear.options && unit.wargear.options.length) {
                 pills.push(`<div class="pill">Wargear options</div>`);
             }
+            if (unit.quality && unit.quality.hasManualWargearOptions) {
+                pills.push(`<div class="pill pill-warning">Manual wargear</div>`);
+            }
             const missing = missingStats(unit);
             if (missing.length) {
                 pills.push(`<div class="pill pill-warning">Missing stats: ${missing.join(", ")}</div>`);
             }
             return pills.join("");
+        }
+
+        function pointsGroups(unit) {
+            const options = unit && Array.isArray(unit.pointsOptions) ? unit.pointsOptions : [];
+            return {
+                base: options.filter((option) => option.selectionKind !== "upgrade"),
+                upgrades: options.filter((option) => option.selectionKind === "upgrade"),
+            };
         }
 
         function wargearGroups(unit) {
@@ -697,6 +708,9 @@
             if (catalog.build.manualSelectionUnits.length) {
                 healthBits.push(`${catalog.build.manualSelectionUnits.length} unit(s) still use source labels verbatim`);
             }
+            if (catalog.build.manualWargearUnits && catalog.build.manualWargearUnits.length) {
+                healthBits.push(`${catalog.build.manualWargearUnits.length} unit(s) still need manual wargear choices`);
+            }
             if (catalog.build.missingStats.length) {
                 healthBits.push(`${catalog.build.missingStats.length} unit(s) still have missing exported stats`);
             }
@@ -712,6 +726,7 @@
             const statusBits = [
                 `${catalog.faction.name}: ${catalog.faction.unitCount} units`,
                 `${catalog.build.manualSelectionUnits.length} manual selection labels`,
+                `${catalog.build.manualWargearUnits ? catalog.build.manualWargearUnits.length : 0} manual wargear units`,
                 `${catalog.build.missingStats.length} units with missing stats`,
             ];
             setStatus(statusBits.join(" | "), false);
@@ -878,6 +893,7 @@
                 unitId,
                 optionId: defaultOption ? defaultOption.id : null,
                 optionIndex: defaultOption ? unit.pointsOptions.indexOf(defaultOption) : null,
+                upgradeOptionIds: [],
                 quantity: 1,
                 wargearSelections: {},
             });
@@ -893,11 +909,29 @@
             }
             const unit = catalogUnitById(entry.unitId);
             const normalizedIndex = Number(optionIndex);
-            const option = unit && Array.isArray(unit.pointsOptions) && normalizedIndex >= 0
-                ? unit.pointsOptions[normalizedIndex]
+            const baseOptions = unit ? pointsGroups(unit).base : [];
+            const option = unit && normalizedIndex >= 0
+                ? (baseOptions[normalizedIndex] || null)
                 : null;
             entry.optionIndex = Number.isInteger(normalizedIndex) ? normalizedIndex : null;
             entry.optionId = option ? option.id : null;
+            renderRoster();
+            renderPreview();
+            scheduleAutoSave();
+        }
+
+        function updateRosterUpgrade(instanceId, optionId, checked) {
+            const entry = state.roster.find((item) => item.instanceId === instanceId);
+            if (!entry) {
+                return;
+            }
+            const selected = new Set(Array.isArray(entry.upgradeOptionIds) ? entry.upgradeOptionIds : []);
+            if (checked) {
+                selected.add(String(optionId));
+            } else {
+                selected.delete(String(optionId));
+            }
+            entry.upgradeOptionIds = Array.from(selected);
             renderRoster();
             renderPreview();
             scheduleAutoSave();
@@ -966,6 +1000,21 @@
                 const issueText = entry.issues.map((issue) => `<div class="inline-note inline-note-warning">${issue}</div>`).join("");
                 const unitMissingStats = entry.unit ? missingStats(entry.unit) : [];
                 const groups = entry.unit ? wargearGroups(entry.unit) : { simple: [], manual: [] };
+                const upgradeControls = (entry.upgradeOptions || []).map((upgrade) => {
+                    const checked = (entry.selectedUpgrades || []).some((selected) => selected.id === upgrade.id);
+                    return `
+                        <label class="inline-note">
+                            <input
+                                type="checkbox"
+                                data-action="upgrade-toggle"
+                                data-instance-id="${entry.instanceId}"
+                                data-option-id="${upgrade.id}"
+                                ${checked ? "checked" : ""}
+                            >
+                            ${upgrade.label} (+${upgrade.points} pts)
+                        </label>
+                    `;
+                }).join("");
                 const wargearControls = groups.simple.map((group) => {
                     const selected = (entry.wargearSelections || []).find((item) => item.group && item.group.id === group.id);
                     const optionsHtml = [
@@ -1008,6 +1057,7 @@
                                     <select data-action="option-select" data-instance-id="${entry.instanceId}">
                                         ${optionsHtml}
                                     </select>
+                                    ${upgradeControls}
                                     ${wargearControls}
                                     ${manualWargearNotes}
                                     ${wargearManualComments}
@@ -1045,6 +1095,7 @@
             els.previewBody.innerHTML = derived.validEntries.map((entry) => {
                 return window.WahBuilderCardRenderer.renderCard(entry.unit, {
                     selectedOption: entry.selectedOption,
+                    selectedUpgrades: entry.selectedUpgrades,
                     selectedPoints: entry.linePoints,
                     quantity: entry.quantity,
                     selectedWargear: entry.wargearSelections,
@@ -1137,10 +1188,13 @@
 
         els.rosterBody.addEventListener("change", (event) => {
             const select = event.target.closest('[data-action="option-select"]');
+            const upgrade = event.target.closest('[data-action="upgrade-toggle"]');
             const wargear = event.target.closest('[data-action="wargear-select"]');
             const quantity = event.target.closest('[data-action="quantity-input"]');
             if (select) {
                 updateRosterOption(select.dataset.instanceId, select.value);
+            } else if (upgrade) {
+                updateRosterUpgrade(upgrade.dataset.instanceId, upgrade.dataset.optionId, upgrade.checked);
             } else if (wargear) {
                 updateRosterWargear(wargear.dataset.instanceId, wargear.dataset.groupId, wargear.value);
             } else if (quantity) {
