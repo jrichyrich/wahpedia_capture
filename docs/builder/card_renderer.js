@@ -80,6 +80,16 @@
             return `<ul class="entry-list render-entry">${items}</ul>`;
         }
 
+        if (entry.type === "option_group") {
+            const items = (entry.items || []).map((item) => `<li>${escapeHtml(item)}</li>`).join("");
+            return `
+                <div class="render-entry">
+                    <span class="entry-label">${escapeHtml(entry.label)}:</span>
+                    ${items ? `<ul class="entry-list">${items}</ul>` : ""}
+                </div>
+            `;
+        }
+
         return "";
     }
 
@@ -220,6 +230,39 @@
         `;
     }
 
+    function renderSelectedWargear(options) {
+        const selections = Array.isArray(options.selectedWargear) ? options.selectedWargear : [];
+        const manualGroups = Array.isArray(options.manualWargearGroups) ? options.manualWargearGroups : [];
+        const selectedItems = selections
+            .filter((entry) => entry && entry.selectedChoice)
+            .map((entry) => `
+                <div class="render-entry">
+                    <span class="entry-label">${escapeHtml(entry.group.target || entry.group.label)}:</span>
+                    <span>${escapeHtml(entry.selectedChoice.label)}</span>
+                </div>
+            `)
+            .join("");
+        const manualItems = manualGroups
+            .map((group) => `
+                <div class="render-entry">
+                    <span class="entry-label">${escapeHtml(group.label)}:</span>
+                    <span>Manual wargear selection</span>
+                </div>
+            `)
+            .join("");
+
+        if (!selectedItems && !manualItems) {
+            return "";
+        }
+
+        return `
+            <section>
+                <div class="datasheet-section-title">Selected Wargear</div>
+                <div class="datasheet-section-content">${selectedItems}${manualItems}</div>
+            </section>
+        `;
+    }
+
     function renderCard(unit, options) {
         const opts = options || {};
         const selectedOption = opts.selectedOption || defaultPointsOption(unit);
@@ -269,6 +312,7 @@
                             <div class="datasheet-section-title">Abilities</div>
                             <div class="datasheet-section-content">${renderAbilities(unit)}</div>
                         </section>
+                        ${renderSelectedWargear(opts)}
                         ${(unit.renderBlocks || []).map(renderRenderBlock).join("")}
                         ${renderComposition(unit, opts)}
                     </div>

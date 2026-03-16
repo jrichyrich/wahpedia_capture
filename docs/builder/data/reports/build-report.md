@@ -1,6 +1,6 @@
 # Builder Catalog Build Report
 
-- Generated at: 2026-03-16T14:04:46+00:00
+- Generated at: 2026-03-16T15:59:07+00:00
 - Source root: `/Users/jasricha/Documents/Github_Personal/wahpedia_capture/out/json`
 - Factions imported: 6
 - Total units: 818

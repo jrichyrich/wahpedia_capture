@@ -7,7 +7,7 @@
 })(typeof globalThis !== "undefined" ? globalThis : this, function () {
     "use strict";
 
-    const ROSTER_SCHEMA_VERSION = 1;
+    const ROSTER_SCHEMA_VERSION = 2;
     const STORAGE_NAMESPACE = "wahpediaCapture.builder.v1";
     const INDEX_KEY = `${STORAGE_NAMESPACE}.savedRosters`;
     const ACTIVE_KEY = `${STORAGE_NAMESPACE}.activeRosterId`;
@@ -89,11 +89,22 @@
         if (!unitId) {
             throw new Error("Roster entry is missing unitId.");
         }
+        const wargearSelections = {};
+        if (entry.wargearSelections && typeof entry.wargearSelections === "object") {
+            Object.entries(entry.wargearSelections).forEach(([groupId, value]) => {
+                const normalizedGroupId = String(groupId || "").trim();
+                if (!normalizedGroupId) {
+                    return;
+                }
+                wargearSelections[normalizedGroupId] = value ? String(value).trim() : null;
+            });
+        }
         const normalized = {
             unitId,
             optionId: entry.optionId ? String(entry.optionId).trim() : null,
             optionIndex: Number.isInteger(entry.optionIndex) ? entry.optionIndex : null,
             quantity: normalizeQuantity(entry.quantity),
+            wargearSelections,
         };
         return normalized;
     }
@@ -138,6 +149,7 @@
             optionId: entry.optionId || null,
             optionIndex: Number.isInteger(entry.optionIndex) ? entry.optionIndex : null,
             quantity: normalizeQuantity(entry.quantity),
+            wargearSelections: { ...(entry.wargearSelections || {}) },
         };
     }
 
@@ -151,6 +163,7 @@
             optionId: entry.optionId || null,
             optionIndex: Number.isInteger(entry.optionIndex) ? entry.optionIndex : null,
             quantity: entry.quantity,
+            wargearSelections: entry.wargearSelections || {},
         });
     }
 
@@ -288,6 +301,34 @@
         return null;
     }
 
+    function resolveWargearSelections(unit, entry) {
+        const groups = unit && unit.wargear && Array.isArray(unit.wargear.options) ? unit.wargear.options : [];
+        const selections = [];
+        const issues = [];
+
+        groups.forEach((group) => {
+            const savedChoiceId = entry.wargearSelections ? entry.wargearSelections[group.id] : null;
+            if (!savedChoiceId) {
+                selections.push({
+                    group,
+                    selectedChoice: null,
+                });
+                return;
+            }
+
+            const selectedChoice = (group.choices || []).find((choice) => choice.id === savedChoiceId) || null;
+            if (!selectedChoice) {
+                issues.push(`Saved wargear selection is no longer available for ${group.label}.`);
+            }
+            selections.push({
+                group,
+                selectedChoice,
+            });
+        });
+
+        return { selections, issues };
+    }
+
     function humanizeUnitId(unitId) {
         return String(unitId || "")
             .split("-")
@@ -322,6 +363,8 @@
             if (unit && !selectedOption) {
                 issues.push(`Saved configuration is no longer available for ${unit.name}.`);
             }
+            const wargearResolution = unit ? resolveWargearSelections(unit, entry) : { selections: [], issues: [] };
+            issues.push(...wargearResolution.issues);
 
             const linePoints = !issues.length && selectedOption && typeof selectedOption.points === "number"
                 ? selectedOption.points * entry.quantity
@@ -336,6 +379,7 @@
                 unit,
                 selectedOption,
                 options: unit && Array.isArray(unit.pointsOptions) ? unit.pointsOptions : [],
+                wargearSelections: wargearResolution.selections,
                 issues,
                 isValid: issues.length === 0,
                 linePoints,

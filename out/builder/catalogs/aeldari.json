@@ -1,6 +1,6 @@
 {
-  "schemaVersion": 2,
-  "generatedAt": "2026-03-16T14:04:46+00:00",
+  "schemaVersion": 3,
+  "generatedAt": "2026-03-16T15:59:07+00:00",
   "faction": {
     "slug": "aeldari",
     "name": "Aeldari",
@@ -113,11 +113,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -234,11 +241,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -465,11 +479,61 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "this-model-s-shuriken-pistol-can-be-replaced-with-one-of-the-following-1",
+            "label": "This model\u2019s shuriken pistol can be replaced with one of the following:",
+            "target": "This model\u2019s shuriken pistol",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-death-spinner",
+                "label": "1 death spinner"
+              },
+              {
+                "id": "1-dragon-fusion-gun",
+                "label": "1 Dragon fusion gun"
+              },
+              {
+                "id": "1-dragon-fusion-pistol",
+                "label": "1 Dragon fusion pistol"
+              },
+              {
+                "id": "1-reaper-launcher",
+                "label": "1 Reaper launcher"
+              }
+            ]
+          },
+          {
+            "id": "this-model-s-star-glaive-can-be-replaced-with-one-of-the-following-2",
+            "label": "This model\u2019s star glaive can be replaced with one of the following:",
+            "target": "This model\u2019s star glaive",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-banshee-blade",
+                "label": "1 Banshee blade"
+              },
+              {
+                "id": "1-scorpion-chainsword",
+                "label": "1 Scorpion chainsword"
+              }
+            ]
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -482,6 +546,19 @@
         "ASURYANI"
       ],
       "renderBlocks": [
+        {
+          "title": "ASPECT TRAINING",
+          "displayStyle": "section",
+          "entries": [
+            {
+              "type": "list",
+              "items": [
+                "While this model is leading a HOWLING BANSHEES unit, it has the Fights First ability.",
+                "While this model is leading a STRIKING SCORPIONS unit, it has the Infiltrators , Scouts 7\" and Stealth abilities."
+              ]
+            }
+          ]
+        },
         {
           "title": "LEADER",
           "displayStyle": "section",
@@ -653,11 +730,36 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "this-model-s-laser-lance-can-be-replaced-with-one-of-the-following-1",
+            "label": "This model\u2019s laser lance can be replaced with one of the following:",
+            "target": "This model\u2019s laser lance",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-dragon-fusion-gun",
+                "label": "1 Dragon fusion gun"
+              },
+              {
+                "id": "1-banshee-blade",
+                "label": "1 Banshee blade"
+              }
+            ]
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "MOUNTED",
@@ -882,11 +984,61 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "this-model-s-shuriken-pistol-can-be-replaced-with-one-of-the-following-1",
+            "label": "This model\u2019s shuriken pistol can be replaced with one of the following:",
+            "target": "This model\u2019s shuriken pistol",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-death-spinner",
+                "label": "1 death spinner"
+              },
+              {
+                "id": "1-dragon-fusion-gun",
+                "label": "1 Dragon fusion gun"
+              },
+              {
+                "id": "1-dragon-fusion-pistol",
+                "label": "1 Dragon fusion pistol"
+              },
+              {
+                "id": "1-reaper-launcher",
+                "label": "1 Reaper launcher"
+              }
+            ]
+          },
+          {
+            "id": "this-model-s-star-glaive-can-be-replaced-with-one-of-the-following-2",
+            "label": "This model\u2019s star glaive can be replaced with one of the following:",
+            "target": "This model\u2019s star glaive",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-banshee-blade",
+                "label": "1 Banshee blade"
+              },
+              {
+                "id": "1-scorpion-chainsword",
+                "label": "1 Scorpion chainsword"
+              }
+            ]
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -1026,11 +1178,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "MONSTER",
@@ -1158,11 +1317,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -1286,11 +1452,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "CHARACTER",
@@ -1484,11 +1657,44 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "this-model-s-shuriken-cannon-can-be-replaced-with-one-of-the-following-1",
+            "label": "This model\u2019s shuriken cannon can be replaced with one of the following:",
+            "target": "This model\u2019s shuriken cannon",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-aeldari-missile-launcher",
+                "label": "1 Aeldari missile launcher"
+              },
+              {
+                "id": "1-bright-lance",
+                "label": "1 bright lance"
+              },
+              {
+                "id": "1-scatter-laser",
+                "label": "1 scatter laser"
+              },
+              {
+                "id": "1-starcannon",
+                "label": "1 starcannon"
+              }
+            ]
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -1734,11 +1940,65 @@
           "id": "7-models"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "any-number-of-models-can-each-have-their-twin-shuriken-catapult-replaced-with-one-of-the-following-1",
+            "label": "Any number of models can each have their twin shuriken catapult replaced with one of the following:",
+            "target": "Any number of models can each have their twin shuriken catapult replaced with one of the following:",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": [
+              {
+                "id": "1-dark-lance",
+                "label": "1 dark lance"
+              },
+              {
+                "id": "1-dissonance-cannon",
+                "label": "1 dissonance cannon"
+              },
+              {
+                "id": "1-scatter-laser",
+                "label": "1 scatter laser"
+              },
+              {
+                "id": "1-shuriken-cannon",
+                "label": "1 shuriken cannon"
+              },
+              {
+                "id": "1-splinter-cannon",
+                "label": "1 splinter cannon"
+              }
+            ]
+          },
+          {
+            "id": "the-cloud-dancer-felarch-can-be-equipped-with-one-of-the-following-2",
+            "label": "The Cloud Dancer Felarch can be equipped with one of the following:",
+            "target": "The Cloud Dancer Felarch",
+            "action": "equip",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-dissonance-pistol",
+                "label": "1 dissonance pistol"
+              },
+              {
+                "id": "1-void-sabre",
+                "label": "1 void sabre"
+              }
+            ]
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "MOUNTED",
@@ -2039,11 +2299,85 @@
           "id": "11-models"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "any-number-of-models-can-each-have-their-corsair-firearm-replaced-with-1-spar-glaive-1",
+            "label": "Any number of models can each have their Corsair firearm replaced with 1 spar-glaive.",
+            "target": "Any number of models can each have their Corsair firearm replaced with 1 spar-glaive.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "for-every-5-models-in-this-unit-1-model-s-corsair-firearm-can-be-replaced-with-one-of-the-following-2",
+            "label": "For every 5 models in this unit, 1 model\u2019s Corsair firearm can be replaced with one of the following:",
+            "target": "For every 5 models in this unit, 1 model\u2019s Corsair firearm can be replaced with one of the following:",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": [
+              {
+                "id": "1-aeldari-missile-launcher",
+                "label": "1 Aeldari missile launcher"
+              },
+              {
+                "id": "1-blaster",
+                "label": "1 blaster"
+              },
+              {
+                "id": "1-dark-lance",
+                "label": "1 dark lance"
+              },
+              {
+                "id": "1-flamer",
+                "label": "1 flamer"
+              },
+              {
+                "id": "1-fusion-gun",
+                "label": "1 fusion gun"
+              },
+              {
+                "id": "1-shredder",
+                "label": "1 shredder"
+              },
+              {
+                "id": "1-shuriken-cannon",
+                "label": "1 shuriken cannon"
+              },
+              {
+                "id": "1-splinter-cannon",
+                "label": "1 splinter cannon"
+              }
+            ]
+          },
+          {
+            "id": "the-corsair-reaver-felarch-can-be-equipped-with-one-of-the-following-3",
+            "label": "The Corsair Reaver Felarch can be equipped with one of the following:",
+            "target": "The Corsair Reaver Felarch",
+            "action": "equip",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-dissonance-pistol",
+                "label": "1 dissonance pistol"
+              },
+              {
+                "id": "1-void-sabre",
+                "label": "1 void sabre"
+              }
+            ]
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "INFANTRY",
@@ -2386,11 +2720,98 @@
           "id": "11-models"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "any-number-of-models-can-each-have-their-corsair-firearm-replaced-with-one-of-the-following-1",
+            "label": "Any number of models can each have their Corsair firearm replaced with one of the following:",
+            "target": "Any number of models can each have their Corsair firearm replaced with one of the following:",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": [
+              {
+                "id": "1-shardcarbine",
+                "label": "1 shardcarbine"
+              },
+              {
+                "id": "1-shuriken-catapult",
+                "label": "1 shuriken catapult"
+              },
+              {
+                "id": "1-spar-glaive",
+                "label": "1 spar-glaive"
+              }
+            ]
+          },
+          {
+            "id": "for-every-5-models-in-this-unit-1-model-s-corsair-firearm-can-be-replaced-with-one-of-the-following-2",
+            "label": "For every 5 models in this unit, 1 model\u2019s Corsair firearm can be replaced with one of the following:",
+            "target": "For every 5 models in this unit, 1 model\u2019s Corsair firearm can be replaced with one of the following:",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": [
+              {
+                "id": "1-aeldari-missile-launcher",
+                "label": "1 Aeldari missile launcher"
+              },
+              {
+                "id": "1-blaster",
+                "label": "1 blaster"
+              },
+              {
+                "id": "1-dark-lance",
+                "label": "1 dark lance"
+              },
+              {
+                "id": "1-flamer",
+                "label": "1 flamer"
+              },
+              {
+                "id": "1-fusion-gun",
+                "label": "1 fusion gun"
+              },
+              {
+                "id": "1-shredder",
+                "label": "1 shredder"
+              },
+              {
+                "id": "1-shuriken-cannon",
+                "label": "1 shuriken cannon"
+              },
+              {
+                "id": "1-splinter-cannon",
+                "label": "1 splinter cannon"
+              }
+            ]
+          },
+          {
+            "id": "the-corsair-skyreaver-felarch-can-be-equipped-with-one-of-the-following-3",
+            "label": "The Corsair Skyreaver Felarch can be equipped with one of the following:",
+            "target": "The Corsair Skyreaver Felarch",
+            "action": "equip",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-dissonance-pistol",
+                "label": "1 dissonance pistol"
+              },
+              {
+                "id": "1-void-sabre",
+                "label": "1 void sabre"
+              }
+            ]
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "INFANTRY",
@@ -2610,11 +3031,63 @@
           "id": "10-models"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "the-skyreaver-felarch-can-replace-its-shuriken-pistol-with-one-of-the-following-1",
+            "label": "The Skyreaver Felarch can replace its shuriken pistol with one of the following:",
+            "target": "The Skyreaver Felarch can replace its shuriken pistol with one of the following:",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": [
+              {
+                "id": "1-blast-pistol",
+                "label": "1 blast pistol"
+              },
+              {
+                "id": "1-neuro-disruptor",
+                "label": "1 neuro disruptor"
+              }
+            ]
+          },
+          {
+            "id": "for-every-5-models-in-the-unit-up-to-2-skyreaver-models-can-each-have-their-shuriken-pistol-and-corsair-blade-replaced-with-one-of-the-following-2",
+            "label": "For every 5 models in the unit, up to 2 Skyreaver models can each have their shuriken pistol and Corsair blade replaced with one of the following*:",
+            "target": "For every 5 models in the unit, up to 2 Skyreaver models can each have their shuriken pistol and Corsair blade replaced with one of the following*:",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": [
+              {
+                "id": "1-blaster-and-1-close-combat-weapon",
+                "label": "1 blaster and 1 close combat weapon"
+              },
+              {
+                "id": "1-flamer-and-1-close-combat-weapon",
+                "label": "1 flamer and 1 close combat weapon"
+              },
+              {
+                "id": "1-fusion-gun-and-1-close-combat-weapon",
+                "label": "1 fusion gun and 1 close combat weapon"
+              },
+              {
+                "id": "1-shredder-and-1-close-combat-weapon",
+                "label": "1 shredder and 1 close combat weapon"
+              }
+            ]
+          }
+        ],
+        "manualNotes": [
+          "* You cannot select the same option more than once per unit unless it contains 10 models, in which case you cannot select the same weapon more than twice per unit."
+        ],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "INFANTRY",
@@ -2829,11 +3302,97 @@
           "id": "10-models"
         }
       ],
+      "wargear": {
+        "abilities": [
+          {
+            "type": "statement",
+            "label": "Mistshield",
+            "text": "The bearer has a 4+ invulnerable save ."
+          }
+        ],
+        "options": [
+          {
+            "id": "the-voidreaver-felarch-s-shuriken-pistol-can-be-replaced-with-one-of-the-following-1",
+            "label": "The Voidreaver Felarch\u2019s shuriken pistol can be replaced with one of the following:",
+            "target": "The Voidreaver Felarch\u2019s shuriken pistol",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-neuro-disruptor",
+                "label": "1 neuro disruptor"
+              },
+              {
+                "id": "1-shuriken-rifle",
+                "label": "1 shuriken rifle"
+              }
+            ]
+          },
+          {
+            "id": "the-voidreaver-felarch-can-be-equipped-with-2",
+            "label": "The Voidreaver Felarch can be equipped with:",
+            "target": "The Voidreaver Felarch can be equipped with:",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": [
+              {
+                "id": "1-mistshield",
+                "label": "1 mistshield"
+              }
+            ]
+          },
+          {
+            "id": "any-number-of-corsair-voidreavers-in-this-unit-can-each-have-their-shuriken-pistol-and-power-sword-replaced-with-1-shuriken-rifle-3",
+            "label": "Any number of Corsair Voidreavers in this unit can each have their shuriken pistol and power sword replaced with 1 shuriken rifle.",
+            "target": "Any number of Corsair Voidreavers in this unit can each have their shuriken pistol and power sword replaced with 1 shuriken rifle.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "for-every-5-models-in-this-unit-1-corsair-voidreaver-s-power-sword-or-shuriken-rifle-can-be-replaced-with-one-of-the-following-4",
+            "label": "For every 5 models in this unit, 1 Corsair Voidreaver\u2019s power sword or shuriken rifle can be replaced with one of the following:",
+            "target": "For every 5 models in this unit, 1 Corsair Voidreaver\u2019s power sword or shuriken rifle can be replaced with one of the following:",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": [
+              {
+                "id": "1-blaster",
+                "label": "1 blaster"
+              },
+              {
+                "id": "1-shredder",
+                "label": "1 shredder"
+              }
+            ]
+          },
+          {
+            "id": "if-this-unit-contains-10-models-1-corsair-voidreaver-s-shuriken-rifle-can-be-replaced-with-one-of-the-following-5",
+            "label": "If this unit contains 10 models, 1 Corsair Voidreaver\u2019s shuriken rifle can be replaced with one of the following:",
+            "target": "If this unit contains 10 models, 1 Corsair Voidreaver\u2019s shuriken rifle can be replaced with one of the following:",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": [
+              {
+                "id": "1-shuriken-cannon",
+                "label": "1 shuriken cannon"
+              },
+              {
+                "id": "1-wraithcannon",
+                "label": "1 wraithcannon"
+              }
+            ]
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "INFANTRY",
@@ -3167,11 +3726,126 @@
           "id": "10-models"
         }
       ],
+      "wargear": {
+        "abilities": [
+          {
+            "type": "statement",
+            "label": "Channeller Stones",
+            "text": "Once per turn, the first time a saving throw is failed for the bearer\u2019s unit, change the Damage characteristic of that attack to 0."
+          },
+          {
+            "type": "statement",
+            "label": "Faolch\u00fa",
+            "text": "Ranged weapons equipped by models in the bearer\u2019s unit have the [IGNORES COVER] ability."
+          },
+          {
+            "type": "statement",
+            "label": "Mistshield",
+            "text": "The bearer has a 4+ invulnerable save ."
+          }
+        ],
+        "options": [
+          {
+            "id": "any-number-of-corsair-voidscarred-can-each-have-their-shuriken-pistol-and-power-sword-replaced-with-1-shuriken-rifle-1",
+            "label": "Any number of Corsair Voidscarred can each have their shuriken pistol and power sword replaced with 1 shuriken rifle.",
+            "target": "Any number of Corsair Voidscarred can each have their shuriken pistol and power sword replaced with 1 shuriken rifle.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "the-voidscarred-felarch-s-shuriken-pistol-can-be-replaced-with-one-of-the-following-2",
+            "label": "The Voidscarred Felarch\u2019s shuriken pistol can be replaced with one of the following:",
+            "target": "The Voidscarred Felarch\u2019s shuriken pistol",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-neuro-disruptor",
+                "label": "1 neuro disruptor"
+              },
+              {
+                "id": "1-shuriken-rifle",
+                "label": "1 shuriken rifle"
+              }
+            ]
+          },
+          {
+            "id": "the-voidscarred-felarch-can-be-equipped-with-1-mistshield-3",
+            "label": "The Voidscarred Felarch can be equipped with 1 mistshield.",
+            "target": "The Voidscarred Felarch can be equipped with 1 mistshield.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "for-every-5-models-in-this-unit-1-corsair-voidscarred-s-shuriken-rifle-can-be-replaced-with-one-of-the-following-4",
+            "label": "For every 5 models in this unit, 1 Corsair Voidscarred\u2019s shuriken rifle can be replaced with one of the following:",
+            "target": "For every 5 models in this unit, 1 Corsair Voidscarred\u2019s shuriken rifle can be replaced with one of the following:",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": [
+              {
+                "id": "1-blaster",
+                "label": "1 blaster"
+              },
+              {
+                "id": "1-shredder",
+                "label": "1 shredder"
+              }
+            ]
+          },
+          {
+            "id": "if-this-unit-contains-10-models-1-corsair-voidscarred-s-shuriken-rifle-can-be-replaced-with-one-of-the-following-5",
+            "label": "If this unit contains 10 models, 1 Corsair Voidscarred\u2019s shuriken rifle can be replaced with one of the following:",
+            "target": "If this unit contains 10 models, 1 Corsair Voidscarred\u2019s shuriken rifle can be replaced with one of the following:",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": [
+              {
+                "id": "1-shuriken-cannon",
+                "label": "1 shuriken cannon"
+              },
+              {
+                "id": "1-wraithcannon",
+                "label": "1 wraithcannon"
+              }
+            ]
+          },
+          {
+            "id": "if-this-unit-contains-10-models-1-corsair-voidscarred-s-shuriken-rifle-can-be-replaced-with-1-long-rifle-6",
+            "label": "If this unit contains 10 models, 1 Corsair Voidscarred\u2019s shuriken rifle can be replaced with 1 long rifle.",
+            "target": "If this unit contains 10 models, 1 Corsair Voidscarred\u2019s shuriken rifle can be replaced with 1 long rifle.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "if-this-unit-contains-10-models-1-corsair-voidscarred-s-power-sword-can-be-replaced-with-1-fusion-pistol-7",
+            "label": "If this unit contains 10 models, 1 Corsair Voidscarred\u2019s power sword can be replaced with 1 fusion pistol.",
+            "target": "If this unit contains 10 models, 1 Corsair Voidscarred\u2019s power sword can be replaced with 1 fusion pistol.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "1-corsair-voidscarred-model-equipped-with-a-shuriken-pistol-and-power-sword-can-be-equipped-with-1-faolch-8",
+            "label": "1 Corsair Voidscarred model equipped with a shuriken pistol and power sword can be equipped with 1 Faolch\u00fa.",
+            "target": "1 Corsair Voidscarred model equipped with a shuriken pistol and power sword can be equipped with 1 Faolch\u00fa.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "KEYWORDS \u2013 ALL MODELS: INFANTRY",
@@ -3317,11 +3991,27 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "this-model-s-2-starcannons-can-be-replaced-with-2-bright-lances-1",
+            "label": "This model\u2019s 2 starcannons can be replaced with 2 bright lances.",
+            "target": "This model\u2019s 2 starcannons can be replaced with 2 bright lances.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "VEHICLE",
@@ -3457,11 +4147,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -3472,7 +4169,18 @@
       "factionKeywords": [
         "ASURYANI"
       ],
-      "renderBlocks": []
+      "renderBlocks": [
+        {
+          "title": "SUPPORT ARTILLERY",
+          "displayStyle": "section",
+          "entries": [
+            {
+              "type": "text",
+              "text": "At the start of the Declare Battle Formations step, this model can join one GUARDIAN DEFENDERS unit from your army (a unit cannot have more than one SUPPORT WEAPON model joined to it). This model then counts as part of that GUARDIANS unit for the rest of the battle, and that unit\u2019s Starting Strength is increased accordingly. This model, and any unit it is joined to, cannot embark within a TRANSPORT ."
+            }
+          ]
+        }
+      ]
     },
     {
       "unitId": "dark-reapers",
@@ -3647,11 +4355,59 @@
           "id": "10-models"
         }
       ],
+      "wargear": {
+        "abilities": [
+          {
+            "type": "statement",
+            "label": "Aspect Shrine Token",
+            "text": "Once per battle for each Aspect Shrine token this unit has, you can change the result of one Hit roll or one Wound roll made for a model in this unit (excluding CHARACTER models) to an unmodified 6."
+          },
+          {
+            "type": "statement",
+            "label": "Designer\u2019s Note",
+            "text": "Place an Aspect Shrine token next to the unit for each Aspect Shrine token it has, removing one each time this ability is used."
+          }
+        ],
+        "options": [
+          {
+            "id": "the-dark-reaper-exarch-s-reaper-launcher-can-be-replaced-with-1-of-the-following-1",
+            "label": "The Dark Reaper Exarch\u2019s Reaper launcher can be replaced with 1 of the following:",
+            "target": "The Dark Reaper Exarch\u2019s Reaper launcher can be replaced with 1 of the following:",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": [
+              {
+                "id": "1-missile-launcher",
+                "label": "1 missile launcher"
+              },
+              {
+                "id": "1-shuriken-cannon",
+                "label": "1 shuriken cannon"
+              },
+              {
+                "id": "1-tempest-launcher",
+                "label": "1 tempest launcher"
+              }
+            ]
+          },
+          {
+            "id": "for-every-5-models-in-this-unit-it-can-have-1-aspect-shrine-token-2",
+            "label": "For every 5 models in this unit, it can have 1 Aspect Shrine token.",
+            "target": "For every 5 models in this unit, it can have 1 Aspect Shrine token.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "INFANTRY",
@@ -3787,11 +4543,24 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [
+          {
+            "type": "statement",
+            "label": "Flip Belt",
+            "text": "Each time the bearer\u2019s unit makes a Normal , Advance , Fall Back or Charge move , ignore any vertical distance when determining the total distance the bearer can be moved during that move."
+          }
+        ],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -3803,6 +4572,16 @@
         "HARLEQUINS"
       ],
       "renderBlocks": [
+        {
+          "title": "TRAVELLING PLAYERS",
+          "displayStyle": "section",
+          "entries": [
+            {
+              "type": "text",
+              "text": "Unless otherwise stated, you cannot include more than one of this model in your army."
+            }
+          ]
+        },
         {
           "title": "WARGEAR ABILITIES",
           "displayStyle": "section",
@@ -3957,11 +4736,76 @@
           "id": "10-models"
         }
       ],
+      "wargear": {
+        "abilities": [
+          {
+            "type": "statement",
+            "label": "Shimmershield",
+            "text": "The bearer has a 4+ invulnerable save ."
+          },
+          {
+            "type": "statement",
+            "label": "Aspect Shrine Token",
+            "text": "Once per battle for each Aspect Shrine token this unit has, you can change the result of one Hit roll or one Wound roll made for a model in this unit (excluding CHARACTER models) to an unmodified 6."
+          },
+          {
+            "type": "statement",
+            "label": "Designer\u2019s Note",
+            "text": "Place an Aspect Shrine token next to the unit for each Aspect Shrine token it has, removing one each time this ability is used."
+          }
+        ],
+        "options": [
+          {
+            "id": "the-dire-avenger-exarch-s-avenger-shuriken-catapult-can-be-replaced-with-1-shuriken-pistol-and-one-of-the-following-1",
+            "label": "The Dire Avenger Exarch\u2019s Avenger shuriken catapult can be replaced with 1 shuriken pistol and one of the following:",
+            "target": "The Dire Avenger Exarch\u2019s Avenger shuriken catapult can be replaced with 1 shuriken pistol and one of the following:",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": [
+              {
+                "id": "1-diresword",
+                "label": "1 diresword"
+              },
+              {
+                "id": "1-power-glaive",
+                "label": "1 power glaive"
+              }
+            ]
+          },
+          {
+            "id": "if-this-unit-s-dire-avenger-exarch-is-equipped-with-1-avenger-shuriken-catapult-it-can-be-equipped-with-1-additional-avenger-shuriken-catapult-2",
+            "label": "If this unit\u2019s Dire Avenger Exarch is equipped with 1 Avenger shuriken catapult, it can be equipped with 1 additional Avenger shuriken catapult.",
+            "target": "If this unit\u2019s Dire Avenger Exarch is equipped with 1 Avenger shuriken catapult, it can be equipped with 1 additional Avenger shuriken catapult.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "the-dire-avenger-exarch-s-shuriken-pistol-can-be-replaced-with-1-shimmershield-3",
+            "label": "The Dire Avenger Exarch\u2019s shuriken pistol can be replaced with 1 shimmershield.",
+            "target": "The Dire Avenger Exarch\u2019s shuriken pistol can be replaced with 1 shimmershield.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "for-every-5-models-in-this-unit-it-can-have-1-aspect-shrine-token-4",
+            "label": "For every 5 models in this unit, it can have 1 Aspect Shrine token.",
+            "target": "For every 5 models in this unit, it can have 1 Aspect Shrine token.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "INFANTRY",
@@ -4115,11 +4959,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -4328,11 +5179,52 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "this-model-s-scatter-laser-can-be-replaced-with-one-of-the-following-1",
+            "label": "This model\u2019s scatter laser can be replaced with one of the following:",
+            "target": "This model\u2019s scatter laser",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-missile-launcher",
+                "label": "1 missile launcher"
+              },
+              {
+                "id": "1-bright-lance",
+                "label": "1 bright lance"
+              },
+              {
+                "id": "1-shuriken-cannon",
+                "label": "1 shuriken cannon"
+              },
+              {
+                "id": "1-starcannon",
+                "label": "1 starcannon"
+              }
+            ]
+          },
+          {
+            "id": "this-model-s-twin-shuriken-catapult-can-be-replaced-with-1-shuriken-cannon-2",
+            "label": "This model\u2019s twin shuriken catapult can be replaced with 1 shuriken cannon.",
+            "target": "This model\u2019s twin shuriken catapult can be replaced with 1 shuriken cannon.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "VEHICLE",
@@ -4511,11 +5403,27 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "this-model-s-witchblade-can-be-replaced-with-1-singing-spear-1",
+            "label": "This model\u2019s witchblade can be replaced with 1 singing spear.",
+            "target": "This model\u2019s witchblade can be replaced with 1 singing spear.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "INFANTRY",
@@ -4702,11 +5610,27 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "this-model-s-witchblade-can-be-replaced-with-1-singing-spear-1",
+            "label": "This model\u2019s witchblade can be replaced with 1 singing spear.",
+            "target": "This model\u2019s witchblade can be replaced with 1 singing spear.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "MOUNTED",
@@ -4915,11 +5839,59 @@
           "id": "10-models"
         }
       ],
+      "wargear": {
+        "abilities": [
+          {
+            "type": "statement",
+            "label": "Aspect Shrine Token",
+            "text": "Once per battle for each Aspect Shrine token this unit has, you can change the result of one Hit roll or one Wound roll made for a model in this unit (excluding CHARACTER models) to an unmodified 6."
+          },
+          {
+            "type": "statement",
+            "label": "Designer\u2019s Note",
+            "text": "Place an Aspect Shrine token next to the unit for each Aspect Shrine token it has, removing one each time this ability is used."
+          }
+        ],
+        "options": [
+          {
+            "id": "the-fire-dragon-exarch-model-s-exarch-s-dragon-fusion-gun-can-be-replaced-with-1-of-the-following-1",
+            "label": "The Fire Dragon Exarch model\u2019s Exarch\u2019s Dragon fusion gun can be replaced with 1 of the following:",
+            "target": "The Fire Dragon Exarch model\u2019s Exarch\u2019s Dragon fusion gun can be replaced with 1 of the following:",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": [
+              {
+                "id": "1-dragon-s-breath-flamer",
+                "label": "1 Dragon\u2019s breath flamer"
+              },
+              {
+                "id": "1-dragon-fusion-pistol-and-1-dragon-axe",
+                "label": "1 Dragon fusion pistol and 1 Dragon axe"
+              },
+              {
+                "id": "1-firepike",
+                "label": "1 firepike"
+              }
+            ]
+          },
+          {
+            "id": "for-every-5-models-in-this-unit-it-can-have-1-aspect-shrine-token-2",
+            "label": "For every 5 models in this unit, it can have 1 Aspect Shrine token.",
+            "target": "For every 5 models in this unit, it can have 1 Aspect Shrine token.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "INFANTRY",
@@ -5082,11 +6054,27 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "this-model-s-twin-shuriken-catapult-can-be-replaced-with-1-shuriken-cannon-1",
+            "label": "This model\u2019s twin shuriken catapult can be replaced with 1 shuriken cannon.",
+            "target": "This model\u2019s twin shuriken catapult can be replaced with 1 shuriken cannon.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "VEHICLE",
@@ -5231,11 +6219,27 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "this-model-s-twin-shuriken-catapult-can-be-replaced-with-1-shuriken-cannon-1",
+            "label": "This model\u2019s twin shuriken catapult can be replaced with 1 shuriken cannon.",
+            "target": "This model\u2019s twin shuriken catapult can be replaced with 1 shuriken cannon.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "VEHICLE",
@@ -5383,11 +6387,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -5597,11 +6608,44 @@
           "id": "11-models"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "the-heavy-weapon-platform-s-shuriken-cannon-can-be-replaced-with-one-of-the-following-1",
+            "label": "The Heavy Weapon Platform\u2019s shuriken cannon can be replaced with one of the following:",
+            "target": "The Heavy Weapon Platform\u2019s shuriken cannon",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-missile-launcher",
+                "label": "1 missile launcher"
+              },
+              {
+                "id": "1-bright-lance",
+                "label": "1 bright lance"
+              },
+              {
+                "id": "1-scatter-laser",
+                "label": "1 scatter laser"
+              },
+              {
+                "id": "1-starcannon",
+                "label": "1 starcannon"
+              }
+            ]
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -5706,11 +6750,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -5899,11 +6950,48 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "each-of-this-model-s-hornet-pulse-lasers-can-be-replaced-with-one-of-the-following-1",
+            "label": "Each of this model\u2019s Hornet pulse lasers can be replaced with one of the following:",
+            "target": "Each of this model\u2019s Hornet pulse lasers",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "aeldari-missile-launcher",
+                "label": "Aeldari missile launcher"
+              },
+              {
+                "id": "bright-lance",
+                "label": "Bright lance"
+              },
+              {
+                "id": "scatter-laser",
+                "label": "Scatter laser"
+              },
+              {
+                "id": "shuriken-cannon",
+                "label": "Shuriken cannon"
+              },
+              {
+                "id": "starcannon",
+                "label": "Starcannon"
+              }
+            ]
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -6079,11 +7167,63 @@
           "id": "10-models"
         }
       ],
+      "wargear": {
+        "abilities": [
+          {
+            "type": "statement",
+            "label": "Aspect Shrine Token",
+            "text": "Once per battle for each Aspect Shrine token this unit has, you can change the result of one Hit roll or one Wound roll made for a model in this unit (excluding CHARACTER models) to an unmodified 6."
+          },
+          {
+            "type": "statement",
+            "label": "Designer\u2019s Note",
+            "text": "Place an Aspect Shrine token next to the unit for each Aspect Shrine token it has, removing one each time this ability is used."
+          }
+        ],
+        "options": [
+          {
+            "id": "the-howling-banshee-exarch-s-banshee-blade-can-be-replaced-with-1-of-the-following-1",
+            "label": "The Howling Banshee Exarch\u2019s Banshee blade can be replaced with 1 of the following:",
+            "target": "The Howling Banshee Exarch\u2019s Banshee blade can be replaced with 1 of the following:",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": [
+              {
+                "id": "1-executioner",
+                "label": "1 executioner"
+              },
+              {
+                "id": "1-triskele",
+                "label": "1 triskele"
+              }
+            ]
+          },
+          {
+            "id": "the-howling-banshee-exarch-s-shuriken-pistol-and-banshee-blade-can-be-replaced-with-1-mirrorswords-2",
+            "label": "The Howling Banshee Exarch\u2019s shuriken pistol and Banshee blade can be replaced with 1 mirrorswords.",
+            "target": "The Howling Banshee Exarch\u2019s shuriken pistol and Banshee blade can be replaced with 1 mirrorswords.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "for-every-5-models-in-this-unit-it-can-have-1-aspect-shrine-token-3",
+            "label": "For every 5 models in this unit, it can have 1 Aspect Shrine token.",
+            "target": "For every 5 models in this unit, it can have 1 Aspect Shrine token.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "INFANTRY",
@@ -6228,11 +7368,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -6356,11 +7503,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -6491,11 +7645,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -6639,11 +7800,24 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [
+          {
+            "type": "statement",
+            "label": "The Scorpion\u2019s Bite",
+            "text": "Melee weapons equipped by the bearer have the [DEVASTATING WOUNDS] ability when targeting units without the TITANIC keyword."
+          }
+        ],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -6788,11 +7962,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -6939,11 +8120,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -7138,11 +8326,44 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "this-model-s-shuriken-cannon-can-be-replaced-with-one-of-the-following-1",
+            "label": "This model\u2019s shuriken cannon can be replaced with one of the following:",
+            "target": "This model\u2019s shuriken cannon",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "aeldari-missile-launcher",
+                "label": "Aeldari missile launcher"
+              },
+              {
+                "id": "bright-lance",
+                "label": "Bright lance"
+              },
+              {
+                "id": "scatter-laser",
+                "label": "Scatter laser"
+              },
+              {
+                "id": "starcannon",
+                "label": "Starcannon"
+              }
+            ]
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -7266,11 +8487,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -7422,11 +8650,27 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "this-model-s-twin-shuriken-catapult-can-be-replaced-with-1-shuriken-cannon-1",
+            "label": "This model's twin shuriken catapult can be replaced with 1 shuriken cannon.",
+            "target": "This model's twin shuriken catapult can be replaced with 1 shuriken cannon.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "VEHICLE",
@@ -7558,11 +8802,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -7758,11 +9009,77 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "this-model-s-d-bombard-can-be-replaced-with-one-of-the-following-1",
+            "label": "This model\u2019s D-bombard can be replaced with one of the following:",
+            "target": "This model\u2019s D-bombard",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "2-phantom-starcannons-and-1-wraith-glaive",
+                "label": "2 Phantom starcannons and 1 wraith glaive"
+              },
+              {
+                "id": "1-phantom-starcannon-1-pulse-laser-and-1-wraith-glaive",
+                "label": "1 Phantom starcannon, 1 pulse laser and 1 wraith glaive"
+              },
+              {
+                "id": "2-pulse-lasers-and-1-wraith-glaive",
+                "label": "2 pulse lasers and 1 wraith glaive"
+              },
+              {
+                "id": "1-phantom-pulsar",
+                "label": "1 Phantom pulsar"
+              }
+            ]
+          },
+          {
+            "id": "this-model-s-phantom-pulsar-can-be-replaced-with-one-of-the-following-2",
+            "label": "This model\u2019s Phantom pulsar can be replaced with one of the following:",
+            "target": "This model\u2019s Phantom pulsar",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-d-bombard",
+                "label": "1 D-bombard"
+              },
+              {
+                "id": "2-phantom-starcannons-and-1-wraith-glaive",
+                "label": "2 Phantom starcannons and 1 wraith glaive"
+              },
+              {
+                "id": "1-phantom-starcannon-1-pulse-laser-and-1-wraith-glaive",
+                "label": "1 Phantom starcannon, 1 pulse laser and 1 wraith glaive"
+              },
+              {
+                "id": "2-pulse-lasers-and-1-wraith-glaive",
+                "label": "2 pulse lasers and 1 wraith glaive"
+              }
+            ]
+          },
+          {
+            "id": "this-model-s-phantom-starcannon-can-be-replaced-with-1-pulse-laser-3",
+            "label": "This model\u2019s Phantom starcannon can be replaced with 1 pulse laser.",
+            "target": "This model\u2019s Phantom starcannon can be replaced with 1 pulse laser.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "MONSTER",
@@ -7908,11 +9225,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -8036,11 +9360,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -8186,11 +9517,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -8335,11 +9673,18 @@
           "id": "10-models"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -8484,11 +9829,35 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "this-model-s-revenant-pulsar-can-be-replaced-with-1-sonic-lance-1",
+            "label": "This model\u2019s Revenant pulsar can be replaced with 1 sonic lance.",
+            "target": "This model\u2019s Revenant pulsar can be replaced with 1 sonic lance.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "this-model-s-sonic-lance-can-be-replaced-with-1-revenant-pulsar-2",
+            "label": "This model\u2019s sonic lance can be replaced with 1 Revenant pulsar.",
+            "target": "This model\u2019s sonic lance can be replaced with 1 Revenant pulsar.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "MONSTER",
@@ -8680,11 +10049,44 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "this-model-s-shuriken-cannon-can-be-replaced-with-one-of-the-following-1",
+            "label": "This model\u2019s shuriken cannon can be replaced with one of the following:",
+            "target": "This model\u2019s shuriken cannon",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-aeldari-missile-launcher",
+                "label": "1 Aeldari missile launcher"
+              },
+              {
+                "id": "1-bright-lance",
+                "label": "1 bright lance"
+              },
+              {
+                "id": "1-scatter-laser",
+                "label": "1 scatter laser"
+              },
+              {
+                "id": "1-starcannon",
+                "label": "1 starcannon"
+              }
+            ]
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -8834,11 +10236,18 @@
           "id": "shadow-spectre-exarch"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -8961,11 +10370,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -8976,7 +10392,18 @@
       "factionKeywords": [
         "ASURYANI"
       ],
-      "renderBlocks": []
+      "renderBlocks": [
+        {
+          "title": "SUPPORT ARTILLERY",
+          "displayStyle": "section",
+          "entries": [
+            {
+              "type": "text",
+              "text": "At the start of the Declare Battle Formations step, this model can join one GUARDIAN DEFENDERS unit from your army (a unit cannot have more than one SUPPORT WEAPON model joined to it). This model then counts as part of that GUARDIANS unit for the rest of the battle, and that unit\u2019s Starting Strength is increased accordingly. This model, and any unit it is joined to, cannot embark within a TRANSPORT ."
+            }
+          ]
+        }
+      ]
     },
     {
       "unitId": "shadowseer",
@@ -9095,11 +10522,33 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [
+          {
+            "type": "statement",
+            "label": "Flip Belt",
+            "text": "Each time the bearer\u2019s unit makes a Normal , Advance , Fall Back or Charge move , ignore any vertical distance when determining the total distance the bearer can be moved during that move."
+          }
+        ],
+        "options": [
+          {
+            "id": "this-model-s-shuriken-pistol-can-be-replaced-with-1-neuro-disruptor-1",
+            "label": "This model\u2019s shuriken pistol can be replaced with 1 neuro disruptor.",
+            "target": "This model\u2019s shuriken pistol can be replaced with 1 neuro disruptor.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "INFANTRY",
@@ -9113,6 +10562,16 @@
         "HARLEQUINS"
       ],
       "renderBlocks": [
+        {
+          "title": "TRAVELLING PLAYERS",
+          "displayStyle": "section",
+          "entries": [
+            {
+              "type": "text",
+              "text": "Unless otherwise stated, you cannot include more than one of this model in your army."
+            }
+          ]
+        },
         {
           "title": "WARGEAR ABILITIES",
           "displayStyle": "section",
@@ -9313,11 +10772,58 @@
           "id": "6-models"
         }
       ],
+      "wargear": {
+        "abilities": [
+          {
+            "type": "statement",
+            "label": "Shimmershield",
+            "text": "The bearer has a 4+ invulnerable save ."
+          }
+        ],
+        "options": [
+          {
+            "id": "the-shining-spear-exarch-s-laser-lance-can-be-replaced-with-one-of-the-following-1",
+            "label": "The Shining Spear Exarch\u2019s laser lance can be replaced with one of the following:",
+            "target": "The Shining Spear Exarch\u2019s laser lance",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-paragon-sabre",
+                "label": "1 paragon sabre"
+              },
+              {
+                "id": "1-star-lance",
+                "label": "1 star lance"
+              }
+            ]
+          },
+          {
+            "id": "the-shining-spear-exarch-s-twin-shuriken-catapult-can-be-replaced-with-1-shuriken-cannon-2",
+            "label": "The Shining Spear Exarch\u2019s twin shuriken catapult can be replaced with 1 shuriken cannon.",
+            "target": "The Shining Spear Exarch\u2019s twin shuriken catapult can be replaced with 1 shuriken cannon.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "the-shining-spear-exarch-can-be-equipped-with-1-shimmershield-3",
+            "label": "The Shining Spear Exarch can be equipped with 1 shimmershield.",
+            "target": "The Shining Spear Exarch can be equipped with 1 shimmershield.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "MOUNTED",
@@ -9471,11 +10977,18 @@
           "id": "6-models"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "MOUNTED",
@@ -9650,11 +11163,71 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [
+          {
+            "type": "statement",
+            "label": "Scattershield",
+            "text": "The bearer has a 4+ invulnerable save ."
+          }
+        ],
+        "options": [
+          {
+            "id": "this-model-can-be-equipped-with-up-to-two-of-the-following-1",
+            "label": "This model can be equipped with up to two of the following:",
+            "target": "This model can be equipped with up to two of the following:",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": [
+              {
+                "id": "1-scatter-laser",
+                "label": "1 scatter laser"
+              },
+              {
+                "id": "1-shuriken-cannon",
+                "label": "1 shuriken cannon"
+              },
+              {
+                "id": "1-starcannon",
+                "label": "1 starcannon"
+              }
+            ]
+          },
+          {
+            "id": "this-model-s-inferno-lance-can-be-replaced-with-1-deathshroud-cannon-2",
+            "label": "This model\u2019s inferno lance can be replaced with 1 deathshroud cannon.",
+            "target": "This model\u2019s inferno lance can be replaced with 1 deathshroud cannon.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "this-model-s-scattershield-can-be-replaced-with-one-of-the-following-3",
+            "label": "This model\u2019s scattershield can be replaced with one of the following:",
+            "target": "This model\u2019s scattershield",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-inferno-lance",
+                "label": "1 inferno lance"
+              },
+              {
+                "id": "1-deathshroud-cannon",
+                "label": "1 deathshroud cannon"
+              }
+            ]
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "MONSTER",
@@ -9827,11 +11400,35 @@
           "id": "4-models"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "any-number-of-models-can-each-have-their-shuriken-cannon-replaced-with-1-skyweaver-haywire-cannon-1",
+            "label": "Any number of models can each have their shuriken cannon replaced with 1 Skyweaver haywire cannon.",
+            "target": "Any number of models can each have their shuriken cannon replaced with 1 Skyweaver haywire cannon.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "any-number-of-models-can-each-have-their-star-bolas-replaced-with-1-zephyrglaive-2",
+            "label": "Any number of models can each have their star bolas replaced with 1 zephyrglaive.",
+            "target": "Any number of models can each have their star bolas replaced with 1 zephyrglaive.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "MOUNTED",
@@ -9932,11 +11529,24 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [
+          {
+            "type": "statement",
+            "label": "Flip Belt",
+            "text": "Each time the bearer\u2019s unit makes a Normal , Advance , Fall Back or Charge move , ignore any vertical distance when determining the total distance the bearer can be moved during that move."
+          }
+        ],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -9949,6 +11559,16 @@
         "HARLEQUINS"
       ],
       "renderBlocks": [
+        {
+          "title": "PATH OF DAMNATION",
+          "displayStyle": "section",
+          "entries": [
+            {
+              "type": "text",
+              "text": "This model cannot be your WARLORD ."
+            }
+          ]
+        },
         {
           "title": "WARGEAR ABILITIES",
           "displayStyle": "section",
@@ -10070,11 +11690,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -10203,11 +11830,18 @@
           "id": "2-models"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -10317,11 +11951,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -10497,11 +12138,49 @@
           "id": "11-models"
         }
       ],
+      "wargear": {
+        "abilities": [
+          {
+            "type": "statement",
+            "label": "Serpent Shield",
+            "text": "Models in the bearer\u2019s unit have a 5+ invulnerable save ."
+          }
+        ],
+        "options": [
+          {
+            "id": "up-to-2-storm-guardians-can-each-have-their-shuriken-pistol-replaced-with-1-flamer-1",
+            "label": "Up to 2 Storm Guardians can each have their shuriken pistol replaced with 1 flamer.",
+            "target": "Up to 2 Storm Guardians can each have their shuriken pistol replaced with 1 flamer.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "up-to-2-storm-guardians-can-each-have-their-shuriken-pistol-replaced-with-1-fusion-gun-2",
+            "label": "Up to 2 Storm Guardians can each have their shuriken pistol replaced with 1 fusion gun.",
+            "target": "Up to 2 Storm Guardians can each have their shuriken pistol replaced with 1 fusion gun.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "up-to-2-storm-guardians-can-each-have-their-close-combat-weapon-replaced-with-1-power-sword-3",
+            "label": "Up to 2 Storm Guardians can each have their close combat weapon replaced with 1 power sword.",
+            "target": "Up to 2 Storm Guardians can each have their close combat weapon replaced with 1 power sword.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "INFANTRY",
@@ -10696,11 +12375,55 @@
           "id": "10-models"
         }
       ],
+      "wargear": {
+        "abilities": [
+          {
+            "type": "statement",
+            "label": "Aspect Shrine Token",
+            "text": "Once per battle for each Aspect Shrine token this unit has, you can change the result of one Hit roll or one Wound roll made for a model in this unit (excluding CHARACTER models) to an unmodified 6."
+          },
+          {
+            "type": "statement",
+            "label": "Designer\u2019s Note",
+            "text": "Place an Aspect Shrine token next to the unit for each Aspect Shrine token it has, removing one each time this ability is used."
+          }
+        ],
+        "options": [
+          {
+            "id": "the-striking-scorpion-exarch-s-shuriken-pistol-scorpion-chainsword-and-scorpion-s-claw-can-be-replaced-with-one-of-the-following-1",
+            "label": "The Striking Scorpion Exarch\u2019s shuriken pistol, Scorpion chainsword and Scorpion\u2019s claw can be replaced with one of the following:",
+            "target": "The Striking Scorpion Exarch\u2019s shuriken pistol, Scorpion chainsword and Scorpion\u2019s claw",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-biting-blade-and-1-shuriken-pistol",
+                "label": "1 biting blade and 1 shuriken pistol"
+              },
+              {
+                "id": "1-chainsabres",
+                "label": "1 chainsabres"
+              }
+            ]
+          },
+          {
+            "id": "for-every-5-models-in-this-unit-it-can-have-1-aspect-shrine-token-2",
+            "label": "For every 5 models in this unit, it can have 1 Aspect Shrine token.",
+            "target": "For every 5 models in this unit, it can have 1 Aspect Shrine token.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "INFANTRY",
@@ -10909,11 +12632,59 @@
           "id": "10-models"
         }
       ],
+      "wargear": {
+        "abilities": [
+          {
+            "type": "statement",
+            "label": "Aspect Shrine Token",
+            "text": "Once per battle for each Aspect Shrine token this unit has, you can change the result of one Hit roll or one Wound roll made for a model in this unit (excluding CHARACTER models) to an unmodified 6."
+          },
+          {
+            "type": "statement",
+            "label": "Designer\u2019s Note",
+            "text": "Place an Aspect Shrine token next to the unit for each Aspect Shrine token it has, removing one each time this ability is used."
+          }
+        ],
+        "options": [
+          {
+            "id": "the-swooping-hawk-exarch-s-hawk-s-talon-can-be-replaced-with-one-of-the-following-1",
+            "label": "The Swooping Hawk Exarch\u2019s Hawk\u2019s talon can be replaced with one of the following:",
+            "target": "The Swooping Hawk Exarch\u2019s Hawk\u2019s talon",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-exarch-s-lasblaster",
+                "label": "1 Exarch\u2019s lasblaster"
+              },
+              {
+                "id": "1-sunpistol-and-1-power-sword",
+                "label": "1 sunpistol and 1 power sword"
+              },
+              {
+                "id": "1-scatter-laser",
+                "label": "1 scatter laser"
+              }
+            ]
+          },
+          {
+            "id": "for-every-5-models-in-this-unit-it-can-have-1-aspect-shrine-token-2",
+            "label": "For every 5 models in this unit, it can have 1 Aspect Shrine token.",
+            "target": "For every 5 models in this unit, it can have 1 Aspect Shrine token.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "INFANTRY",
@@ -11061,11 +12832,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -11078,6 +12856,16 @@
         "YNNARI"
       ],
       "renderBlocks": [
+        {
+          "title": "SERVANT OF THE WHISPERING GOD",
+          "displayStyle": "section",
+          "entries": [
+            {
+              "type": "text",
+              "text": "If your army includes THE VISARCH , it cannot include any EPIC HERO units (excluding YNNARI units). If your army includes any EPIC HERO units (excluding YNNARI units), it cannot include THE VISARCH ."
+            }
+          ]
+        },
         {
           "title": "LEADER",
           "displayStyle": "section",
@@ -11210,11 +12998,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "MONSTER",
@@ -11229,7 +13024,18 @@
       "factionKeywords": [
         "YNNARI"
       ],
-      "renderBlocks": []
+      "renderBlocks": [
+        {
+          "title": "AVATAR OF THE WHISPERING GOD",
+          "displayStyle": "section",
+          "entries": [
+            {
+              "type": "text",
+              "text": "If your army includes THE YNCARNE , it cannot include any EPIC HERO units (excluding YNNARI units). If your army includes any EPIC HERO units (excluding YNNARI units), it cannot include THE YNCARNE ."
+            }
+          ]
+        }
+      ]
     },
     {
       "unitId": "troupe",
@@ -11418,11 +13224,75 @@
           "id": "12-models"
         }
       ],
+      "wargear": {
+        "abilities": [
+          {
+            "type": "statement",
+            "label": "Flip Belt",
+            "text": "Each time the bearer\u2019s unit makes a Normal , Advance , Fall Back or Charge move , ignore any vertical distance when determining the total distance the bearer can be moved during that move."
+          }
+        ],
+        "options": [
+          {
+            "id": "any-number-of-models-can-each-have-their-harlequin-s-blade-replaced-with-1-harlequin-s-special-weapon-1",
+            "label": "Any number of models can each have their Harlequin\u2019s blade replaced with 1 Harlequin\u2019s special weapon.",
+            "target": "Any number of models can each have their Harlequin\u2019s blade replaced with 1 Harlequin\u2019s special weapon.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "the-lead-player-s-harlequin-s-blade-can-be-replaced-with-1-power-sword-2",
+            "label": "The Lead Player\u2019s Harlequin\u2019s blade can be replaced with 1 power sword.",
+            "target": "The Lead Player\u2019s Harlequin\u2019s blade can be replaced with 1 power sword.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "if-this-unit-contains-9-or-fewer-models-3",
+            "label": "If this unit contains 9 or fewer models:",
+            "target": "If this unit contains 9 or fewer models:",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": [
+              {
+                "id": "up-to-2-models-can-each-have-their-shuriken-pistol-replaced-with-1-neuro-disruptor",
+                "label": "Up to 2 models can each have their shuriken pistol replaced with 1 neuro disruptor"
+              },
+              {
+                "id": "up-to-2-models-can-each-have-their-shuriken-pistol-replaced-with-1-fusion-pistol",
+                "label": "Up to 2 models can each have their shuriken pistol replaced with 1 fusion pistol"
+              }
+            ]
+          },
+          {
+            "id": "if-this-unit-contains-10-or-more-models-4",
+            "label": "If this unit contains 10 or more models:",
+            "target": "If this unit contains 10 or more models:",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": [
+              {
+                "id": "up-to-4-models-can-each-have-their-shuriken-pistol-replaced-with-1-neuro-disruptor",
+                "label": "Up to 4 models can each have their shuriken pistol replaced with 1 neuro disruptor"
+              },
+              {
+                "id": "up-to-4-models-can-each-have-their-shuriken-pistol-replaced-with-1-fusion-pistol",
+                "label": "Up to 4 models can each have their shuriken pistol replaced with 1 fusion pistol"
+              }
+            ]
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "INFANTRY",
@@ -11592,11 +13462,50 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [
+          {
+            "type": "statement",
+            "label": "Flip Belt",
+            "text": "Each time the bearer\u2019s unit makes a Normal , Advance , Fall Back or Charge move , ignore any vertical distance when determining the total distance the bearer can be moved during that move."
+          }
+        ],
+        "options": [
+          {
+            "id": "this-model-s-shuriken-pistol-can-be-replaced-with-one-of-the-following-1",
+            "label": "This model\u2019s shuriken pistol can be replaced with one of the following:",
+            "target": "This model\u2019s shuriken pistol",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-fusion-pistol",
+                "label": "1 fusion pistol"
+              },
+              {
+                "id": "1-neuro-disruptor",
+                "label": "1 neuro disruptor"
+              }
+            ]
+          },
+          {
+            "id": "this-model-s-troupe-master-s-blade-can-be-replaced-with-1-harlequin-s-special-weapon-2",
+            "label": "This model's Troupe Master's blade can be replaced with 1 Harlequin's special weapon.",
+            "target": "This model's Troupe Master's blade can be replaced with 1 Harlequin's special weapon.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "INFANTRY",
@@ -11609,6 +13518,16 @@
         "HARLEQUINS"
       ],
       "renderBlocks": [
+        {
+          "title": "TRAVELLING PLAYERS",
+          "displayStyle": "section",
+          "entries": [
+            {
+              "type": "text",
+              "text": "Unless otherwise stated, you cannot include more than one of this model in your army."
+            }
+          ]
+        },
         {
           "title": "WARGEAR ABILITIES",
           "displayStyle": "section",
@@ -11752,11 +13671,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -11887,11 +13813,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -12034,11 +13967,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -12049,7 +13989,18 @@
       "factionKeywords": [
         "ASURYANI"
       ],
-      "renderBlocks": []
+      "renderBlocks": [
+        {
+          "title": "SUPPORT ARTILLERY",
+          "displayStyle": "section",
+          "entries": [
+            {
+              "type": "text",
+              "text": "At the start of the Declare Battle Formations step, this model can join one GUARDIAN DEFENDERS unit from your army (a unit cannot have more than one SUPPORT WEAPON model joined to it). This model then counts as part of that GUARDIANS unit for the rest of the battle, and that unit\u2019s Starting Strength is increased accordingly. This model, and any unit it is joined to, cannot embark within a TRANSPORT ."
+            }
+          ]
+        }
+      ]
     },
     {
       "unitId": "voidweaver",
@@ -12183,11 +14134,27 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "this-model-s-voidweaver-haywire-cannon-can-be-replaced-with-1-prismatic-cannon-1",
+            "label": "This model\u2019s Voidweaver haywire cannon can be replaced with 1 prismatic cannon.",
+            "target": "This model\u2019s Voidweaver haywire cannon can be replaced with 1 prismatic cannon.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "VEHICLE",
@@ -12360,11 +14327,44 @@
           "id": "2-models"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "any-number-of-models-can-each-have-their-bright-lance-replaced-with-one-of-the-following-1",
+            "label": "Any number of models can each have their bright lance replaced with one of the following:",
+            "target": "Any number of models can each have their bright lance replaced with one of the following:",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": [
+              {
+                "id": "1-scatter-laser",
+                "label": "1 scatter laser"
+              },
+              {
+                "id": "1-starcannon",
+                "label": "1 starcannon"
+              }
+            ]
+          },
+          {
+            "id": "any-number-of-models-can-each-have-their-shuriken-cannon-replaced-with-1-missile-launcher-2",
+            "label": "Any number of models can each have their shuriken cannon replaced with 1 missile launcher.",
+            "target": "Any number of models can each have their shuriken cannon replaced with 1 missile launcher.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "VEHICLE",
@@ -12537,11 +14537,44 @@
           "id": "2-models"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "each-model-can-have-each-shuriken-cannon-it-is-equipped-with-replaced-with-one-of-the-following-1",
+            "label": "Each model can have each shuriken cannon it is equipped with replaced with one of the following:",
+            "target": "Each model can have each shuriken cannon it is equipped with replaced with one of the following:",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": [
+              {
+                "id": "1-missile-launcher",
+                "label": "1 missile launcher"
+              },
+              {
+                "id": "1-bright-lance",
+                "label": "1 bright lance"
+              },
+              {
+                "id": "1-scatter-laser",
+                "label": "1 scatter laser"
+              },
+              {
+                "id": "1-starcannon",
+                "label": "1 starcannon"
+              }
+            ]
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "VEHICLE",
@@ -12698,11 +14731,27 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "this-model-s-witchblade-can-be-replaced-with-1-singing-spear-1",
+            "label": "This model\u2019s witchblade can be replaced with 1 singing spear.",
+            "target": "This model\u2019s witchblade can be replaced with 1 singing spear.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "INFANTRY",
@@ -12881,11 +14930,27 @@
           "id": "4-models"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "any-number-of-models-can-each-have-their-witchblade-replaced-with-1-singing-spear-1",
+            "label": "Any number of models can each have their witchblade replaced with 1 singing spear.",
+            "target": "Any number of models can each have their witchblade replaced with 1 singing spear.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "INFANTRY",
@@ -13075,11 +15140,27 @@
           "id": "2-models"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "any-number-of-models-can-each-have-their-witchblade-replaced-with-1-singing-spear-1",
+            "label": "Any number of models can each have their witchblade replaced with 1 singing spear.",
+            "target": "Any number of models can each have their witchblade replaced with 1 singing spear.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "MOUNTED",
@@ -13241,11 +15322,27 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "this-model-s-twin-shuriken-catapult-can-be-replaced-with-1-shuriken-cannon-1",
+            "label": "This model\u2019s twin shuriken catapult can be replaced with 1 shuriken cannon.",
+            "target": "This model\u2019s twin shuriken catapult can be replaced with 1 shuriken cannon.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "VEHICLE",
@@ -13453,11 +15550,59 @@
           "id": "10-models"
         }
       ],
+      "wargear": {
+        "abilities": [
+          {
+            "type": "statement",
+            "label": "Aspect Shrine Token",
+            "text": "Once per battle for each Aspect Shrine token this unit has, you can change the result of one Hit roll or one Wound roll made for a model in this unit (excluding CHARACTER models) to an unmodified 6."
+          },
+          {
+            "type": "statement",
+            "label": "Designer\u2019s Note",
+            "text": "Place an Aspect Shrine token next to the unit for each Aspect Shrine token it has, removing one each time this ability is used."
+          }
+        ],
+        "options": [
+          {
+            "id": "the-warp-spider-exarch-s-exarch-s-death-spinner-can-be-replaced-with-one-of-the-following-1",
+            "label": "The Warp Spider Exarch\u2019s Exarch\u2019s death spinner can be replaced with one of the following:",
+            "target": "The Warp Spider Exarch\u2019s Exarch\u2019s death spinner",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-spinneret-rifle-and-1-death-weavers",
+                "label": "1 spinneret rifle and 1 death weavers"
+              },
+              {
+                "id": "1-powerblades-and-1-death-weavers",
+                "label": "1 powerblades and 1 death weavers"
+              },
+              {
+                "id": "1-powerblade-array",
+                "label": "1 powerblade array"
+              }
+            ]
+          },
+          {
+            "id": "for-every-5-models-in-this-unit-it-can-have-1-aspect-shrine-token-2",
+            "label": "For every 5 models in this unit, it can have 1 Aspect Shrine token.",
+            "target": "For every 5 models in this unit, it can have 1 Aspect Shrine token.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "INFANTRY",
@@ -13640,11 +15785,69 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "this-model-s-scatter-laser-can-be-replaced-with-one-of-the-following-1",
+            "label": "This model\u2019s scatter laser can be replaced with one of the following:",
+            "target": "This model\u2019s scatter laser",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-aeldari-missile-launcher",
+                "label": "1 Aeldari missile launcher"
+              },
+              {
+                "id": "1-bright-lance",
+                "label": "1 bright lance"
+              },
+              {
+                "id": "1-shuriken-cannon",
+                "label": "1 shuriken cannon"
+              },
+              {
+                "id": "1-starcannon",
+                "label": "1 starcannon"
+              }
+            ]
+          },
+          {
+            "id": "this-model-s-shuriken-cannon-can-be-replaced-with-one-of-the-following-2",
+            "label": "This model\u2019s shuriken cannon can be replaced with one of the following:",
+            "target": "This model\u2019s shuriken cannon",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-aeldari-missile-launcher",
+                "label": "1 Aeldari missile launcher"
+              },
+              {
+                "id": "1-bright-lance",
+                "label": "1 bright lance"
+              },
+              {
+                "id": "1-scatter-laser",
+                "label": "1 scatter laser"
+              },
+              {
+                "id": "1-starcannon",
+                "label": "1 starcannon"
+              }
+            ]
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -13847,11 +16050,52 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "this-model-s-twin-shuriken-cannon-can-be-replaced-with-one-of-the-following-1",
+            "label": "This model\u2019s twin shuriken cannon can be replaced with one of the following:",
+            "target": "This model\u2019s twin shuriken cannon",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-twin-missile-launcher",
+                "label": "1 twin missile launcher"
+              },
+              {
+                "id": "1-twin-bright-lance",
+                "label": "1 twin bright lance"
+              },
+              {
+                "id": "1-twin-scatter-laser",
+                "label": "1 twin scatter laser"
+              },
+              {
+                "id": "1-twin-starcannon",
+                "label": "1 twin starcannon"
+              }
+            ]
+          },
+          {
+            "id": "this-model-s-twin-shuriken-catapult-can-be-replaced-with-1-shuriken-cannon-2",
+            "label": "This model\u2019s twin shuriken catapult can be replaced with 1 shuriken cannon.",
+            "target": "This model\u2019s twin shuriken catapult can be replaced with 1 shuriken cannon.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "VEHICLE",
@@ -13971,11 +16215,18 @@
           "id": "2-models"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "FORTIFICATION",
@@ -14124,11 +16375,36 @@
           "id": "6-models"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "any-number-of-models-can-each-have-their-twin-shuriken-catapult-replaced-with-one-of-the-following-1",
+            "label": "Any number of models can each have their twin shuriken catapult replaced with one of the following:",
+            "target": "Any number of models can each have their twin shuriken catapult replaced with one of the following:",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": [
+              {
+                "id": "1-scatter-laser",
+                "label": "1 scatter laser"
+              },
+              {
+                "id": "1-shuriken-cannon",
+                "label": "1 shuriken cannon"
+              }
+            ]
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "MOUNTED",
@@ -14233,11 +16509,33 @@
           "id": "5-models"
         }
       ],
+      "wargear": {
+        "abilities": [
+          {
+            "type": "statement",
+            "label": "Forceshield",
+            "text": "The bearer has a 4+ invulnerable save ."
+          }
+        ],
+        "options": [
+          {
+            "id": "all-of-the-models-in-this-unit-can-each-have-their-ghostswords-replaced-with-1-ghostaxe-and-1-forceshield-1",
+            "label": "All of the models in this unit can each have their ghostswords replaced with 1 ghostaxe and 1 forceshield.",
+            "target": "All of the models in this unit can each have their ghostswords replaced with 1 ghostaxe and 1 forceshield.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "INFANTRY",
@@ -14368,11 +16666,27 @@
           "id": "5-models"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "all-of-the-models-in-this-unit-can-each-have-their-wraithcannon-replaced-with-1-d-scythe-1",
+            "label": "All of the models in this unit can each have their wraithcannon replaced with 1 D-scythe.",
+            "target": "All of the models in this unit can each have their wraithcannon replaced with 1 D-scythe.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "INFANTRY",
@@ -14542,11 +16856,62 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [
+          {
+            "type": "statement",
+            "label": "Scattershield",
+            "text": "The bearer has a 4+ invulnerable save and each time an attack is allocated to the bearer, subtract 1 from the Damage characteristic of that attack."
+          }
+        ],
+        "options": [
+          {
+            "id": "this-model-s-suncannon-can-be-replaced-with-1-heavy-wraithcannon-1",
+            "label": "This model's suncannon can be replaced with 1 heavy wraithcannon.",
+            "target": "This model's suncannon can be replaced with 1 heavy wraithcannon.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "this-model-s-scattershield-can-be-replaced-with-1-heavy-wraithcannon-2",
+            "label": "This model\u2019s scattershield can be replaced with 1 heavy wraithcannon.",
+            "target": "This model\u2019s scattershield can be replaced with 1 heavy wraithcannon.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "this-model-can-be-equipped-with-up-to-two-of-the-following-3",
+            "label": "This model can be equipped with up to two of the following:",
+            "target": "This model can be equipped with up to two of the following:",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": [
+              {
+                "id": "1-scatter-laser",
+                "label": "1 scatter laser"
+              },
+              {
+                "id": "1-shuriken-cannon",
+                "label": "1 shuriken cannon"
+              },
+              {
+                "id": "1-starcannon",
+                "label": "1 starcannon"
+              }
+            ]
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "MONSTER",
@@ -14726,11 +17091,54 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [
+          {
+            "type": "statement",
+            "label": "Scattershield",
+            "text": "The bearer has a 4+ invulnerable save and each time an attack is allocated to the bearer, subtract 1 from the Damage characteristic of that attack."
+          }
+        ],
+        "options": [
+          {
+            "id": "this-model-s-scattershield-can-be-replaced-with-1-heavy-wraithcannon-1",
+            "label": "This model\u2019s scattershield can be replaced with 1 heavy wraithcannon.",
+            "target": "This model\u2019s scattershield can be replaced with 1 heavy wraithcannon.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "this-model-can-be-equipped-with-up-to-two-of-the-following-2",
+            "label": "This model can be equipped with up to two of the following:",
+            "target": "This model can be equipped with up to two of the following:",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": [
+              {
+                "id": "1-scatter-laser",
+                "label": "1 scatter laser"
+              },
+              {
+                "id": "1-shuriken-cannon",
+                "label": "1 shuriken cannon"
+              },
+              {
+                "id": "1-starcannon",
+                "label": "1 starcannon"
+              }
+            ]
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "MONSTER",
@@ -14974,11 +17382,64 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "each-of-this-model-s-shuriken-catapults-can-be-replaced-with-1-flamer-1",
+            "label": "Each of this model's shuriken catapults can be replaced with 1 flamer.",
+            "target": "Each of this model's shuriken catapults can be replaced with 1 flamer.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "this-model-can-be-equipped-with-1-ghostglaive-2",
+            "label": "This model can be equipped with 1 ghostglaive.",
+            "target": "This model can be equipped with 1 ghostglaive.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "this-model-can-be-equipped-with-up-to-two-of-the-following-3",
+            "label": "This model can be equipped with up to two of the following:",
+            "target": "This model can be equipped with up to two of the following:",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": [
+              {
+                "id": "1-missile-launcher",
+                "label": "1 missile launcher"
+              },
+              {
+                "id": "1-bright-lance",
+                "label": "1 bright lance"
+              },
+              {
+                "id": "1-scatter-laser",
+                "label": "1 scatter laser"
+              },
+              {
+                "id": "1-shuriken-cannon",
+                "label": "1 shuriken cannon"
+              },
+              {
+                "id": "1-starcannon",
+                "label": "1 starcannon"
+              }
+            ]
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "MONSTER",
@@ -15188,11 +17649,52 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "this-model-can-be-equipped-with-one-of-the-following-1",
+            "label": "This model can be equipped with one of the following:",
+            "target": "This model",
+            "action": "equip",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-aeldari-missile-launcher",
+                "label": "1 Aeldari missile launcher"
+              },
+              {
+                "id": "1-bright-lance",
+                "label": "1 bright lance"
+              },
+              {
+                "id": "1-scatter-laser",
+                "label": "1 scatter laser"
+              },
+              {
+                "id": "1-shuriken-cannon",
+                "label": "1 shuriken cannon"
+              },
+              {
+                "id": "1-starcannon",
+                "label": "1 starcannon"
+              },
+              {
+                "id": "1-wraithseer-d-cannon",
+                "label": "1 Wraithseer D-cannon"
+              }
+            ]
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "MONSTER",
@@ -15323,11 +17825,33 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [
+          {
+            "type": "statement",
+            "label": "Shadow Field",
+            "text": "You cannot re-roll invulnerable saving throws made for the bearer. The first time an invulnerable saving throw made for the bearer is failed, until the end of the battle, the bearer has no invulnerable save."
+          }
+        ],
+        "options": [
+          {
+            "id": "this-model-s-splinter-pistol-can-be-replaced-with-1-blast-pistol-1",
+            "label": "This model\u2019s splinter pistol can be replaced with 1 blast pistol.",
+            "target": "This model\u2019s splinter pistol can be replaced with 1 blast pistol.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "INFANTRY",
@@ -15480,11 +18004,27 @@
           "id": "10-models"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "the-klaivex-s-klaive-can-be-replaced-with-1-demilklaives-1",
+            "label": "The Klaivex\u2019s klaive can be replaced with 1 demilklaives.",
+            "target": "The Klaivex\u2019s klaive can be replaced with 1 demilklaives.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "INFANTRY",
@@ -15691,11 +18231,90 @@
           "id": "10-models"
         }
       ],
+      "wargear": {
+        "abilities": [
+          {
+            "type": "statement",
+            "label": "Phantasm Grenade Launcher",
+            "text": "The bearer\u2019s unit has the Grenade s keyword."
+          }
+        ],
+        "options": [
+          {
+            "id": "the-sybarite-s-close-combat-weapon-can-be-replaced-with-1-sybarite-weapon-1",
+            "label": "The Sybarite\u2019s close combat weapon can be replaced with 1 Sybarite weapon.",
+            "target": "The Sybarite\u2019s close combat weapon can be replaced with 1 Sybarite weapon.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "the-sybarite-can-be-equipped-with-1-phantasm-grenade-launcher-2",
+            "label": "The Sybarite can be equipped with 1 phantasm grenade launcher.",
+            "target": "The Sybarite can be equipped with 1 phantasm grenade launcher.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "the-sybarite-s-splinter-rifle-can-be-replaced-with-one-of-the-following-3",
+            "label": "The Sybarite\u2019s splinter rifle can be replaced with one of the following:",
+            "target": "The Sybarite\u2019s splinter rifle",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-blast-pistol",
+                "label": "1 blast pistol"
+              },
+              {
+                "id": "1-splinter-pistol",
+                "label": "1 splinter pistol"
+              }
+            ]
+          },
+          {
+            "id": "1-kabalite-warrior-s-splinter-rifle-can-be-replaced-with-1-blaster-4",
+            "label": "1 Kabalite Warrior\u2019s splinter rifle can be replaced with 1 blaster.",
+            "target": "1 Kabalite Warrior\u2019s splinter rifle can be replaced with 1 blaster.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "1-kabalite-warrior-s-splinter-rifle-can-be-replaced-with-1-dark-lance-5",
+            "label": "1 Kabalite Warrior\u2019s splinter rifle can be replaced with 1 dark lance.",
+            "target": "1 Kabalite Warrior\u2019s splinter rifle can be replaced with 1 dark lance.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "1-kabalite-warrior-s-splinter-rifle-can-be-replaced-with-1-shredder-6",
+            "label": "1 Kabalite Warrior\u2019s splinter rifle can be replaced with 1 shredder.",
+            "target": "1 Kabalite Warrior\u2019s splinter rifle can be replaced with 1 shredder.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "1-kabalite-warrior-s-splinter-rifle-can-be-replaced-with-1-splinter-cannon-7",
+            "label": "1 Kabalite Warrior\u2019s splinter rifle can be replaced with 1 splinter cannon.",
+            "target": "1 Kabalite Warrior\u2019s splinter rifle can be replaced with 1 splinter cannon.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "INFANTRY",
@@ -15823,11 +18442,27 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "this-model-s-dark-lance-can-be-replaced-with-1-disintegrator-cannon-1",
+            "label": "This model\u2019s dark lance can be replaced with 1 disintegrator cannon.",
+            "target": "This model\u2019s dark lance can be replaced with 1 disintegrator cannon.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "VEHICLE",
@@ -16014,11 +18649,72 @@
           "id": "3-models-2"
         }
       ],
+      "wargear": {
+        "abilities": [
+          {
+            "type": "statement",
+            "label": "Cluster Caltrops",
+            "text": "Each time you roll a D6 for the bearer while resolving this unit\u2019s Eviscerating Fly-by ability, you can re-roll the result."
+          },
+          {
+            "type": "statement",
+            "label": "Grav-talon",
+            "text": "The bearer\u2019s melee weapons have the [LANCE] ability."
+          }
+        ],
+        "options": [
+          {
+            "id": "the-arena-champion-can-be-equipped-with-1-agoniser-1",
+            "label": "The Arena Champion can be equipped with 1 agoniser.",
+            "target": "The Arena Champion can be equipped with 1 agoniser.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "for-every-3-models-in-this-unit-1-model-s-splinter-rifle-can-be-replaced-with-one-of-the-following-2",
+            "label": "For every 3 models in this unit, 1 model\u2019s splinter rifle can be replaced with one of the following:",
+            "target": "For every 3 models in this unit, 1 model\u2019s splinter rifle can be replaced with one of the following:",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": [
+              {
+                "id": "1-blaster",
+                "label": "1 blaster"
+              },
+              {
+                "id": "1-heat-lance",
+                "label": "1 heat lance"
+              }
+            ]
+          },
+          {
+            "id": "for-every-3-models-in-this-unit-1-model-can-be-equipped-with-one-of-the-following-3",
+            "label": "For every 3 models in this unit, 1 model can be equipped with one of the following:",
+            "target": "For every 3 models in this unit, 1 model can be equipped with one of the following:",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": [
+              {
+                "id": "1-grav-talon",
+                "label": "1 grav-talon"
+              },
+              {
+                "id": "1-cluster-caltrops",
+                "label": "1 cluster caltrops"
+              }
+            ]
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "MOUNTED",
@@ -16164,11 +18860,36 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "this-model-can-be-equipped-with-one-of-the-following-1",
+            "label": "This model can be equipped with one of the following:",
+            "target": "This model",
+            "action": "equip",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-blast-pistol",
+                "label": "1 blast pistol"
+              },
+              {
+                "id": "1-splinter-pistol",
+                "label": "1 splinter pistol"
+              }
+            ]
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -16305,11 +19026,27 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "this-model-s-twin-splinter-rifle-can-be-replaced-with-1-splinter-cannon-1",
+            "label": "This model\u2019s twin splinter rifle can be replaced with 1 splinter cannon.",
+            "target": "This model\u2019s twin splinter rifle can be replaced with 1 splinter cannon.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "VEHICLE",
@@ -16448,11 +19185,27 @@
           "id": "10-models"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "the-hekatrix-s-splinter-pistol-can-be-replaced-with-1-blast-pistol-1",
+            "label": "The Hekatrix\u2019s splinter pistol can be replaced with 1 blast pistol.",
+            "target": "The Hekatrix\u2019s splinter pistol can be replaced with 1 blast pistol.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "INFANTRY",
@@ -16569,11 +19322,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -16587,6 +19347,16 @@
         "YNNARI"
       ],
       "renderBlocks": [
+        {
+          "title": "SERVANT OF THE WHISPERING GOD",
+          "displayStyle": "section",
+          "entries": [
+            {
+              "type": "text",
+              "text": "If your army includes YVRAINE , it cannot include any EPIC HERO units (excluding YNNARI units). If your army includes any EPIC HERO units (excluding YNNARI units), it cannot include YVRAINE ."
+            }
+          ]
+        },
         {
           "title": "LEADER",
           "displayStyle": "section",

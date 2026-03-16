@@ -7,9 +7,9 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 
-SCHEMA_VERSION = 2
+SCHEMA_VERSION = 3
 STATS_ORDER = ("M", "T", "Sv", "W", "Ld", "OC")
-SECTION_EXCLUDES = {"ABILITIES", "UNIT COMPOSITION"}
+SECTION_EXCLUDES = {"ABILITIES", "UNIT COMPOSITION", "WARGEAR OPTIONS"}
 POINTS_LABEL_HINTS = ("model", "models")
 
 
@@ -185,6 +185,9 @@ def normalize_entry(entry: dict[str, object]) -> dict[str, object]:
             }
             for row in entry.get("rows", [])
         ]
+    elif entry_type == "option_group":
+        normalized["label"] = entry.get("label")
+        normalized["items"] = list(entry.get("items", []))
     return normalized
 
 
@@ -249,6 +252,105 @@ def build_composition(unit_composition: list[dict[str, object]]) -> dict[str, ob
     }
 
 
+def section_entries(card: dict[str, object], title: str) -> list[dict[str, object]]:
+    target = title.upper()
+    for section in card.get("sections", []):
+        if str(section.get("title", "")).upper() == target:
+            return list(section.get("entries", []))
+    return []
+
+
+def parse_wargear_prompt(label: str) -> dict[str, object]:
+    text = normalize_space(label)
+    lowered = normalize_label_key(text)
+    result = {
+        "target": text,
+        "action": "manual",
+        "selectionMode": "manual",
+    }
+
+    complex_markers = (
+        "two different weapons",
+        "up to ",
+        "any number of models",
+        "for every ",
+        "if this unit contains",
+    )
+    if any(marker in lowered for marker in complex_markers):
+        return result
+
+    patterns = [
+        (r"^(.*?) can be replaced with one of the following:?$", "replace", "single"),
+        (r"^(.*?) can be equipped with one of the following:?$", "equip", "single"),
+        (r"^(.*?) can have its .* replaced with one of the following:?$", "replace", "single"),
+    ]
+
+    for pattern, action, selection_mode in patterns:
+        match = re.match(pattern, text, flags=re.IGNORECASE)
+        if match:
+            result["target"] = normalize_space(match.group(1))
+            result["action"] = action
+            result["selectionMode"] = selection_mode
+            return result
+
+    return result
+
+
+def normalize_wargear_choice(label: str) -> dict[str, object]:
+    value = normalize_space(label)
+    return {
+        "id": slugify(value),
+        "label": value,
+    }
+
+
+def build_wargear(card: dict[str, object]) -> dict[str, object]:
+    abilities = [
+        normalize_entry(entry)
+        for entry in section_entries(card, "WARGEAR ABILITIES")
+    ]
+    option_entries = section_entries(card, "WARGEAR OPTIONS")
+    options = []
+    manual_notes = []
+    has_manual_options = False
+
+    for entry in option_entries:
+        entry_type = entry.get("type")
+        if entry_type == "option_group":
+            label = normalize_space(entry.get("label"))
+            parsed = parse_wargear_prompt(label)
+            choices = [normalize_wargear_choice(item) for item in entry.get("items", []) if normalize_space(item)]
+            if label == "None" and not choices:
+                continue
+            option_id = slugify(f"{label}-{len(options) + 1}")
+            option = {
+                "id": option_id,
+                "label": label,
+                "target": parsed["target"],
+                "action": parsed["action"],
+                "selectionMode": parsed["selectionMode"],
+                "choices": choices,
+            }
+            if parsed["selectionMode"] == "manual":
+                has_manual_options = True
+            options.append(option)
+            continue
+
+        text = normalize_space(entry.get("text"))
+        if text:
+            manual_notes.append(text)
+
+    if manual_notes:
+        has_manual_options = True
+
+    return {
+        "abilities": abilities,
+        "options": options,
+        "manualNotes": manual_notes,
+        "hasManualOptions": has_manual_options,
+    }
+
+
 def unit_id_from_card(card: dict[str, object]) -> str:
     source = card.get("source", {})
     datasheet_slug = source.get("datasheet_slug")
@@ -262,6 +364,7 @@ def normalize_card(faction_slug: str, card: dict[str, object]) -> tuple[dict[str
     characteristics = card.get("characteristics", {})
     abilities = card.get("abilities", {})
     composition = build_composition(card.get("unit_composition", []))
+    wargear = build_wargear(card)
     source = card.get("source", {})
 
     normalized = {
@@ -306,11 +409,13 @@ def normalize_card(faction_slug: str, card: dict[str, object]) -> tuple[dict[str
             "modelCountOptions": composition["modelCountOptions"],
         },
         "pointsOptions": composition["pointsOptions"],
+        "wargear": wargear,
         "selectionMode": composition["selectionMode"],
         "quality": {
             "missingStats": [],
             "hasMissingStats": False,
             "hasManualSelectionLabels": composition["selectionMode"] == "manual",
+            "hasManualWargearOptions": wargear["hasManualOptions"],
         },
         "keywords": list(card.get("keywords", [])),
         "factionKeywords": list(card.get("faction_keywords", [])),

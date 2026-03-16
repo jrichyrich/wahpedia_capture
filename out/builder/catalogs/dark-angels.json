@@ -1,6 +1,6 @@
 {
-  "schemaVersion": 2,
-  "generatedAt": "2026-03-16T14:04:46+00:00",
+  "schemaVersion": 3,
+  "generatedAt": "2026-03-16T15:59:07+00:00",
   "faction": {
     "slug": "dark-angels",
     "name": "Dark Angels",
@@ -148,11 +148,27 @@
           "id": "6-models"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "all-models-in-this-unit-can-each-have-their-flamestorm-gauntlets-replaced-with-1-auto-boltstorm-gauntlets-and-1-fragstorm-grenade-launcher-1",
+            "label": "All models in this unit can each have their flamestorm gauntlets replaced with 1 auto boltstorm gauntlets and 1 fragstorm grenade launcher.",
+            "target": "All models in this unit can each have their flamestorm gauntlets replaced with 1 auto boltstorm gauntlets and 1 fragstorm grenade launcher.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "INFANTRY",
@@ -289,11 +305,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -500,11 +523,67 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [
+          {
+            "type": "statement",
+            "label": "Terminator Storm Shield",
+            "text": "The bearer has a Wounds characteristic of 6."
+          }
+        ],
+        "options": [
+          {
+            "id": "this-model-s-power-fist-can-be-replaced-with-one-of-the-following-1",
+            "label": "This model\u2019s power fist can be replaced with one of the following:",
+            "target": "This model\u2019s power fist",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-chainfist",
+                "label": "1 chainfist"
+              },
+              {
+                "id": "1-close-combat-weapon",
+                "label": "1 close combat weapon"
+              },
+              {
+                "id": "1-power-weapon",
+                "label": "1 power weapon"
+              },
+              {
+                "id": "1-thunder-hammer",
+                "label": "1 thunder hammer"
+              }
+            ]
+          },
+          {
+            "id": "this-model-s-storm-bolter-and-power-fist-can-be-replaced-with-one-of-the-following-2",
+            "label": "This model\u2019s storm bolter and power fist can be replaced with one of the following:",
+            "target": "This model\u2019s storm bolter and power fist",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-twin-lightning-claws",
+                "label": "1 twin lightning claws"
+              },
+              {
+                "id": "1-thunder-hammer-and-1-terminator-storm-shield",
+                "label": "1 thunder hammer and 1 Terminator storm shield"
+              }
+            ]
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -777,11 +856,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "MOUNTED",
@@ -924,11 +1010,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -1074,11 +1167,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -1221,11 +1321,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "MOUNTED",
@@ -1366,11 +1473,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -1604,11 +1718,57 @@
           "id": "10-models"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "the-assault-intercessor-sergeant-s-heavy-bolt-pistol-can-be-replaced-with-one-of-the-following-1",
+            "label": "The Assault Intercessor Sergeant\u2019s heavy bolt pistol can be replaced with one of the following:",
+            "target": "The Assault Intercessor Sergeant\u2019s heavy bolt pistol",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-hand-flamer",
+                "label": "1 hand flamer"
+              },
+              {
+                "id": "1-plasma-pistol",
+                "label": "1 plasma pistol"
+              }
+            ]
+          },
+          {
+            "id": "the-assault-intercessor-sergeant-s-astartes-chainsword-can-be-replaced-with-one-of-the-following-2",
+            "label": "The Assault Intercessor Sergeant\u2019s Astartes chainsword can be replaced with one of the following:",
+            "target": "The Assault Intercessor Sergeant\u2019s Astartes chainsword",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-power-fist",
+                "label": "1 power fist"
+              },
+              {
+                "id": "1-power-weapon",
+                "label": "1 power weapon"
+              },
+              {
+                "id": "1-thunder-hammer",
+                "label": "1 thunder hammer"
+              }
+            ]
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -1794,11 +1954,61 @@
           "id": "10-models"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "for-every-5-models-in-this-unit-1-assault-intercessor-with-jump-pack-s-heavy-bolt-pistol-can-be-replaced-with-1-plasma-pistol-1",
+            "label": "For every 5 models in this unit, 1 Assault Intercessor with Jump Pack\u2019s heavy bolt pistol can be replaced with 1 plasma pistol.",
+            "target": "For every 5 models in this unit, 1 Assault Intercessor with Jump Pack\u2019s heavy bolt pistol can be replaced with 1 plasma pistol.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "the-assault-intercessor-sergeant-with-jump-pack-s-astartes-chainsword-can-be-replaced-with-one-of-the-following-2",
+            "label": "The Assault Intercessor Sergeant with Jump Pack\u2019s Astartes chainsword can be replaced with one of the following:",
+            "target": "The Assault Intercessor Sergeant with Jump Pack\u2019s Astartes chainsword",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-power-weapon",
+                "label": "1 power weapon"
+              },
+              {
+                "id": "1-power-fist",
+                "label": "1 power fist"
+              }
+            ]
+          },
+          {
+            "id": "the-assault-intercessor-sergeant-with-jump-pack-s-heavy-bolt-pistol-can-be-replaced-with-one-of-the-following-3",
+            "label": "The Assault Intercessor Sergeant with Jump Pack\u2019s heavy bolt pistol can be replaced with one of the following:",
+            "target": "The Assault Intercessor Sergeant with Jump Pack\u2019s heavy bolt pistol",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-hand-flamer",
+                "label": "1 hand flamer"
+              },
+              {
+                "id": "1-plasma-pistol",
+                "label": "1 plasma pistol"
+              }
+            ]
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "INFANTRY",
@@ -2124,11 +2334,24 @@
           "id": "10-models"
         }
       ],
+      "wargear": {
+        "abilities": [
+          {
+            "type": "statement",
+            "label": "Astartes Shield",
+            "text": "The bearer has a 4+ invulnerable save ."
+          }
+        ],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -2466,11 +2689,24 @@
           "id": "10-models"
         }
       ],
+      "wargear": {
+        "abilities": [
+          {
+            "type": "statement",
+            "label": "Astartes Shield",
+            "text": "The bearer has a 4+ invulnerable save ."
+          }
+        ],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -2652,11 +2888,18 @@
           "id": "4-models"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -2865,11 +3108,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -3038,11 +3288,18 @@
           "id": "3-models"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "MOUNTED",
@@ -3159,11 +3416,24 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [
+          {
+            "type": "statement",
+            "label": "The Lion Helm",
+            "text": "Models in the bearer\u2019s unit have a 4+ invulnerable save . In addition, once per battle, in any phase, the bearer can summon a Watcher in the Dark. When it does, until the end of the phase, models in the bearer\u2019s unit have the Feel No Pain 4+ ability against mortal wounds ."
+          }
+        ],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -3353,11 +3623,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -3485,11 +3762,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -3911,11 +4195,117 @@
           "id": "attack-bike"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "the-biker-sergeant-s-bolt-pistol-can-be-replaced-with-one-of-the-following-1",
+            "label": "The Biker Sergeant\u2019s bolt pistol can be replaced with one of the following:",
+            "target": "The Biker Sergeant\u2019s bolt pistol",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-astartes-chainsword",
+                "label": "1 Astartes chainsword"
+              },
+              {
+                "id": "1-boltgun",
+                "label": "1 boltgun"
+              },
+              {
+                "id": "1-combi-weapon",
+                "label": "1 combi-weapon"
+              },
+              {
+                "id": "1-hand-flamer",
+                "label": "1 hand flamer"
+              },
+              {
+                "id": "1-grav-pistol",
+                "label": "1 grav-pistol"
+              },
+              {
+                "id": "1-inferno-pistol",
+                "label": "1 inferno pistol"
+              },
+              {
+                "id": "1-plasma-pistol",
+                "label": "1 plasma pistol"
+              },
+              {
+                "id": "1-storm-bolter",
+                "label": "1 storm bolter"
+              },
+              {
+                "id": "1-power-fist",
+                "label": "1 power fist"
+              },
+              {
+                "id": "1-power-weapon",
+                "label": "1 power weapon"
+              },
+              {
+                "id": "1-thunder-hammer",
+                "label": "1 thunder hammer"
+              }
+            ]
+          },
+          {
+            "id": "any-number-of-space-marine-bikers-can-each-have-their-bolt-pistol-replaced-with-1-astartes-chainsword-2",
+            "label": "Any number of Space Marine Bikers can each have their bolt pistol replaced with 1 Astartes chainsword.",
+            "target": "Any number of Space Marine Bikers can each have their bolt pistol replaced with 1 Astartes chainsword.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "up-to-2-space-marine-bikers-can-each-have-their-bolt-pistol-replaced-with-one-of-the-following-3",
+            "label": "Up to 2 Space Marine Bikers can each have their bolt pistol replaced with one of the following:",
+            "target": "Up to 2 Space Marine Bikers can each have their bolt pistol replaced with one of the following:",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": [
+              {
+                "id": "1-flamer",
+                "label": "1 flamer"
+              },
+              {
+                "id": "1-grav-gun",
+                "label": "1 grav-gun"
+              },
+              {
+                "id": "1-meltagun",
+                "label": "1 meltagun"
+              },
+              {
+                "id": "1-plasma-gun",
+                "label": "1 plasma gun"
+              },
+              {
+                "id": "1-plasma-pistol",
+                "label": "1 plasma pistol"
+              }
+            ]
+          },
+          {
+            "id": "an-attack-bike-s-heavy-bolter-can-be-replaced-with-1-multi-melta-4",
+            "label": "An Attack Bike\u2019s heavy bolter can be replaced with 1 multi-melta.",
+            "target": "An Attack Bike\u2019s heavy bolter can be replaced with 1 multi-melta.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "MOUNTED",
@@ -4039,11 +4429,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -4227,11 +4624,18 @@
           "id": "6-models"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -4411,11 +4815,35 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "this-model-s-twin-heavy-bolter-can-be-replaced-with-1-twin-multi-melta-1",
+            "label": "This model\u2019s twin heavy bolter can be replaced with 1 twin multi-melta.",
+            "target": "This model\u2019s twin heavy bolter can be replaced with 1 twin multi-melta.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "this-model-s-brutalis-fists-and-brutalis-bolt-rifles-can-be-replaced-with-1-brutalis-talons-2",
+            "label": "This model\u2019s Brutalis fists and Brutalis bolt rifles can be replaced with 1 Brutalis talons.",
+            "target": "This model\u2019s Brutalis fists and Brutalis bolt rifles can be replaced with 1 Brutalis talons.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "VEHICLE",
@@ -4552,11 +4980,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -4779,11 +5214,79 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [
+          {
+            "type": "statement",
+            "label": "Relic Shield",
+            "text": "The bearer has a Wounds characteristic of 6."
+          }
+        ],
+        "options": [
+          {
+            "id": "this-model-s-bolt-pistol-master-crafted-bolter-and-close-combat-weapon-can-be-replaced-with-one-of-the-following-1",
+            "label": "This model\u2019s bolt pistol, master-crafted bolter and close combat weapon can be replaced with one of the following:",
+            "target": "This model\u2019s bolt pistol, master-crafted bolter and close combat weapon",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-heavy-bolt-pistol-and-1-power-fist",
+                "label": "1 heavy bolt pistol and 1 power fist"
+              },
+              {
+                "id": "1-heavy-bolt-pistol-and-1-master-crafted-power-weapon",
+                "label": "1 heavy bolt pistol and 1 master-crafted power weapon"
+              },
+              {
+                "id": "1-neo-volkite-pistol-and-1-power-fist",
+                "label": "1 neo-volkite pistol and 1 power fist"
+              },
+              {
+                "id": "1-neo-volkite-pistol-and-1-master-crafted-power-weapon",
+                "label": "1 neo-volkite pistol and 1 master-crafted power weapon"
+              },
+              {
+                "id": "1-plasma-pistol-and-1-power-fist",
+                "label": "1 plasma pistol and 1 power fist"
+              },
+              {
+                "id": "1-plasma-pistol-and-1-master-crafted-power-weapon",
+                "label": "1 plasma pistol and 1 master-crafted power weapon"
+              },
+              {
+                "id": "1-heavy-bolt-pistol-1-master-crafted-power-weapon-and-1-relic-shield",
+                "label": "1 heavy bolt pistol, 1 master-crafted power weapon and 1 relic shield"
+              }
+            ]
+          },
+          {
+            "id": "this-model-s-close-combat-weapon-can-be-replaced-with-one-of-the-following-2",
+            "label": "This model\u2019s close combat weapon can be replaced with one of the following:",
+            "target": "This model\u2019s close combat weapon",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-master-crafted-power-weapon",
+                "label": "1 master-crafted power weapon"
+              },
+              {
+                "id": "1-power-fist",
+                "label": "1 power fist"
+              }
+            ]
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -5005,11 +5508,40 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "this-model-s-master-crafted-heavy-bolt-rifle-and-master-crafted-power-weapon-can-be-replaced-with-1",
+            "label": "This model\u2019s master-crafted heavy bolt rifle and master-crafted power weapon can be replaced with:",
+            "target": "This model\u2019s master-crafted heavy bolt rifle and master-crafted power weapon can be replaced with:",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": [
+              {
+                "id": "1-boltstorm-gauntlet-1-power-fist-and-1-relic-chainsword",
+                "label": "1 boltstorm gauntlet, 1 power fist and 1 relic chainsword"
+              },
+              {
+                "id": "1-boltstorm-gauntlet-1-power-fist-and-1-relic-blade",
+                "label": "1 boltstorm gauntlet, 1 power fist and 1 relic blade"
+              },
+              {
+                "id": "1-boltstorm-gauntlet-1-power-fist-and-1-relic-fist",
+                "label": "1 boltstorm gauntlet, 1 power fist and 1 relic fist"
+              }
+            ]
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "INFANTRY",
@@ -5152,11 +5684,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -5316,11 +5855,35 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "this-model-s-storm-bolter-can-be-replaced-with-1-combi-weapon-1",
+            "label": "This model\u2019s storm bolter can be replaced with 1 combi-weapon",
+            "target": "This model\u2019s storm bolter can be replaced with 1 combi-weapon",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "this-model-s-relic-weapon-can-be-replaced-with-1-relic-fist-2",
+            "label": "This model\u2019s relic weapon can be replaced with 1 relic fist",
+            "target": "This model\u2019s relic weapon can be replaced with 1 relic fist",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "INFANTRY",
@@ -5635,11 +6198,105 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [
+          {
+            "type": "statement",
+            "label": "Relic Shield",
+            "text": "The bearer has a Wounds characteristic of 7."
+          }
+        ],
+        "options": [
+          {
+            "id": "this-model-s-bolt-pistol-can-be-replaced-with-one-of-the-following-1",
+            "label": "This model\u2019s bolt pistol can be replaced with one of the following:",
+            "target": "This model\u2019s bolt pistol",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-combi-weapon",
+                "label": "1 combi-weapon"
+              },
+              {
+                "id": "1-hand-flamer",
+                "label": "1 hand flamer"
+              },
+              {
+                "id": "1-inferno-pistol",
+                "label": "1 inferno pistol"
+              },
+              {
+                "id": "1-master-crafted-boltgun",
+                "label": "1 master-crafted boltgun"
+              },
+              {
+                "id": "1-plasma-pistol",
+                "label": "1 plasma pistol"
+              },
+              {
+                "id": "1-storm-bolter",
+                "label": "1 storm bolter"
+              },
+              {
+                "id": "1-relic-shield",
+                "label": "1 relic shield*"
+              },
+              {
+                "id": "1-relic-weapon",
+                "label": "1 relic weapon"
+              },
+              {
+                "id": "1-power-fist",
+                "label": "1 power fist"
+              },
+              {
+                "id": "1-thunder-hammer",
+                "label": "1 thunder hammer"
+              }
+            ]
+          },
+          {
+            "id": "this-model-s-astartes-chainsword-can-be-replaced-with-one-of-the-following-2",
+            "label": "This model\u2019s Astartes chainsword can be replaced with one of the following:",
+            "target": "This model\u2019s Astartes chainsword",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-close-combat-weapon-and-1-relic-shield",
+                "label": "1 close combat weapon and 1 relic shield*"
+              },
+              {
+                "id": "1-power-fist",
+                "label": "1 power fist"
+              },
+              {
+                "id": "1-relic-weapon",
+                "label": "1 relic weapon"
+              }
+            ]
+          },
+          {
+            "id": "this-model-s-bolt-pistol-and-astartes-chainsword-can-be-replaced-with-1-twin-lightning-claws-3",
+            "label": "This model\u2019s bolt pistol and Astartes chainsword can be replaced with 1 twin lightning claws.",
+            "target": "This model\u2019s bolt pistol and Astartes chainsword can be replaced with 1 twin lightning claws.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [
+          "* Maximum one per model."
+        ],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "MOUNTED",
@@ -5857,11 +6514,24 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [
+          {
+            "type": "statement",
+            "label": "Relic Shield",
+            "text": "The bearer has a Wounds characteristic of 6."
+          }
+        ],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -6046,11 +6716,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -6216,11 +6893,41 @@
           "id": "6-models"
         }
       ],
+      "wargear": {
+        "abilities": [
+          {
+            "type": "statement",
+            "label": "Centurion Assault Launcher",
+            "text": "The bearer has the Grenades keyword."
+          }
+        ],
+        "options": [
+          {
+            "id": "any-number-of-models-can-each-have-their-twin-flamer-replaced-with-1-twin-meltagun-1",
+            "label": "Any number of models can each have their twin flamer replaced with 1 twin meltagun.",
+            "target": "Any number of models can each have their twin flamer replaced with 1 twin meltagun.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "any-number-of-models-can-each-have-their-centurion-bolters-replaced-with-1-centurion-assault-launcher-2",
+            "label": "Any number of models can each have their Centurion bolters replaced with 1 Centurion assault launcher.",
+            "target": "Any number of models can each have their Centurion bolters replaced with 1 Centurion assault launcher.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "INFANTRY",
@@ -6404,11 +7111,44 @@
           "id": "6-models"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "any-number-of-models-can-each-have-their-centurion-bolters-replaced-with-1-centurion-missile-launcher-1",
+            "label": "Any number of models can each have their Centurion bolters replaced with 1 Centurion missile launcher.",
+            "target": "Any number of models can each have their Centurion bolters replaced with 1 Centurion missile launcher.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "any-number-of-models-can-each-have-their-grav-cannon-replaced-with-one-of-the-following-2",
+            "label": "Any number of models can each have their grav-cannon replaced with one of the following:",
+            "target": "Any number of models can each have their grav-cannon replaced with one of the following:",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": [
+              {
+                "id": "1-twin-heavy-bolter",
+                "label": "1 twin heavy bolter"
+              },
+              {
+                "id": "1-twin-lascannon",
+                "label": "1 twin lascannon"
+              }
+            ]
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "INFANTRY",
@@ -6579,11 +7319,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -6706,11 +7453,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -6857,11 +7611,33 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [
+          {
+            "type": "statement",
+            "label": "Relic Shield",
+            "text": "The bearer has a Wounds characteristic of 6."
+          }
+        ],
+        "options": [
+          {
+            "id": "this-model-s-storm-bolter-can-be-replaced-with-1-relic-shield-1",
+            "label": "This model\u2019s storm bolter can be replaced with 1 relic shield.",
+            "target": "This model\u2019s storm bolter can be replaced with 1 relic shield.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "INFANTRY",
@@ -7019,11 +7795,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "MOUNTED",
@@ -7253,11 +8036,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -7491,11 +8281,60 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "this-model-s-bolt-pistol-can-be-replaced-with-one-of-the-following-1",
+            "label": "This model\u2019s bolt pistol can be replaced with one of the following:",
+            "target": "This model\u2019s bolt pistol",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-boltgun",
+                "label": "1 boltgun"
+              },
+              {
+                "id": "1-combi-weapon",
+                "label": "1 combi-weapon"
+              },
+              {
+                "id": "1-grav-pistol",
+                "label": "1 grav-pistol"
+              },
+              {
+                "id": "1-hand-flamer",
+                "label": "1 hand flamer"
+              },
+              {
+                "id": "1-inferno-pistol",
+                "label": "1 inferno pistol"
+              },
+              {
+                "id": "1-plasma-pistol",
+                "label": "1 plasma pistol"
+              },
+              {
+                "id": "1-storm-bolter",
+                "label": "1 storm bolter"
+              },
+              {
+                "id": "1-power-fist",
+                "label": "1 power fist"
+              }
+            ]
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -8037,11 +8876,24 @@
           "id": "5-models"
         }
       ],
+      "wargear": {
+        "abilities": [
+          {
+            "type": "statement",
+            "label": "Astartes Shield",
+            "text": "The bearer has a 4+ invulnerable save ."
+          }
+        ],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -8190,11 +9042,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "MOUNTED",
@@ -8401,11 +9260,18 @@
           "id": "4-models"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "KEYWORDS \u2013 ALL MODELS: INFANTRY",
@@ -8730,11 +9596,24 @@
           "id": "5-models"
         }
       ],
+      "wargear": {
+        "abilities": [
+          {
+            "type": "statement",
+            "label": "Storm Shield",
+            "text": "The bearer has a 4+ invulnerable save ."
+          }
+        ],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "MOUNTED",
@@ -8865,11 +9744,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -9166,11 +10052,24 @@
           "id": "10-models"
         }
       ],
+      "wargear": {
+        "abilities": [
+          {
+            "type": "statement",
+            "label": "Storm Shield",
+            "text": "The bearer has a Wounds characteristic of 4."
+          }
+        ],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -9344,11 +10243,29 @@
           "id": "5-models"
         }
       ],
+      "wargear": {
+        "abilities": [
+          {
+            "type": "statement",
+            "label": "Watcher in the Dark",
+            "text": "Once per battle, in any phase, just after a mortal wound is allocated to an ADEPTUS ASTARTES model in this unit, this unit can summon a Watcher in the Dark. When it does, until the end of the phase, models in this unit have the Feel No Pain 4+ ability against mortal wounds."
+          },
+          {
+            "type": "statement",
+            "label": "Designer\u2019s Note",
+            "text": "Place a Watcher in the Dark token next to the unit, removing it when this ability has been used."
+          }
+        ],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -9550,11 +10467,58 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [
+          {
+            "type": "statement",
+            "label": "Storm Shield",
+            "text": "The bearer has a Wounds characteristic of 6."
+          }
+        ],
+        "options": [
+          {
+            "id": "this-model-s-storm-bolter-and-master-crafted-power-weapon-can-be-replaced-with-either-1-twin-lightning-claws-or-two-different-weapons-from-the-following-list-1",
+            "label": "This model\u2019s storm bolter and master-crafted power weapon can be replaced with either 1 twin lightning claws, or two different weapons from the following list:",
+            "target": "This model\u2019s storm bolter and master-crafted power weapon can be replaced with either 1 twin lightning claws, or two different weapons from the following list:",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": [
+              {
+                "id": "1-storm-bolter",
+                "label": "1 storm bolter"
+              },
+              {
+                "id": "1-chainfist",
+                "label": "1 chainfist"
+              },
+              {
+                "id": "1-mace-of-absolution",
+                "label": "1 mace of absolution"
+              },
+              {
+                "id": "1-power-fist",
+                "label": "1 power fist"
+              },
+              {
+                "id": "1-thunder-hammer",
+                "label": "1 thunder hammer"
+              },
+              {
+                "id": "1-storm-shield",
+                "label": "1 storm shield"
+              }
+            ]
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "INFANTRY",
@@ -9821,11 +10785,29 @@
           "id": "10-models"
         }
       ],
+      "wargear": {
+        "abilities": [
+          {
+            "type": "statement",
+            "label": "Watcher in the Dark",
+            "text": "Once per battle, in any phase, just after a mortal wound is allocated to an ADEPTUS ASTARTES model in this unit, this unit can summon a Watcher in the Dark. When it does, until the end of the phase, models in this unit have the Feel No Pain 4+ ability against mortal wounds."
+          },
+          {
+            "type": "statement",
+            "label": "Designer\u2019s Note",
+            "text": "Place a Watcher in the Dark token next to the unit, removing it when this ability has been used."
+          }
+        ],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -10077,11 +11059,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -10302,11 +11291,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -10486,11 +11482,35 @@
           "id": "5-models"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "all-of-the-models-in-this-unit-can-each-have-their-superfrag-rocket-launcher-replaced-with-1-superkrak-rocket-launcher-1",
+            "label": "All of the models in this unit can each have their superfrag rocket launcher replaced with 1 superkrak rocket launcher.",
+            "target": "All of the models in this unit can each have their superfrag rocket launcher replaced with 1 superkrak rocket launcher.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "the-desolation-sergeant-s-superfrag-rocket-launcher-or-superkrak-rocket-launcher-can-be-replaced-with-1-vengor-launcher-2",
+            "label": "The Desolation Sergeant\u2019s superfrag rocket launcher or superkrak rocket launcher can be replaced with 1 vengor launcher.",
+            "target": "The Desolation Sergeant\u2019s superfrag rocket launcher or superkrak rocket launcher can be replaced with 1 vengor launcher.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "INFANTRY",
@@ -10856,11 +11876,99 @@
           "id": "10-models"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "up-to-4-devastator-marines-can-each-have-their-boltgun-replaced-with-one-of-the-following-1",
+            "label": "Up to 4 Devastator Marines can each have their boltgun replaced with one of the following:",
+            "target": "Up to 4 Devastator Marines can each have their boltgun replaced with one of the following:",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": [
+              {
+                "id": "1-grav-cannon",
+                "label": "1 grav-cannon"
+              },
+              {
+                "id": "1-heavy-bolter",
+                "label": "1 heavy bolter"
+              },
+              {
+                "id": "1-lascannon",
+                "label": "1 lascannon"
+              },
+              {
+                "id": "1-missile-launcher",
+                "label": "1 missile launcher"
+              },
+              {
+                "id": "1-multi-melta",
+                "label": "1 multi-melta"
+              },
+              {
+                "id": "1-plasma-cannon",
+                "label": "1 plasma cannon"
+              }
+            ]
+          },
+          {
+            "id": "the-devastator-sergeant-s-bolt-pistol-and-boltgun-can-be-replaced-with-two-different-weapons-from-the-following-list-2",
+            "label": "The Devastator Sergeant\u2019s bolt pistol and boltgun can be replaced with two different weapons from the following list:*",
+            "target": "The Devastator Sergeant\u2019s bolt pistol and boltgun can be replaced with two different weapons from the following list:*",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": [
+              {
+                "id": "1-astartes-chain-sword",
+                "label": "1 Astartes chain sword"
+              },
+              {
+                "id": "1-bolt-pistol",
+                "label": "1 bolt pistol"
+              },
+              {
+                "id": "1-boltgun",
+                "label": "1 boltgun"
+              },
+              {
+                "id": "1-combi-weapon",
+                "label": "1 combi-weapon"
+              },
+              {
+                "id": "1-grav-pistol",
+                "label": "1 grav-pistol"
+              },
+              {
+                "id": "1-plasma-pistol",
+                "label": "1 plasma pistol"
+              },
+              {
+                "id": "1-power-fist",
+                "label": "1 power fist"
+              },
+              {
+                "id": "1-power-weapon",
+                "label": "1 power weapon"
+              },
+              {
+                "id": "1-thunder-hammer",
+                "label": "1 thunder hammer"
+              }
+            ]
+          }
+        ],
+        "manualNotes": [
+          "* This model can only be equipped with two ranged weapons if one of them is a Pistol (and it can only have one Pistol)"
+        ],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "INFANTRY",
@@ -11082,11 +12190,57 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "this-model-s-assault-cannon-can-be-replaced-with-one-of-the-following-1",
+            "label": "This model\u2019s assault cannon can be replaced with one of the following:",
+            "target": "This model\u2019s assault cannon",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-heavy-plasma-cannon",
+                "label": "1 heavy plasma cannon"
+              },
+              {
+                "id": "1-multi-melta",
+                "label": "1 multi-melta"
+              },
+              {
+                "id": "1-twin-lascannon",
+                "label": "1 twin lascannon"
+              }
+            ]
+          },
+          {
+            "id": "this-model-s-dreadnought-combat-weapon-and-storm-bolter-can-be-replaced-with-one-of-the-following-2",
+            "label": "This model\u2019s Dreadnought combat weapon and storm bolter can be replaced with one of the following:",
+            "target": "This model\u2019s Dreadnought combat weapon and storm bolter",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-missile-launcher-and-1-close-combat-weapon",
+                "label": "1 missile launcher and 1 close combat weapon"
+              },
+              {
+                "id": "1-heavy-flamer-and-1-dreadnought-combat-weapon",
+                "label": "1 heavy flamer and 1 Dreadnought combat weapon"
+              }
+            ]
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -11169,11 +12323,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -11269,11 +12430,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -11443,11 +12611,44 @@
           "id": "3-models"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "the-eliminator-sergeant-s-bolt-sniper-rifle-can-be-replaced-with-one-of-the-following-1",
+            "label": "The Eliminator Sergeant\u2019s bolt sniper rifle can be replaced with one of the following:",
+            "target": "The Eliminator Sergeant\u2019s bolt sniper rifle",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-instigator-bolt-carbine",
+                "label": "1 instigator bolt carbine"
+              },
+              {
+                "id": "1-las-fusil",
+                "label": "1 las fusil"
+              }
+            ]
+          },
+          {
+            "id": "all-eliminators-in-this-unit-can-each-have-their-bolt-sniper-rifle-replaced-with-1-las-fusil-2",
+            "label": "All Eliminators in this unit can each have their bolt sniper rifle replaced with 1 las fusil.",
+            "target": "All Eliminators in this unit can each have their bolt sniper rifle replaced with 1 las fusil.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "INFANTRY",
@@ -11594,11 +12795,27 @@
           "id": "6-models"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "for-every-3-models-in-this-unit-1-eradicator-s-melta-rifle-can-be-replaced-with-1-multi-melta-1",
+            "label": "For every 3 models in this unit, 1 Eradicator\u2019s melta rifle can be replaced with 1 multi-melta.",
+            "target": "For every 3 models in this unit, 1 Eradicator\u2019s melta rifle can be replaced with 1 multi-melta.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "INFANTRY",
@@ -11747,11 +12964,24 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [
+          {
+            "type": "statement",
+            "label": "Book of Salvation",
+            "text": "While this model is leading a unit, add 1 to the Attacks characteristic of melee weapons equipped by models in that unit. When this model is destroyed, each friendly ADEPTUS ASTARTES unit within 6\" of this model must take a Battle-shock test ."
+          }
+        ],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -12012,11 +13242,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -12307,11 +13544,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -12446,11 +13690,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -12648,11 +13899,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -12790,11 +14048,27 @@
           "id": "2-models"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "any-number-of-models-can-each-have-their-twin-firestrike-las-talon-replaced-with-1-twin-firestrike-autocannon-1",
+            "label": "Any number of models can each have their twin Firestrike las-talon replaced with 1 twin Firestrike autocannon.",
+            "target": "Any number of models can each have their twin Firestrike las-talon replaced with 1 twin Firestrike autocannon.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "ARTILLERY",
@@ -12953,11 +14227,43 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "this-model-s-2-storm-bolters-can-be-replaced-with-2-fragstorm-grenade-launchers-1",
+            "label": "This model\u2019s 2 storm bolters can be replaced with 2 fragstorm grenade launchers.",
+            "target": "This model\u2019s 2 storm bolters can be replaced with 2 fragstorm grenade launchers.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "this-model-can-be-equipped-with-1-ironhail-heavy-stubber-2",
+            "label": "This model can be equipped with 1 ironhail heavy stubber.",
+            "target": "This model can be equipped with 1 ironhail heavy stubber.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "this-model-can-be-equipped-with-1-icarus-rocket-pod-3",
+            "label": "This model can be equipped with 1 Icarus rocket pod.",
+            "target": "This model can be equipped with 1 Icarus rocket pod.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "VEHICLE",
@@ -13115,11 +14421,35 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "this-model-can-be-equipped-with-1-ironhail-heavy-stubber-1",
+            "label": "This model can be equipped with 1 ironhail heavy stubber.",
+            "target": "This model can be equipped with 1 ironhail heavy stubber.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "this-model-can-be-equipped-with-1-icarus-rocket-pod-2",
+            "label": "This model can be equipped with 1 Icarus rocket pod.",
+            "target": "This model can be equipped with 1 Icarus rocket pod.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "VEHICLE",
@@ -13276,11 +14606,35 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "this-model-can-be-equipped-with-1-ironhail-heavy-stubber-1",
+            "label": "This model can be equipped with 1 ironhail heavy stubber.",
+            "target": "This model can be equipped with 1 ironhail heavy stubber.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "this-model-can-be-equipped-with-1-icarus-rocket-pod-2",
+            "label": "This model can be equipped with 1 Icarus rocket pod.",
+            "target": "This model can be equipped with 1 Icarus rocket pod.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "VEHICLE",
@@ -13444,11 +14798,27 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "this-model-s-hammerfall-heavy-bolter-array-can-be-replaced-with-1-hammerfall-heavy-flamer-array-1",
+            "label": "This model\u2019s Hammerfall heavy bolter array can be replaced with 1 Hammerfall heavy flamer array.",
+            "target": "This model\u2019s Hammerfall heavy bolter array can be replaced with 1 Hammerfall heavy flamer array.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "FORTIFICATION",
@@ -13606,11 +14976,27 @@
           "id": "10-models"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "for-every-5-models-in-this-unit-1-heavy-intercessor-s-heavy-bolt-rifle-can-be-replaced-with-1-heavy-bolter-1",
+            "label": "For every 5 models in this unit, 1 Heavy Intercessor\u2019s heavy bolt rifle can be replaced with 1 heavy bolter.",
+            "target": "For every 5 models in this unit, 1 Heavy Intercessor\u2019s heavy bolt rifle can be replaced with 1 heavy bolter.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "INFANTRY",
@@ -13791,11 +15177,27 @@
           "id": "10-models"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "the-hellblaster-sergeant-s-bolt-pistol-can-be-replaced-with-1-plasma-pistol-1",
+            "label": "The Hellblaster Sergeant\u2019s bolt pistol can be replaced with 1 plasma pistol.",
+            "target": "The Hellblaster Sergeant\u2019s bolt pistol can be replaced with 1 plasma pistol.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "INFANTRY",
@@ -13929,11 +15331,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -14073,11 +15482,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -14283,11 +15699,71 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [
+          {
+            "type": "statement",
+            "label": "Orbital Comms Array (Aura)",
+            "text": "While a friendly ADEPTUS ASTARTES unit is within 6\" of the bearer, each time you target that unit with a Stratagem , roll one D6: on a 5+, you gain 1CP."
+          },
+          {
+            "type": "statement",
+            "label": "Shield Dome",
+            "text": "The bearer has a 5+ invulnerable save ."
+          }
+        ],
+        "options": [
+          {
+            "id": "this-model-can-be-equipped-with-1-ironhail-heavy-stubber-1",
+            "label": "This model can be equipped with 1 ironhail heavy stubber.",
+            "target": "This model can be equipped with 1 ironhail heavy stubber.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "this-model-s-2-storm-bolters-can-be-replaced-with-2-fragstorm-grenade-launchers-2",
+            "label": "This model\u2019s 2 storm bolters can be replaced with 2 fragstorm grenade launchers.",
+            "target": "This model\u2019s 2 storm bolters can be replaced with 2 fragstorm grenade launchers.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "this-model-can-be-equipped-with-one-of-the-following-3",
+            "label": "This model can be equipped with one of the following:",
+            "target": "This model",
+            "action": "equip",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-bellicatus-missile-array",
+                "label": "1 bellicatus missile array"
+              },
+              {
+                "id": "1-ironhail-skytalon-array",
+                "label": "1 ironhail skytalon array"
+              },
+              {
+                "id": "1-orbital-comms-array",
+                "label": "1 orbital comms array"
+              },
+              {
+                "id": "1-shield-dome",
+                "label": "1 shield dome"
+              }
+            ]
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "VEHICLE",
@@ -14469,11 +15945,27 @@
           "id": "6-models"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "all-models-in-this-unit-can-each-have-their-assault-bolters-replaced-with-1-plasma-exterminators-1",
+            "label": "All models in this unit can each have their assault bolters replaced with 1 plasma exterminators.",
+            "target": "All models in this unit can each have their assault bolters replaced with 1 plasma exterminators.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "INFANTRY",
@@ -14611,11 +16103,33 @@
           "id": "10-models"
         }
       ],
+      "wargear": {
+        "abilities": [
+          {
+            "type": "statement",
+            "label": "Haywire Mine",
+            "text": "Once per battle, at the start of any phase, you can select one enemy unit within 3\" of the bearer and roll one D6: on a 2+, that enemy unit suffers D3 mortal wounds , or 2D3 mortal wounds instead if it is a VEHICLE unit."
+          }
+        ],
+        "options": [
+          {
+            "id": "one-incursor-can-be-equipped-with-1-haywire-mine-1",
+            "label": "One Incursor can be equipped with 1 haywire mine.",
+            "target": "One Incursor can be equipped with 1 haywire mine.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "INFANTRY",
@@ -14761,11 +16275,18 @@
           "id": "10-models"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -14899,11 +16420,48 @@
           "id": "10-models"
         }
       ],
+      "wargear": {
+        "abilities": [
+          {
+            "type": "statement",
+            "label": "Helix Gauntlet",
+            "text": "Models in the bearer\u2019s unit have the Feel No Pain 6+ ability."
+          },
+          {
+            "type": "statement",
+            "label": "Infiltrator Comms Array",
+            "text": "Each time you target the bearer\u2019s unit with a Stratagem, roll one D6: on a 5+, you gain 1CP."
+          }
+        ],
+        "options": [
+          {
+            "id": "1-infiltrator-can-be-equipped-with-1-helix-gauntlet-1",
+            "label": "1 Infiltrator can be equipped with 1 helix gauntlet.*",
+            "target": "1 Infiltrator can be equipped with 1 helix gauntlet.*",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "1-infiltrator-can-be-equipped-with-1-infiltrator-comms-array-2",
+            "label": "1 Infiltrator can be equipped with 1 Infiltrator comms array.*",
+            "target": "1 Infiltrator can be equipped with 1 Infiltrator comms array.*",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [
+          "* These options cannot be taken on the same model."
+        ],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "INFANTRY",
@@ -15054,11 +16612,18 @@
           "id": "6-models"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -15320,11 +16885,77 @@
           "id": "10-models"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "the-intercessor-sergeant-s-bolt-rifle-can-be-replaced-with-one-of-the-following-1",
+            "label": "The Intercessor Sergeant\u2019s bolt rifle can be replaced with one of the following:",
+            "target": "The Intercessor Sergeant\u2019s bolt rifle",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-astartes-chainsword",
+                "label": "1 Astartes chainsword"
+              },
+              {
+                "id": "1-hand-flamer",
+                "label": "1 hand flamer"
+              },
+              {
+                "id": "1-plasma-pistol",
+                "label": "1 plasma pistol"
+              },
+              {
+                "id": "1-power-weapon",
+                "label": "1 power weapon"
+              }
+            ]
+          },
+          {
+            "id": "the-intercessor-sergeant-s-close-combat-weapon-can-be-replaced-with-one-of-the-following-2",
+            "label": "The Intercessor Sergeant\u2019s close combat weapon can be replaced with one of the following:",
+            "target": "The Intercessor Sergeant\u2019s close combat weapon",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-astartes-chainsword",
+                "label": "1 Astartes chainsword"
+              },
+              {
+                "id": "1-power-fist",
+                "label": "1 power fist"
+              },
+              {
+                "id": "1-power-weapon",
+                "label": "1 power weapon"
+              },
+              {
+                "id": "1-thunder-hammer",
+                "label": "1 thunder hammer"
+              }
+            ]
+          },
+          {
+            "id": "for-every-5-models-in-this-unit-1-model-equipped-with-a-bolt-rifle-can-be-equipped-with-1-astartes-grenade-launcher-3",
+            "label": "For every 5 models in this unit, 1 model equipped with a bolt rifle can be equipped with 1 Astartes grenade launcher.",
+            "target": "For every 5 models in this unit, 1 model equipped with a bolt rifle can be equipped with 1 Astartes grenade launcher.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "INFANTRY",
@@ -15470,11 +17101,27 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "this-model-s-onslaught-gatling-cannon-can-be-replaced-with-1-multi-melta-1",
+            "label": "This model\u2019s onslaught gatling cannon can be replaced with 1 multi-melta.",
+            "target": "This model\u2019s onslaught gatling cannon can be replaced with 1 multi-melta.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "MOUNTED",
@@ -15636,11 +17283,27 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "this-model-s-incendium-cannon-can-be-replaced-with-1-twin-ironhail-autocannon-1",
+            "label": "This model\u2019s incendium cannon can be replaced with 1 twin ironhail autocannon.",
+            "target": "This model\u2019s incendium cannon can be replaced with 1 twin ironhail autocannon.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "VEHICLE",
@@ -15835,11 +17498,24 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [
+          {
+            "type": "statement",
+            "label": "Ironclad Assault Launchers",
+            "text": "The bearer has the GRENADES keyword."
+          }
+        ],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -16020,11 +17696,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -16140,11 +17823,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -16460,11 +18150,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -16631,11 +18328,43 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "this-model-can-be-equipped-with-1-hunter-killer-missile-1",
+            "label": "This model can be equipped with 1 hunter-killer missile.",
+            "target": "This model can be equipped with 1 hunter-killer missile.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "this-model-can-be-equipped-with-1-multi-melta-2",
+            "label": "This model can be equipped with 1 multi-melta.",
+            "target": "This model can be equipped with 1 multi-melta.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "this-model-can-be-equipped-with-1-storm-bolter-3",
+            "label": "This model can be equipped with 1 storm bolter.",
+            "target": "This model can be equipped with 1 storm bolter.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "VEHICLE",
@@ -16829,11 +18558,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -17014,11 +18750,43 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "this-model-can-be-equipped-with-1-hunter-killer-missile-1",
+            "label": "This model can be equipped with 1 hunter-killer missile.",
+            "target": "This model can be equipped with 1 hunter-killer missile.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "this-model-can-be-equipped-with-1-multi-melta-2",
+            "label": "This model can be equipped with 1 multi-melta.",
+            "target": "This model can be equipped with 1 multi-melta.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "this-model-can-be-equipped-with-1-storm-bolter-3",
+            "label": "This model can be equipped with 1 storm bolter.",
+            "target": "This model can be equipped with 1 storm bolter.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "VEHICLE",
@@ -17218,11 +18986,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -17386,11 +19161,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -17557,11 +19339,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -17769,11 +19558,24 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [
+          {
+            "type": "statement",
+            "label": "Explorator Augury Web",
+            "text": "Enemy units that are set up on the battlefield as Reinforcements cannot be set up within 12\" of this bearer, but the bearer must halve its Transport Capacity ."
+          }
+        ],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -17965,11 +19767,43 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "this-model-can-be-equipped-with-1-hunter-killer-missile-1",
+            "label": "This model can be equipped with 1 hunter-killer missile.",
+            "target": "This model can be equipped with 1 hunter-killer missile.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "this-model-can-be-equipped-with-1-multi-melta-2",
+            "label": "This model can be equipped with 1 multi-melta.",
+            "target": "This model can be equipped with 1 multi-melta.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "this-model-can-be-equipped-with-1-storm-bolter-3",
+            "label": "This model can be equipped with 1 storm bolter.",
+            "target": "This model can be equipped with 1 storm bolter.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "VEHICLE",
@@ -18114,11 +19948,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -18239,11 +20080,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -18388,11 +20236,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -18540,11 +20395,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -18689,11 +20551,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -18848,11 +20717,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -18968,11 +20844,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -19217,11 +21100,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -19377,11 +21267,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -19558,11 +21455,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -19740,11 +21644,36 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "this-model-can-be-equipped-with-one-of-the-following-1",
+            "label": "This model can be equipped with one of the following:",
+            "target": "This model",
+            "action": "equip",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-combi-weapon",
+                "label": "1 combi-weapon"
+              },
+              {
+                "id": "1-storm-bolter",
+                "label": "1 storm bolter"
+              }
+            ]
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -20002,11 +21931,48 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "this-model-s-bolt-pistol-can-be-replaced-with-one-of-the-following-1",
+            "label": "This model\u2019s bolt pistol can be replaced with one of the following:",
+            "target": "This model\u2019s bolt pistol",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-boltgun",
+                "label": "1 boltgun"
+              },
+              {
+                "id": "1-combi-weapon",
+                "label": "1 combi-weapon"
+              },
+              {
+                "id": "1-grav-pistol",
+                "label": "1 grav-pistol"
+              },
+              {
+                "id": "1-plasma-pistol",
+                "label": "1 plasma pistol"
+              },
+              {
+                "id": "1-storm-bolter",
+                "label": "1 storm bolter"
+              }
+            ]
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "MOUNTED",
@@ -20276,11 +22242,56 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "this-model-s-bolt-pistol-can-be-replaced-with-one-of-the-following-1",
+            "label": "This model\u2019s bolt pistol can be replaced with one of the following:",
+            "target": "This model\u2019s bolt pistol",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-boltgun",
+                "label": "1 boltgun"
+              },
+              {
+                "id": "1-combi-weapon",
+                "label": "1 combi-weapon"
+              },
+              {
+                "id": "1-grav-pistol",
+                "label": "1 grav-pistol"
+              },
+              {
+                "id": "1-hand-flamer",
+                "label": "1 hand flamer"
+              },
+              {
+                "id": "1-inferno-pistol",
+                "label": "1 inferno pistol"
+              },
+              {
+                "id": "1-plasma-pistol",
+                "label": "1 plasma pistol"
+              },
+              {
+                "id": "1-storm-bolter",
+                "label": "1 storm bolter"
+              }
+            ]
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -20499,11 +22510,79 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [
+          {
+            "type": "statement",
+            "label": "Storm Shield",
+            "text": "The bearer has a 4+ invulnerable save ."
+          }
+        ],
+        "options": [
+          {
+            "id": "this-model-s-master-crafted-bolter-can-be-replaced-with-one-of-the-following-1",
+            "label": "This model\u2019s master-crafted bolter can be replaced with one of the following:",
+            "target": "This model\u2019s master-crafted bolter",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-plasma-pistol",
+                "label": "1 plasma pistol"
+              },
+              {
+                "id": "1-master-crafted-power-weapon",
+                "label": "1 master-crafted power weapon"
+              },
+              {
+                "id": "1-power-fist",
+                "label": "1 power fist"
+              }
+            ]
+          },
+          {
+            "id": "this-model-s-bolt-pistol-master-crafted-bolter-and-close-combat-weapon-can-be-replaced-with-1-neo-volkite-pistol-1-master-crafted-power-weapon-and-1-storm-shield-2",
+            "label": "This model\u2019s bolt pistol, master-crafted bolter and close combat weapon can be replaced with 1 neo volkite pistol, 1 master-crafted power weapon and 1 storm shield.",
+            "target": "This model\u2019s bolt pistol, master-crafted bolter and close combat weapon can be replaced with 1 neo volkite pistol, 1 master-crafted power weapon and 1 storm shield.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "this-model-s-bolt-pistol-can-be-replaced-with-1-heavy-bolt-pistol-3",
+            "label": "This model\u2019s bolt pistol can be replaced with 1 heavy bolt pistol.",
+            "target": "This model\u2019s bolt pistol can be replaced with 1 heavy bolt pistol.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "this-model-s-close-combat-weapon-can-be-replaced-with-one-of-the-following-4",
+            "label": "This model\u2019s close combat weapon can be replaced with one of the following:",
+            "target": "This model\u2019s close combat weapon",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-master-crafted-power-weapon",
+                "label": "1 master-crafted power weapon"
+              },
+              {
+                "id": "1-power-fist",
+                "label": "1 power fist"
+              }
+            ]
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "INFANTRY",
@@ -20673,11 +22752,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -20811,11 +22897,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -20950,11 +23043,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -21113,11 +23213,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "MONSTER",
@@ -21132,6 +23239,16 @@
         "DARK ANGELS"
       ],
       "renderBlocks": [
+        {
+          "title": "PRIMARCH OF THE FIRST LEGION",
+          "displayStyle": "section",
+          "entries": [
+            {
+              "type": "text",
+              "text": "Mist-wreathed Shadow Realms: In your Command phase , if this unit is not within Engagement Range of one or more enemy units, you can remove it from the battlefield and place it into Strategic Reserves . Martial Exemplar (Aura): While a friendly ADEPTUS ASTARTES unit is within 6\" of this model, each time a model in that unit makes a melee attack, re-roll a Hit roll of 1 and re-roll a Wound roll of 1. No Hiding From the Watchers (Aura): While a friendly ADEPTUS ASTARTES unit is within 6\" of this model, models in that unit have the Feel No Pain 4+ ability against mortal wounds ."
+            }
+          ]
+        },
         {
           "title": "SUPREME COMMANDER",
           "displayStyle": "section",
@@ -21302,11 +23419,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -21554,11 +23678,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -21705,11 +23836,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -21922,11 +24060,27 @@
           "id": "invader-atv"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "an-invader-atv-s-onslaught-gatling-cannon-can-be-replaced-with-1-multi-melta-1",
+            "label": "An Invader ATV\u2019s onslaught gatling cannon can be replaced with 1 multi-melta.",
+            "target": "An Invader ATV\u2019s onslaught gatling cannon can be replaced with 1 multi-melta.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "MOUNTED",
@@ -22082,11 +24236,52 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "this-model-can-be-equipped-with-one-of-the-following-1",
+            "label": "This model can be equipped with one of the following:",
+            "target": "This model",
+            "action": "equip",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "2-heavy-bolters",
+                "label": "2 heavy bolters"
+              },
+              {
+                "id": "2-lascannons",
+                "label": "2 lascannons"
+              }
+            ]
+          },
+          {
+            "id": "this-model-can-be-equipped-with-1-hunter-killer-missile-2",
+            "label": "This model can be equipped with 1 hunter-killer missile.",
+            "target": "This model can be equipped with 1 hunter-killer missile.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "this-model-can-be-equipped-with-1-storm-bolter-3",
+            "label": "This model can be equipped with 1 storm bolter.",
+            "target": "This model can be equipped with 1 storm bolter.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "VEHICLE",
@@ -22252,11 +24447,52 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "this-model-can-be-equipped-with-one-of-the-following-1",
+            "label": "This model can be equipped with one of the following:",
+            "target": "This model",
+            "action": "equip",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "2-heavy-bolters",
+                "label": "2 heavy bolters"
+              },
+              {
+                "id": "2-lascannons",
+                "label": "2 lascannons"
+              }
+            ]
+          },
+          {
+            "id": "this-model-can-be-equipped-with-1-hunter-killer-missile-2",
+            "label": "This model can be equipped with 1 hunter-killer missile.",
+            "target": "This model can be equipped with 1 hunter-killer missile.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "this-model-can-be-equipped-with-1-storm-bolter-3",
+            "label": "This model can be equipped with 1 storm bolter.",
+            "target": "This model can be equipped with 1 storm bolter.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "VEHICLE",
@@ -22381,11 +24617,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -22588,11 +24831,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "ARTILLERY",
@@ -22763,11 +25013,18 @@
           "id": "6-models"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "MOUNTED",
@@ -22978,11 +25235,27 @@
           "id": "3-models"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "for-every-3-models-in-this-unit-1-model-s-plasma-talon-can-be-replaced-with-1-astartes-grenade-launcher-1",
+            "label": "For every 3 models in this unit, 1 model\u2019s plasma talon can be replaced with 1 Astartes grenade launcher.",
+            "target": "For every 3 models in this unit, 1 model\u2019s plasma talon can be replaced with 1 Astartes grenade launcher.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "KEYWORDS \u2013 ALL MODELS: MOUNTED",
@@ -23122,11 +25395,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -23260,11 +25540,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -23398,11 +25685,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -23550,11 +25844,43 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "this-model-s-twin-heavy-bolter-can-be-replaced-with-1-twin-lascannon-1",
+            "label": "This model\u2019s twin heavy bolter can be replaced with 1 twin lascannon.",
+            "target": "This model\u2019s twin heavy bolter can be replaced with 1 twin lascannon.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "this-model-can-be-equipped-with-1-hunter-killer-missile-2",
+            "label": "This model can be equipped with 1 hunter-killer missile.",
+            "target": "This model can be equipped with 1 hunter-killer missile.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "this-model-can-be-equipped-with-1-storm-bolter-3",
+            "label": "This model can be equipped with 1 storm bolter.",
+            "target": "This model can be equipped with 1 storm bolter.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "VEHICLE",
@@ -23769,11 +26095,51 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "this-model-can-be-equipped-with-1-icarus-rocket-pod-1",
+            "label": "This model can be equipped with 1 Icarus rocket pod.",
+            "target": "This model can be equipped with 1 Icarus rocket pod.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "this-model-s-heavy-flamer-can-be-replaced-with-1-onslaught-gatling-cannon-2",
+            "label": "This model\u2019s heavy flamer can be replaced with 1 onslaught gatling cannon.",
+            "target": "This model\u2019s heavy flamer can be replaced with 1 onslaught gatling cannon.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "this-model-s-heavy-onslaught-gatling-cannon-can-be-replaced-with-1-macro-plasma-incinerator-3",
+            "label": "This model\u2019s heavy onslaught gatling cannon can be replaced with 1 macro plasma incinerator.",
+            "target": "This model\u2019s heavy onslaught gatling cannon can be replaced with 1 macro plasma incinerator.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "this-model-s-twin-fragstorm-grenade-launcher-can-be-replaced-with-1-twin-storm-bolter-4",
+            "label": "This model\u2019s twin fragstorm grenade launcher can be replaced with 1 twin storm bolter.",
+            "target": "This model\u2019s twin fragstorm grenade launcher can be replaced with 1 twin storm bolter.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "VEHICLE",
@@ -23938,11 +26304,62 @@
           "id": "10-models"
         }
       ],
+      "wargear": {
+        "abilities": [
+          {
+            "type": "statement",
+            "label": "Grapnel Launcher",
+            "text": "Each time the bearer\u2019s unit makes a Normal , Advance , Fall Back or Charge move , ignore any vertical distance when determining the total distance the bearer can be moved during that move."
+          },
+          {
+            "type": "statement",
+            "label": "Reiver Grav-chute",
+            "text": "The bearer has the Deep Strike ability."
+          }
+        ],
+        "options": [
+          {
+            "id": "all-models-in-this-unit-can-each-have-their-combat-knife-replaced-with-1-bolt-carbine-and-1-close-combat-weapon-1",
+            "label": "All models in this unit can each have their combat knife replaced with 1 bolt carbine and 1 close combat weapon.",
+            "target": "All models in this unit can each have their combat knife replaced with 1 bolt carbine and 1 close combat weapon.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "if-the-reiver-sergeant-is-equipped-with-1-bolt-carbine-it-can-be-equipped-with-1-combat-knife-2",
+            "label": "If the Reiver Sergeant is equipped with 1 bolt carbine, it can be equipped with 1 combat knife.",
+            "target": "If the Reiver Sergeant is equipped with 1 bolt carbine, it can be equipped with 1 combat knife.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "all-models-in-this-unit-can-each-be-equipped-with-1-reiver-grav-chute-3",
+            "label": "All models in this unit can each be equipped with 1 Reiver grav-chute.",
+            "target": "All models in this unit can each be equipped with 1 Reiver grav-chute.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "all-models-in-this-unit-can-each-be-equipped-with-1-grapnel-launcher-4",
+            "label": "All models in this unit can each be equipped with 1 grapnel launcher.",
+            "target": "All models in this unit can each be equipped with 1 grapnel launcher.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "INFANTRY",
@@ -24287,11 +26704,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -24465,11 +26889,56 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "this-model-s-twin-heavy-bolter-can-be-replaced-with-one-of-the-following-1",
+            "label": "This model\u2019s twin heavy bolter can be replaced with one of the following:",
+            "target": "This model\u2019s twin heavy bolter",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-multi-melta",
+                "label": "1 multi-melta"
+              },
+              {
+                "id": "1-twin-assault-cannon",
+                "label": "1 twin assault cannon"
+              },
+              {
+                "id": "1-twin-lascannon",
+                "label": "1 twin lascannon"
+              }
+            ]
+          },
+          {
+            "id": "this-model-can-be-equipped-with-1-hunter-killer-missile-2",
+            "label": "This model can be equipped with 1 hunter-killer missile.",
+            "target": "This model can be equipped with 1 hunter-killer missile.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "this-model-can-be-equipped-with-1-storm-bolter-3",
+            "label": "This model can be equipped with 1 storm bolter.",
+            "target": "This model can be equipped with 1 storm bolter.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "VEHICLE",
@@ -24704,11 +27173,24 @@
           "id": "10-models"
         }
       ],
+      "wargear": {
+        "abilities": [
+          {
+            "type": "statement",
+            "label": "Grenade Harness",
+            "text": "The bearer has the GRENADES keyword."
+          }
+        ],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -24900,11 +27382,35 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "this-model-s-twin-heavy-bolter-can-be-replaced-with-1-twin-lascannon-1",
+            "label": "This model\u2019s twin heavy bolter can be replaced with 1 twin lascannon.",
+            "target": "This model\u2019s twin heavy bolter can be replaced with 1 twin lascannon.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "this-model-s-heavy-onslaught-gatling-cannon-can-be-replaced-with-1-las-talon-2",
+            "label": "This model\u2019s heavy onslaught gatling cannon can be replaced with 1 las-talon.",
+            "target": "This model\u2019s heavy onslaught gatling cannon can be replaced with 1 las-talon.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "VEHICLE",
@@ -25140,11 +27646,43 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "this-model-s-macro-plasma-incinerator-can-be-replaced-with-1-heavy-laser-destroyer-1",
+            "label": "This model\u2019s macro plasma incinerator can be replaced with 1 heavy laser destroyer.",
+            "target": "This model\u2019s macro plasma incinerator can be replaced with 1 heavy laser destroyer.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "this-model-can-be-equipped-with-1-ironhail-heavy-stubber-2",
+            "label": "This model can be equipped with 1 ironhail heavy stubber.",
+            "target": "This model can be equipped with 1 ironhail heavy stubber.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "this-model-can-be-equipped-with-1-icarus-rocket-pod-3",
+            "label": "This model can be equipped with 1 Icarus rocket pod.",
+            "target": "This model can be equipped with 1 Icarus rocket pod.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "VEHICLE",
@@ -25285,11 +27823,27 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "this-model-can-be-equipped-with-1-hunter-killer-missile-1",
+            "label": "This model can be equipped with 1 hunter-killer missile.",
+            "target": "This model can be equipped with 1 hunter-killer missile.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "VEHICLE",
@@ -25441,11 +27995,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -25598,11 +28159,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "MOUNTED",
@@ -25949,11 +28517,18 @@
           "id": "6-models"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "MOUNTED",
@@ -26116,11 +28691,18 @@
           "id": "10-models"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -26342,11 +28924,69 @@
           "id": "10-models"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "the-scout-sergeant-s-boltgun-can-be-replaced-with-1-astartes-chainsword-1",
+            "label": "The Scout Sergeant's boltgun can be replaced with 1 Astartes chainsword.",
+            "target": "The Scout Sergeant's boltgun can be replaced with 1 Astartes chainsword.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "any-number-of-models-can-each-have-their-boltgun-replaced-with-one-of-the-following-2",
+            "label": "Any number of models can each have their boltgun replaced with one of the following:",
+            "target": "Any number of models can each have their boltgun replaced with one of the following:",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": [
+              {
+                "id": "1-astartes-shotgun",
+                "label": "1 Astartes shotgun"
+              },
+              {
+                "id": "1-combat-knife",
+                "label": "1 combat knife"
+              }
+            ]
+          },
+          {
+            "id": "for-every-5-models-in-this-unit-1-scout-s-boltgun-can-be-replaced-with-1-scout-sniper-rifle-3",
+            "label": "For every 5 models in this unit, 1 Scout\u2019s boltgun can be replaced with 1 Scout sniper rifle.",
+            "target": "For every 5 models in this unit, 1 Scout\u2019s boltgun can be replaced with 1 Scout sniper rifle.",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": []
+          },
+          {
+            "id": "for-every-5-models-in-this-unit-1-scout-s-boltgun-can-be-replaced-with-one-of-the-following-4",
+            "label": "For every 5 models in this unit, 1 Scout\u2019s boltgun can be replaced with one of the following:",
+            "target": "For every 5 models in this unit, 1 Scout\u2019s boltgun can be replaced with one of the following:",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": [
+              {
+                "id": "1-heavy-bolter",
+                "label": "1 heavy bolter"
+              },
+              {
+                "id": "1-missile-launcher",
+                "label": "1 missile launcher"
+              }
+            ]
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "INFANTRY",
@@ -26502,11 +29142,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -26672,11 +29319,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -26853,11 +29507,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -27023,11 +29684,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -27193,11 +29861,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -27342,11 +30017,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -27571,11 +30253,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -27728,11 +30417,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -27955,11 +30651,18 @@
           "id": "10-models"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -28147,11 +30850,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -28309,11 +31019,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -28443,11 +31160,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -28578,11 +31302,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -28766,11 +31497,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -29000,11 +31738,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -29201,11 +31946,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -29333,11 +32085,18 @@
           "id": "3-models"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -29768,11 +32527,144 @@
           "id": "10-models"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "1-tactical-marine-s-boltgun-can-be-replaced-with-one-of-the-following-1",
+            "label": "1 Tactical Marine\u2019s boltgun can be replaced with one of the following:",
+            "target": "1 Tactical Marine\u2019s boltgun",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-flamer",
+                "label": "1 flamer"
+              },
+              {
+                "id": "1-heavy-bolter",
+                "label": "1 heavy bolter"
+              },
+              {
+                "id": "1-grav-cannon",
+                "label": "1 grav-cannon"
+              },
+              {
+                "id": "1-grav-gun",
+                "label": "1 grav-gun"
+              },
+              {
+                "id": "1-lascannon",
+                "label": "1 lascannon"
+              },
+              {
+                "id": "1-meltagun",
+                "label": "1 meltagun"
+              },
+              {
+                "id": "1-missile-launcher",
+                "label": "1 missile launcher"
+              },
+              {
+                "id": "1-multi-melta",
+                "label": "1 multi-melta"
+              },
+              {
+                "id": "1-plasma-cannon",
+                "label": "1 plasma cannon"
+              },
+              {
+                "id": "1-plasma-gun",
+                "label": "1 plasma gun"
+              }
+            ]
+          },
+          {
+            "id": "1-tactical-marine-s-boltgun-can-be-replaced-with-one-of-the-following-2",
+            "label": "1 Tactical Marine\u2019s boltgun can be replaced with one of the following:",
+            "target": "1 Tactical Marine\u2019s boltgun",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-flamer",
+                "label": "1 flamer"
+              },
+              {
+                "id": "1-grav-gun",
+                "label": "1 grav-gun"
+              },
+              {
+                "id": "1-meltagun",
+                "label": "1 meltagun"
+              },
+              {
+                "id": "1-plasma-gun",
+                "label": "1 plasma gun"
+              }
+            ]
+          },
+          {
+            "id": "the-tactical-sergeant-s-bolt-pistol-and-boltgun-can-be-replaced-with-1-twin-lightning-claws-or-two-different-weapons-from-the-following-list-3",
+            "label": "The Tactical Sergeant\u2019s bolt pistol and boltgun can be replaced with 1 twin lightning claws, or two different weapons from the following list:*",
+            "target": "The Tactical Sergeant\u2019s bolt pistol and boltgun can be replaced with 1 twin lightning claws, or two different weapons from the following list:*",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": [
+              {
+                "id": "1-astartes-chainsword",
+                "label": "1 Astartes chainsword"
+              },
+              {
+                "id": "1-bolt-pistol",
+                "label": "1 bolt pistol"
+              },
+              {
+                "id": "1-boltgun",
+                "label": "1 boltgun"
+              },
+              {
+                "id": "1-combi-weapon",
+                "label": "1 combi-weapon"
+              },
+              {
+                "id": "1-grav-pistol",
+                "label": "1 grav-pistol"
+              },
+              {
+                "id": "1-plasma-pistol",
+                "label": "1 plasma pistol"
+              },
+              {
+                "id": "1-storm-bolter",
+                "label": "1 storm bolter"
+              },
+              {
+                "id": "1-power-fist",
+                "label": "1 power fist"
+              },
+              {
+                "id": "1-power-weapon",
+                "label": "1 power weapon"
+              },
+              {
+                "id": "1-thunder-hammer",
+                "label": "1 thunder hammer"
+              }
+            ]
+          }
+        ],
+        "manualNotes": [
+          "* This model can only be equipped with two ranged weapons if one of them is a Pistol (and it can only have one Pistol)."
+        ],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "INFANTRY",
@@ -29879,11 +32771,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -30014,11 +32913,18 @@
           "id": "3-models"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -30160,11 +33066,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -30489,11 +33402,90 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "this-model-s-bolt-pistol-can-be-replaced-with-one-of-the-following-1",
+            "label": "This model\u2019s bolt pistol can be replaced with one of the following:",
+            "target": "This model\u2019s bolt pistol",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-boltgun",
+                "label": "1 boltgun"
+              },
+              {
+                "id": "1-combi-weapon",
+                "label": "1 combi-weapon"
+              },
+              {
+                "id": "1-grav-pistol",
+                "label": "1 grav-pistol"
+              },
+              {
+                "id": "1-plasma-pistol",
+                "label": "1 plasma pistol"
+              },
+              {
+                "id": "1-storm-bolter",
+                "label": "1 storm bolter"
+              }
+            ]
+          },
+          {
+            "id": "this-model-s-omnissian-power-axe-can-be-replaced-with-one-of-the-following-2",
+            "label": "This model\u2019s Omnissian power axe can be replaced with one of the following:",
+            "target": "This model\u2019s Omnissian power axe",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-astartes-chainsword",
+                "label": "1 Astartes chainsword"
+              },
+              {
+                "id": "1-power-fist",
+                "label": "1 power fist"
+              },
+              {
+                "id": "1-thunder-hammer",
+                "label": "1 thunder hammer"
+              }
+            ]
+          },
+          {
+            "id": "this-model-must-be-equipped-with-one-of-the-following-3",
+            "label": "This model must be equipped with one of the following:",
+            "target": "This model must be equipped with one of the following:",
+            "action": "manual",
+            "selectionMode": "manual",
+            "choices": [
+              {
+                "id": "1-servo-arm",
+                "label": "1 servo arm"
+              },
+              {
+                "id": "1-conversion-beamer",
+                "label": "1 conversion beamer"
+              },
+              {
+                "id": "1-flamer-1-plasma-cutter-and-2-servo-arms",
+                "label": "1 flamer, 1 plasma cutter and 2 servo-arms"
+              }
+            ]
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": true
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": true
       },
       "keywords": [
         "MOUNTED",
@@ -30637,11 +33629,24 @@
           "id": "10-models"
         }
       ],
+      "wargear": {
+        "abilities": [
+          {
+            "type": "statement",
+            "label": "Storm Shield",
+            "text": "The bearer has a Wounds characteristic of 4."
+          }
+        ],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -30854,11 +33859,18 @@
           "id": "10-models"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -31028,11 +34040,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -31194,11 +34213,36 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [
+          {
+            "id": "this-model-s-2-combi-bolters-can-be-replaced-with-one-of-the-following-1",
+            "label": "This model\u2019s 2 combi-bolters can be replaced with one of the following",
+            "target": "This model\u2019s 2 combi-bolters",
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "2-heavy-flamers",
+                "label": "2 heavy flamers"
+              },
+              {
+                "id": "2-twin-volkite-chargers",
+                "label": "2 twin volkite chargers"
+              }
+            ]
+          }
+        ],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -31395,11 +34439,18 @@
           "id": "2-models"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "ARTILLERY",
@@ -31557,11 +34608,24 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [
+          {
+            "type": "statement",
+            "label": "Thunderhawk Cluster Bombs",
+            "text": "Each time the bearer ends a Normal move , you can select one enemy unit it moved over during that move and roll six D6: for each 3+, that unit suffers 1 mortal wound ."
+          }
+        ],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -31718,11 +34782,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -31918,11 +34989,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -32123,11 +35201,24 @@
           "id": "10-models"
         }
       ],
+      "wargear": {
+        "abilities": [
+          {
+            "type": "statement",
+            "label": "Storm Shield",
+            "text": "The bearer has a 4+ invulnerable save ."
+          }
+        ],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -32339,11 +35430,24 @@
           "id": "10-models"
         }
       ],
+      "wargear": {
+        "abilities": [
+          {
+            "type": "statement",
+            "label": "Storm Shield",
+            "text": "The bearer has a 4+ invulnerable save ."
+          }
+        ],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -32637,11 +35741,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -32775,11 +35886,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -32932,11 +36050,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -33079,11 +36204,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -33226,11 +36358,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -33361,11 +36500,18 @@
           "id": "1-model"
         }
       ],
+      "wargear": {
+        "abilities": [],
+        "options": [],
+        "manualNotes": [],
+        "hasManualOptions": false
+      },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
-        "hasManualSelectionLabels": false
+        "hasManualSelectionLabels": false,
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",

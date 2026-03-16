@@ -29,6 +29,20 @@ function sampleCatalog() {
                     { id: "1-model", label: "1 model", points: 280 },
                     { id: "2-models", label: "2 models", points: 560 },
                 ],
+                wargear: {
+                    options: [
+                        {
+                            id: "relic-weapon",
+                            label: "Relic weapon",
+                            target: "Exarch",
+                            selectionMode: "single",
+                            choices: [
+                                { id: "axe", label: "Axe" },
+                                { id: "spear", label: "Spear" },
+                            ],
+                        },
+                    ],
+                },
             },
         ],
     };
@@ -47,6 +61,7 @@ test("saveRosterToStorage persists payload and active id", () => {
                 optionId: "1-model",
                 optionIndex: 0,
                 quantity: 1,
+                wargearSelections: { "relic-weapon": "spear" },
             },
         ],
     });
@@ -59,6 +74,7 @@ test("saveRosterToStorage persists payload and active id", () => {
     const loaded = Store.loadRosterFromStorage(storage, "roster-1");
     assert.equal(loaded.name, "Swordwind");
     assert.equal(loaded.entries[0].optionId, "1-model");
+    assert.equal(loaded.entries[0].wargearSelections["relic-weapon"], "spear");
 });
 
 test("import/export round trips roster JSON", () => {
@@ -67,13 +83,14 @@ test("import/export round trips roster JSON", () => {
         appVersion: "builder-catalog-v2",
         factionSlug: "aeldari",
         name: "Imported Roster",
-        entries: [{ unitId: "avatar-of-khaine", optionId: "1-model", quantity: 2 }],
+        entries: [{ unitId: "avatar-of-khaine", optionId: "1-model", quantity: 2, wargearSelections: { "relic-weapon": "axe" } }],
     });
 
     const imported = Store.importRosterJson(json);
     assert.equal(imported.name, "Imported Roster");
     assert.equal(imported.factionSlug, "aeldari");
     assert.equal(imported.entries[0].quantity, 2);
+    assert.equal(imported.entries[0].wargearSelections["relic-weapon"], "axe");
     assert.notEqual(imported.id, "roster-2");
 });
 
@@ -84,7 +101,13 @@ test("deriveResolvedRoster resolves by optionId and totals valid entries", () =>
             factionSlug: "aeldari",
             name: "Resolved",
             entries: [
-                { unitId: "avatar-of-khaine", optionId: "2-models", optionIndex: 0, quantity: 2 },
+                {
+                    unitId: "avatar-of-khaine",
+                    optionId: "2-models",
+                    optionIndex: 0,
+                    quantity: 2,
+                    wargearSelections: { "relic-weapon": "spear" },
+                },
             ],
         },
         catalog: sampleCatalog(),
@@ -92,6 +115,7 @@ test("deriveResolvedRoster resolves by optionId and totals valid entries", () =>
     });
 
     assert.equal(resolved.entries[0].selectedOption.id, "2-models");
+    assert.equal(resolved.entries[0].wargearSelections[0].selectedChoice.id, "spear");
     assert.equal(resolved.entries[0].linePoints, 1120);
     assert.equal(resolved.totalPoints, 1120);
     assert.equal(resolved.invalidEntries.length, 0);
@@ -104,7 +128,7 @@ test("deriveResolvedRoster degrades gracefully when faction, unit, or option is 
             factionSlug: "space-marines",
             name: "Broken",
             entries: [
-                { unitId: "missing-unit", optionId: "missing-option", quantity: 1 },
+                { unitId: "missing-unit", optionId: "missing-option", quantity: 1, wargearSelections: { "relic-weapon": "axe" } },
             ],
         },
         catalog: sampleCatalog(),

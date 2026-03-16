@@ -335,6 +335,15 @@
             font-weight: 700;
         }
 
+        .entry-stack {
+            display: grid;
+            gap: 8px;
+        }
+
+        .entry-subselect {
+            width: 100%;
+        }
+
         .status-error {
             color: #8c2f39;
             font-weight: 700;
@@ -643,11 +652,22 @@
             if (unit.selectionMode === "manual") {
                 pills.push(`<div class="pill">Manual option labels</div>`);
             }
+            if (unit.wargear && unit.wargear.options && unit.wargear.options.length) {
+                pills.push(`<div class="pill">Wargear options</div>`);
+            }
             const missing = missingStats(unit);
             if (missing.length) {
                 pills.push(`<div class="pill pill-warning">Missing stats: ${missing.join(", ")}</div>`);
             }
             return pills.join("");
+        }
+
+        function wargearGroups(unit) {
+            const groups = unit && unit.wargear && Array.isArray(unit.wargear.options) ? unit.wargear.options : [];
+            return {
+                simple: groups.filter((group) => group.selectionMode === "single"),
+                manual: groups.filter((group) => group.selectionMode !== "single"),
+            };
         }
 
         function renderFactionOptions() {
@@ -859,6 +879,7 @@
                 optionId: defaultOption ? defaultOption.id : null,
                 optionIndex: defaultOption ? unit.pointsOptions.indexOf(defaultOption) : null,
                 quantity: 1,
+                wargearSelections: {},
             });
             renderRoster();
             renderPreview();
@@ -888,6 +909,21 @@
                 return;
             }
             entry.quantity = Math.max(1, Number(quantity) || 1);
+            renderRoster();
+            renderPreview();
+            scheduleAutoSave();
+        }
+
+        function updateRosterWargear(instanceId, groupId, choiceId) {
+            const entry = state.roster.find((item) => item.instanceId === instanceId);
+            if (!entry) {
+                return;
+            }
+            entry.wargearSelections = entry.wargearSelections || {};
+            entry.wargearSelections[groupId] = choiceId ? String(choiceId) : null;
+            if (!entry.wargearSelections[groupId]) {
+                delete entry.wargearSelections[groupId];
+            }
             renderRoster();
             renderPreview();
             scheduleAutoSave();
@@ -929,6 +965,34 @@
                     : `<option value="-1">Unavailable</option>`;
                 const issueText = entry.issues.map((issue) => `<div class="inline-note inline-note-warning">${issue}</div>`).join("");
                 const unitMissingStats = entry.unit ? missingStats(entry.unit) : [];
+                const groups = entry.unit ? wargearGroups(entry.unit) : { simple: [], manual: [] };
+                const wargearControls = groups.simple.map((group) => {
+                    const selected = (entry.wargearSelections || []).find((item) => item.group && item.group.id === group.id);
+                    const optionsHtml = [
+                        `<option value="">Keep current wargear</option>`,
+                        ...group.choices.map((choice) => `
+                            <option value="${choice.id}" ${selected && selected.selectedChoice && selected.selectedChoice.id === choice.id ? "selected" : ""}>
+                                ${choice.label}
+                            </option>
+                        `),
+                    ].join("");
+                    return `
+                        <div>
+                            <div class="inline-note">${group.target || group.label}</div>
+                            <select class="entry-subselect" data-action="wargear-select" data-instance-id="${entry.instanceId}" data-group-id="${group.id}">
+                                ${optionsHtml}
+                            </select>
+                        </div>
+                    `;
+                }).join("");
+                const manualWargearNotes = groups.manual.map((group) => `
+                    <div class="inline-note inline-note-warning">
+                        Manual wargear: ${group.label}
+                    </div>
+                `).join("");
+                const wargearManualComments = entry.unit && entry.unit.wargear && Array.isArray(entry.unit.wargear.manualNotes)
+                    ? entry.unit.wargear.manualNotes.map((note) => `<div class="inline-note inline-note-warning">${note}</div>`).join("")
+                    : "";
 
                 return `
                     <tr>
@@ -940,9 +1004,14 @@
                         </td>
                         <td>
                             ${entry.unit ? `
-                                <select data-action="option-select" data-instance-id="${entry.instanceId}">
-                                    ${optionsHtml}
-                                </select>
+                                <div class="entry-stack">
+                                    <select data-action="option-select" data-instance-id="${entry.instanceId}">
+                                        ${optionsHtml}
+                                    </select>
+                                    ${wargearControls}
+                                    ${manualWargearNotes}
+                                    ${wargearManualComments}
+                                </div>
                             ` : `<div class="inline-note inline-note-warning">This unit cannot be resolved in the current catalog.</div>`}
                         </td>
                         <td>
@@ -978,6 +1047,8 @@
                     selectedOption: entry.selectedOption,
                     selectedPoints: entry.linePoints,
                     quantity: entry.quantity,
+                    selectedWargear: entry.wargearSelections,
+                    manualWargearGroups: entry.unit && entry.unit.wargear ? entry.unit.wargear.options.filter((group) => group.selectionMode !== "single") : [],
                 });
             }).join("");
         }
@@ -1066,9 +1137,12 @@
 
         els.rosterBody.addEventListener("change", (event) => {
             const select = event.target.closest('[data-action="option-select"]');
+            const wargear = event.target.closest('[data-action="wargear-select"]');
             const quantity = event.target.closest('[data-action="quantity-input"]');
             if (select) {
                 updateRosterOption(select.dataset.instanceId, select.value);
+            } else if (wargear) {
+                updateRosterWargear(wargear.dataset.instanceId, wargear.dataset.groupId, wargear.value);
             } else if (quantity) {
                 updateRosterQuantity(quantity.dataset.instanceId, quantity.value);
             }

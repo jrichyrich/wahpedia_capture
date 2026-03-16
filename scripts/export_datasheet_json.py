@@ -261,6 +261,44 @@ def parse_points_block(block: Tag) -> dict[str, object]:
     return {"type": "points", "rows": rows}
 
 
+def parse_option_group_entries(block: Tag) -> list[dict[str, object]]:
+    entries: list[dict[str, object]] = []
+
+    for list_wrap in block.find_all("ul", recursive=False):
+        for item in list_wrap.find_all("li", recursive=False):
+            prompt_parts = []
+            for child in item.contents:
+                if isinstance(child, Tag) and child.name == "ul":
+                    continue
+                prompt_parts.append(str(child))
+
+            prompt = normalize_space(BeautifulSoup("".join(prompt_parts), "html.parser").get_text(" ", strip=True))
+            choices = []
+            nested = item.find("ul", recursive=False)
+            if nested:
+                choices = [
+                    normalize_space(option.get_text(" ", strip=True))
+                    for option in nested.find_all("li", recursive=False)
+                    if normalize_space(option.get_text(" ", strip=True))
+                ]
+
+            if (prompt or choices) and not (prompt == "None" and not choices):
+                entries.append(
+                    {
+                        "type": "option_group",
+                        "label": prompt,
+                        "items": choices,
+                    }
+                )
+
+    for comment in block.select(".dsOptionsComment"):
+        text = normalize_space(comment.get_text(" ", strip=True))
+        if text:
+            entries.append({"type": "text", "text": text})
+
+    return entries
+
+
 def parse_top_level_bold_segments(
     block: Tag, entry_type: str = "statement"
 ) -> list[dict[str, object]]:
@@ -303,6 +341,11 @@ def parse_section_block(section_title: str, block: Tag) -> list[dict[str, object
     if not text:
         return []
 
+    if section_title == "WARGEAR OPTIONS":
+        option_entries = parse_option_group_entries(block)
+        if option_entries:
+            return option_entries
+
     tagged_match = re.match(r"^([A-Z ]+):\s*(.+)$", text)
     if tagged_match and tagged_match.group(1) in {"CORE", "FACTION"}:
         return [
@@ -340,7 +383,53 @@ def parse_section_block(section_title: str, block: Tag) -> list[dict[str, object
     return entries
 
 
-def parse_sections(card: Tag) -> list[dict[str, object]]:
+def parse_left_column_sections(card: Tag) -> list[dict[str, object]]:
+    columns_wrap = card.select_one("div.ds2col")
+    if not columns_wrap:
+        return []
+
+    children = direct_children(columns_wrap)
+    if not children:
+        return []
+
+    left_column = children[0]
+    sections = []
+    current_title: str | None = None
+    current_nodes: list[str] = []
+    seen_table = False
+
+    def flush_current() -> None:
+        nonlocal current_title, current_nodes
+        if not current_title:
+            current_nodes = []
+            return
+        block = BeautifulSoup("".join(current_nodes), "html.parser")
+        entries = parse_section_block(current_title, block)
+        sections.append({"title": current_title, "entries": entries})
+        current_nodes = []
+
+    for child in left_column.contents:
+        if isinstance(child, Tag) and child.name == "table":
+            seen_table = True
+            continue
+        if not seen_table or not isinstance(child, Tag):
+            continue
+
+        classes = child.get("class", [])
+        if "dsLineHor" in classes:
+            continue
+        if "dsHeader" in classes:
+            flush_current()
+            current_title = normalize_space(child.get_text(" ", strip=True))
+            continue
+        if current_title:
+            current_nodes.append(str(child))
+
+    flush_current()
+    return [section for section in sections if section.get("entries")]
+
+
+def parse_right_column_sections(card: Tag) -> list[dict[str, object]]:
     columns_wrap = card.select_one("div.ds2col")
     if not columns_wrap:
         return []
@@ -373,6 +462,10 @@ def parse_sections(card: Tag) -> list[dict[str, object]]:
         current_section["entries"].extend(parse_section_block(current_section["title"], child))
 
     return sections
+
+
+def parse_sections(card: Tag) -> list[dict[str, object]]:
+    return parse_left_column_sections(card) + parse_right_column_sections(card)
 
 
 def parse_keywords(card: Tag) -> dict[str, list[str]]:

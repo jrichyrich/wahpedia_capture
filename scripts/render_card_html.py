@@ -130,6 +130,15 @@ def render_section_entry(entry: dict[str, object]) -> str:
         </div>
         """
 
+    if entry_type == "option_group":
+        items = "".join(f"<li>{escape(str(item))}</li>" for item in entry.get("items", []))
+        return f"""
+        <div class="section-entry">
+          <h4>{escape(str(entry['label']))}</h4>
+          <ul>{items}</ul>
+        </div>
+        """
+
     if entry_type == "points":
         rows = "".join(
             f"<tr><td>{escape(str(row['label']))}</td><td>{escape(str(row['points']))}</td></tr>"

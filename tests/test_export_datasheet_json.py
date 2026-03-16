@@ -55,6 +55,32 @@ class ExportDatasheetTests(unittest.TestCase):
             },
         )
 
+    def test_parse_section_block_supports_wargear_options(self):
+        soup = BeautifulSoup(
+            """
+            <div>
+              <ul>
+                <li>
+                  1 Tactical Marine's boltgun can be replaced with one of the following:
+                  <ul>
+                    <li>1 flamer</li>
+                    <li>1 meltagun</li>
+                  </ul>
+                </li>
+              </ul>
+              <div class="dsOptionsComment">Only one model can take this option.</div>
+            </div>
+            """,
+            "html.parser",
+        )
+
+        entries = export_datasheet_json.parse_section_block("WARGEAR OPTIONS", soup.div)
+        self.assertEqual(entries[0]["type"], "option_group")
+        self.assertIn("boltgun can be replaced", entries[0]["label"])
+        self.assertEqual(entries[0]["items"], ["1 flamer", "1 meltagun"])
+        self.assertEqual(entries[1]["type"], "text")
+        self.assertIn("Only one model", entries[1]["text"])
+
     def test_real_repo_aircraft_exports_include_core_stats(self):
         samples = [
             ROOT / "out" / "json" / "space-marines" / "Stormtalon-Gunship.json",

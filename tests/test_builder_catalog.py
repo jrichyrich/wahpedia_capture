@@ -84,6 +84,21 @@ class BuilderCatalogTests(unittest.TestCase):
                     "entries": [{"type": "text", "text": "Subtract 1 from Hit rolls."}],
                 },
                 {
+                    "title": "WARGEAR OPTIONS",
+                    "entries": [
+                        {
+                            "type": "option_group",
+                            "label": "1 model's sword can be replaced with one of the following:",
+                            "items": ["1 axe", "1 spear"],
+                        },
+                        {
+                            "type": "option_group",
+                            "label": "The Exarch can be replaced with 1 twin blades, or two different weapons from the following list:",
+                            "items": ["1 pistol", "1 blade"],
+                        },
+                    ],
+                },
+                {
                     "title": "LEADER",
                     "entries": [{"type": "list", "items": ["Example Unit"]}],
                 },
@@ -98,6 +113,9 @@ class BuilderCatalogTests(unittest.TestCase):
         self.assertEqual(unit["pointsOptions"][0]["selectionKind"], "models")
         self.assertEqual(unit["selectionMode"], "parsed")
         self.assertEqual(unit["composition"]["modelCountOptions"][0]["minModels"], 1)
+        self.assertEqual(unit["wargear"]["options"][0]["selectionMode"], "single")
+        self.assertEqual(unit["wargear"]["options"][0]["action"], "replace")
+        self.assertTrue(unit["wargear"]["hasManualOptions"])
         self.assertEqual(unit["renderBlocks"][0]["displayStyle"], "damaged")
         self.assertEqual(unit["renderBlocks"][1]["title"], "LEADER")
         self.assertEqual(diagnostics["missingStats"], [])
@@ -246,6 +264,13 @@ class BuilderCatalogTests(unittest.TestCase):
             self.assertFalse(diagnostics["manualSelection"])
             self.assertEqual(option["selectionKind"], selection_kind)
             self.assertEqual(option["modelCount"], model_count)
+
+    def test_real_repo_tactical_squad_has_wargear_options(self):
+        card = json.loads((ROOT / "out" / "json" / "space-marines" / "Tactical-Squad.json").read_text(encoding="utf-8"))
+        unit, _ = build_builder_catalog.normalize_card("space-marines", card)
+        self.assertTrue(unit["wargear"]["options"])
+        self.assertEqual(unit["wargear"]["options"][0]["selectionMode"], "single")
+        self.assertTrue(unit["wargear"]["hasManualOptions"])
 
 
 class BuilderAppSmokeTests(unittest.TestCase):

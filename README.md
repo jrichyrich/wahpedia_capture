@@ -193,7 +193,7 @@ Then visit:
 
 The builder reads `docs/builder/data/manifest.json`, lets you browse a faction catalog, add units to a roster, choose points/config options, total the roster, and print the rendered datacards.
 
-The static builder now also persists the active roster in browser storage and supports JSON import/export for roster saves. Saved rosters only store roster metadata plus unit/config references; they do not embed faction catalog data.
+The static builder now also persists the active roster in browser storage, supports JSON import/export for roster saves, and can render basic structured wargear selections where those options have been normalized. Saved rosters only store roster metadata plus unit/config references; they do not embed faction catalog data.
 
 The generated builder report currently tracks two quality buckets directly:
 

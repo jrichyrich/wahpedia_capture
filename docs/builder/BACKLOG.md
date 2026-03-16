@@ -14,7 +14,7 @@ Use this file as the working queue. The intended approach is to take one item at
 
 ### 1. Wargear And Upgrade Modeling
 
-Status: `next`
+Status: `in progress`
 
 Goal:
 
@@ -36,6 +36,13 @@ Done criteria:
 - At least representative infantry, character, and vehicle units support structured wargear selection.
 - Saved rosters round-trip those choices through local storage and JSON import/export.
 - Preview and print output show the selected loadout, not only the default card text.
+
+Current progress:
+
+- `WARGEAR OPTIONS` are now exported from Wahapedia into structured section entries.
+- Builder catalogs now normalize simple single-choice wargear groups and preserve complex cases as manual instructions.
+- Saved rosters now persist selected wargear choices.
+- Static builder UI now shows simple wargear selectors on roster entries and carries those selections into preview rendering.
 
 ### 2. Rules-Aware Legality Checks
 
