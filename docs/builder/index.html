@@ -527,8 +527,10 @@
 
     <script src="./card_renderer.js"></script>
     <script src="./roster_store.js"></script>
+    <script src="./app.js"></script>
     <script>
         const Store = window.WahBuilderRosterStore;
+        const BuilderApp = window.WahBuilderApp;
         const state = {
             manifest: null,
             factionSlug: "",
@@ -904,102 +906,6 @@
             }, 250);
         }
 
-        function addToRoster(unitId) {
-            const unit = catalogUnitById(unitId);
-            if (!unit) {
-                return;
-            }
-            const defaultOption = window.WahBuilderCardRenderer.defaultPointsOption(unit);
-            state.roster.push({
-                instanceId: Store.createRosterId(),
-                unitId,
-                optionId: defaultOption ? defaultOption.id : null,
-                optionIndex: defaultOption ? unit.pointsOptions.indexOf(defaultOption) : null,
-                upgradeOptionIds: [],
-                quantity: 1,
-                wargearSelections: {},
-            });
-            renderRoster();
-            renderPreview();
-            scheduleAutoSave();
-        }
-
-        function updateRosterOption(instanceId, optionIndex) {
-            const entry = state.roster.find((item) => item.instanceId === instanceId);
-            if (!entry) {
-                return;
-            }
-            const unit = catalogUnitById(entry.unitId);
-            const normalizedIndex = Number(optionIndex);
-            const baseOptions = unit ? pointsGroups(unit).base : [];
-            const option = unit && normalizedIndex >= 0
-                ? (baseOptions[normalizedIndex] || null)
-                : null;
-            entry.optionIndex = Number.isInteger(normalizedIndex) ? normalizedIndex : null;
-            entry.optionId = option ? option.id : null;
-            renderRoster();
-            renderPreview();
-            scheduleAutoSave();
-        }
-
-        function updateRosterUpgrade(instanceId, optionId, checked) {
-            const entry = state.roster.find((item) => item.instanceId === instanceId);
-            if (!entry) {
-                return;
-            }
-            const selected = new Set(Array.isArray(entry.upgradeOptionIds) ? entry.upgradeOptionIds : []);
-            if (checked) {
-                selected.add(String(optionId));
-            } else {
-                selected.delete(String(optionId));
-            }
-            entry.upgradeOptionIds = Array.from(selected);
-            renderRoster();
-            renderPreview();
-            scheduleAutoSave();
-        }
-
-        function updateRosterQuantity(instanceId, quantity) {
-            const entry = state.roster.find((item) => item.instanceId === instanceId);
-            if (!entry) {
-                return;
-            }
-            entry.quantity = Math.max(1, Number(quantity) || 1);
-            renderRoster();
-            renderPreview();
-            scheduleAutoSave();
-        }
-
-        function updateRosterWargear(instanceId, groupId, choiceId) {
-            const entry = state.roster.find((item) => item.instanceId === instanceId);
-            if (!entry) {
-                return;
-            }
-            entry.wargearSelections = entry.wargearSelections || {};
-            entry.wargearSelections[groupId] = choiceId ? String(choiceId) : null;
-            if (!entry.wargearSelections[groupId]) {
-                delete entry.wargearSelections[groupId];
-            }
-            renderRoster();
-            renderPreview();
-            scheduleAutoSave();
-        }
-
-        function removeFromRoster(instanceId) {
-            state.roster = state.roster.filter((item) => item.instanceId !== instanceId);
-            renderRoster();
-            renderPreview();
-            scheduleAutoSave();
-        }
-
-        function clearRoster() {
-            state.roster = [];
-            renderRoster();
-            renderPreview();
-            scheduleAutoSave();
-            setRosterStatus("Cleared the active roster.", false);
-        }
-
         function renderRoster() {
             const derived = deriveRoster();
             if (!state.catalog || !derived.entries.length) {
@@ -1008,7 +914,10 @@
                 return;
             }
 
-            els.rosterBody.innerHTML = derived.entries.map((entry) => {
+            els.rosterBody.innerHTML = derived.entries.map((entry, index) => {
+                const runtimeInstanceId = state.roster[index] && state.roster[index].instanceId
+                    ? state.roster[index].instanceId
+                    : entry.instanceId;
                 const missingOptionRow = entry.unit && !entry.selectedOption
                     ? `<option value="-1" selected>Missing saved configuration</option>`
                     : "";
@@ -1029,7 +938,7 @@
                             <input
                                 type="checkbox"
                                 data-action="upgrade-toggle"
-                                data-instance-id="${entry.instanceId}"
+                                data-instance-id="${runtimeInstanceId}"
                                 data-option-id="${upgrade.id}"
                                 ${checked ? "checked" : ""}
                             >
@@ -1050,7 +959,7 @@
                     return `
                         <div>
                             <div class="inline-note">${group.target || group.label}</div>
-                            <select class="entry-subselect" data-action="wargear-select" data-instance-id="${entry.instanceId}" data-group-id="${group.id}">
+                            <select class="entry-subselect" data-action="wargear-select" data-instance-id="${runtimeInstanceId}" data-group-id="${group.id}">
                                 ${optionsHtml}
                             </select>
                         </div>
@@ -1076,7 +985,7 @@
                         <td>
                             ${entry.unit ? `
                                 <div class="entry-stack">
-                                    <select data-action="option-select" data-instance-id="${entry.instanceId}">
+                                    <select data-action="option-select" data-instance-id="${runtimeInstanceId}">
                                         ${optionsHtml}
                                     </select>
                                     ${upgradeControls}
@@ -1093,11 +1002,11 @@
                                 step="1"
                                 value="${entry.quantity}"
                                 data-action="quantity-input"
-                                data-instance-id="${entry.instanceId}"
+                                data-instance-id="${runtimeInstanceId}"
                             >
                         </td>
                         <td><strong>${entry.linePoints}</strong></td>
-                        <td><button class="btn btn-remove" data-action="remove-entry" data-instance-id="${entry.instanceId}">x</button></td>
+                        <td><button class="btn btn-remove" data-action="remove-entry" data-instance-id="${runtimeInstanceId}">x</button></td>
                     </tr>
                 `;
             }).join("");
@@ -1126,6 +1035,18 @@
                 });
             }).join("");
         }
+
+        const interactionController = BuilderApp.createInteractionController({
+            state,
+            Store,
+            renderer: window.WahBuilderCardRenderer,
+            catalogUnitById,
+            pointsGroups,
+            renderRoster,
+            renderPreview,
+            scheduleAutoSave,
+            setRosterStatus,
+        });
 
         function downloadActiveRoster() {
             const payload = Store.exportRosterJson(activeRosterDocument());
@@ -1203,33 +1124,15 @@
         els.unitSearch.addEventListener("input", renderUnitList);
 
         els.unitList.addEventListener("click", (event) => {
-            const addButton = event.target.closest('[data-action="add-unit"]');
-            if (addButton) {
-                addToRoster(addButton.dataset.unitId);
-            }
+            interactionController.handleUnitListClick(event);
         });
 
         els.rosterBody.addEventListener("change", (event) => {
-            const select = event.target.closest('[data-action="option-select"]');
-            const upgrade = event.target.closest('[data-action="upgrade-toggle"]');
-            const wargear = event.target.closest('[data-action="wargear-select"]');
-            const quantity = event.target.closest('[data-action="quantity-input"]');
-            if (select) {
-                updateRosterOption(select.dataset.instanceId, select.value);
-            } else if (upgrade) {
-                updateRosterUpgrade(upgrade.dataset.instanceId, upgrade.dataset.optionId, upgrade.checked);
-            } else if (wargear) {
-                updateRosterWargear(wargear.dataset.instanceId, wargear.dataset.groupId, wargear.value);
-            } else if (quantity) {
-                updateRosterQuantity(quantity.dataset.instanceId, quantity.value);
-            }
+            interactionController.handleRosterBodyChange(event);
         });
 
         els.rosterBody.addEventListener("click", (event) => {
-            const button = event.target.closest('[data-action="remove-entry"]');
-            if (button) {
-                removeFromRoster(button.dataset.instanceId);
-            }
+            interactionController.handleRosterBodyClick(event);
         });
 
         els.savedRosterSelect.addEventListener("change", async (event) => {
@@ -1299,7 +1202,9 @@
             setRosterStatus(`Deleted ${deletedName}.`, false);
         });
 
-        els.clearRoster.addEventListener("click", clearRoster);
+        els.clearRoster.addEventListener("click", () => {
+            interactionController.clearRoster();
+        });
         els.printCleanToggle.addEventListener("change", (event) => {
             state.previewRenderMode = event.target.checked ? "print-clean" : "default";
             renderPreview();

@@ -101,3 +101,45 @@ test("renderCard print-clean mode hides replaced weapon rows when selection is r
     assert.doesNotMatch(html, /Witchblade/);
     assert.doesNotMatch(html, /weapon-choice-badge-replaced/);
 });
+
+test("renderCard uses additive loadout wording for equip-style wargear", () => {
+    const renderer = loadRenderer();
+    const unit = {
+        name: "Anathema Psykana Rhino",
+        stats: { M: '12"', T: "9", Sv: "3+", W: "10", Ld: "6+", OC: "2" },
+        quality: { missingStats: [] },
+        selectionMode: "parsed",
+        pointsOptions: [{ id: "1-model", label: "1 model", points: 75, selectionKind: "models" }],
+        weapons: {
+            ranged: [
+                { name: "Hunter-killer missile one shot", range: '48"', a: "1", skill: "2+", s: "14", ap: "-3", d: "D6", abilities: [] },
+                { name: "Storm bolter", range: '24"', a: "2", skill: "3+", s: "4", ap: "0", d: "1", abilities: [] },
+            ],
+            melee: [
+                { name: "Armoured tracks", range: "Melee", a: "3", skill: "4+", s: "6", ap: "0", d: "1", abilities: [] },
+            ],
+        },
+        abilities: { core: [], faction: [], datasheet: [], other: [] },
+        renderBlocks: [],
+        composition: { rawLines: ["1 Anathema Psykana Rhino"] },
+        keywords: ["VEHICLE"],
+        factionKeywords: ["ADEPTUS CUSTODES"],
+    };
+
+    const html = renderer.renderCard(unit, {
+        selectedOption: unit.pointsOptions[0],
+        selectedWargear: [
+            {
+                group: { target: "This model", label: "This model", action: "equip" },
+                selectedChoice: { id: "hunter-killer", label: "1 hunter-killer missile" },
+            },
+        ],
+        manualWargearGroups: [],
+    });
+
+    assert.match(html, /Current Loadout/);
+    assert.match(html, /1 hunter-killer missile/);
+    assert.match(html, /Equipped on This model/);
+    assert.match(html, /weapon-choice-badge-selected/);
+    assert.doesNotMatch(html, /Replaces This model/);
+});

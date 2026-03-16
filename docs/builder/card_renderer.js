@@ -79,19 +79,38 @@
         const replacedReferences = [];
         const currentLoadout = [];
 
+        function resolveGroupAction(group, targetLabel) {
+            if (group && group.action) {
+                return group.action;
+            }
+            return targetLabel ? "replace" : null;
+        }
+
+        function loadoutDetail(group, targetLabel) {
+            const action = resolveGroupAction(group, targetLabel);
+            if (action === "replace") {
+                return targetLabel ? `Replaces ${targetLabel}` : "Replaces existing wargear";
+            }
+            if (action === "equip") {
+                return targetLabel ? `Equipped on ${targetLabel}` : "Additional wargear";
+            }
+            return targetLabel ? `Selected for ${targetLabel}` : "Selected wargear";
+        }
+
         selectedWargear.forEach((entry) => {
             if (!entry || !entry.selectedChoice || !entry.group) {
                 return;
             }
             const selectedLabel = entry.selectedChoice.label;
             const targetLabel = entry.group.target || entry.group.label;
+            const action = resolveGroupAction(entry.group, targetLabel);
             currentLoadout.push({
                 type: "wargear",
                 label: selectedLabel,
-                detail: targetLabel ? `Replaces ${targetLabel}` : "Selected wargear",
+                detail: loadoutDetail(entry.group, targetLabel),
             });
             selectedReferences.push(normalizeLoadoutLabel(selectedLabel));
-            if (targetLabel) {
+            if (targetLabel && action === "replace") {
                 replacedReferences.push(extractTargetFragment(targetLabel));
             }
         });

@@ -100,6 +100,7 @@
             });
         }
         const normalized = {
+            instanceId: entry.instanceId ? String(entry.instanceId).trim() : null,
             unitId,
             optionId: entry.optionId ? String(entry.optionId).trim() : null,
             optionIndex: Number.isInteger(entry.optionIndex) ? entry.optionIndex : null,
@@ -149,7 +150,7 @@
 
     function createRuntimeEntry(entry) {
         return {
-            instanceId: createRosterId(),
+            instanceId: entry.instanceId ? String(entry.instanceId) : createRosterId(),
             unitId: entry.unitId,
             optionId: entry.optionId || null,
             optionIndex: Number.isInteger(entry.optionIndex) ? entry.optionIndex : null,
@@ -165,6 +166,7 @@
 
     function serializeRuntimeEntry(entry) {
         return normalizeSavedEntry({
+            instanceId: entry.instanceId || createRosterId(),
             unitId: entry.unitId,
             optionId: entry.optionId || null,
             optionIndex: Number.isInteger(entry.optionIndex) ? entry.optionIndex : null,
