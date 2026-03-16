@@ -143,3 +143,52 @@ test("renderCard uses additive loadout wording for equip-style wargear", () => {
     assert.match(html, /weapon-choice-badge-selected/);
     assert.doesNotMatch(html, /Replaces This model/);
 });
+
+test("renderCard shows counted allocation loadout selections", () => {
+    const renderer = loadRenderer();
+    const unit = {
+        name: "Corsair Cloud Dancer Band",
+        stats: { M: '14"', T: "4", Sv: "3+", W: "2", Ld: "6+", OC: "2" },
+        quality: { missingStats: [] },
+        selectionMode: "parsed",
+        pointsOptions: [{ id: "3-models", label: "3 models", points: 105, selectionKind: "models", modelCount: 3 }],
+        weapons: {
+            ranged: [
+                { name: "Twin shuriken catapult", range: '18"', a: "2", skill: "3+", s: "4", ap: "-1", d: "1", abilities: [] },
+                { name: "Dark lance", range: '36"', a: "1", skill: "3+", s: "12", ap: "-3", d: "D6+2", abilities: [] },
+                { name: "Scatter laser", range: '36"', a: "6", skill: "3+", s: "5", ap: "0", d: "1", abilities: [] },
+            ],
+            melee: [{ name: "Close combat weapon", range: "Melee", a: "2", skill: "3+", s: "3", ap: "0", d: "1", abilities: [] }],
+        },
+        abilities: { core: [], faction: [], datasheet: [], other: [] },
+        renderBlocks: [],
+        composition: { rawLines: ["3 Corsair Cloud Dancers"] },
+        keywords: ["MOUNTED"],
+        factionKeywords: ["AELDARI"],
+    };
+
+    const html = renderer.renderCard(unit, {
+        selectedOption: unit.pointsOptions[0],
+        selectedWargear: [
+            {
+                group: {
+                    target: "twin shuriken catapult",
+                    label: "Any number of models can each have their twin shuriken catapult replaced with one of the following:",
+                    action: "replace",
+                    selectionMode: "allocation",
+                },
+                selectedChoices: [
+                    { choice: { id: "dark-lance", label: "1 dark lance" }, count: 2 },
+                    { choice: { id: "scatter-laser", label: "1 scatter laser" }, count: 1 },
+                ],
+            },
+        ],
+        manualWargearGroups: [],
+    });
+
+    assert.match(html, /2x dark lance/);
+    assert.match(html, /1 scatter laser/);
+    assert.match(html, /Replaces twin shuriken catapult/);
+    assert.match(html, /weapon-choice-badge-selected/);
+    assert.match(html, /weapon-choice-badge-replaced/);
+});

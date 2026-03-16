@@ -9,7 +9,8 @@ function sampleUnit() {
         unitId: "caladius-grav-tank",
         name: "Caladius Grav-tank",
         pointsOptions: [
-            { id: "1-model", label: "1 model", points: 215, selectionKind: "models" },
+            { id: "1-model", label: "1 model", points: 215, selectionKind: "models", modelCount: 1 },
+            { id: "3-models", label: "3 models", points: 300, selectionKind: "models", modelCount: 3 },
         ],
         wargear: {
             options: [
@@ -19,6 +20,18 @@ function sampleUnit() {
                     target: "This model’s twin iliastus accelerator cannon",
                     selectionMode: "single",
                     choices: [{ id: "1-twin-arachnus-heavy-blaze-cannon", label: "1 twin arachnus heavy blaze cannon" }],
+                },
+                {
+                    id: "catapult-allocation",
+                    label: "Any number of models can each have their twin shuriken catapult replaced with one of the following:",
+                    target: "twin shuriken catapult",
+                    action: "replace",
+                    selectionMode: "allocation",
+                    allocationLimit: "modelCount",
+                    choices: [
+                        { id: "dark-lance", label: "1 dark lance" },
+                        { id: "scatter-laser", label: "1 scatter laser" },
+                    ],
                 },
             ],
         },
@@ -100,6 +113,67 @@ test("handleRosterBodyChange updates structured wargear selection and rerenders"
     assert.equal(calls.renderRoster, 1);
     assert.equal(calls.renderPreview, 1);
     assert.equal(calls.scheduleAutoSave, 1);
+});
+
+test("handleRosterBodyChange updates counted allocation wargear and clamps to model count", () => {
+    const { controller, state, calls } = createDeps();
+    state.roster[0].optionId = "3-models";
+    state.roster[0].optionIndex = 1;
+    state.roster[0].wargearSelections = {
+        "catapult-allocation": { mode: "allocation", counts: { "dark-lance": 1 } },
+    };
+
+    const handled = controller.handleRosterBodyChange(
+        makeEvent(
+            '[data-action="wargear-count"]',
+            { instanceId: "entry-1", groupId: "catapult-allocation", choiceId: "scatter-laser" },
+            { value: "3" }
+        )
+    );
+
+    assert.equal(handled, true);
+    assert.equal(state.roster[0].wargearSelections["catapult-allocation"].counts["dark-lance"], 1);
+    assert.equal(state.roster[0].wargearSelections["catapult-allocation"].counts["scatter-laser"], 2);
+    assert.equal(calls.renderRoster, 1);
+    assert.equal(calls.renderPreview, 1);
+    assert.equal(calls.scheduleAutoSave, 1);
+});
+
+test("handleRosterBodyChange enforces static allocation caps", () => {
+    const { controller, state } = createDeps();
+    state.roster[0].wargearSelections = {
+        "catapult-allocation": { mode: "allocation", counts: { "dark-lance": 1 } },
+    };
+    state.roster[0].unitId = "caladius-grav-tank";
+    state.roster[0].optionId = "1-model";
+    state.roster[0].optionIndex = 0;
+    const unit = sampleUnit();
+    unit.wargear.options[1].allocationLimit = { kind: "static", max: 2 };
+
+    const customController = App.createInteractionController({
+        state,
+        Store,
+        renderer: { defaultPointsOption: (value) => value.pointsOptions[0] || null },
+        catalogUnitById: () => unit,
+        pointsGroups: (value) => ({
+            base: value.pointsOptions.filter((option) => option.selectionKind !== "upgrade"),
+            upgrades: value.pointsOptions.filter((option) => option.selectionKind === "upgrade"),
+        }),
+        renderRoster: () => {},
+        renderPreview: () => {},
+        scheduleAutoSave: () => {},
+        setRosterStatus: () => {},
+    });
+
+    customController.handleRosterBodyChange(
+        makeEvent(
+            '[data-action="wargear-count"]',
+            { instanceId: "entry-1", groupId: "catapult-allocation", choiceId: "scatter-laser" },
+            { value: "4" }
+        )
+    );
+
+    assert.equal(state.roster[0].wargearSelections["catapult-allocation"].counts["scatter-laser"], 1);
 });
 
 test("clearRoster empties the roster and records a status message", () => {

@@ -145,6 +145,30 @@ class BuilderCatalogTests(unittest.TestCase):
         self.assertEqual(unit_wide_equip["action"], "equip")
         self.assertEqual(unit_wide_equip["choices"][0]["label"], "1 grapnel launcher")
 
+    def test_parse_wargear_prompt_supports_counted_allocations(self):
+        allocation = build_builder_catalog.parse_wargear_prompt(
+            "Any number of models can each have their twin shuriken catapult replaced with one of the following:"
+        )
+        self.assertEqual(allocation["selectionMode"], "allocation")
+        self.assertEqual(allocation["action"], "replace")
+        self.assertEqual(allocation["actor"], "Any number of models")
+        self.assertEqual(allocation["target"], "twin shuriken catapult")
+        self.assertEqual(allocation["allocationLimit"], {"kind": "modelCount"})
+
+        up_to = build_builder_catalog.parse_wargear_prompt(
+            "Up to 2 Storm Guardians can each have their bolt pistol replaced with one of the following:"
+        )
+        self.assertEqual(up_to["selectionMode"], "allocation")
+        self.assertEqual(up_to["allocationLimit"], {"kind": "static", "max": 2})
+        self.assertEqual(up_to["target"], "bolt pistol")
+
+        for_every = build_builder_catalog.parse_wargear_prompt(
+            "For every 5 models in this unit, 1 model’s Corsair firearm can be replaced with one of the following:"
+        )
+        self.assertEqual(for_every["selectionMode"], "allocation")
+        self.assertEqual(for_every["allocationLimit"], {"kind": "ratio", "perModels": 5, "maxPerStep": 1})
+        self.assertEqual(for_every["target"], "Corsair firearm")
+
     def test_build_composition_parses_upgrade_point_labels(self):
         composition = build_builder_catalog.build_composition(
             [
@@ -303,6 +327,31 @@ class BuilderCatalogTests(unittest.TestCase):
         self.assertEqual(unit["wargear"]["options"][0]["selectionMode"], "single")
         self.assertEqual(unit["wargear"]["options"][0]["choices"][0]["label"], "1 singing spear")
         self.assertFalse(diagnostics["manualWargear"])
+
+    def test_real_repo_cloud_dancer_band_uses_allocation_wargear(self):
+        card = json.loads((ROOT / "out" / "json" / "aeldari" / "Corsair-Cloud-Dancer-Band.json").read_text(encoding="utf-8"))
+        unit, diagnostics = build_builder_catalog.normalize_card("aeldari", card)
+        allocation_group = unit["wargear"]["options"][0]
+        self.assertEqual(allocation_group["selectionMode"], "allocation")
+        self.assertEqual(allocation_group["action"], "replace")
+        self.assertEqual(allocation_group["target"], "twin shuriken catapult")
+        self.assertEqual(allocation_group["choices"][0]["label"], "1 dark lance")
+        self.assertFalse(diagnostics["manualWargear"])
+
+    def test_real_repo_bike_squad_and_corsairs_use_structured_allocations(self):
+        bike_card = json.loads((ROOT / "out" / "json" / "dark-angels" / "Bike-Squad.json").read_text(encoding="utf-8"))
+        bike_unit, bike_diag = build_builder_catalog.normalize_card("dark-angels", bike_card)
+        bike_group = next(group for group in bike_unit["wargear"]["options"] if "up to 2 space marine bikers" in group["label"].lower())
+        self.assertEqual(bike_group["selectionMode"], "allocation")
+        self.assertEqual(bike_group["allocationLimit"], {"kind": "static", "max": 2})
+        self.assertFalse(bike_diag["manualWargear"])
+
+        corsair_card = json.loads((ROOT / "out" / "json" / "aeldari" / "Corsair-Reaver-Band.json").read_text(encoding="utf-8"))
+        corsair_unit, corsair_diag = build_builder_catalog.normalize_card("aeldari", corsair_card)
+        corsair_group = next(group for group in corsair_unit["wargear"]["options"] if "for every 5 models" in group["label"].lower())
+        self.assertEqual(corsair_group["selectionMode"], "allocation")
+        self.assertEqual(corsair_group["allocationLimit"], {"kind": "ratio", "perModels": 5, "maxPerStep": 1})
+        self.assertFalse(corsair_diag["manualWargear"])
 
 
 class BuilderAppSmokeTests(unittest.TestCase):

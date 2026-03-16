@@ -1,12 +1,12 @@
 # Builder Catalog Build Report
 
-- Generated at: 2026-03-16T16:12:42+00:00
+- Generated at: 2026-03-16T17:21:00+00:00
 - Source root: `/Users/jasricha/Documents/Github_Personal/wahpedia_capture/out/json`
 - Factions imported: 6
 - Total units: 818
 - Units with missing stats: 0
 - Manual selection units: 0
-- Units with manual wargear: 54
+- Units with manual wargear: 25
 
 ## Factions
 
@@ -16,7 +16,7 @@
 - Units: 31
 - Missing stats: 0
 - Manual selection units: 0
-- Manual wargear units: 8
+- Manual wargear units: 0
 
 ### Aeldari
 
@@ -24,7 +24,7 @@
 - Units: 97
 - Missing stats: 0
 - Manual selection units: 0
-- Manual wargear units: 26
+- Manual wargear units: 16
 
 ### Dark Angels
 
@@ -32,7 +32,7 @@
 - Units: 174
 - Missing stats: 0
 - Manual selection units: 0
-- Manual wargear units: 15
+- Manual wargear units: 5
 
 ### Space Marines
 
@@ -40,7 +40,7 @@
 - Units: 155
 - Missing stats: 0
 - Manual selection units: 0
-- Manual wargear units: 2
+- Manual wargear units: 1
 
 ### Space Wolves
 

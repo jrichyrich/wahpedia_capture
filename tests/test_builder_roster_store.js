@@ -42,6 +42,18 @@ function sampleCatalog() {
                                 { id: "spear", label: "Spear" },
                             ],
                         },
+                        {
+                            id: "heavy-weapon-allocation",
+                            label: "Any number of models can each have their catapult replaced with one of the following:",
+                            target: "catapult",
+                            action: "replace",
+                            selectionMode: "allocation",
+                            allocationLimit: "modelCount",
+                            choices: [
+                                { id: "dark-lance", label: "1 dark lance" },
+                                { id: "scatter-laser", label: "1 scatter laser" },
+                            ],
+                        },
                     ],
                 },
             },
@@ -63,7 +75,10 @@ test("saveRosterToStorage persists payload and active id", () => {
                 optionIndex: 0,
                 upgradeOptionIds: ["exarch-upgrade"],
                 quantity: 1,
-                wargearSelections: { "relic-weapon": "spear" },
+                wargearSelections: {
+                    "relic-weapon": "spear",
+                    "heavy-weapon-allocation": { mode: "allocation", counts: { "dark-lance": 1 } },
+                },
             },
         ],
     });
@@ -78,6 +93,7 @@ test("saveRosterToStorage persists payload and active id", () => {
     assert.equal(loaded.entries[0].optionId, "1-model");
     assert.deepEqual(loaded.entries[0].upgradeOptionIds, ["exarch-upgrade"]);
     assert.equal(loaded.entries[0].wargearSelections["relic-weapon"], "spear");
+    assert.equal(loaded.entries[0].wargearSelections["heavy-weapon-allocation"].counts["dark-lance"], 1);
 });
 
 test("import/export round trips roster JSON", () => {
@@ -91,7 +107,10 @@ test("import/export round trips roster JSON", () => {
             optionId: "1-model",
             upgradeOptionIds: ["exarch-upgrade"],
             quantity: 2,
-            wargearSelections: { "relic-weapon": "axe" },
+            wargearSelections: {
+                "relic-weapon": "axe",
+                "heavy-weapon-allocation": { mode: "allocation", counts: { "scatter-laser": 2 } },
+            },
         }],
     });
 
@@ -101,6 +120,7 @@ test("import/export round trips roster JSON", () => {
     assert.equal(imported.entries[0].quantity, 2);
     assert.deepEqual(imported.entries[0].upgradeOptionIds, ["exarch-upgrade"]);
     assert.equal(imported.entries[0].wargearSelections["relic-weapon"], "axe");
+    assert.equal(imported.entries[0].wargearSelections["heavy-weapon-allocation"].counts["scatter-laser"], 2);
     assert.notEqual(imported.id, "roster-2");
 });
 
@@ -117,7 +137,10 @@ test("deriveResolvedRoster resolves by optionId and totals valid entries", () =>
                     optionIndex: 0,
                     upgradeOptionIds: ["exarch-upgrade"],
                     quantity: 2,
-                    wargearSelections: { "relic-weapon": "spear" },
+                    wargearSelections: {
+                        "relic-weapon": "spear",
+                        "heavy-weapon-allocation": { mode: "allocation", counts: { "dark-lance": 2 } },
+                    },
                 },
             ],
         },
@@ -128,6 +151,8 @@ test("deriveResolvedRoster resolves by optionId and totals valid entries", () =>
     assert.equal(resolved.entries[0].selectedOption.id, "2-models");
     assert.deepEqual(resolved.entries[0].selectedUpgrades.map((option) => option.id), ["exarch-upgrade"]);
     assert.equal(resolved.entries[0].wargearSelections[0].selectedChoice.id, "spear");
+    assert.equal(resolved.entries[0].wargearSelections[1].selectedChoices[0].choice.id, "dark-lance");
+    assert.equal(resolved.entries[0].wargearSelections[1].selectedChoices[0].count, 2);
     assert.equal(resolved.entries[0].linePoints, 1180);
     assert.equal(resolved.totalPoints, 1180);
     assert.equal(resolved.invalidEntries.length, 0);

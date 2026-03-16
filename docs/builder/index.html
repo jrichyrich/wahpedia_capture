@@ -701,8 +701,38 @@
             const groups = unit && unit.wargear && Array.isArray(unit.wargear.options) ? unit.wargear.options : [];
             return {
                 simple: groups.filter((group) => group.selectionMode === "single"),
-                manual: groups.filter((group) => group.selectionMode !== "single"),
+                allocation: groups.filter((group) => group.selectionMode === "allocation"),
+                manual: groups.filter((group) => group.selectionMode === "manual"),
             };
+        }
+
+        function allocationLimit(group, entry) {
+            if (!group || group.selectionMode !== "allocation") {
+                return null;
+            }
+            const modelCount = entry && entry.selectedOption && typeof entry.selectedOption.modelCount === "number"
+                ? entry.selectedOption.modelCount
+                : null;
+            if (!group.allocationLimit || group.allocationLimit === "modelCount") {
+                return modelCount;
+            }
+            if (typeof group.allocationLimit === "object") {
+                if (group.allocationLimit.kind === "modelCount") {
+                    return modelCount;
+                }
+                if (group.allocationLimit.kind === "static") {
+                    return typeof group.allocationLimit.max === "number" ? group.allocationLimit.max : null;
+                }
+                if (group.allocationLimit.kind === "ratio" && modelCount !== null) {
+                    const perModels = Number(group.allocationLimit.perModels) || 0;
+                    const maxPerStep = Number(group.allocationLimit.maxPerStep) || 0;
+                    if (perModels > 0 && maxPerStep > 0) {
+                        return Math.floor(modelCount / perModels) * maxPerStep;
+                    }
+                    return 0;
+                }
+            }
+            return null;
         }
 
         function renderFactionOptions() {
@@ -930,7 +960,7 @@
                     : `<option value="-1">Unavailable</option>`;
                 const issueText = entry.issues.map((issue) => `<div class="inline-note inline-note-warning">${issue}</div>`).join("");
                 const unitMissingStats = entry.unit ? missingStats(entry.unit) : [];
-                const groups = entry.unit ? wargearGroups(entry.unit) : { simple: [], manual: [] };
+                const groups = entry.unit ? wargearGroups(entry.unit) : { simple: [], allocation: [], manual: [] };
                 const upgradeControls = (entry.upgradeOptions || []).map((upgrade) => {
                     const checked = (entry.selectedUpgrades || []).some((selected) => selected.id === upgrade.id);
                     return `
@@ -965,6 +995,43 @@
                         </div>
                     `;
                 }).join("");
+                const allocationControls = groups.allocation.map((group) => {
+                    const selected = (entry.wargearSelections || []).find((item) => item.group && item.group.id === group.id);
+                    const selectedCounts = selected && Array.isArray(selected.selectedChoices)
+                        ? Object.fromEntries(selected.selectedChoices.map((item) => [item.choice.id, item.count]))
+                        : {};
+                    const selectedTotal = selected && typeof selected.totalSelected === "number"
+                        ? selected.totalSelected
+                        : 0;
+                    const maxAllowed = selected && typeof selected.allocationMax === "number"
+                        ? selected.allocationMax
+                        : allocationLimit(group, entry);
+                    const choiceRows = group.choices.map((choice) => `
+                        <label class="inline-note">
+                            <span>${choice.label}</span>
+                            <input
+                                class="entry-subselect"
+                                type="number"
+                                min="0"
+                                step="1"
+                                ${maxAllowed !== null ? `max="${maxAllowed}"` : ""}
+                                value="${selectedCounts[choice.id] || 0}"
+                                data-action="wargear-count"
+                                data-instance-id="${runtimeInstanceId}"
+                                data-group-id="${group.id}"
+                                data-choice-id="${choice.id}"
+                            >
+                        </label>
+                    `).join("");
+                    return `
+                        <div>
+                            <div class="inline-note">${group.label}</div>
+                            <div class="inline-note">${group.target ? `Replaces ${group.target}` : "Allocate replacements across the unit."}</div>
+                            <div class="inline-note">${maxAllowed !== null ? `Selected ${selectedTotal}/${maxAllowed} model weapon swaps.` : `Selected ${selectedTotal} weapon swaps.`}</div>
+                            ${choiceRows}
+                        </div>
+                    `;
+                }).join("");
                 const manualWargearNotes = groups.manual.map((group) => `
                     <div class="inline-note inline-note-warning">
                         Manual wargear: ${group.label}
@@ -990,6 +1057,7 @@
                                     </select>
                                     ${upgradeControls}
                                     ${wargearControls}
+                                    ${allocationControls}
                                     ${manualWargearNotes}
                                     ${wargearManualComments}
                                 </div>
@@ -1031,7 +1099,9 @@
                     quantity: entry.quantity,
                     renderMode: state.previewRenderMode,
                     selectedWargear: entry.wargearSelections,
-                    manualWargearGroups: entry.unit && entry.unit.wargear ? entry.unit.wargear.options.filter((group) => group.selectionMode !== "single") : [],
+                    manualWargearGroups: entry.unit && entry.unit.wargear
+                        ? entry.unit.wargear.options.filter((group) => group.selectionMode === "manual")
+                        : [],
                 });
             }).join("");
         }

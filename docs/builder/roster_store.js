@@ -96,6 +96,23 @@
                 if (!normalizedGroupId) {
                     return;
                 }
+                if (value && typeof value === "object" && !Array.isArray(value)) {
+                    const rawCounts = value.mode === "allocation" && value.counts && typeof value.counts === "object"
+                        ? value.counts
+                        : value;
+                    const counts = {};
+                    Object.entries(rawCounts).forEach(([choiceId, count]) => {
+                        const normalizedChoiceId = String(choiceId || "").trim();
+                        const normalizedCount = Math.max(0, Number.parseInt(count, 10) || 0);
+                        if (normalizedChoiceId && normalizedCount > 0) {
+                            counts[normalizedChoiceId] = normalizedCount;
+                        }
+                    });
+                    if (Object.keys(counts).length) {
+                        wargearSelections[normalizedGroupId] = { mode: "allocation", counts };
+                    }
+                    return;
+                }
                 wargearSelections[normalizedGroupId] = value ? String(value).trim() : null;
             });
         }
@@ -378,13 +395,81 @@
         };
     }
 
-    function resolveWargearSelections(unit, entry) {
+    function resolveWargearSelections(unit, entry, selectedOption) {
         const groups = unit && unit.wargear && Array.isArray(unit.wargear.options) ? unit.wargear.options : [];
         const selections = [];
         const issues = [];
+        const modelCount = selectedOption && typeof selectedOption.modelCount === "number"
+            ? selectedOption.modelCount
+            : null;
+
+        function allocationLimit(group) {
+            if (!group || group.selectionMode !== "allocation") {
+                return null;
+            }
+            if (!group.allocationLimit || group.allocationLimit === "modelCount") {
+                return modelCount;
+            }
+            if (typeof group.allocationLimit === "object") {
+                if (group.allocationLimit.kind === "modelCount") {
+                    return modelCount;
+                }
+                if (group.allocationLimit.kind === "static") {
+                    return typeof group.allocationLimit.max === "number" ? group.allocationLimit.max : null;
+                }
+                if (group.allocationLimit.kind === "ratio" && modelCount !== null) {
+                    const perModels = Number(group.allocationLimit.perModels) || 0;
+                    const maxPerStep = Number(group.allocationLimit.maxPerStep) || 0;
+                    if (perModels > 0 && maxPerStep > 0) {
+                        return Math.floor(modelCount / perModels) * maxPerStep;
+                    }
+                    return 0;
+                }
+            }
+            return null;
+        }
 
         groups.forEach((group) => {
-            const savedChoiceId = entry.wargearSelections ? entry.wargearSelections[group.id] : null;
+            const savedValue = entry.wargearSelections ? entry.wargearSelections[group.id] : null;
+            if (group.selectionMode === "allocation") {
+                const rawCounts = typeof savedValue === "string"
+                    ? { [savedValue]: 1 }
+                    : (savedValue && typeof savedValue === "object"
+                        ? (savedValue.mode === "allocation" && savedValue.counts && typeof savedValue.counts === "object"
+                            ? savedValue.counts
+                            : savedValue)
+                        : {});
+                const selectedChoices = [];
+                Object.entries(rawCounts).forEach(([choiceId, count]) => {
+                    const normalizedCount = Math.max(0, Number.parseInt(count, 10) || 0);
+                    if (!normalizedCount) {
+                        return;
+                    }
+                    const choice = (group.choices || []).find((entry) => entry.id === choiceId) || null;
+                    if (!choice) {
+                        issues.push(`Saved wargear selection is no longer available for ${group.label}: ${choiceId}.`);
+                        return;
+                    }
+                    selectedChoices.push({
+                        choice,
+                        count: normalizedCount,
+                    });
+                });
+                selections.push({
+                    group,
+                    selectedChoice: null,
+                    selectedChoices,
+                    totalSelected: selectedChoices.reduce((sum, item) => sum + item.count, 0),
+                    allocationMax: allocationLimit(group),
+                });
+                const maxAllowed = allocationLimit(group);
+                if (maxAllowed !== null && selections[selections.length - 1].totalSelected > maxAllowed) {
+                    issues.push(`Saved wargear allocation exceeds limit for ${group.label}.`);
+                }
+                return;
+            }
+
+            const savedChoiceId = typeof savedValue === "string" ? savedValue : null;
             if (!savedChoiceId) {
                 selections.push({
                     group,
@@ -441,7 +526,7 @@
                 : { selectedOption: null, selectedUpgrades: [], issues: [], options: [], upgradeOptions: [] };
             const selectedOption = pointsResolution.selectedOption;
             issues.push(...pointsResolution.issues);
-            const wargearResolution = unit ? resolveWargearSelections(unit, entry) : { selections: [], issues: [] };
+            const wargearResolution = unit ? resolveWargearSelections(unit, entry, selectedOption) : { selections: [], issues: [] };
             issues.push(...wargearResolution.issues);
 
             const unitPoints = !issues.length && selectedOption && typeof selectedOption.points === "number"

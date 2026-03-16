@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generatedAt": "2026-03-16T16:12:42+00:00",
+  "generatedAt": "2026-03-16T17:21:00+00:00",
   "faction": {
     "slug": "space-marines",
     "name": "Space Marines",
@@ -12,10 +12,6 @@
     "missingStats": [],
     "manualSelectionUnits": [],
     "manualWargearUnits": [
-      {
-        "unitId": "intercessor-squad",
-        "name": "Intercessor Squad"
-      },
       {
         "unitId": "tactical-squad",
         "name": "Tactical Squad"
@@ -4483,6 +4479,7 @@
             "id": "this-model-s-bolt-pistol-master-crafted-bolter-and-close-combat-weapon-can-be-replaced-with-one-of-the-following-1",
             "label": "This model\u2019s bolt pistol, master-crafted bolter and close combat weapon can be replaced with one of the following:",
             "target": "This model\u2019s bolt pistol, master-crafted bolter and close combat weapon",
+            "actor": null,
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -4514,12 +4511,14 @@
                 "id": "1-heavy-bolt-pistol-1-master-crafted-power-weapon-and-1-relic-shield",
                 "label": "1 heavy bolt pistol, 1 master-crafted power weapon and 1 relic shield"
               }
-            ]
+            ],
+            "allocationLimit": null
           },
           {
             "id": "this-model-s-close-combat-weapon-can-be-replaced-with-one-of-the-following-2",
             "label": "This model\u2019s close combat weapon can be replaced with one of the following:",
             "target": "This model\u2019s close combat weapon",
+            "actor": null,
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -4531,7 +4530,8 @@
                 "id": "1-power-fist",
                 "label": "1 power fist"
               }
-            ]
+            ],
+            "allocationLimit": null
           }
         ],
         "manualNotes": [],
@@ -14138,6 +14138,7 @@
             "id": "the-intercessor-sergeant-s-bolt-rifle-can-be-replaced-with-one-of-the-following-1",
             "label": "The Intercessor Sergeant\u2019s bolt rifle can be replaced with one of the following:",
             "target": "The Intercessor Sergeant\u2019s bolt rifle",
+            "actor": null,
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -14157,12 +14158,14 @@
                 "id": "1-power-weapon",
                 "label": "1 power weapon"
               }
-            ]
+            ],
+            "allocationLimit": null
           },
           {
             "id": "the-intercessor-sergeant-s-close-combat-weapon-can-be-replaced-with-one-of-the-following-2",
             "label": "The Intercessor Sergeant\u2019s close combat weapon can be replaced with one of the following:",
             "target": "The Intercessor Sergeant\u2019s close combat weapon",
+            "actor": null,
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -14182,26 +14185,34 @@
                 "id": "1-thunder-hammer",
                 "label": "1 thunder hammer"
               }
-            ]
+            ],
+            "allocationLimit": null
           },
           {
             "id": "for-every-5-models-in-this-unit-1-model-equipped-with-a-bolt-rifle-can-be-equipped-with-1-astartes-grenade-launcher-3",
             "label": "For every 5 models in this unit, 1 model equipped with a bolt rifle can be equipped with 1 Astartes grenade launcher.",
-            "target": "For every 5 models in this unit, 1 model equipped with a bolt rifle can be equipped with 1 Astartes grenade launcher.",
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": []
+            "target": "For every 5 models in this unit, 1 model equipped with a bolt rifle",
+            "actor": null,
+            "action": "equip",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-astartes-grenade-launcher",
+                "label": "1 Astartes grenade launcher"
+              }
+            ],
+            "allocationLimit": null
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -27530,6 +27541,7 @@
             "id": "1-tactical-marine-s-boltgun-can-be-replaced-with-one-of-the-following-1",
             "label": "1 Tactical Marine\u2019s boltgun can be replaced with one of the following:",
             "target": "1 Tactical Marine\u2019s boltgun",
+            "actor": null,
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -27573,12 +27585,14 @@
                 "id": "1-plasma-gun",
                 "label": "1 plasma gun"
               }
-            ]
+            ],
+            "allocationLimit": null
           },
           {
             "id": "1-tactical-marine-s-boltgun-can-be-replaced-with-one-of-the-following-2",
             "label": "1 Tactical Marine\u2019s boltgun can be replaced with one of the following:",
             "target": "1 Tactical Marine\u2019s boltgun",
+            "actor": null,
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -27598,12 +27612,14 @@
                 "id": "1-plasma-gun",
                 "label": "1 plasma gun"
               }
-            ]
+            ],
+            "allocationLimit": null
           },
           {
             "id": "the-tactical-sergeant-s-bolt-pistol-and-boltgun-can-be-replaced-with-1-twin-lightning-claws-or-two-different-weapons-from-the-following-list-3",
             "label": "The Tactical Sergeant\u2019s bolt pistol and boltgun can be replaced with 1 twin lightning claws, or two different weapons from the following list:*",
             "target": "The Tactical Sergeant\u2019s bolt pistol and boltgun can be replaced with 1 twin lightning claws, or two different weapons from the following list:",
+            "actor": null,
             "action": "manual",
             "selectionMode": "manual",
             "choices": [
@@ -27647,7 +27663,8 @@
                 "id": "1-thunder-hammer",
                 "label": "1 thunder hammer"
               }
-            ]
+            ],
+            "allocationLimit": null
           }
         ],
         "manualNotes": [

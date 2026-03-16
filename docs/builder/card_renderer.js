@@ -97,21 +97,39 @@
             return targetLabel ? `Selected for ${targetLabel}` : "Selected wargear";
         }
 
-        selectedWargear.forEach((entry) => {
-            if (!entry || !entry.selectedChoice || !entry.group) {
+        function recordSelectedChoice(group, choice, count) {
+            if (!choice) {
                 return;
             }
-            const selectedLabel = entry.selectedChoice.label;
-            const targetLabel = entry.group.target || entry.group.label;
-            const action = resolveGroupAction(entry.group, targetLabel);
+            const targetLabel = group ? (group.target || group.label) : "";
+            const action = resolveGroupAction(group, targetLabel);
+            const singularLabel = String(choice.label || "").replace(/^\s*1\s+/, "");
+            const countLabel = count && count > 1 ? `${count}x ${singularLabel}` : choice.label;
             currentLoadout.push({
                 type: "wargear",
-                label: selectedLabel,
-                detail: loadoutDetail(entry.group, targetLabel),
+                label: countLabel,
+                detail: loadoutDetail(group, targetLabel),
             });
-            selectedReferences.push(normalizeLoadoutLabel(selectedLabel));
+            selectedReferences.push(normalizeLoadoutLabel(choice.label));
             if (targetLabel && action === "replace") {
                 replacedReferences.push(extractTargetFragment(targetLabel));
+            }
+        }
+
+        selectedWargear.forEach((entry) => {
+            if (!entry || !entry.group) {
+                return;
+            }
+            if (entry.selectedChoice) {
+                recordSelectedChoice(entry.group, entry.selectedChoice, 1);
+            }
+            if (Array.isArray(entry.selectedChoices)) {
+                entry.selectedChoices.forEach((selection) => {
+                    if (!selection || !selection.choice || !selection.count) {
+                        return;
+                    }
+                    recordSelectedChoice(entry.group, selection.choice, selection.count);
+                });
             }
         });
 

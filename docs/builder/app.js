@@ -39,6 +39,54 @@
             scheduleAutoSave();
         }
 
+        function resolveBaseOption(unit, entry) {
+            if (!unit) {
+                return null;
+            }
+            const baseOptions = pointsGroups(unit).base;
+            const allOptions = Array.isArray(unit.pointsOptions) ? unit.pointsOptions : [];
+            if (entry.optionId) {
+                const byId = allOptions.find((option) => option.id === entry.optionId) || null;
+                if (byId && byId.selectionKind !== "upgrade") {
+                    return byId;
+                }
+            }
+            if (Number.isInteger(entry.optionIndex) && baseOptions[entry.optionIndex]) {
+                return baseOptions[entry.optionIndex];
+            }
+            return renderer.defaultPointsOption(unit);
+        }
+
+        function allocationLimit(unit, entry, group) {
+            if (!group || group.selectionMode !== "allocation") {
+                return null;
+            }
+            const selectedOption = resolveBaseOption(unit, entry);
+            const modelCount = selectedOption && typeof selectedOption.modelCount === "number"
+                ? selectedOption.modelCount
+                : null;
+            if (!group.allocationLimit || group.allocationLimit === "modelCount") {
+                return modelCount;
+            }
+            if (typeof group.allocationLimit === "object") {
+                if (group.allocationLimit.kind === "modelCount") {
+                    return modelCount;
+                }
+                if (group.allocationLimit.kind === "static") {
+                    return typeof group.allocationLimit.max === "number" ? group.allocationLimit.max : null;
+                }
+                if (group.allocationLimit.kind === "ratio" && modelCount !== null) {
+                    const perModels = Number(group.allocationLimit.perModels) || 0;
+                    const maxPerStep = Number(group.allocationLimit.maxPerStep) || 0;
+                    if (perModels > 0 && maxPerStep > 0) {
+                        return Math.floor(modelCount / perModels) * maxPerStep;
+                    }
+                    return 0;
+                }
+            }
+            return null;
+        }
+
         function addToRoster(unitId) {
             const unit = catalogUnitById(unitId);
             if (!unit) {
@@ -115,6 +163,57 @@
             return true;
         }
 
+        function updateRosterWargearAllocation(instanceId, groupId, choiceId, countValue) {
+            const entry = state.roster.find((item) => item.instanceId === instanceId);
+            if (!entry) {
+                return false;
+            }
+            const unit = catalogUnitById(entry.unitId);
+            const group = unit && unit.wargear && Array.isArray(unit.wargear.options)
+                ? unit.wargear.options.find((option) => option.id === groupId)
+                : null;
+            if (!group || group.selectionMode !== "allocation") {
+                return false;
+            }
+            const requestedCount = Math.max(0, Number.parseInt(countValue, 10) || 0);
+            const currentValue = entry.wargearSelections && typeof entry.wargearSelections[groupId] === "object"
+                ? entry.wargearSelections[groupId]
+                : {};
+            const counts = {
+                ...((currentValue.mode === "allocation" && currentValue.counts && typeof currentValue.counts === "object")
+                    ? currentValue.counts
+                    : currentValue),
+            };
+
+            const limit = allocationLimit(unit, entry, group);
+            const otherTotal = Object.entries(counts).reduce((sum, [savedChoiceId, savedCount]) => {
+                if (savedChoiceId === choiceId) {
+                    return sum;
+                }
+                return sum + Math.max(0, Number.parseInt(savedCount, 10) || 0);
+            }, 0);
+            const normalizedCount = limit === null
+                ? requestedCount
+                : Math.max(0, Math.min(requestedCount, Math.max(0, limit - otherTotal)));
+
+            if (!entry.wargearSelections || typeof entry.wargearSelections !== "object") {
+                entry.wargearSelections = {};
+            }
+            if (normalizedCount > 0) {
+                counts[choiceId] = normalizedCount;
+            } else {
+                delete counts[choiceId];
+            }
+            if (Object.keys(counts).length) {
+                entry.wargearSelections[groupId] = { mode: "allocation", counts };
+            } else {
+                delete entry.wargearSelections[groupId];
+            }
+
+            rerenderAndPersist();
+            return true;
+        }
+
         function removeFromRoster(instanceId) {
             const before = state.roster.length;
             state.roster = state.roster.filter((item) => item.instanceId !== instanceId);
@@ -156,6 +255,9 @@
             const wargear = target && typeof target.closest === "function"
                 ? target.closest('[data-action="wargear-select"]')
                 : null;
+            const wargearCount = target && typeof target.closest === "function"
+                ? target.closest('[data-action="wargear-count"]')
+                : null;
             const quantity = target && typeof target.closest === "function"
                 ? target.closest('[data-action="quantity-input"]')
                 : null;
@@ -168,6 +270,14 @@
             }
             if (wargear) {
                 return updateRosterWargear(wargear.dataset.instanceId, wargear.dataset.groupId, wargear.value);
+            }
+            if (wargearCount) {
+                return updateRosterWargearAllocation(
+                    wargearCount.dataset.instanceId,
+                    wargearCount.dataset.groupId,
+                    wargearCount.dataset.choiceId,
+                    wargearCount.value
+                );
             }
             if (quantity) {
                 return updateRosterQuantity(quantity.dataset.instanceId, quantity.value);
@@ -192,6 +302,7 @@
             updateRosterUpgrade,
             updateRosterQuantity,
             updateRosterWargear,
+            updateRosterWargearAllocation,
             removeFromRoster,
             clearRoster,
             handleUnitListClick,
