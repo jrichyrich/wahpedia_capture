@@ -285,6 +285,32 @@
             gap: 12px;
         }
 
+        .roster-manager {
+            display: grid;
+            gap: 14px;
+            margin-bottom: 18px;
+            padding-bottom: 18px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .roster-manager-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 240px) minmax(0, 1fr);
+            gap: 12px;
+        }
+
+        .roster-manager-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .roster-status {
+            min-height: 18px;
+            font-size: 12px;
+            color: #5d5448;
+        }
+
         .preview-header {
             display: flex;
             justify-content: space-between;
@@ -326,6 +352,10 @@
 
             .unit-list {
                 max-height: 360px;
+            }
+
+            .roster-manager-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -408,6 +438,29 @@
                     </div>
                 </div>
 
+                <div class="roster-manager">
+                    <div class="roster-manager-grid">
+                        <div class="field-group">
+                            <label class="field-label" for="saved-roster-select">Saved rosters</label>
+                            <select id="saved-roster-select" disabled>
+                                <option>No saved rosters</option>
+                            </select>
+                        </div>
+                        <div class="field-group">
+                            <label class="field-label" for="roster-name">Roster name</label>
+                            <input id="roster-name" type="text" placeholder="Aeldari Roster" disabled>
+                        </div>
+                    </div>
+                    <div class="roster-manager-actions">
+                        <button id="save-roster" class="btn">Save roster</button>
+                        <button id="new-roster" class="btn">New roster</button>
+                        <button id="import-roster" class="btn">Import JSON</button>
+                        <button id="export-roster" class="btn">Export JSON</button>
+                        <button id="delete-roster" class="btn">Delete roster</button>
+                    </div>
+                    <div id="roster-status" class="roster-status"></div>
+                </div>
+
                 <table class="roster-table">
                     <thead>
                         <tr>
@@ -441,13 +494,24 @@
         </main>
     </div>
 
+    <input id="import-roster-file" type="file" accept=".json,application/json" hidden>
+
     <script src="./card_renderer.js"></script>
+    <script src="./roster_store.js"></script>
     <script>
+        const Store = window.WahBuilderRosterStore;
         const state = {
             manifest: null,
             factionSlug: "",
             catalog: null,
+            rosterFactionSlug: "",
             roster: [],
+            activeRosterId: null,
+            activeRosterName: "",
+            savedRosterList: [],
+            lastSavedAt: null,
+            storageAvailable: false,
+            saveTimer: null,
         };
 
         const els = {
@@ -465,10 +529,23 @@
             previewBody: document.getElementById("preview-body"),
             clearRoster: document.getElementById("clear-roster"),
             printRoster: document.getElementById("print-roster"),
+            rosterName: document.getElementById("roster-name"),
+            savedRosterSelect: document.getElementById("saved-roster-select"),
+            saveRoster: document.getElementById("save-roster"),
+            newRoster: document.getElementById("new-roster"),
+            importRoster: document.getElementById("import-roster"),
+            exportRoster: document.getElementById("export-roster"),
+            deleteRoster: document.getElementById("delete-roster"),
+            rosterStatus: document.getElementById("roster-status"),
+            importRosterFile: document.getElementById("import-roster-file"),
         };
 
         function setStatus(message, isError) {
             els.statusBox.innerHTML = isError ? `<span class="status-error">${message}</span>` : message;
+        }
+
+        function setRosterStatus(message, isError) {
+            els.rosterStatus.innerHTML = isError ? `<span class="status-error">${message}</span>` : (message || "");
         }
 
         async function fetchJson(path) {
@@ -477,6 +554,73 @@
                 throw new Error(`Failed to load ${path} (${response.status})`);
             }
             return response.json();
+        }
+
+        function storageAdapter() {
+            return Store.createStorageAdapter(window.localStorage);
+        }
+
+        function availableFactionSlugs() {
+            return (state.manifest && state.manifest.factions ? state.manifest.factions : []).map((entry) => entry.slug);
+        }
+
+        function appVersion() {
+            return state.manifest ? `builder-catalog-v${state.manifest.schemaVersion}` : "builder-catalog-unknown";
+        }
+
+        function formatSavedAt(value) {
+            if (!value) {
+                return "Not saved yet";
+            }
+            const parsed = new Date(value);
+            return Number.isNaN(parsed.getTime()) ? value : parsed.toLocaleString();
+        }
+
+        function optionNode(value, label, isSelected) {
+            const option = document.createElement("option");
+            option.value = value;
+            option.textContent = label;
+            if (isSelected) {
+                option.selected = true;
+            }
+            return option;
+        }
+
+        function activeRosterDocument() {
+            return Store.serializeRuntimeRoster({
+                id: state.activeRosterId || Store.createRosterId(),
+                savedAt: state.lastSavedAt || new Date().toISOString(),
+                appVersion: appVersion(),
+                factionSlug: state.rosterFactionSlug || state.factionSlug,
+                name: state.activeRosterName || els.rosterName.value,
+                entries: state.roster,
+            });
+        }
+
+        function refreshSavedRosterList() {
+            state.savedRosterList = Store.listSavedRosters(storageAdapter());
+            renderSavedRosterOptions();
+        }
+
+        function renderSavedRosterOptions() {
+            const hasStorage = Boolean(storageAdapter());
+            const savedRosters = state.savedRosterList || [];
+            els.savedRosterSelect.disabled = !hasStorage || savedRosters.length === 0;
+            els.saveRoster.disabled = !hasStorage;
+            els.deleteRoster.disabled = !hasStorage || !state.activeRosterId;
+
+            if (!savedRosters.length) {
+                els.savedRosterSelect.replaceChildren(optionNode("", "No saved rosters", true));
+                return;
+            }
+
+            els.savedRosterSelect.replaceChildren(
+                ...savedRosters.map((roster) => optionNode(
+                    roster.id,
+                    `${roster.name} | ${roster.factionSlug} | ${formatSavedAt(roster.savedAt)}`,
+                    roster.id === state.activeRosterId
+                ))
+            );
         }
 
         function catalogUnitById(unitId) {
@@ -506,26 +650,6 @@
             return pills.join("");
         }
 
-        function selectedOption(entry) {
-            const unit = catalogUnitById(entry.unitId);
-            if (!unit) {
-                return null;
-            }
-            return unit.pointsOptions[entry.optionIndex] || unit.pointsOptions[0] || null;
-        }
-
-        function linePoints(entry) {
-            const option = selectedOption(entry);
-            if (!option || typeof option.points !== "number") {
-                return 0;
-            }
-            return option.points * entry.quantity;
-        }
-
-        function nextInstanceId() {
-            return `${Date.now()}-${Math.random().toString(16).slice(2)}`;
-        }
-
         function renderFactionOptions() {
             const factions = state.manifest && state.manifest.factions ? state.manifest.factions : [];
             els.factionSelect.innerHTML = factions
@@ -533,32 +657,22 @@
                 .join("");
             els.factionSelect.disabled = factions.length === 0;
             els.unitSearch.disabled = factions.length === 0;
+            els.rosterName.disabled = factions.length === 0;
+            els.importRoster.disabled = factions.length === 0;
+            els.exportRoster.disabled = factions.length === 0;
+            els.newRoster.disabled = factions.length === 0;
         }
 
-        async function loadManifest() {
-            const manifest = await fetchJson("./data/manifest.json");
-            state.manifest = manifest;
-            renderFactionOptions();
-            if (manifest.factions.length) {
-                state.factionSlug = manifest.factions[0].slug;
-                els.factionSelect.value = state.factionSlug;
-                await loadCatalog(state.factionSlug);
-            }
-        }
-
-        async function loadCatalog(factionSlug) {
-            const manifestEntry = (state.manifest && state.manifest.factions ? state.manifest.factions : []).find((entry) => entry.slug === factionSlug);
-            if (!manifestEntry) {
+        function renderCatalogSummary() {
+            if (!state.catalog) {
                 return;
             }
-            const catalog = await fetchJson(`./data/${manifestEntry.catalogFile}`);
-            state.factionSlug = factionSlug;
-            state.catalog = catalog;
-            state.roster = [];
+            const catalog = state.catalog;
             els.catalogUnitCount.textContent = String(catalog.faction.unitCount);
             els.catalogManualCount.textContent = String(catalog.build.manualSelectionUnits.length);
             els.catalogMissingCount.textContent = String(catalog.build.missingStats.length);
-            els.rosterTitle.textContent = catalog.faction.name;
+            els.factionSelect.value = state.factionSlug;
+
             const healthBits = [];
             if (catalog.build.manualSelectionUnits.length) {
                 healthBits.push(`${catalog.build.manualSelectionUnits.length} unit(s) still use source labels verbatim`);
@@ -566,9 +680,14 @@
             if (catalog.build.missingStats.length) {
                 healthBits.push(`${catalog.build.missingStats.length} unit(s) still have missing exported stats`);
             }
-            els.rosterSubtitle.textContent = healthBits.length
-                ? `${catalog.build.catalogUnitCount} units loaded. Data health: ${healthBits.join(" | ")}.`
-                : `${catalog.build.catalogUnitCount} units loaded. Data health: clean.`;
+
+            els.rosterTitle.textContent = state.activeRosterName || Store.normalizeName("", state.rosterFactionSlug || state.factionSlug);
+            els.rosterSubtitle.textContent = [
+                state.catalog.faction.name,
+                `${catalog.build.catalogUnitCount} units loaded`,
+                healthBits.length ? `Data health: ${healthBits.join(" | ")}` : "Data health: clean",
+                `Last saved: ${formatSavedAt(state.lastSavedAt)}`,
+            ].join(" | ");
 
             const statusBits = [
                 `${catalog.faction.name}: ${catalog.faction.unitCount} units`,
@@ -576,9 +695,27 @@
                 `${catalog.build.missingStats.length} units with missing stats`,
             ];
             setStatus(statusBits.join(" | "), false);
+        }
+
+        async function setCatalog(factionSlug) {
+            const manifestEntry = (state.manifest && state.manifest.factions ? state.manifest.factions : []).find((entry) => entry.slug === factionSlug);
+            if (!manifestEntry) {
+                throw new Error(`Unknown faction: ${factionSlug}`);
+            }
+            if (!state.catalog || state.factionSlug !== factionSlug) {
+                state.catalog = await fetchJson(`./data/${manifestEntry.catalogFile}`);
+            }
+            state.factionSlug = factionSlug;
+            renderCatalogSummary();
             renderUnitList();
-            renderRoster();
-            renderPreview();
+        }
+
+        function deriveRoster() {
+            return Store.deriveResolvedRoster({
+                roster: activeRosterDocument(),
+                catalog: state.catalog,
+                availableFactionSlugs: availableFactionSlugs(),
+            });
         }
 
         function renderUnitList() {
@@ -620,19 +757,112 @@
             }).join("");
         }
 
+        function renderSavedRosterState() {
+            renderSavedRosterOptions();
+            els.rosterName.value = state.activeRosterName || "";
+            renderCatalogSummary();
+        }
+
+        async function createNewRoster(factionSlug) {
+            const rosterFaction = factionSlug || state.factionSlug || availableFactionSlugs()[0];
+            await setCatalog(rosterFaction);
+            state.activeRosterId = Store.createRosterId();
+            state.activeRosterName = Store.normalizeName("", rosterFaction);
+            state.rosterFactionSlug = rosterFaction;
+            state.roster = [];
+            state.lastSavedAt = null;
+            renderSavedRosterState();
+            renderRoster();
+            renderPreview();
+            persistActiveRoster({ announce: false });
+            setRosterStatus(`Started a new ${state.catalog.faction.name} roster.`, false);
+        }
+
+        async function loadSavedRosterDocument(roster, options = {}) {
+            const savedRoster = Store.migrateSavedRosterDocument(roster);
+            state.activeRosterId = savedRoster.id;
+            state.activeRosterName = savedRoster.name;
+            state.rosterFactionSlug = savedRoster.factionSlug;
+            state.lastSavedAt = savedRoster.savedAt;
+            state.roster = Store.createRuntimeEntries(savedRoster.entries);
+
+            const factions = availableFactionSlugs();
+            const targetFaction = factions.includes(savedRoster.factionSlug) ? savedRoster.factionSlug : (factions[0] || "");
+            if (targetFaction) {
+                await setCatalog(targetFaction);
+            }
+            if (storageAdapter()) {
+                Store.setActiveRosterId(storageAdapter(), savedRoster.id);
+            }
+            refreshSavedRosterList();
+            renderSavedRosterState();
+            renderRoster();
+            renderPreview();
+
+            if (!factions.includes(savedRoster.factionSlug)) {
+                setRosterStatus(
+                    `Loaded ${savedRoster.name}, but its faction (${savedRoster.factionSlug}) is not available in the current builder data.`,
+                    true
+                );
+                return;
+            }
+            setRosterStatus(options.message || `Loaded ${savedRoster.name}.`, false);
+        }
+
+        function persistActiveRoster(options = {}) {
+            const adapter = storageAdapter();
+            if (!adapter) {
+                state.storageAvailable = false;
+                renderSavedRosterOptions();
+                if (options.announce) {
+                    setRosterStatus("Browser storage is unavailable. Roster changes cannot be persisted locally.", true);
+                }
+                return null;
+            }
+
+            const result = Store.saveRosterToStorage(adapter, activeRosterDocument());
+            if (!result.ok) {
+                if (options.announce) {
+                    setRosterStatus("Unable to save roster to browser storage.", true);
+                }
+                return null;
+            }
+            state.storageAvailable = true;
+            state.activeRosterId = result.roster.id;
+            state.activeRosterName = result.roster.name;
+            state.rosterFactionSlug = result.roster.factionSlug;
+            state.lastSavedAt = result.roster.savedAt;
+            refreshSavedRosterList();
+            renderSavedRosterState();
+            if (options.announce) {
+                setRosterStatus(`Saved ${result.roster.name} at ${formatSavedAt(result.roster.savedAt)}.`, false);
+            }
+            return result.roster;
+        }
+
+        function scheduleAutoSave() {
+            clearTimeout(state.saveTimer);
+            state.saveTimer = window.setTimeout(() => {
+                persistActiveRoster({ announce: false });
+            }, 250);
+        }
+
         function addToRoster(unitId) {
             const unit = catalogUnitById(unitId);
             if (!unit) {
                 return;
             }
+            const defaultOption = window.WahBuilderCardRenderer.defaultPointsOption(unit);
             state.roster.push({
-                instanceId: nextInstanceId(),
-                unitId: unitId,
-                optionIndex: 0,
+                instanceId: Store.createRosterId(),
+                unitId,
+                optionId: defaultOption ? defaultOption.id : null,
+                optionIndex: defaultOption ? unit.pointsOptions.indexOf(defaultOption) : null,
                 quantity: 1,
             });
             renderRoster();
             renderPreview();
+            scheduleAutoSave();
         }
 
         function updateRosterOption(instanceId, optionIndex) {
@@ -640,9 +870,16 @@
             if (!entry) {
                 return;
             }
-            entry.optionIndex = Number(optionIndex) || 0;
+            const unit = catalogUnitById(entry.unitId);
+            const normalizedIndex = Number(optionIndex);
+            const option = unit && Array.isArray(unit.pointsOptions) && normalizedIndex >= 0
+                ? unit.pointsOptions[normalizedIndex]
+                : null;
+            entry.optionIndex = Number.isInteger(normalizedIndex) ? normalizedIndex : null;
+            entry.optionId = option ? option.id : null;
             renderRoster();
             renderPreview();
+            scheduleAutoSave();
         }
 
         function updateRosterQuantity(instanceId, quantity) {
@@ -653,50 +890,60 @@
             entry.quantity = Math.max(1, Number(quantity) || 1);
             renderRoster();
             renderPreview();
+            scheduleAutoSave();
         }
 
         function removeFromRoster(instanceId) {
             state.roster = state.roster.filter((item) => item.instanceId !== instanceId);
             renderRoster();
             renderPreview();
+            scheduleAutoSave();
         }
 
         function clearRoster() {
             state.roster = [];
             renderRoster();
             renderPreview();
+            scheduleAutoSave();
+            setRosterStatus("Cleared the active roster.", false);
         }
 
         function renderRoster() {
-            if (!state.catalog || !state.roster.length) {
+            const derived = deriveRoster();
+            if (!state.catalog || !derived.entries.length) {
                 els.rosterBody.innerHTML = `<tr><td colspan="5" class="table-empty">No roster entries yet.</td></tr>`;
                 els.totalPoints.textContent = "0";
                 return;
             }
 
-            let total = 0;
-            els.rosterBody.innerHTML = state.roster.map((entry) => {
-                const unit = catalogUnitById(entry.unitId);
-                const lineTotal = linePoints(entry);
-                total += lineTotal;
-
-                const optionsHtml = (unit.pointsOptions || []).map((pointsOption, index) => `
-                    <option value="${index}" ${index === entry.optionIndex ? "selected" : ""}>
-                        ${pointsOption.label} | ${pointsOption.points} pts
-                    </option>
-                `).join("");
+            els.rosterBody.innerHTML = derived.entries.map((entry) => {
+                const missingOptionRow = entry.unit && !entry.selectedOption
+                    ? `<option value="-1" selected>Missing saved configuration</option>`
+                    : "";
+                const optionsHtml = entry.unit
+                    ? `${missingOptionRow}${entry.options.map((pointsOption, index) => `
+                        <option value="${index}" ${entry.selectedOption && pointsOption.id === entry.selectedOption.id ? "selected" : ""}>
+                            ${pointsOption.label} | ${pointsOption.points} pts
+                        </option>
+                    `).join("")}`
+                    : `<option value="-1">Unavailable</option>`;
+                const issueText = entry.issues.map((issue) => `<div class="inline-note inline-note-warning">${issue}</div>`).join("");
+                const unitMissingStats = entry.unit ? missingStats(entry.unit) : [];
 
                 return `
                     <tr>
                         <td>
-                            <strong>${unit.name}</strong>
-                            ${unit.selectionMode === "manual" ? `<div class="inline-note inline-note-warning">Source labels are preserved verbatim for this unit.</div>` : ""}
-                            ${missingStats(unit).length ? `<div class="inline-note inline-note-warning">Missing stats: ${missingStats(unit).join(", ")}.</div>` : ""}
+                            <strong>${entry.displayName}</strong>
+                            ${entry.unit && entry.unit.selectionMode === "manual" ? `<div class="inline-note inline-note-warning">Source labels are preserved verbatim for this unit.</div>` : ""}
+                            ${unitMissingStats.length ? `<div class="inline-note inline-note-warning">Missing stats: ${unitMissingStats.join(", ")}.</div>` : ""}
+                            ${issueText}
                         </td>
                         <td>
-                            <select data-action="option-select" data-instance-id="${entry.instanceId}">
-                                ${optionsHtml}
-                            </select>
+                            ${entry.unit ? `
+                                <select data-action="option-select" data-instance-id="${entry.instanceId}">
+                                    ${optionsHtml}
+                                </select>
+                            ` : `<div class="inline-note inline-note-warning">This unit cannot be resolved in the current catalog.</div>`}
                         </td>
                         <td>
                             <input
@@ -708,30 +955,63 @@
                                 data-instance-id="${entry.instanceId}"
                             >
                         </td>
-                        <td><strong>${lineTotal}</strong></td>
+                        <td><strong>${entry.linePoints}</strong></td>
                         <td><button class="btn btn-remove" data-action="remove-entry" data-instance-id="${entry.instanceId}">x</button></td>
                     </tr>
                 `;
             }).join("");
 
-            els.totalPoints.textContent = String(total);
+            els.totalPoints.textContent = String(derived.totalPoints);
         }
 
         function renderPreview() {
-            if (!state.catalog || !state.roster.length) {
-                els.previewBody.innerHTML = `<div class="inline-note">Add one or more units to preview printable datacards.</div>`;
+            const derived = deriveRoster();
+            if (!state.catalog || !derived.validEntries.length) {
+                els.previewBody.innerHTML = derived.invalidEntries.length
+                    ? `<div class="inline-note">Only valid roster entries are shown in the preview. Repair or remove unresolved entries to print them.</div>`
+                    : `<div class="inline-note">Add one or more units to preview printable datacards.</div>`;
                 return;
             }
 
-            els.previewBody.innerHTML = state.roster.map((entry) => {
-                const unit = catalogUnitById(entry.unitId);
-                const option = selectedOption(entry);
-                return window.WahBuilderCardRenderer.renderCard(unit, {
-                    selectedOption: option,
-                    selectedPoints: linePoints(entry),
+            els.previewBody.innerHTML = derived.validEntries.map((entry) => {
+                return window.WahBuilderCardRenderer.renderCard(entry.unit, {
+                    selectedOption: entry.selectedOption,
+                    selectedPoints: entry.linePoints,
                     quantity: entry.quantity,
                 });
             }).join("");
+        }
+
+        function downloadActiveRoster() {
+            const payload = Store.exportRosterJson(activeRosterDocument());
+            const blob = new Blob([payload], { type: "application/json" });
+            const url = URL.createObjectURL(blob);
+            const anchor = document.createElement("a");
+            const filenameBase = (state.activeRosterName || "roster").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") || "roster";
+            anchor.href = url;
+            anchor.download = `${filenameBase}.json`;
+            document.body.appendChild(anchor);
+            anchor.click();
+            anchor.remove();
+            URL.revokeObjectURL(url);
+            setRosterStatus(`Exported ${state.activeRosterName || "roster"} as JSON.`, false);
+        }
+
+        async function restoreInitialRoster() {
+            refreshSavedRosterList();
+            const adapter = storageAdapter();
+            const activeRosterId = Store.getActiveRosterId(adapter);
+            if (activeRosterId) {
+                const savedRoster = Store.loadRosterFromStorage(adapter, activeRosterId);
+                if (savedRoster) {
+                    await loadSavedRosterDocument(savedRoster, { message: `Restored ${savedRoster.name}.` });
+                    return;
+                }
+            }
+            const factions = availableFactionSlugs();
+            if (factions.length) {
+                await createNewRoster(factions[0]);
+            }
         }
 
         async function init() {
@@ -744,7 +1024,12 @@
                 return;
             }
             try {
+                state.storageAvailable = Boolean(storageAdapter());
                 await loadManifest();
+                await restoreInitialRoster();
+                if (!state.storageAvailable) {
+                    setRosterStatus("Browser storage is unavailable. JSON import/export still works, but auto-save is disabled.", true);
+                }
             } catch (error) {
                 setStatus(
                     `Unable to load the builder manifest. Run <code>python scripts/build_builder_catalog.py --clean</code> and serve the repo over HTTP before opening this page.<br><br>${error.message}`,
@@ -754,9 +1039,17 @@
             }
         }
 
+        async function loadManifest() {
+            const manifest = await fetchJson("./data/manifest.json");
+            state.manifest = manifest;
+            renderFactionOptions();
+        }
+
         els.factionSelect.addEventListener("change", async (event) => {
             try {
-                await loadCatalog(event.target.value);
+                if (event.target.value && event.target.value !== state.rosterFactionSlug) {
+                    await createNewRoster(event.target.value);
+                }
             } catch (error) {
                 setStatus(error.message, true);
             }
@@ -788,10 +1081,78 @@
             }
         });
 
+        els.savedRosterSelect.addEventListener("change", async (event) => {
+            const savedRoster = Store.loadRosterFromStorage(storageAdapter(), event.target.value);
+            if (!savedRoster) {
+                setRosterStatus("Unable to load the selected roster from browser storage.", true);
+                return;
+            }
+            await loadSavedRosterDocument(savedRoster);
+        });
+
+        els.rosterName.addEventListener("input", (event) => {
+            state.activeRosterName = Store.normalizeName(event.target.value, state.rosterFactionSlug || state.factionSlug);
+            renderCatalogSummary();
+            scheduleAutoSave();
+        });
+
+        els.saveRoster.addEventListener("click", () => {
+            persistActiveRoster({ announce: true });
+        });
+
+        els.newRoster.addEventListener("click", async () => {
+            await createNewRoster(state.factionSlug || availableFactionSlugs()[0]);
+        });
+
+        els.importRoster.addEventListener("click", () => {
+            els.importRosterFile.value = "";
+            els.importRosterFile.click();
+        });
+
+        els.importRosterFile.addEventListener("change", async (event) => {
+            const file = event.target.files && event.target.files[0];
+            if (!file) {
+                return;
+            }
+            try {
+                const text = await file.text();
+                const importedRoster = Store.importRosterJson(text);
+                await loadSavedRosterDocument(importedRoster, { message: `Imported ${importedRoster.name}.` });
+                persistActiveRoster({ announce: false });
+            } catch (error) {
+                setRosterStatus(error.message, true);
+            }
+        });
+
+        els.exportRoster.addEventListener("click", () => {
+            downloadActiveRoster();
+        });
+
+        els.deleteRoster.addEventListener("click", async () => {
+            const adapter = storageAdapter();
+            if (!adapter || !state.activeRosterId) {
+                return;
+            }
+            const deletedName = state.activeRosterName;
+            Store.deleteRosterFromStorage(adapter, state.activeRosterId);
+            refreshSavedRosterList();
+            const nextActiveId = Store.getActiveRosterId(adapter);
+            if (nextActiveId) {
+                const nextRoster = Store.loadRosterFromStorage(adapter, nextActiveId);
+                if (nextRoster) {
+                    await loadSavedRosterDocument(nextRoster, { message: `Deleted ${deletedName}. Loaded ${nextRoster.name}.` });
+                    return;
+                }
+            }
+            await createNewRoster(state.factionSlug || availableFactionSlugs()[0]);
+            setRosterStatus(`Deleted ${deletedName}.`, false);
+        });
+
         els.clearRoster.addEventListener("click", clearRoster);
         els.printRoster.addEventListener("click", () => {
-            if (!state.roster.length) {
-                alert("Add at least one unit before printing.");
+            const derived = deriveRoster();
+            if (!derived.validEntries.length) {
+                alert("Add at least one valid unit before printing.");
                 return;
             }
             window.print();

@@ -254,8 +254,12 @@ class BuilderAppSmokeTests(unittest.TestCase):
         html = html_path.read_text(encoding="utf-8")
         self.assertIn("./data/manifest.json", html)
         self.assertIn("./card_renderer.js", html)
+        self.assertIn("./roster_store.js", html)
         self.assertIn("WahBuilderCardRenderer.renderCard", html)
         self.assertIn("Print roster cards", html)
+        self.assertIn("Import JSON", html)
+        self.assertIn("Export JSON", html)
+        self.assertIn("Saved rosters", html)
         self.assertIn('window.location.protocol === "file:"', html)
 
 
