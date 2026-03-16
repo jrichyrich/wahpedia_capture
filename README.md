@@ -207,6 +207,7 @@ The generated builder report currently tracks two quality buckets directly:
 
 ### Future improvements
 
+- Builder backlog: [docs/builder/BACKLOG.md](./docs/builder/BACKLOG.md)
 - Move to an api-based solution.
 
 ### Contributing
