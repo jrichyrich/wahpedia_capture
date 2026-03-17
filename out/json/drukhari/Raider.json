@@ -1,0 +1,183 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Raider",
+    "faction_slug": "drukhari",
+    "datasheet_slug": "Raider",
+    "output_slug": "drukhari"
+  },
+  "name": "Raider",
+  "base_size": "\u230060mm flying base",
+  "characteristics": {
+    "M": "14\"",
+    "T": "8",
+    "Sv": "4+",
+    "W": "10",
+    "Ld": "7+",
+    "OC": "2",
+    "Invulnerable Save": "6+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Dark lance",
+        "abilities": [],
+        "range": "36\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "12",
+        "ap": "-3",
+        "d": "D6+2"
+      },
+      {
+        "name": "Disintegrator cannon",
+        "abilities": [],
+        "range": "36\"",
+        "a": "3",
+        "bs": "3+",
+        "s": "6",
+        "ap": "-3",
+        "d": "2"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Bladevanes and chainsnares",
+        "abilities": [],
+        "range": "Melee",
+        "a": "D3+3",
+        "ws": "4+",
+        "s": "6",
+        "ap": "-1",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise D3 , Deep Strike , Firing Deck 11"
+    ],
+    "faction": [
+      "Power from Pain"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "At the start of your Command phase , select one of the abilities in the Vanguard of the Dark City section (see above) for this model. Until the start of your next Command phase, this model has that ability.",
+        "name": "Vanguard of the Dark City"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Raider"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "dark lance; bladevanes and chainsnares.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "85"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "VEHICLE",
+    "TRANSPORT",
+    "DEDICATED TRANSPORT",
+    "FLY",
+    "AELDARI",
+    "RAIDER"
+  ],
+  "faction_keywords": [
+    "DRUKHARI"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s dark lance can be replaced with 1 disintegrator cannon.",
+          "items": []
+        }
+      ]
+    },
+    {
+      "title": "VANGUARD OF THE DARK CITY",
+      "entries": [
+        {
+          "type": "text",
+          "text": "Masters of the Shadowed Sky: At the end of your Command phase , if this model is within range of an objective marker you control, and if one or more KABALITE WARRIORS units are embarked within it, that objective marker remains under your control until your opponent\u2019s Level of Control over that objective marker is greater than yours at the end of a phase. Speed of the Kill: Each time a WYCHES unit disembarks from this model (excluding Emergency Disembarkations ), models in that WYCHES unit must be set up wholly within 6\" of this model. Visions of Butchery: While one or more WRACKS units are embarked within this model, for each WRACKS model embarked within this model, add 1 to the Attacks characteristic of this model\u2019s bladevanes and chainsnares. Aethersails: While one or more DRUKHARI units are embarked within this model, you can re-roll Advance and Charge rolls made for this model."
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise D3 , Deep Strike , Firing Deck 11"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Power from Pain"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "At the start of your Command phase , select one of the abilities in the Vanguard of the Dark City section (see above) for this model. Until the start of your next Command phase, this model has that ability.",
+          "name": "Vanguard of the Dark City"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Raider"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "dark lance; bladevanes and chainsnares.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "85"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "TRANSPORT",
+      "entries": [
+        {
+          "type": "text",
+          "text": "This model has a transport capacity of 11 DRUKHARI INFANTRY models (excluding JUMP PACK models)."
+        }
+      ]
+    }
+  ]
+}

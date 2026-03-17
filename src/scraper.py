@@ -1,4 +1,4 @@
-from selenium.webdriver import FirefoxOptions as Options, Firefox as Browser
+from selenium.webdriver import ChromeOptions as Options, Chrome as Browser
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -141,7 +141,7 @@ class WebScraper:
         """
         Resizes the browser window so the full datasheet fits above the viewport bottom.
         """
-        data_card = WebDriverWait(self.driver, 5).until(
+        data_card = WebDriverWait(self.driver, 30).until(
             EC.presence_of_element_located((By.CSS_SELECTOR, "div.dsOuterFrame.datasheet"))
         )
         card_height = self.driver.execute_script(
@@ -189,15 +189,8 @@ class WebScraper:
             int: 0 if successful, 1 otherwise.
         """
         try:
-            ublock_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/addon-1318898-latest.xpi"
-            ublock_path = "./docs/assets/extensions/ublock_origin.xpi"
-
-            if not os.path.exists(ublock_path):
-                response = requests.get(ublock_url)
-                with open(ublock_path, "wb") as file:
-                    file.write(response.content)
-
-            self.driver.install_addon(ublock_path)
+            # uBlock Origin installation for Chrome is different. 
+            # Skipping for now to prioritize core functionality.
             return 0
         except Exception:
             return 1
@@ -235,8 +228,7 @@ class WebScraper:
             None
         """
         driver_options = Options()
-        driver_options.add_argument("--width=" + str(width))
-        driver_options.add_argument("--height=" + str(height))
+        driver_options.add_argument(f"--window-size={width},{height}")
         if headless:
             driver_options.add_argument("--headless")
 
@@ -279,7 +271,7 @@ class WebScraper:
             return 0
         self.driver.get(self.home_url)
         try:
-            cookies_button = WebDriverWait(self.driver, 5).until(
+            cookies_button = WebDriverWait(self.driver, 30).until(
                 EC.element_to_be_clickable((By.XPATH, '//*[@id="ez-manage-settings"]'))
             )
             cookies_button.click()
@@ -287,7 +279,7 @@ class WebScraper:
             return 1
 
         try:
-            save_exit_button = WebDriverWait(self.driver, 5).until(
+            save_exit_button = WebDriverWait(self.driver, 30).until(
                 EC.element_to_be_clickable((By.XPATH, '//*[@id="ez-save-settings"]'))
             )
             save_exit_button.click()
@@ -312,7 +304,7 @@ class WebScraper:
         try:
             self.driver.get(self.home_url)
 
-            menu = WebDriverWait(self.driver, 5).until(
+            menu = WebDriverWait(self.driver, 30).until(
                 EC.presence_of_element_located(
                     (
                         By.XPATH,
@@ -344,7 +336,7 @@ class WebScraper:
         try:
             self.driver.get(self.factions_url + faction_name)
 
-            button = WebDriverWait(self.driver, 5).until(
+            button = WebDriverWait(self.driver, 30).until(
                 EC.presence_of_element_located((By.XPATH, '//*[@id="btnArmyList"]'))
             )
             actions = ActionChains(self.driver)
@@ -381,7 +373,7 @@ class WebScraper:
         self.fit_window_to_card()
         self.prepare_card_for_screenshot()
 
-        data_card = WebDriverWait(self.driver, 5).until(
+        data_card = WebDriverWait(self.driver, 30).until(
             EC.presence_of_element_located((By.CSS_SELECTOR, "div.dsOuterFrame.datasheet"))
         )
         data_card.screenshot(self.output_dir + faction + "/" + unit + ".png")

@@ -1,0 +1,385 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Corsair-Skyreaver-Band",
+    "faction_slug": "drukhari",
+    "datasheet_slug": "Corsair-Skyreaver-Band",
+    "output_slug": "drukhari"
+  },
+  "name": "Corsair Skyreaver Band",
+  "base_size": "\u230025mm",
+  "characteristics": {
+    "M": "14\"",
+    "T": "3",
+    "Sv": "5+",
+    "W": "3",
+    "Ld": "6+",
+    "OC": "1"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Aeldari missile launcher \u2013 starshot",
+        "abilities": [],
+        "range": "48\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "10",
+        "ap": "-2",
+        "d": "D6"
+      },
+      {
+        "name": "Aeldari missile launcher \u2013 sunburst",
+        "abilities": [
+          "BLAST"
+        ],
+        "range": "48\"",
+        "a": "D6",
+        "bs": "3+",
+        "s": "4",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Blaster",
+        "abilities": [
+          "ASSAULT"
+        ],
+        "range": "18\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "8",
+        "ap": "-4",
+        "d": "D6+1"
+      },
+      {
+        "name": "Brace of pistols",
+        "abilities": [
+          "assault",
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "2",
+        "bs": "3+",
+        "s": "3",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Corsair firearm",
+        "abilities": [
+          "assault",
+          "lethal hits"
+        ],
+        "range": "24\"",
+        "a": "4",
+        "bs": "3+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Dark lance",
+        "abilities": [
+          "heavy"
+        ],
+        "range": "36\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "12",
+        "ap": "-3",
+        "d": "D6+2"
+      },
+      {
+        "name": "Dissonance pistol",
+        "abilities": [
+          "devastating wounds",
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "6",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Flamer",
+        "abilities": [
+          "assault",
+          "ignores cover",
+          "torrent"
+        ],
+        "range": "12\"",
+        "a": "D6",
+        "bs": "N/A",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Fusion gun",
+        "abilities": [
+          "assault",
+          "melta 2"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "8",
+        "ap": "-4",
+        "d": "D6+1"
+      },
+      {
+        "name": "Shardcarbine",
+        "abilities": [
+          "anti-infantry 3+",
+          "assault"
+        ],
+        "range": "18\"",
+        "a": "3",
+        "bs": "3+",
+        "s": "2",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Shuriken cannon",
+        "abilities": [
+          "sustained hits 1"
+        ],
+        "range": "24\"",
+        "a": "3",
+        "bs": "3+",
+        "s": "6",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Shuriken catapult",
+        "abilities": [
+          "assault"
+        ],
+        "range": "18\"",
+        "a": "2",
+        "bs": "3+",
+        "s": "4",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Splinter cannon",
+        "abilities": [
+          "anti-infantry 3+",
+          "heavy",
+          "sustained hits 1"
+        ],
+        "range": "36\"",
+        "a": "3",
+        "bs": "4+",
+        "s": "3",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Shredder",
+        "abilities": [
+          "ASSAULT",
+          "TORRENT"
+        ],
+        "range": "18\"",
+        "a": "D6",
+        "bs": "N/A",
+        "s": "6",
+        "ap": "0",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Close combat weapon",
+        "abilities": [],
+        "range": "Melee",
+        "a": "2",
+        "ws": "3+",
+        "s": "3",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Spar-glaive",
+        "abilities": [],
+        "range": "Melee",
+        "a": "4",
+        "ws": "3+",
+        "s": "3",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Void sabre",
+        "abilities": [],
+        "range": "Melee",
+        "a": "3",
+        "ws": "3+",
+        "s": "4",
+        "ap": "-2",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deep Strike"
+    ],
+    "faction": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "At the end of your opponent\u2019s turn, if this unit is not within Engagement Range of one or more enemy units, you can remove this unit from the battlefield and place it into Strategic Reserves .",
+        "name": "Skyleap"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "0-1 Corsair Skyreaver Felarch",
+        "5-10 Corsair Skyreavers"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "brace of pistols; Corsair firearm; close combat weapon.",
+      "label": "Every model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "5 models",
+          "points": "125"
+        },
+        {
+          "label": "6 models",
+          "points": "150"
+        },
+        {
+          "label": "10 models",
+          "points": "250"
+        },
+        {
+          "label": "11 models",
+          "points": "275"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "GRENADES",
+    "ANHRATHE",
+    "FLY",
+    "JUMP PACK",
+    "AELDARI",
+    "CORSAIR SKYREAVER BAND"
+  ],
+  "faction_keywords": [
+    "DRUKHARI",
+    "ASURYANI"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "Any number of models can each have their Corsair firearm replaced with one of the following:",
+          "items": [
+            "1 shardcarbine",
+            "1 shuriken catapult",
+            "1 spar-glaive"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "For every 5 models in this unit, 1 model\u2019s Corsair firearm can be replaced with one of the following:",
+          "items": [
+            "1 Aeldari missile launcher",
+            "1 blaster",
+            "1 dark lance",
+            "1 flamer",
+            "1 fusion gun",
+            "1 shredder",
+            "1 shuriken cannon",
+            "1 splinter cannon"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "The Corsair Skyreaver Felarch can be equipped with one of the following:",
+          "items": [
+            "1 dissonance pistol",
+            "1 void sabre"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deep Strike"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "At the end of your opponent\u2019s turn, if this unit is not within Engagement Range of one or more enemy units, you can remove this unit from the battlefield and place it into Strategic Reserves .",
+          "name": "Skyleap"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "0-1 Corsair Skyreaver Felarch",
+            "5-10 Corsair Skyreavers"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "brace of pistols; Corsair firearm; close combat weapon.",
+          "label": "Every model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "5 models",
+              "points": "125"
+            },
+            {
+              "label": "6 models",
+              "points": "150"
+            },
+            {
+              "label": "10 models",
+              "points": "250"
+            },
+            {
+              "label": "11 models",
+              "points": "275"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

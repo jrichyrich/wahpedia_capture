@@ -1,0 +1,280 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Talos",
+    "faction_slug": "drukhari",
+    "datasheet_slug": "Talos",
+    "output_slug": "drukhari"
+  },
+  "name": "Talos",
+  "base_size": "\u230060mm flying base",
+  "characteristics": {
+    "M": "7\"",
+    "T": "7",
+    "Sv": "3+",
+    "W": "7",
+    "Ld": "7+",
+    "OC": "2",
+    "Invulnerable Save": "6+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Stinger pod",
+        "abilities": [],
+        "range": "24\"",
+        "a": "2D6",
+        "bs": "3+",
+        "s": "5",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Twin haywire blaster",
+        "abilities": [
+          "anti-vehicle 4+",
+          "devastating wounds",
+          "twin-linked"
+        ],
+        "range": "24\"",
+        "a": "2",
+        "bs": "3+",
+        "s": "3",
+        "ap": "-1",
+        "d": "3"
+      },
+      {
+        "name": "Twin heat lance",
+        "abilities": [
+          "assault",
+          "melta 3",
+          "twin-linked"
+        ],
+        "range": "18\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "14",
+        "ap": "-4",
+        "d": "D6"
+      },
+      {
+        "name": "Twin liquifier gun",
+        "abilities": [
+          "anti-infantry 3+",
+          "torrent",
+          "twin-linked"
+        ],
+        "range": "12\"",
+        "a": "D6",
+        "bs": "N/A",
+        "s": "4",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Twin splinter cannon",
+        "abilities": [
+          "anti-infantry 3+",
+          "sustained hits 1",
+          "twin-linked"
+        ],
+        "range": "36\"",
+        "a": "3",
+        "bs": "3+",
+        "s": "3",
+        "ap": "-1",
+        "d": "2"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Chain-flails",
+        "abilities": [],
+        "range": "Melee",
+        "a": "8",
+        "ws": "3+",
+        "s": "6",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Macro-scalpel",
+        "abilities": [],
+        "range": "Melee",
+        "a": "5",
+        "ws": "3+",
+        "s": "7",
+        "ap": "-2",
+        "d": "2"
+      },
+      {
+        "name": "Talos gauntlet",
+        "abilities": [],
+        "range": "Melee",
+        "a": "5",
+        "ws": "4+",
+        "s": "9",
+        "ap": "-2",
+        "d": "3"
+      },
+      {
+        "name": "Talos ichor injector",
+        "abilities": [
+          "extra attacks"
+        ],
+        "range": "Melee",
+        "a": "1",
+        "ws": "2+",
+        "s": "8",
+        "ap": "-2",
+        "d": "D6"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise 1 , Feel No Pain 5+"
+    ],
+    "faction": [
+      "Power from Pain"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "If a model in this unit is equipped with 2 macro-scalpels, those weapons have the [TWIN-LINKED] ability.",
+        "name": "Devoted to Pain"
+      },
+      {
+        "type": "rule",
+        "text": "Each time this unit destroys an enemy unit, you gain 1 additional Pain token .",
+        "name": "Torture Device"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1-2 Talos"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "twin splinter cannon; 2 macro-scalpels.",
+      "label": "Every model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "80"
+        },
+        {
+          "label": "2 models",
+          "points": "160"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "MONSTER",
+    "HAEMONCULUS COVENS",
+    "FLY",
+    "AELDARI",
+    "TALOS"
+  ],
+  "faction_keywords": [
+    "DRUKHARI"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "Any number of models can each replace their twin splinter cannon with one of the following:",
+          "items": [
+            "1 stinger pod",
+            "1 twin haywire blaster",
+            "1 twin heat lance"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "Any number of models can each replace one of their macro-scalpels with one of the following:",
+          "items": [
+            "1 Talos ichor injector",
+            "1 twin liquifier gun"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "Any number of models can each replace one of their macro-scalpels with one of the following:",
+          "items": [
+            "1 chain flails",
+            "1 Talos gauntlet"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise 1 , Feel No Pain 5+"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Power from Pain"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "If a model in this unit is equipped with 2 macro-scalpels, those weapons have the [TWIN-LINKED] ability.",
+          "name": "Devoted to Pain"
+        },
+        {
+          "type": "rule",
+          "text": "Each time this unit destroys an enemy unit, you gain 1 additional Pain token .",
+          "name": "Torture Device"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1-2 Talos"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "twin splinter cannon; 2 macro-scalpels.",
+          "label": "Every model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "80"
+            },
+            {
+              "label": "2 models",
+              "points": "160"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

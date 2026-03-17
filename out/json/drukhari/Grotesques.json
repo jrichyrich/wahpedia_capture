@@ -1,0 +1,185 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Grotesques",
+    "faction_slug": "drukhari",
+    "datasheet_slug": "Grotesques",
+    "output_slug": "drukhari"
+  },
+  "name": "Grotesques",
+  "base_size": "\u230040mm",
+  "characteristics": {
+    "M": "7\"",
+    "T": "5",
+    "Sv": "6+",
+    "W": "4",
+    "Ld": "7+",
+    "OC": "1",
+    "Invulnerable Save": "6+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Liquifier gun",
+        "abilities": [
+          "anti-infantry 3+",
+          "torrent"
+        ],
+        "range": "12\"",
+        "a": "D6",
+        "bs": "N/A",
+        "s": "4",
+        "ap": "-1",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Monstrous weapons",
+        "abilities": [],
+        "range": "Melee",
+        "a": "4",
+        "ws": "3+",
+        "s": "5",
+        "ap": "-2",
+        "d": "2"
+      },
+      {
+        "name": "Paired monstrous weapons",
+        "abilities": [
+          "twin-linked"
+        ],
+        "range": "Melee",
+        "a": "4",
+        "ws": "3+",
+        "s": "5",
+        "ap": "-2",
+        "d": "2"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Feel No Pain 5+"
+    ],
+    "faction": [
+      "Power from Pain"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this unit ends a Charge move , select one enemy unit within Engagement Range of it, then roll one D6 for each model in this unit that is within Engagement Range of that enemy unit: for each 4+, that enemy unit suffers D3 mortal wounds .",
+        "name": "Monstrous Charge"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "3-6 Grotesques"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "paired monstrous weapons.",
+      "label": "Every model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "3 models",
+          "points": "80"
+        },
+        {
+          "label": "6 models",
+          "points": "170"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "HAEMONCULUS COVENS",
+    "AELDARI",
+    "GROTESQUES"
+  ],
+  "faction_keywords": [
+    "DRUKHARI"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "Any number of models can each replace their paired monstrous weapons with 1 monstrous weapon and 1 liquifier gun.",
+          "items": []
+        }
+      ]
+    },
+    {
+      "title": "MONSTROUS HULKS",
+      "entries": [
+        {
+          "type": "text",
+          "text": "This unit cannot embark within a VENOM , but it can embark within other DRUKHARI TRANSPORTS ; when doing so, each GROTESQUE model takes up the space of 3 models."
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Feel No Pain 5+"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Power from Pain"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this unit ends a Charge move , select one enemy unit within Engagement Range of it, then roll one D6 for each model in this unit that is within Engagement Range of that enemy unit: for each 4+, that enemy unit suffers D3 mortal wounds .",
+          "name": "Monstrous Charge"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "3-6 Grotesques"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "paired monstrous weapons.",
+          "label": "Every model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "3 models",
+              "points": "80"
+            },
+            {
+              "label": "6 models",
+              "points": "170"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

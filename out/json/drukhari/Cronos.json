@@ -1,0 +1,180 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Cronos",
+    "faction_slug": "drukhari",
+    "datasheet_slug": "Cronos",
+    "output_slug": "drukhari"
+  },
+  "name": "Cronos",
+  "base_size": "\u230060mm flying base",
+  "characteristics": {
+    "M": "7\"",
+    "T": "7",
+    "Sv": "3+",
+    "W": "7",
+    "Ld": "7+",
+    "OC": "2",
+    "Invulnerable Save": "6+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Spirit syphon",
+        "abilities": [
+          "ignores cover",
+          "torrent"
+        ],
+        "range": "12\"",
+        "a": "D6",
+        "bs": "N/A",
+        "s": "5",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Spirit vortex",
+        "abilities": [
+          "blast",
+          "ignores cover"
+        ],
+        "range": "18\"",
+        "a": "D6",
+        "bs": "3+",
+        "s": "5",
+        "ap": "-1",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Spirit-leech tentacles",
+        "abilities": [
+          "anti-infantry 2+"
+        ],
+        "range": "Melee",
+        "a": "6",
+        "ws": "3+",
+        "s": "5",
+        "ap": "-1",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise 1 , Feel No Pain 5+"
+    ],
+    "faction": [
+      "Power from Pain"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time you spend 1 Pain token to Empower a friendly unit within 9\" of this unit, roll one D6, adding 1 to the result if one or more models in this unit are not equipped with a spirit vortex: on a 5+, you gain 1 Pain token.",
+        "name": "Pain Engine (Aura)"
+      },
+      {
+        "type": "rule",
+        "text": "Pain tokens you spend for reasons other than Empowering a unit do not trigger this ability.",
+        "name": "Designer\u2019s Note"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1-2 Cronos"
+      ]
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "55"
+        },
+        {
+          "label": "2 models",
+          "points": "110"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "MONSTER",
+    "HAEMONCULUS COVENS",
+    "FLY",
+    "AELDARI",
+    "CRONOS"
+  ],
+  "faction_keywords": [
+    "DRUKHARI"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "Any number of models can each be equipped with 1 spirit vortex.",
+          "items": []
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise 1 , Feel No Pain 5+"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Power from Pain"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time you spend 1 Pain token to Empower a friendly unit within 9\" of this unit, roll one D6, adding 1 to the result if one or more models in this unit are not equipped with a spirit vortex: on a 5+, you gain 1 Pain token.",
+          "name": "Pain Engine (Aura)"
+        },
+        {
+          "type": "rule",
+          "text": "Pain tokens you spend for reasons other than Empowering a unit do not trigger this ability.",
+          "name": "Designer\u2019s Note"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1-2 Cronos"
+          ]
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "55"
+            },
+            {
+              "label": "2 models",
+              "points": "110"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

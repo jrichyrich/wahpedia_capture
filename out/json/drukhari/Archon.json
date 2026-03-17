@@ -1,0 +1,243 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Archon",
+    "faction_slug": "drukhari",
+    "datasheet_slug": "Archon",
+    "output_slug": "drukhari"
+  },
+  "name": "Archon",
+  "base_size": "\u230032mm",
+  "characteristics": {
+    "M": "7\"",
+    "T": "3",
+    "Sv": "4+",
+    "W": "4",
+    "Ld": "6+",
+    "OC": "1",
+    "Invulnerable Save": "2+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Blast pistol",
+        "abilities": [
+          "pistol"
+        ],
+        "range": "6\"",
+        "a": "1",
+        "bs": "2+",
+        "s": "8",
+        "ap": "-3",
+        "d": "D3"
+      },
+      {
+        "name": "Splinter pistol",
+        "abilities": [
+          "anti-infantry 3+",
+          "assault",
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "2+",
+        "s": "2",
+        "ap": "0",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Agoniser",
+        "abilities": [
+          "anti-infantry 3+"
+        ],
+        "range": "Melee",
+        "a": "6",
+        "ws": "2+",
+        "s": "3",
+        "ap": "-2",
+        "d": "1"
+      },
+      {
+        "name": "Huskblade",
+        "abilities": [
+          "devastating wounds"
+        ],
+        "range": "Melee",
+        "a": "4",
+        "ws": "2+",
+        "s": "3",
+        "ap": "-2",
+        "d": "3"
+      },
+      {
+        "name": "Master-crafted power weapon",
+        "abilities": [],
+        "range": "Melee",
+        "a": "5",
+        "ws": "2+",
+        "s": "4",
+        "ap": "-2",
+        "d": "2"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Leader"
+    ],
+    "faction": [
+      "Power from Pain"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Once per battle, at the start of any phase, you can select one friendly DRUKHARI unit that is Battle-shocked and within 12\" of this model. That unit is no longer Battle-shocked.",
+        "name": "Overlord"
+      },
+      {
+        "type": "rule",
+        "text": "Once per battle round , one model from your army with this ability can use it when its unit is targeted with a Stratagem. If it does, reduce the CP cost of that use of that Stratagem by 1CP.",
+        "name": "Devious Mastermind"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Archon"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "splinter pistol; huskblade; shadowfield.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "80"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "KABAL",
+    "CHARACTER",
+    "AELDARI",
+    "ARCHON"
+  ],
+  "faction_keywords": [
+    "DRUKHARI"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model's splinter pistol can be replaced with one of the following:",
+          "items": [
+            "1 blast pistol",
+            "1 soul trap"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "This model\u2019s huskblade can be replaced with one of the following:",
+          "items": [
+            "1 agoniser",
+            "1 master-crafted power weapon"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Leader"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Power from Pain"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Once per battle, at the start of any phase, you can select one friendly DRUKHARI unit that is Battle-shocked and within 12\" of this model. That unit is no longer Battle-shocked.",
+          "name": "Overlord"
+        },
+        {
+          "type": "rule",
+          "text": "Once per battle round , one model from your army with this ability can use it when its unit is targeted with a Stratagem. If it does, reduce the CP cost of that use of that Stratagem by 1CP.",
+          "name": "Devious Mastermind"
+        }
+      ]
+    },
+    {
+      "title": "WARGEAR ABILITIES",
+      "entries": [
+        {
+          "type": "statement",
+          "text": "You cannot re-roll invulnerable saving throws made for the bearer. The first time an invulnerable saving throw made for the bearer is failed, until the end of the battle, the bearer has no invulnerable save.",
+          "label": "Shadowfield"
+        },
+        {
+          "type": "statement",
+          "text": "Add 1 to the Attacks and Strength characteristics of the bearer\u2019s melee weapons. The first time the bearer makes a melee attack that destroys an enemy model, after all the bearer\u2019s attacks have been resolved, until the end of the battle, add an additional 1 to the Attacks and Strength characteristics of the bearer\u2019s melee weapons.",
+          "label": "Soul Trap"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Archon"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "splinter pistol; huskblade; shadowfield.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "80"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "LEADER",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "Hand of the Archon",
+            "Incubi",
+            "Kabalite Warriors"
+          ]
+        }
+      ]
+    }
+  ]
+}

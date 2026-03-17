@@ -1,0 +1,234 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Razorwing-Jetfighter",
+    "faction_slug": "drukhari",
+    "datasheet_slug": "Razorwing-Jetfighter",
+    "output_slug": "drukhari"
+  },
+  "name": "Razorwing Jetfighter",
+  "base_size": "\u2300120 x 92mm flying base",
+  "characteristics": {
+    "M": "20+\"",
+    "T": "8",
+    "Sv": "4+",
+    "W": "10",
+    "Ld": "7+",
+    "OC": "0",
+    "Invulnerable Save": "6+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Dark Lance",
+        "abilities": [],
+        "range": "36\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "12",
+        "ap": "-3",
+        "d": "D6+2"
+      },
+      {
+        "name": "Disintegrator cannon",
+        "abilities": [],
+        "range": "36\"",
+        "a": "3",
+        "bs": "3+",
+        "s": "6",
+        "ap": "-3",
+        "d": "2"
+      },
+      {
+        "name": "Razorwing missiles \u2013 monoscythe missiles",
+        "abilities": [
+          "blast"
+        ],
+        "range": "48\"",
+        "a": "D6",
+        "bs": "3+",
+        "s": "6",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Razorwing missiles \u2013 neurotoxin missiles",
+        "abilities": [
+          "anti-infantry 2+",
+          "blast"
+        ],
+        "range": "48\"",
+        "a": "D6+3",
+        "bs": "3+",
+        "s": "2",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Razorwing missiles \u2013 shatterfield missiles",
+        "abilities": [
+          "blast"
+        ],
+        "range": "48\"",
+        "a": "D6",
+        "bs": "3+",
+        "s": "7",
+        "ap": "-2",
+        "d": "1"
+      },
+      {
+        "name": "Splinter cannon",
+        "abilities": [
+          "anti-infantry 3+",
+          "sustained hits 1"
+        ],
+        "range": "36\"",
+        "a": "3",
+        "bs": "3+",
+        "s": "3",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Twin splinter rifle",
+        "abilities": [
+          "anti-infantry 3+",
+          "assault",
+          "rapid fire 2",
+          "twin-linked"
+        ],
+        "range": "24\"",
+        "a": "2",
+        "bs": "3+",
+        "s": "2",
+        "ap": "0",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Bladed wings",
+        "abilities": [],
+        "range": "Melee",
+        "a": "3",
+        "ws": "4+",
+        "s": "6",
+        "ap": "-1",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise D3 , Stealth"
+    ],
+    "faction": [
+      "Power from Pain"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time a model in this unit makes a ranged attack that targets an enemy unit (excluding units that can FLY ), add 1 to the Hit roll .",
+        "name": "Ground Attack Craft"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Razorwing Jetfighter"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "2 dark lances; Razorwing missiles; twin splinter rifle; bladed wings.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "170"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "VEHICLE",
+    "FLY",
+    "AIRCRAFT",
+    "AELDARI",
+    "RAZORWING JETFIGHTER"
+  ],
+  "faction_keywords": [
+    "DRUKHARI"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s 2 dark lances can be replaced with 2 disintegrator cannons.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "This model\u2019s twin splinter rifle can be replaced with 1 splinter cannon.",
+          "items": []
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise D3 , Stealth"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Power from Pain"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time a model in this unit makes a ranged attack that targets an enemy unit (excluding units that can FLY ), add 1 to the Hit roll .",
+          "name": "Ground Attack Craft"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Razorwing Jetfighter"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "2 dark lances; Razorwing missiles; twin splinter rifle; bladed wings.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "170"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

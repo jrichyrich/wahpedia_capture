@@ -1,0 +1,172 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Haemonculus",
+    "faction_slug": "drukhari",
+    "datasheet_slug": "Haemonculus",
+    "output_slug": "drukhari"
+  },
+  "name": "Haemonculus",
+  "base_size": "\u230025mm",
+  "characteristics": {
+    "M": "7\"",
+    "T": "4",
+    "Sv": "5+",
+    "W": "5",
+    "Ld": "7+",
+    "OC": "1",
+    "Invulnerable Save": "6+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Stinger pistol",
+        "abilities": [
+          "anti-infantry 2+",
+          "pistol",
+          "precision"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "2+",
+        "s": "2",
+        "ap": "-1",
+        "d": "D3"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Haemonculus tools and scissorhands",
+        "abilities": [
+          "anti-infantry 2+",
+          "precision"
+        ],
+        "range": "Melee",
+        "a": "5",
+        "ws": "2+",
+        "s": "3",
+        "ap": "-1",
+        "d": "D3"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Feel No Pain 5+ , Leader"
+    ],
+    "faction": [
+      "Power from Pain"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While an enemy unit is within 6\" of this model, worsen the Leadership characteristic of models in that unit by 1. In addition, in the Battle-shock step of your opponent\u2019s Command phase , if such an enemy unit is below its Starting Strength , it must take a Battle-shock test.",
+        "name": "Fear Incarnate (Aura)"
+      },
+      {
+        "type": "rule",
+        "text": "In your Command phase , if one or more models from your army with this ability are on the battlefield, roll one D6: on a 4+, you gain 1 Pain token .",
+        "name": "Pain Adept"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Haemonculus"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "stinger pistol; Haemonculus tools and scissorhands.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "60"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "HAEMONCULUS COVENS",
+    "CHARACTER",
+    "AELDARI",
+    "HAEMONCULUS"
+  ],
+  "faction_keywords": [
+    "DRUKHARI"
+  ],
+  "sections": [
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Feel No Pain 5+ , Leader"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Power from Pain"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While an enemy unit is within 6\" of this model, worsen the Leadership characteristic of models in that unit by 1. In addition, in the Battle-shock step of your opponent\u2019s Command phase , if such an enemy unit is below its Starting Strength , it must take a Battle-shock test.",
+          "name": "Fear Incarnate (Aura)"
+        },
+        {
+          "type": "rule",
+          "text": "In your Command phase , if one or more models from your army with this ability are on the battlefield, roll one D6: on a 4+, you gain 1 Pain token .",
+          "name": "Pain Adept"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Haemonculus"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "stinger pistol; Haemonculus tools and scissorhands.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "60"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "LEADER",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "Wracks"
+          ]
+        }
+      ]
+    }
+  ]
+}

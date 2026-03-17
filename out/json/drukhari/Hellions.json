@@ -1,0 +1,236 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Hellions",
+    "faction_slug": "drukhari",
+    "datasheet_slug": "Hellions",
+    "output_slug": "drukhari"
+  },
+  "name": "Hellions",
+  "base_size": "\u230032mm flying base",
+  "characteristics": {
+    "M": "14\"",
+    "T": "4",
+    "Sv": "4+",
+    "W": "2",
+    "Ld": "7+",
+    "OC": "1",
+    "Invulnerable Save": "6+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Splinter pistol",
+        "abilities": [
+          "anti-infantry 3+",
+          "assault",
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "2",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Splinter pods",
+        "abilities": [
+          "anti-infantry 3+",
+          "assault",
+          "twin-linked"
+        ],
+        "range": "18\"",
+        "a": "2",
+        "bs": "3+",
+        "s": "2",
+        "ap": "0",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Hellglaive",
+        "abilities": [
+          "lance",
+          "sustained hits 1"
+        ],
+        "range": "Melee",
+        "a": "3",
+        "ws": "3+",
+        "s": "4",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Power weapon",
+        "abilities": [
+          "anti-infantry 3+",
+          "lance",
+          "sustained hits 1"
+        ],
+        "range": "Melee",
+        "a": "4",
+        "ws": "3+",
+        "s": "3",
+        "ap": "-2",
+        "d": "1"
+      },
+      {
+        "name": "Stunclaw",
+        "abilities": [
+          "devastating wounds",
+          "lance",
+          "precision"
+        ],
+        "range": "Melee",
+        "a": "4",
+        "ws": "3+",
+        "s": "3",
+        "ap": "-1",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deep Strike"
+    ],
+    "faction": [
+      "Power from Pain"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Once per turn, when an enemy unit ends a Normal , Advance or Fall Back move within 9\" of this unit, this unit can make a Normal move of up to D6\".",
+        "name": "Skyboard Evasion"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Helliarch",
+        "4-9 Hellions"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "splinter pods; hellglaive.",
+      "label": "Every model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "5 models",
+          "points": "85"
+        },
+        {
+          "label": "10 models",
+          "points": "170"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "MOUNTED",
+    "FLY",
+    "AELDARI",
+    "WYCH CULT",
+    "HELLIONS"
+  ],
+  "faction_keywords": [
+    "DRUKHARI"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "The Helliarch can be equipped with 1 phantasm grenade launcher.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "The Helliarch\u2019s hellglaive can be replaced with one of the following:",
+          "items": [
+            "1 splinter pistol and 1 power weapon.",
+            "1 splinter pistol and 1 stunclaw."
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "If the Helliarch is equipped with 1 splinter pistol, it can be equipped with 1 hellglaive (that model\u2019s hellglaive cannot be replaced).",
+          "items": []
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deep Strike"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Power from Pain"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Once per turn, when an enemy unit ends a Normal , Advance or Fall Back move within 9\" of this unit, this unit can make a Normal move of up to D6\".",
+          "name": "Skyboard Evasion"
+        }
+      ]
+    },
+    {
+      "title": "WARGEAR ABILITIES",
+      "entries": [
+        {
+          "type": "statement",
+          "text": "The bearer\u2019s unit has the SMOKE and GRENADES keywords.",
+          "label": "Phantasm Grenade Launcher"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Helliarch",
+            "4-9 Hellions"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "splinter pods; hellglaive.",
+          "label": "Every model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "5 models",
+              "points": "85"
+            },
+            {
+              "label": "10 models",
+              "points": "170"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

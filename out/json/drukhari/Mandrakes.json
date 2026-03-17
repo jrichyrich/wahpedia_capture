@@ -1,0 +1,159 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Mandrakes",
+    "faction_slug": "drukhari",
+    "datasheet_slug": "Mandrakes",
+    "output_slug": "drukhari"
+  },
+  "name": "Mandrakes",
+  "base_size": "\u230028.5mm",
+  "characteristics": {
+    "M": "8\"",
+    "T": "3",
+    "Sv": "7+",
+    "W": "1",
+    "Ld": "7+",
+    "OC": "1",
+    "Invulnerable Save": "5+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Baleblast",
+        "abilities": [
+          "assault",
+          "devastating wounds",
+          "ignores cover"
+        ],
+        "range": "18\"",
+        "a": "2",
+        "bs": "3+",
+        "s": "5",
+        "ap": "-1",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Glimmersteel blade",
+        "abilities": [
+          "devastating wounds"
+        ],
+        "range": "Melee",
+        "a": "3",
+        "ws": "3+",
+        "s": "5",
+        "ap": "-1",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deep Strike , Infiltrators , Stealth"
+    ],
+    "faction": [
+      "Power from Pain"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "This unit cannot be targeted by ranged attacks unless the attacking model is within 18\".",
+        "name": "Shade Weavers"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Nightfiend",
+        "4-9 Mandrakes"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "baleblast; glimmersteel blade.",
+      "label": "Every model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "5 models",
+          "points": "75"
+        },
+        {
+          "label": "10 models",
+          "points": "150"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "AELDARI",
+    "BLADES FOR HIRE",
+    "MANDRAKES"
+  ],
+  "faction_keywords": [
+    "DRUKHARI"
+  ],
+  "sections": [
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deep Strike , Infiltrators , Stealth"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Power from Pain"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "This unit cannot be targeted by ranged attacks unless the attacking model is within 18\".",
+          "name": "Shade Weavers"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Nightfiend",
+            "4-9 Mandrakes"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "baleblast; glimmersteel blade.",
+          "label": "Every model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "5 models",
+              "points": "75"
+            },
+            {
+              "label": "10 models",
+              "points": "150"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

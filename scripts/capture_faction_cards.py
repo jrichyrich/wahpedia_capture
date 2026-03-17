@@ -4,7 +4,7 @@ import re
 import time
 from pathlib import Path
 
-from selenium.webdriver import Firefox, FirefoxOptions
+from selenium.webdriver import Chrome as Firefox, ChromeOptions as FirefoxOptions
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
@@ -410,8 +410,7 @@ def clear_outputs(output_dir: Path, source_dir: Path, output_slug: str) -> None:
 def build_driver() -> tuple[Firefox, WebDriverWait]:
     options = FirefoxOptions()
     options.add_argument("--headless")
-    options.add_argument("--width=1800")
-    options.add_argument("--height=2200")
+    options.add_argument("--window-size=1800,2200")
     # `none` avoids long waits on Wahapedia assets, but we must verify the page title
     # before saving so we don't capture the previous datasheet during navigation.
     options.page_load_strategy = "none"

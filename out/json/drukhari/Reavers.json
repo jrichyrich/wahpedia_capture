@@ -1,0 +1,225 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Reavers",
+    "faction_slug": "drukhari",
+    "datasheet_slug": "Reavers",
+    "output_slug": "drukhari"
+  },
+  "name": "Reavers",
+  "base_size": "\u230032mm flying base",
+  "characteristics": {
+    "M": "16\"",
+    "T": "4",
+    "Sv": "4+",
+    "W": "2",
+    "Ld": "7+",
+    "OC": "2",
+    "Invulnerable Save": "6+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Blaster",
+        "abilities": [
+          "assault"
+        ],
+        "range": "18\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "8",
+        "ap": "-4",
+        "d": "D6+1"
+      },
+      {
+        "name": "Heat lance",
+        "abilities": [
+          "assault",
+          "melta 3"
+        ],
+        "range": "18\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "14",
+        "ap": "-4",
+        "d": "D6"
+      },
+      {
+        "name": "Splinter pistol",
+        "abilities": [
+          "anti-infantry 3+",
+          "assault",
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "2",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Splinter rifle",
+        "abilities": [
+          "anti-infantry 3+",
+          "assault"
+        ],
+        "range": "24\"",
+        "a": "2",
+        "bs": "3+",
+        "s": "2",
+        "ap": "0",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Bladevanes",
+        "abilities": [
+          "lance"
+        ],
+        "range": "Melee",
+        "a": "4",
+        "ws": "3+",
+        "s": "4",
+        "ap": "-1",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [],
+    "faction": [
+      "Power from Pain"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this unit ends a Normal or Advance move , you can select one enemy unit (excluding MONSTERS and VEHICLES ) that it moved over during that move, then roll one D6 for each model in this unit: for each 4+, that enemy unit suffers 1 mortal wound .",
+        "name": "Eviscerating Fly-by"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Arena Champion",
+        "2-5 Reavers"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "splinter pistol; splinter rifle; bladevanes.",
+      "label": "Every model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "3 models",
+          "points": "70"
+        },
+        {
+          "label": "6 models",
+          "points": "140"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "MOUNTED",
+    "WYCH CULT",
+    "FLY",
+    "AELDARI",
+    "REAVERS"
+  ],
+  "faction_keywords": [
+    "DRUKHARI"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "For every 3 models in this unit, 1 model\u2019s splinter rifle can be replaced with one of the following:",
+          "items": [
+            "1 blaster",
+            "1 heat lance"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "For every 3 models in this unit, 1 model can be equipped with one of the following:",
+          "items": [
+            "1 cluster caltrops",
+            "1 grav-talon"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Power from Pain"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this unit ends a Normal or Advance move , you can select one enemy unit (excluding MONSTERS and VEHICLES ) that it moved over during that move, then roll one D6 for each model in this unit: for each 4+, that enemy unit suffers 1 mortal wound .",
+          "name": "Eviscerating Fly-by"
+        }
+      ]
+    },
+    {
+      "title": "WARGEAR ABILITIES",
+      "entries": [
+        {
+          "type": "statement",
+          "text": "Each time you roll to inflict wounds using this unit\u2019s Eviscerating Fly-by ability, you can re-roll one D6 for each model in this unit equipped with cluster caltrops.",
+          "label": "Cluster Caltrops"
+        },
+        {
+          "type": "statement",
+          "text": "The bearer\u2019s melee weapons have an Armour Penetration characteristic of -2 and the [LETHAL HITS] ability.",
+          "label": "Grav-talon"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Arena Champion",
+            "2-5 Reavers"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "splinter pistol; splinter rifle; bladevanes.",
+          "label": "Every model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "3 models",
+              "points": "70"
+            },
+            {
+              "label": "6 models",
+              "points": "140"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,202 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Voidraven-Bomber",
+    "faction_slug": "drukhari",
+    "datasheet_slug": "Voidraven-Bomber",
+    "output_slug": "drukhari"
+  },
+  "name": "Voidraven Bomber",
+  "base_size": "\u2300120 x 92mm flying base",
+  "characteristics": {
+    "M": "20+\"",
+    "T": "9",
+    "Sv": "4+",
+    "W": "12",
+    "Ld": "7+",
+    "OC": "0",
+    "Invulnerable Save": "6+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Dark scythe",
+        "abilities": [],
+        "range": "24\"",
+        "a": "6",
+        "bs": "3+",
+        "s": "8",
+        "ap": "-4",
+        "d": "2"
+      },
+      {
+        "name": "Void lance",
+        "abilities": [],
+        "range": "36\"",
+        "a": "2",
+        "bs": "3+",
+        "s": "14",
+        "ap": "-4",
+        "d": "D6+2"
+      },
+      {
+        "name": "Voidraven missiles \u2013 implosion missiles",
+        "abilities": [
+          "blast"
+        ],
+        "range": "48\"",
+        "a": "D3",
+        "bs": "3+",
+        "s": "9",
+        "ap": "-2",
+        "d": "3"
+      },
+      {
+        "name": "Voidraven missiles \u2013 shatterfield missiles",
+        "abilities": [
+          "blast"
+        ],
+        "range": "48\"",
+        "a": "D6",
+        "bs": "3+",
+        "s": "7",
+        "ap": "-2",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Bladed wings",
+        "abilities": [],
+        "range": "Melee",
+        "a": "3",
+        "ws": "4+",
+        "s": "6",
+        "ap": "-1",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise D3 , Stealth"
+    ],
+    "faction": [
+      "Power from Pain"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Once per battle, after this unit ends a Normal move , you can select one enemy model that it moved over during that move, then roll one D6 for each enemy unit within D6\" of that model: on a 4+, that enemy unit suffers D6 mortal wounds .",
+        "name": "Void Mine"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Voidraven Bomber"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "2 void lances; bladed wings.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "245"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "VEHICLE",
+    "AIRCRAFT",
+    "FLY",
+    "AELDARI",
+    "VOIDRAVEN BOMBER"
+  ],
+  "faction_keywords": [
+    "DRUKHARI"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model can be equipped with 1 Voidraven missiles.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "This model\u2019s 2 void lances can be replaced with 2 dark scythes.",
+          "items": []
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise D3 , Stealth"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Power from Pain"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Once per battle, after this unit ends a Normal move , you can select one enemy model that it moved over during that move, then roll one D6 for each enemy unit within D6\" of that model: on a 4+, that enemy unit suffers D6 mortal wounds .",
+          "name": "Void Mine"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Voidraven Bomber"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "2 void lances; bladed wings.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "245"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DAMAGED: 1-4 WOUNDS REMAINING",
+      "entries": [
+        {
+          "type": "text",
+          "text": "While this model has 1-4 wounds remaining, each time this model makes an attack, subtract 1 from the Hit roll ."
+        }
+      ]
+    }
+  ]
+}

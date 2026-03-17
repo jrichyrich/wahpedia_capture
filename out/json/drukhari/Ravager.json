@@ -1,0 +1,173 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Ravager",
+    "faction_slug": "drukhari",
+    "datasheet_slug": "Ravager",
+    "output_slug": "drukhari"
+  },
+  "name": "Ravager",
+  "base_size": "\u230060mm flying base",
+  "characteristics": {
+    "M": "14\"",
+    "T": "9",
+    "Sv": "4+",
+    "W": "11",
+    "Ld": "7+",
+    "OC": "3",
+    "Invulnerable Save": "6+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Dark lance",
+        "abilities": [],
+        "range": "36\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "12",
+        "ap": "-3",
+        "d": "D6+2"
+      },
+      {
+        "name": "Disintegrator cannon",
+        "abilities": [],
+        "range": "36\"",
+        "a": "3",
+        "bs": "3+",
+        "s": "6",
+        "ap": "-3",
+        "d": "2"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Bladevanes",
+        "abilities": [],
+        "range": "Melee",
+        "a": "3",
+        "ws": "4+",
+        "s": "6",
+        "ap": "-1",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise D3 , Deep Strike"
+    ],
+    "faction": [
+      "Power from Pain"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this model makes an attack that targets an enemy unit that is at its Starting Strength , you can re-roll the Hit roll .",
+        "name": "Eradicate the Foe"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Ravager"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "3 dark lances; bladevanes.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "110"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "VEHICLE",
+    "KABAL",
+    "FLY",
+    "AELDARI",
+    "RAVAGER"
+  ],
+  "faction_keywords": [
+    "DRUKHARI"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "Any number of this model\u2019s dark lances can each be replaced with 1 disintegrator cannon.",
+          "items": []
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise D3 , Deep Strike"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Power from Pain"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model makes an attack that targets an enemy unit that is at its Starting Strength , you can re-roll the Hit roll .",
+          "name": "Eradicate the Foe"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Ravager"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "3 dark lances; bladevanes.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "110"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DAMAGED: 1-4 WOUNDS REMAINING",
+      "entries": [
+        {
+          "type": "text",
+          "text": "While this model has 1-4 wounds remaining, each time it makes an attack, subtract 1 from the Hit roll ."
+        }
+      ]
+    }
+  ]
+}

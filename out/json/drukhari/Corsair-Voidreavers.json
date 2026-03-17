@@ -1,0 +1,293 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Corsair-Voidreavers",
+    "faction_slug": "drukhari",
+    "datasheet_slug": "Corsair-Voidreavers",
+    "output_slug": "drukhari"
+  },
+  "name": "Corsair Voidreavers",
+  "base_size": "\u230028.5mm",
+  "characteristics": {
+    "M": "7\"",
+    "T": "3",
+    "Sv": "4+",
+    "W": "1",
+    "Ld": "7+",
+    "OC": "2"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Blaster",
+        "abilities": [
+          "assault"
+        ],
+        "range": "18\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "8",
+        "ap": "-4",
+        "d": "D6+1"
+      },
+      {
+        "name": "Neuro disruptor",
+        "abilities": [
+          "anti-infantry 2+",
+          "assault",
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "4",
+        "ap": "-2",
+        "d": "1"
+      },
+      {
+        "name": "Shredder",
+        "abilities": [
+          "assault",
+          "torrent"
+        ],
+        "range": "18\"",
+        "a": "D6",
+        "bs": "N/A",
+        "s": "6",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Shuriken cannon",
+        "abilities": [
+          "lethal hits"
+        ],
+        "range": "24\"",
+        "a": "3",
+        "bs": "3+",
+        "s": "6",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Shuriken pistol",
+        "abilities": [
+          "assault",
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "4",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Shuriken rifle",
+        "abilities": [
+          "assault",
+          "rapid fire 1"
+        ],
+        "range": "24\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "4",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Wraithcannon",
+        "abilities": [],
+        "range": "18\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "14",
+        "ap": "-4",
+        "d": "D6+1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Close combat weapon",
+        "abilities": [],
+        "range": "Melee",
+        "a": "2",
+        "ws": "3+",
+        "s": "3",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Power sword",
+        "abilities": [],
+        "range": "Melee",
+        "a": "2",
+        "ws": "3+",
+        "s": "4",
+        "ap": "-2",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Scouts 7\""
+    ],
+    "faction": [
+      "Battle Focus"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time a model in this unit makes an attack, re-roll a Hit roll of 1. If the target of that attack is within range of an objective marker , you can re-roll the Hit roll instead.",
+        "name": "Reavers of the Void"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Voidreaver Felarch",
+        "4-9 Corsair Voidreavers"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "shuriken pistol; power sword; close combat weapon.",
+      "label": "Every model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "5 models",
+          "points": "65"
+        },
+        {
+          "label": "10 models",
+          "points": "110"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "BATTLELINE",
+    "AELDARI",
+    "GRENADES",
+    "ANHRATHE",
+    "CORSAIR VOIDREAVERS"
+  ],
+  "faction_keywords": [
+    "DRUKHARI",
+    "ASURYANI"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "The Voidreaver Felarch\u2019s shuriken pistol can be replaced with one of the following:",
+          "items": [
+            "1 neuro disruptor",
+            "1 shuriken rifle"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "The Voidreaver Felarch can be equipped with:",
+          "items": [
+            "1 mistshield"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "Any number of Corsair Voidreavers in this unit can each have their shuriken pistol and power sword replaced with 1 shuriken rifle.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "For every 5 models in this unit, 1 Corsair Voidreaver\u2019s power sword or shuriken rifle can be replaced with one of the following:",
+          "items": [
+            "1 blaster",
+            "1 shredder"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "If this unit contains 10 models, 1 Corsair Voidreaver\u2019s shuriken rifle can be replaced with one of the following:",
+          "items": [
+            "1 shuriken cannon",
+            "1 wraithcannon"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Scouts 7\""
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Battle Focus"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time a model in this unit makes an attack, re-roll a Hit roll of 1. If the target of that attack is within range of an objective marker , you can re-roll the Hit roll instead.",
+          "name": "Reavers of the Void"
+        }
+      ]
+    },
+    {
+      "title": "WARGEAR ABILITIES",
+      "entries": [
+        {
+          "type": "statement",
+          "text": "The bearer has a 4+ invulnerable save .",
+          "label": "Mistshield"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Voidreaver Felarch",
+            "4-9 Corsair Voidreavers"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "shuriken pistol; power sword; close combat weapon.",
+          "label": "Every model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "5 models",
+              "points": "65"
+            },
+            {
+              "label": "10 models",
+              "points": "110"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

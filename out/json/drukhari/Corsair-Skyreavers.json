@@ -1,0 +1,275 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Corsair-Skyreavers",
+    "faction_slug": "drukhari",
+    "datasheet_slug": "Corsair-Skyreavers",
+    "output_slug": "drukhari"
+  },
+  "name": "Corsair Skyreavers",
+  "base_size": "\u230028.5mm",
+  "characteristics": {
+    "M": "12\"",
+    "T": "3",
+    "Sv": "5+",
+    "W": "1",
+    "Ld": "7+",
+    "OC": "1"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Blaster",
+        "abilities": [
+          "assault"
+        ],
+        "range": "18\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "8",
+        "ap": "-4",
+        "d": "D6+1"
+      },
+      {
+        "name": "Blast pistol",
+        "abilities": [
+          "assault",
+          "pistol"
+        ],
+        "range": "6\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "8",
+        "ap": "-3",
+        "d": "D3"
+      },
+      {
+        "name": "Flamer",
+        "abilities": [
+          "assault",
+          "ignores cover",
+          "torrent"
+        ],
+        "range": "12\"",
+        "a": "D6",
+        "bs": "N/A",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Fusion gun",
+        "abilities": [
+          "assault",
+          "melta 2"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "8",
+        "ap": "-4",
+        "d": "D6"
+      },
+      {
+        "name": "Neuro disruptor",
+        "abilities": [
+          "anti-infantry 2+",
+          "assault",
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "4",
+        "ap": "-2",
+        "d": "1"
+      },
+      {
+        "name": "Shredder",
+        "abilities": [
+          "assault",
+          "torrent"
+        ],
+        "range": "18\"",
+        "a": "D6",
+        "bs": "N/A",
+        "s": "6",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Shuriken pistol",
+        "abilities": [
+          "assault",
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "4",
+        "ap": "-1",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Corsair blade",
+        "abilities": [],
+        "range": "Melee",
+        "a": "3",
+        "ws": "3+",
+        "s": "4",
+        "ap": "-2",
+        "d": "1"
+      },
+      {
+        "name": "Close combat weapon",
+        "abilities": [],
+        "range": "Melee",
+        "a": "3",
+        "ws": "3+",
+        "s": "3",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deep Strike , Scouts 7\""
+    ],
+    "faction": [
+      "Battle Focus"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "At the end of the Fight phase , if this unit was eligible to fight this phase, and is not within Engagement Range of one or more enemy units, it can make a Normal move of up to D3+3\". Otherwise, if this unit was eligible to fight this phase, this unit can make a Fall Back move of up to D3+3\".",
+        "name": "Raid and Run"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Skyreaver Felarch",
+        "4-9 Skyreavers"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "shuriken pistol; Corsair blade.",
+      "label": "Every model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "5 models",
+          "points": "75"
+        },
+        {
+          "label": "10 models",
+          "points": "150"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "AELDARI",
+    "ANHRATHE",
+    "JUMP PACK",
+    "FLY",
+    "GRENADES",
+    "CORSAIR SKYREAVERS"
+  ],
+  "faction_keywords": [
+    "DRUKHARI",
+    "ASURYANI"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "The Skyreaver Felarch can replace its shuriken pistol with one of the following:",
+          "items": [
+            "1 blast pistol",
+            "1 neuro disruptor"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "For every 5 models in the unit, up to 2 Skyreaver models can each have their shuriken pistol and Corsair blade replaced with one of the following*:",
+          "items": [
+            "1 blaster and 1 close combat weapon",
+            "1 flamer and 1 close combat weapon",
+            "1 fusion gun and 1 close combat weapon",
+            "1 shredder and 1 close combat weapon"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "* You cannot select the same option more than once per unit unless it contains 10 models, in which case you cannot select the same weapon more than twice per unit."
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deep Strike , Scouts 7\""
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Battle Focus"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "At the end of the Fight phase , if this unit was eligible to fight this phase, and is not within Engagement Range of one or more enemy units, it can make a Normal move of up to D3+3\". Otherwise, if this unit was eligible to fight this phase, this unit can make a Fall Back move of up to D3+3\".",
+          "name": "Raid and Run"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Skyreaver Felarch",
+            "4-9 Skyreavers"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "shuriken pistol; Corsair blade.",
+          "label": "Every model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "5 models",
+              "points": "75"
+            },
+            {
+              "label": "10 models",
+              "points": "150"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

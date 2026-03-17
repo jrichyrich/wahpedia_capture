@@ -1,0 +1,262 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Wracks",
+    "faction_slug": "drukhari",
+    "datasheet_slug": "Wracks",
+    "output_slug": "drukhari"
+  },
+  "name": "Wracks",
+  "base_size": "\u230025mm",
+  "characteristics": {
+    "M": "7\"",
+    "T": "4",
+    "Sv": "5+",
+    "W": "2",
+    "Ld": "7+",
+    "OC": "2",
+    "Invulnerable Save": "6+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Hexrifle",
+        "abilities": [
+          "heavy",
+          "precision"
+        ],
+        "range": "36\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "8",
+        "ap": "-2",
+        "d": "3"
+      },
+      {
+        "name": "Liquifier gun",
+        "abilities": [
+          "anti-infantry 3+",
+          "torrent"
+        ],
+        "range": "12\"",
+        "a": "D6",
+        "bs": "N/A",
+        "s": "4",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Ossefactor",
+        "abilities": [
+          "anti-infantry 4+",
+          "devastating wounds"
+        ],
+        "range": "24\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "2",
+        "ap": "-2",
+        "d": "2"
+      },
+      {
+        "name": "Stinger pistol",
+        "abilities": [
+          "anti-infantry 2+",
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "2",
+        "ap": "0",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Power weapon",
+        "abilities": [
+          "anti-infantry 3+"
+        ],
+        "range": "Melee",
+        "a": "3",
+        "ws": "3+",
+        "s": "5",
+        "ap": "-2",
+        "d": "1"
+      },
+      {
+        "name": "Torturer\u2019s tools",
+        "abilities": [
+          "anti-infantry 4+"
+        ],
+        "range": "Melee",
+        "a": "2",
+        "ws": "3+",
+        "s": "4",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Twin torturer\u2019s tools",
+        "abilities": [
+          "anti-infantry 4+",
+          "twin-linked"
+        ],
+        "range": "Melee",
+        "a": "2",
+        "ws": "3+",
+        "s": "4",
+        "ap": "-1",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [],
+    "faction": [
+      "Power from Pain"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "In your Shooting phase and the Fight phase , after this unit has shot or fought, select one enemy unit (excluding VEHICLES ) hit by one or more of those attacks. That unit must take a Battle-shock test .",
+        "name": "Torturer\u2019s Craft"
+      }
+    ],
+    "other": [
+      {
+        "type": "list",
+        "items": [
+          "Melee weapons equipped by non- CHARACTER models in this unit have an Attacks characteristic of 3.",
+          "Melee weapons equipped by non- CHARACTER models in this unit have an Attacks characteristic of 4 and the [HAZARDOUS] ability."
+        ]
+      }
+    ]
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Acothyst",
+        "4-9 Wracks"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "twin torturer\u2019s tools.",
+      "label": "Every model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "5 models",
+          "points": "60"
+        },
+        {
+          "label": "8 models",
+          "points": "100"
+        },
+        {
+          "label": "10 models",
+          "points": "120"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "BATTLELINE",
+    "HAEMONCULUS COVENS",
+    "AELDARI",
+    "WRACKS"
+  ],
+  "faction_keywords": [
+    "DRUKHARI"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "For every 5 models in this unit:",
+          "items": [
+            "1 model\u2019s twin torturer\u2019s tools can be replaced with 1 hexrifle and 1 torturer\u2019s tool",
+            "1 model\u2019s twin torturer\u2019s tools can be replaced with 1 liquifier gun and 1 torturer\u2019s tool",
+            "1 model\u2019s twin torturer\u2019s tools can be replaced with 1 ossefactor and 1 torturer\u2019s tool",
+            "1 model\u2019s twin torturer\u2019s tools can be replaced with 1 stinger pistol and 1 torturer\u2019s tool"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "The Acothyst\u2019s twin torturer\u2019s tools can be replaced with 1 power weapon and 1 torturer\u2019s tool.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "If the Acothyst is not equipped with a power weapon, its torturer\u2019s tool can be replaced with 1 power weapon.",
+          "items": []
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Power from Pain"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "Melee weapons equipped by non- CHARACTER models in this unit have an Attacks characteristic of 3.",
+            "Melee weapons equipped by non- CHARACTER models in this unit have an Attacks characteristic of 4 and the [HAZARDOUS] ability."
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "In your Shooting phase and the Fight phase , after this unit has shot or fought, select one enemy unit (excluding VEHICLES ) hit by one or more of those attacks. That unit must take a Battle-shock test .",
+          "name": "Torturer\u2019s Craft"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Acothyst",
+            "4-9 Wracks"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "twin torturer\u2019s tools.",
+          "label": "Every model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "5 models",
+              "points": "60"
+            },
+            {
+              "label": "8 models",
+              "points": "100"
+            },
+            {
+              "label": "10 models",
+              "points": "120"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

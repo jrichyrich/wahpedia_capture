@@ -1,0 +1,193 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Skyweavers",
+    "faction_slug": "drukhari",
+    "datasheet_slug": "Skyweavers",
+    "output_slug": "drukhari"
+  },
+  "name": "Skyweavers",
+  "base_size": "\u230060mm flying base",
+  "characteristics": {
+    "M": "14\"",
+    "T": "4",
+    "Sv": "4+",
+    "W": "3",
+    "Ld": "6+",
+    "OC": "2",
+    "Invulnerable Save": "4+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Shuriken cannon",
+        "abilities": [
+          "lethal hits"
+        ],
+        "range": "24\"",
+        "a": "3",
+        "bs": "3+",
+        "s": "6",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Skyweaver haywire cannon",
+        "abilities": [
+          "anti-vehicle 4+",
+          "devastating wounds"
+        ],
+        "range": "24\"",
+        "a": "2",
+        "bs": "3+",
+        "s": "3",
+        "ap": "-1",
+        "d": "3"
+      },
+      {
+        "name": "Star bolas",
+        "abilities": [],
+        "range": "12\"",
+        "a": "D3",
+        "bs": "3+",
+        "s": "7",
+        "ap": "-2",
+        "d": "2"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Close combat weapon",
+        "abilities": [],
+        "range": "Melee",
+        "a": "4",
+        "ws": "3+",
+        "s": "3",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Zephyrglaive",
+        "abilities": [],
+        "range": "Melee",
+        "a": "4",
+        "ws": "3+",
+        "s": "6",
+        "ap": "-2",
+        "d": "2"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [],
+    "faction": [
+      "Battle Focus , Disparate Paths"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time an attack targets this unit, subtract 1 from the Hit roll .",
+        "name": "Acrobatic Grace"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "2-4 Skyweavers"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "shuriken cannon; star bolas; close combat weapon.",
+      "label": "Every model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "2 models",
+          "points": "95"
+        },
+        {
+          "label": "4 models",
+          "points": "190"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "MOUNTED",
+    "AELDARI",
+    "FLY",
+    "SMOKE",
+    "SKYWEAVERS"
+  ],
+  "faction_keywords": [
+    "HARLEQUINS"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "Any number of models can each have their shuriken cannon replaced with 1 Skyweaver haywire cannon.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "Any number of models can each have their star bolas replaced with 1 zephyrglaive.",
+          "items": []
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Battle Focus , Disparate Paths"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time an attack targets this unit, subtract 1 from the Hit roll .",
+          "name": "Acrobatic Grace"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "2-4 Skyweavers"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "shuriken cannon; star bolas; close combat weapon.",
+          "label": "Every model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "2 models",
+              "points": "95"
+            },
+            {
+              "label": "4 models",
+              "points": "190"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

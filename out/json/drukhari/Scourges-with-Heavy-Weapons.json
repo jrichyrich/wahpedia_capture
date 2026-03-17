@@ -1,0 +1,303 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Scourges-with-Heavy-Weapons",
+    "faction_slug": "drukhari",
+    "datasheet_slug": "Scourges-with-Heavy-Weapons",
+    "output_slug": "drukhari"
+  },
+  "name": "Scourges with Heavy Weapons",
+  "base_size": "\u230032mm",
+  "characteristics": {
+    "M": "14\"",
+    "T": "3",
+    "Sv": "4+",
+    "W": "1",
+    "Ld": "7+",
+    "OC": "1",
+    "Invulnerable Save": "5+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Blast pistol",
+        "abilities": [
+          "pistol"
+        ],
+        "range": "6\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "8",
+        "ap": "-3",
+        "d": "D3"
+      },
+      {
+        "name": "Blaster",
+        "abilities": [
+          "assault"
+        ],
+        "range": "18\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "8",
+        "ap": "-4",
+        "d": "D6+1"
+      },
+      {
+        "name": "Dark lance",
+        "abilities": [
+          "heavy"
+        ],
+        "range": "36\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "12",
+        "ap": "-3",
+        "d": "D6+2"
+      },
+      {
+        "name": "Haywire blaster",
+        "abilities": [
+          "anti-vehicle 4+",
+          "devastating wounds",
+          "heavy"
+        ],
+        "range": "24\"",
+        "a": "2",
+        "bs": "4+",
+        "s": "3",
+        "ap": "-1",
+        "d": "3"
+      },
+      {
+        "name": "Heat lance",
+        "abilities": [
+          "assault",
+          "heavy",
+          "melta 3"
+        ],
+        "range": "18\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "14",
+        "ap": "-4",
+        "d": "D6"
+      },
+      {
+        "name": "Shardcarbine",
+        "abilities": [
+          "anti-infantry 3+",
+          "assault"
+        ],
+        "range": "18\"",
+        "a": "3",
+        "bs": "3+",
+        "s": "2",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Shredder",
+        "abilities": [
+          "assault",
+          "torrent"
+        ],
+        "range": "18\"",
+        "a": "D6",
+        "bs": "N/A",
+        "s": "6",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Splinter cannon",
+        "abilities": [
+          "anti-infantry 3+",
+          "heavy",
+          "sustained hits 1"
+        ],
+        "range": "36\"",
+        "a": "3",
+        "bs": "4+",
+        "s": "3",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Splinter pistol",
+        "abilities": [
+          "anti-infantry 3+",
+          "assault",
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "2",
+        "ap": "0",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Close combat weapon",
+        "abilities": [],
+        "range": "Melee",
+        "a": "2",
+        "ws": "3+",
+        "s": "3",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Power weapon",
+        "abilities": [
+          "anti-infantry 3+"
+        ],
+        "range": "Melee",
+        "a": "3",
+        "ws": "3+",
+        "s": "3",
+        "ap": "-2",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deep Strike"
+    ],
+    "faction": [
+      "Power from Pain"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "In your Shooting phase , after this unit has shot, if it is not within Engagement Range of one or more enemy units, it can make a Normal move of up to 6\". If it does, until the end of the turn, this unit is not eligible to declare a charge .",
+        "name": "Airborne Evasion"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Solarite",
+        "4 Scourges"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "shardcarbine; close combat weapon.",
+      "label": "The Solarite is equipped with"
+    },
+    {
+      "type": "statement",
+      "text": "splinter cannon; close combat weapon.",
+      "label": "Every Scourge is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "5 models",
+          "points": "130"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "FLY",
+    "GRENADES",
+    "JUMP PACK",
+    "AELDARI",
+    "BLADES FOR HIRE",
+    "SCOURGES",
+    "SCOURGES WITH HEAVY WEAPONS"
+  ],
+  "faction_keywords": [
+    "DRUKHARI"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "The Solarite\u2019s shardcarbine can be replaced with one of the following:",
+          "items": [
+            "1 blast pistol and 1 power weapon",
+            "1 splinter pistol and 1 power weapon"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "Any number of Scourges can each replace their splinter cannon with one of the following:",
+          "items": [
+            "1 blaster",
+            "1 dark lance",
+            "1 haywire blaster",
+            "1 heat lance",
+            "1 shredder"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deep Strike"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Power from Pain"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "In your Shooting phase , after this unit has shot, if it is not within Engagement Range of one or more enemy units, it can make a Normal move of up to 6\". If it does, until the end of the turn, this unit is not eligible to declare a charge .",
+          "name": "Airborne Evasion"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Solarite",
+            "4 Scourges"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "shardcarbine; close combat weapon.",
+          "label": "The Solarite is equipped with"
+        },
+        {
+          "type": "statement",
+          "text": "splinter cannon; close combat weapon.",
+          "label": "Every Scourge is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "5 models",
+              "points": "130"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

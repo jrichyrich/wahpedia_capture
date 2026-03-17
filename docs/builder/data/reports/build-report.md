@@ -1,12 +1,12 @@
 # Builder Catalog Build Report
 
-- Generated at: 2026-03-16T17:21:00+00:00
-- Source root: `/Users/jasricha/Documents/Github_Personal/wahpedia_capture/out/json`
-- Factions imported: 6
-- Total units: 818
+- Generated at: 2026-03-17T02:58:51+00:00
+- Source root: `/Users/lisarichards/Documents/GitHub/wahpedia_capture/out/json`
+- Factions imported: 7
+- Total units: 865
 - Units with missing stats: 0
 - Manual selection units: 0
-- Units with manual wargear: 25
+- Units with manual wargear: 34
 
 ## Factions
 
@@ -33,6 +33,14 @@
 - Missing stats: 0
 - Manual selection units: 0
 - Manual wargear units: 5
+
+### Drukhari
+
+- Catalog: `catalogs/drukhari.json`
+- Units: 47
+- Missing stats: 0
+- Manual selection units: 0
+- Manual wargear units: 9
 
 ### Space Marines
 

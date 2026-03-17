@@ -1,0 +1,190 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Voidweaver",
+    "faction_slug": "drukhari",
+    "datasheet_slug": "Voidweaver",
+    "output_slug": "drukhari"
+  },
+  "name": "Voidweaver",
+  "base_size": "\u230065mm",
+  "characteristics": {
+    "M": "14\"",
+    "T": "6",
+    "Sv": "4+",
+    "W": "6",
+    "Ld": "6+",
+    "OC": "2",
+    "Invulnerable Save": "4+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Prismatic cannon \u2013 dispersed pulse",
+        "abilities": [
+          "blast"
+        ],
+        "range": "24\"",
+        "a": "2D6",
+        "bs": "3+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Prismatic cannon \u2013 focused lances",
+        "abilities": [],
+        "range": "24\"",
+        "a": "2",
+        "bs": "3+",
+        "s": "12",
+        "ap": "-3",
+        "d": "4"
+      },
+      {
+        "name": "Shuriken cannon",
+        "abilities": [
+          "lethal hits"
+        ],
+        "range": "24\"",
+        "a": "3",
+        "bs": "3+",
+        "s": "6",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Voidweaver haywire cannon",
+        "abilities": [
+          "anti-vehicle 4+",
+          "devastating wounds"
+        ],
+        "range": "24\"",
+        "a": "3",
+        "bs": "3+",
+        "s": "4",
+        "ap": "-1",
+        "d": "3"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Close combat weapon",
+        "abilities": [],
+        "range": "Melee",
+        "a": "4",
+        "ws": "3+",
+        "s": "3",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise 1 , Stealth"
+    ],
+    "faction": [
+      "Battle Focus , Disparate Paths"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "This unit can only be selected as the target of a ranged attack if the attacking model is within 18\".",
+        "name": "Polychromatic Camouflage"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Voidweaver"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "2 shuriken cannons; Voidweaver haywire cannon; close combat weapon.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "125"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "VEHICLE",
+    "AELDARI",
+    "FLY",
+    "VOIDWEAVER"
+  ],
+  "faction_keywords": [
+    "HARLEQUINS"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s Voidweaver haywire cannon can be replaced with 1 prismatic cannon.",
+          "items": []
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise 1 , Stealth"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Battle Focus , Disparate Paths"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "This unit can only be selected as the target of a ranged attack if the attacking model is within 18\".",
+          "name": "Polychromatic Camouflage"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Voidweaver"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "2 shuriken cannons; Voidweaver haywire cannon; close combat weapon.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "125"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
