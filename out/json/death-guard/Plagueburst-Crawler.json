@@ -1,0 +1,223 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Plagueburst-Crawler",
+    "faction_slug": "death-guard",
+    "datasheet_slug": "Plagueburst-Crawler",
+    "output_slug": "death-guard"
+  },
+  "name": "Plagueburst Crawler",
+  "base_size": "\u2300Use model",
+  "characteristics": {
+    "M": "10\"",
+    "T": "10",
+    "Sv": "2+",
+    "W": "12",
+    "Ld": "6+",
+    "OC": "3",
+    "Invulnerable Save": "5+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Entropy cannon",
+        "abilities": [
+          "lethal hits"
+        ],
+        "range": "36\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "10",
+        "ap": "-3",
+        "d": "D6+1"
+      },
+      {
+        "name": "Heavy slugger",
+        "abilities": [
+          "lethal hits"
+        ],
+        "range": "36\"",
+        "a": "4",
+        "bs": "3+",
+        "s": "5",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Plagueburst mortar",
+        "abilities": [
+          "blast",
+          "indirect fire",
+          "lethal hits"
+        ],
+        "range": "48\"",
+        "a": "D6+3",
+        "bs": "3+",
+        "s": "8",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Plaguespitter",
+        "abilities": [
+          "anti-infantry 2+",
+          "ignores cover",
+          "torrent"
+        ],
+        "range": "12\"",
+        "a": "D6",
+        "bs": "N/A",
+        "s": "6",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Rothail volley gun",
+        "abilities": [
+          "lethal hits",
+          "rapid fire 3"
+        ],
+        "range": "36\"",
+        "a": "3",
+        "bs": "3+",
+        "s": "5",
+        "ap": "0",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Armoured tracks",
+        "abilities": [],
+        "range": "Melee",
+        "a": "3",
+        "ws": "4+",
+        "s": "6",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise D3"
+    ],
+    "faction": [
+      "Nurgle\u2019s Gift (Aura)"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "In your Shooting phase , each time you select a target for this model\u2019s Plagueburst mortar, roll one D6 for the target unit and every other enemy unit within 3\" of the target unit, adding 1 to that roll if the unit being rolled for is Afflicted . On a 6+, the unit being rolled for is struck by spores; after resolving all of this model\u2019s attacks against the target unit, each unit struck by spores suffers D3 mortal wounds .",
+        "name": "Spore-laced Shock Waves"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Plagueburst Crawler"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "2 entropy cannons; heavy slugger; Plagueburst mortar; armoured tracks.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "210"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "VEHICLE",
+    "CHAOS",
+    "NURGLE",
+    "DAEMON",
+    "PLAGUEBURST CRAWLER"
+  ],
+  "faction_keywords": [
+    "DEATH GUARD"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s 2 entropy cannons can be replaced with 2 plaguespitters.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "This model\u2019s heavy slugger can be replaced with 1 rothail volley gun.",
+          "items": []
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise D3"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Nurgle\u2019s Gift (Aura)"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "In your Shooting phase , each time you select a target for this model\u2019s Plagueburst mortar, roll one D6 for the target unit and every other enemy unit within 3\" of the target unit, adding 1 to that roll if the unit being rolled for is Afflicted . On a 6+, the unit being rolled for is struck by spores; after resolving all of this model\u2019s attacks against the target unit, each unit struck by spores suffers D3 mortal wounds .",
+          "name": "Spore-laced Shock Waves"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Plagueburst Crawler"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "2 entropy cannons; heavy slugger; Plagueburst mortar; armoured tracks.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "210"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DAMAGED: 1-4 WOUNDS REMAINING",
+      "entries": [
+        {
+          "type": "text",
+          "text": "While this model has 1-4 wounds remaining, each time this model makes an attack, subtract 1 from the Hit roll ."
+        }
+      ]
+    }
+  ]
+}

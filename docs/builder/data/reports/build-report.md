@@ -1,12 +1,12 @@
 # Builder Catalog Build Report
 
-- Generated at: 2026-03-17T02:58:51+00:00
+- Generated at: 2026-03-17T05:17:28+00:00
 - Source root: `/Users/lisarichards/Documents/GitHub/wahpedia_capture/out/json`
-- Factions imported: 7
-- Total units: 865
+- Factions imported: 8
+- Total units: 936
 - Units with missing stats: 0
 - Manual selection units: 0
-- Units with manual wargear: 34
+- Units with manual wargear: 38
 
 ## Factions
 
@@ -33,6 +33,14 @@
 - Missing stats: 0
 - Manual selection units: 0
 - Manual wargear units: 5
+
+### Death Guard
+
+- Catalog: `catalogs/death-guard.json`
+- Units: 71
+- Missing stats: 0
+- Manual selection units: 0
+- Manual wargear units: 4
 
 ### Drukhari
 

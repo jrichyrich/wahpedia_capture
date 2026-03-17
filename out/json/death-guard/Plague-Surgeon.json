@@ -1,0 +1,169 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Plague-Surgeon",
+    "faction_slug": "death-guard",
+    "datasheet_slug": "Plague-Surgeon",
+    "output_slug": "death-guard"
+  },
+  "name": "Plague Surgeon",
+  "base_size": "\u230040mm",
+  "characteristics": {
+    "M": "5\"",
+    "T": "6",
+    "Sv": "3+",
+    "W": "4",
+    "Ld": "6+",
+    "OC": "1"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Bolt pistol",
+        "abilities": [
+          "lethal hits",
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Balesword",
+        "abilities": [
+          "lethal hits"
+        ],
+        "range": "Melee",
+        "a": "4",
+        "ws": "3+",
+        "s": "5",
+        "ap": "-2",
+        "d": "2"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Leader"
+    ],
+    "faction": [
+      "Nurgle\u2019s Gift (Aura)"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, in your Command phase , you can return 1 destroyed Bodyguard model to that unit.",
+        "name": "Tainted Narthecium"
+      },
+      {
+        "type": "rule",
+        "text": "At the start of the Fight phase , select one enemy unit within Engagement Range of this model. Until the end of the phase, each time this model makes an attack that targets that unit, an unmodified Hit roll of 5+ scores a Critical Hit . If that unit is Below Half-strength , an unmodified Hit roll of 4+ scores a Critical Hit instead.",
+        "name": "Inflamed Infections"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Plague Surgeon"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "bolt pistol; balesword.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "50"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "CHARACTER",
+    "CHAOS",
+    "NURGLE",
+    "PLAGUE SURGEON"
+  ],
+  "faction_keywords": [
+    "DEATH GUARD"
+  ],
+  "sections": [
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Leader"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Nurgle\u2019s Gift (Aura)"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, in your Command phase , you can return 1 destroyed Bodyguard model to that unit.",
+          "name": "Tainted Narthecium"
+        },
+        {
+          "type": "rule",
+          "text": "At the start of the Fight phase , select one enemy unit within Engagement Range of this model. Until the end of the phase, each time this model makes an attack that targets that unit, an unmodified Hit roll of 5+ scores a Critical Hit . If that unit is Below Half-strength , an unmodified Hit roll of 4+ scores a Critical Hit instead.",
+          "name": "Inflamed Infections"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Plague Surgeon"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "bolt pistol; balesword.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "50"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "LEADER",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "Plague Marines"
+          ]
+        }
+      ]
+    }
+  ]
+}

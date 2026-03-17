@@ -1,0 +1,233 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Great-Unclean-One",
+    "faction_slug": "death-guard",
+    "datasheet_slug": "Great-Unclean-One",
+    "output_slug": "death-guard"
+  },
+  "name": "Great Unclean One",
+  "base_size": "\u2300130mm",
+  "characteristics": {
+    "M": "7\"",
+    "T": "12",
+    "Sv": "5+",
+    "W": "20",
+    "Ld": "6+",
+    "OC": "5",
+    "Invulnerable Save": "4+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Plague flail",
+        "abilities": [],
+        "range": "6\"",
+        "a": "D6+1",
+        "bs": "3+",
+        "s": "7",
+        "ap": "-2",
+        "d": "2"
+      },
+      {
+        "name": "Putrid vomit",
+        "abilities": [
+          "ignores cover",
+          "torrent"
+        ],
+        "range": "12\"",
+        "a": "D6+3",
+        "bs": "N/A",
+        "s": "5",
+        "ap": "-2",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Bileblade",
+        "abilities": [
+          "extra attacks",
+          "lethal hits"
+        ],
+        "range": "Melee",
+        "a": "3",
+        "ws": "2+",
+        "s": "6",
+        "ap": "-2",
+        "d": "2"
+      },
+      {
+        "name": "Bilesword \u2013 strike",
+        "abilities": [
+          "lethal hits"
+        ],
+        "range": "Melee",
+        "a": "6",
+        "ws": "2+",
+        "s": "10",
+        "ap": "-2",
+        "d": "D6+1"
+      },
+      {
+        "name": "Bilesword \u2013 sweep",
+        "abilities": [
+          "lethal hits"
+        ],
+        "range": "Melee",
+        "a": "12",
+        "ws": "2+",
+        "s": "7",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Doomsday bell",
+        "abilities": [
+          "lethal hits"
+        ],
+        "range": "Melee",
+        "a": "6",
+        "ws": "2+",
+        "s": "7",
+        "ap": "-1",
+        "d": "2"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise D6 , Deep Strike , Feel No Pain 6+"
+    ],
+    "faction": [
+      "Pact of Decay"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While a friendly PLAGUE LEGIONS unit is within 6\" of this model, add 1 to the Toughness characteristic of models in that unit.",
+        "name": "Daemon Lord of Nurgle (Aura)"
+      },
+      {
+        "type": "rule",
+        "text": "At the end of your Movement phase , you can select one enemy unit within 12\" of this model. Until the start of your next Movement phase, that unit is rotted. While a unit is rotted, subtract 1 from the Toughness characteristic of models in that unit.",
+        "name": "Nurgle\u2019s Rot (Psychic)"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Great Unclean One"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "plague flail; putrid vomit; bilesword.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "250"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "MONSTER",
+    "CHARACTER",
+    "PSYKER",
+    "CHAOS",
+    "NURGLE",
+    "DAEMON",
+    "SUMMONED",
+    "GREAT UNCLEAN ONE"
+  ],
+  "faction_keywords": [
+    "PLAGUE LEGIONS"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s plague flail can be replaced with 1 bileblade.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "This model\u2019s bilesword can be replaced with 1 doomsday bell.",
+          "items": []
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise D6 , Deep Strike , Feel No Pain 6+"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Pact of Decay"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While a friendly PLAGUE LEGIONS unit is within 6\" of this model, add 1 to the Toughness characteristic of models in that unit.",
+          "name": "Daemon Lord of Nurgle (Aura)"
+        },
+        {
+          "type": "rule",
+          "text": "At the end of your Movement phase , you can select one enemy unit within 12\" of this model. Until the start of your next Movement phase, that unit is rotted. While a unit is rotted, subtract 1 from the Toughness characteristic of models in that unit.",
+          "name": "Nurgle\u2019s Rot (Psychic)"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Great Unclean One"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "plague flail; putrid vomit; bilesword.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "250"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DAMAGED: 1-7 WOUNDS REMAINING",
+      "entries": [
+        {
+          "type": "text",
+          "text": "While this model has 1-7 wounds remaining, each time this model makes an attack, subtract 1 from the Hit roll ."
+        }
+      ]
+    }
+  ]
+}

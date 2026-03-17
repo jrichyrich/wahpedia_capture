@@ -1,0 +1,201 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Death-Guard-Cultists",
+    "faction_slug": "death-guard",
+    "datasheet_slug": "Death-Guard-Cultists",
+    "output_slug": "death-guard"
+  },
+  "name": "Death Guard Cultists",
+  "base_size": "\u230025mm",
+  "characteristics": {
+    "M": "6\"",
+    "T": "3",
+    "Sv": "6+",
+    "W": "1",
+    "Ld": "7+",
+    "OC": "1"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Cultist firearm",
+        "abilities": [],
+        "range": "24\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "3",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Flamer",
+        "abilities": [
+          "ignores cover",
+          "torrent"
+        ],
+        "range": "12\"",
+        "a": "D6",
+        "bs": "N/A",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Grenade launcher \u2013 frag",
+        "abilities": [
+          "blast"
+        ],
+        "range": "24\"",
+        "a": "D3",
+        "bs": "4+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Grenade launcher \u2013 krak",
+        "abilities": [],
+        "range": "24\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "9",
+        "ap": "-2",
+        "d": "D3"
+      },
+      {
+        "name": "Heavy stubber",
+        "abilities": [
+          "rapid fire 3"
+        ],
+        "range": "36\"",
+        "a": "3",
+        "bs": "5+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Brutal assault weapon",
+        "abilities": [],
+        "range": "Melee",
+        "a": "2",
+        "ws": "4+",
+        "s": "3",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Scouts 6\""
+    ],
+    "faction": [
+      "Nurgle\u2019s Gift (Aura)"
+    ],
+    "datasheet": [],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Death Guard Cultist Champion",
+        "9-19 Death Guard Cultists"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "Cultist firearm; brutal assault weapon.",
+      "label": "Every model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "10 models",
+          "points": "50"
+        },
+        {
+          "label": "20 models",
+          "points": "100"
+        }
+      ]
+    }
+  ],
+  "keywords": [],
+  "faction_keywords": [],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "For every 10 models in the unit, 1 Death Guard Cultist\u2019s Cultist firearm can be replaced with 1 flamer.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "For every 10 models in the unit, 1 Death Guard Cultist\u2019s Cultist firearm can be replaced with 1 heavy stubber.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "For every 10 models in the unit, 1 Death Guard Cultist\u2019s Cultist firearm can be replaced with 1 grenade launcher.",
+          "items": []
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Scouts 6\""
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Nurgle\u2019s Gift (Aura)"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Death Guard Cultist Champion",
+            "9-19 Death Guard Cultists"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "Cultist firearm; brutal assault weapon.",
+          "label": "Every model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "10 models",
+              "points": "50"
+            },
+            {
+              "label": "20 models",
+              "points": "100"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

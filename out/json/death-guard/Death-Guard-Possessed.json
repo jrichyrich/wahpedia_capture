@@ -1,0 +1,151 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Death-Guard-Possessed",
+    "faction_slug": "death-guard",
+    "datasheet_slug": "Death-Guard-Possessed",
+    "output_slug": "death-guard"
+  },
+  "name": "Death Guard Possessed",
+  "base_size": "\u230032mm",
+  "characteristics": {
+    "M": "9\"",
+    "T": "6",
+    "Sv": "3+",
+    "W": "3",
+    "Ld": "6+",
+    "OC": "1",
+    "Invulnerable Save": "5+"
+  },
+  "weapons": {
+    "melee_weapons": [
+      {
+        "name": "Hideous mutations",
+        "abilities": [],
+        "range": "Melee",
+        "a": "4",
+        "ws": "3+",
+        "s": "5",
+        "ap": "-1",
+        "d": "2"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [],
+    "faction": [
+      "Nurgle\u2019s Gift (Aura)"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this unit makes a Charge move , until the end of the turn, weapons equipped by models in this unit have the [SUSTAINED HITS 1] ability.",
+        "name": "Infectious Bloodshed"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Possessed Champion",
+        "4-9 Possessed"
+      ]
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "5 models",
+          "points": "155"
+        },
+        {
+          "label": "10 models",
+          "points": "310"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "CHAOS",
+    "DAEMON",
+    "POSSESSED"
+  ],
+  "faction_keywords": [
+    "DEATH GUARD"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "1 model can be equipped with 1 diseased icon.",
+          "items": []
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Nurgle\u2019s Gift (Aura)"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this unit makes a Charge move , until the end of the turn, weapons equipped by models in this unit have the [SUSTAINED HITS 1] ability.",
+          "name": "Infectious Bloodshed"
+        }
+      ]
+    },
+    {
+      "title": "WARGEAR ABILITIES",
+      "entries": [
+        {
+          "type": "statement",
+          "text": "Melee weapons in the bearer\u2019s unit have the [LETHAL HITS] ability.",
+          "label": "Diseased Icon"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Possessed Champion",
+            "4-9 Possessed"
+          ]
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "5 models",
+              "points": "155"
+            },
+            {
+              "label": "10 models",
+              "points": "310"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "POSSESSED",
+      "entries": [
+        {
+          "type": "text",
+          "text": "For the purposes of embarking within TRANSPORTS , each DEATH GUARD POSSESSED model counts as one TERMINATOR model."
+        }
+      ]
+    }
+  ]
+}

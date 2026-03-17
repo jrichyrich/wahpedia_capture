@@ -1,0 +1,278 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Blightlord-Terminators",
+    "faction_slug": "death-guard",
+    "datasheet_slug": "Blightlord-Terminators",
+    "output_slug": "death-guard"
+  },
+  "name": "Blightlord Terminators",
+  "base_size": "\u230040mm",
+  "characteristics": {
+    "M": "5\"",
+    "T": "7",
+    "Sv": "2+",
+    "W": "3",
+    "Ld": "6+",
+    "OC": "1",
+    "Invulnerable Save": "4+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Blight launcher",
+        "abilities": [
+          "blast",
+          "lethal hits"
+        ],
+        "range": "24\"",
+        "a": "D3",
+        "bs": "3+",
+        "s": "6",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "\u0421ombi-bolter",
+        "abilities": [
+          "lethal hits",
+          "rapid fire 2"
+        ],
+        "range": "24\"",
+        "a": "2",
+        "bs": "3+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Combi-weapon",
+        "abilities": [
+          "anti-infantry 4+",
+          "devastating wounds",
+          "rapid fire 1"
+        ],
+        "range": "24\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Plague spewer",
+        "abilities": [
+          "anti-infantry 2+",
+          "ignores cover",
+          "torrent"
+        ],
+        "range": "12\"",
+        "a": "D6",
+        "bs": "N/A",
+        "s": "5",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Reaper autocannon",
+        "abilities": [
+          "devastating wounds",
+          "sustained hits 1"
+        ],
+        "range": "36\"",
+        "a": "4",
+        "bs": "3+",
+        "s": "7",
+        "ap": "-1",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Bubotic blade",
+        "abilities": [
+          "lethal hits"
+        ],
+        "range": "Melee",
+        "a": "3",
+        "ws": "3+",
+        "s": "5",
+        "ap": "-2",
+        "d": "2"
+      },
+      {
+        "name": "Close combat weapon",
+        "abilities": [],
+        "range": "Melee",
+        "a": "3",
+        "ws": "3+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Flail of corruption",
+        "abilities": [
+          "lethal hits"
+        ],
+        "range": "Melee",
+        "a": "6",
+        "ws": "3+",
+        "s": "5",
+        "ap": "-1",
+        "d": "2"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deep Strike"
+    ],
+    "faction": [
+      "Nurgle\u2019s Gift (Aura)"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "If this unit has a Starting Strength of 5 or more, or if a CHARACTER is leading this unit, then each time a model in this unit makes a ranged attack that targets an Afflicted unit, improve the Strength and Armour Penetration characteristics of that attack by 1.",
+        "name": "Blistering Fusillade"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Blightlord Champion",
+        "2-9 Blightlord Terminators"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "combi-bolter; bubotic blade.",
+      "label": "Every model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "3 models",
+          "points": "115"
+        },
+        {
+          "label": "5 models",
+          "points": "185"
+        },
+        {
+          "label": "10 models",
+          "points": "370"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "CHAOS",
+    "NURGLE",
+    "TERMINATOR",
+    "BLIGHTLORD TERMINATORS"
+  ],
+  "faction_keywords": [
+    "DEATH GUARD"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "For every 5 models in this unit, up to 3 models' combi-bolters can each be replaced with 1 combi-weapon.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "For every 5 models in this unit, 1 Blightlord Terminator\u2019s combi-bolter and bubotic blade can be replaced with 1 flail of corruption.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "For every 5 models in this unit, 1 Blightlord Terminator\u2019s combi-bolter can be replaced with 1 blight launcher.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "For every 5 models in this unit, 1 Blightlord Terminator's combi-bolter can be replaced with 1 reaper autocannon.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "For every 5 models in this unit, 1 Blightlord Terminator's combi-bolter can be replaced with 1 plague spewer.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "If this unit contains only 3 models, 1 Blightlord Terminator\u2019s combi-bolter and bubotic blade can be replaced with 1 plague spewer and 1 close combat weapon.",
+          "items": []
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deep Strike"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Nurgle\u2019s Gift (Aura)"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "If this unit has a Starting Strength of 5 or more, or if a CHARACTER is leading this unit, then each time a model in this unit makes a ranged attack that targets an Afflicted unit, improve the Strength and Armour Penetration characteristics of that attack by 1.",
+          "name": "Blistering Fusillade"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Blightlord Champion",
+            "2-9 Blightlord Terminators"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "combi-bolter; bubotic blade.",
+          "label": "Every model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "3 models",
+              "points": "115"
+            },
+            {
+              "label": "5 models",
+              "points": "185"
+            },
+            {
+              "label": "10 models",
+              "points": "370"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,170 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Lord-of-Contagion",
+    "faction_slug": "death-guard",
+    "datasheet_slug": "Lord-of-Contagion",
+    "output_slug": "death-guard"
+  },
+  "name": "Lord of Contagion",
+  "base_size": "\u230040mm",
+  "characteristics": {
+    "M": "5\"",
+    "T": "7",
+    "Sv": "2+",
+    "W": "6",
+    "Ld": "6+",
+    "OC": "1",
+    "Invulnerable Save": "4+"
+  },
+  "weapons": {
+    "melee_weapons": [
+      {
+        "name": "Manreaper \u2013 strike",
+        "abilities": [
+          "lethal hits"
+        ],
+        "range": "Melee",
+        "a": "5",
+        "ws": "2+",
+        "s": "9",
+        "ap": "-2",
+        "d": "3"
+      },
+      {
+        "name": "Manreaper \u2013 sweep",
+        "abilities": [
+          "lethal hits"
+        ],
+        "range": "Melee",
+        "a": "10",
+        "ws": "2+",
+        "s": "6",
+        "ap": "-1",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deep Strike , Leader"
+    ],
+    "faction": [
+      "Nurgle\u2019s Gift (Aura)"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, melee weapons equipped by models in that unit have the [SUSTAINED HITS 1] and [LANCE] abilities.",
+        "name": "Vector of Disease"
+      },
+      {
+        "type": "rule",
+        "text": "The first time a model with this ability is destroyed in a battle round , roll one D6 at the end of the phase. On a 2+, set that model back up on the battlefield, as close as possible to where it was destroyed and not within Engagement Range of any enemy units, with 3 wounds remaining. Each model can only be set up in this way once per battle.",
+        "name": "Unholy Resilience"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Lord of Contagion"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "manreaper.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "120"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "CHARACTER",
+    "GRENADES",
+    "CHAOS",
+    "NURGLE",
+    "TERMINATOR",
+    "LORD OF CONTAGION"
+  ],
+  "faction_keywords": [
+    "DEATH GUARD"
+  ],
+  "sections": [
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deep Strike , Leader"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Nurgle\u2019s Gift (Aura)"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, melee weapons equipped by models in that unit have the [SUSTAINED HITS 1] and [LANCE] abilities.",
+          "name": "Vector of Disease"
+        },
+        {
+          "type": "rule",
+          "text": "The first time a model with this ability is destroyed in a battle round , roll one D6 at the end of the phase. On a 2+, set that model back up on the battlefield, as close as possible to where it was destroyed and not within Engagement Range of any enemy units, with 3 wounds remaining. Each model can only be set up in this way once per battle.",
+          "name": "Unholy Resilience"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Lord of Contagion"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "manreaper.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "120"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "LEADER",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "Blightlord Terminators",
+            "Deathshroud Terminators"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,208 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Deathshroud-Terminators",
+    "faction_slug": "death-guard",
+    "datasheet_slug": "Deathshroud-Terminators",
+    "output_slug": "death-guard"
+  },
+  "name": "Deathshroud Terminators",
+  "base_size": "\u230040mm",
+  "characteristics": {
+    "M": "5\"",
+    "T": "7",
+    "Sv": "2+",
+    "W": "4",
+    "Ld": "6+",
+    "OC": "1",
+    "Invulnerable Save": "4+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Plaguespurt gauntlet",
+        "abilities": [
+          "anti-infantry 4+",
+          "ignores cover",
+          "pistol",
+          "torrent"
+        ],
+        "range": "12\"",
+        "a": "D6",
+        "bs": "N/A",
+        "s": "3",
+        "ap": "0",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Manreaper \u2013 strike",
+        "abilities": [
+          "lethal hits"
+        ],
+        "range": "Melee",
+        "a": "4",
+        "ws": "2+",
+        "s": "8",
+        "ap": "-2",
+        "d": "2"
+      },
+      {
+        "name": "Manreaper \u2013 sweep",
+        "abilities": [
+          "lethal hits"
+        ],
+        "range": "Melee",
+        "a": "8",
+        "ws": "3+",
+        "s": "4",
+        "ap": "-1",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deep Strike"
+    ],
+    "faction": [
+      "Nurgle\u2019s Gift (Aura)"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While a CHARACTER model is leading this unit, that CHARACTER model has the Feel No Pain 4+ ability.",
+        "name": "Silent Bodyguard"
+      },
+      {
+        "type": "rule",
+        "text": "In your Movement phase , when this unit is set up on the battlefield using the Deep Strike ability, it can be set up anywhere on the battlefield that is more than 6\" horizontally away from all Afflicted enemy units, and more than 9\" horizontally away from all other enemy units.",
+        "name": "Death Approaches"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Deathshroud Champion",
+        "2-5 Deathshroud Terminators"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "plaguespurt gauntlet; manreaper.",
+      "label": "Every model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "3 models",
+          "points": "160"
+        },
+        {
+          "label": "6 models",
+          "points": "320"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "CHAOS",
+    "NURGLE",
+    "TERMINATOR",
+    "DEATHSHROUD TERMINATORS"
+  ],
+  "faction_keywords": [
+    "DEATH GUARD"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "The Deathshroud Champion can be equipped with 1 additional plaguespurt gauntlet.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "The Deathshroud Champion can be equipped with 1 icon of despair.",
+          "items": []
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deep Strike"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Nurgle\u2019s Gift (Aura)"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While a CHARACTER model is leading this unit, that CHARACTER model has the Feel No Pain 4+ ability.",
+          "name": "Silent Bodyguard"
+        },
+        {
+          "type": "rule",
+          "text": "In your Movement phase , when this unit is set up on the battlefield using the Deep Strike ability, it can be set up anywhere on the battlefield that is more than 6\" horizontally away from all Afflicted enemy units, and more than 9\" horizontally away from all other enemy units.",
+          "name": "Death Approaches"
+        }
+      ]
+    },
+    {
+      "title": "WARGEAR ABILITIES",
+      "entries": [
+        {
+          "type": "statement",
+          "text": "While an enemy unit is within 6\" of the bearer, worsen the Leadership characteristic of models in that unit by 1.",
+          "label": "Icon of Despair (Aura)"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Deathshroud Champion",
+            "2-5 Deathshroud Terminators"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "plaguespurt gauntlet; manreaper.",
+          "label": "Every model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "3 models",
+              "points": "160"
+            },
+            {
+              "label": "6 models",
+              "points": "320"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

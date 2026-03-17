@@ -1,0 +1,328 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Helbrute",
+    "faction_slug": "death-guard",
+    "datasheet_slug": "Helbrute",
+    "output_slug": "death-guard"
+  },
+  "name": "Helbrute",
+  "base_size": "\u230060mm",
+  "characteristics": {
+    "M": "7\"",
+    "T": "9",
+    "Sv": "2+",
+    "W": "8",
+    "Ld": "6+",
+    "OC": "3"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Combi-bolter",
+        "abilities": [
+          "lethal hits",
+          "rapid fire 2"
+        ],
+        "range": "24\"",
+        "a": "2",
+        "bs": "3+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Heavy flamer",
+        "abilities": [
+          "ignores cover",
+          "torrent"
+        ],
+        "range": "12\"",
+        "a": "D6",
+        "bs": "N/A",
+        "s": "5",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Missile launcher \u2013 frag",
+        "abilities": [
+          "blast"
+        ],
+        "range": "48\"",
+        "a": "D6",
+        "bs": "3+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Missile launcher \u2013 krak",
+        "abilities": [],
+        "range": "48\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "9",
+        "ap": "-2",
+        "d": "D6"
+      },
+      {
+        "name": "Multi-melta",
+        "abilities": [
+          "melta 2",
+          "lethal hits"
+        ],
+        "range": "18\"",
+        "a": "2",
+        "bs": "3+",
+        "s": "9",
+        "ap": "-4",
+        "d": "D6"
+      },
+      {
+        "name": "Plasma cannon",
+        "abilities": [
+          "blast",
+          "hazardous",
+          "lethal hits"
+        ],
+        "range": "36\"",
+        "a": "D3",
+        "bs": "3+",
+        "s": "8",
+        "ap": "-3",
+        "d": "3"
+      },
+      {
+        "name": "Twin autocannon",
+        "abilities": [
+          "twin-linked",
+          "lethal hits"
+        ],
+        "range": "48\"",
+        "a": "2",
+        "bs": "3+",
+        "s": "10",
+        "ap": "-1",
+        "d": "3"
+      },
+      {
+        "name": "Twin heavy bolter",
+        "abilities": [
+          "lethal hits",
+          "sustained hits 1",
+          "twin-linked"
+        ],
+        "range": "36\"",
+        "a": "3",
+        "bs": "3+",
+        "s": "5",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Twin lascannon",
+        "abilities": [
+          "twin-linked"
+        ],
+        "range": "48\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "12",
+        "ap": "-3",
+        "d": "D6+1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Close combat weapon",
+        "abilities": [],
+        "range": "Melee",
+        "a": "5",
+        "ws": "3+",
+        "s": "6",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Helbrute fist",
+        "abilities": [],
+        "range": "Melee",
+        "a": "5",
+        "ws": "3+",
+        "s": "12",
+        "ap": "-2",
+        "d": "3"
+      },
+      {
+        "name": "Helbrute hammer",
+        "abilities": [],
+        "range": "Melee",
+        "a": "4",
+        "ws": "3+",
+        "s": "14",
+        "ap": "-3",
+        "d": "D6+1"
+      },
+      {
+        "name": "Power scourge",
+        "abilities": [],
+        "range": "Melee",
+        "a": "8",
+        "ws": "3+",
+        "s": "7",
+        "ap": "-1",
+        "d": "2"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise 1"
+    ],
+    "faction": [
+      "Nurgle\u2019s Gift (Aura)"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this model makes an attack that targets an Afflicted unit, add 1 to the Wound roll .",
+        "name": "Diseased Malice"
+      },
+      {
+        "type": "rule",
+        "text": "If this model is equipped with two melee weapons in addition to its close combat weapon, add 2 to the Attacks characteristic of those two weapons.",
+        "name": "Froth-spattered Frenzy"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Helbrute"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "multi-melta; Helbrute fist; close combat weapon.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "115"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "VEHICLE",
+    "WALKER",
+    "CHAOS",
+    "NURGLE",
+    "HELBRUTE"
+  ],
+  "faction_keywords": [
+    "DEATH GUARD"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s multi-melta can be replaced with one of the following:",
+          "items": [
+            "1 plasma cannon",
+            "1 twin autocannon",
+            "1 twin lascannon",
+            "1 twin heavy bolter",
+            "1 additional Helbrute fist"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "1 of this model\u2019s Helbrute fists can be replaced with 1 missile launcher",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "1 of this model\u2019s Helbrute fists can be replaced with one of the following:",
+          "items": [
+            "1 Helbrute hammer",
+            "1 power scourge"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "For each Helbrute fist this model is equipped with, it can be equipped with one of the following:",
+          "items": [
+            "1 combi-bolter*",
+            "1 heavy flamer*"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "* That Helbrute fist cannot then be replaced."
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise 1"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Nurgle\u2019s Gift (Aura)"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model makes an attack that targets an Afflicted unit, add 1 to the Wound roll .",
+          "name": "Diseased Malice"
+        },
+        {
+          "type": "rule",
+          "text": "If this model is equipped with two melee weapons in addition to its close combat weapon, add 2 to the Attacks characteristic of those two weapons.",
+          "name": "Froth-spattered Frenzy"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Helbrute"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "multi-melta; Helbrute fist; close combat weapon.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "115"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

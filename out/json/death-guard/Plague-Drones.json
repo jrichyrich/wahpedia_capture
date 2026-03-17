@@ -1,0 +1,204 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Plague-Drones",
+    "faction_slug": "death-guard",
+    "datasheet_slug": "Plague-Drones",
+    "output_slug": "death-guard"
+  },
+  "name": "Plague Drones",
+  "base_size": "\u230060mm",
+  "characteristics": {
+    "M": "10\"",
+    "T": "8",
+    "Sv": "6+",
+    "W": "5",
+    "Ld": "7+",
+    "OC": "2",
+    "Invulnerable Save": "5+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Death\u2019s heads",
+        "abilities": [
+          "blast",
+          "lethal hits"
+        ],
+        "range": "12\"",
+        "a": "D3",
+        "bs": "4+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Foul mouthparts",
+        "abilities": [
+          "extra attacks",
+          "lethal hits"
+        ],
+        "range": "Melee",
+        "a": "2",
+        "ws": "4+",
+        "s": "5",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Plaguesword",
+        "abilities": [
+          "lethal hits"
+        ],
+        "range": "Melee",
+        "a": "2",
+        "ws": "3+",
+        "s": "4",
+        "ap": "-1",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deep Strike"
+    ],
+    "faction": [
+      "Pact of Decay"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "In your Shooting phase , after this unit has shot, select one enemy unit hit by one or more of those attacks. Until the end of the turn, each time a friendly PLAGUE LEGIONS unit makes an attack that targets that unit, you can re-roll the Wound roll .",
+        "name": "Death\u2019s Heads"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Plaguebringer",
+        "2-5 Plague Drones"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "death\u2019s heads; foul mouthparts; plaguesword.",
+      "label": "Every model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "3 models",
+          "points": "115"
+        },
+        {
+          "label": "6 models",
+          "points": "230"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "MOUNTED",
+    "FLY",
+    "CHAOS",
+    "NURGLE",
+    "DAEMON",
+    "SUMMONED",
+    "PLAGUE DRONES"
+  ],
+  "faction_keywords": [
+    "PLAGUE LEGIONS"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "1 Plague Drone that is not equipped with a daemonic icon can be equipped with 1 instrument of Chaos.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "1 Plague Drone that is not equipped with an instrument of Chaos can be equipped with 1 daemonic icon.",
+          "items": []
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deep Strike"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Pact of Decay"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "In your Shooting phase , after this unit has shot, select one enemy unit hit by one or more of those attacks. Until the end of the turn, each time a friendly PLAGUE LEGIONS unit makes an attack that targets that unit, you can re-roll the Wound roll .",
+          "name": "Death\u2019s Heads"
+        }
+      ]
+    },
+    {
+      "title": "WARGEAR ABILITIES",
+      "entries": [
+        {
+          "type": "statement",
+          "text": "Models in the bearer\u2019s unit have a Leadership characteristic of 6+.",
+          "label": "Daemonic Icon"
+        },
+        {
+          "type": "statement",
+          "text": "Add 1 to Charge rolls made for the bearer\u2019s unit.",
+          "label": "Instrument of Chaos"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Plaguebringer",
+            "2-5 Plague Drones"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "death\u2019s heads; foul mouthparts; plaguesword.",
+          "label": "Every model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "3 models",
+              "points": "115"
+            },
+            {
+              "label": "6 models",
+              "points": "230"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

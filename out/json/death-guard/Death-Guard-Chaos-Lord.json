@@ -1,0 +1,277 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Death-Guard-Chaos-Lord",
+    "faction_slug": "death-guard",
+    "datasheet_slug": "Death-Guard-Chaos-Lord",
+    "output_slug": "death-guard"
+  },
+  "name": "Death Guard Chaos Lord",
+  "base_size": "\u230040mm",
+  "characteristics": {
+    "M": "5\"",
+    "T": "5",
+    "Sv": "3+",
+    "W": "5",
+    "Ld": "6+",
+    "OC": "1",
+    "Invulnerable Save": "4+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Combi-weapon",
+        "abilities": [
+          "anti-infantry 4+",
+          "devastating wounds",
+          "rapid fire 1"
+        ],
+        "range": "24\"",
+        "a": "1",
+        "bs": "2+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Plague bolt pistol",
+        "abilities": [
+          "lethal hits",
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "2+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Plague combi-bolter",
+        "abilities": [
+          "lethal hits",
+          "rapid fire 2"
+        ],
+        "range": "24\"",
+        "a": "2",
+        "bs": "2+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Plasma pistol \u2013 standard",
+        "abilities": [
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "2+",
+        "s": "7",
+        "ap": "-2",
+        "d": "1"
+      },
+      {
+        "name": "Plasma pistol \u2013 supercharge",
+        "abilities": [
+          "hazardous",
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "2+",
+        "s": "8",
+        "ap": "-3",
+        "d": "2"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Astartes chainsword",
+        "abilities": [],
+        "range": "Melee",
+        "a": "7",
+        "ws": "2+",
+        "s": "4",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Plague fist",
+        "abilities": [
+          "lethal hits"
+        ],
+        "range": "Melee",
+        "a": "5",
+        "ws": "3+",
+        "s": "8",
+        "ap": "-2",
+        "d": "2"
+      },
+      {
+        "name": "Plague-encrusted exalted weapon",
+        "abilities": [
+          "lethal hits"
+        ],
+        "range": "Melee",
+        "a": "6",
+        "ws": "2+",
+        "s": "5",
+        "ap": "-2",
+        "d": "1"
+      },
+      {
+        "name": "Twin lightning claws",
+        "abilities": [
+          "twin-linked"
+        ],
+        "range": "Melee",
+        "a": "7",
+        "ws": "2+",
+        "s": "5",
+        "ap": "-2",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Leader"
+    ],
+    "faction": [
+      "Nurgle\u2019s Gift (Aura)"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, each time a model in that unit makes an attack, re-roll a Hit roll of 1.",
+        "name": "Chaos Lord"
+      },
+      {
+        "type": "rule",
+        "text": "While an enemy unit is within Contagion Range of this model, at the end of the turn, roll one D6: on a 4+, that enemy unit suffers D3 mortal wounds .",
+        "name": "Desiccation Conduit (Aura)"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Death Guard Chaos Lord"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "plague bolt pistol; Astartes chainsword.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "65"
+        }
+      ]
+    }
+  ],
+  "keywords": [],
+  "faction_keywords": [],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s plague bolt pistol can be replaced with one of the following:",
+          "items": [
+            "1 combi-weapon",
+            "1 plague combi-bolter",
+            "1 plague fist",
+            "1 plague-encrusted exalted weapon",
+            "1 plasma pistol"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "This model\u2019s Astartes chainsword can be replaced with one of the following:",
+          "items": [
+            "1 plague fist",
+            "1 plague-encrusted exalted weapon"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "This model\u2019s plague bolt pistol and Astartes chainsword can be replaced with 1 twin lighting claws.",
+          "items": []
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Leader"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Nurgle\u2019s Gift (Aura)"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, each time a model in that unit makes an attack, re-roll a Hit roll of 1.",
+          "name": "Chaos Lord"
+        },
+        {
+          "type": "rule",
+          "text": "While an enemy unit is within Contagion Range of this model, at the end of the turn, roll one D6: on a 4+, that enemy unit suffers D3 mortal wounds .",
+          "name": "Desiccation Conduit (Aura)"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Death Guard Chaos Lord"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "plague bolt pistol; Astartes chainsword.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "65"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "LEADER",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "Plague Marines"
+          ]
+        }
+      ]
+    }
+  ]
+}

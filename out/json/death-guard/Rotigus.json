@@ -1,0 +1,187 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Rotigus",
+    "faction_slug": "death-guard",
+    "datasheet_slug": "Rotigus",
+    "output_slug": "death-guard"
+  },
+  "name": "Rotigus",
+  "base_size": "\u2300130mm",
+  "characteristics": {
+    "M": "7\"",
+    "T": "12",
+    "Sv": "5+",
+    "W": "22",
+    "Ld": "6+",
+    "OC": "5",
+    "Invulnerable Save": "4+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Streams of brackish filth",
+        "abilities": [
+          "devastating wounds",
+          "ignores cover",
+          "torrent"
+        ],
+        "range": "12\"",
+        "a": "2D6",
+        "bs": "N/A",
+        "s": "8",
+        "ap": "-2",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Gnarlrod \u2013 strike",
+        "abilities": [
+          "lethal hits",
+          "psychic"
+        ],
+        "range": "Melee",
+        "a": "7",
+        "ws": "2+",
+        "s": "10",
+        "ap": "-3",
+        "d": "3"
+      },
+      {
+        "name": "Gnarlrod \u2013 sweep",
+        "abilities": [
+          "lethal hits",
+          "psychic"
+        ],
+        "range": "Melee",
+        "a": "14",
+        "ws": "2+",
+        "s": "8",
+        "ap": "-1",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise D6 , Deep Strike , Feel No Pain 6+"
+    ],
+    "faction": [
+      "Pact of Decay"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "At the start of the Fight phase , you can select one enemy unit within 24\" and visible to this model. Until the end of the phase, each time an attack made by a PLAGUE LEGIONS model is allocated to a model in that unit, add 1 to the Damage characteristic of that attack.",
+        "name": "Virulent Blessing (Psychic)"
+      },
+      {
+        "type": "rule",
+        "text": "While an enemy unit is within 6\" of this model, subtract 2 from the Move characteristic and subtract 1 from the Objective Control characteristic of models in that unit.",
+        "name": "Deluge of Nurgle (Aura)"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Rotigus \u2013 EPIC HERO"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "streams of brackish filth; gnarlrod.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "265"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "MONSTER",
+    "CHARACTER",
+    "EPIC HERO",
+    "PSYKER",
+    "CHAOS",
+    "NURGLE",
+    "DAEMON",
+    "SUMMONED",
+    "ROTIGUS"
+  ],
+  "faction_keywords": [
+    "PLAGUE LEGIONS"
+  ],
+  "sections": [
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise D6 , Deep Strike , Feel No Pain 6+"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Pact of Decay"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "At the start of the Fight phase , you can select one enemy unit within 24\" and visible to this model. Until the end of the phase, each time an attack made by a PLAGUE LEGIONS model is allocated to a model in that unit, add 1 to the Damage characteristic of that attack.",
+          "name": "Virulent Blessing (Psychic)"
+        },
+        {
+          "type": "rule",
+          "text": "While an enemy unit is within 6\" of this model, subtract 2 from the Move characteristic and subtract 1 from the Objective Control characteristic of models in that unit.",
+          "name": "Deluge of Nurgle (Aura)"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Rotigus \u2013 EPIC HERO"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "streams of brackish filth; gnarlrod.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "265"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DAMAGED: 1-7 WOUNDS REMAINING",
+      "entries": [
+        {
+          "type": "text",
+          "text": "While this model has 1-7 wounds remaining, each time this model makes an attack, subtract 1 from the Hit roll ."
+        }
+      ]
+    }
+  ]
+}

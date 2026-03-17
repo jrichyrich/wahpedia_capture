@@ -1,0 +1,173 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Foetid-Bloat-drone",
+    "faction_slug": "death-guard",
+    "datasheet_slug": "Foetid-Bloat-drone",
+    "output_slug": "death-guard"
+  },
+  "name": "Foetid Bloat-drone",
+  "base_size": "\u230060mm",
+  "characteristics": {
+    "M": "10\"",
+    "T": "9",
+    "Sv": "3+",
+    "W": "10",
+    "Ld": "6+",
+    "OC": "3",
+    "Invulnerable Save": "5+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Plaguespitter",
+        "abilities": [
+          "anti-infantry 2+",
+          "ignores cover",
+          "torrent"
+        ],
+        "range": "12\"",
+        "a": "D6",
+        "bs": "N/A",
+        "s": "6",
+        "ap": "-1",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Fleshmower",
+        "abilities": [
+          "lethal hits"
+        ],
+        "range": "Melee",
+        "a": "10",
+        "ws": "3+",
+        "s": "7",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Plague probe",
+        "abilities": [
+          "lethal hits"
+        ],
+        "range": "Melee",
+        "a": "3",
+        "ws": "3+",
+        "s": "6",
+        "ap": "-1",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise D3"
+    ],
+    "faction": [
+      "Nurgle\u2019s Gift (Aura)"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "This model is eligible to shoot and declare a charge in a turn in which it Fell Back .",
+        "name": "Hovering Death"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Foetid Bloat-drone"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "fleshmower; plague probe.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "100"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "VEHICLE",
+    "FLY",
+    "CHAOS",
+    "NURGLE",
+    "DAEMON",
+    "FOETID BLOAT-DRONE"
+  ],
+  "faction_keywords": [
+    "DEATH GUARD"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s fleshmower can be replaced with 2 plaguespitters.",
+          "items": []
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise D3"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Nurgle\u2019s Gift (Aura)"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "This model is eligible to shoot and declare a charge in a turn in which it Fell Back .",
+          "name": "Hovering Death"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Foetid Bloat-drone"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "fleshmower; plague probe.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "100"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

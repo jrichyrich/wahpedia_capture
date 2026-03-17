@@ -1,0 +1,174 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Lord-of-Virulence",
+    "faction_slug": "death-guard",
+    "datasheet_slug": "Lord-of-Virulence",
+    "output_slug": "death-guard"
+  },
+  "name": "Lord of Virulence",
+  "base_size": "\u230050mm",
+  "characteristics": {
+    "M": "5\"",
+    "T": "7",
+    "Sv": "2+",
+    "W": "6",
+    "Ld": "6+",
+    "OC": "1",
+    "Invulnerable Save": "4+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Twin plague spewer",
+        "abilities": [
+          "anti-infantry 2+",
+          "ignores cover",
+          "torrent",
+          "twin-linked"
+        ],
+        "range": "12\"",
+        "a": "D6",
+        "bs": "N/A",
+        "s": "5",
+        "ap": "-1",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Power fist",
+        "abilities": [
+          "lethal hits"
+        ],
+        "range": "Melee",
+        "a": "5",
+        "ws": "2+",
+        "s": "8",
+        "ap": "-2",
+        "d": "2"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deep Strike , Leader"
+    ],
+    "faction": [
+      "Nurgle\u2019s Gift (Aura)"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, each time a model in that unit makes a ranged attack, you can re-roll the Wound roll .",
+        "name": "Virulent Aura"
+      },
+      {
+        "type": "rule",
+        "text": "At the start of your Shooting phase , select one enemy unit within 30\" of and visible to this model. Until the end of the phase, each time a friendly DEATH GUARD model makes a ranged attack that targets that unit, re-roll a Hit roll of 1 (if that attack is made with a Blast weapon , you can re-roll the Hit roll instead).",
+        "name": "Blight Bombardment"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Lord of Virulence"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "twin plague spewer; power fist.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "100"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "CHARACTER",
+    "CHAOS",
+    "NURGLE",
+    "TERMINATOR",
+    "LORD OF VIRULENCE"
+  ],
+  "faction_keywords": [
+    "DEATH GUARD"
+  ],
+  "sections": [
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deep Strike , Leader"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Nurgle\u2019s Gift (Aura)"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, each time a model in that unit makes a ranged attack, you can re-roll the Wound roll .",
+          "name": "Virulent Aura"
+        },
+        {
+          "type": "rule",
+          "text": "At the start of your Shooting phase , select one enemy unit within 30\" of and visible to this model. Until the end of the phase, each time a friendly DEATH GUARD model makes a ranged attack that targets that unit, re-roll a Hit roll of 1 (if that attack is made with a Blast weapon , you can re-roll the Hit roll instead).",
+          "name": "Blight Bombardment"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Lord of Virulence"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "twin plague spewer; power fist.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "100"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "LEADER",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "Blightlord Terminators",
+            "Deathshroud Terminators"
+          ]
+        }
+      ]
+    }
+  ]
+}
