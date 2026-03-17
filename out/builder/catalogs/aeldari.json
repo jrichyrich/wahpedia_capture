@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generatedAt": "2026-03-16T17:21:00+00:00",
+  "generatedAt": "2026-03-17T20:08:48+00:00",
   "faction": {
     "slug": "aeldari",
     "name": "Aeldari",
@@ -15,14 +15,6 @@
       {
         "unitId": "corsair-skyreavers",
         "name": "Corsair Skyreavers"
-      },
-      {
-        "unitId": "corsair-voidreavers",
-        "name": "Corsair Voidreavers"
-      },
-      {
-        "unitId": "corsair-voidscarred",
-        "name": "Corsair Voidscarred"
       },
       {
         "unitId": "dark-reapers",
@@ -551,7 +543,7 @@
           {
             "id": "this-model-s-shuriken-pistol-can-be-replaced-with-one-of-the-following-1",
             "label": "This model\u2019s shuriken pistol can be replaced with one of the following:",
-            "target": "This model\u2019s shuriken pistol",
+            "target": "shuriken pistol",
             "actor": null,
             "action": "replace",
             "selectionMode": "single",
@@ -578,7 +570,7 @@
           {
             "id": "this-model-s-star-glaive-can-be-replaced-with-one-of-the-following-2",
             "label": "This model\u2019s star glaive can be replaced with one of the following:",
-            "target": "This model\u2019s star glaive",
+            "target": "star glaive",
             "actor": null,
             "action": "replace",
             "selectionMode": "single",
@@ -806,7 +798,7 @@
           {
             "id": "this-model-s-laser-lance-can-be-replaced-with-one-of-the-following-1",
             "label": "This model\u2019s laser lance can be replaced with one of the following:",
-            "target": "This model\u2019s laser lance",
+            "target": "laser lance",
             "actor": null,
             "action": "replace",
             "selectionMode": "single",
@@ -1062,7 +1054,7 @@
           {
             "id": "this-model-s-shuriken-pistol-can-be-replaced-with-one-of-the-following-1",
             "label": "This model\u2019s shuriken pistol can be replaced with one of the following:",
-            "target": "This model\u2019s shuriken pistol",
+            "target": "shuriken pistol",
             "actor": null,
             "action": "replace",
             "selectionMode": "single",
@@ -1089,7 +1081,7 @@
           {
             "id": "this-model-s-star-glaive-can-be-replaced-with-one-of-the-following-2",
             "label": "This model\u2019s star glaive can be replaced with one of the following:",
-            "target": "This model\u2019s star glaive",
+            "target": "star glaive",
             "actor": null,
             "action": "replace",
             "selectionMode": "single",
@@ -1739,7 +1731,7 @@
           {
             "id": "this-model-s-shuriken-cannon-can-be-replaced-with-one-of-the-following-1",
             "label": "This model\u2019s shuriken cannon can be replaced with one of the following:",
-            "target": "This model\u2019s shuriken cannon",
+            "target": "shuriken cannon",
             "actor": null,
             "action": "replace",
             "selectionMode": "single",
@@ -2024,8 +2016,8 @@
           {
             "id": "any-number-of-models-can-each-have-their-twin-shuriken-catapult-replaced-with-one-of-the-following-1",
             "label": "Any number of models can each have their twin shuriken catapult replaced with one of the following:",
-            "target": "twin shuriken catapult",
-            "actor": "Any number of models",
+            "target": "models",
+            "actor": "models",
             "action": "replace",
             "selectionMode": "allocation",
             "choices": [
@@ -2389,7 +2381,7 @@
           {
             "id": "any-number-of-models-can-each-have-their-corsair-firearm-replaced-with-1-spar-glaive-1",
             "label": "Any number of models can each have their Corsair firearm replaced with 1 spar-glaive.",
-            "target": "Corsair firearm",
+            "target": "models",
             "actor": "models",
             "action": "replace",
             "selectionMode": "allocation",
@@ -2406,10 +2398,10 @@
           {
             "id": "for-every-5-models-in-this-unit-1-model-s-corsair-firearm-can-be-replaced-with-one-of-the-following-2",
             "label": "For every 5 models in this unit, 1 model\u2019s Corsair firearm can be replaced with one of the following:",
-            "target": "Corsair firearm",
-            "actor": "1 model",
+            "target": "For every 5 models in this unit, 1 model\u2019s Corsair firearm",
+            "actor": null,
             "action": "replace",
-            "selectionMode": "allocation",
+            "selectionMode": "single",
             "choices": [
               {
                 "id": "1-aeldari-missile-launcher",
@@ -2444,11 +2436,7 @@
                 "label": "1 splinter cannon"
               }
             ],
-            "allocationLimit": {
-              "kind": "ratio",
-              "perModels": 5,
-              "maxPerStep": 1
-            }
+            "allocationLimit": null
           },
           {
             "id": "the-corsair-reaver-felarch-can-be-equipped-with-one-of-the-following-3",
@@ -2827,8 +2815,8 @@
           {
             "id": "any-number-of-models-can-each-have-their-corsair-firearm-replaced-with-one-of-the-following-1",
             "label": "Any number of models can each have their Corsair firearm replaced with one of the following:",
-            "target": "Corsair firearm",
-            "actor": "Any number of models",
+            "target": "models",
+            "actor": "models",
             "action": "replace",
             "selectionMode": "allocation",
             "choices": [
@@ -2852,10 +2840,10 @@
           {
             "id": "for-every-5-models-in-this-unit-1-model-s-corsair-firearm-can-be-replaced-with-one-of-the-following-2",
             "label": "For every 5 models in this unit, 1 model\u2019s Corsair firearm can be replaced with one of the following:",
-            "target": "Corsair firearm",
-            "actor": "1 model",
+            "target": "For every 5 models in this unit, 1 model\u2019s Corsair firearm",
+            "actor": null,
             "action": "replace",
-            "selectionMode": "allocation",
+            "selectionMode": "single",
             "choices": [
               {
                 "id": "1-aeldari-missile-launcher",
@@ -2890,11 +2878,7 @@
                 "label": "1 splinter cannon"
               }
             ],
-            "allocationLimit": {
-              "kind": "ratio",
-              "perModels": 5,
-              "maxPerStep": 1
-            }
+            "allocationLimit": null
           },
           {
             "id": "the-corsair-skyreaver-felarch-can-be-equipped-with-one-of-the-following-3",
@@ -3150,9 +3134,9 @@
           {
             "id": "the-skyreaver-felarch-can-replace-its-shuriken-pistol-with-one-of-the-following-1",
             "label": "The Skyreaver Felarch can replace its shuriken pistol with one of the following:",
-            "target": "The Skyreaver Felarch can replace its shuriken pistol with one of the following:",
+            "target": null,
             "actor": null,
-            "action": "manual",
+            "action": null,
             "selectionMode": "manual",
             "choices": [
               {
@@ -3169,10 +3153,10 @@
           {
             "id": "for-every-5-models-in-the-unit-up-to-2-skyreaver-models-can-each-have-their-shuriken-pistol-and-corsair-blade-replaced-with-one-of-the-following-2",
             "label": "For every 5 models in the unit, up to 2 Skyreaver models can each have their shuriken pistol and Corsair blade replaced with one of the following*:",
-            "target": "For every 5 models in the unit, up to 2 Skyreaver models can each have their shuriken pistol and Corsair blade replaced with one of the following*:",
-            "actor": null,
-            "action": "manual",
-            "selectionMode": "manual",
+            "target": "Skyreaver models",
+            "actor": "Skyreaver models",
+            "action": "replace",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-blaster-and-1-close-combat-weapon",
@@ -3191,7 +3175,11 @@
                 "label": "1 shredder and 1 close combat weapon"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": {
+              "kind": "ratio",
+              "perModels": 5,
+              "maxPerStep": 2
+            }
           }
         ],
         "manualNotes": [
@@ -3465,8 +3453,8 @@
           {
             "id": "any-number-of-corsair-voidreavers-in-this-unit-can-each-have-their-shuriken-pistol-and-power-sword-replaced-with-1-shuriken-rifle-3",
             "label": "Any number of Corsair Voidreavers in this unit can each have their shuriken pistol and power sword replaced with 1 shuriken rifle.",
-            "target": "shuriken pistol and power sword",
-            "actor": "Corsair Voidreavers in this unit",
+            "target": "models",
+            "actor": "models",
             "action": "replace",
             "selectionMode": "allocation",
             "choices": [
@@ -3501,10 +3489,10 @@
           {
             "id": "if-this-unit-contains-10-models-1-corsair-voidreaver-s-shuriken-rifle-can-be-replaced-with-one-of-the-following-5",
             "label": "If this unit contains 10 models, 1 Corsair Voidreaver\u2019s shuriken rifle can be replaced with one of the following:",
-            "target": "If this unit contains 10 models, 1 Corsair Voidreaver\u2019s shuriken rifle can be replaced with one of the following:",
+            "target": "If this unit contains 10 models, 1 Corsair Voidreaver\u2019s shuriken rifle",
             "actor": null,
-            "action": "manual",
-            "selectionMode": "manual",
+            "action": "replace",
+            "selectionMode": "single",
             "choices": [
               {
                 "id": "1-shuriken-cannon",
@@ -3519,14 +3507,14 @@
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -3882,8 +3870,8 @@
           {
             "id": "any-number-of-corsair-voidscarred-can-each-have-their-shuriken-pistol-and-power-sword-replaced-with-1-shuriken-rifle-1",
             "label": "Any number of Corsair Voidscarred can each have their shuriken pistol and power sword replaced with 1 shuriken rifle.",
-            "target": "shuriken pistol and power sword",
-            "actor": "Corsair Voidscarred",
+            "target": "models",
+            "actor": "models",
             "action": "replace",
             "selectionMode": "allocation",
             "choices": [
@@ -3952,10 +3940,10 @@
           {
             "id": "if-this-unit-contains-10-models-1-corsair-voidscarred-s-shuriken-rifle-can-be-replaced-with-one-of-the-following-5",
             "label": "If this unit contains 10 models, 1 Corsair Voidscarred\u2019s shuriken rifle can be replaced with one of the following:",
-            "target": "If this unit contains 10 models, 1 Corsair Voidscarred\u2019s shuriken rifle can be replaced with one of the following:",
+            "target": "If this unit contains 10 models, 1 Corsair Voidscarred\u2019s shuriken rifle",
             "actor": null,
-            "action": "manual",
-            "selectionMode": "manual",
+            "action": "replace",
+            "selectionMode": "single",
             "choices": [
               {
                 "id": "1-shuriken-cannon",
@@ -3971,21 +3959,31 @@
           {
             "id": "if-this-unit-contains-10-models-1-corsair-voidscarred-s-shuriken-rifle-can-be-replaced-with-1-long-rifle-6",
             "label": "If this unit contains 10 models, 1 Corsair Voidscarred\u2019s shuriken rifle can be replaced with 1 long rifle.",
-            "target": "If this unit contains 10 models, 1 Corsair Voidscarred\u2019s shuriken rifle can be replaced with 1 long rifle.",
+            "target": "If this unit contains 10 models, 1 Corsair Voidscarred\u2019s shuriken rifle",
             "actor": null,
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": [],
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-long-rifle",
+                "label": "1 long rifle"
+              }
+            ],
             "allocationLimit": null
           },
           {
             "id": "if-this-unit-contains-10-models-1-corsair-voidscarred-s-power-sword-can-be-replaced-with-1-fusion-pistol-7",
             "label": "If this unit contains 10 models, 1 Corsair Voidscarred\u2019s power sword can be replaced with 1 fusion pistol.",
-            "target": "If this unit contains 10 models, 1 Corsair Voidscarred\u2019s power sword can be replaced with 1 fusion pistol.",
+            "target": "If this unit contains 10 models, 1 Corsair Voidscarred\u2019s power sword",
             "actor": null,
-            "action": "manual",
-            "selectionMode": "manual",
-            "choices": [],
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-fusion-pistol",
+                "label": "1 fusion pistol"
+              }
+            ],
             "allocationLimit": null
           },
           {
@@ -4005,14 +4003,14 @@
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "KEYWORDS \u2013 ALL MODELS: INFANTRY",
@@ -4164,7 +4162,7 @@
           {
             "id": "this-model-s-2-starcannons-can-be-replaced-with-2-bright-lances-1",
             "label": "This model\u2019s 2 starcannons can be replaced with 2 bright lances.",
-            "target": "This model\u2019s 2 starcannons",
+            "target": "2 starcannons",
             "actor": null,
             "action": "replace",
             "selectionMode": "single",
@@ -4569,9 +4567,9 @@
           {
             "id": "for-every-5-models-in-this-unit-it-can-have-1-aspect-shrine-token-2",
             "label": "For every 5 models in this unit, it can have 1 Aspect Shrine token.",
-            "target": "For every 5 models in this unit, it can have 1 Aspect Shrine token.",
+            "target": null,
             "actor": null,
-            "action": "manual",
+            "action": null,
             "selectionMode": "manual",
             "choices": [],
             "allocationLimit": null
@@ -4985,9 +4983,9 @@
           {
             "id": "for-every-5-models-in-this-unit-it-can-have-1-aspect-shrine-token-4",
             "label": "For every 5 models in this unit, it can have 1 Aspect Shrine token.",
-            "target": "For every 5 models in this unit, it can have 1 Aspect Shrine token.",
+            "target": null,
             "actor": null,
-            "action": "manual",
+            "action": null,
             "selectionMode": "manual",
             "choices": [],
             "allocationLimit": null
@@ -5381,7 +5379,7 @@
           {
             "id": "this-model-s-scatter-laser-can-be-replaced-with-one-of-the-following-1",
             "label": "This model\u2019s scatter laser can be replaced with one of the following:",
-            "target": "This model\u2019s scatter laser",
+            "target": "scatter laser",
             "actor": null,
             "action": "replace",
             "selectionMode": "single",
@@ -5408,7 +5406,7 @@
           {
             "id": "this-model-s-twin-shuriken-catapult-can-be-replaced-with-1-shuriken-cannon-2",
             "label": "This model\u2019s twin shuriken catapult can be replaced with 1 shuriken cannon.",
-            "target": "This model\u2019s twin shuriken catapult",
+            "target": "twin shuriken catapult",
             "actor": null,
             "action": "replace",
             "selectionMode": "single",
@@ -5614,7 +5612,7 @@
           {
             "id": "this-model-s-witchblade-can-be-replaced-with-1-singing-spear-1",
             "label": "This model\u2019s witchblade can be replaced with 1 singing spear.",
-            "target": "This model\u2019s witchblade",
+            "target": "witchblade",
             "actor": null,
             "action": "replace",
             "selectionMode": "single",
@@ -5828,7 +5826,7 @@
           {
             "id": "this-model-s-witchblade-can-be-replaced-with-1-singing-spear-1",
             "label": "This model\u2019s witchblade can be replaced with 1 singing spear.",
-            "target": "This model\u2019s witchblade",
+            "target": "witchblade",
             "actor": null,
             "action": "replace",
             "selectionMode": "single",
@@ -6098,9 +6096,9 @@
           {
             "id": "for-every-5-models-in-this-unit-it-can-have-1-aspect-shrine-token-2",
             "label": "For every 5 models in this unit, it can have 1 Aspect Shrine token.",
-            "target": "For every 5 models in this unit, it can have 1 Aspect Shrine token.",
+            "target": null,
             "actor": null,
-            "action": "manual",
+            "action": null,
             "selectionMode": "manual",
             "choices": [],
             "allocationLimit": null
@@ -6283,7 +6281,7 @@
           {
             "id": "this-model-s-twin-shuriken-catapult-can-be-replaced-with-1-shuriken-cannon-1",
             "label": "This model\u2019s twin shuriken catapult can be replaced with 1 shuriken cannon.",
-            "target": "This model\u2019s twin shuriken catapult",
+            "target": "twin shuriken catapult",
             "actor": null,
             "action": "replace",
             "selectionMode": "single",
@@ -6455,7 +6453,7 @@
           {
             "id": "this-model-s-twin-shuriken-catapult-can-be-replaced-with-1-shuriken-cannon-1",
             "label": "This model\u2019s twin shuriken catapult can be replaced with 1 shuriken cannon.",
-            "target": "This model\u2019s twin shuriken catapult",
+            "target": "twin shuriken catapult",
             "actor": null,
             "action": "replace",
             "selectionMode": "single",
@@ -7459,9 +7457,9 @@
           {
             "id": "for-every-5-models-in-this-unit-it-can-have-1-aspect-shrine-token-3",
             "label": "For every 5 models in this unit, it can have 1 Aspect Shrine token.",
-            "target": "For every 5 models in this unit, it can have 1 Aspect Shrine token.",
+            "target": null,
             "actor": null,
-            "action": "manual",
+            "action": null,
             "selectionMode": "manual",
             "choices": [],
             "allocationLimit": null
@@ -8584,7 +8582,7 @@
           {
             "id": "this-model-s-shuriken-cannon-can-be-replaced-with-one-of-the-following-1",
             "label": "This model\u2019s shuriken cannon can be replaced with one of the following:",
-            "target": "This model\u2019s shuriken cannon",
+            "target": "shuriken cannon",
             "actor": null,
             "action": "replace",
             "selectionMode": "single",
@@ -8910,7 +8908,7 @@
           {
             "id": "this-model-s-twin-shuriken-catapult-can-be-replaced-with-1-shuriken-cannon-1",
             "label": "This model's twin shuriken catapult can be replaced with 1 shuriken cannon.",
-            "target": "This model's twin shuriken catapult",
+            "target": "twin shuriken catapult",
             "actor": null,
             "action": "replace",
             "selectionMode": "single",
@@ -9276,7 +9274,7 @@
           {
             "id": "this-model-s-d-bombard-can-be-replaced-with-one-of-the-following-1",
             "label": "This model\u2019s D-bombard can be replaced with one of the following:",
-            "target": "This model\u2019s D-bombard",
+            "target": "D-bombard",
             "actor": null,
             "action": "replace",
             "selectionMode": "single",
@@ -9303,7 +9301,7 @@
           {
             "id": "this-model-s-phantom-pulsar-can-be-replaced-with-one-of-the-following-2",
             "label": "This model\u2019s Phantom pulsar can be replaced with one of the following:",
-            "target": "This model\u2019s Phantom pulsar",
+            "target": "Phantom pulsar",
             "actor": null,
             "action": "replace",
             "selectionMode": "single",
@@ -9330,7 +9328,7 @@
           {
             "id": "this-model-s-phantom-starcannon-can-be-replaced-with-1-pulse-laser-3",
             "label": "This model\u2019s Phantom starcannon can be replaced with 1 pulse laser.",
-            "target": "This model\u2019s Phantom starcannon",
+            "target": "Phantom starcannon",
             "actor": null,
             "action": "replace",
             "selectionMode": "single",
@@ -10107,7 +10105,7 @@
           {
             "id": "this-model-s-revenant-pulsar-can-be-replaced-with-1-sonic-lance-1",
             "label": "This model\u2019s Revenant pulsar can be replaced with 1 sonic lance.",
-            "target": "This model\u2019s Revenant pulsar",
+            "target": "Revenant pulsar",
             "actor": null,
             "action": "replace",
             "selectionMode": "single",
@@ -10122,7 +10120,7 @@
           {
             "id": "this-model-s-sonic-lance-can-be-replaced-with-1-revenant-pulsar-2",
             "label": "This model\u2019s sonic lance can be replaced with 1 Revenant pulsar.",
-            "target": "This model\u2019s sonic lance",
+            "target": "sonic lance",
             "actor": null,
             "action": "replace",
             "selectionMode": "single",
@@ -10341,7 +10339,7 @@
           {
             "id": "this-model-s-shuriken-cannon-can-be-replaced-with-one-of-the-following-1",
             "label": "This model\u2019s shuriken cannon can be replaced with one of the following:",
-            "target": "This model\u2019s shuriken cannon",
+            "target": "shuriken cannon",
             "actor": null,
             "action": "replace",
             "selectionMode": "single",
@@ -10822,7 +10820,7 @@
           {
             "id": "this-model-s-shuriken-pistol-can-be-replaced-with-1-neuro-disruptor-1",
             "label": "This model\u2019s shuriken pistol can be replaced with 1 neuro disruptor.",
-            "target": "This model\u2019s shuriken pistol",
+            "target": "shuriken pistol",
             "actor": null,
             "action": "replace",
             "selectionMode": "single",
@@ -11486,9 +11484,9 @@
           {
             "id": "this-model-can-be-equipped-with-up-to-two-of-the-following-1",
             "label": "This model can be equipped with up to two of the following:",
-            "target": "This model can be equipped with up to two of the following:",
+            "target": null,
             "actor": null,
-            "action": "manual",
+            "action": null,
             "selectionMode": "manual",
             "choices": [
               {
@@ -11509,7 +11507,7 @@
           {
             "id": "this-model-s-inferno-lance-can-be-replaced-with-1-deathshroud-cannon-2",
             "label": "This model\u2019s inferno lance can be replaced with 1 deathshroud cannon.",
-            "target": "This model\u2019s inferno lance",
+            "target": "inferno lance",
             "actor": null,
             "action": "replace",
             "selectionMode": "single",
@@ -11524,7 +11522,7 @@
           {
             "id": "this-model-s-scattershield-can-be-replaced-with-one-of-the-following-3",
             "label": "This model\u2019s scattershield can be replaced with one of the following:",
-            "target": "This model\u2019s scattershield",
+            "target": "scattershield",
             "actor": null,
             "action": "replace",
             "selectionMode": "single",
@@ -11728,7 +11726,7 @@
           {
             "id": "any-number-of-models-can-each-have-their-shuriken-cannon-replaced-with-1-skyweaver-haywire-cannon-1",
             "label": "Any number of models can each have their shuriken cannon replaced with 1 Skyweaver haywire cannon.",
-            "target": "shuriken cannon",
+            "target": "models",
             "actor": "models",
             "action": "replace",
             "selectionMode": "allocation",
@@ -11745,7 +11743,7 @@
           {
             "id": "any-number-of-models-can-each-have-their-star-bolas-replaced-with-1-zephyrglaive-2",
             "label": "Any number of models can each have their star bolas replaced with 1 zephyrglaive.",
-            "target": "star bolas",
+            "target": "models",
             "actor": "models",
             "action": "replace",
             "selectionMode": "allocation",
@@ -12490,47 +12488,56 @@
           {
             "id": "up-to-2-storm-guardians-can-each-have-their-shuriken-pistol-replaced-with-1-flamer-1",
             "label": "Up to 2 Storm Guardians can each have their shuriken pistol replaced with 1 flamer.",
-            "target": "Storm Guardians",
-            "actor": null,
+            "target": "models",
+            "actor": "shuriken pistol",
             "action": "replace",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-flamer",
                 "label": "1 flamer"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": {
+              "kind": "static",
+              "max": 2
+            }
           },
           {
             "id": "up-to-2-storm-guardians-can-each-have-their-shuriken-pistol-replaced-with-1-fusion-gun-2",
             "label": "Up to 2 Storm Guardians can each have their shuriken pistol replaced with 1 fusion gun.",
-            "target": "Storm Guardians",
-            "actor": null,
+            "target": "models",
+            "actor": "shuriken pistol",
             "action": "replace",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-fusion-gun",
                 "label": "1 fusion gun"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": {
+              "kind": "static",
+              "max": 2
+            }
           },
           {
             "id": "up-to-2-storm-guardians-can-each-have-their-close-combat-weapon-replaced-with-1-power-sword-3",
             "label": "Up to 2 Storm Guardians can each have their close combat weapon replaced with 1 power sword.",
-            "target": "Storm Guardians",
-            "actor": null,
+            "target": "models",
+            "actor": "close combat weapon",
             "action": "replace",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-power-sword",
                 "label": "1 power sword"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": {
+              "kind": "static",
+              "max": 2
+            }
           }
         ],
         "manualNotes": [],
@@ -12772,9 +12779,9 @@
           {
             "id": "for-every-5-models-in-this-unit-it-can-have-1-aspect-shrine-token-2",
             "label": "For every 5 models in this unit, it can have 1 Aspect Shrine token.",
-            "target": "For every 5 models in this unit, it can have 1 Aspect Shrine token.",
+            "target": null,
             "actor": null,
-            "action": "manual",
+            "action": null,
             "selectionMode": "manual",
             "choices": [],
             "allocationLimit": null
@@ -13037,9 +13044,9 @@
           {
             "id": "for-every-5-models-in-this-unit-it-can-have-1-aspect-shrine-token-2",
             "label": "For every 5 models in this unit, it can have 1 Aspect Shrine token.",
-            "target": "For every 5 models in this unit, it can have 1 Aspect Shrine token.",
+            "target": null,
             "actor": null,
-            "action": "manual",
+            "action": null,
             "selectionMode": "manual",
             "choices": [],
             "allocationLimit": null
@@ -13605,7 +13612,7 @@
           {
             "id": "any-number-of-models-can-each-have-their-harlequin-s-blade-replaced-with-1-harlequin-s-special-weapon-1",
             "label": "Any number of models can each have their Harlequin\u2019s blade replaced with 1 Harlequin\u2019s special weapon.",
-            "target": "Harlequin\u2019s blade",
+            "target": "models",
             "actor": "models",
             "action": "replace",
             "selectionMode": "allocation",
@@ -13637,9 +13644,9 @@
           {
             "id": "if-this-unit-contains-9-or-fewer-models-3",
             "label": "If this unit contains 9 or fewer models:",
-            "target": "If this unit contains 9 or fewer models:",
+            "target": null,
             "actor": null,
-            "action": "manual",
+            "action": null,
             "selectionMode": "manual",
             "choices": [
               {
@@ -13656,9 +13663,9 @@
           {
             "id": "if-this-unit-contains-10-or-more-models-4",
             "label": "If this unit contains 10 or more models:",
-            "target": "If this unit contains 10 or more models:",
+            "target": null,
             "actor": null,
-            "action": "manual",
+            "action": null,
             "selectionMode": "manual",
             "choices": [
               {
@@ -13863,7 +13870,7 @@
           {
             "id": "this-model-s-shuriken-pistol-can-be-replaced-with-one-of-the-following-1",
             "label": "This model\u2019s shuriken pistol can be replaced with one of the following:",
-            "target": "This model\u2019s shuriken pistol",
+            "target": "shuriken pistol",
             "actor": null,
             "action": "replace",
             "selectionMode": "single",
@@ -13882,7 +13889,7 @@
           {
             "id": "this-model-s-troupe-master-s-blade-can-be-replaced-with-1-harlequin-s-special-weapon-2",
             "label": "This model's Troupe Master's blade can be replaced with 1 Harlequin's special weapon.",
-            "target": "This model's Troupe Master's blade",
+            "target": "Troupe Master's blade",
             "actor": null,
             "action": "replace",
             "selectionMode": "single",
@@ -14538,7 +14545,7 @@
           {
             "id": "this-model-s-voidweaver-haywire-cannon-can-be-replaced-with-1-prismatic-cannon-1",
             "label": "This model\u2019s Voidweaver haywire cannon can be replaced with 1 prismatic cannon.",
-            "target": "This model\u2019s Voidweaver haywire cannon",
+            "target": "Voidweaver haywire cannon",
             "actor": null,
             "action": "replace",
             "selectionMode": "single",
@@ -14738,8 +14745,8 @@
           {
             "id": "any-number-of-models-can-each-have-their-bright-lance-replaced-with-one-of-the-following-1",
             "label": "Any number of models can each have their bright lance replaced with one of the following:",
-            "target": "bright lance",
-            "actor": "Any number of models",
+            "target": "models",
+            "actor": "models",
             "action": "replace",
             "selectionMode": "allocation",
             "choices": [
@@ -14759,7 +14766,7 @@
           {
             "id": "any-number-of-models-can-each-have-their-shuriken-cannon-replaced-with-1-missile-launcher-2",
             "label": "Any number of models can each have their shuriken cannon replaced with 1 missile launcher.",
-            "target": "shuriken cannon",
+            "target": "models",
             "actor": "models",
             "action": "replace",
             "selectionMode": "allocation",
@@ -14961,9 +14968,9 @@
           {
             "id": "each-model-can-have-each-shuriken-cannon-it-is-equipped-with-replaced-with-one-of-the-following-1",
             "label": "Each model can have each shuriken cannon it is equipped with replaced with one of the following:",
-            "target": "Each model can have each shuriken cannon it is equipped with replaced with one of the following:",
+            "target": null,
             "actor": null,
-            "action": "manual",
+            "action": null,
             "selectionMode": "manual",
             "choices": [
               {
@@ -15157,7 +15164,7 @@
           {
             "id": "this-model-s-witchblade-can-be-replaced-with-1-singing-spear-1",
             "label": "This model\u2019s witchblade can be replaced with 1 singing spear.",
-            "target": "This model\u2019s witchblade",
+            "target": "witchblade",
             "actor": null,
             "action": "replace",
             "selectionMode": "single",
@@ -15363,7 +15370,7 @@
           {
             "id": "any-number-of-models-can-each-have-their-witchblade-replaced-with-1-singing-spear-1",
             "label": "Any number of models can each have their witchblade replaced with 1 singing spear.",
-            "target": "witchblade",
+            "target": "models",
             "actor": "models",
             "action": "replace",
             "selectionMode": "allocation",
@@ -15582,7 +15589,7 @@
           {
             "id": "any-number-of-models-can-each-have-their-witchblade-replaced-with-1-singing-spear-1",
             "label": "Any number of models can each have their witchblade replaced with 1 singing spear.",
-            "target": "witchblade",
+            "target": "models",
             "actor": "models",
             "action": "replace",
             "selectionMode": "allocation",
@@ -15773,7 +15780,7 @@
           {
             "id": "this-model-s-twin-shuriken-catapult-can-be-replaced-with-1-shuriken-cannon-1",
             "label": "This model\u2019s twin shuriken catapult can be replaced with 1 shuriken cannon.",
-            "target": "This model\u2019s twin shuriken catapult",
+            "target": "twin shuriken catapult",
             "actor": null,
             "action": "replace",
             "selectionMode": "single",
@@ -16042,9 +16049,9 @@
           {
             "id": "for-every-5-models-in-this-unit-it-can-have-1-aspect-shrine-token-2",
             "label": "For every 5 models in this unit, it can have 1 Aspect Shrine token.",
-            "target": "For every 5 models in this unit, it can have 1 Aspect Shrine token.",
+            "target": null,
             "actor": null,
-            "action": "manual",
+            "action": null,
             "selectionMode": "manual",
             "choices": [],
             "allocationLimit": null
@@ -16247,7 +16254,7 @@
           {
             "id": "this-model-s-scatter-laser-can-be-replaced-with-one-of-the-following-1",
             "label": "This model\u2019s scatter laser can be replaced with one of the following:",
-            "target": "This model\u2019s scatter laser",
+            "target": "scatter laser",
             "actor": null,
             "action": "replace",
             "selectionMode": "single",
@@ -16274,7 +16281,7 @@
           {
             "id": "this-model-s-shuriken-cannon-can-be-replaced-with-one-of-the-following-2",
             "label": "This model\u2019s shuriken cannon can be replaced with one of the following:",
-            "target": "This model\u2019s shuriken cannon",
+            "target": "shuriken cannon",
             "actor": null,
             "action": "replace",
             "selectionMode": "single",
@@ -16516,7 +16523,7 @@
           {
             "id": "this-model-s-twin-shuriken-cannon-can-be-replaced-with-one-of-the-following-1",
             "label": "This model\u2019s twin shuriken cannon can be replaced with one of the following:",
-            "target": "This model\u2019s twin shuriken cannon",
+            "target": "twin shuriken cannon",
             "actor": null,
             "action": "replace",
             "selectionMode": "single",
@@ -16543,7 +16550,7 @@
           {
             "id": "this-model-s-twin-shuriken-catapult-can-be-replaced-with-1-shuriken-cannon-2",
             "label": "This model\u2019s twin shuriken catapult can be replaced with 1 shuriken cannon.",
-            "target": "This model\u2019s twin shuriken catapult",
+            "target": "twin shuriken catapult",
             "actor": null,
             "action": "replace",
             "selectionMode": "single",
@@ -16850,8 +16857,8 @@
           {
             "id": "any-number-of-models-can-each-have-their-twin-shuriken-catapult-replaced-with-one-of-the-following-1",
             "label": "Any number of models can each have their twin shuriken catapult replaced with one of the following:",
-            "target": "twin shuriken catapult",
-            "actor": "Any number of models",
+            "target": "models",
+            "actor": "models",
             "action": "replace",
             "selectionMode": "allocation",
             "choices": [
@@ -17355,7 +17362,7 @@
           {
             "id": "this-model-s-suncannon-can-be-replaced-with-1-heavy-wraithcannon-1",
             "label": "This model's suncannon can be replaced with 1 heavy wraithcannon.",
-            "target": "This model's suncannon",
+            "target": "suncannon",
             "actor": null,
             "action": "replace",
             "selectionMode": "single",
@@ -17370,7 +17377,7 @@
           {
             "id": "this-model-s-scattershield-can-be-replaced-with-1-heavy-wraithcannon-2",
             "label": "This model\u2019s scattershield can be replaced with 1 heavy wraithcannon.",
-            "target": "This model\u2019s scattershield",
+            "target": "scattershield",
             "actor": null,
             "action": "replace",
             "selectionMode": "single",
@@ -17385,9 +17392,9 @@
           {
             "id": "this-model-can-be-equipped-with-up-to-two-of-the-following-3",
             "label": "This model can be equipped with up to two of the following:",
-            "target": "This model can be equipped with up to two of the following:",
+            "target": null,
             "actor": null,
-            "action": "manual",
+            "action": null,
             "selectionMode": "manual",
             "choices": [
               {
@@ -17606,7 +17613,7 @@
           {
             "id": "this-model-s-scattershield-can-be-replaced-with-1-heavy-wraithcannon-1",
             "label": "This model\u2019s scattershield can be replaced with 1 heavy wraithcannon.",
-            "target": "This model\u2019s scattershield",
+            "target": "scattershield",
             "actor": null,
             "action": "replace",
             "selectionMode": "single",
@@ -17621,9 +17628,9 @@
           {
             "id": "this-model-can-be-equipped-with-up-to-two-of-the-following-2",
             "label": "This model can be equipped with up to two of the following:",
-            "target": "This model can be equipped with up to two of the following:",
+            "target": null,
             "actor": null,
-            "action": "manual",
+            "action": null,
             "selectionMode": "manual",
             "choices": [
               {
@@ -17915,7 +17922,7 @@
           {
             "id": "this-model-can-be-equipped-with-1-ghostglaive-2",
             "label": "This model can be equipped with 1 ghostglaive.",
-            "target": "This model",
+            "target": "model",
             "actor": null,
             "action": "equip",
             "selectionMode": "single",
@@ -17930,9 +17937,9 @@
           {
             "id": "this-model-can-be-equipped-with-up-to-two-of-the-following-3",
             "label": "This model can be equipped with up to two of the following:",
-            "target": "This model can be equipped with up to two of the following:",
+            "target": null,
             "actor": null,
-            "action": "manual",
+            "action": null,
             "selectionMode": "manual",
             "choices": [
               {
@@ -18183,7 +18190,7 @@
           {
             "id": "this-model-can-be-equipped-with-one-of-the-following-1",
             "label": "This model can be equipped with one of the following:",
-            "target": "This model",
+            "target": "model",
             "actor": null,
             "action": "equip",
             "selectionMode": "single",
@@ -18367,7 +18374,7 @@
           {
             "id": "this-model-s-splinter-pistol-can-be-replaced-with-1-blast-pistol-1",
             "label": "This model\u2019s splinter pistol can be replaced with 1 blast pistol.",
-            "target": "This model\u2019s splinter pistol",
+            "target": "splinter pistol",
             "actor": null,
             "action": "replace",
             "selectionMode": "single",
@@ -19036,7 +19043,7 @@
           {
             "id": "this-model-s-dark-lance-can-be-replaced-with-1-disintegrator-cannon-1",
             "label": "This model\u2019s dark lance can be replaced with 1 disintegrator cannon.",
-            "target": "This model\u2019s dark lance",
+            "target": "dark lance",
             "actor": null,
             "action": "replace",
             "selectionMode": "single",
@@ -19276,10 +19283,10 @@
           {
             "id": "for-every-3-models-in-this-unit-1-model-s-splinter-rifle-can-be-replaced-with-one-of-the-following-2",
             "label": "For every 3 models in this unit, 1 model\u2019s splinter rifle can be replaced with one of the following:",
-            "target": "splinter rifle",
-            "actor": "1 model",
+            "target": "For every 3 models in this unit, 1 model\u2019s splinter rifle",
+            "actor": null,
             "action": "replace",
-            "selectionMode": "allocation",
+            "selectionMode": "single",
             "choices": [
               {
                 "id": "1-blaster",
@@ -19290,17 +19297,13 @@
                 "label": "1 heat lance"
               }
             ],
-            "allocationLimit": {
-              "kind": "ratio",
-              "perModels": 3,
-              "maxPerStep": 1
-            }
+            "allocationLimit": null
           },
           {
             "id": "for-every-3-models-in-this-unit-1-model-can-be-equipped-with-one-of-the-following-3",
             "label": "For every 3 models in this unit, 1 model can be equipped with one of the following:",
-            "target": "1 model",
-            "actor": "1 model",
+            "target": "model",
+            "actor": "model",
             "action": "equip",
             "selectionMode": "allocation",
             "choices": [
@@ -19480,7 +19483,7 @@
           {
             "id": "this-model-can-be-equipped-with-one-of-the-following-1",
             "label": "This model can be equipped with one of the following:",
-            "target": "This model",
+            "target": "model",
             "actor": null,
             "action": "equip",
             "selectionMode": "single",
@@ -19648,7 +19651,7 @@
           {
             "id": "this-model-s-twin-splinter-rifle-can-be-replaced-with-1-splinter-cannon-1",
             "label": "This model\u2019s twin splinter rifle can be replaced with 1 splinter cannon.",
-            "target": "This model\u2019s twin splinter rifle",
+            "target": "twin splinter rifle",
             "actor": null,
             "action": "replace",
             "selectionMode": "single",

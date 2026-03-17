@@ -1,0 +1,201 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Salamander-Command-Vehicle",
+    "faction_slug": "astra-militarum",
+    "datasheet_slug": "Salamander-Command-Vehicle",
+    "output_slug": "astra-militarum"
+  },
+  "name": "Salamander Command Vehicle",
+  "base_size": "\u2300Use model",
+  "characteristics": {
+    "M": "12\"",
+    "T": "8",
+    "Sv": "3+",
+    "W": "10",
+    "Ld": "7+",
+    "OC": "3"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Heavy bolter",
+        "abilities": [
+          "sustained hits 1"
+        ],
+        "range": "36\"",
+        "a": "3",
+        "bs": "4+",
+        "s": "5",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Heavy flamer",
+        "abilities": [
+          "ignores cover",
+          "torrent"
+        ],
+        "range": "12\"",
+        "a": "D6",
+        "bs": "N/A",
+        "s": "5",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Heavy stubber",
+        "abilities": [
+          "rapid fire 3"
+        ],
+        "range": "36\"",
+        "a": "3",
+        "bs": "4+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Hunter-killer missile one shot",
+        "abilities": [],
+        "range": "48\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "14",
+        "ap": "-3",
+        "d": "D6"
+      },
+      {
+        "name": "Storm bolter",
+        "abilities": [
+          "rapid fire 2"
+        ],
+        "range": "24\"",
+        "a": "2",
+        "bs": "4+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Armoured tracks",
+        "abilities": [],
+        "range": "Melee",
+        "a": "3",
+        "ws": "4+",
+        "s": "6",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise D3"
+    ],
+    "faction": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this model has shot, select one enemy unit hit by one or more of those attacks. Until the end of the phase, that unit cannot have the Benefit of Cover .",
+        "name": "Auspex Surveyor"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Salamander Command Vehicle"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "heavy bolter; heavy flamer; armoured tracks.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "80"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "VEHICLE",
+    "IMPERIUM",
+    "SQUADRON",
+    "SMOKE",
+    "SALAMANDER COMMAND VEHICLE"
+  ],
+  "faction_keywords": [
+    "ASTRA MILITARUM"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model can be equipped with 1 hunter-killer missile.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "This model can be equipped with one of the following:",
+          "items": [
+            "1 heavy stubber",
+            "1 storm bolter"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise D3"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model has shot, select one enemy unit hit by one or more of those attacks. Until the end of the phase, that unit cannot have the Benefit of Cover .",
+          "name": "Auspex Surveyor"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Salamander Command Vehicle"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "heavy bolter; heavy flamer; armoured tracks.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "80"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

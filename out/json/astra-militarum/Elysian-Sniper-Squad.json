@@ -1,0 +1,169 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Elysian-Sniper-Squad",
+    "faction_slug": "astra-militarum",
+    "datasheet_slug": "Elysian-Sniper-Squad",
+    "output_slug": "astra-militarum"
+  },
+  "name": "Elysian Sniper Squad",
+  "base_size": "\u230060mm",
+  "characteristics": {
+    "M": "6\"",
+    "T": "3",
+    "Sv": "5+",
+    "W": "2",
+    "Ld": "7+",
+    "OC": "2"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Lasgun",
+        "abilities": [
+          "rapid fire 1"
+        ],
+        "range": "24\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "3",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Sniper rifle",
+        "abilities": [
+          "heavy",
+          "precision"
+        ],
+        "range": "36\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "4",
+        "ap": "-2",
+        "d": "2"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Close combat weapon",
+        "abilities": [],
+        "range": "Melee",
+        "a": "1",
+        "ws": "4+",
+        "s": "3",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deep Strike"
+    ],
+    "faction": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this unit Remains Stationary, until the start of your next Movement phase , ranged weapons equipped by models in this unit have the [DEVASTATING WOUNDS] ability.",
+        "name": "Mark the Target"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "3 Elysian Sniper Teams"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "lasgun; sniper rifle; close combat weapon.",
+      "label": "Every model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "3 models",
+          "points": "65"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "IMPERIUM",
+    "GRENADES",
+    "REGIMENT",
+    "ELYSIAN SNIPER SQUAD"
+  ],
+  "faction_keywords": [
+    "ASTRA MILITARUM"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "None"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deep Strike"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this unit Remains Stationary, until the start of your next Movement phase , ranged weapons equipped by models in this unit have the [DEVASTATING WOUNDS] ability.",
+          "name": "Mark the Target"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "3 Elysian Sniper Teams"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "lasgun; sniper rifle; close combat weapon.",
+          "label": "Every model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "3 models",
+              "points": "65"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "SNIPER TEAMS",
+      "entries": [
+        {
+          "type": "text",
+          "text": "For the purposes of embarking within TRANSPORTS , each Elysian Sniper Team model counts as one Heavy Weapons Team model."
+        }
+      ]
+    }
+  ]
+}

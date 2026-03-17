@@ -1,0 +1,200 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Krieg-Heavy-Weapons-Squad",
+    "faction_slug": "astra-militarum",
+    "datasheet_slug": "Krieg-Heavy-Weapons-Squad",
+    "output_slug": "astra-militarum"
+  },
+  "name": "Krieg Heavy Weapons Squad",
+  "base_size": "",
+  "characteristics": {
+    "M": "4\"",
+    "T": "3",
+    "Sv": "4+",
+    "W": "2",
+    "Ld": "7+",
+    "OC": "1"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Krieg heavy flamer",
+        "abilities": [
+          "ignores cover",
+          "torrent"
+        ],
+        "range": "18\"",
+        "a": "D6",
+        "bs": "N/A",
+        "s": "5",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Lascannon",
+        "abilities": [
+          "heavy"
+        ],
+        "range": "48\"",
+        "a": "1",
+        "bs": "5+",
+        "s": "12",
+        "ap": "-3",
+        "d": "D6+1"
+      },
+      {
+        "name": "Laspistol",
+        "abilities": [
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "3",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Twin Krieg heavy stubber",
+        "abilities": [
+          "heavy",
+          "rapid fire 3",
+          "twin-linked"
+        ],
+        "range": "48\"",
+        "a": "3",
+        "bs": "5+",
+        "s": "6",
+        "ap": "-1",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Close combat weapon",
+        "abilities": [],
+        "range": "Melee",
+        "a": "1",
+        "ws": "4+",
+        "s": "3",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [],
+    "faction": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While the Fire Coordinator model is on the battlefield, each time a Heavy Weapons Gunner model is destroyed, roll one D6: on a 3+, do not remove it from play. The destroyed model can shoot after the attacking model\u2019s unit has finished making its attacks, and is then removed from play.",
+        "name": "Final Duty"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "3 Heavy Weapons Gunners",
+        "1 Fire Coordinator"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "lascannon; laspistol; close combat weapon.",
+      "label": "Each Heavy Weapons Gunner is equipped with"
+    },
+    {
+      "type": "statement",
+      "text": "laspistol; close combat weapon.",
+      "label": "The Fire Coordinator is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "4 models",
+          "points": "75"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "GRENADES",
+    "IMPERIUM",
+    "REGIMENT",
+    "KRIEG HEAVY WEAPONS SQUAD"
+  ],
+  "faction_keywords": [
+    "ASTRA MILITARUM"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "Any number of Heavy Weapons Gunners can each have their lascannon replaced with one of the following:",
+          "items": [
+            "1 Krieg heavy flamer",
+            "1 twin Krieg heavy stubber"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "rule",
+          "text": "While the Fire Coordinator model is on the battlefield, each time a Heavy Weapons Gunner model is destroyed, roll one D6: on a 3+, do not remove it from play. The destroyed model can shoot after the attacking model\u2019s unit has finished making its attacks, and is then removed from play.",
+          "name": "Final Duty"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "3 Heavy Weapons Gunners",
+            "1 Fire Coordinator"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "lascannon; laspistol; close combat weapon.",
+          "label": "Each Heavy Weapons Gunner is equipped with"
+        },
+        {
+          "type": "statement",
+          "text": "laspistol; close combat weapon.",
+          "label": "The Fire Coordinator is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "4 models",
+              "points": "75"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "EMBARKING",
+      "entries": [
+        {
+          "type": "text",
+          "text": "While embarked within a TRANSPORT , each Heavy Weapons Gunner model takes up the space of 2 models, and each weapon equipped by these models is considered to be 2 models\u2019 weapons for the purposes of the Firing Deck ability."
+        }
+      ]
+    }
+  ]
+}

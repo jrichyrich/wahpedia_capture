@@ -1,0 +1,173 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Tauros-Venator",
+    "faction_slug": "astra-militarum",
+    "datasheet_slug": "Tauros-Venator",
+    "output_slug": "astra-militarum"
+  },
+  "name": "Tauros Venator",
+  "base_size": "\u2300Use model",
+  "characteristics": {
+    "M": "12\"",
+    "T": "6",
+    "Sv": "4+",
+    "W": "6",
+    "Ld": "7+",
+    "OC": "2"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Hunter-killer missile one shot",
+        "abilities": [],
+        "range": "48\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "14",
+        "ap": "-3",
+        "d": "D6"
+      },
+      {
+        "name": "Twin lascannon",
+        "abilities": [
+          "twin-linked"
+        ],
+        "range": "48\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "12",
+        "ap": "-3",
+        "d": "D6+1"
+      },
+      {
+        "name": "Twin multi-laser",
+        "abilities": [
+          "twin-linked"
+        ],
+        "range": "36\"",
+        "a": "4",
+        "bs": "4+",
+        "s": "6",
+        "ap": "0",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Armoured frame",
+        "abilities": [],
+        "range": "Melee",
+        "a": "2",
+        "ws": "4+",
+        "s": "5",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise 1"
+    ],
+    "faction": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this model makes an attack that targets a MONSTER or VEHICLE unit, you can re-roll the Wound roll .",
+        "name": "Mobile Hunter-killer"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Tauros Venator"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "twin multi-laser; armoured frame.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "50"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "MOUNTED",
+    "REGIMENT",
+    "IMPERIUM",
+    "TAUROS",
+    "TAUROS VENATOR"
+  ],
+  "faction_keywords": [
+    "ASTRA MILITARUM"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s twin multi-laser can be replaced with 1 twin lascannon.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "This model can be equipped with 1 hunter-killer missile.",
+          "items": []
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise 1"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model makes an attack that targets a MONSTER or VEHICLE unit, you can re-roll the Wound roll .",
+          "name": "Mobile Hunter-killer"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Tauros Venator"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "twin multi-laser; armoured frame.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "50"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,191 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Vulture-Gunship",
+    "faction_slug": "astra-militarum",
+    "datasheet_slug": "Vulture-Gunship",
+    "output_slug": "astra-militarum"
+  },
+  "name": "Vulture Gunship",
+  "base_size": "\u2300120 x 92mm flying base",
+  "characteristics": {
+    "M": "20+\"",
+    "T": "10",
+    "Sv": "2+",
+    "W": "14",
+    "Ld": "7+",
+    "OC": "0"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Heavy bolter",
+        "abilities": [
+          "sustained hits 1"
+        ],
+        "range": "36\"",
+        "a": "3",
+        "bs": "4+",
+        "s": "5",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Multiple rocket pod",
+        "abilities": [
+          "blast"
+        ],
+        "range": "36\"",
+        "a": "D6",
+        "bs": "4+",
+        "s": "6",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Vulture gatling cannon",
+        "abilities": [
+          "sustained hits 1"
+        ],
+        "range": "24\"",
+        "a": "18",
+        "bs": "4+",
+        "s": "5",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Vulture hellstrike rack",
+        "abilities": [
+          "anti-fly 2+"
+        ],
+        "range": "48\"",
+        "a": "2",
+        "bs": "4+",
+        "s": "10",
+        "ap": "-3",
+        "d": "D6"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Armoured hull",
+        "abilities": [],
+        "range": "Melee",
+        "a": "6",
+        "ws": "4+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise D6 , Hover"
+    ],
+    "faction": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "In your Shooting phase , after this model has shot, select one enemy unit hit by one or more of those attacks. That enemy unit must take a Battle-shock test .",
+        "name": "Gunship Barrage"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Vulture Gunship"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "heavy bolter; 2 multiple rocket pods; Vulture hellstrike racks; armoured hull.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "225"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "VEHICLE",
+    "FLY",
+    "AIRCRAFT",
+    "IMPERIUM",
+    "VULTURE GUNSHIP"
+  ],
+  "faction_keywords": [
+    "ASTRA MILITARUM"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s 2 multiple rocket pods and Vulture hellstrike rack can be replaced with 2 Vulture gatling cannons.",
+          "items": []
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise D6 , Hover"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "In your Shooting phase , after this model has shot, select one enemy unit hit by one or more of those attacks. That enemy unit must take a Battle-shock test .",
+          "name": "Gunship Barrage"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Vulture Gunship"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "heavy bolter; 2 multiple rocket pods; Vulture hellstrike racks; armoured hull.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "225"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DAMAGED: 1-5 WOUNDS REMAINING",
+      "entries": [
+        {
+          "type": "text",
+          "text": "While this model has 1-5 wounds remaining, each time this model makes an attack, subtract 1 from the Hit roll ."
+        }
+      ]
+    }
+  ]
+}

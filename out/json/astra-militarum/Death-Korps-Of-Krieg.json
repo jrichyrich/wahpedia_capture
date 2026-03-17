@@ -1,0 +1,392 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Death-Korps-Of-Krieg",
+    "faction_slug": "astra-militarum",
+    "datasheet_slug": "Death-Korps-Of-Krieg",
+    "output_slug": "astra-militarum"
+  },
+  "name": "Death Korps Of Krieg",
+  "base_size": "\u230025mm",
+  "characteristics": {
+    "M": "6\"",
+    "T": "3",
+    "Sv": "5+",
+    "W": "1",
+    "Ld": "7+",
+    "OC": "2"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Bolt pistol",
+        "abilities": [
+          "PISTOL"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Boltgun",
+        "abilities": [
+          "rapid fire 1"
+        ],
+        "range": "24\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Flamer",
+        "abilities": [
+          "ignores cover",
+          "torrent"
+        ],
+        "range": "12\"",
+        "a": "D6",
+        "bs": "N/A",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Grenade launcher \u2013 frag",
+        "abilities": [
+          "blast"
+        ],
+        "range": "24\"",
+        "a": "D3",
+        "bs": "4+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Grenade launcher \u2013 krak",
+        "abilities": [],
+        "range": "24\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "9",
+        "ap": "-2",
+        "d": "D3"
+      },
+      {
+        "name": "Lasgun",
+        "abilities": [
+          "rapid fire 1"
+        ],
+        "range": "24\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "3",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Laspistol",
+        "abilities": [
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "3",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Long-las",
+        "abilities": [
+          "heavy",
+          "precision"
+        ],
+        "range": "36\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "4",
+        "ap": "-2",
+        "d": "2"
+      },
+      {
+        "name": "Meltagun",
+        "abilities": [
+          "melta 2"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "9",
+        "ap": "-4",
+        "d": "D6"
+      },
+      {
+        "name": "Plasma gun \u2013 standard",
+        "abilities": [
+          "rapid fire 1"
+        ],
+        "range": "24\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "7",
+        "ap": "-2",
+        "d": "1"
+      },
+      {
+        "name": "Plasma gun \u2013 supercharge",
+        "abilities": [
+          "hazardous",
+          "rapid fire 1"
+        ],
+        "range": "24\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "8",
+        "ap": "-3",
+        "d": "2"
+      },
+      {
+        "name": "Plasma pistol \u2013 standard",
+        "abilities": [
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "7",
+        "ap": "-2",
+        "d": "1"
+      },
+      {
+        "name": "Plasma pistol \u2013 supercharge",
+        "abilities": [
+          "hazardous",
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "8",
+        "ap": "-3",
+        "d": "2"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Chainsword",
+        "abilities": [],
+        "range": "Melee",
+        "a": "3",
+        "ws": "4+",
+        "s": "3",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Close combat weapon",
+        "abilities": [],
+        "range": "Melee",
+        "a": "1",
+        "ws": "4+",
+        "s": "3",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Power weapon",
+        "abilities": [],
+        "range": "Melee",
+        "a": "2",
+        "ws": "4+",
+        "s": "4",
+        "ap": "-2",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [],
+    "faction": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time a model in this unit makes an attack, add 1 to the Hit roll if this unit is below its Starting Strength , and add 1 to the Wound roll as well if this unit is Below Half-strength .",
+        "name": "Grim Demeanour"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Death Korps Watchmaster and 9 Death Korps Troopers",
+        "2 Death Korps Watchmasters and 18 Death Korps Troopers"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "2 Death Korps Watchmasters and 18 Death Korps Troopers",
+      "label": "OR"
+    },
+    {
+      "type": "statement",
+      "text": "laspistol; chainsword.",
+      "label": "Every Death Korps Watchmaster is equipped with"
+    },
+    {
+      "type": "statement",
+      "text": "close combat weapon. This unit can have up to two Leader units attached to it, provided no more than one of those units is a COMMAND SQUAD unit. If it does, and this Bodyguard unit is destroyed, the Leader units attached to it become separate units, with their original Starting Strengths .",
+      "label": "Every Death Korps Trooper is equipped with: lasgun;"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "10 models",
+          "points": "65"
+        },
+        {
+          "label": "20 models",
+          "points": "145"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "BATTLELINE",
+    "IMPERIUM",
+    "GRENADES",
+    "REGIMENT",
+    "PLATOON",
+    "DEATH KORPS OF KRIEG"
+  ],
+  "faction_keywords": [
+    "ASTRA MILITARUM"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "For every 10 models in this unit, up to 2 Death Korps Troopers can each have their lasgun replaced with one of the following*:",
+          "items": [
+            "1 flamer",
+            "1 grenade launcher",
+            "1 long-las",
+            "1 meltagun",
+            "1 plasma gun"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "For every 10 models in this unit, 1 Death Korps Trooper equipped with a lasgun can be equipped with 1 Death Korps medi-pack (that model\u2019s lasgun cannot be replaced)**.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "For every 10 models in this unit, 1 Death Korps Trooper equipped with a lasgun can be equipped with 1 vox-caster (that model\u2019s lasgun cannot be replaced).**",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "Any number of Death Korps Watchmasters can each replace their laspistol and chainsword with 1 boltgun and 1 close combat weapon.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "Any number of Death Korps Watchmasters can each replace their chainsword with 1 power weapon.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "Any number of Death Korps Watchmasters can each replace their laspistol with one of the following:",
+          "items": [
+            "1 bolt pistol",
+            "1 plasma pistol"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "* You cannot select the same option more than once per unit unless it contains 20 models, in which case you cannot select the same option more than twice per unit."
+        },
+        {
+          "type": "text",
+          "text": "** A model can only take one of these options."
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "rule",
+          "text": "Each time a model in this unit makes an attack, add 1 to the Hit roll if this unit is below its Starting Strength , and add 1 to the Wound roll as well if this unit is Below Half-strength .",
+          "name": "Grim Demeanour"
+        }
+      ]
+    },
+    {
+      "title": "WARGEAR ABILITIES",
+      "entries": [
+        {
+          "type": "statement",
+          "text": "Each time you target the bearer\u2019s unit with a Stratagem , roll one D6, adding 1 to the result if there are one or more friendly OFFICER models within 6\": on a 5+, you gain 1CP.",
+          "label": "Vox-caster"
+        },
+        {
+          "type": "statement",
+          "text": "At the start of your Command phase , if the bearer\u2019s unit is below its Starting Strength , you can return up to D3 destroyed Death Korps Troopers to this unit (if this unit contains two models equipped with a Death Korps medi-pack, return up to D3+1 destroyed Death Korps Troopers to this unit instead).",
+          "label": "Death Korps Medi-pack"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Death Korps Watchmaster and 9 Death Korps Troopers",
+            "2 Death Korps Watchmasters and 18 Death Korps Troopers"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "2 Death Korps Watchmasters and 18 Death Korps Troopers",
+          "label": "OR"
+        },
+        {
+          "type": "statement",
+          "text": "laspistol; chainsword.",
+          "label": "Every Death Korps Watchmaster is equipped with"
+        },
+        {
+          "type": "statement",
+          "text": "close combat weapon. This unit can have up to two Leader units attached to it, provided no more than one of those units is a COMMAND SQUAD unit. If it does, and this Bodyguard unit is destroyed, the Leader units attached to it become separate units, with their original Starting Strengths .",
+          "label": "Every Death Korps Trooper is equipped with: lasgun;"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "10 models",
+              "points": "65"
+            },
+            {
+              "label": "20 models",
+              "points": "145"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

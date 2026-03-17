@@ -1,0 +1,184 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Tauros-Assault-Vehicle",
+    "faction_slug": "astra-militarum",
+    "datasheet_slug": "Tauros-Assault-Vehicle",
+    "output_slug": "astra-militarum"
+  },
+  "name": "Tauros Assault Vehicle",
+  "base_size": "\u2300Use model",
+  "characteristics": {
+    "M": "12\"",
+    "T": "6",
+    "Sv": "4+",
+    "W": "6",
+    "Ld": "7+",
+    "OC": "2"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Heavy flamer",
+        "abilities": [
+          "ignores cover",
+          "torrent"
+        ],
+        "range": "12\"",
+        "a": "D6",
+        "bs": "N/A",
+        "s": "5",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Hunter-killer missile one shot",
+        "abilities": [],
+        "range": "48\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "14",
+        "ap": "-3",
+        "d": "D6"
+      },
+      {
+        "name": "Tauros grenade launcher \u2013 frag",
+        "abilities": [
+          "blast"
+        ],
+        "range": "24\"",
+        "a": "D6",
+        "bs": "4+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Tauros grenade launcher \u2013 krak",
+        "abilities": [],
+        "range": "24\"",
+        "a": "2",
+        "bs": "4+",
+        "s": "9",
+        "ap": "-2",
+        "d": "D3"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Armoured frame",
+        "abilities": [],
+        "range": "Melee",
+        "a": "2",
+        "ws": "4+",
+        "s": "5",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise 1 , Scouts 9\""
+    ],
+    "faction": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this model Advances, do not make an Advance roll for it. Instead, until the end of the phase, add 6\" to the Move characteristic of this model.",
+        "name": "Turbo-boost"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Tauros Assault Vehicle"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "heavy flamer; armoured frame.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "50"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "MOUNTED",
+    "REGIMENT",
+    "IMPERIUM",
+    "TAUROS",
+    "TAUROS ASSAULT VEHICLE"
+  ],
+  "faction_keywords": [
+    "ASTRA MILITARUM"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s heavy flamer can be replaced with 1 Tauros grenade launcher.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "This model can be equipped with 1 hunter-killer missile.",
+          "items": []
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise 1 , Scouts 9\""
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model Advances, do not make an Advance roll for it. Instead, until the end of the phase, add 6\" to the Move characteristic of this model.",
+          "name": "Turbo-boost"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Tauros Assault Vehicle"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "heavy flamer; armoured frame.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "50"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

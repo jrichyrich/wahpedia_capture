@@ -1,0 +1,193 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Primaris-Psyker",
+    "faction_slug": "astra-militarum",
+    "datasheet_slug": "Primaris-Psyker",
+    "output_slug": "astra-militarum"
+  },
+  "name": "Primaris Psyker",
+  "base_size": "\u230032mm",
+  "characteristics": {
+    "M": "6\"",
+    "T": "3",
+    "Sv": "5+",
+    "W": "3",
+    "Ld": "7+",
+    "OC": "1"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Laspistol",
+        "abilities": [
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "3",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Psychic Maelstrom \u2013 witchfire",
+        "abilities": [
+          "blast",
+          "devastating wounds",
+          "psychic"
+        ],
+        "range": "18\"",
+        "a": "D6",
+        "bs": "3+",
+        "s": "5",
+        "ap": "-2",
+        "d": "1"
+      },
+      {
+        "name": "Psychic Maelstrom \u2013 focused witchfire",
+        "abilities": [
+          "blast",
+          "devastating wounds",
+          "hazardous",
+          "psychic"
+        ],
+        "range": "18\"",
+        "a": "D6+1",
+        "bs": "3+",
+        "s": "6",
+        "ap": "-2",
+        "d": "2"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Force weapon",
+        "abilities": [
+          "psychic"
+        ],
+        "range": "Melee",
+        "a": "3",
+        "ws": "4+",
+        "s": "6",
+        "ap": "-1",
+        "d": "D3"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Leader"
+    ],
+    "faction": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, models in that unit have the Feel No Pain 4+ ability against Psychic Attacks .",
+        "name": "Malign Wardings(Psychic)"
+      },
+      {
+        "type": "rule",
+        "text": "At the start of your opponent\u2019s Shooting phase , you can roll one D6: on a 1, this PSYKER \u2019s unit suffers D3 mortal wounds ; on a 2+, until the end of the phase, models in this PSYKER \u2019s unit have a 4+ invulnerable save .",
+        "name": "Psychic Barrier (Psychic)"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Primaris Psyker"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "laspistol; Psychic Maelstrom; force weapon.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "60"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "CHARACTER",
+    "PSYKER",
+    "IMPERIUM",
+    "PRIMARIS PSYKER"
+  ],
+  "faction_keywords": [
+    "ASTRA MILITARUM"
+  ],
+  "sections": [
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Leader"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, models in that unit have the Feel No Pain 4+ ability against Psychic Attacks .",
+          "name": "Malign Wardings(Psychic)"
+        },
+        {
+          "type": "rule",
+          "text": "At the start of your opponent\u2019s Shooting phase , you can roll one D6: on a 1, this PSYKER \u2019s unit suffers D3 mortal wounds ; on a 2+, until the end of the phase, models in this PSYKER \u2019s unit have a 4+ invulnerable save .",
+          "name": "Psychic Barrier (Psychic)"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Primaris Psyker"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "laspistol; Psychic Maelstrom; force weapon.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "60"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "LEADER",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "Cadian Shock Troops",
+            "Catachan Jungle Fighters",
+            "Kasrkin",
+            "Krieg Combat Engineers",
+            "Tempestus Scions",
+            "Death Korps Of Krieg"
+          ]
+        }
+      ]
+    }
+  ]
+}

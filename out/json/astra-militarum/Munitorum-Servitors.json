@@ -1,0 +1,200 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Munitorum-Servitors",
+    "faction_slug": "astra-militarum",
+    "datasheet_slug": "Munitorum-Servitors",
+    "output_slug": "astra-militarum"
+  },
+  "name": "Munitorum Servitors",
+  "base_size": "\u230025mm",
+  "characteristics": {
+    "M": "6\"",
+    "T": "3",
+    "Sv": "4+",
+    "W": "1",
+    "Ld": "8+",
+    "OC": "0",
+    "Invulnerable Save": "6+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Heavy bolter",
+        "abilities": [
+          "heavy",
+          "sustained hits 1"
+        ],
+        "range": "36\"",
+        "a": "3",
+        "bs": "6+",
+        "s": "5",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Multi-melta",
+        "abilities": [
+          "heavy",
+          "melta 2"
+        ],
+        "range": "18\"",
+        "a": "2",
+        "bs": "6+",
+        "s": "9",
+        "ap": "-4",
+        "d": "D6"
+      },
+      {
+        "name": "Plasma cannon \u2013 standard",
+        "abilities": [
+          "blast",
+          "heavy"
+        ],
+        "range": "36\"",
+        "a": "D3",
+        "bs": "6+",
+        "s": "7",
+        "ap": "-2",
+        "d": "1"
+      },
+      {
+        "name": "Plasma cannon \u2013 supercharge",
+        "abilities": [
+          "blast",
+          "hazardous",
+          "heavy"
+        ],
+        "range": "36\"",
+        "a": "D3",
+        "bs": "6+",
+        "s": "8",
+        "ap": "-3",
+        "d": "2"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Close combat weapon",
+        "abilities": [],
+        "range": "Melee",
+        "a": "1",
+        "ws": "5+",
+        "s": "3",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Servitor\u2019s servo-arm",
+        "abilities": [],
+        "range": "Melee",
+        "a": "1",
+        "ws": "5+",
+        "s": "6",
+        "ap": "-2",
+        "d": "3"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [],
+    "faction": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While a friendly TECH-PRIEST ENGINSEER model is leading this unit, improve the Ballistic Skill and Weapon Skill characteristics of ranged and melee weapons equipped by MUNITORUM SERVITOR models in this unit by 1.",
+        "name": "Mindlock"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "4 Munitorum Servitors"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "Servitor\u2019s servo-arm.",
+      "label": "Every model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "4 models",
+          "points": "35"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "IMPERIUM",
+    "MUNITORUM SERVITORS"
+  ],
+  "faction_keywords": [
+    "ASTRA MILITARUM"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "Up to 2 models can each have their Servitor\u2019s servo-arm replaced with one of the following:",
+          "items": [
+            "1 heavy bolter",
+            "1 multi-melta",
+            "1 plasma cannon"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "rule",
+          "text": "While a friendly TECH-PRIEST ENGINSEER model is leading this unit, improve the Ballistic Skill and Weapon Skill characteristics of ranged and melee weapons equipped by MUNITORUM SERVITOR models in this unit by 1.",
+          "name": "Mindlock"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "4 Munitorum Servitors"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "Servitor\u2019s servo-arm.",
+          "label": "Every model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "4 models",
+              "points": "35"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "SERVITOR RETINUE",
+      "entries": [
+        {
+          "type": "text",
+          "text": "At the start of the Declare Battle Formations step, this unit can join one other unit from your army that is being led by a REGIMENTAL ENGINSEER (a unit cannot have more than one MUNITORUM SERVITORS unit joined to it). If it does, until the end of the battle, every model in this unit counts as being part of that Bodyguard unit, and that Bodyguard unit\u2019s Starting Strength is increased accordingly."
+        }
+      ]
+    }
+  ]
+}

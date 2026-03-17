@@ -1,0 +1,211 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Deathstrike",
+    "faction_slug": "astra-militarum",
+    "datasheet_slug": "Deathstrike",
+    "output_slug": "astra-militarum"
+  },
+  "name": "Deathstrike",
+  "base_size": "\u2300Use model",
+  "characteristics": {
+    "M": "10\"",
+    "T": "10",
+    "Sv": "3+",
+    "W": "11",
+    "Ld": "7+",
+    "OC": "3"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Deathstrike missile",
+        "abilities": [
+          "blast"
+        ],
+        "range": "N/A",
+        "a": "2D6",
+        "bs": "2+",
+        "s": "16",
+        "ap": "-4",
+        "d": "1"
+      },
+      {
+        "name": "Heavy bolter",
+        "abilities": [
+          "sustained hits 1"
+        ],
+        "range": "36\"",
+        "a": "3",
+        "bs": "4+",
+        "s": "5",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Heavy flamer",
+        "abilities": [
+          "ignores cover",
+          "torrent"
+        ],
+        "range": "12\"",
+        "a": "D6",
+        "bs": "N/A",
+        "s": "5",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Hunter-killer missile one shot",
+        "abilities": [],
+        "range": "48\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "14",
+        "ap": "-3",
+        "d": "D6"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Armoured tracks",
+        "abilities": [],
+        "range": "Melee",
+        "a": "3",
+        "ws": "4+",
+        "s": "6",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise D6"
+    ],
+    "faction": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "In your Shooting phase , each time this model is selected to shoot, if it has not shot with its Deathstrike missile this battle, you can do one of the following in addition to resolving this model\u2019s ranged attacks: Designate Target: If this model does not have a Deathstrike Target marker on the battlefield, place a unique Deathstrike Target marker for this model anywhere on the battlefield. Adjust Target: If this model has a Deathstrike Target marker on the battlefield, move that marker to anywhere else on the battlefield.",
+        "name": "Deathstrike Missile"
+      }
+    ],
+    "other": [
+      {
+        "type": "list",
+        "items": [
+          "Designate Target: If this model does not have a Deathstrike Target marker on the battlefield, place a unique Deathstrike Target marker for this model anywhere on the battlefield.",
+          "Adjust Target: If this model has a Deathstrike Target marker on the battlefield, move that marker to anywhere else on the battlefield."
+        ]
+      }
+    ]
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Deathstrike"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "heavy bolter; Deathstrike missile; armoured tracks.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "145"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "VEHICLE",
+    "ARTILLERY",
+    "SMOKE",
+    "IMPERIUM",
+    "SQUADRON",
+    "DEATHSTRIKE"
+  ],
+  "faction_keywords": [
+    "ASTRA MILITARUM"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s heavy bolter can be replaced with 1 heavy flamer.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "This model can be equipped with 1 hunter-killer missile.",
+          "items": []
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise D6"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "Designate Target: If this model does not have a Deathstrike Target marker on the battlefield, place a unique Deathstrike Target marker for this model anywhere on the battlefield.",
+            "Adjust Target: If this model has a Deathstrike Target marker on the battlefield, move that marker to anywhere else on the battlefield."
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "In your Shooting phase , each time this model is selected to shoot, if it has not shot with its Deathstrike missile this battle, you can do one of the following in addition to resolving this model\u2019s ranged attacks: Designate Target: If this model does not have a Deathstrike Target marker on the battlefield, place a unique Deathstrike Target marker for this model anywhere on the battlefield. Adjust Target: If this model has a Deathstrike Target marker on the battlefield, move that marker to anywhere else on the battlefield.",
+          "name": "Deathstrike Missile"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Deathstrike"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "heavy bolter; Deathstrike missile; armoured tracks.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "145"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DAMAGED: 1-4 WOUNDS REMAINING",
+      "entries": [
+        {
+          "type": "text",
+          "text": "While this model has 1-4 wounds remaining, each time this model makes an attack, subtract 1 from the Hit roll ."
+        }
+      ]
+    }
+  ]
+}

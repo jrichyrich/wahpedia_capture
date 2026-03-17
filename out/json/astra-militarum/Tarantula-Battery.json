@@ -1,0 +1,173 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Tarantula-Battery",
+    "faction_slug": "astra-militarum",
+    "datasheet_slug": "Tarantula-Battery",
+    "output_slug": "astra-militarum"
+  },
+  "name": "Tarantula Battery",
+  "base_size": "\u2300Use model",
+  "characteristics": {
+    "M": "-",
+    "T": "5",
+    "Sv": "3+",
+    "W": "4",
+    "Ld": "7+",
+    "OC": "0"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Twin heavy bolter",
+        "abilities": [
+          "sustained hits 1",
+          "twin-linked"
+        ],
+        "range": "36\"",
+        "a": "3",
+        "bs": "4+",
+        "s": "5",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Twin lascannon",
+        "abilities": [
+          "twin-linked"
+        ],
+        "range": "48\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "12",
+        "ap": "-3",
+        "d": "D6+1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Close combat weapon",
+        "abilities": [],
+        "range": "Melee",
+        "a": "1",
+        "ws": "4+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise 1"
+    ],
+    "faction": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "You can target this unit with the Fire Overwatch Stratagem for 0CP, and can do so even if you have already used that Stratagem on a different unit this phase.",
+        "name": "Sentry Programming"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1-3 Tarantula Sentry Guns"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "twin heavy bolter; close combat weapon.",
+      "label": "Every model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "40"
+        },
+        {
+          "label": "2 models",
+          "points": "80"
+        },
+        {
+          "label": "3 models",
+          "points": "120"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "VEHICLE",
+    "IMPERIUM",
+    "TARANTULA BATTERY"
+  ],
+  "faction_keywords": [
+    "ASTRA MILITARUM"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "Any number of models can each have their twin heavy bolter replaced with 1 twin lascannon.",
+          "items": []
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise 1"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "You can target this unit with the Fire Overwatch Stratagem for 0CP, and can do so even if you have already used that Stratagem on a different unit this phase.",
+          "name": "Sentry Programming"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1-3 Tarantula Sentry Guns"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "twin heavy bolter; close combat weapon.",
+          "label": "Every model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "40"
+            },
+            {
+              "label": "2 models",
+              "points": "80"
+            },
+            {
+              "label": "3 models",
+              "points": "120"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,169 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Manticore-Platform",
+    "faction_slug": "astra-militarum",
+    "datasheet_slug": "Manticore-Platform",
+    "output_slug": "astra-militarum"
+  },
+  "name": "Manticore Platform",
+  "base_size": "\u2300Use model",
+  "characteristics": {
+    "M": "-",
+    "T": "8",
+    "Sv": "3+",
+    "W": "8",
+    "Ld": "7+",
+    "OC": "2"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Storm eagle rockets",
+        "abilities": [
+          "blast",
+          "indirect fire"
+        ],
+        "range": "120\"",
+        "a": "D6+1",
+        "bs": "4+",
+        "s": "10",
+        "ap": "-2",
+        "d": "3"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Close combat weapons",
+        "abilities": [],
+        "range": "Melee",
+        "a": "3",
+        "ws": "4+",
+        "s": "3",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise 1"
+    ],
+    "faction": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this model makes an attack with its storm eagle rockets that targets an enemy unit that contains five or more models, you can re-roll the Hit roll .",
+        "name": "Furious Barrage"
+      },
+      {
+        "type": "rule",
+        "text": "Each time a ranged attack is allocated to a model, if that model is not fully visible to every model in the attacking unit because of this Fortification, that model has the Benefit of Cover against that attack.",
+        "name": "Reinforced Cover"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Manticore Platform"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "storm eagle rockets; close combat weapons.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "95"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "FORTIFICATION",
+    "IMPERIUM",
+    "ARTILLERY",
+    "MANTICORE PLATFORM"
+  ],
+  "faction_keywords": [
+    "ASTRA MILITARUM"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "None"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "FORTIFICATION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "That unit can still be selected as the target of ranged attacks, but each time such an attack is made, unless it is made with a Pistol , subtract 1 from the Hit roll .",
+            "Models in that unit do not need to take Desperate Escape tests due to Falling Back while Battle- shocked, except for those that will move over enemy models when doing so."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise 1"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model makes an attack with its storm eagle rockets that targets an enemy unit that contains five or more models, you can re-roll the Hit roll .",
+          "name": "Furious Barrage"
+        },
+        {
+          "type": "rule",
+          "text": "Each time a ranged attack is allocated to a model, if that model is not fully visible to every model in the attacking unit because of this Fortification, that model has the Benefit of Cover against that attack.",
+          "name": "Reinforced Cover"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Manticore Platform"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "storm eagle rockets; close combat weapons.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "95"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

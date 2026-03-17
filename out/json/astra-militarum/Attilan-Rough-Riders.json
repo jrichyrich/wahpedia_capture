@@ -1,0 +1,212 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Attilan-Rough-Riders",
+    "faction_slug": "astra-militarum",
+    "datasheet_slug": "Attilan-Rough-Riders",
+    "output_slug": "astra-militarum"
+  },
+  "name": "Attilan Rough Riders",
+  "base_size": "\u230060 x 35.5mm",
+  "characteristics": {
+    "M": "12\"",
+    "T": "4",
+    "Sv": "4+",
+    "W": "2",
+    "Ld": "7+",
+    "OC": "1"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Lasgun",
+        "abilities": [
+          "rapid fire 1"
+        ],
+        "range": "24\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "3",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Laspistol",
+        "abilities": [
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "3",
+        "ap": "0",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Goad lance",
+        "abilities": [
+          "lance"
+        ],
+        "range": "Melee",
+        "a": "2",
+        "ws": "3+",
+        "s": "6",
+        "ap": "-2",
+        "d": "2"
+      },
+      {
+        "name": "Hunting lance \u2013 frag tip",
+        "abilities": [
+          "lance"
+        ],
+        "range": "Melee",
+        "a": "D6",
+        "ws": "3+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Hunting lance \u2013 melta tip",
+        "abilities": [
+          "lance"
+        ],
+        "range": "Melee",
+        "a": "1",
+        "ws": "3+",
+        "s": "9",
+        "ap": "-4",
+        "d": "D6"
+      },
+      {
+        "name": "Power sabre",
+        "abilities": [],
+        "range": "Melee",
+        "a": "4",
+        "ws": "3+",
+        "s": "4",
+        "ap": "-2",
+        "d": "1"
+      },
+      {
+        "name": "Steed\u2019s hooves",
+        "abilities": [
+          "extra attacks"
+        ],
+        "range": "Melee",
+        "a": "2",
+        "ws": "4+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [],
+    "faction": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "This unit is eligible to shoot and declare a charge in a turn in which it Fell Back .",
+        "name": "Horsemasters"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Rough Rider Sergeant",
+        "4-9 Rough Riders"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "lasgun; laspistol; hunting lance; steed\u2019s hooves.",
+      "label": "Every model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "5 models",
+          "points": "60"
+        },
+        {
+          "label": "10 models",
+          "points": "120"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "MOUNTED",
+    "GRENADES",
+    "IMPERIUM",
+    "REGIMENT",
+    "ATTILAN ROUGH RIDERS"
+  ],
+  "faction_keywords": [
+    "ASTRA MILITARUM"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "For every 5 models in this unit, 1 model\u2019s hunting lance can be replaced with 1 goad lance.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "The Rough Rider Sergeant can be equipped with 1 power sabre.",
+          "items": []
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "rule",
+          "text": "This unit is eligible to shoot and declare a charge in a turn in which it Fell Back .",
+          "name": "Horsemasters"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Rough Rider Sergeant",
+            "4-9 Rough Riders"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "lasgun; laspistol; hunting lance; steed\u2019s hooves.",
+          "label": "Every model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "5 models",
+              "points": "60"
+            },
+            {
+              "label": "10 models",
+              "points": "120"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

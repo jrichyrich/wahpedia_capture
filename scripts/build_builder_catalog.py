@@ -260,255 +260,302 @@ def section_entries(card: dict[str, object], title: str) -> list[dict[str, objec
     return []
 
 
-def parse_wargear_prompt(label: str, items: list[str] | None = None) -> dict[str, object]:
-    text = normalize_space(label).rstrip("*").strip()
-    lowered = normalize_label_key(text)
+def normalize_wargear_choice(label: str) -> dict[str, object]:
+    value = normalize_space(label)
+    return {
+        "id": slugify(value),
+        "label": value,
+    }
+
+
+def parse_wargear_prompt(text: str, items: list[str]) -> dict[str, object]:
     result = {
-        "target": text,
+        "target": None,
         "actor": None,
-        "action": "manual",
+        "action": None,
         "selectionMode": "manual",
         "choices": [],
         "allocationLimit": None,
     }
 
-    complex_markers = (
-        "two different weapons",
-        "if this unit contains",
-    )
-    if any(marker in lowered for marker in complex_markers):
-        return result
-
-    allocation_patterns = [
-        (
-            r"^(Any number of models.*?) can each have their (.+?) replaced with one of the following:?$",
-            "replace",
-        ),
-        (
-            r"^(Any number of models.*?) can each be equipped with one of the following:?$",
-            "equip",
-        ),
-    ]
-
-    for pattern, action in allocation_patterns:
-        match = re.match(pattern, text, flags=re.IGNORECASE)
-        if match:
-            actor = normalize_space(match.group(1))
-            target = normalize_space(match.group(2)) if match.lastindex and match.lastindex >= 2 else actor
-            result["actor"] = actor
-            result["target"] = target
-            result["action"] = action
-            result["selectionMode"] = "allocation"
-            result["allocationLimit"] = {"kind": "modelCount"}
-            return result
-
-    quantified_allocation_patterns = [
-        (
-            r"^Up to (\d+) (.+?) can each have their (.+?) replaced with one of the following:?$",
-            "replace",
-            lambda match: normalize_space(match.group(2)),
-            lambda match: normalize_space(match.group(3)),
-            lambda match: {"kind": "static", "max": int(match.group(1))},
-        ),
-        (
-            r"^Up to (\d+) (.+?) can each be equipped with one of the following:?$",
-            "equip",
-            lambda match: normalize_space(match.group(2)),
-            lambda match: normalize_space(match.group(2)),
-            lambda match: {"kind": "static", "max": int(match.group(1))},
-        ),
-        (
-            r"^For every (\d+) models? in (?:this unit|the unit), (\d+) (.+?) can each have their (.+?) replaced with one of the following:?$",
-            "replace",
-            lambda match: normalize_space(match.group(3)),
-            lambda match: normalize_space(match.group(4)),
-            lambda match: {"kind": "ratio", "perModels": int(match.group(1)), "maxPerStep": int(match.group(2))},
-        ),
-        (
-            r"^For every (\d+) models? in (?:this unit|the unit), (\d+) model[’']s (.+?) can be replaced with one of the following:?$",
-            "replace",
-            lambda _match: "1 model",
-            lambda match: normalize_space(match.group(3)),
-            lambda match: {"kind": "ratio", "perModels": int(match.group(1)), "maxPerStep": int(match.group(2))},
-        ),
-        (
-            r"^For every (\d+) models? in (?:this unit|the unit), (\d+) (.+?) can each be equipped with one of the following:?$",
-            "equip",
-            lambda match: normalize_space(match.group(3)),
-            lambda match: normalize_space(match.group(3)),
-            lambda match: {"kind": "ratio", "perModels": int(match.group(1)), "maxPerStep": int(match.group(2))},
-        ),
-        (
-            r"^For every (\d+) models? in (?:this unit|the unit), (\d+) model can be equipped with one of the following:?$",
-            "equip",
-            lambda _match: "1 model",
-            lambda _match: "1 model",
-            lambda match: {"kind": "ratio", "perModels": int(match.group(1)), "maxPerStep": int(match.group(2))},
-        ),
-        (
-            r"^For every (\d+) models? in (?:this unit|the unit), up to (\d+) (.+?) can each have their (.+?) replaced with one of the following:?$",
-            "replace",
-            lambda match: normalize_space(match.group(3)),
-            lambda match: normalize_space(match.group(4)),
-            lambda match: {"kind": "ratio", "perModels": int(match.group(1)), "maxPerStep": int(match.group(2))},
-        ),
-        (
-            r"^For every (\d+) models? in (?:this unit|the unit), up to (\d+) (.+?) can each be equipped with one of the following:?$",
-            "equip",
-            lambda match: normalize_space(match.group(3)),
-            lambda match: normalize_space(match.group(3)),
-            lambda match: {"kind": "ratio", "perModels": int(match.group(1)), "maxPerStep": int(match.group(2))},
-        ),
-    ]
-
-    for pattern, action, actor_builder, target_builder, limit_builder in quantified_allocation_patterns:
-        match = re.match(pattern, text, flags=re.IGNORECASE)
-        if match:
-            result["actor"] = actor_builder(match)
-            result["target"] = target_builder(match)
-            result["action"] = action
-            result["selectionMode"] = "allocation"
-            result["allocationLimit"] = limit_builder(match)
-            return result
-
+    # Each pattern is (regex, action, target_builder, choices_builder, selection_mode_builder, actor_builder, allocation_limit_builder)
     patterns = [
-        (r"^(.*?) can be replaced with one of the following:?$", "replace", "single"),
-        (r"^(.*?) can be equipped with one of the following:?$", "equip", "single"),
-        (r"^(.*?) must be equipped with one of the following:?$", "equip", "single"),
-        (r"^(.*?) can have its .* replaced with one of the following:?$", "replace", "single"),
-        (r"^(All .*?) can each be equipped with one of the following:?$", "equip", "single"),
-        (r"^(.*?) can be replaced with:?$", "replace", "single"),
-        (r"^(.*?) can be equipped with:?$", "equip", "single"),
-    ]
-
-    for pattern, action, selection_mode in patterns:
-        match = re.match(pattern, text, flags=re.IGNORECASE)
-        if match:
-            result["target"] = normalize_space(match.group(1))
-            result["action"] = action
-            result["selectionMode"] = selection_mode
-            return result
-
-    fixed_patterns = [
+        # --- ALLOCATION PATTERNS (Priority) ---
         (
-            r"^(.*?) can be equipped with (\d+ .+?)\.?$",
+            r"^For every (\d+) models? in (?:this unit|the unit), (?:up to )?(\d+) (.+?)(?: can each have|'s) their (.+?) replaced with one of the following(?:\*|:|\.)*$",
+            "replace",
+            lambda match: normalize_space(match.group(3)),
+            lambda _match: [], # Uses items list
+            lambda _match: "allocation",
+            lambda match: normalize_space(match.group(3)),
+            lambda match: {"kind": "ratio", "perModels": int(match.group(1)), "maxPerStep": int(match.group(2))},
+        ),
+        (
+            r"^For every (\d+) models? in (?:this unit|the unit), (?:up to )?(\d+) (.+?)(?: equipped with a .+?)? can (?:each )?be equipped with (?:one )?(.+?)(?: \(.*?\))?(?:\*|:|\.)*$",
             "equip",
+            lambda match: normalize_space(match.group(3)),
+            lambda match: [normalize_wargear_choice(match.group(4))],
+            lambda _match: "allocation",
+            lambda match: normalize_space(match.group(3)),
+            lambda match: {"kind": "ratio", "perModels": int(match.group(1)), "maxPerStep": int(match.group(2))},
+        ),
+        (
+            r"^For every (\d+) models? in (?:this unit|the unit), (?:up to )?(\d+) (.+?)[’']s (.+?) can be replaced with (\d+ .+?)(?:\*|:|\.)*$",
+            "replace",
+            lambda match: normalize_space(match.group(3)),
+            lambda match: [normalize_wargear_choice(match.group(5))],
+            lambda _match: "allocation",
+            lambda match: normalize_space(match.group(4)),
+            lambda match: {"kind": "ratio", "perModels": int(match.group(1)), "maxPerStep": int(match.group(2))},
+        ),
+        (
+            r"^For every (\d+) models? in (?:this unit|the unit), (\d+) model can be equipped with (\d+ .+?)(?:\*|:|\.)*$",
+            "equip",
+            lambda match: "1 model",
+            lambda match: [normalize_wargear_choice(match.group(3))],
+            lambda _match: "allocation",
+            lambda match: "1 model",
+            lambda match: {"kind": "ratio", "perModels": int(match.group(1)), "maxPerStep": int(match.group(2))},
+        ),
+        (
+            r"^For every (\d+) models? in (?:this unit|the unit), (\d+) (.+?) can be equipped with (?:one )?(.+?)(?:\*|:|\.)*$",
+            "equip",
+            lambda match: normalize_space(match.group(3)),
+            lambda match: [normalize_wargear_choice(match.group(4))],
+            lambda _match: "allocation",
+            lambda match: normalize_space(match.group(3)),
+            lambda match: {"kind": "ratio", "perModels": int(match.group(1)), "maxPerStep": int(match.group(2))},
+        ),
+        (
+            r"^Any number of (?:models|.+?) can (?:each )?have their (.+? and .+?) replaced with (.+? and .+?)(?:\*|:|\.)*$",
+            "replace",
+            lambda match: "models",
+            lambda match: [normalize_wargear_choice(match.group(2))],
+            lambda _match: "allocation",
+            lambda match: normalize_space(match.group(1)),
+            lambda _match: {"kind": "modelCount"},
+        ),
+        (
+            r"^Any number of (?:models|.+?) can (?:each )?have their (.+?) replaced with one of the following(?:\*|:|\.)*$",
+            "replace",
+            lambda match: "models",
+            lambda _match: [],
+            lambda _match: "allocation",
+            lambda match: "models",
+            lambda _match: {"kind": "modelCount"},
+        ),
+        (
+            r"^Any number of (?:models|.+?) can (?:each )?have their (.+?) replaced with (\d+ .+?)(?:\*|:|\.)*$",
+            "replace",
+            lambda match: "models",
+            lambda match: [normalize_wargear_choice(match.group(2))],
+            lambda _match: "allocation",
+            lambda match: "models",
+            lambda _match: {"kind": "modelCount"},
+        ),
+        (
+            r"^Any number of (?:models|.+?) can (?:each )?be equipped with one of the following(?:\*|:|\.)*$",
+            "equip",
+            lambda match: "models",
+            lambda _match: [],
+            lambda _match: "allocation",
+            lambda match: "models",
+            lambda _match: {"kind": "modelCount"},
+        ),
+        (
+            r"^Any number of (?:models|.+?) can (?:each )?be equipped with (\d+ .+?)(?:\*|:|\.)*$",
+            "equip",
+            lambda match: "models",
+            lambda match: [normalize_wargear_choice(match.group(1))],
+            lambda _match: "allocation",
+            lambda match: "models",
+            lambda _match: {"kind": "modelCount"},
+        ),
+        (
+            r"^Up to (\d+) (?:models|.+?) can (?:each )?have their (.+?) replaced with (\d+ .+?)(?:\*|:|\.)*$",
+            "replace",
+            lambda match: "models",
+            lambda match: [normalize_wargear_choice(match.group(3))],
+            lambda _match: "allocation",
+            lambda match: normalize_space(match.group(2)),
+            lambda match: {"kind": "static", "max": int(match.group(1))},
+        ),
+        (
+            r"^Up to (\d+) (?:models|.+?) can (?:each )?be equipped with (\d+ .+?)(?:\*|:|\.)*$",
+            "equip",
+            lambda match: "models",
+            lambda match: [normalize_wargear_choice(match.group(2))],
+            lambda _match: "allocation",
+            lambda match: "models",
+            lambda match: {"kind": "static", "max": int(match.group(1))},
+        ),
+        (
+            r"^(?:This model|It) can (?:each )?be equipped with one of the following(?:\*|:|\.)*$",
+            "equip",
+            lambda _match: "model",
+            lambda _match: [],
+            lambda _match: "single",
+            lambda _match: None,
+            lambda _match: None,
+        ),
+        (
+            r"^(?:This model|It) can (?:each )?be equipped with (\d+ .+?)(?:\*|:|\.)*$",
+            "equip",
+            lambda _match: "model",
+            lambda match: [normalize_wargear_choice(match.group(1))],
+            lambda _match: "single",
+            lambda _match: None,
+            lambda _match: None,
+        ),
+        (
+            r"^(?:This model|It)[’']s (.+?) can be replaced with one of the following(?:\*|:|\.)*$",
+            "replace",
+            lambda match: normalize_space(match.group(1)),
+            lambda _match: [],
+            lambda _match: "single",
+            lambda _match: None,
+            lambda _match: None,
+        ),
+        (
+            r"^(?:This model|It)[’']s (.+?) can be replaced with (\d+ .+?)(?:\*|:|\.)*$",
+            "replace",
             lambda match: normalize_space(match.group(1)),
             lambda match: [normalize_wargear_choice(match.group(2))],
+            lambda _match: "single",
+            lambda _match: None,
+            lambda _match: None,
+        ),
+        (
+            r"^If this unit contains (\d+) models, (?:one model|it) can be equipped with (?:one )?(.+?)(?:\*|:|\.)*$",
+            "equip",
+            lambda match: "unit",
+            lambda match: [normalize_wargear_choice(match.group(2))],
+            lambda _match: "allocation",
+            lambda match: "unit",
+            lambda match: {"kind": "static", "max": 1},
+        ),
+        (
+            r"^If this unit contains (\d+) models, one model[’']s (.+?) can be replaced with (\d+ .+?)(?:\*|:|\.)*$",
+            "replace",
+            lambda match: "model",
+            lambda match: [normalize_wargear_choice(match.group(3))],
+            lambda _match: "allocation",
+            lambda match: normalize_space(match.group(2)),
+            lambda match: {"kind": "static", "max": 1},
+        ),
+
+        # --- SINGLE SELECTION PATTERNS (Fallbacks) ---
+        (
+            r"^(.*?) can be replaced with one of the following:?$",
+            "replace",
+            lambda match: normalize_space(match.group(1)),
+            lambda _match: [],
+            lambda _match: "single",
+            lambda _match: None,
+            lambda _match: None,
+        ),
+        (
+            r"^(.*?) can be equipped with one of the following:?$",
+            "equip",
+            lambda match: normalize_space(match.group(1)),
+            lambda _match: [],
+            lambda _match: "single",
+            lambda _match: None,
+            lambda _match: None,
+        ),
+        (
+            r"^(.*?) must be equipped with one of the following:?$",
+            "equip",
+            lambda match: normalize_space(match.group(1)),
+            lambda _match: [],
+            lambda _match: "single",
+            lambda _match: None,
+            lambda _match: None,
+        ),
+        (
+            r"^(.*?) can have its .* replaced with one of the following:?$",
+            "replace",
+            lambda match: normalize_space(match.group(1)),
+            lambda _match: [],
+            lambda _match: "single",
+            lambda _match: None,
+            lambda _match: None,
+        ),
+        (
+            r"^(All .*?) can each be equipped with one of the following:?$",
+            "equip",
+            lambda match: normalize_space(match.group(1)),
+            lambda _match: [],
+            lambda _match: "single",
+            lambda _match: None,
+            lambda _match: None,
         ),
         (
             r"^(.*?) can be replaced with (?:either )?(\d+ .+?)\.?$",
             "replace",
             lambda match: normalize_space(match.group(1)),
             lambda match: [normalize_wargear_choice(match.group(2))],
+            lambda _match: "single",
+            lambda _match: None,
+            lambda _match: None,
         ),
         (
             r"^(.*?)[’']s (.+?) can be replaced with (?:either )?(\d+ .+?)\.?$",
             "replace",
             lambda match: normalize_space(f"{match.group(1)}'s {match.group(2)}"),
             lambda match: [normalize_wargear_choice(match.group(3))],
+            lambda _match: "single",
+            lambda _match: None,
+            lambda _match: None,
+        ),
+        (
+            r"^(.*?) can be equipped with (\d+ .+?)\.?$",
+            "equip",
+            lambda match: normalize_space(match.group(1)),
+            lambda match: [normalize_wargear_choice(match.group(2))],
+            lambda _match: "single",
+            lambda _match: None,
+            lambda _match: None,
         ),
         (
             r"^(All .*?) can each have their (.+?) replaced with (\d+ .+?)\.?$",
             "replace",
             lambda match: normalize_space(match.group(1)),
             lambda match: [normalize_wargear_choice(match.group(3))],
+            lambda _match: "single",
+            lambda _match: None,
+            lambda _match: None,
         ),
         (
             r"^(All .*?) can each be equipped with (\d+ .+?)\.?$",
             "equip",
             lambda match: normalize_space(match.group(1)),
             lambda match: [normalize_wargear_choice(match.group(2))],
+            lambda _match: "single",
+            lambda _match: None,
+            lambda _match: None,
         ),
         (
-            r"^Up to (\d+) (.+?) can each have their (.+?) replaced with (\d+ .+?)\.?$",
+            r"^(.*?) can be replaced with:?$",
             "replace",
-            lambda match: normalize_space(match.group(2)),
-            lambda match: [normalize_wargear_choice(match.group(4))],
-            lambda match: "allocation",
-            lambda match: normalize_space(match.group(3)),
-            lambda match: {"kind": "static", "max": int(match.group(1))},
-        ),
-        (
-            r"^Up to (\d+) (.+?) can each be equipped with (\d+ .+?)\.?$",
-            "equip",
-            lambda match: normalize_space(match.group(2)),
-            lambda match: [normalize_wargear_choice(match.group(3))],
-            lambda match: "allocation",
-            lambda match: normalize_space(match.group(2)),
-            lambda match: {"kind": "static", "max": int(match.group(1))},
-        ),
-        (
-            r"^Any number of (.+?) can each have their (.+?) replaced with (\d+ .+?)\.?$",
-            "replace",
-            lambda match: normalize_space(match.group(2)),
-            lambda match: [normalize_wargear_choice(match.group(3))],
-            lambda match: "allocation",
             lambda match: normalize_space(match.group(1)),
-            lambda _match: {"kind": "modelCount"},
+            lambda _match: [],
+            lambda _match: "single",
+            lambda _match: None,
+            lambda _match: None,
         ),
         (
-            r"^Any number of (.+?) can each be equipped with (\d+ .+?)\.?$",
+            r"^(.*?) can be equipped with:?$",
             "equip",
             lambda match: normalize_space(match.group(1)),
-            lambda match: [normalize_wargear_choice(match.group(2))],
-            lambda match: "allocation",
-            lambda match: normalize_space(match.group(1)),
-            lambda _match: {"kind": "modelCount"},
-        ),
-        (
-            r"^For every (\d+) models? in (?:this unit|the unit), (\d+) (.+?)[’']s (.+?) can be replaced with (\d+ .+?)\.?$",
-            "replace",
-            lambda match: normalize_space(match.group(3)),
-            lambda match: [normalize_wargear_choice(match.group(5))],
-            lambda match: "allocation",
-            lambda match: normalize_space(match.group(4)),
-            lambda match: {"kind": "ratio", "perModels": int(match.group(1)), "maxPerStep": int(match.group(2))},
-        ),
-        (
-            r"^For every (\d+) models? in (?:this unit|the unit), (\d+) model can be equipped with (\d+ .+?)\.?$",
-            "equip",
-            lambda match: "1 model",
-            lambda match: [normalize_wargear_choice(match.group(3))],
-            lambda match: "allocation",
-            lambda match: "1 model",
-            lambda match: {"kind": "ratio", "perModels": int(match.group(1)), "maxPerStep": int(match.group(2))},
-        ),
-        (
-            r"^For every (\d+) models? in (?:this unit|the unit), (\d+) (.+?) can be equipped with (\d+ .+?)\.?$",
-            "equip",
-            lambda match: normalize_space(match.group(3)),
-            lambda match: [normalize_wargear_choice(match.group(4))],
-            lambda match: "allocation",
-            lambda match: normalize_space(match.group(3)),
-            lambda match: {"kind": "ratio", "perModels": int(match.group(1)), "maxPerStep": int(match.group(2))},
+            lambda _match: [],
+            lambda _match: "single",
+            lambda _match: None,
+            lambda _match: None,
         ),
     ]
 
-    for pattern, action, target_builder, choices_builder, selection_mode_builder, actor_builder, allocation_limit_builder in [
-        (a, b, c, d, lambda _match: "single", lambda _match: None, lambda _match: None)
-        for a, b, c, d in fixed_patterns[:5]
-    ] + [
-        (
-            fixed_patterns[5][0],
-            fixed_patterns[5][1],
-            fixed_patterns[5][2],
-            fixed_patterns[5][3],
-            lambda _match: "single",
-            lambda _match: None,
-            lambda _match: None,
-        ),
-        (
-            fixed_patterns[6][0],
-            fixed_patterns[6][1],
-            fixed_patterns[6][2],
-            fixed_patterns[6][3],
-            lambda _match: "single",
-            lambda _match: None,
-            lambda _match: None,
-        ),
-        *fixed_patterns[7:],
-    ]:
+    for pattern, action, target_builder, choices_builder, selection_mode_builder, actor_builder, limit_builder in patterns:
         match = re.match(pattern, text, flags=re.IGNORECASE)
         if match:
             result["target"] = target_builder(match)
@@ -516,18 +563,10 @@ def parse_wargear_prompt(label: str, items: list[str] | None = None) -> dict[str
             result["action"] = action
             result["selectionMode"] = selection_mode_builder(match)
             result["choices"] = choices_builder(match)
-            result["allocationLimit"] = allocation_limit_builder(match)
+            result["allocationLimit"] = limit_builder(match)
             return result
 
     return result
-
-
-def normalize_wargear_choice(label: str) -> dict[str, object]:
-    value = normalize_space(label)
-    return {
-        "id": slugify(value),
-        "label": value,
-    }
 
 
 def build_wargear(card: dict[str, object]) -> dict[str, object]:
@@ -571,7 +610,10 @@ def build_wargear(card: dict[str, object]) -> dict[str, object]:
             manual_notes.append(text)
 
     if manual_notes:
-        has_manual_options = True
+        # Notes don't necessarily mean the unit needs manual intervention,
+        # but they are worth flagging if we want to be sure everything is parsed.
+        # For now, we only flag if an ACTUAL OPTION failed to parse.
+        pass
 
     return {
         "abilities": abilities,

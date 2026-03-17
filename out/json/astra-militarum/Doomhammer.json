@@ -1,0 +1,211 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Doomhammer",
+    "faction_slug": "astra-militarum",
+    "datasheet_slug": "Doomhammer",
+    "output_slug": "astra-militarum"
+  },
+  "name": "Doomhammer",
+  "base_size": "\u2300Use model",
+  "characteristics": {
+    "M": "12\"",
+    "T": "13",
+    "Sv": "2+",
+    "W": "24",
+    "Ld": "7+",
+    "OC": "8"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Lascannon",
+        "abilities": [],
+        "range": "48\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "12",
+        "ap": "-3",
+        "d": "D6+1"
+      },
+      {
+        "name": "Magma cannon",
+        "abilities": [
+          "blast",
+          "melta 6"
+        ],
+        "range": "24\"",
+        "a": "D6+3",
+        "bs": "4+",
+        "s": "12",
+        "ap": "-4",
+        "d": "D6"
+      },
+      {
+        "name": "Twin heavy bolter",
+        "abilities": [
+          "sustained hits 1",
+          "twin-linked"
+        ],
+        "range": "36\"",
+        "a": "3",
+        "bs": "4+",
+        "s": "5",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Twin heavy flamer",
+        "abilities": [
+          "ignores cover",
+          "torrent",
+          "twin-linked"
+        ],
+        "range": "12\"",
+        "a": "D6",
+        "bs": "N/A",
+        "s": "5",
+        "ap": "-1",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Armoured tracks",
+        "abilities": [],
+        "range": "Melee",
+        "a": "6",
+        "ws": "4+",
+        "s": "8",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise D6+2 , Firing Deck 6"
+    ],
+    "faction": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this model\u2019s magma cannon targets a MONSTER or VEHICLE unit, that target is always considered to be within half range of that weapon.",
+        "name": "Close-range Titan Killer"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Doomhammer"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "2 lascannons; magma cannon; twin heavy bolter; 2 twin heavy flamers; armoured tracks.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "415"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "VEHICLE",
+    "TITANIC",
+    "SMOKE",
+    "IMPERIUM",
+    "TRANSPORT",
+    "DOOMHAMMER"
+  ],
+  "faction_keywords": [
+    "ASTRA MILITARUM"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s 2 twin heavy flamers can be replaced with 2 twin heavy bolters.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "This model can be equipped with one of the following:",
+          "items": [
+            "2 lascannons and 2 twin heavy bolters",
+            "2 lascannons and 2 twin heavy flamers"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise D6+2 , Firing Deck 6"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model\u2019s magma cannon targets a MONSTER or VEHICLE unit, that target is always considered to be within half range of that weapon.",
+          "name": "Close-range Titan Killer"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Doomhammer"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "2 lascannons; magma cannon; twin heavy bolter; 2 twin heavy flamers; armoured tracks.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "415"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DAMAGED: 1-8 WOUNDS REMAINING",
+      "entries": [
+        {
+          "type": "text",
+          "text": "While this model has 1-8 wounds remaining, subtract 4 from its Objective Control characteristic and each time this model makes an attack, subtract 1 from the Hit roll ."
+        }
+      ]
+    },
+    {
+      "title": "TRANSPORT",
+      "entries": [
+        {
+          "type": "text",
+          "text": "This model has a transport capacity of 26 ASTRA MILITARUM INFANTRY models. Each OGRYN model takes up the space of 3 models. It cannot transport ARTILLERY models."
+        }
+      ]
+    }
+  ]
+}

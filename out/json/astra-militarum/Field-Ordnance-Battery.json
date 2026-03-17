@@ -1,0 +1,192 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Field-Ordnance-Battery",
+    "faction_slug": "astra-militarum",
+    "datasheet_slug": "Field-Ordnance-Battery",
+    "output_slug": "astra-militarum"
+  },
+  "name": "Field Ordnance Battery",
+  "base_size": "\u2300100mm",
+  "characteristics": {
+    "M": "3\"",
+    "T": "5",
+    "Sv": "4+",
+    "W": "6",
+    "Ld": "7+",
+    "OC": "2"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Bombast field gun",
+        "abilities": [
+          "blast",
+          "heavy",
+          "indirect fire"
+        ],
+        "range": "48\"",
+        "a": "D6",
+        "bs": "5+",
+        "s": "7",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Heavy lascannon",
+        "abilities": [
+          "heavy"
+        ],
+        "range": "48\"",
+        "a": "2",
+        "bs": "5+",
+        "s": "14",
+        "ap": "-3",
+        "d": "D6+1"
+      },
+      {
+        "name": "Lasgun",
+        "abilities": [
+          "rapid fire 1"
+        ],
+        "range": "24\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "3",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Laspistol",
+        "abilities": [
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "3",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Malleus rocket launcher",
+        "abilities": [
+          "blast",
+          "heavy"
+        ],
+        "range": "48\"",
+        "a": "D6+6",
+        "bs": "5+",
+        "s": "6",
+        "ap": "-1",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Battery close combat weapons",
+        "abilities": [],
+        "range": "Melee",
+        "a": "3",
+        "ws": "4+",
+        "s": "3",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [],
+    "faction": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this unit is being affected by an Order, provided it Remained Stationary this turn, all Heavy weapons equipped by models in this unit have the [SUSTAINED HITS 1] ability.",
+        "name": "Rearm, Reload, Fire"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "2 Ordnance Teams"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "malleus rocket launcher; lasgun; laspistol; battery close combat weapons.",
+      "label": "Every model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "2 models",
+          "points": "110"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "ARTILLERY",
+    "GRENADES",
+    "IMPERIUM",
+    "REGIMENT",
+    "FIELD ORDNANCE BATTERY"
+  ],
+  "faction_keywords": [
+    "ASTRA MILITARUM"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "Any number of models can each have their malleus rocket launcher replaced with one of the following:",
+          "items": [
+            "1 bombast field gun",
+            "1 heavy lascannon"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "rule",
+          "text": "While this unit is being affected by an Order, provided it Remained Stationary this turn, all Heavy weapons equipped by models in this unit have the [SUSTAINED HITS 1] ability.",
+          "name": "Rearm, Reload, Fire"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "2 Ordnance Teams"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "malleus rocket launcher; lasgun; laspistol; battery close combat weapons.",
+          "label": "Every model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "2 models",
+              "points": "110"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,371 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Tempestus-Scions",
+    "faction_slug": "astra-militarum",
+    "datasheet_slug": "Tempestus-Scions",
+    "output_slug": "astra-militarum"
+  },
+  "name": "Tempestus Scions",
+  "base_size": "\u230025mm",
+  "characteristics": {
+    "M": "6\"",
+    "T": "3",
+    "Sv": "4+",
+    "W": "1",
+    "Ld": "7+",
+    "OC": "1"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Bolt pistol",
+        "abilities": [
+          "PISTOL"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Flamer",
+        "abilities": [
+          "ignores cover",
+          "torrent"
+        ],
+        "range": "12\"",
+        "a": "D6",
+        "bs": "N/A",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Grenade launcher \u2013 frag",
+        "abilities": [
+          "blast"
+        ],
+        "range": "24\"",
+        "a": "D3",
+        "bs": "3+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Grenade launcher \u2013 krak",
+        "abilities": [],
+        "range": "24\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "9",
+        "ap": "-2",
+        "d": "D3"
+      },
+      {
+        "name": "Hot-shot lasgun",
+        "abilities": [
+          "rapid fire 1"
+        ],
+        "range": "24\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "3",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Hot-shot laspistol",
+        "abilities": [
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "3",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Hot-shot volley gun",
+        "abilities": [
+          "rapid fire 2"
+        ],
+        "range": "30\"",
+        "a": "2",
+        "bs": "3+",
+        "s": "4",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Meltagun",
+        "abilities": [
+          "melta 2"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "9",
+        "ap": "-4",
+        "d": "D6"
+      },
+      {
+        "name": "Plasma gun \u2013 standard",
+        "abilities": [
+          "rapid fire 1"
+        ],
+        "range": "24\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "7",
+        "ap": "-2",
+        "d": "1"
+      },
+      {
+        "name": "Plasma gun \u2013 supercharge",
+        "abilities": [
+          "hazardous",
+          "rapid fire 1"
+        ],
+        "range": "24\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "8",
+        "ap": "-3",
+        "d": "2"
+      },
+      {
+        "name": "Plasma pistol \u2013 standard",
+        "abilities": [
+          "PISTOL"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "7",
+        "ap": "-2",
+        "d": "1"
+      },
+      {
+        "name": "Plasma pistol \u2013 supercharge",
+        "abilities": [
+          "HAZARDOUS",
+          "PISTOL"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "8",
+        "ap": "-3",
+        "d": "2"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Chainsword",
+        "abilities": [],
+        "range": "Melee",
+        "a": "4",
+        "ws": "4+",
+        "s": "3",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Close combat weapon",
+        "abilities": [],
+        "range": "Melee",
+        "a": "2",
+        "ws": "4+",
+        "s": "3",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Power fist",
+        "abilities": [],
+        "range": "Melee",
+        "a": "3",
+        "ws": "4+",
+        "s": "6",
+        "ap": "-2",
+        "d": "2"
+      },
+      {
+        "name": "Power weapon",
+        "abilities": [],
+        "range": "Melee",
+        "a": "3",
+        "ws": "4+",
+        "s": "4",
+        "ap": "-2",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deep Strike"
+    ],
+    "faction": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time a model in this unit makes an attack, re-roll a Wound roll of 1. If the target of that attack is an enemy unit within range of an objective marker , you can re-roll the Wound roll instead.",
+        "name": "Storm Troopers"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Tempestor",
+        "4-9 Tempestus Scions"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "hot-shot laspistol; chainsword.",
+      "label": "The Tempestor is equipped with"
+    },
+    {
+      "type": "statement",
+      "text": "hot-shot lasgun; close combat weapon. This unit can have up to two Leader units attached to it, provided no more than one of those units is a COMMAND SQUAD unit. If it does, and this Bodyguard unit is destroyed, the Leader units attached to it become separate units, with their original Starting Strengths .",
+      "label": "Every Tempestus Scion is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "5 models",
+          "points": "70"
+        },
+        {
+          "label": "10 models",
+          "points": "140"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "GRENADES",
+    "IMPERIUM",
+    "REGIMENT",
+    "MILITARUM TEMPESTUS",
+    "TEMPESTUS SCIONS"
+  ],
+  "faction_keywords": [
+    "ASTRA MILITARUM"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "For every 5 models in this unit, up to two Tempestus Scions can each have their hot-shot lasgun replaced with one of the following*:",
+          "items": [
+            "1 flamer",
+            "1 grenade launcher",
+            "1 hot-shot volley gun",
+            "1 meltagun",
+            "1 plasma gun"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "1 Tempestus Scion\u2019s hot-shot lasgun can be replaced with 1 hot-shot laspistol and 1 vox-caster.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "The Tempestor\u2019s chainsword can be replaced with one of the following:",
+          "items": [
+            "1 power fist",
+            "1 power weapon"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "The Tempestor\u2019s hot-shot laspistol can be replaced with one of the following:",
+          "items": [
+            "1 bolt pistol",
+            "1 plasma pistol"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "* You cannot select the same weapon from this list more than once per unit, unless this unit contains 10 models, in which case you cannot select the same weapon more than twice per unit."
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deep Strike"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time a model in this unit makes an attack, re-roll a Wound roll of 1. If the target of that attack is an enemy unit within range of an objective marker , you can re-roll the Wound roll instead.",
+          "name": "Storm Troopers"
+        }
+      ]
+    },
+    {
+      "title": "WARGEAR ABILITIES",
+      "entries": [
+        {
+          "type": "statement",
+          "text": "Each time you target the bearer\u2019s unit with a Stratagem , roll one D6, adding 1 to the result if there are one or more friendly OFFICER models within 6\": on a 5+, you gain 1CP.",
+          "label": "Vox-caster"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Tempestor",
+            "4-9 Tempestus Scions"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "hot-shot laspistol; chainsword.",
+          "label": "The Tempestor is equipped with"
+        },
+        {
+          "type": "statement",
+          "text": "hot-shot lasgun; close combat weapon. This unit can have up to two Leader units attached to it, provided no more than one of those units is a COMMAND SQUAD unit. If it does, and this Bodyguard unit is destroyed, the Leader units attached to it become separate units, with their original Starting Strengths .",
+          "label": "Every Tempestus Scion is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "5 models",
+              "points": "70"
+            },
+            {
+              "label": "10 models",
+              "points": "140"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,355 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Tempestus-Aquilons",
+    "faction_slug": "astra-militarum",
+    "datasheet_slug": "Tempestus-Aquilons",
+    "output_slug": "astra-militarum"
+  },
+  "name": "Tempestus Aquilons",
+  "base_size": "\u230028.5mm",
+  "characteristics": {
+    "M": "6\"",
+    "T": "3",
+    "Sv": "4+",
+    "W": "1",
+    "Ld": "7+",
+    "OC": "1"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Bolt pistol",
+        "abilities": [
+          "PISTOL"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Hot-shot lascarbine",
+        "abilities": [
+          "ASSAULT"
+        ],
+        "range": "18\"",
+        "a": "2",
+        "bs": "3+",
+        "s": "3",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Hot-shot laspistol",
+        "abilities": [
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "3",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Hot-shot long-las",
+        "abilities": [
+          "HEAVY",
+          "PRECISION"
+        ],
+        "range": "36\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "4",
+        "ap": "-2",
+        "d": "3"
+      },
+      {
+        "name": "Sentry flamer",
+        "abilities": [
+          "IGNORES COVER",
+          "TORRENT"
+        ],
+        "range": "12\"",
+        "a": "D6+3",
+        "bs": "N/A",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Sentry grenade launcher \u2013 frag",
+        "abilities": [
+          "blast"
+        ],
+        "range": "24\"",
+        "a": "D3+3",
+        "bs": "4+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Sentry grenade launcher \u2013 krak",
+        "abilities": [],
+        "range": "24\"",
+        "a": "2",
+        "bs": "4+",
+        "s": "9",
+        "ap": "-2",
+        "d": "D3"
+      },
+      {
+        "name": "Sentry hot-shot volley gun",
+        "abilities": [
+          "RAPID FIRE 4"
+        ],
+        "range": "30\"",
+        "a": "4",
+        "bs": "4+",
+        "s": "4",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Melta carbine",
+        "abilities": [
+          "ASSAULT",
+          "MELTA 2"
+        ],
+        "range": "10\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "9",
+        "ap": "-4",
+        "d": "D6"
+      },
+      {
+        "name": "Plasma carbine \u2013 standard",
+        "abilities": [
+          "ASSAULT"
+        ],
+        "range": "18\"",
+        "a": "2",
+        "bs": "3+",
+        "s": "7",
+        "ap": "-2",
+        "d": "1"
+      },
+      {
+        "name": "Plasma carbine \u2013 supercharge",
+        "abilities": [
+          "ASSAULT",
+          "HAZARDOUS"
+        ],
+        "range": "18\"",
+        "a": "2",
+        "bs": "3+",
+        "s": "8",
+        "ap": "-3",
+        "d": "2"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Chainsword",
+        "abilities": [],
+        "range": "Melee",
+        "a": "4",
+        "ws": "4+",
+        "s": "3",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Close combat weapon",
+        "abilities": [],
+        "range": "Melee",
+        "a": "2",
+        "ws": "4+",
+        "s": "3",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Power weapon",
+        "abilities": [],
+        "range": "Melee",
+        "a": "3",
+        "ws": "4+",
+        "s": "4",
+        "ap": "-2",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deep Strike"
+    ],
+    "faction": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "In your Movement phase , when this unit is set up on the battlefield using the Deep Strike ability, it can perform a precision drop. If it does, this unit can be set up anywhere on the battlefield that is more than 6\" horizontally away from all enemy units, but until the end of the turn, it is not eligible to declare a charge .",
+        "name": "Precision Drop"
+      },
+      {
+        "type": "rule",
+        "text": "When this unit is set up on the battlefield using the Deep Strike ability, the Tempestor Aquilon can shoot with its sentry weapon (its sentry flamer, sentry grenade launcher or sentry hot-shot volley gun).",
+        "name": "Servo-sentry"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Tempestor Aquilon",
+        "9 Tempestus Aquilons"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "hot-shot lascarbine; sentry flamer; close combat weapon.",
+      "label": "The Tempestor Aquilon is equipped with"
+    },
+    {
+      "type": "statement",
+      "text": "hot-shot lascarbine; close combat weapon.",
+      "label": "Every Tempestus Aquilon is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "10 models",
+          "points": "100"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "GRENADES",
+    "SMOKE",
+    "IMPERIUM",
+    "REGIMENT",
+    "MILITARUM TEMPESTUS",
+    "TEMPESTUS AQUILONS"
+  ],
+  "faction_keywords": [
+    "ASTRA MILITARUM"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "The Tempestor Aquilon\u2019s sentry flamer can be replaced with one of the following:",
+          "items": [
+            "1 sentry hot-shot volley gun",
+            "1 sentry grenade launcher"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "The Tempestor Aquilon\u2019s hot-shot lascarbine can be replaced with one of the following:",
+          "items": [
+            "1 chainsword",
+            "1 power weapon",
+            "1 hot-shot laspistol"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "The Tempestor Aquilon can be equipped with one of the following:",
+          "items": [
+            "1 bolt pistol",
+            "1 hot-shot laspistol"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "One Tempestus Aquilon\u2019s hot\u2011shot lascarbine can be replaced with 1 of the following:",
+          "items": [
+            "1 melta carbine",
+            "1 plasma carbine"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "One Tempestus Aquilon\u2019s hot-shot lascarbine can be replaced with 2 hot-shot laspistols.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "One Tempestus Aquilon\u2019s hot-shot lascarbine can be replaced with 1 hot-shot long-las.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "Up to two Tempestus Aquilons can each have their hot-shot lascarbine replaced with 1 hot-shot laspistol.",
+          "items": []
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deep Strike"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "In your Movement phase , when this unit is set up on the battlefield using the Deep Strike ability, it can perform a precision drop. If it does, this unit can be set up anywhere on the battlefield that is more than 6\" horizontally away from all enemy units, but until the end of the turn, it is not eligible to declare a charge .",
+          "name": "Precision Drop"
+        },
+        {
+          "type": "rule",
+          "text": "When this unit is set up on the battlefield using the Deep Strike ability, the Tempestor Aquilon can shoot with its sentry weapon (its sentry flamer, sentry grenade launcher or sentry hot-shot volley gun).",
+          "name": "Servo-sentry"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Tempestor Aquilon",
+            "9 Tempestus Aquilons"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "hot-shot lascarbine; sentry flamer; close combat weapon.",
+          "label": "The Tempestor Aquilon is equipped with"
+        },
+        {
+          "type": "statement",
+          "text": "hot-shot lascarbine; close combat weapon.",
+          "label": "Every Tempestus Aquilon is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "10 models",
+              "points": "100"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,269 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Rogal-Dorn-Battle-Tank",
+    "faction_slug": "astra-militarum",
+    "datasheet_slug": "Rogal-Dorn-Battle-Tank",
+    "output_slug": "astra-militarum"
+  },
+  "name": "Rogal Dorn Battle Tank",
+  "base_size": "\u2300Use model",
+  "characteristics": {
+    "M": "10\"",
+    "T": "12",
+    "Sv": "2+",
+    "W": "18",
+    "Ld": "7+",
+    "OC": "5"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Castigator gatling cannon",
+        "abilities": [],
+        "range": "24\"",
+        "a": "12",
+        "bs": "4+",
+        "s": "5",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Coaxial autocannon",
+        "abilities": [],
+        "range": "48\"",
+        "a": "2",
+        "bs": "4+",
+        "s": "9",
+        "ap": "-1",
+        "d": "3"
+      },
+      {
+        "name": "Heavy bolter",
+        "abilities": [
+          "sustained hits 1"
+        ],
+        "range": "36\"",
+        "a": "3",
+        "bs": "4+",
+        "s": "5",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Heavy stubber",
+        "abilities": [
+          "rapid fire 3"
+        ],
+        "range": "36\"",
+        "a": "3",
+        "bs": "4+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Meltagun",
+        "abilities": [
+          "melta 2"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "9",
+        "ap": "-4",
+        "d": "D6"
+      },
+      {
+        "name": "Multi-melta",
+        "abilities": [
+          "melta 2"
+        ],
+        "range": "18\"",
+        "a": "2",
+        "bs": "4+",
+        "s": "9",
+        "ap": "-4",
+        "d": "D6"
+      },
+      {
+        "name": "Oppressor cannon",
+        "abilities": [
+          "blast"
+        ],
+        "range": "72\"",
+        "a": "D6+3",
+        "bs": "4+",
+        "s": "12",
+        "ap": "-2",
+        "d": "3"
+      },
+      {
+        "name": "Pulveriser cannon",
+        "abilities": [
+          "blast"
+        ],
+        "range": "24\"",
+        "a": "D6",
+        "bs": "4+",
+        "s": "9",
+        "ap": "-3",
+        "d": "3"
+      },
+      {
+        "name": "Twin battle cannon",
+        "abilities": [
+          "blast",
+          "twin-linked"
+        ],
+        "range": "48\"",
+        "a": "D6+3",
+        "bs": "4+",
+        "s": "10",
+        "ap": "-1",
+        "d": "3"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Armoured tracks",
+        "abilities": [],
+        "range": "Melee",
+        "a": "6",
+        "ws": "4+",
+        "s": "7",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise D6"
+    ],
+    "faction": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Once per battle, when an attack is allocated to this model, you change the Damage characteristic of that attack to 0.",
+        "name": "Ablative Plating"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Rogal Dorn Battle Tank"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "castigator gatling cannon; heavy stubber; twin battle cannon; armoured tracks.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "260"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "VEHICLE",
+    "SMOKE",
+    "IMPERIUM",
+    "SQUADRON",
+    "ROGAL DORN BATTLE TANK"
+  ],
+  "faction_keywords": [
+    "ASTRA MILITARUM"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s twin battle cannon can be replaced with 1 oppressor cannon and 1 coaxial autocannon.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "This model\u2019s castigator gatling cannon can be replaced with 1 pulveriser cannon.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "This model can be equipped with one of the following:",
+          "items": [
+            "2 meltaguns",
+            "2 additional heavy stubbers"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "This model can be equipped with one of the following:",
+          "items": [
+            "2 heavy bolters",
+            "2 multi-meltas"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise D6"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Once per battle, when an attack is allocated to this model, you change the Damage characteristic of that attack to 0.",
+          "name": "Ablative Plating"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Rogal Dorn Battle Tank"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "castigator gatling cannon; heavy stubber; twin battle cannon; armoured tracks.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "260"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DAMAGED: 1-6 WOUNDS REMAINING",
+      "entries": [
+        {
+          "type": "text",
+          "text": "While this model has 1-6 wounds remaining, each time this model makes an attack, subtract 1 from the Hit roll ."
+        }
+      ]
+    }
+  ]
+}

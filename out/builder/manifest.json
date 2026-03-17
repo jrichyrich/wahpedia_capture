@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generatedAt": "2026-03-16T17:21:00+00:00",
+  "generatedAt": "2026-03-17T20:08:48+00:00",
   "sourceRoot": "/Users/jasricha/Documents/Github_Personal/wahpedia_capture/out/json",
   "catalogRoot": "catalogs",
   "reportFile": "reports/build-report.json",
@@ -21,7 +21,16 @@
       "catalogFile": "catalogs/aeldari.json",
       "missingStatsCount": 0,
       "manualSelectionCount": 0,
-      "manualWargearCount": 16
+      "manualWargearCount": 14
+    },
+    {
+      "slug": "astra-militarum",
+      "name": "Astra Militarum",
+      "unitCount": 128,
+      "catalogFile": "catalogs/astra-militarum.json",
+      "missingStatsCount": 0,
+      "manualSelectionCount": 0,
+      "manualWargearCount": 10
     },
     {
       "slug": "dark-angels",
@@ -30,7 +39,25 @@
       "catalogFile": "catalogs/dark-angels.json",
       "missingStatsCount": 0,
       "manualSelectionCount": 0,
-      "manualWargearCount": 5
+      "manualWargearCount": 2
+    },
+    {
+      "slug": "death-guard",
+      "name": "Death Guard",
+      "unitCount": 71,
+      "catalogFile": "catalogs/death-guard.json",
+      "missingStatsCount": 0,
+      "manualSelectionCount": 0,
+      "manualWargearCount": 3
+    },
+    {
+      "slug": "drukhari",
+      "name": "Drukhari",
+      "unitCount": 47,
+      "catalogFile": "catalogs/drukhari.json",
+      "missingStatsCount": 0,
+      "manualSelectionCount": 0,
+      "manualWargearCount": 7
     },
     {
       "slug": "space-marines",
@@ -39,7 +66,7 @@
       "catalogFile": "catalogs/space-marines.json",
       "missingStatsCount": 0,
       "manualSelectionCount": 0,
-      "manualWargearCount": 1
+      "manualWargearCount": 0
     },
     {
       "slug": "space-wolves",
@@ -48,7 +75,7 @@
       "catalogFile": "catalogs/space-wolves.json",
       "missingStatsCount": 0,
       "manualSelectionCount": 0,
-      "manualWargearCount": 2
+      "manualWargearCount": 1
     },
     {
       "slug": "ultramarines",
@@ -57,16 +84,16 @@
       "catalogFile": "catalogs/ultramarines.json",
       "missingStatsCount": 0,
       "manualSelectionCount": 0,
-      "manualWargearCount": 1
+      "manualWargearCount": 0
     }
   ],
   "report": {
     "totals": {
-      "factionCount": 6,
-      "unitCount": 818,
+      "factionCount": 9,
+      "unitCount": 1064,
       "missingStatsCount": 0,
       "manualSelectionCount": 0,
-      "manualWargearCount": 25
+      "manualWargearCount": 37
     },
     "factions": [
       {
@@ -87,14 +114,6 @@
           {
             "unitId": "corsair-skyreavers",
             "name": "Corsair Skyreavers"
-          },
-          {
-            "unitId": "corsair-voidreavers",
-            "name": "Corsair Voidreavers"
-          },
-          {
-            "unitId": "corsair-voidscarred",
-            "name": "Corsair Voidscarred"
           },
           {
             "unitId": "dark-reapers",
@@ -151,6 +170,55 @@
         ]
       },
       {
+        "slug": "astra-militarum",
+        "name": "Astra Militarum",
+        "unitCount": 128,
+        "missingStats": [],
+        "manualSelectionUnits": [],
+        "manualWargearUnits": [
+          {
+            "unitId": "catachan-command-squad",
+            "name": "Catachan Command Squad"
+          },
+          {
+            "unitId": "death-korps-grenadier-squad",
+            "name": "Death Korps Grenadier Squad"
+          },
+          {
+            "unitId": "death-korps-of-krieg",
+            "name": "Death Korps Of Krieg"
+          },
+          {
+            "unitId": "kasrkin",
+            "name": "Kasrkin"
+          },
+          {
+            "unitId": "krieg-command-squad",
+            "name": "Krieg Command Squad"
+          },
+          {
+            "unitId": "mukaali-riders",
+            "name": "Mukaali Riders"
+          },
+          {
+            "unitId": "munitorum-servitors",
+            "name": "Munitorum Servitors"
+          },
+          {
+            "unitId": "sabre-weapons-battery",
+            "name": "Sabre Weapons Battery"
+          },
+          {
+            "unitId": "tempestus-aquilons",
+            "name": "Tempestus Aquilons"
+          },
+          {
+            "unitId": "tempestus-scions",
+            "name": "Tempestus Scions"
+          }
+        ]
+      },
+      {
         "slug": "dark-angels",
         "name": "Dark Angels",
         "unitCount": 174,
@@ -158,24 +226,70 @@
         "manualSelectionUnits": [],
         "manualWargearUnits": [
           {
-            "unitId": "captain-on-bike",
-            "name": "Captain On Bike"
-          },
-          {
-            "unitId": "deathwing-strikemaster",
-            "name": "Deathwing Strikemaster"
+            "unitId": "bike-squad",
+            "name": "Bike Squad"
           },
           {
             "unitId": "devastator-squad",
             "name": "Devastator Squad"
+          }
+        ]
+      },
+      {
+        "slug": "death-guard",
+        "name": "Death Guard",
+        "unitCount": 71,
+        "missingStats": [],
+        "manualSelectionUnits": [],
+        "manualWargearUnits": [
+          {
+            "unitId": "blightlord-terminators",
+            "name": "Blightlord Terminators"
           },
           {
-            "unitId": "infiltrator-squad",
-            "name": "Infiltrator Squad"
+            "unitId": "mastodon",
+            "name": "Mastodon"
           },
           {
-            "unitId": "tactical-squad",
-            "name": "Tactical Squad"
+            "unitId": "plague-marines",
+            "name": "Plague Marines"
+          }
+        ]
+      },
+      {
+        "slug": "drukhari",
+        "name": "Drukhari",
+        "unitCount": 47,
+        "missingStats": [],
+        "manualSelectionUnits": [],
+        "manualWargearUnits": [
+          {
+            "unitId": "corsair-skyreavers",
+            "name": "Corsair Skyreavers"
+          },
+          {
+            "unitId": "grotesques",
+            "name": "Grotesques"
+          },
+          {
+            "unitId": "ravager",
+            "name": "Ravager"
+          },
+          {
+            "unitId": "scourges-with-heavy-weapons",
+            "name": "Scourges with Heavy Weapons"
+          },
+          {
+            "unitId": "talos",
+            "name": "Talos"
+          },
+          {
+            "unitId": "troupe",
+            "name": "Troupe"
+          },
+          {
+            "unitId": "wracks",
+            "name": "Wracks"
           }
         ]
       },
@@ -185,12 +299,7 @@
         "unitCount": 155,
         "missingStats": [],
         "manualSelectionUnits": [],
-        "manualWargearUnits": [
-          {
-            "unitId": "tactical-squad",
-            "name": "Tactical Squad"
-          }
-        ]
+        "manualWargearUnits": []
       },
       {
         "slug": "space-wolves",
@@ -202,10 +311,6 @@
           {
             "unitId": "wolf-guard-pack-leader-in-terminator-armour",
             "name": "Wolf Guard Pack Leader In Terminator Armour"
-          },
-          {
-            "unitId": "wolf-guard",
-            "name": "Wolf Guard"
           }
         ]
       },
@@ -215,12 +320,7 @@
         "unitCount": 170,
         "missingStats": [],
         "manualSelectionUnits": [],
-        "manualWargearUnits": [
-          {
-            "unitId": "tactical-squad",
-            "name": "Tactical Squad"
-          }
-        ]
+        "manualWargearUnits": []
       }
     ]
   }

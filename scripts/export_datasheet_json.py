@@ -18,10 +18,7 @@ USER_AGENT = (
 
 
 def normalize_wahapedia_url(url: str) -> str:
-    value = (url or "").strip()
-    if value.startswith("https://wahapedia.ru/"):
-        return "http://wahapedia.ru/" + value.removeprefix("https://wahapedia.ru/")
-    return value
+    return (url or "").strip()
 
 
 def parse_args() -> argparse.Namespace:

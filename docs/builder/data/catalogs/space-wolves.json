@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generatedAt": "2026-03-17T05:17:28+00:00",
+  "generatedAt": "2026-03-17T20:08:48+00:00",
   "faction": {
     "slug": "space-wolves",
     "name": "Space Wolves",
@@ -15,10 +15,6 @@
       {
         "unitId": "wolf-guard-pack-leader-in-terminator-armour",
         "name": "Wolf Guard Pack Leader In Terminator Armour"
-      },
-      {
-        "unitId": "wolf-guard",
-        "name": "Wolf Guard"
       }
     ]
   },
@@ -34565,10 +34561,10 @@
           {
             "id": "any-number-of-models-can-have-their-bolt-pistol-replaced-with-one-of-the-following-1",
             "label": "Any number of models can have their bolt pistol replaced with one of the following:",
-            "target": "Any number of models can have their bolt pistol replaced with one of the following:",
-            "actor": null,
-            "action": "manual",
-            "selectionMode": "manual",
+            "target": "models",
+            "actor": "models",
+            "action": "replace",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-boltgun",
@@ -34591,18 +34587,20 @@
                 "label": "1 storm shield"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": {
+              "kind": "modelCount"
+            }
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -36080,7 +36078,7 @@
           {
             "id": "this-model-s-storm-bolter-and-power-weapon-can-be-replaced-with-1-twin-lightning-claws-1",
             "label": "This model\u2019s storm bolter and power weapon can be replaced with 1 twin lightning claws.",
-            "target": "This model\u2019s storm bolter and power weapon",
+            "target": "storm bolter and power weapon",
             "actor": null,
             "action": "replace",
             "selectionMode": "single",
@@ -36095,9 +36093,9 @@
           {
             "id": "this-model-s-storm-bolter-and-power-weapon-can-be-replaced-with-two-different-options-from-the-following-list-2",
             "label": "This model\u2019s storm bolter and power weapon can be replaced with two different options from the following list:*",
-            "target": "This model\u2019s storm bolter and power weapon can be replaced with two different options from the following list:",
+            "target": null,
             "actor": null,
-            "action": "manual",
+            "action": null,
             "selectionMode": "manual",
             "choices": [
               {
@@ -36138,7 +36136,7 @@
           {
             "id": "this-model-s-storm-bolter-can-be-replaced-with-1-combi-weapon-3",
             "label": "This model\u2019s storm bolter can be replaced with 1 combi-weapon.",
-            "target": "This model\u2019s storm bolter",
+            "target": "storm bolter",
             "actor": null,
             "action": "replace",
             "selectionMode": "single",

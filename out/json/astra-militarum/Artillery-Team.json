@@ -1,0 +1,200 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Artillery-Team",
+    "faction_slug": "astra-militarum",
+    "datasheet_slug": "Artillery-Team",
+    "output_slug": "astra-militarum"
+  },
+  "name": "Artillery Team",
+  "base_size": "\u2300130mm",
+  "characteristics": {
+    "M": "3\"",
+    "T": "7",
+    "Sv": "3+",
+    "W": "10",
+    "Ld": "7+",
+    "OC": "3"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Heavy mortar",
+        "abilities": [
+          "blast",
+          "heavy",
+          "indirect fire"
+        ],
+        "range": "48\"",
+        "a": "D6+3",
+        "bs": "5+",
+        "s": "8",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Heavy quad launcher",
+        "abilities": [
+          "blast",
+          "heavy",
+          "indirect fire",
+          "twin-linked"
+        ],
+        "range": "48\"",
+        "a": "2D6",
+        "bs": "5+",
+        "s": "5",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Lasgun",
+        "abilities": [
+          "rapid fire 1"
+        ],
+        "range": "24\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "3",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Multiple rocket launcher",
+        "abilities": [
+          "anti-infantry 3+",
+          "blast",
+          "heavy",
+          "indirect fire"
+        ],
+        "range": "48\"",
+        "a": "D6+3",
+        "bs": "5+",
+        "s": "2",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Siege cannon",
+        "abilities": [
+          "blast",
+          "heavy",
+          "indirect fire"
+        ],
+        "range": "48\"",
+        "a": "D6",
+        "bs": "5+",
+        "s": "12",
+        "ap": "-2",
+        "d": "3"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Crew close combat weapons",
+        "abilities": [],
+        "range": "Melee",
+        "a": "3",
+        "ws": "4+",
+        "s": "3",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [],
+    "faction": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "In your Shooting phase , after this model has shot, if one or more of those attacks made with an Indirect Fire weapon scored a hit against an enemy unit, that unit must take a Battle-shock test (if an INFANTRY unit is hit by one or more attacks made by a multiple rocket launcher, they must subtract 1 from their Battle-shock test when doing so).",
+        "name": "Remorseless Barrage"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Artillery Team"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "heavy mortar; lasgun; crew close combat weapons.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "95"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "ARTILLERY",
+    "GRENADES",
+    "IMPERIUM",
+    "REGIMENT",
+    "ARTILLERY TEAM"
+  ],
+  "faction_keywords": [
+    "ASTRA MILITARUM"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s heavy mortar can be replaced with one of the following:",
+          "items": [
+            "1 siege cannon",
+            "1 heavy quad launcher",
+            "1 multiple rocket launcher"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "rule",
+          "text": "In your Shooting phase , after this model has shot, if one or more of those attacks made with an Indirect Fire weapon scored a hit against an enemy unit, that unit must take a Battle-shock test (if an INFANTRY unit is hit by one or more attacks made by a multiple rocket launcher, they must subtract 1 from their Battle-shock test when doing so).",
+          "name": "Remorseless Barrage"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Artillery Team"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "heavy mortar; lasgun; crew close combat weapons.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "95"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

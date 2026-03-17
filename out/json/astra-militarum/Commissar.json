@@ -1,0 +1,231 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Commissar",
+    "faction_slug": "astra-militarum",
+    "datasheet_slug": "Commissar",
+    "output_slug": "astra-militarum"
+  },
+  "name": "Commissar",
+  "base_size": "\u230028.5mm",
+  "characteristics": {
+    "M": "6\"",
+    "T": "3",
+    "Sv": "5+",
+    "W": "3",
+    "Ld": "6+",
+    "OC": "1",
+    "Invulnerable Save": "5+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Bolt pistol",
+        "abilities": [
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Plasma pistol \u2013 standard",
+        "abilities": [
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "7",
+        "ap": "-2",
+        "d": "1"
+      },
+      {
+        "name": "Plasma pistol \u2013 supercharge",
+        "abilities": [
+          "hazardous",
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "8",
+        "ap": "-3",
+        "d": "2"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Chainsword",
+        "abilities": [],
+        "range": "Melee",
+        "a": "4",
+        "ws": "3+",
+        "s": "3",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Power weapon",
+        "abilities": [],
+        "range": "Melee",
+        "a": "3",
+        "ws": "3+",
+        "s": "4",
+        "ap": "-2",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Leader"
+    ],
+    "faction": [
+      "Voice of Command"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Once per battle round , at the start of any phase, you can select one friendly ASTRA MILITARUM INFANTRY unit that is Battle-shocked and within 12\" of this model. If you do, one model in that unit is destroyed, and that unit is then no longer Battle-shocked.",
+        "name": "Summary Execution"
+      },
+      {
+        "type": "rule",
+        "text": "While another OFFICER model is in the same unit as this model, you can re-roll Battle-shock test s taken for that unit.",
+        "name": "Political Overwatch"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Commissar"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "bolt pistol; chainsword.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "30"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "CHARACTER",
+    "IMPERIUM",
+    "OFFICER",
+    "COMMISSAR"
+  ],
+  "faction_keywords": [
+    "ASTRA MILITARUM"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s bolt pistol can be replaced with 1 plasma pistol.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "This model\u2019s chainsword can be replaced with 1 power weapon.",
+          "items": []
+        }
+      ]
+    },
+    {
+      "title": "ORDERS",
+      "entries": [
+        {
+          "type": "text",
+          "text": "This OFFICER can issue 1 Order to a REGIMENT unit. This OFFICER can only issue the Duty and Honour! and Fix Bayonets! Orders."
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Leader"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Voice of Command"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Once per battle round , at the start of any phase, you can select one friendly ASTRA MILITARUM INFANTRY unit that is Battle-shocked and within 12\" of this model. If you do, one model in that unit is destroyed, and that unit is then no longer Battle-shocked.",
+          "name": "Summary Execution"
+        },
+        {
+          "type": "rule",
+          "text": "While another OFFICER model is in the same unit as this model, you can re-roll Battle-shock test s taken for that unit.",
+          "name": "Political Overwatch"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Commissar"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "bolt pistol; chainsword.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "30"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "LEADER",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "Cadian Shock Troops",
+            "Catachan Jungle Fighters",
+            "Kasrkin",
+            "Krieg Combat Engineers",
+            "Tempestus Scions",
+            "Death Korps Of Krieg"
+          ]
+        }
+      ]
+    }
+  ]
+}

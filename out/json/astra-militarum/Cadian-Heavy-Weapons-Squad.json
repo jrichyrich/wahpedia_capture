@@ -1,0 +1,227 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Cadian-Heavy-Weapons-Squad",
+    "faction_slug": "astra-militarum",
+    "datasheet_slug": "Cadian-Heavy-Weapons-Squad",
+    "output_slug": "astra-militarum"
+  },
+  "name": "Cadian Heavy Weapons Squad",
+  "base_size": "\u230050mm",
+  "characteristics": {
+    "M": "6\"",
+    "T": "3",
+    "Sv": "5+",
+    "W": "2",
+    "Ld": "7+",
+    "OC": "2"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Autocannon",
+        "abilities": [
+          "heavy"
+        ],
+        "range": "48\"",
+        "a": "2",
+        "bs": "5+",
+        "s": "9",
+        "ap": "-1",
+        "d": "3"
+      },
+      {
+        "name": "Heavy bolter",
+        "abilities": [
+          "heavy",
+          "sustained hits 1"
+        ],
+        "range": "36\"",
+        "a": "3",
+        "bs": "5+",
+        "s": "5",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Lascannon",
+        "abilities": [
+          "heavy"
+        ],
+        "range": "48\"",
+        "a": "1",
+        "bs": "5+",
+        "s": "12",
+        "ap": "-3",
+        "d": "D6+1"
+      },
+      {
+        "name": "Laspistol",
+        "abilities": [
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "2",
+        "bs": "4+",
+        "s": "3",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Missile launcher \u2013 frag",
+        "abilities": [
+          "blast",
+          "heavy"
+        ],
+        "range": "48\"",
+        "a": "D6",
+        "bs": "5+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Missile launcher \u2013 krak",
+        "abilities": [
+          "heavy"
+        ],
+        "range": "48\"",
+        "a": "1",
+        "bs": "5+",
+        "s": "9",
+        "ap": "-2",
+        "d": "D6"
+      },
+      {
+        "name": "Mortar",
+        "abilities": [
+          "blast",
+          "heavy",
+          "indirect fire"
+        ],
+        "range": "48\"",
+        "a": "D6",
+        "bs": "5+",
+        "s": "5",
+        "ap": "0",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Weapons team close combat weapons",
+        "abilities": [],
+        "range": "Melee",
+        "a": "2",
+        "ws": "4+",
+        "s": "3",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [],
+    "faction": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time you target this unit with the Fire Overwatch Stratagem, while resolving that Stratagem, hits are scored on unmodified Hit rolls of 5+, or on unmodified Hit rolls of 4+ instead if this unit is within 6\" of one or more friendly PLATOON units.",
+        "name": "Covering Fire"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "3 Heavy Weapons Teams"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "heavy bolter; laspistol; weapons team close combat weapons.",
+      "label": "Every model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "3 models",
+          "points": "65"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "GRENADES",
+    "IMPERIUM",
+    "REGIMENT",
+    "CADIAN HEAVY WEAPONS SQUAD"
+  ],
+  "faction_keywords": [
+    "ASTRA MILITARUM"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "Any number of models can each have their heavy bolter replaced with one of the following:",
+          "items": [
+            "1 autocannon",
+            "1 lascannon",
+            "1 missile launcher",
+            "1 mortar"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "rule",
+          "text": "Each time you target this unit with the Fire Overwatch Stratagem, while resolving that Stratagem, hits are scored on unmodified Hit rolls of 5+, or on unmodified Hit rolls of 4+ instead if this unit is within 6\" of one or more friendly PLATOON units.",
+          "name": "Covering Fire"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "3 Heavy Weapons Teams"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "heavy bolter; laspistol; weapons team close combat weapons.",
+          "label": "Every model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "3 models",
+              "points": "65"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "EMBARKING",
+      "entries": [
+        {
+          "type": "text",
+          "text": "While embarked within a TRANSPORT , each model takes up the space of 2 models, and each weapon equipped by these models is considered to be 2 models\u2019 weapons for the purposes of the Firing Deck ability."
+        }
+      ]
+    }
+  ]
+}

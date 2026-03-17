@@ -1,0 +1,209 @@
+{
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Sabre-Weapons-Battery",
+    "faction_slug": "astra-militarum",
+    "datasheet_slug": "Sabre-Weapons-Battery",
+    "output_slug": "astra-militarum"
+  },
+  "name": "Sabre Weapons Battery",
+  "base_size": "\u2300Use model",
+  "characteristics": {
+    "M": "-",
+    "T": "4",
+    "Sv": "4+",
+    "W": "4",
+    "Ld": "7+",
+    "OC": "1"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Twin autocannon",
+        "abilities": [
+          "twin-linked"
+        ],
+        "range": "48\"",
+        "a": "2",
+        "bs": "4+",
+        "s": "9",
+        "ap": "-1",
+        "d": "3"
+      },
+      {
+        "name": "Twin heavy bolter",
+        "abilities": [
+          "sustained hits 1",
+          "twin-linked"
+        ],
+        "range": "36\"",
+        "a": "3",
+        "bs": "4+",
+        "s": "5",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Twin heavy stubber",
+        "abilities": [
+          "rapid fire 3",
+          "twin-linked"
+        ],
+        "range": "36\"",
+        "a": "3",
+        "bs": "4+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Twin lascannon",
+        "abilities": [
+          "twin-linked"
+        ],
+        "range": "48\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "12",
+        "ap": "-3",
+        "d": "D6+1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Close combat weapon",
+        "abilities": [],
+        "range": "Melee",
+        "a": "1",
+        "ws": "4+",
+        "s": "3",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [],
+    "faction": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time you target this unit with the Fire Overwatch Stratagem, hits are scored on unmodified Hit rolls of 5+ when resolving that Stratagem.",
+        "name": "Sentinel Directives"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1-2 Sabre Gun Platforms"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "twin heavy bolter; close combat weapon.",
+      "label": "Every model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "45"
+        },
+        {
+          "label": "2 models",
+          "points": "90"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "FORTIFICATION",
+    "IMPERIUM",
+    "ARTILLERY",
+    "SABRE WEAPONS BATTERY"
+  ],
+  "faction_keywords": [
+    "ASTRA MILITARUM"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "Any number of models\u2019 twin heavy bolters can each be replaced with one of the following:",
+          "items": [
+            "1 defence searchlight",
+            "1 twin autocannon",
+            "1 twin heavy stubber",
+            "1 twin lascannon"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "FORTIFICATION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "That unit can still be selected as the target of ranged attacks, but each time such an attack is made, unless it is made with a Pistol , subtract 1 from the Hit roll .",
+            "Models in that unit do not need to take Desperate Escape tests due to Falling Back while Battle- shocked, except for those that will move over enemy models when doing so."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "rule",
+          "text": "Each time you target this unit with the Fire Overwatch Stratagem, hits are scored on unmodified Hit rolls of 5+ when resolving that Stratagem.",
+          "name": "Sentinel Directives"
+        }
+      ]
+    },
+    {
+      "title": "WARGEAR ABILITIES",
+      "entries": [
+        {
+          "type": "statement",
+          "text": "At the start of your Shooting phase , you can select one enemy unit within 24\" and visible to the bearer. Until the end of the phase, that unit cannot have the Benefit of Cover .",
+          "label": "Defence Searchlight"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1-2 Sabre Gun Platforms"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "twin heavy bolter; close combat weapon.",
+          "label": "Every model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "45"
+            },
+            {
+              "label": "2 models",
+              "points": "90"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -38,6 +38,12 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="Use a new browser instance for each datasheet capture.",
     )
+    parser.add_argument(
+        "--card-slug",
+        action="append",
+        default=[],
+        help="Limit capture to one or more card slugs. Repeat as needed.",
+    )
     return parser.parse_args()
 
 
@@ -239,16 +245,17 @@ def wait_for_expected_datasheet(
     def matches_expected_target(current_driver: Firefox) -> bool:
         title = (current_driver.title or "").strip()
         normalized_title = normalize_slug(title)
-        if normalized_title not in {normalized_expected, canonical_expected}:
+        if normalized_expected not in normalized_title and canonical_expected not in normalized_title:
+            print(f"  [DEBUG] target title mismatch: '{normalized_title}' vs '{normalized_expected}'", flush=True)
             return False
 
         if not current_driver.find_elements(By.CSS_SELECTOR, "div.dsOuterFrame.datasheet"):
+            print(f"  [DEBUG] target datasheet element not found", flush=True)
             return False
 
-        body_text = current_driver.execute_script(
-            "return (document.body && document.body.innerText) || '';"
-        )
-        return "This datasheet does not meet the selection criteria" not in body_text
+        # We no longer check for "This datasheet does not meet the selection criteria"
+        # as it can appear in sidebars/tooltips even when the main datasheet is valid.
+        return True
 
     wait.until(matches_expected_target)
 
@@ -284,16 +291,19 @@ def wait_for_rendered_datasheet(
         )
 
         normalized_title = normalize_slug(details["title"])
-        if normalized_title not in {normalized_expected, canonical_expected}:
+        if normalized_expected not in normalized_title and canonical_expected not in normalized_title:
+            print(f"  [DEBUG] title mismatch: '{normalized_title}' does not contain '{normalized_expected}'", flush=True)
             return False
 
         if not details["fontsLoaded"]:
             return False
 
-        if details["textLength"] < 200:
+        if details["textLength"] < 100:
+            print(f"  [DEBUG] text too short: {details['textLength']}", flush=True)
             return False
 
-        if details["placeholderCount"] > 8:
+        if details["placeholderCount"] > 12:
+            print(f"  [DEBUG] too many placeholders: {details['placeholderCount']}", flush=True)
             return False
 
         visible_stats = [
@@ -301,9 +311,13 @@ def wait_for_rendered_datasheet(
             for value in details["stats"]
             if value
             and value not in {"M", "T", "Sv", "W", "Ld", "OC"}
-            and len(value) <= 4
+            and len(value) <= 5
         ]
-        return len(visible_stats) >= 6
+        if len(visible_stats) < 3:
+            print(f"  [DEBUG] too few stats: {len(visible_stats)} ({visible_stats})", flush=True)
+            return False
+
+        return True
 
     wait.until(is_fully_rendered)
 
@@ -385,8 +399,6 @@ def unique_links(driver: Firefox) -> list[dict[str, str]]:
 
     for element in driver.find_elements(By.CSS_SELECTOR, "#tooltip_contentArmyList a"):
         href = element.get_attribute("href")
-        if href and href.startswith("https://wahapedia.ru/"):
-            href = "http://wahapedia.ru/" + href.removeprefix("https://wahapedia.ru/")
         text = element.text.strip()
         if not href or href.endswith("datasheets.html") or href in seen:
             continue
@@ -411,13 +423,10 @@ def build_driver() -> tuple[Firefox, WebDriverWait]:
     options = FirefoxOptions()
     options.add_argument("--headless")
     options.add_argument("--window-size=1800,2200")
-    # `none` avoids long waits on Wahapedia assets, but we must verify the page title
-    # before saving so we don't capture the previous datasheet during navigation.
-    options.page_load_strategy = "none"
 
     driver = Firefox(options=options)
-    driver.set_page_load_timeout(30)
-    wait = WebDriverWait(driver, 60)
+    driver.set_page_load_timeout(120)
+    wait = WebDriverWait(driver, 120)
     return driver, wait
 
 
@@ -430,6 +439,7 @@ def capture_datasheet(
     destination: Path,
 ) -> None:
     driver.get(href)
+    time.sleep(2)
     maybe_accept_consent(driver)
     wait_for_filter_options(driver, wait, filters)
     for filter_text in filters:
@@ -458,33 +468,58 @@ def main() -> int:
     if args.clear:
         clear_outputs(output_dir, source_dir, args.output_slug)
 
-    driver, wait = build_driver()
+    manifest_path = source_dir / f"{args.output_slug}-links.json"
+    links = []
+    if args.card_slug and manifest_path.exists():
+        with manifest_path.open("r") as file:
+            all_links = json.load(file)
+            links = [
+                link
+                for link in all_links
+                if link["href"].rstrip("/").split("/")[-1] in args.card_slug
+            ]
+        print(f"Loaded {len(links)} {args.output_slug} unit links from manifest", flush=True)
+
+    driver = None
+    wait = None
 
     try:
-        print(f"Opening {args.url}", flush=True)
-        driver.get(args.url)
-        maybe_accept_consent(driver)
-        wait_for_filter_options(driver, wait, args.filter)
-        baseline_title = (driver.title or "").strip()
-        baseline_count = len(driver.find_elements(By.CSS_SELECTOR, "#tooltip_contentArmyList a"))
-        for filter_text in args.filter:
-            set_selects_by_text(driver, filter_text)
-        if args.filter:
-            wait_for_filtered_army_list(
-                driver, wait, baseline_title, baseline_count, args.filter
+        if not links:
+            driver, wait = build_driver()
+            print(f"Opening {args.url}", flush=True)
+            driver.get(args.url)
+            maybe_accept_consent(driver)
+            wait_for_filter_options(driver, wait, args.filter)
+            baseline_title = (driver.title or "").strip()
+            baseline_count = len(driver.find_elements(By.CSS_SELECTOR, "#tooltip_contentArmyList a"))
+            for filter_text in args.filter:
+                set_selects_by_text(driver, filter_text)
+            if args.filter:
+                wait_for_filtered_army_list(
+                    driver, wait, baseline_title, baseline_count, args.filter
+                )
+            wait.until(
+                lambda current_driver: len(
+                    current_driver.find_elements(By.CSS_SELECTOR, "#tooltip_contentArmyList a")
+                )
+                > 0
             )
-        wait.until(
-            lambda current_driver: len(
-                current_driver.find_elements(By.CSS_SELECTOR, "#tooltip_contentArmyList a")
-            )
-            > 0
-        )
 
-        links = unique_links(driver)
-        print(f"Found {len(links)} {args.output_slug} unit links", flush=True)
+            links = unique_links(driver)
+            print(f"Found {len(links)} {args.output_slug} unit links", flush=True)
 
-        with (source_dir / f"{args.output_slug}-links.json").open("w") as file:
-            json.dump(links, file, indent=2)
+            with manifest_path.open("w") as file:
+                json.dump(links, file, indent=2)
+
+            if args.card_slug:
+                links = [
+                    link
+                    for link in links
+                    if link["href"].rstrip("/").split("/")[-1] in args.card_slug
+                ]
+
+        if not driver:
+            driver, wait = build_driver()
 
         failures = []
         for index, item in enumerate(links, start=1):

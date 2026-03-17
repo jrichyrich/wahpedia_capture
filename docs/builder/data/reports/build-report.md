@@ -1,12 +1,12 @@
 # Builder Catalog Build Report
 
-- Generated at: 2026-03-17T05:17:28+00:00
-- Source root: `/Users/lisarichards/Documents/GitHub/wahpedia_capture/out/json`
-- Factions imported: 8
-- Total units: 936
+- Generated at: 2026-03-17T20:08:48+00:00
+- Source root: `/Users/jasricha/Documents/Github_Personal/wahpedia_capture/out/json`
+- Factions imported: 9
+- Total units: 1064
 - Units with missing stats: 0
 - Manual selection units: 0
-- Units with manual wargear: 38
+- Units with manual wargear: 37
 
 ## Factions
 
@@ -24,7 +24,15 @@
 - Units: 97
 - Missing stats: 0
 - Manual selection units: 0
-- Manual wargear units: 16
+- Manual wargear units: 14
+
+### Astra Militarum
+
+- Catalog: `catalogs/astra-militarum.json`
+- Units: 128
+- Missing stats: 0
+- Manual selection units: 0
+- Manual wargear units: 10
 
 ### Dark Angels
 
@@ -32,7 +40,7 @@
 - Units: 174
 - Missing stats: 0
 - Manual selection units: 0
-- Manual wargear units: 5
+- Manual wargear units: 2
 
 ### Death Guard
 
@@ -40,7 +48,7 @@
 - Units: 71
 - Missing stats: 0
 - Manual selection units: 0
-- Manual wargear units: 4
+- Manual wargear units: 3
 
 ### Drukhari
 
@@ -48,7 +56,7 @@
 - Units: 47
 - Missing stats: 0
 - Manual selection units: 0
-- Manual wargear units: 9
+- Manual wargear units: 7
 
 ### Space Marines
 
@@ -56,7 +64,7 @@
 - Units: 155
 - Missing stats: 0
 - Manual selection units: 0
-- Manual wargear units: 1
+- Manual wargear units: 0
 
 ### Space Wolves
 
@@ -64,7 +72,7 @@
 - Units: 191
 - Missing stats: 0
 - Manual selection units: 0
-- Manual wargear units: 2
+- Manual wargear units: 1
 
 ### Ultramarines
 
@@ -72,4 +80,4 @@
 - Units: 170
 - Missing stats: 0
 - Manual selection units: 0
-- Manual wargear units: 1
+- Manual wargear units: 0
