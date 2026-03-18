@@ -473,7 +473,7 @@
                         </div>
                         <div class="field-group">
                             <label class="field-label" for="roster-name">Roster name</label>
-                            <input id="roster-name" type="text" placeholder="Aeldari Roster" disabled>
+                            <input id="roster-name" type="text" placeholder="Aeldari Roster" maxlength="80" disabled>
                         </div>
                     </div>
                     <div class="roster-manager-actions">
@@ -539,6 +539,7 @@
             roster: [],
             activeRosterId: null,
             activeRosterName: "",
+            rosterNameDraft: "",
             savedRosterList: [],
             lastSavedAt: null,
             storageAvailable: false,
@@ -625,7 +626,7 @@
                 savedAt: state.lastSavedAt || new Date().toISOString(),
                 appVersion: appVersion(),
                 factionSlug: state.rosterFactionSlug || state.factionSlug,
-                name: state.activeRosterName || els.rosterName.value,
+                name: state.rosterNameDraft,
                 entries: state.roster,
             });
         }
@@ -848,7 +849,10 @@
 
         function renderSavedRosterState() {
             renderSavedRosterOptions();
-            els.rosterName.value = state.activeRosterName || "";
+            const nextRosterName = state.rosterNameDraft || "";
+            if (els.rosterName.value !== nextRosterName) {
+                els.rosterName.value = nextRosterName;
+            }
             renderCatalogSummary();
         }
 
@@ -857,6 +861,7 @@
             await setCatalog(rosterFaction);
             state.activeRosterId = Store.createRosterId();
             state.activeRosterName = Store.normalizeName("", rosterFaction);
+            state.rosterNameDraft = state.activeRosterName;
             state.rosterFactionSlug = rosterFaction;
             state.roster = [];
             state.lastSavedAt = null;
@@ -871,6 +876,7 @@
             const savedRoster = Store.migrateSavedRosterDocument(roster);
             state.activeRosterId = savedRoster.id;
             state.activeRosterName = savedRoster.name;
+            state.rosterNameDraft = savedRoster.name;
             state.rosterFactionSlug = savedRoster.factionSlug;
             state.lastSavedAt = savedRoster.savedAt;
             state.roster = Store.createRuntimeEntries(savedRoster.entries);
@@ -1215,7 +1221,8 @@
         });
 
         els.rosterName.addEventListener("input", (event) => {
-            state.activeRosterName = Store.normalizeName(event.target.value, state.rosterFactionSlug || state.factionSlug);
+            state.rosterNameDraft = event.target.value;
+            state.activeRosterName = Store.normalizeName(state.rosterNameDraft, state.rosterFactionSlug || state.factionSlug);
             renderCatalogSummary();
             scheduleAutoSave();
         });
