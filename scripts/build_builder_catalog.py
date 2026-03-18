@@ -33,6 +33,10 @@ def default_docs_data_root() -> Path:
     return repo_root() / "docs" / "builder" / "data"
 
 
+def default_source_cards_root() -> Path:
+    return repo_root() / "out" / "factions"
+
+
 def slug_to_title(slug: str) -> str:
     return slug.replace("-", " ").title()
 
@@ -785,6 +789,8 @@ def write_report(output_root: Path, manifest: dict[str, object]) -> None:
         f"- Units with missing stats: {manifest['report']['totals']['missingStatsCount']}",
         f"- Manual selection units: {manifest['report']['totals']['manualSelectionCount']}",
         f"- Units with manual wargear: {manifest['report']['totals']['manualWargearCount']}",
+        f"- Source cards copied: {manifest['report']['totals']['sourceCardCopiedCount']}",
+        f"- Source cards missing: {manifest['report']['totals']['sourceCardMissingCount']}",
         "",
         "## Factions",
         "",
@@ -800,6 +806,8 @@ def write_report(output_root: Path, manifest: dict[str, object]) -> None:
                 f"- Missing stats: {faction['missingStatsCount']}",
                 f"- Manual selection units: {faction['manualSelectionCount']}",
                 f"- Manual wargear units: {faction['manualWargearCount']}",
+                f"- Source cards copied: {faction['sourceCardCopiedCount']}",
+                f"- Source cards missing: {faction['sourceCardMissingCount']}",
                 "",
             ]
         )
@@ -819,9 +827,98 @@ def publish_docs_data(output_root: Path, docs_data_root: Path) -> None:
             shutil.copy2(child, destination)
 
 
-def build_all(source_root: Path, output_root: Path, factions: list[str] | None = None, clean: bool = False) -> dict[str, object]:
+def collect_source_card_report(
+    source_cards_root: Path,
+    catalogs: list[dict[str, object]],
+) -> dict[str, object]:
+    copied_count = 0
+    missing_count = 0
+    faction_reports: dict[str, dict[str, object]] = {}
+
+    for catalog in catalogs:
+        faction_slug = str(catalog["faction"]["slug"])
+        copied_units = 0
+        missing_units: list[dict[str, str]] = []
+
+        for unit in catalog.get("units", []):
+            source = unit.get("source", {}) if isinstance(unit, dict) else {}
+            output_slug = str(source.get("outputSlug") or faction_slug)
+            datasheet_slug = str(source.get("datasheetSlug") or "").strip()
+            if not datasheet_slug:
+                missing_count += 1
+                missing_units.append(
+                    {
+                        "name": str(unit.get("name", unit.get("unitId", "Unknown unit"))),
+                        "reason": "missing-datasheet-slug",
+                    }
+                )
+                continue
+
+            candidate_path = source_cards_root / output_slug / f"{datasheet_slug}.png"
+            if not candidate_path.exists():
+                missing_count += 1
+                missing_units.append(
+                    {
+                        "name": str(unit.get("name", datasheet_slug)),
+                        "reason": f"missing-file:{candidate_path}",
+                    }
+                )
+                continue
+
+            copied_count += 1
+            copied_units += 1
+
+        faction_reports[faction_slug] = {
+            "copiedCount": copied_units,
+            "missingCount": len(missing_units),
+            "missingUnits": missing_units,
+        }
+
+    return {
+        "copiedCount": copied_count,
+        "missingCount": missing_count,
+        "factions": faction_reports,
+    }
+
+
+def publish_source_cards(docs_data_root: Path, source_cards_root: Path) -> None:
+    catalogs_dir = docs_data_root / "catalogs"
+    if not catalogs_dir.exists():
+        return
+
+    destination_root = docs_data_root / "source-cards"
+    if destination_root.exists():
+        shutil.rmtree(destination_root)
+    destination_root.mkdir(parents=True, exist_ok=True)
+
+    for catalog_path in sorted(catalogs_dir.glob("*.json")):
+        catalog = json.loads(catalog_path.read_text(encoding="utf-8"))
+        faction_slug = str(catalog["faction"]["slug"])
+        destination_dir = destination_root / faction_slug
+        destination_dir.mkdir(parents=True, exist_ok=True)
+
+        for unit in catalog.get("units", []):
+            source = unit.get("source", {}) if isinstance(unit, dict) else {}
+            output_slug = str(source.get("outputSlug") or faction_slug)
+            datasheet_slug = str(source.get("datasheetSlug") or "").strip()
+            if not datasheet_slug:
+                continue
+            candidate_path = source_cards_root / output_slug / f"{datasheet_slug}.png"
+            if not candidate_path.exists():
+                continue
+            shutil.copy2(candidate_path, destination_dir / candidate_path.name)
+
+
+def build_all(
+    source_root: Path,
+    output_root: Path,
+    factions: list[str] | None = None,
+    clean: bool = False,
+    source_cards_root: Path | None = None,
+) -> dict[str, object]:
     source_root = Path(source_root)
     output_root = Path(output_root)
+    source_cards_root = Path(source_cards_root) if source_cards_root else default_source_cards_root()
     if not source_root.exists():
         raise FileNotFoundError(f"Source root not found: {source_root}")
 
@@ -836,6 +933,7 @@ def build_all(source_root: Path, output_root: Path, factions: list[str] | None =
 
     manifest_factions = []
     report_factions = []
+    built_catalogs = []
     total_units = 0
     total_missing_stats = 0
     total_manual_selection = 0
@@ -848,6 +946,7 @@ def build_all(source_root: Path, output_root: Path, factions: list[str] | None =
         cards = json.loads(index_path.read_text(encoding="utf-8"))
         output_catalog_path = catalog_dir / f"{faction_slug}.json"
         catalog = build_faction_catalog(faction_slug, cards, output_catalog_path)
+        built_catalogs.append(catalog)
         build_info = catalog["build"]
 
         manifest_factions.append(
@@ -876,11 +975,26 @@ def build_all(source_root: Path, output_root: Path, factions: list[str] | None =
         total_manual_selection += len(build_info["manualSelectionUnits"])
         total_manual_wargear += len(build_info["manualWargearUnits"])
 
+    source_card_report = collect_source_card_report(source_cards_root, built_catalogs)
+
+    for faction in manifest_factions:
+        source_info = source_card_report["factions"].get(faction["slug"], {})
+        faction["sourceCardCopiedCount"] = source_info.get("copiedCount", 0)
+        faction["sourceCardMissingCount"] = source_info.get("missingCount", 0)
+
+    for faction in report_factions:
+        source_info = source_card_report["factions"].get(faction["slug"], {})
+        faction["sourceCardCopiedCount"] = source_info.get("copiedCount", 0)
+        faction["sourceCardMissingCount"] = source_info.get("missingCount", 0)
+        faction["missingSourceCards"] = source_info.get("missingUnits", [])
+
     manifest = {
         "schemaVersion": SCHEMA_VERSION,
         "generatedAt": utc_now(),
         "sourceRoot": str(source_root.resolve()),
+        "sourceCardsRoot": str(source_cards_root.resolve()),
         "catalogRoot": "catalogs",
+        "sourceCardsRootRelative": "source-cards",
         "reportFile": "reports/build-report.json",
         "factions": manifest_factions,
         "report": {
@@ -890,6 +1004,8 @@ def build_all(source_root: Path, output_root: Path, factions: list[str] | None =
                 "missingStatsCount": total_missing_stats,
                 "manualSelectionCount": total_manual_selection,
                 "manualWargearCount": total_manual_wargear,
+                "sourceCardCopiedCount": source_card_report["copiedCount"],
+                "sourceCardMissingCount": source_card_report["missingCount"],
             },
             "factions": report_factions,
         },
@@ -907,6 +1023,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--source-root", default=str(default_source_root()))
     parser.add_argument("--output-root", default=str(default_output_root()))
     parser.add_argument("--docs-data-root", default=str(default_docs_data_root()))
+    parser.add_argument("--source-cards-root", default=str(default_source_cards_root()))
     parser.add_argument("--faction", action="append", dest="factions")
     parser.add_argument("--clean", action="store_true")
     return parser.parse_args()
@@ -919,8 +1036,10 @@ def main() -> None:
         output_root=Path(args.output_root),
         factions=args.factions,
         clean=args.clean,
+        source_cards_root=Path(args.source_cards_root),
     )
     publish_docs_data(Path(args.output_root), Path(args.docs_data_root))
+    publish_source_cards(Path(args.docs_data_root), Path(args.source_cards_root))
     totals = manifest["report"]["totals"]
     print(
         f"Built {totals['unitCount']} units across {totals['factionCount']} factions into {args.output_root}"

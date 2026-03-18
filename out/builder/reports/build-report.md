@@ -1,12 +1,14 @@
 # Builder Catalog Build Report
 
-- Generated at: 2026-03-17T20:08:48+00:00
+- Generated at: 2026-03-18T21:01:18+00:00
 - Source root: `/Users/jasricha/Documents/Github_Personal/wahpedia_capture/out/json`
 - Factions imported: 9
 - Total units: 1064
 - Units with missing stats: 0
 - Manual selection units: 0
 - Units with manual wargear: 37
+- Source cards copied: 986
+- Source cards missing: 78
 
 ## Factions
 
@@ -17,6 +19,8 @@
 - Missing stats: 0
 - Manual selection units: 0
 - Manual wargear units: 0
+- Source cards copied: 31
+- Source cards missing: 0
 
 ### Aeldari
 
@@ -25,6 +29,8 @@
 - Missing stats: 0
 - Manual selection units: 0
 - Manual wargear units: 14
+- Source cards copied: 97
+- Source cards missing: 0
 
 ### Astra Militarum
 
@@ -33,6 +39,8 @@
 - Missing stats: 0
 - Manual selection units: 0
 - Manual wargear units: 10
+- Source cards copied: 128
+- Source cards missing: 0
 
 ### Dark Angels
 
@@ -41,6 +49,8 @@
 - Missing stats: 0
 - Manual selection units: 0
 - Manual wargear units: 2
+- Source cards copied: 174
+- Source cards missing: 0
 
 ### Death Guard
 
@@ -49,6 +59,8 @@
 - Missing stats: 0
 - Manual selection units: 0
 - Manual wargear units: 3
+- Source cards copied: 71
+- Source cards missing: 0
 
 ### Drukhari
 
@@ -57,6 +69,8 @@
 - Missing stats: 0
 - Manual selection units: 0
 - Manual wargear units: 7
+- Source cards copied: 47
+- Source cards missing: 0
 
 ### Space Marines
 
@@ -65,6 +79,8 @@
 - Missing stats: 0
 - Manual selection units: 0
 - Manual wargear units: 0
+- Source cards copied: 155
+- Source cards missing: 0
 
 ### Space Wolves
 
@@ -73,6 +89,8 @@
 - Missing stats: 0
 - Manual selection units: 0
 - Manual wargear units: 1
+- Source cards copied: 191
+- Source cards missing: 0
 
 ### Ultramarines
 
@@ -81,3 +99,5 @@
 - Missing stats: 0
 - Manual selection units: 0
 - Manual wargear units: 0
+- Source cards copied: 92
+- Source cards missing: 78

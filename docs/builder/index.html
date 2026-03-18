@@ -329,6 +329,42 @@
             margin-bottom: 18px;
         }
 
+        .preview-controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .preview-mode-group {
+            display: inline-flex;
+            border: 1.5px solid var(--ink);
+            background: var(--panel-2);
+        }
+
+        .preview-mode-btn {
+            border: 0;
+            border-right: 1.5px solid var(--ink);
+            background: transparent;
+            color: var(--ink);
+            min-height: 40px;
+            padding: 8px 12px;
+            font: inherit;
+            font-weight: 900;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+        .preview-mode-btn:last-child {
+            border-right: 0;
+        }
+
+        .preview-mode-btn.is-active {
+            background: var(--accent);
+            color: white;
+        }
+
         .preview-mode-toggle {
             display: inline-flex;
             align-items: center;
@@ -356,6 +392,59 @@
         .preview-body {
             display: grid;
             gap: 24px;
+        }
+
+        .source-card {
+            background: var(--panel);
+            border: 1.5px solid var(--ink);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .source-card-header {
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--line);
+            background: #faf7f0;
+        }
+
+        .source-card-title {
+            margin: 0;
+            font-family: "Exo 2", sans-serif;
+            font-size: 22px;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .source-card-meta {
+            margin-top: 4px;
+            color: #5d5448;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .source-card-image-wrap {
+            padding: 16px;
+            background: #f3efe4;
+        }
+
+        .source-card-image {
+            display: block;
+            width: 100%;
+            height: auto;
+            border: 1.5px solid var(--ink);
+            background: white;
+        }
+
+        .source-card-actions {
+            padding: 0 16px 16px;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .source-card-missing {
+            padding: 16px;
         }
 
         .inline-note {
@@ -429,6 +518,21 @@
             .preview-header {
                 flex-direction: column;
                 align-items: flex-start;
+            }
+
+            .preview-controls {
+                width: 100%;
+                justify-content: stretch;
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .preview-mode-group {
+                width: 100%;
+            }
+
+            .preview-mode-btn {
+                flex: 1 1 0;
             }
 
             .points-tally,
@@ -663,11 +767,18 @@
                     <div>
                         <h2 class="section-heading">Card Preview</h2>
                         <div class="inline-note">Cards render directly from the normalized builder catalog and the current roster selections.</div>
+                        <div id="preview-mode-note" class="inline-note"></div>
                     </div>
-                    <label class="preview-mode-toggle">
-                        <input id="print-clean-toggle" type="checkbox">
-                        <span>Print-clean mode</span>
-                    </label>
+                    <div class="preview-controls">
+                        <div class="preview-mode-group" role="group" aria-label="Preview source mode">
+                            <button id="preview-mode-configured" class="preview-mode-btn is-active" type="button" aria-pressed="true">Configured card</button>
+                            <button id="preview-mode-source" class="preview-mode-btn" type="button" aria-pressed="false">Original Wahapedia</button>
+                        </div>
+                        <label class="preview-mode-toggle">
+                            <input id="print-clean-toggle" type="checkbox">
+                            <span>Print-clean mode</span>
+                        </label>
+                    </div>
                 </div>
                 <button id="preview-toggle" class="btn preview-toggle-btn" type="button" aria-expanded="false">Show cards</button>
                 <div id="preview-body" class="preview-body"></div>
@@ -697,6 +808,7 @@
             storageAvailable: false,
             saveTimer: null,
             previewRenderMode: "default",
+            previewSourceMode: "configured",
             mobilePreviewVisible: false,
             wasMobileViewport: false,
         };
@@ -715,6 +827,9 @@
             totalPoints: document.getElementById("total-points"),
             previewBody: document.getElementById("preview-body"),
             previewToggle: document.getElementById("preview-toggle"),
+            previewModeConfigured: document.getElementById("preview-mode-configured"),
+            previewModeSource: document.getElementById("preview-mode-source"),
+            previewModeNote: document.getElementById("preview-mode-note"),
             printCleanToggle: document.getElementById("print-clean-toggle"),
             clearRoster: document.getElementById("clear-roster"),
             printRoster: document.getElementById("print-roster"),
@@ -902,6 +1017,68 @@
             els.previewToggle.textContent = shouldShowPreview ? "Hide cards" : "Show cards";
             els.previewToggle.setAttribute("aria-expanded", shouldShowPreview ? "true" : "false");
             els.previewBody.classList.toggle("preview-body-hidden", !shouldShowPreview);
+            const isConfigured = state.previewSourceMode === "configured";
+            els.previewModeConfigured.classList.toggle("is-active", isConfigured);
+            els.previewModeConfigured.setAttribute("aria-pressed", isConfigured ? "true" : "false");
+            els.previewModeSource.classList.toggle("is-active", !isConfigured);
+            els.previewModeSource.setAttribute("aria-pressed", !isConfigured ? "true" : "false");
+            els.printCleanToggle.disabled = !isConfigured;
+            els.previewModeNote.textContent = isConfigured
+                ? "Configured cards reflect your roster choices. Switch to Original Wahapedia to inspect the captured source card."
+                : "Original Wahapedia cards are static source captures and may not reflect selected upgrades, wargear, or quantity.";
+        }
+
+        function sourceCardUrl(unit) {
+            const source = unit && unit.source ? unit.source : null;
+            if (!source || !source.outputSlug || !source.datasheetSlug) {
+                return null;
+            }
+            return `./data/source-cards/${encodeURIComponent(source.outputSlug)}/${encodeURIComponent(source.datasheetSlug)}.png`;
+        }
+
+        function escapeHtml(value) {
+            return String(value ?? "")
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#39;");
+        }
+
+        function renderSourceCard(entry) {
+            const url = entry && entry.unit ? sourceCardUrl(entry.unit) : null;
+            const safeName = escapeHtml(entry && entry.displayName ? entry.displayName : "Unknown unit");
+            const imageMarkup = url
+                ? `
+                    <div class="source-card-image-wrap">
+                        <img
+                            class="source-card-image"
+                            src="${url}"
+                            alt="Original Wahapedia card for ${safeName}"
+                            loading="lazy"
+                            onerror="this.closest('.source-card').dataset.missing='true'; this.replaceWith(Object.assign(document.createElement('div'), { className: 'source-card-missing inline-note inline-note-warning', textContent: 'Original Wahapedia card is not available for this unit.' }));"
+                        >
+                    </div>
+                `
+                : `<div class="source-card-missing inline-note inline-note-warning">Original Wahapedia card is not available for this unit.</div>`;
+            const actionsMarkup = url
+                ? `
+                    <div class="source-card-actions">
+                        <a class="btn" href="${url}" target="_blank" rel="noopener noreferrer">Open source image</a>
+                    </div>
+                `
+                : "";
+
+            return `
+                <article class="source-card">
+                    <div class="source-card-header">
+                        <h3 class="source-card-title">${safeName}</h3>
+                        <div class="source-card-meta">Original Wahapedia source card</div>
+                    </div>
+                    ${imageMarkup}
+                    ${actionsMarkup}
+                </article>
+            `;
         }
 
         function renderFactionOptions() {
@@ -1257,13 +1434,17 @@
         }
 
         function renderPreview() {
-            state.mobilePreviewVisible = isMobileViewport() ? false : true;
-            state.wasMobileViewport = isMobileViewport();
             const derived = deriveRoster();
             if (!state.catalog || !derived.validEntries.length) {
                 els.previewBody.innerHTML = derived.invalidEntries.length
                     ? `<div class="inline-note">Only valid roster entries are shown in the preview. Repair or remove unresolved entries to print them.</div>`
                     : `<div class="inline-note">Add one or more units to preview printable datacards.</div>`;
+                renderPreviewVisibility();
+                return;
+            }
+
+            if (state.previewSourceMode === "source-image") {
+                els.previewBody.innerHTML = derived.validEntries.map((entry) => renderSourceCard(entry)).join("");
                 renderPreviewVisibility();
                 return;
             }
@@ -1338,6 +1519,8 @@
                 return;
             }
             try {
+                state.wasMobileViewport = isMobileViewport();
+                state.mobilePreviewVisible = !state.wasMobileViewport;
                 state.storageAvailable = Boolean(storageAdapter());
                 await loadManifest();
                 await restoreInitialRoster();
@@ -1458,6 +1641,18 @@
             state.mobilePreviewVisible = !state.mobilePreviewVisible;
             renderPreviewVisibility();
         });
+        els.previewModeConfigured.addEventListener("click", () => {
+            if (state.previewSourceMode !== "configured") {
+                state.previewSourceMode = "configured";
+                renderPreview();
+            }
+        });
+        els.previewModeSource.addEventListener("click", () => {
+            if (state.previewSourceMode !== "source-image") {
+                state.previewSourceMode = "source-image";
+                renderPreview();
+            }
+        });
         els.printCleanToggle.addEventListener("change", (event) => {
             state.previewRenderMode = event.target.checked ? "print-clean" : "default";
             renderPreview();
@@ -1476,7 +1671,18 @@
                 alert("Add at least one valid unit before printing.");
                 return;
             }
-            window.print();
+            if (state.previewSourceMode === "configured") {
+                window.print();
+                return;
+            }
+            const previousMode = state.previewSourceMode;
+            state.previewSourceMode = "configured";
+            renderPreview();
+            window.setTimeout(() => {
+                window.print();
+                state.previewSourceMode = previousMode;
+                renderPreview();
+            }, 0);
         });
 
         init();

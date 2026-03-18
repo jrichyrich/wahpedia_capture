@@ -214,8 +214,11 @@ class BuilderCatalogTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmpdir:
             source_root = Path(tmpdir) / "source"
             output_root = Path(tmpdir) / "out"
+            docs_root = Path(tmpdir) / "docs"
+            source_cards_root = Path(tmpdir) / "cards"
             faction_dir = source_root / "test-faction"
             faction_dir.mkdir(parents=True)
+            (source_cards_root / "test-faction").mkdir(parents=True)
 
             unit_one = {
                 "source": {
@@ -262,16 +265,34 @@ class BuilderCatalogTests(unittest.TestCase):
             }
 
             (faction_dir / "index.json").write_text(json.dumps([unit_one, unit_two]), encoding="utf-8")
+            (source_cards_root / "test-faction" / "One.png").write_bytes(b"fake-png")
 
-            manifest = build_builder_catalog.build_all(source_root, output_root, clean=True)
+            manifest = build_builder_catalog.build_all(
+                source_root,
+                output_root,
+                clean=True,
+                source_cards_root=source_cards_root,
+            )
             self.assertEqual(manifest["report"]["totals"]["factionCount"], 1)
             self.assertEqual(manifest["report"]["totals"]["unitCount"], 2)
             self.assertEqual(manifest["report"]["totals"]["missingStatsCount"], 1)
             self.assertEqual(manifest["report"]["totals"]["manualSelectionCount"], 0)
             self.assertEqual(manifest["report"]["totals"]["manualWargearCount"], 0)
+            self.assertEqual(manifest["report"]["totals"]["sourceCardCopiedCount"], 1)
+            self.assertEqual(manifest["report"]["totals"]["sourceCardMissingCount"], 1)
             self.assertTrue((output_root / "catalogs" / "test-faction.json").exists())
             self.assertTrue((output_root / "reports" / "build-report.json").exists())
             self.assertTrue((output_root / "manifest.json").exists())
+            self.assertFalse((output_root / "source-cards").exists())
+            self.assertEqual(manifest["factions"][0]["sourceCardCopiedCount"], 1)
+            self.assertEqual(manifest["factions"][0]["sourceCardMissingCount"], 1)
+            self.assertEqual(
+                manifest["report"]["factions"][0]["missingSourceCards"][0]["name"],
+                "Unit Two",
+            )
+            build_builder_catalog.publish_docs_data(output_root, docs_root)
+            build_builder_catalog.publish_source_cards(docs_root, source_cards_root)
+            self.assertTrue((docs_root / "source-cards" / "test-faction" / "One.png").exists())
 
     def test_real_repo_samples_build_expected_shape(self):
         samples = [
@@ -367,6 +388,8 @@ class BuilderAppSmokeTests(unittest.TestCase):
         self.assertIn("Export JSON", html)
         self.assertIn("Saved rosters", html)
         self.assertIn('window.location.protocol === "file:"', html)
+        self.assertIn("Original Wahapedia", html)
+        self.assertIn("./data/source-cards/", html)
 
 
 if __name__ == "__main__":
