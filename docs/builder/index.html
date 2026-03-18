@@ -45,6 +45,7 @@
             display: flex;
             flex-direction: column;
             gap: 18px;
+            min-width: 0;
         }
 
         .brand h1,
@@ -189,6 +190,10 @@
             font-weight: 900;
             text-transform: uppercase;
             cursor: pointer;
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .btn:hover {
@@ -211,6 +216,7 @@
             display: flex;
             flex-direction: column;
             gap: 24px;
+            min-width: 0;
         }
 
         .roster-card,
@@ -271,6 +277,10 @@
             font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 0.08em;
+        }
+
+        .roster-entry-label {
+            display: none;
         }
 
         .table-empty {
@@ -335,6 +345,14 @@
             margin: 0;
         }
 
+        .preview-toggle-btn {
+            display: none;
+        }
+
+        .preview-body.preview-body-hidden {
+            display: none;
+        }
+
         .preview-body {
             display: grid;
             gap: 24px;
@@ -384,10 +402,143 @@
             }
         }
 
+        @media (max-width: 640px) {
+            .sidebar,
+            .main {
+                padding: 14px;
+            }
+
+            .roster-card,
+            .preview-card {
+                padding: 16px;
+            }
+
+            .unit-list {
+                max-height: min(42vh, 360px);
+            }
+
+            .unit-row {
+                flex-direction: column;
+            }
+
+            .unit-row .btn {
+                width: 100%;
+            }
+
+            .roster-header,
+            .preview-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .points-tally,
+            .points-caption {
+                text-align: left;
+            }
+
+            .roster-manager-actions {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+            }
+
+            .roster-manager-actions .btn,
+            .roster-actions .btn {
+                width: 100%;
+            }
+
+            .roster-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .preview-mode-toggle {
+                width: 100%;
+            }
+
+            .preview-toggle-btn {
+                display: inline-flex;
+                width: 100%;
+            }
+
+            .roster-table thead {
+                display: none;
+            }
+
+            .roster-table,
+            .roster-table tbody {
+                display: block;
+            }
+
+            .roster-entry {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+                padding: 14px;
+                margin-bottom: 14px;
+                border: 1.5px solid var(--ink);
+                background: var(--panel-2);
+                box-shadow: var(--shadow);
+            }
+
+            .roster-entry td {
+                display: block;
+                padding: 0;
+                border-bottom: 0;
+                min-width: 0;
+            }
+
+            .roster-entry td::before {
+                content: attr(data-label);
+                display: block;
+                margin-bottom: 6px;
+                font-size: 11px;
+                font-weight: 900;
+                letter-spacing: 0.08em;
+                text-transform: uppercase;
+                color: #5d5448;
+            }
+
+            .roster-entry td[data-label="Unit"],
+            .roster-entry td[data-label="Configuration"],
+            .roster-entry td[data-label="Action"] {
+                grid-column: 1 / -1;
+            }
+
+            .roster-entry td[data-label="Action"] {
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .roster-entry td[data-label="Action"]::before {
+                width: 100%;
+            }
+
+            .roster-entry td[data-label="Action"] .btn-remove {
+                width: 100%;
+            }
+
+            .roster-entry .entry-stack {
+                gap: 10px;
+            }
+
+            .roster-entry .inline-note {
+                font-size: 13px;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .roster-manager-actions {
+                grid-template-columns: 1fr;
+            }
+        }
+
         @media print {
             .sidebar,
             .roster-card,
-            .preview-header .btn {
+            .preview-header .btn,
+            .preview-toggle-btn {
                 display: none !important;
             }
 
@@ -518,6 +669,7 @@
                         <span>Print-clean mode</span>
                     </label>
                 </div>
+                <button id="preview-toggle" class="btn preview-toggle-btn" type="button" aria-expanded="false">Show cards</button>
                 <div id="preview-body" class="preview-body"></div>
             </section>
         </main>
@@ -545,6 +697,8 @@
             storageAvailable: false,
             saveTimer: null,
             previewRenderMode: "default",
+            mobilePreviewVisible: false,
+            wasMobileViewport: false,
         };
 
         const els = {
@@ -560,6 +714,7 @@
             rosterBody: document.getElementById("roster-body"),
             totalPoints: document.getElementById("total-points"),
             previewBody: document.getElementById("preview-body"),
+            previewToggle: document.getElementById("preview-toggle"),
             printCleanToggle: document.getElementById("print-clean-toggle"),
             clearRoster: document.getElementById("clear-roster"),
             printRoster: document.getElementById("print-roster"),
@@ -734,6 +889,19 @@
                 }
             }
             return null;
+        }
+
+        function isMobileViewport() {
+            return window.innerWidth <= 640;
+        }
+
+        function renderPreviewVisibility() {
+            const isMobile = isMobileViewport();
+            const shouldShowPreview = isMobile ? state.mobilePreviewVisible : true;
+            els.previewToggle.hidden = !isMobile;
+            els.previewToggle.textContent = shouldShowPreview ? "Hide cards" : "Show cards";
+            els.previewToggle.setAttribute("aria-expanded", shouldShowPreview ? "true" : "false");
+            els.previewBody.classList.toggle("preview-body-hidden", !shouldShowPreview);
         }
 
         function renderFactionOptions() {
@@ -1048,14 +1216,14 @@
                     : "";
 
                 return `
-                    <tr>
-                        <td>
+                    <tr class="roster-entry">
+                        <td data-label="Unit">
                             <strong>${entry.displayName}</strong>
                             ${entry.unit && entry.unit.selectionMode === "manual" ? `<div class="inline-note inline-note-warning">Source labels are preserved verbatim for this unit.</div>` : ""}
                             ${unitMissingStats.length ? `<div class="inline-note inline-note-warning">Missing stats: ${unitMissingStats.join(", ")}.</div>` : ""}
                             ${issueText}
                         </td>
-                        <td>
+                        <td data-label="Configuration">
                             ${entry.unit ? `
                                 <div class="entry-stack">
                                     <select data-action="option-select" data-instance-id="${runtimeInstanceId}">
@@ -1069,7 +1237,7 @@
                                 </div>
                             ` : `<div class="inline-note inline-note-warning">This unit cannot be resolved in the current catalog.</div>`}
                         </td>
-                        <td>
+                        <td data-label="Qty">
                             <input
                                 type="number"
                                 min="1"
@@ -1079,8 +1247,8 @@
                                 data-instance-id="${runtimeInstanceId}"
                             >
                         </td>
-                        <td><strong>${entry.linePoints}</strong></td>
-                        <td><button class="btn btn-remove" data-action="remove-entry" data-instance-id="${runtimeInstanceId}">x</button></td>
+                        <td data-label="Line Pts"><strong>${entry.linePoints}</strong></td>
+                        <td data-label="Action"><button class="btn btn-remove" data-action="remove-entry" data-instance-id="${runtimeInstanceId}">x</button></td>
                     </tr>
                 `;
             }).join("");
@@ -1089,11 +1257,14 @@
         }
 
         function renderPreview() {
+            state.mobilePreviewVisible = isMobileViewport() ? false : true;
+            state.wasMobileViewport = isMobileViewport();
             const derived = deriveRoster();
             if (!state.catalog || !derived.validEntries.length) {
                 els.previewBody.innerHTML = derived.invalidEntries.length
                     ? `<div class="inline-note">Only valid roster entries are shown in the preview. Repair or remove unresolved entries to print them.</div>`
                     : `<div class="inline-note">Add one or more units to preview printable datacards.</div>`;
+                renderPreviewVisibility();
                 return;
             }
 
@@ -1110,6 +1281,7 @@
                         : [],
                 });
             }).join("");
+            renderPreviewVisibility();
         }
 
         const interactionController = BuilderApp.createInteractionController({
@@ -1282,9 +1454,21 @@
         els.clearRoster.addEventListener("click", () => {
             interactionController.clearRoster();
         });
+        els.previewToggle.addEventListener("click", () => {
+            state.mobilePreviewVisible = !state.mobilePreviewVisible;
+            renderPreviewVisibility();
+        });
         els.printCleanToggle.addEventListener("change", (event) => {
             state.previewRenderMode = event.target.checked ? "print-clean" : "default";
             renderPreview();
+        });
+        window.addEventListener("resize", () => {
+            const isMobile = isMobileViewport();
+            if (isMobile !== state.wasMobileViewport) {
+                state.mobilePreviewVisible = !isMobile;
+                state.wasMobileViewport = isMobile;
+            }
+            renderPreviewVisibility();
         });
         els.printRoster.addEventListener("click", () => {
             const derived = deriveRoster();
