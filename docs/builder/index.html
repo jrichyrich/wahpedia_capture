@@ -821,9 +821,9 @@
 
     <input id="import-roster-file" type="file" accept=".json,application/json" hidden>
 
-    <script src="./card_renderer.js"></script>
-    <script src="./roster_store.js"></script>
-    <script src="./app.js"></script>
+    <script src="./card_renderer.js?v=20260319-relationships-preview"></script>
+    <script src="./roster_store.js?v=20260319-relationships-preview"></script>
+    <script src="./app.js?v=20260319-relationships-preview"></script>
     <script>
         const Store = window.WahBuilderRosterStore;
         const BuilderApp = window.WahBuilderApp;
@@ -1534,6 +1534,46 @@
                 const wargearManualComments = entry.unit && entry.unit.wargear && Array.isArray(entry.unit.wargear.manualNotes)
                     ? entry.unit.wargear.manualNotes.map((note) => `<div class="inline-note inline-note-warning">${note}</div>`).join("")
                     : "";
+                const relationship = entry.relationship || {};
+                const attachmentControl = ((relationship.attachOptions && relationship.attachOptions.length) || relationship.attachedToInstanceId) ? `
+                    <div>
+                        <div class="inline-note">Attach to</div>
+                        <select class="entry-subselect" data-action="attachment-select" data-instance-id="${runtimeInstanceId}">
+                            <option value="">Operate separately</option>
+                            ${relationship.attachOptions.map((option) => `
+                                <option value="${option.instanceId}" ${relationship.attachedToInstanceId === option.instanceId ? "selected" : ""}>
+                                    ${escapeHtml(option.label)}
+                                </option>
+                            `).join("")}
+                        </select>
+                    </div>
+                ` : "";
+                const embarkControl = !relationship.attachedToInstanceId && ((relationship.transportOptions && relationship.transportOptions.length) || relationship.embarkedInInstanceId) ? `
+                    <div>
+                        <div class="inline-note">Embark in</div>
+                        <select class="entry-subselect" data-action="embark-select" data-instance-id="${runtimeInstanceId}">
+                            <option value="">Deploy separately</option>
+                            ${relationship.transportOptions.map((option) => `
+                                <option value="${option.instanceId}" ${relationship.embarkedInInstanceId === option.instanceId ? "selected" : ""}>
+                                    ${escapeHtml(option.label)}
+                                </option>
+                            `).join("")}
+                        </select>
+                    </div>
+                ` : "";
+                const relationshipNotes = [
+                    relationship.attachedToLabel ? `<div class="inline-note">Attached to ${escapeHtml(relationship.attachedToLabel)}.</div>` : "",
+                    relationship.inheritedEmbarkedInLabel ? `<div class="inline-note">Embarks with its unit in ${escapeHtml(relationship.inheritedEmbarkedInLabel)}.</div>` : "",
+                    relationship.embarkedInLabel ? `<div class="inline-note">Embarked in ${escapeHtml(relationship.embarkedInLabel)}.</div>` : "",
+                    relationship.attachedLeaderNames && relationship.attachedLeaderNames.length ? `<div class="inline-note">Attached Leaders: ${escapeHtml(relationship.attachedLeaderNames.join(", "))}.</div>` : "",
+                    relationship.embarkedUnitNames && relationship.embarkedUnitNames.length ? `<div class="inline-note">Embarked Units: ${escapeHtml(relationship.embarkedUnitNames.join(", "))}.</div>` : "",
+                    relationship.transportCapacity && relationship.transportCapacity.supported && typeof relationship.transportCapacity.max === "number"
+                        ? `<div class="inline-note">Transport capacity: ${relationship.transportCapacity.used}/${relationship.transportCapacity.max}.</div>`
+                        : "",
+                    relationship.transportCapacity && !relationship.transportCapacity.supported && relationship.transportCapacity.rawText
+                        ? `<div class="inline-note inline-note-warning">${escapeHtml(relationship.transportCapacity.rawText)}</div>`
+                        : "",
+                ].join("");
                 const warlordControl = isCharacter ? `
                     <label class="inline-note">
                         <input
@@ -1554,6 +1594,7 @@
                             ${isWarlord ? `<div class="inline-note">Selected as Warlord.</div>` : ""}
                             ${entry.unit && entry.unit.selectionMode === "manual" ? `<div class="inline-note inline-note-warning">Source labels are preserved verbatim for this unit.</div>` : ""}
                             ${unitMissingStats.length ? `<div class="inline-note inline-note-warning">Missing stats: ${unitMissingStats.join(", ")}.</div>` : ""}
+                            ${relationshipNotes}
                             ${issueText}
                         </td>
                         <td data-label="Configuration">
@@ -1563,6 +1604,8 @@
                                         ${optionsHtml}
                                     </select>
                                     ${warlordControl}
+                                    ${attachmentControl}
+                                    ${embarkControl}
                                     ${upgradeControls}
                                     ${wargearControls}
                                     ${allocationControls}
@@ -1614,6 +1657,9 @@
                     quantity: entry.quantity,
                     renderMode: state.previewRenderMode,
                     selectedWargear: entry.wargearSelections,
+                    relationshipNotes: entry.relationship && Array.isArray(entry.relationship.relationshipNotes)
+                        ? entry.relationship.relationshipNotes
+                        : [],
                     manualWargearGroups: entry.unit && entry.unit.wargear
                         ? entry.unit.wargear.options.filter((group) => group.selectionMode === "manual")
                         : [],

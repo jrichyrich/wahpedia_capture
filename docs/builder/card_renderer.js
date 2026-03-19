@@ -75,6 +75,7 @@
         const selectedWargear = Array.isArray(options.selectedWargear) ? options.selectedWargear : [];
         const selectedUpgrades = Array.isArray(options.selectedUpgrades) ? options.selectedUpgrades : [];
         const manualWargearGroups = Array.isArray(options.manualWargearGroups) ? options.manualWargearGroups : [];
+        const relationshipNotes = Array.isArray(options.relationshipNotes) ? options.relationshipNotes : [];
         const selectedReferences = [];
         const replacedReferences = [];
         const currentLoadout = [];
@@ -146,6 +147,17 @@
                 type: "manual",
                 label: group.label,
                 detail: "Manual selection still required",
+            });
+        });
+
+        relationshipNotes.forEach((note) => {
+            if (!note || !note.label) {
+                return;
+            }
+            currentLoadout.push({
+                type: note.type || "relationship",
+                label: note.label,
+                detail: note.detail || "Roster relationship",
             });
         });
 
@@ -417,6 +429,11 @@
             .filter((item) => item.type === "manual")
             .forEach(() => {
                 chips.push(`<span class="config-chip config-chip-warning">Manual wargear</span>`);
+            });
+        loadoutState.currentLoadout
+            .filter((item) => item.type === "attachment" || item.type === "transport")
+            .forEach((item) => {
+                chips.push(`<span class="config-chip">${escapeHtml(item.label)}</span>`);
             });
 
         if (!chips.length) {

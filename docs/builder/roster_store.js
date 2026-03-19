@@ -7,7 +7,7 @@
 })(typeof globalThis !== "undefined" ? globalThis : this, function () {
     "use strict";
 
-    const ROSTER_SCHEMA_VERSION = 4;
+    const ROSTER_SCHEMA_VERSION = 5;
     const STORAGE_NAMESPACE = "wahpediaCapture.builder.v1";
     const INDEX_KEY = `${STORAGE_NAMESPACE}.savedRosters`;
     const ACTIVE_KEY = `${STORAGE_NAMESPACE}.activeRosterId`;
@@ -66,6 +66,11 @@
             battleSize,
             warlordInstanceId: normalizedWarlordId || null,
         };
+    }
+
+    function normalizeInstanceReference(value) {
+        const normalized = value ? String(value).trim() : "";
+        return normalized || null;
     }
 
     function createStorageAdapter(storage) {
@@ -165,6 +170,8 @@
                 : [],
             quantity: normalizeQuantity(entry.quantity),
             wargearSelections,
+            attachedToInstanceId: normalizeInstanceReference(entry.attachedToInstanceId || entry.attached_to_instance_id),
+            embarkedInInstanceId: normalizeInstanceReference(entry.embarkedInInstanceId || entry.embarked_in_instance_id),
         };
         return normalized;
     }
@@ -213,6 +220,8 @@
             upgradeOptionIds: Array.isArray(entry.upgradeOptionIds) ? [...entry.upgradeOptionIds] : [],
             quantity: normalizeQuantity(entry.quantity),
             wargearSelections: { ...(entry.wargearSelections || {}) },
+            attachedToInstanceId: normalizeInstanceReference(entry.attachedToInstanceId),
+            embarkedInInstanceId: normalizeInstanceReference(entry.embarkedInInstanceId),
         };
     }
 
@@ -229,6 +238,8 @@
             upgradeOptionIds: Array.isArray(entry.upgradeOptionIds) ? entry.upgradeOptionIds : [],
             quantity: entry.quantity,
             wargearSelections: entry.wargearSelections || {},
+            attachedToInstanceId: entry.attachedToInstanceId || null,
+            embarkedInInstanceId: entry.embarkedInInstanceId || null,
         });
     }
 
@@ -250,6 +261,387 @@
         }
         const target = String(keyword || "").trim().toUpperCase();
         return unit.keywords.some((value) => String(value || "").trim().toUpperCase() === target);
+    }
+
+    function normalizeRuleReference(value) {
+        return String(value || "")
+            .toUpperCase()
+            .replace(/[’']/g, "")
+            .replace(/\([^)]*\)/g, " ")
+            .replace(/\*/g, " ")
+            .replace(/[^A-Z0-9]+/g, " ")
+            .replace(/\s+/g, " ")
+            .trim();
+    }
+
+    function referenceVariants(value) {
+        const raw = String(value || "").trim();
+        const variants = new Set();
+        const normalized = normalizeRuleReference(raw);
+        if (normalized) {
+            variants.add(normalized);
+        }
+        const withoutParens = normalizeRuleReference(raw.replace(/\([^)]*\)/g, " "));
+        if (withoutParens) {
+            variants.add(withoutParens);
+        }
+        const parentheticalMatches = raw.match(/\(([^)]+)\)/g) || [];
+        parentheticalMatches.forEach((match) => {
+            const normalizedInner = normalizeRuleReference(match.replace(/[()]/g, ""));
+            if (normalizedInner) {
+                variants.add(normalizedInner);
+            }
+        });
+        return Array.from(variants);
+    }
+
+    function unitRuleText(unit) {
+        const values = [];
+        if (!unit) {
+            return values;
+        }
+        (Array.isArray(unit.renderBlocks) ? unit.renderBlocks : []).forEach((block) => {
+            (Array.isArray(block.entries) ? block.entries : []).forEach((entry) => {
+                if (!entry || typeof entry !== "object") {
+                    return;
+                }
+                if (typeof entry.text === "string" && entry.text.trim()) {
+                    values.push(entry.text.trim());
+                }
+                if (typeof entry.label === "string" && entry.label.trim()) {
+                    values.push(entry.label.trim());
+                }
+                if (Array.isArray(entry.items)) {
+                    entry.items.forEach((item) => {
+                        if (item && String(item).trim()) {
+                            values.push(String(item).trim());
+                        }
+                    });
+                }
+            });
+        });
+        const composition = unit.composition && Array.isArray(unit.composition.statements)
+            ? unit.composition.statements
+            : [];
+        composition.forEach((statement) => {
+            if (statement && statement.text && String(statement.text).trim()) {
+                values.push(String(statement.text).trim());
+            }
+        });
+        const datasheetRules = unit.abilities && Array.isArray(unit.abilities.datasheet)
+            ? unit.abilities.datasheet
+            : [];
+        datasheetRules.forEach((rule) => {
+            if (rule && rule.text && String(rule.text).trim()) {
+                values.push(String(rule.text).trim());
+            }
+            if (rule && rule.name && String(rule.name).trim()) {
+                values.push(String(rule.name).trim());
+            }
+        });
+        const otherRules = unit.abilities && Array.isArray(unit.abilities.other)
+            ? unit.abilities.other
+            : [];
+        otherRules.forEach((entry) => {
+            if (entry && entry.text && String(entry.text).trim()) {
+                values.push(String(entry.text).trim());
+            }
+            if (entry && Array.isArray(entry.items)) {
+                entry.items.forEach((item) => {
+                    if (item && String(item).trim()) {
+                        values.push(String(item).trim());
+                    }
+                });
+            }
+        });
+        return values;
+    }
+
+    function parseNumberWord(value) {
+        const normalized = String(value || "").trim().toLowerCase();
+        if (!normalized) {
+            return null;
+        }
+        if (/^\d+$/.test(normalized)) {
+            return Number.parseInt(normalized, 10);
+        }
+        return {
+            one: 1,
+            two: 2,
+            three: 3,
+            four: 4,
+            five: 5,
+            six: 6,
+        }[normalized] || null;
+    }
+
+    function isCharacterOrLeaderUnit(unit) {
+        return unitHasKeyword(unit, "CHARACTER") || Boolean(leaderMetadataForUnit(unit).targetRefs.length);
+    }
+
+    function leaderMetadataForUnit(unit) {
+        const targetRefs = [];
+        const texts = unitRuleText(unit);
+        (Array.isArray(unit.renderBlocks) ? unit.renderBlocks : [])
+            .filter((block) => block && block.title === "LEADER")
+            .forEach((block) => {
+                (Array.isArray(block.entries) ? block.entries : []).forEach((entry) => {
+                    if (Array.isArray(entry.items)) {
+                        entry.items.forEach((item) => {
+                            referenceVariants(item).forEach((normalized) => {
+                                if (normalized && !targetRefs.includes(normalized)) {
+                                    targetRefs.push(normalized);
+                                }
+                            });
+                        });
+                    }
+                    if (typeof entry.text === "string") {
+                        const match = entry.text.match(/join one\s+(.+?)\s+unit/i);
+                        if (match) {
+                            referenceVariants(match[1]).forEach((normalized) => {
+                                if (normalized && !targetRefs.includes(normalized)) {
+                                    targetRefs.push(normalized);
+                                }
+                            });
+                        }
+                    }
+                });
+            });
+        texts.forEach((text) => {
+            const match = text.match(/must join one\s+(.+?)\s+unit/i);
+            if (match) {
+                referenceVariants(match[1]).forEach((normalized) => {
+                    if (normalized && !targetRefs.includes(normalized)) {
+                        targetRefs.push(normalized);
+                    }
+                });
+            }
+        });
+        return {
+            targetRefs,
+        };
+    }
+
+    function targetMetadataForUnit(unit) {
+        const texts = unitRuleText(unit);
+        const aliasRefs = [];
+        let maxLeaders = 1;
+        let maxCommandSquads = null;
+        let requiredLeaderKeywordRefs = [];
+
+        texts.forEach((text) => {
+            const aliasMatch = text.match(/can be attached to\s+(?:an?|the)\s+(.+?)\s*,\s*it can also be attached to this unit/i);
+            if (aliasMatch) {
+                referenceVariants(aliasMatch[1]).forEach((normalized) => {
+                    if (normalized && !aliasRefs.includes(normalized)) {
+                        aliasRefs.push(normalized);
+                    }
+                });
+            }
+            const maxLeadersMatch = text.match(/can have up to\s+(\w+)\s+Leader units attached/i);
+            if (maxLeadersMatch) {
+                const parsed = parseNumberWord(maxLeadersMatch[1]);
+                if (parsed) {
+                    maxLeaders = parsed;
+                }
+            }
+            if (/no more than one of those units is a COMMAND SQUAD unit/i.test(text)) {
+                maxCommandSquads = 1;
+            }
+            const requiredMatch = text.match(/must attach one\s+(.+?)\s+model to this unit/i);
+            if (requiredMatch) {
+                requiredLeaderKeywordRefs = requiredMatch[1]
+                    .split(/\s+or\s+/i)
+                    .flatMap((part) => referenceVariants(part))
+                    .filter(Boolean);
+            }
+        });
+
+        return {
+            nameRef: normalizeRuleReference(unit && unit.name),
+            aliasRefs,
+            maxLeaders,
+            maxCommandSquads,
+            requiredLeaderKeywordRefs,
+            requiresLeader: requiredLeaderKeywordRefs.length > 0,
+        };
+    }
+
+    function allUnitKeywords(unit) {
+        return [
+            ...(Array.isArray(unit && unit.keywords) ? unit.keywords : []),
+            ...(Array.isArray(unit && unit.factionKeywords) ? unit.factionKeywords : []),
+            unit && unit.name ? unit.name : "",
+        ]
+            .map((value) => normalizeRuleReference(value))
+            .filter(Boolean);
+    }
+
+    function entryModelCount(entry) {
+        if (entry && entry.selectedOption && typeof entry.selectedOption.modelCount === "number") {
+            return entry.selectedOption.modelCount;
+        }
+        const options = entry && entry.unit && entry.unit.composition && Array.isArray(entry.unit.composition.modelCountOptions)
+            ? entry.unit.composition.modelCountOptions
+            : [];
+        if (!options.length) {
+            return 1;
+        }
+        return options.reduce((sum, option) => {
+            const count = typeof option.maxModels === "number"
+                ? option.maxModels
+                : (typeof option.minModels === "number" ? option.minModels : 0);
+            return sum + Math.max(0, count);
+        }, 0) || 1;
+    }
+
+    function unitMatchesReference(unit, reference) {
+        const normalizedReference = normalizeRuleReference(reference);
+        if (!unit || !normalizedReference) {
+            return false;
+        }
+        const haystack = allUnitKeywords(unit);
+        return haystack.some((value) => value === normalizedReference || value.includes(normalizedReference) || normalizedReference.includes(value));
+    }
+
+    function transportMetadataForUnit(unit) {
+        const block = (Array.isArray(unit && unit.renderBlocks) ? unit.renderBlocks : []).find((entry) => entry && entry.title === "TRANSPORT") || null;
+        const text = block && Array.isArray(block.entries)
+            ? ((block.entries.find((entry) => entry && typeof entry.text === "string" && /transport capacity of/i.test(entry.text)) || {}).text || null)
+            : null;
+        if (!text) {
+            return null;
+        }
+        const capacityMatch = text.match(/transport capacity of\s+(\d+)\s+(.+?)\./i);
+        if (!capacityMatch) {
+            return {
+                rawText: text,
+                supported: false,
+            };
+        }
+        const capacity = Number.parseInt(capacityMatch[1], 10);
+        const allowedClause = String(capacityMatch[2] || "").trim();
+        if (!capacity || /\bor\s+\d+\s+[A-Z]/i.test(allowedClause)) {
+            return {
+                rawText: text,
+                supported: false,
+                capacity,
+            };
+        }
+        const disallowedKeywords = [];
+        const disallowedMatch = text.match(/It cannot transport\s+(.+?)\s+models?\./i);
+        if (disallowedMatch) {
+            disallowedMatch[1]
+                .split(/\s*,\s*|\s+or\s+/i)
+                .map((value) => normalizeRuleReference(value))
+                .filter(Boolean)
+                .forEach((value) => {
+                    if (!disallowedKeywords.includes(value)) {
+                        disallowedKeywords.push(value);
+                    }
+                });
+        }
+        const slotModifiers = [];
+        const modifierRegex = /Each\s+(.+?)\s+model takes up the space of\s+(\d+)\s+models?/gi;
+        let modifierMatch;
+        while ((modifierMatch = modifierRegex.exec(text))) {
+            const refs = String(modifierMatch[1] || "")
+                .split(/\s*,\s*|\s+or\s+/i)
+                .map((value) => normalizeRuleReference(value))
+                .filter(Boolean);
+            const seats = Number.parseInt(modifierMatch[2], 10) || 1;
+            if (refs.length && seats > 1) {
+                slotModifiers.push({ refs, seats });
+            }
+        }
+        return {
+            rawText: text,
+            supported: true,
+            capacity,
+            allowedClause,
+            disallowedKeywords,
+            slotModifiers,
+        };
+    }
+
+    function transportSupportsUnit(transportMeta, unit) {
+        if (!transportMeta || !transportMeta.supported || !unit) {
+            return null;
+        }
+        const normalizedAllowed = normalizeRuleReference(transportMeta.allowedClause);
+        if (!normalizedAllowed) {
+            return true;
+        }
+        const unitKeywords = allUnitKeywords(unit);
+        if (transportMeta.disallowedKeywords.some((ref) => unitKeywords.some((keyword) => keyword === ref || keyword.includes(ref) || ref.includes(keyword)))) {
+            return false;
+        }
+        const alternatives = transportMeta.allowedClause
+            .split(/\s+or\s+/i)
+            .map((value) => normalizeRuleReference(value))
+            .filter(Boolean);
+        if (!alternatives.length) {
+            return true;
+        }
+        return alternatives.some((alternative) => {
+            const words = alternative
+                .split(" ")
+                .filter((word) => word && word !== "MODEL" && word !== "MODELS");
+            return words.every((word) => unitKeywords.some((keyword) => keyword === word || keyword.includes(word) || word.includes(keyword)));
+        });
+    }
+
+    function transportSeatMultiplier(transportMeta, unit) {
+        if (!transportMeta || !transportMeta.supported || !unit) {
+            return 1;
+        }
+        const unitKeywords = allUnitKeywords(unit);
+        return transportMeta.slotModifiers.reduce((maxSeats, modifier) => {
+            const matches = modifier.refs.some((ref) => unitKeywords.some((keyword) => keyword === ref || keyword.includes(ref) || ref.includes(keyword)));
+            return matches ? Math.max(maxSeats, modifier.seats) : maxSeats;
+        }, 1);
+    }
+
+    function relationshipSummaryEntry(type, label, detail) {
+        return {
+            type,
+            label,
+            detail,
+        };
+    }
+
+    function buildRelationshipMetadata(entries) {
+        const metadataById = new Map();
+        entries.forEach((entry) => {
+            const leaderMeta = leaderMetadataForUnit(entry.unit);
+            const targetMeta = targetMetadataForUnit(entry.unit);
+            const transportMeta = transportMetadataForUnit(entry.unit);
+            metadataById.set(entry.instanceId, {
+                leaderMeta,
+                targetMeta,
+                transportMeta,
+                nameRef: normalizeRuleReference(entry.displayName),
+            });
+        });
+        return metadataById;
+    }
+
+    function canLeaderAttachToTarget(leaderEntry, targetEntry, relationshipMetadata) {
+        const leaderMeta = relationshipMetadata.get(leaderEntry.instanceId).leaderMeta;
+        const targetMeta = relationshipMetadata.get(targetEntry.instanceId).targetMeta;
+        if (!leaderMeta.targetRefs.length) {
+            return false;
+        }
+        const refs = [targetMeta.nameRef, ...targetMeta.aliasRefs].filter(Boolean);
+        const matchesTarget = refs.some((ref) => leaderMeta.targetRefs.some((targetRef) => targetRef === ref || targetRef.includes(ref) || ref.includes(targetRef)));
+        if (!matchesTarget) {
+            return false;
+        }
+        if (targetMeta.requiredLeaderKeywordRefs.length) {
+            const keywords = allUnitKeywords(leaderEntry.unit);
+            return targetMeta.requiredLeaderKeywordRefs.some((ref) => keywords.some((keyword) => keyword === ref || keyword.includes(ref) || ref.includes(keyword)));
+        }
+        return true;
     }
 
     function duplicateCapForUnit(unit) {
@@ -728,8 +1120,15 @@
         const resolvedEntries = entries.filter((entry) => entry.unit);
         const characterEntries = resolvedEntries.filter((entry) => unitHasKeyword(entry.unit, "CHARACTER"));
         const dedicatedTransportEntries = resolvedEntries.filter((entry) => unitHasKeyword(entry.unit, "DEDICATED TRANSPORT"));
+        const transportEntries = resolvedEntries.filter((entry) => unitHasKeyword(entry.unit, "TRANSPORT"));
         const duplicateCounts = new Map();
         const duplicateCaps = new Map();
+        const entriesById = new Map(entries.map((entry) => [entry.instanceId, entry]));
+        const relationshipMetadata = buildRelationshipMetadata(resolvedEntries);
+        const attachedLeaderIdsByTarget = new Map();
+        const embarkedUnitIdsByTransport = new Map();
+        const transportSeatUsageByTransport = new Map();
+        const unsupportedTransportEntries = [];
 
         resolvedEntries.forEach((entry) => {
             const datasheetName = entry.unit && entry.unit.name ? entry.unit.name : entry.displayName;
@@ -737,6 +1136,22 @@
             if (!duplicateCaps.has(datasheetName)) {
                 duplicateCaps.set(datasheetName, duplicateCapForUnit(entry.unit));
             }
+            entry.relationship = {
+                attachedToInstanceId: entry.entry.attachedToInstanceId || null,
+                attachedToLabel: null,
+                attachOptions: [],
+                attachedLeaderIds: [],
+                attachedLeaderNames: [],
+                embarkedInInstanceId: entry.entry.embarkedInInstanceId || null,
+                embarkedInLabel: null,
+                inheritedEmbarkedInInstanceId: null,
+                inheritedEmbarkedInLabel: null,
+                transportOptions: [],
+                embarkedUnitIds: [],
+                embarkedUnitNames: [],
+                transportCapacity: null,
+                relationshipNotes: [],
+            };
         });
 
         entries.forEach((entry) => {
@@ -751,6 +1166,204 @@
                     `${datasheetName} appears ${duplicateCount} times, exceeding its limit of ${duplicateCap}.`
                 );
             }
+        });
+
+        resolvedEntries.forEach((entry) => {
+            const leaderMeta = relationshipMetadata.get(entry.instanceId).leaderMeta;
+            if (!leaderMeta.targetRefs.length) {
+                return;
+            }
+            entry.relationship.attachOptions = resolvedEntries
+                .filter((targetEntry) => targetEntry.instanceId !== entry.instanceId && canLeaderAttachToTarget(entry, targetEntry, relationshipMetadata))
+                .map((targetEntry) => ({
+                    instanceId: targetEntry.instanceId,
+                    label: targetEntry.displayName,
+                }));
+        });
+
+        resolvedEntries.forEach((entry) => {
+            if (!entry.relationship.attachedToInstanceId) {
+                return;
+            }
+            const targetEntry = entriesById.get(entry.relationship.attachedToInstanceId) || null;
+            if (!targetEntry || !targetEntry.unit) {
+                entry.issues.push("Attached unit is not available in the current roster.");
+                return;
+            }
+            if (targetEntry.instanceId === entry.instanceId) {
+                entry.issues.push("A unit cannot be attached to itself.");
+                return;
+            }
+            if (!canLeaderAttachToTarget(entry, targetEntry, relationshipMetadata)) {
+                entry.issues.push(`This unit cannot attach to ${targetEntry.displayName}.`);
+                return;
+            }
+            if (!attachedLeaderIdsByTarget.has(targetEntry.instanceId)) {
+                attachedLeaderIdsByTarget.set(targetEntry.instanceId, []);
+            }
+            attachedLeaderIdsByTarget.get(targetEntry.instanceId).push(entry.instanceId);
+            entry.relationship.attachedToLabel = targetEntry.displayName;
+            entry.relationship.relationshipNotes.push(
+                relationshipSummaryEntry("attachment", `Attached to ${targetEntry.displayName}`, "Leader assignment")
+            );
+            if (entry.relationship.embarkedInInstanceId) {
+                entry.issues.push("Attached Leaders inherit transport assignment from their unit and cannot embark separately.");
+            }
+        });
+
+        resolvedEntries.forEach((entry) => {
+            const targetMeta = relationshipMetadata.get(entry.instanceId).targetMeta;
+            const attachedLeaderIds = attachedLeaderIdsByTarget.get(entry.instanceId) || [];
+            entry.relationship.attachedLeaderIds = [...attachedLeaderIds];
+            entry.relationship.attachedLeaderNames = attachedLeaderIds
+                .map((instanceId) => entriesById.get(instanceId))
+                .filter(Boolean)
+                .map((leaderEntry) => leaderEntry.displayName);
+            if (attachedLeaderIds.length) {
+                entry.relationship.relationshipNotes.push(
+                    relationshipSummaryEntry(
+                        "attachment",
+                        attachedLeaderIds.length === 1
+                            ? `Attached Leader: ${entry.relationship.attachedLeaderNames[0]}`
+                            : `Attached Leaders: ${entry.relationship.attachedLeaderNames.join(", ")}`,
+                        "Leader assignment"
+                    )
+                );
+            }
+            if (attachedLeaderIds.length > targetMeta.maxLeaders) {
+                entry.issues.push(`${entry.displayName} has ${attachedLeaderIds.length} attached Leaders, exceeding its limit of ${targetMeta.maxLeaders}.`);
+            }
+            if (targetMeta.maxCommandSquads !== null) {
+                const commandSquadLeaders = attachedLeaderIds
+                    .map((instanceId) => entriesById.get(instanceId))
+                    .filter((leaderEntry) => leaderEntry && /COMMAND SQUAD/i.test(leaderEntry.displayName));
+                if (commandSquadLeaders.length > targetMeta.maxCommandSquads) {
+                    entry.issues.push(`${entry.displayName} cannot have more than ${targetMeta.maxCommandSquads} attached Command Squad unit.`);
+                }
+            }
+            if (targetMeta.requiresLeader && !attachedLeaderIds.length) {
+                entry.issues.push(`${entry.displayName} requires an attached ${targetMeta.requiredLeaderKeywordRefs.join(" or ")} Leader.`);
+            }
+        });
+
+        resolvedEntries.forEach((entry) => {
+            const transportMeta = relationshipMetadata.get(entry.instanceId).transportMeta;
+            if (transportMeta) {
+                entry.relationship.transportCapacity = {
+                    supported: Boolean(transportMeta.supported),
+                    rawText: transportMeta.rawText,
+                    max: typeof transportMeta.capacity === "number" ? transportMeta.capacity : null,
+                    used: 0,
+                };
+                if (!transportMeta.supported) {
+                    unsupportedTransportEntries.push(entry);
+                }
+            }
+        });
+
+        resolvedEntries.forEach((entry) => {
+            if (entry.relationship.attachedToInstanceId) {
+                return;
+            }
+            if (!entry.relationship.embarkedInInstanceId) {
+                return;
+            }
+            const transportEntry = entriesById.get(entry.relationship.embarkedInInstanceId) || null;
+            if (!transportEntry || !transportEntry.unit) {
+                entry.issues.push("Selected transport is not available in the current roster.");
+                return;
+            }
+            if (!unitHasKeyword(transportEntry.unit, "TRANSPORT")) {
+                entry.issues.push(`${transportEntry.displayName} is not a Transport unit.`);
+                return;
+            }
+
+            const transportMeta = relationshipMetadata.get(transportEntry.instanceId).transportMeta;
+            const compatibility = transportSupportsUnit(transportMeta, entry.unit);
+            if (compatibility === false) {
+                entry.issues.push(`${entry.displayName} cannot embark in ${transportEntry.displayName}.`);
+            }
+            entry.relationship.embarkedInLabel = transportEntry.displayName;
+            entry.relationship.relationshipNotes.push(
+                relationshipSummaryEntry("transport", `Embarked in ${transportEntry.displayName}`, "Transport assignment")
+            );
+            if (!embarkedUnitIdsByTransport.has(transportEntry.instanceId)) {
+                embarkedUnitIdsByTransport.set(transportEntry.instanceId, []);
+            }
+            embarkedUnitIdsByTransport.get(transportEntry.instanceId).push(entry.instanceId);
+
+            const ownSeats = entryModelCount(entry) * transportSeatMultiplier(transportMeta, entry.unit);
+            const attachedLeaderIds = attachedLeaderIdsByTarget.get(entry.instanceId) || [];
+            const attachedSeats = attachedLeaderIds.reduce((sum, leaderId) => {
+                const leaderEntry = entriesById.get(leaderId);
+                if (!leaderEntry || !leaderEntry.unit) {
+                    return sum;
+                }
+                leaderEntry.relationship.inheritedEmbarkedInInstanceId = transportEntry.instanceId;
+                leaderEntry.relationship.inheritedEmbarkedInLabel = transportEntry.displayName;
+                leaderEntry.relationship.relationshipNotes.push(
+                    relationshipSummaryEntry("transport", `Embarked with ${entry.displayName} in ${transportEntry.displayName}`, "Transport assignment")
+                );
+                return sum + (entryModelCount(leaderEntry) * transportSeatMultiplier(transportMeta, leaderEntry.unit));
+            }, 0);
+            transportSeatUsageByTransport.set(
+                transportEntry.instanceId,
+                (transportSeatUsageByTransport.get(transportEntry.instanceId) || 0) + ownSeats + attachedSeats
+            );
+        });
+
+        transportEntries.forEach((transportEntry) => {
+            const embarkedUnitIds = embarkedUnitIdsByTransport.get(transportEntry.instanceId) || [];
+            transportEntry.relationship.embarkedUnitIds = [...embarkedUnitIds];
+            transportEntry.relationship.embarkedUnitNames = embarkedUnitIds
+                .map((instanceId) => entriesById.get(instanceId))
+                .filter(Boolean)
+                .map((entry) => entry.displayName);
+            if (transportEntry.relationship.transportCapacity) {
+                transportEntry.relationship.transportCapacity.used = transportSeatUsageByTransport.get(transportEntry.instanceId) || 0;
+            }
+            if (transportEntry.relationship.embarkedUnitNames.length) {
+                transportEntry.relationship.relationshipNotes.push(
+                    relationshipSummaryEntry(
+                        "transport",
+                        transportEntry.relationship.embarkedUnitNames.length === 1
+                            ? `Embarked Unit: ${transportEntry.relationship.embarkedUnitNames[0]}`
+                            : `Embarked Units: ${transportEntry.relationship.embarkedUnitNames.join(", ")}`,
+                        "Transport occupancy"
+                    )
+                );
+            }
+            if (unitHasKeyword(transportEntry.unit, "DEDICATED TRANSPORT") && !embarkedUnitIds.length) {
+                transportEntry.issues.push("Dedicated Transport has no embarked units assigned.");
+            }
+            if (
+                transportEntry.relationship.transportCapacity
+                && transportEntry.relationship.transportCapacity.supported
+                && typeof transportEntry.relationship.transportCapacity.max === "number"
+                && transportEntry.relationship.transportCapacity.used > transportEntry.relationship.transportCapacity.max
+            ) {
+                transportEntry.issues.push(
+                    `${transportEntry.displayName} uses ${transportEntry.relationship.transportCapacity.used}/${transportEntry.relationship.transportCapacity.max} transport capacity.`
+                );
+            }
+        });
+
+        resolvedEntries.forEach((entry) => {
+            if (entry.relationship.attachedToInstanceId) {
+                return;
+            }
+            entry.relationship.transportOptions = transportEntries
+                .filter((transportEntry) => transportEntry.instanceId !== entry.instanceId)
+                .map((transportEntry) => {
+                    const transportCapacity = transportEntry.relationship.transportCapacity;
+                    const occupancy = transportCapacity && typeof transportCapacity.max === "number"
+                        ? ` (${transportCapacity.used}/${transportCapacity.max})`
+                        : "";
+                    return {
+                        instanceId: transportEntry.instanceId,
+                        label: `${transportEntry.displayName}${occupancy}`,
+                    };
+                });
         });
 
         if (totalPoints > pointsLimit) {
@@ -808,11 +1421,11 @@
             });
         }
 
-        if (dedicatedTransportEntries.length) {
+        if (unsupportedTransportEntries.length) {
             armyWarnings.push({
-                code: "dedicated-transport-not-modeled",
+                code: "transport-rules-partial",
                 level: "warning",
-                message: "Dedicated Transport embark requirements are not modeled yet, so empty transports are not validated.",
+                message: "Some transport rules are too complex to validate fully, so transport capacity and compatibility checks are advisory for those units.",
             });
         }
 

@@ -26,6 +26,7 @@ function sampleCatalog() {
                 unitId: "avatar-of-khaine",
                 name: "Avatar of Khaine",
                 keywords: ["MONSTER", "CHARACTER"],
+                factionKeywords: ["AELDARI"],
                 pointsOptions: [
                     { id: "1-model", label: "1 model", points: 280, selectionKind: "models" },
                     { id: "2-models", label: "2 models", points: 560, selectionKind: "models" },
@@ -101,26 +102,63 @@ function sampleCatalog() {
                 unitId: "guardian-defenders",
                 name: "Guardian Defenders",
                 keywords: ["INFANTRY", "BATTLELINE"],
+                factionKeywords: ["AELDARI"],
                 pointsOptions: [
-                    { id: "10-models", label: "10 models", points: 100, selectionKind: "models" },
+                    { id: "10-models", label: "10 models", points: 100, selectionKind: "models", modelCount: 10 },
                 ],
                 wargear: { options: [] },
+                composition: {
+                    modelCountOptions: [{ label: "10 Guardians", minModels: 10, maxModels: 10 }],
+                    statements: [],
+                },
+            },
+            {
+                unitId: "autarch",
+                name: "Autarch",
+                keywords: ["INFANTRY", "CHARACTER"],
+                factionKeywords: ["AELDARI"],
+                pointsOptions: [
+                    { id: "1-model", label: "1 model", points: 90, selectionKind: "models", modelCount: 1 },
+                ],
+                renderBlocks: [
+                    {
+                        title: "LEADER",
+                        entries: [{ type: "list", items: ["Guardian Defenders"] }],
+                    },
+                ],
+                wargear: { options: [] },
+                composition: {
+                    modelCountOptions: [{ label: "1 Autarch", minModels: 1, maxModels: 1 }],
+                    statements: [],
+                },
             },
             {
                 unitId: "wave-serpent",
                 name: "Wave Serpent",
                 keywords: ["VEHICLE", "TRANSPORT", "DEDICATED TRANSPORT"],
+                factionKeywords: ["AELDARI"],
                 pointsOptions: [
-                    { id: "1-model", label: "1 model", points: 120, selectionKind: "models" },
+                    { id: "1-model", label: "1 model", points: 120, selectionKind: "models", modelCount: 1 },
                 ],
                 wargear: { options: [] },
+                renderBlocks: [
+                    {
+                        title: "TRANSPORT",
+                        entries: [{ type: "text", text: "This model has a transport capacity of 12 AELDARI INFANTRY models. Each WRAITHGUARD model takes up the space of 2 models." }],
+                    },
+                ],
+                composition: {
+                    modelCountOptions: [{ label: "1 Wave Serpent", minModels: 1, maxModels: 1 }],
+                    statements: [],
+                },
             },
             {
                 unitId: "prince-yriel",
                 name: "Prince Yriel",
                 keywords: ["INFANTRY", "CHARACTER", "EPIC HERO"],
+                factionKeywords: ["AELDARI"],
                 pointsOptions: [
-                    { id: "1-model", label: "1 model", points: 100, selectionKind: "models" },
+                    { id: "1-model", label: "1 model", points: 100, selectionKind: "models", modelCount: 1 },
                 ],
                 wargear: { options: [] },
             },
@@ -128,8 +166,9 @@ function sampleCatalog() {
                 unitId: "fire-prism",
                 name: "Fire Prism",
                 keywords: ["VEHICLE"],
+                factionKeywords: ["AELDARI"],
                 pointsOptions: [
-                    { id: "1-model", label: "1 model", points: 180, selectionKind: "models" },
+                    { id: "1-model", label: "1 model", points: 180, selectionKind: "models", modelCount: 1 },
                 ],
                 wargear: { options: [] },
             },
@@ -155,7 +194,17 @@ test("saveRosterToStorage persists payload and active id", () => {
         entries: [
             {
                 instanceId: "entry-1",
-                unitId: "avatar-of-khaine",
+                unitId: "guardian-defenders",
+                optionId: "10-models",
+                optionIndex: 0,
+                upgradeOptionIds: [],
+                quantity: 1,
+                wargearSelections: {},
+                embarkedInInstanceId: "entry-3",
+            },
+            {
+                instanceId: "entry-2",
+                unitId: "autarch",
                 optionId: "1-model",
                 optionIndex: 0,
                 upgradeOptionIds: ["exarch-upgrade"],
@@ -165,6 +214,16 @@ test("saveRosterToStorage persists payload and active id", () => {
                     "heavy-weapon-allocation": { mode: "allocation", counts: { "dark-lance": 1 } },
                     armory: { mode: "multi", choiceIds: ["shuriken-pistol", "power-blade"] },
                 },
+                attachedToInstanceId: "entry-1",
+            },
+            {
+                instanceId: "entry-3",
+                unitId: "wave-serpent",
+                optionId: "1-model",
+                optionIndex: 0,
+                upgradeOptionIds: [],
+                quantity: 1,
+                wargearSelections: {},
             },
         ],
     });
@@ -178,11 +237,13 @@ test("saveRosterToStorage persists payload and active id", () => {
     assert.equal(loaded.name, "Swordwind");
     assert.equal(loaded.army.battleSize, "strike-force");
     assert.equal(loaded.army.warlordInstanceId, "entry-1");
-    assert.equal(loaded.entries[0].optionId, "1-model");
-    assert.deepEqual(loaded.entries[0].upgradeOptionIds, ["exarch-upgrade"]);
-    assert.equal(loaded.entries[0].wargearSelections["relic-weapon"], "spear");
-    assert.equal(loaded.entries[0].wargearSelections["heavy-weapon-allocation"].counts["dark-lance"], 1);
-    assert.deepEqual(loaded.entries[0].wargearSelections.armory.choiceIds, ["shuriken-pistol", "power-blade"]);
+    assert.equal(loaded.entries[0].embarkedInInstanceId, "entry-3");
+    assert.equal(loaded.entries[1].attachedToInstanceId, "entry-1");
+    assert.equal(loaded.entries[1].optionId, "1-model");
+    assert.deepEqual(loaded.entries[1].upgradeOptionIds, ["exarch-upgrade"]);
+    assert.equal(loaded.entries[1].wargearSelections["relic-weapon"], "spear");
+    assert.equal(loaded.entries[1].wargearSelections["heavy-weapon-allocation"].counts["dark-lance"], 1);
+    assert.deepEqual(loaded.entries[1].wargearSelections.armory.choiceIds, ["shuriken-pistol", "power-blade"]);
 });
 
 test("import/export round trips roster JSON", () => {
@@ -194,7 +255,7 @@ test("import/export round trips roster JSON", () => {
         army: legalArmy(),
         entries: [{
             instanceId: "entry-1",
-            unitId: "avatar-of-khaine",
+            unitId: "autarch",
             optionId: "1-model",
             upgradeOptionIds: ["exarch-upgrade"],
             quantity: 2,
@@ -203,6 +264,20 @@ test("import/export round trips roster JSON", () => {
                 "heavy-weapon-allocation": { mode: "allocation", counts: { "scatter-laser": 2 } },
                 armory: { mode: "multi", choiceIds: ["twin-blades"] },
             },
+            attachedToInstanceId: "entry-2",
+        }, {
+            instanceId: "entry-2",
+            unitId: "guardian-defenders",
+            optionId: "10-models",
+            quantity: 1,
+            wargearSelections: {},
+            embarkedInInstanceId: "entry-3",
+        }, {
+            instanceId: "entry-3",
+            unitId: "wave-serpent",
+            optionId: "1-model",
+            quantity: 1,
+            wargearSelections: {},
         }],
     });
 
@@ -212,10 +287,12 @@ test("import/export round trips roster JSON", () => {
     assert.equal(imported.army.battleSize, "strike-force");
     assert.equal(imported.army.warlordInstanceId, "entry-1");
     assert.equal(imported.entries[0].quantity, 2);
+    assert.equal(imported.entries[0].attachedToInstanceId, "entry-2");
     assert.deepEqual(imported.entries[0].upgradeOptionIds, ["exarch-upgrade"]);
     assert.equal(imported.entries[0].wargearSelections["relic-weapon"], "axe");
     assert.equal(imported.entries[0].wargearSelections["heavy-weapon-allocation"].counts["scatter-laser"], 2);
     assert.deepEqual(imported.entries[0].wargearSelections.armory.choiceIds, ["twin-blades"]);
+    assert.equal(imported.entries[1].embarkedInInstanceId, "entry-3");
     assert.notEqual(imported.id, "roster-2");
 });
 
@@ -321,6 +398,8 @@ test("migrateSavedRosterDocument defaults army state for legacy rosters", () => 
 
     assert.equal(migrated.army.battleSize, "strike-force");
     assert.equal(migrated.army.warlordInstanceId, null);
+    assert.equal(migrated.entries[0].attachedToInstanceId, null);
+    assert.equal(migrated.entries[0].embarkedInInstanceId, null);
 });
 
 test("deriveResolvedRoster validates multi-pick limits and shared pools", () => {
@@ -356,6 +435,82 @@ test("deriveResolvedRoster validates multi-pick limits and shared pools", () => 
     const poolSelection = resolved.entries[0].wargearSelections.find((item) => item.group.id === "marksman-rifle");
     assert.equal(poolSelection.poolUsage.used, 2);
     assert.equal(poolSelection.poolUsage.max, 1);
+});
+
+test("deriveResolvedRoster resolves valid attachments and embarked units", () => {
+    const resolved = Store.deriveResolvedRoster({
+        roster: {
+            id: "roster-relationships-valid",
+            factionSlug: "aeldari",
+            name: "Relationships",
+            army: legalArmy("entry-hero"),
+            entries: [
+                { instanceId: "entry-bodyguard", unitId: "guardian-defenders", optionId: "10-models", quantity: 1, wargearSelections: {}, embarkedInInstanceId: "entry-transport" },
+                { instanceId: "entry-hero", unitId: "autarch", optionId: "1-model", quantity: 1, wargearSelections: {}, attachedToInstanceId: "entry-bodyguard" },
+                { instanceId: "entry-transport", unitId: "wave-serpent", optionId: "1-model", quantity: 1, wargearSelections: {} },
+            ],
+        },
+        catalog: sampleCatalog(),
+        availableFactionSlugs: ["aeldari"],
+    });
+
+    const hero = resolved.entries.find((entry) => entry.instanceId === "entry-hero");
+    const bodyguard = resolved.entries.find((entry) => entry.instanceId === "entry-bodyguard");
+    const transport = resolved.entries.find((entry) => entry.instanceId === "entry-transport");
+
+    assert.equal(hero.relationship.attachedToLabel, "Guardian Defenders");
+    assert.equal(hero.relationship.inheritedEmbarkedInLabel, "Wave Serpent");
+    assert.deepEqual(bodyguard.relationship.attachedLeaderNames, ["Autarch"]);
+    assert.equal(bodyguard.relationship.embarkedInLabel, "Wave Serpent");
+    assert.equal(transport.relationship.transportCapacity.used, 11);
+    assert.deepEqual(transport.relationship.embarkedUnitNames, ["Guardian Defenders"]);
+    assert.equal(resolved.invalidEntries.length, 0);
+});
+
+test("deriveResolvedRoster flags invalid attachment and transport assignments", () => {
+    const resolved = Store.deriveResolvedRoster({
+        roster: {
+            id: "roster-relationships-invalid",
+            factionSlug: "aeldari",
+            name: "Bad Relationships",
+            army: legalArmy("entry-hero"),
+            entries: [
+                { instanceId: "entry-bodyguard-1", unitId: "guardian-defenders", optionId: "10-models", quantity: 1, wargearSelections: {}, embarkedInInstanceId: "entry-transport" },
+                { instanceId: "entry-bodyguard-2", unitId: "guardian-defenders", optionId: "10-models", quantity: 1, wargearSelections: {}, embarkedInInstanceId: "entry-transport" },
+                { instanceId: "entry-hero", unitId: "autarch", optionId: "1-model", quantity: 1, wargearSelections: {}, attachedToInstanceId: "entry-fire-prism" },
+                { instanceId: "entry-fire-prism", unitId: "fire-prism", optionId: "1-model", quantity: 1, wargearSelections: {} },
+                { instanceId: "entry-transport", unitId: "wave-serpent", optionId: "1-model", quantity: 1, wargearSelections: {} },
+            ],
+        },
+        catalog: sampleCatalog(),
+        availableFactionSlugs: ["aeldari"],
+    });
+
+    const hero = resolved.entries.find((entry) => entry.instanceId === "entry-hero");
+    const transport = resolved.entries.find((entry) => entry.instanceId === "entry-transport");
+
+    assert.match(hero.issues.join(" "), /cannot attach to Fire Prism/i);
+    assert.match(transport.issues.join(" "), /uses 20\/12 transport capacity/i);
+});
+
+test("deriveResolvedRoster flags empty Dedicated Transports", () => {
+    const resolved = Store.deriveResolvedRoster({
+        roster: {
+            id: "roster-empty-transport",
+            factionSlug: "aeldari",
+            name: "Empty Transport",
+            army: legalArmy("entry-hero"),
+            entries: [
+                { instanceId: "entry-hero", unitId: "autarch", optionId: "1-model", quantity: 1, wargearSelections: {} },
+                { instanceId: "entry-transport", unitId: "wave-serpent", optionId: "1-model", quantity: 1, wargearSelections: {} },
+            ],
+        },
+        catalog: sampleCatalog(),
+        availableFactionSlugs: ["aeldari"],
+    });
+
+    const transport = resolved.entries.find((entry) => entry.instanceId === "entry-transport");
+    assert.match(transport.issues.join(" "), /Dedicated Transport has no embarked units assigned/i);
 });
 
 test("deriveResolvedRoster flags points caps by battle size", () => {
@@ -460,7 +615,7 @@ test("deriveResolvedRoster allows six Dedicated Transports and flags the seventh
         availableFactionSlugs: ["aeldari"],
     });
 
-    assert.equal(allowed.invalidEntries.length, 0);
+    assert.doesNotMatch(allowed.invalidEntries[0].issues.join(" "), /limit of 6/);
     assert.match(flagged.invalidEntries[0].issues.join(" "), /limit of 6/);
 });
 

@@ -147,6 +147,8 @@
                 upgradeOptionIds: [],
                 quantity: 1,
                 wargearSelections: {},
+                attachedToInstanceId: null,
+                embarkedInInstanceId: null,
             };
             state.roster.push(entry);
             ensureWarlordSelection(isCharacterUnit(unit) ? entry.instanceId : null);
@@ -335,6 +337,7 @@
             if (state.roster.length === before) {
                 return false;
             }
+            clearRelationshipsForRemovedEntry(instanceId);
             ensureWarlordSelection();
             rerenderAndPersist();
             return true;
@@ -368,6 +371,43 @@
             return true;
         }
 
+        function updateRosterAttachment(instanceId, targetInstanceId) {
+            const entry = state.roster.find((item) => item.instanceId === instanceId) || null;
+            if (!entry) {
+                return false;
+            }
+            entry.attachedToInstanceId = targetInstanceId ? String(targetInstanceId).trim() || null : null;
+            if (entry.attachedToInstanceId) {
+                entry.embarkedInInstanceId = null;
+            }
+            rerenderAndPersist();
+            return true;
+        }
+
+        function updateRosterEmbark(instanceId, transportInstanceId) {
+            const entry = state.roster.find((item) => item.instanceId === instanceId) || null;
+            if (!entry) {
+                return false;
+            }
+            if (entry.attachedToInstanceId) {
+                return false;
+            }
+            entry.embarkedInInstanceId = transportInstanceId ? String(transportInstanceId).trim() || null : null;
+            rerenderAndPersist();
+            return true;
+        }
+
+        function clearRelationshipsForRemovedEntry(instanceId) {
+            state.roster.forEach((item) => {
+                if (item.attachedToInstanceId === instanceId) {
+                    item.attachedToInstanceId = null;
+                }
+                if (item.embarkedInInstanceId === instanceId) {
+                    item.embarkedInInstanceId = null;
+                }
+            });
+        }
+
         function handleUnitListClick(event) {
             const target = eventElementTarget(event);
             const addButton = target && typeof target.closest === "function"
@@ -398,6 +438,12 @@
                 : null;
             const warlord = target && typeof target.closest === "function"
                 ? target.closest('[data-action="warlord-select"]')
+                : null;
+            const attachment = target && typeof target.closest === "function"
+                ? target.closest('[data-action="attachment-select"]')
+                : null;
+            const embark = target && typeof target.closest === "function"
+                ? target.closest('[data-action="embark-select"]')
                 : null;
             const quantity = target && typeof target.closest === "function"
                 ? target.closest('[data-action="quantity-input"]')
@@ -432,6 +478,12 @@
             if (warlord) {
                 return updateArmyWarlord(warlord.dataset.instanceId);
             }
+            if (attachment) {
+                return updateRosterAttachment(attachment.dataset.instanceId, attachment.value);
+            }
+            if (embark) {
+                return updateRosterEmbark(embark.dataset.instanceId, embark.value);
+            }
             if (quantity) {
                 return updateRosterQuantity(quantity.dataset.instanceId, quantity.value);
             }
@@ -459,6 +511,8 @@
             updateRosterWargearMulti,
             updateArmyBattleSize,
             updateArmyWarlord,
+            updateRosterAttachment,
+            updateRosterEmbark,
             removeFromRoster,
             clearRoster,
             handleUnitListClick,

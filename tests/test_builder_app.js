@@ -64,6 +64,8 @@ function createDeps() {
             upgradeOptionIds: [],
             quantity: 1,
             wargearSelections: {},
+            attachedToInstanceId: null,
+            embarkedInInstanceId: null,
         }],
         army: Store.normalizeArmyState({}),
     };
@@ -356,4 +358,126 @@ test("adding the first Character auto-selects Warlord and removing it falls back
 
     controller.removeFromRoster(secondId);
     assert.equal(state.army.warlordInstanceId, null);
+});
+
+test("handleRosterBodyChange updates attachment and embark assignments", () => {
+    const leaderUnit = {
+        unitId: "autarch",
+        name: "Autarch",
+        keywords: ["CHARACTER", "INFANTRY"],
+        pointsOptions: [{ id: "1-model", label: "1 model", points: 90, selectionKind: "models", modelCount: 1 }],
+        wargear: { options: [] },
+    };
+    const bodyguardUnit = {
+        unitId: "guardian-defenders",
+        name: "Guardian Defenders",
+        keywords: ["INFANTRY"],
+        pointsOptions: [{ id: "10-models", label: "10 models", points: 100, selectionKind: "models", modelCount: 10 }],
+        wargear: { options: [] },
+    };
+    const transportUnit = {
+        unitId: "wave-serpent",
+        name: "Wave Serpent",
+        keywords: ["VEHICLE", "TRANSPORT", "DEDICATED TRANSPORT"],
+        pointsOptions: [{ id: "1-model", label: "1 model", points: 120, selectionKind: "models", modelCount: 1 }],
+        wargear: { options: [] },
+    };
+    const state = {
+        roster: [
+            { instanceId: "entry-hero", unitId: "autarch", optionId: "1-model", optionIndex: 0, upgradeOptionIds: [], quantity: 1, wargearSelections: {}, attachedToInstanceId: null, embarkedInInstanceId: null },
+            { instanceId: "entry-bodyguard", unitId: "guardian-defenders", optionId: "10-models", optionIndex: 0, upgradeOptionIds: [], quantity: 1, wargearSelections: {}, attachedToInstanceId: null, embarkedInInstanceId: null },
+            { instanceId: "entry-transport", unitId: "wave-serpent", optionId: "1-model", optionIndex: 0, upgradeOptionIds: [], quantity: 1, wargearSelections: {}, attachedToInstanceId: null, embarkedInInstanceId: null },
+        ],
+        army: Store.normalizeArmyState({}),
+    };
+    const calls = { renderRoster: 0, renderPreview: 0, scheduleAutoSave: 0 };
+    const controller = App.createInteractionController({
+        state,
+        Store,
+        renderer: { defaultPointsOption: (value) => value.pointsOptions[0] || null },
+        catalogUnitById: (unitId) => ({
+            autarch: leaderUnit,
+            "guardian-defenders": bodyguardUnit,
+            "wave-serpent": transportUnit,
+        }[unitId] || null),
+        pointsGroups: (value) => ({
+            base: value.pointsOptions.filter((option) => option.selectionKind !== "upgrade"),
+            upgrades: value.pointsOptions.filter((option) => option.selectionKind === "upgrade"),
+        }),
+        renderRoster: () => { calls.renderRoster += 1; },
+        renderPreview: () => { calls.renderPreview += 1; },
+        scheduleAutoSave: () => { calls.scheduleAutoSave += 1; },
+        setRosterStatus: () => {},
+    });
+
+    assert.equal(controller.handleRosterBodyChange(
+        makeEvent('[data-action="attachment-select"]', { instanceId: "entry-hero" }, { value: "entry-bodyguard" })
+    ), true);
+    assert.equal(state.roster[0].attachedToInstanceId, "entry-bodyguard");
+
+    assert.equal(controller.handleRosterBodyChange(
+        makeEvent('[data-action="embark-select"]', { instanceId: "entry-bodyguard" }, { value: "entry-transport" })
+    ), true);
+    assert.equal(state.roster[1].embarkedInInstanceId, "entry-transport");
+    assert.equal(calls.renderRoster, 2);
+    assert.equal(calls.renderPreview, 2);
+    assert.equal(calls.scheduleAutoSave, 2);
+});
+
+test("removeFromRoster clears dependent attachment and embark references", () => {
+    const leaderUnit = {
+        unitId: "autarch",
+        name: "Autarch",
+        keywords: ["CHARACTER", "INFANTRY"],
+        pointsOptions: [{ id: "1-model", label: "1 model", points: 90, selectionKind: "models", modelCount: 1 }],
+        wargear: { options: [] },
+    };
+    const bodyguardUnit = {
+        unitId: "guardian-defenders",
+        name: "Guardian Defenders",
+        keywords: ["INFANTRY"],
+        pointsOptions: [{ id: "10-models", label: "10 models", points: 100, selectionKind: "models", modelCount: 10 }],
+        wargear: { options: [] },
+    };
+    const transportUnit = {
+        unitId: "wave-serpent",
+        name: "Wave Serpent",
+        keywords: ["VEHICLE", "TRANSPORT", "DEDICATED TRANSPORT"],
+        pointsOptions: [{ id: "1-model", label: "1 model", points: 120, selectionKind: "models", modelCount: 1 }],
+        wargear: { options: [] },
+    };
+    const state = {
+        roster: [
+            { instanceId: "entry-hero", unitId: "autarch", optionId: "1-model", optionIndex: 0, upgradeOptionIds: [], quantity: 1, wargearSelections: {}, attachedToInstanceId: "entry-bodyguard", embarkedInInstanceId: null },
+            { instanceId: "entry-bodyguard", unitId: "guardian-defenders", optionId: "10-models", optionIndex: 0, upgradeOptionIds: [], quantity: 1, wargearSelections: {}, attachedToInstanceId: null, embarkedInInstanceId: "entry-transport" },
+            { instanceId: "entry-transport", unitId: "wave-serpent", optionId: "1-model", optionIndex: 0, upgradeOptionIds: [], quantity: 1, wargearSelections: {}, attachedToInstanceId: null, embarkedInInstanceId: null },
+        ],
+        army: Store.normalizeArmyState({ warlordInstanceId: "entry-hero" }),
+    };
+    const controller = App.createInteractionController({
+        state,
+        Store,
+        renderer: { defaultPointsOption: (value) => value.pointsOptions[0] || null },
+        catalogUnitById: (unitId) => ({
+            autarch: leaderUnit,
+            "guardian-defenders": bodyguardUnit,
+            "wave-serpent": transportUnit,
+        }[unitId] || null),
+        pointsGroups: (value) => ({
+            base: value.pointsOptions.filter((option) => option.selectionKind !== "upgrade"),
+            upgrades: value.pointsOptions.filter((option) => option.selectionKind === "upgrade"),
+        }),
+        renderRoster: () => {},
+        renderPreview: () => {},
+        scheduleAutoSave: () => {},
+        setRosterStatus: () => {},
+    });
+
+    controller.removeFromRoster("entry-bodyguard");
+    assert.equal(state.roster.length, 2);
+    assert.equal(state.roster[0].attachedToInstanceId, null);
+    assert.equal(state.army.warlordInstanceId, "entry-hero");
+
+    controller.removeFromRoster("entry-transport");
+    assert.equal(state.roster.length, 1);
 });
