@@ -3,7 +3,11 @@
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Suppressor-Squad",
     "faction_slug": "space-marines",
     "datasheet_slug": "Suppressor-Squad",
-    "output_slug": "space-wolves"
+    "output_slug": "space-wolves",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Suppressor-Squad",
+    "canonicalSourceId": "wahapedia:1fdf0e6f524d89aaa109f67e50741eaefe62f8ea",
+    "fetchedAt": "2026-03-19T17:35:02+00:00",
+    "contentHash": "c2eab7391168e5137439c1c89f6316901a0ce9ed767e588d8dfb82fc84674abd"
   },
   "name": "Suppressor Squad",
   "base_size": "\u230040mm",
@@ -57,33 +61,13 @@
   },
   "abilities": {
     "core": [
-      "Deep Strike"
+      "Deep Strike FACTION: Oath of Moment Suppression Fire: In your Shooting phase , after this unit has shot, select one enemy unit hit by one or more of those attacks made with an accelerator autocannon. Until the start of your next turn, while this unit is on the battlefield, that enemy unit is suppressed. While a unit is suppressed, each time a model in that unit makes an attack, subtract 1 from the Hit roll ."
     ],
-    "faction": [
-      "Oath of Moment"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "In your Shooting phase , after this unit has shot, select one enemy unit hit by one or more of those attacks made with an accelerator autocannon. Until the start of your next turn, while this unit is on the battlefield, that enemy unit is suppressed. While a unit is suppressed, each time a model in that unit makes an attack, subtract 1 from the Hit roll .",
-        "name": "Suppression Fire"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Suppressor Sergeant",
-        "2 Suppressors"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "accelerator autocannon; bolt pistol; close combat weapon.",
-      "label": "Every model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -114,38 +98,14 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deep Strike"
+            "Deep Strike FACTION: Oath of Moment Suppression Fire: In your Shooting phase , after this unit has shot, select one enemy unit hit by one or more of those attacks made with an accelerator autocannon. Until the start of your next turn, while this unit is on the battlefield, that enemy unit is suppressed. While a unit is suppressed, each time a model in that unit makes an attack, subtract 1 from the Hit roll ."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Oath of Moment"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "In your Shooting phase , after this unit has shot, select one enemy unit hit by one or more of those attacks made with an accelerator autocannon. Until the start of your next turn, while this unit is on the battlefield, that enemy unit is suppressed. While a unit is suppressed, each time a model in that unit makes an attack, subtract 1 from the Hit roll .",
-          "name": "Suppression Fire"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Suppressor Sergeant",
-            "2 Suppressors"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "accelerator autocannon; bolt pistol; close combat weapon.",
-          "label": "Every model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -157,5 +117,19 @@
         }
       ]
     }
-  ]
+  ],
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "quality": {
+    "rawSectionTitles": [
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "exportedSectionTitles": [
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [],
+    "warnings": []
+  }
 }

@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Windriders",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Windriders",
+    "canonicalSourceId": "wahapedia:e17d35dd9ffe66248cbb62b7282c27da60c801f5",
     "faction_slug": "aeldari",
     "datasheet_slug": "Windriders",
+    "fetchedAt": "2026-03-19T17:11:23+00:00",
+    "contentHash": "0c5cf3bd7530f2d852c418a89fbc3ceee655c7950647d5060c959d012db4cbe7",
     "output_slug": "aeldari"
   },
   "name": "Windriders",
@@ -72,29 +78,12 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Battle Focus"
+      "Battle Focus Swift Demise: Each time a model in this unit makes a ranged attack, re-roll a Hit roll of 1. If the target of that attack is the closest eligible target, you can re-roll the Hit roll instead."
     ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "Each time a model in this unit makes a ranged attack, re-roll a Hit roll of 1. If the target of that attack is the closest eligible target, you can re-roll the Hit roll instead.",
-        "name": "Swift Demise"
-      }
-    ],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "3-6 Windriders"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "twin shuriken catapult; close combat weapon.",
-      "label": "Every model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -139,30 +128,14 @@
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Battle Focus"
+            "Battle Focus Swift Demise: Each time a model in this unit makes a ranged attack, re-roll a Hit roll of 1. If the target of that attack is the closest eligible target, you can re-roll the Hit roll instead."
           ]
-        },
-        {
-          "type": "rule",
-          "text": "Each time a model in this unit makes a ranged attack, re-roll a Hit roll of 1. If the target of that attack is the closest eligible target, you can re-roll the Hit roll instead.",
-          "name": "Swift Demise"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "3-6 Windriders"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "twin shuriken catapult; close combat weapon.",
-          "label": "Every model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -178,5 +151,89 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY"
+    ]
+  }
 }

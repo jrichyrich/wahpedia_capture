@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Stormsword",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Stormsword",
+    "canonicalSourceId": "wahapedia:4019b3f7346dba1849096d8ddd1c757b23113a12",
     "faction_slug": "astra-militarum",
     "datasheet_slug": "Stormsword",
+    "fetchedAt": "2026-03-19T17:12:04+00:00",
+    "contentHash": "8fa0e653f15d19033db10631d43ce00054afa87bf2585b46348b40a3e22c157e",
     "output_slug": "astra-militarum"
   },
   "name": "Stormsword",
@@ -83,30 +89,13 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D6+2"
+      "Deadly Demise D6+2 Concussive Wave: In your Shooting phase , just after selecting a target for this model\u2019s Stormsword siege cannon, roll one D6 for the target unit and every other unit within 3\" of that unit: on a 5+, the unit being rolled for is struck by a concussive wave. After this model has finished making its attacks against that target unit this phase, each unit struck by a concussive wave suffers D3 mortal wounds ."
     ],
     "faction": [],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "In your Shooting phase , just after selecting a target for this model\u2019s Stormsword siege cannon, roll one D6 for the target unit and every other unit within 3\" of that unit: on a 5+, the unit being rolled for is struck by a concussive wave. After this model has finished making its attacks against that target unit this phase, each unit struck by a concussive wave suffers D3 mortal wounds .",
-        "name": "Concussive Wave"
-      }
-    ],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Stormsword"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "2 lascannons; Stormsword siege cannon; twin heavy bolter; 2 twin heavy flamers; armoured tracks.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -153,30 +142,14 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D6+2"
+            "Deadly Demise D6+2 Concussive Wave: In your Shooting phase , just after selecting a target for this model\u2019s Stormsword siege cannon, roll one D6 for the target unit and every other unit within 3\" of that unit: on a 5+, the unit being rolled for is struck by a concussive wave. After this model has finished making its attacks against that target unit this phase, each unit struck by a concussive wave suffers D3 mortal wounds ."
           ]
-        },
-        {
-          "type": "rule",
-          "text": "In your Shooting phase , just after selecting a target for this model\u2019s Stormsword siege cannon, roll one D6 for the target unit and every other unit within 3\" of that unit: on a 5+, the unit being rolled for is struck by a concussive wave. After this model has finished making its attacks against that target unit this phase, each unit struck by a concussive wave suffers D3 mortal wounds .",
-          "name": "Concussive Wave"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Stormsword"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "2 lascannons; Stormsword siege cannon; twin heavy bolter; 2 twin heavy flamers; armoured tracks.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -197,5 +170,87 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-8 WOUNDS REMAINING",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-8 WOUNDS REMAINING"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY"
+    ]
+  }
 }

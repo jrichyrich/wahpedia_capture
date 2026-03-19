@@ -3,7 +3,11 @@
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Assault-Intercessors-With-Jump-Packs",
     "faction_slug": "space-marines",
     "datasheet_slug": "Assault-Intercessors-With-Jump-Packs",
-    "output_slug": "ultramarines"
+    "output_slug": "ultramarines",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Assault-Intercessors-With-Jump-Packs",
+    "canonicalSourceId": "wahapedia:f83e749808e0b1a37da7e8aa856ae56db869e95a",
+    "fetchedAt": "2026-03-19T17:35:02+00:00",
+    "contentHash": "04452dbdf453dddf05aeb1074bba54c420a0a70a7fb670f15b8420049922d81b"
   },
   "name": "Assault Intercessors With Jump Packs",
   "base_size": "\u230032mm",
@@ -104,33 +108,13 @@
   },
   "abilities": {
     "core": [
-      "Deep Strike"
+      "Deep Strike FACTION: Oath of Moment Hammer of Wrath: Each time this unit ends a Charge move , select one enemy unit within Engagement Range of it, then roll one D6 for each model in this unit that is within Engagement Range of that enemy unit: for each 4+, that enemy unit suffers 1 mortal wound ."
     ],
-    "faction": [
-      "Oath of Moment"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "Each time this unit ends a Charge move , select one enemy unit within Engagement Range of it, then roll one D6 for each model in this unit that is within Engagement Range of that enemy unit: for each 4+, that enemy unit suffers 1 mortal wound .",
-        "name": "Hammer of Wrath"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Assault Intercessor Sergeant with Jump Pack",
-        "4-9 Assault Intercessors with Jump Packs"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "heavy bolt pistol; Astartes chainsword.",
-      "label": "Each model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -159,44 +143,46 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "For every 5 models in this unit, 1 Assault Intercessor with Jump Pack\u2019s heavy bolt pistol can be replaced with 1 plasma pistol.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "The Assault Intercessor Sergeant with Jump Pack\u2019s Astartes chainsword can be replaced with one of the following:",
+          "items": [
+            "1 power weapon",
+            "1 power fist"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "The Assault Intercessor Sergeant with Jump Pack\u2019s heavy bolt pistol can be replaced with one of the following:",
+          "items": [
+            "1 hand flamer",
+            "1 plasma pistol"
+          ]
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deep Strike"
+            "Deep Strike FACTION: Oath of Moment Hammer of Wrath: Each time this unit ends a Charge move , select one enemy unit within Engagement Range of it, then roll one D6 for each model in this unit that is within Engagement Range of that enemy unit: for each 4+, that enemy unit suffers 1 mortal wound ."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Oath of Moment"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "Each time this unit ends a Charge move , select one enemy unit within Engagement Range of it, then roll one D6 for each model in this unit that is within Engagement Range of that enemy unit: for each 4+, that enemy unit suffers 1 mortal wound .",
-          "name": "Hammer of Wrath"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Assault Intercessor Sergeant with Jump Pack",
-            "4-9 Assault Intercessors with Jump Packs"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "heavy bolt pistol; Astartes chainsword.",
-          "label": "Each model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -212,5 +198,20 @@
         }
       ]
     }
-  ]
+  ],
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "quality": {
+    "rawSectionTitles": [
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [],
+    "warnings": []
+  }
 }

@@ -3,7 +3,11 @@
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Captain-In-Gravis-Armour",
     "faction_slug": "space-marines",
     "datasheet_slug": "Captain-In-Gravis-Armour",
-    "output_slug": "ultramarines"
+    "output_slug": "ultramarines",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Captain-In-Gravis-Armour",
+    "canonicalSourceId": "wahapedia:75fe2af0b16ad04a05fca2c0bfa9a8a3d9ee8249",
+    "fetchedAt": "2026-03-19T17:35:02+00:00",
+    "contentHash": "0395fef8c04b239d22bf99de075a4d7fe773931bfc3dec2889c6518c736f71b5"
   },
   "name": "Captain In Gravis Armour",
   "base_size": "\u230040mm",
@@ -105,37 +109,13 @@
   },
   "abilities": {
     "core": [
-      "Leader"
+      "Leader FACTION: Oath of Moment Rites of Battle: Once per battle round , one unit from your army with this ability can use it when its unit is targeted with a Stratagem . If it does, reduce the CP cost of that use of that Stratagem by 1CP. Refuse to Yield: Each time an attack is allocated to this model, halve the Damage characteristic of that attack."
     ],
-    "faction": [
-      "Oath of Moment"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "Once per battle round , one unit from your army with this ability can use it when its unit is targeted with a Stratagem . If it does, reduce the CP cost of that use of that Stratagem by 1CP.",
-        "name": "Rites of Battle"
-      },
-      {
-        "type": "rule",
-        "text": "Each time an attack is allocated to this model, halve the Damage characteristic of that attack.",
-        "name": "Refuse to Yield"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Captain in Gravis Armour"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "master-crafted heavy bolt rifle; master-crafted power weapon.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -159,48 +139,34 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s master-crafted heavy bolt rifle and master-crafted power weapon can be replaced with:",
+          "items": [
+            "1 boltstorm gauntlet, 1 power fist and 1 relic chainsword",
+            "1 boltstorm gauntlet, 1 power fist and 1 relic blade",
+            "1 boltstorm gauntlet, 1 power fist and 1 relic fist"
+          ]
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Leader"
+            "Leader FACTION: Oath of Moment Rites of Battle: Once per battle round , one unit from your army with this ability can use it when its unit is targeted with a Stratagem . If it does, reduce the CP cost of that use of that Stratagem by 1CP. Refuse to Yield: Each time an attack is allocated to this model, halve the Damage characteristic of that attack."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Oath of Moment"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "Once per battle round , one unit from your army with this ability can use it when its unit is targeted with a Stratagem . If it does, reduce the CP cost of that use of that Stratagem by 1CP.",
-          "name": "Rites of Battle"
-        },
-        {
-          "type": "rule",
-          "text": "Each time an attack is allocated to this model, halve the Damage characteristic of that attack.",
-          "name": "Refuse to Yield"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Captain in Gravis Armour"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "master-crafted heavy bolt rifle; master-crafted power weapon.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -226,5 +192,22 @@
         }
       ]
     }
-  ]
+  ],
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "quality": {
+    "rawSectionTitles": [
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "missingExpectedSections": [],
+    "warnings": []
+  }
 }

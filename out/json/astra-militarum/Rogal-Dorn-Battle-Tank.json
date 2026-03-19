@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Rogal-Dorn-Battle-Tank",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Rogal-Dorn-Battle-Tank",
+    "canonicalSourceId": "wahapedia:cba8b68b8468e78e55cbd111dba1d608c2422d1b",
     "faction_slug": "astra-militarum",
     "datasheet_slug": "Rogal-Dorn-Battle-Tank",
+    "fetchedAt": "2026-03-19T17:12:01+00:00",
+    "contentHash": "a79b86027160e33e1f6e3421d69da2bde55a02230e53664bb57d0398fdcf8f60",
     "output_slug": "astra-militarum"
   },
   "name": "Rogal Dorn Battle Tank",
@@ -138,30 +144,13 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D6"
+      "Deadly Demise D6 Ablative Plating: Once per battle, when an attack is allocated to this model, you change the Damage characteristic of that attack to 0."
     ],
     "faction": [],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "Once per battle, when an attack is allocated to this model, you change the Damage characteristic of that attack to 0.",
-        "name": "Ablative Plating"
-      }
-    ],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Rogal Dorn Battle Tank"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "castigator gatling cannon; heavy stubber; twin battle cannon; armoured tracks.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -221,30 +210,14 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D6"
+            "Deadly Demise D6 Ablative Plating: Once per battle, when an attack is allocated to this model, you change the Damage characteristic of that attack to 0."
           ]
-        },
-        {
-          "type": "rule",
-          "text": "Once per battle, when an attack is allocated to this model, you change the Damage characteristic of that attack to 0.",
-          "name": "Ablative Plating"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Rogal Dorn Battle Tank"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "castigator gatling cannon; heavy stubber; twin battle cannon; armoured tracks.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -265,5 +238,87 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-6 WOUNDS REMAINING",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-6 WOUNDS REMAINING"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY"
+    ]
+  }
 }

@@ -3,7 +3,11 @@
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Fellblade",
     "faction_slug": "space-marines",
     "datasheet_slug": "Fellblade",
-    "output_slug": "space-wolves"
+    "output_slug": "space-wolves",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Fellblade",
+    "canonicalSourceId": "wahapedia:88dd4e4c15a96a5ce2615e773644fc16251102ca",
+    "fetchedAt": "2026-03-19T17:35:02+00:00",
+    "contentHash": "3be021a6a6d6b0a605bcd5e8a711106109aa7eba8a36dc63db7023fb3a6daf2b"
   },
   "name": "Fellblade",
   "base_size": "\u2300Use model",
@@ -204,32 +208,13 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D6+2"
+      "Deadly Demise D6+2 FACTION: Oath of Moment Rolling Fortress: Each time a ranged attack is allocated to a model from your army, if that model is not fully visible to every model in the attacking unit because of this Fellblade model, that model has the Benefit of Cover against that attack."
     ],
-    "faction": [
-      "Oath of Moment"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "Each time a ranged attack is allocated to a model from your army, if that model is not fully visible to every model in the attacking unit because of this Fellblade model, that model has the Benefit of Cover against that attack.",
-        "name": "Rolling Fortress"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Fellblade"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "demolisher cannon; Fellblade accelerator cannon; 2 quad lascannons; twin heavy bolter; armoured tracks.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -252,43 +237,54 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s 2 quad lascannons can be replaced with one of the following:",
+          "items": [
+            "2 laser destroyers",
+            "2 quad heavy bolters"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "This model\u2019s twin heavy bolter can be replaced with 1 twin heavy flamer.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "This model can be equipped with 1 havoc launcher.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "This model can be equipped with one of the following:",
+          "items": [
+            "1 combi-weapon",
+            "1 heavy bolter",
+            "1 heavy flamer",
+            "1 multi-melta",
+            "1 storm bolter"
+          ]
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D6+2"
+            "Deadly Demise D6+2 FACTION: Oath of Moment Rolling Fortress: Each time a ranged attack is allocated to a model from your army, if that model is not fully visible to every model in the attacking unit because of this Fellblade model, that model has the Benefit of Cover against that attack."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Oath of Moment"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "Each time a ranged attack is allocated to a model from your army, if that model is not fully visible to every model in the attacking unit because of this Fellblade model, that model has the Benefit of Cover against that attack.",
-          "name": "Rolling Fortress"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Fellblade"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "demolisher cannon; Fellblade accelerator cannon; 2 quad lascannons; twin heavy bolter; armoured tracks.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -309,5 +305,22 @@
         }
       ]
     }
-  ]
+  ],
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "quality": {
+    "rawSectionTitles": [
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-8 WOUNDS REMAINING"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-8 WOUNDS REMAINING"
+    ],
+    "missingExpectedSections": [],
+    "warnings": []
+  }
 }

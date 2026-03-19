@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Ynnari-Kabalite-Warriors",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Ynnari-Kabalite-Warriors",
+    "canonicalSourceId": "wahapedia:1a7b7e1d12fd08d977d196e58cb58bfda721660a",
     "faction_slug": "aeldari",
     "datasheet_slug": "Ynnari-Kabalite-Warriors",
+    "fetchedAt": "2026-03-19T17:11:12+00:00",
+    "contentHash": "cd10ad71741c13f2faf66645a0b3b63e8edebc919799eea75e028883b63f58c6",
     "output_slug": "aeldari"
   },
   "name": "Ynnari Kabalite Warriors",
@@ -137,30 +143,12 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Battle Focus , Disparate Paths"
+      "Battle Focus , Disparate Paths Sadistic Raiders: At the end of your Command phase , if you control an objective marker that this unit (or a TRANSPORT it is embarked within) is within range of, that objective marker remains under your control until your opponent\u2019s Level of Control over that objective marker is greater than yours at the end of a phase."
     ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "At the end of your Command phase , if you control an objective marker that this unit (or a TRANSPORT it is embarked within) is within range of, that objective marker remains under your control until your opponent\u2019s Level of Control over that objective marker is greater than yours at the end of a phase.",
-        "name": "Sadistic Raiders"
-      }
-    ],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Sybarite",
-        "9 Kabalite Warriors"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "splinter rifle; close combat weapon.",
-      "label": "Every model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -231,13 +219,8 @@
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Battle Focus , Disparate Paths"
+            "Battle Focus , Disparate Paths Sadistic Raiders: At the end of your Command phase , if you control an objective marker that this unit (or a TRANSPORT it is embarked within) is within range of, that objective marker remains under your control until your opponent\u2019s Level of Control over that objective marker is greater than yours at the end of a phase."
           ]
-        },
-        {
-          "type": "rule",
-          "text": "At the end of your Command phase , if you control an objective marker that this unit (or a TRANSPORT it is embarked within) is within range of, that objective marker remains under your control until your opponent\u2019s Level of Control over that objective marker is greater than yours at the end of a phase.",
-          "name": "Sadistic Raiders"
         }
       ]
     },
@@ -245,27 +228,14 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "statement",
-          "text": "The bearer\u2019s unit has the Grenade s keyword.",
-          "label": "Phantasm Grenade Launcher"
+          "type": "text",
+          "text": "Phantasm Grenade Launcher: The bearer\u2019s unit has the Grenade s keyword."
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Sybarite",
-            "9 Kabalite Warriors"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "splinter rifle; close combat weapon.",
-          "label": "Every model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -277,5 +247,91 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY"
+    ]
+  }
 }

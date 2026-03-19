@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Wraithguard",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Wraithguard",
+    "canonicalSourceId": "wahapedia:57997da21a69df69c17c4f850184e4c2729793f2",
     "faction_slug": "aeldari",
     "datasheet_slug": "Wraithguard",
+    "fetchedAt": "2026-03-19T17:11:25+00:00",
+    "contentHash": "7eeb160636e6e747ce53701721592c7e78b7ce11be7dfe3c65fb294f2b49bde0",
     "output_slug": "aeldari"
   },
   "name": "Wraithguard",
@@ -56,32 +62,15 @@
   "abilities": {
     "core": [],
     "faction": [],
-    "datasheet": [
+    "datasheet": [],
+    "other": [
       {
-        "type": "rule",
-        "text": "This unit is eligible to shoot in a turn in which it Fell Back .",
-        "name": "War Construct"
-      },
-      {
-        "type": "rule",
-        "text": "While this unit is within 12\" of one or more friendly AELDARI PSYKER models, models in this unit have a Leadership characteristic of 6+ and each time a model in this unit makes an attack, add 1 to the Hit roll .",
-        "name": "Psychic Guidance"
+        "type": "text",
+        "text": "War Construct: This unit is eligible to shoot in a turn in which it Fell Back . Psychic Guidance: While this unit is within 12\" of one or more friendly AELDARI PSYKER models, models in this unit have a Leadership characteristic of 6+ and each time a model in this unit makes an attack, add 1 to the Hit roll ."
       }
-    ],
-    "other": []
+    ]
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "5 Wraithguard"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "wraithcannon; close combat weapon.",
-      "label": "Every model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -116,31 +105,14 @@
       "title": "ABILITIES",
       "entries": [
         {
-          "type": "rule",
-          "text": "This unit is eligible to shoot in a turn in which it Fell Back .",
-          "name": "War Construct"
-        },
-        {
-          "type": "rule",
-          "text": "While this unit is within 12\" of one or more friendly AELDARI PSYKER models, models in this unit have a Leadership characteristic of 6+ and each time a model in this unit makes an attack, add 1 to the Hit roll .",
-          "name": "Psychic Guidance"
+          "type": "text",
+          "text": "War Construct: This unit is eligible to shoot in a turn in which it Fell Back . Psychic Guidance: While this unit is within 12\" of one or more friendly AELDARI PSYKER models, models in this unit have a Leadership characteristic of 6+ and each time a model in this unit makes an attack, add 1 to the Hit roll ."
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "5 Wraithguard"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "wraithcannon; close combat weapon.",
-          "label": "Every model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -152,5 +124,89 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY"
+    ]
+  }
 }

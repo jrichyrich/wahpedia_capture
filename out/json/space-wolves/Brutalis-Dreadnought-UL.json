@@ -3,7 +3,11 @@
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Brutalis-Dreadnought-UL",
     "faction_slug": "space-marines",
     "datasheet_slug": "Brutalis-Dreadnought-UL",
-    "output_slug": "space-wolves"
+    "output_slug": "space-wolves",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Brutalis-Dreadnought-UL",
+    "canonicalSourceId": "wahapedia:fa36307e0e5429917cab4180cebe810b586f1726",
+    "fetchedAt": "2026-03-19T17:35:02+00:00",
+    "contentHash": "93eab79d1271f5c74930d0ccd0cf3e3da093daa687db8f6d00a2233c7eceb0d8"
   },
   "name": "Brutalis Dreadnought",
   "base_size": "\u230090mm",
@@ -111,32 +115,13 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D3"
+      "Deadly Demise D3 FACTION: Oath of Moment Brutalis Charge: Each time this model ends a Charge move , select one enemy unit within Engagement Range of it and roll one D6: on a 2-3, that enemy unit suffers D3 mortal wounds ; on a 4-5, that enemy unit suffers 3 mortal wounds; on a 6, that enemy unit suffers D3+3 mortal wounds."
     ],
-    "faction": [
-      "Oath of Moment"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "Each time this model ends a Charge move , select one enemy unit within Engagement Range of it and roll one D6: on a 2-3, that enemy unit suffers D3 mortal wounds ; on a 4-5, that enemy unit suffers 3 mortal wounds; on a 6, that enemy unit suffers D3+3 mortal wounds.",
-        "name": "Brutalis Charge"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Brutalis Dreadnought"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "twin Icarus ironhail heavy stubber; twin heavy bolter; Brutalis bolt rifles; Brutalis fists.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -160,43 +145,35 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s twin heavy bolter can be replaced with 1 twin multi-melta.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "This model\u2019s Brutalis fists and Brutalis bolt rifles can be replaced with 1 Brutalis talons.",
+          "items": []
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D3"
+            "Deadly Demise D3 FACTION: Oath of Moment Brutalis Charge: Each time this model ends a Charge move , select one enemy unit within Engagement Range of it and roll one D6: on a 2-3, that enemy unit suffers D3 mortal wounds ; on a 4-5, that enemy unit suffers 3 mortal wounds; on a 6, that enemy unit suffers D3+3 mortal wounds."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Oath of Moment"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "Each time this model ends a Charge move , select one enemy unit within Engagement Range of it and roll one D6: on a 2-3, that enemy unit suffers D3 mortal wounds ; on a 4-5, that enemy unit suffers 3 mortal wounds; on a 6, that enemy unit suffers D3+3 mortal wounds.",
-          "name": "Brutalis Charge"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Brutalis Dreadnought"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "twin Icarus ironhail heavy stubber; twin heavy bolter; Brutalis bolt rifles; Brutalis fists.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -217,5 +194,22 @@
         }
       ]
     }
-  ]
+  ],
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "quality": {
+    "rawSectionTitles": [
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-4 WOUNDS REMAINING"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-4 WOUNDS REMAINING"
+    ],
+    "missingExpectedSections": [],
+    "warnings": []
+  }
 }

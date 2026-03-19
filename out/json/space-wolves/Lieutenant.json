@@ -3,7 +3,11 @@
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Lieutenant",
     "faction_slug": "space-marines",
     "datasheet_slug": "Lieutenant",
-    "output_slug": "space-wolves"
+    "output_slug": "space-wolves",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Lieutenant",
+    "canonicalSourceId": "wahapedia:5814ce192ee7a7be5fb5bf69b4798b74245df93f",
+    "fetchedAt": "2026-03-19T17:35:02+00:00",
+    "contentHash": "c75deafbf262ccb11218174d36ed33e13d2dea84ec60d795b899385298a05d47"
   },
   "name": "Lieutenant",
   "base_size": "\u230040mm",
@@ -125,37 +129,13 @@
   },
   "abilities": {
     "core": [
-      "Leader"
+      "Leader FACTION: Oath of Moment Tactical Precision: While this model is leading a unit, weapons equipped by models in that unit have the [LETHAL HITS] ability. Target Priority: This model\u2019s unit is eligible to shoot and declare a charge in a turn in which it Fell Back ."
     ],
-    "faction": [
-      "Oath of Moment"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "While this model is leading a unit, weapons equipped by models in that unit have the [LETHAL HITS] ability.",
-        "name": "Tactical Precision"
-      },
-      {
-        "type": "rule",
-        "text": "This model\u2019s unit is eligible to shoot and declare a charge in a turn in which it Fell Back .",
-        "name": "Target Priority"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Lieutenant"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "bolt pistol; master-crafted bolter; close combat weapon.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -179,31 +159,46 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s master-crafted bolter can be replaced with one of the following:",
+          "items": [
+            "1 plasma pistol",
+            "1 master-crafted power weapon",
+            "1 power fist"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "This model\u2019s bolt pistol, master-crafted bolter and close combat weapon can be replaced with 1 neo volkite pistol, 1 master-crafted power weapon and 1 storm shield.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "This model\u2019s bolt pistol can be replaced with 1 heavy bolt pistol.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "This model\u2019s close combat weapon can be replaced with one of the following:",
+          "items": [
+            "1 master-crafted power weapon",
+            "1 power fist"
+          ]
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Leader"
+            "Leader FACTION: Oath of Moment Tactical Precision: While this model is leading a unit, weapons equipped by models in that unit have the [LETHAL HITS] ability. Target Priority: This model\u2019s unit is eligible to shoot and declare a charge in a turn in which it Fell Back ."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Oath of Moment"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "While this model is leading a unit, weapons equipped by models in that unit have the [LETHAL HITS] ability.",
-          "name": "Tactical Precision"
-        },
-        {
-          "type": "rule",
-          "text": "This model\u2019s unit is eligible to shoot and declare a charge in a turn in which it Fell Back .",
-          "name": "Target Priority"
         }
       ]
     },
@@ -211,26 +206,14 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "statement",
-          "text": "The bearer has a 4+ invulnerable save .",
-          "label": "Storm Shield"
+          "type": "text",
+          "text": "Storm Shield: The bearer has a 4+ invulnerable save ."
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Lieutenant"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "bolt pistol; master-crafted bolter; close combat weapon.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -272,5 +255,24 @@
         }
       ]
     }
-  ]
+  ],
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "quality": {
+    "rawSectionTitles": [
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "missingExpectedSections": [],
+    "warnings": []
+  }
 }

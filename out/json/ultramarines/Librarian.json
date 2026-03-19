@@ -3,7 +3,11 @@
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Librarian",
     "faction_slug": "space-marines",
     "datasheet_slug": "Librarian",
-    "output_slug": "ultramarines"
+    "output_slug": "ultramarines",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Librarian",
+    "canonicalSourceId": "wahapedia:29b28ae131aef16fe18efe4915344ae793797cdf",
+    "fetchedAt": "2026-03-19T17:35:03+00:00",
+    "contentHash": "577799a1ce9477a58dc92a386efadb679caa884272541498807aa7008f233f20"
   },
   "name": "Librarian",
   "base_size": "\u230040mm",
@@ -73,37 +77,13 @@
   },
   "abilities": {
     "core": [
-      "Leader"
+      "Leader FACTION: Oath of Moment Psychic Hood: While this model is leading a unit, models in that unit have the Feel No Pain 4+ ability against Psychic Attacks . Mental Fortress (Psychic): While this model is leading a unit, models in that unit have a 4+ invulnerable save ."
     ],
-    "faction": [
-      "Oath of Moment"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "While this model is leading a unit, models in that unit have the Feel No Pain 4+ ability against Psychic Attacks .",
-        "name": "Psychic Hood"
-      },
-      {
-        "type": "rule",
-        "text": "While this model is leading a unit, models in that unit have a 4+ invulnerable save .",
-        "name": "Mental Fortress (Psychic)"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Librarian"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "bolt pistol; Smite; force weapon.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -134,42 +114,14 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Leader"
+            "Leader FACTION: Oath of Moment Psychic Hood: While this model is leading a unit, models in that unit have the Feel No Pain 4+ ability against Psychic Attacks . Mental Fortress (Psychic): While this model is leading a unit, models in that unit have a 4+ invulnerable save ."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Oath of Moment"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "While this model is leading a unit, models in that unit have the Feel No Pain 4+ ability against Psychic Attacks .",
-          "name": "Psychic Hood"
-        },
-        {
-          "type": "rule",
-          "text": "While this model is leading a unit, models in that unit have a 4+ invulnerable save .",
-          "name": "Mental Fortress (Psychic)"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Librarian"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "bolt pistol; Smite; force weapon.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -211,5 +163,21 @@
         }
       ]
     }
-  ]
+  ],
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "quality": {
+    "rawSectionTitles": [
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "exportedSectionTitles": [
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "missingExpectedSections": [],
+    "warnings": []
+  }
 }

@@ -3,7 +3,11 @@
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Fire-Raptor-Gunship",
     "faction_slug": "space-marines",
     "datasheet_slug": "Fire-Raptor-Gunship",
-    "output_slug": "space-wolves"
+    "output_slug": "space-wolves",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Fire-Raptor-Gunship",
+    "canonicalSourceId": "wahapedia:47f30dbb810313bcfc0034f0e12fd1306b146fd3",
+    "fetchedAt": "2026-03-19T17:35:02+00:00",
+    "contentHash": "ad1660fc28c41cc3c0e364b82cb55ccbb1d0c289bc141247f96291ca7bc88a81"
   },
   "name": "Fire Raptor Gunship",
   "base_size": "\u2300120 x 92mm flying base",
@@ -95,32 +99,13 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D6 , Hover"
+      "Deadly Demise D6 , Hover FACTION: Oath of Moment Strafing Run: Each time this model makes a ranged attack that targets a unit that cannot Fly , add 1 to the Hit roll ."
     ],
-    "faction": [
-      "Oath of Moment"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "Each time this model makes a ranged attack that targets a unit that cannot Fly , add 1 to the Hit roll .",
-        "name": "Strafing Run"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Fire Raptor Gunship"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "twin avenger bolt cannon; 2 twin autocannons; 2 twin hellstrike launchers; armoured hull",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -144,43 +129,35 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s 2 twin hellstrike missile launchers can be replaced with 2 twin lascannons",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "This model\u2019s 2 twin autocannons can be replaced with 2 quad heavy bolters.",
+          "items": []
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D6 , Hover"
+            "Deadly Demise D6 , Hover FACTION: Oath of Moment Strafing Run: Each time this model makes a ranged attack that targets a unit that cannot Fly , add 1 to the Hit roll ."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Oath of Moment"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "Each time this model makes a ranged attack that targets a unit that cannot Fly , add 1 to the Hit roll .",
-          "name": "Strafing Run"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Fire Raptor Gunship"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "twin avenger bolt cannon; 2 twin autocannons; 2 twin hellstrike launchers; armoured hull",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -201,5 +178,22 @@
         }
       ]
     }
-  ]
+  ],
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "quality": {
+    "rawSectionTitles": [
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-6 WOUNDS REMAINING"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-6 WOUNDS REMAINING"
+    ],
+    "missingExpectedSections": [],
+    "warnings": []
+  }
 }

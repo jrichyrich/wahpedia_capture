@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Wasp-Assault-Walker",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Wasp-Assault-Walker",
+    "canonicalSourceId": "wahapedia:db60cba267d21b707afa1778afd8cce4c8d4f781",
     "faction_slug": "aeldari",
     "datasheet_slug": "Wasp-Assault-Walker",
+    "fetchedAt": "2026-03-19T17:11:33+00:00",
+    "contentHash": "162b926a1e9c839f14fe5897968f8b61fa6b6e4e97688853870a2f3ca729eeca",
     "output_slug": "aeldari"
   },
   "name": "Wasp Assault Walker",
@@ -98,32 +104,13 @@
   },
   "abilities": {
     "core": [
-      "Deep Strike"
+      "Deep Strike FACTION: Battle Focus Cloudbreakers: Each time this model Advances , do not make an Advance roll for it. Instead, until the end of the phase, add 6\" to the Move characteristic of this model."
     ],
-    "faction": [
-      "Battle Focus"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "Each time this model Advances , do not make an Advance roll for it. Instead, until the end of the phase, add 6\" to the Move characteristic of this model.",
-        "name": "Cloudbreakers"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Wasp Assault Walker"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "scatter laser; shuriken cannon; Wasp feet.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -177,37 +164,14 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deep Strike"
+            "Deep Strike FACTION: Battle Focus Cloudbreakers: Each time this model Advances , do not make an Advance roll for it. Instead, until the end of the phase, add 6\" to the Move characteristic of this model."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Battle Focus"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "Each time this model Advances , do not make an Advance roll for it. Instead, until the end of the phase, add 6\" to the Move characteristic of this model.",
-          "name": "Cloudbreakers"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Wasp Assault Walker"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "scatter laser; shuriken cannon; Wasp feet.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -219,5 +183,85 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY"
+    ]
+  }
 }

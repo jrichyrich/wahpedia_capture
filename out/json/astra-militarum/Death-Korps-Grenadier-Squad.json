@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Death-Korps-Grenadier-Squad",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Death-Korps-Grenadier-Squad",
+    "canonicalSourceId": "wahapedia:85e4905af3b2b0b14ed9355d77c6c6cbcae9cfdd",
     "faction_slug": "astra-militarum",
     "datasheet_slug": "Death-Korps-Grenadier-Squad",
+    "fetchedAt": "2026-03-19T17:12:12+00:00",
+    "contentHash": "af83cbf3cc97cf742fd5430ea7d5f2c7c35ec13f6cf009a30fd587410e6092e3",
     "output_slug": "astra-militarum"
   },
   "name": "Death Korps Grenadier Squad",
@@ -179,43 +185,15 @@
   "abilities": {
     "core": [],
     "faction": [],
-    "datasheet": [
+    "datasheet": [],
+    "other": [
       {
-        "type": "rule",
-        "text": "In your Shooting phase , you can select one unit from your army with this ability as the target of the Grenade Stratagem for 0CP, provided that unit has not already been the target of that Stratagem this phase. This can allow you to use the Grenade Stratagem for a second time this phase.",
-        "name": "Primed and Ready"
+        "type": "text",
+        "text": "Primed and Ready: In your Shooting phase , you can select one unit from your army with this ability as the target of the Grenade Stratagem for 0CP, provided that unit has not already been the target of that Stratagem this phase. This can allow you to use the Grenade Stratagem for a second time this phase."
       }
-    ],
-    "other": []
+    ]
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Grenadier Sergeant and 9 Grenadiers",
-        "1 Grenadier Sergeant, 7 Grenadiers and 1 Heavy Weapons Team"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "1 Grenadier Sergeant and 9 Grenadiers 1 Grenadier Sergeant, 7 Grenadiers and 1 Heavy Weapons Team",
-      "label": "One of the following"
-    },
-    {
-      "type": "statement",
-      "text": "sergeant\u2019s pistol; sergeant\u2019s close combat weapon.",
-      "label": "The Grenadier Sergeant is equipped with"
-    },
-    {
-      "type": "statement",
-      "text": "hot-shot lasgun; close combat weapon.",
-      "label": "Every Grenadier model is equipped with"
-    },
-    {
-      "type": "statement",
-      "text": "heavy flamer; close combat weapon.",
-      "label": "The Heavy Weapons Team is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -259,9 +237,8 @@
       "title": "ABILITIES",
       "entries": [
         {
-          "type": "rule",
-          "text": "In your Shooting phase , you can select one unit from your army with this ability as the target of the Grenade Stratagem for 0CP, provided that unit has not already been the target of that Stratagem this phase. This can allow you to use the Grenade Stratagem for a second time this phase.",
-          "name": "Primed and Ready"
+          "type": "text",
+          "text": "Primed and Ready: In your Shooting phase , you can select one unit from your army with this ability as the target of the Grenade Stratagem for 0CP, provided that unit has not already been the target of that Stratagem this phase. This can allow you to use the Grenade Stratagem for a second time this phase."
         }
       ]
     },
@@ -269,42 +246,14 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "statement",
-          "text": "Each time you target the bearer\u2019s unit with a Stratagem , roll one D6, adding 1 to the result if there are one or more friendly OFFICER models within 6\": on a 5+, you gain 1CP.",
-          "label": "Vox-caster"
+          "type": "text",
+          "text": "Vox-caster: Each time you target the bearer\u2019s unit with a Stratagem , roll one D6, adding 1 to the result if there are one or more friendly OFFICER models within 6\": on a 5+, you gain 1CP."
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Grenadier Sergeant and 9 Grenadiers",
-            "1 Grenadier Sergeant, 7 Grenadiers and 1 Heavy Weapons Team"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "1 Grenadier Sergeant and 9 Grenadiers 1 Grenadier Sergeant, 7 Grenadiers and 1 Heavy Weapons Team",
-          "label": "One of the following"
-        },
-        {
-          "type": "statement",
-          "text": "sergeant\u2019s pistol; sergeant\u2019s close combat weapon.",
-          "label": "The Grenadier Sergeant is equipped with"
-        },
-        {
-          "type": "statement",
-          "text": "hot-shot lasgun; close combat weapon.",
-          "label": "Every Grenadier model is equipped with"
-        },
-        {
-          "type": "statement",
-          "text": "heavy flamer; close combat weapon.",
-          "label": "The Heavy Weapons Team is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -325,5 +274,93 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "GRENADIER SQUAD",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "GRENADIER SQUAD"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY"
+    ]
+  }
 }

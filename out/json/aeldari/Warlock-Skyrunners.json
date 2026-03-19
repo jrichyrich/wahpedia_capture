@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Warlock-Skyrunners",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Warlock-Skyrunners",
+    "canonicalSourceId": "wahapedia:8903523f8e5bdbf239ce953cb6ef1e1c6ed50f6d",
     "faction_slug": "aeldari",
     "datasheet_slug": "Warlock-Skyrunners",
+    "fetchedAt": "2026-03-19T17:11:23+00:00",
+    "contentHash": "d58a4e7fb8fdb057f237f42e5f1074ace4e550ed003321cd93692ff0c1fb9339",
     "output_slug": "aeldari"
   },
   "name": "Warlock Skyrunners",
@@ -101,37 +107,13 @@
   },
   "abilities": {
     "core": [
-      "Leader"
+      "Leader FACTION: Battle Focus Runes of Battle (Psychic): Weapons equipped by models in this unit have the [IGNORES COVER] ability. Psychic Communion (Psychic): Each time this unit is selected to shoot, for each WARLOCK model in this unit, until the end of the phase, add 1 to the Attacks and Strength characteristics of that model\u2019s Destructor weapon for each other friendly AELDARI PSYKER model within 6\" of that model (to a maximum of +2)."
     ],
-    "faction": [
-      "Battle Focus"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "Weapons equipped by models in this unit have the [IGNORES COVER] ability.",
-        "name": "Runes of Battle (Psychic)"
-      },
-      {
-        "type": "rule",
-        "text": "Each time this unit is selected to shoot, for each WARLOCK model in this unit, until the end of the phase, add 1 to the Attacks and Strength characteristics of that model\u2019s Destructor weapon for each other friendly AELDARI PSYKER model within 6\" of that model (to a maximum of +2).",
-        "name": "Psychic Communion (Psychic)"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1-2 Warlock Skyrunners"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "Destructor; shuriken pistol; twin shuriken catapult; witchblade.",
-      "label": "Every model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -175,42 +157,14 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Leader"
+            "Leader FACTION: Battle Focus Runes of Battle (Psychic): Weapons equipped by models in this unit have the [IGNORES COVER] ability. Psychic Communion (Psychic): Each time this unit is selected to shoot, for each WARLOCK model in this unit, until the end of the phase, add 1 to the Attacks and Strength characteristics of that model\u2019s Destructor weapon for each other friendly AELDARI PSYKER model within 6\" of that model (to a maximum of +2)."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Battle Focus"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "Weapons equipped by models in this unit have the [IGNORES COVER] ability.",
-          "name": "Runes of Battle (Psychic)"
-        },
-        {
-          "type": "rule",
-          "text": "Each time this unit is selected to shoot, for each WARLOCK model in this unit, until the end of the phase, add 1 to the Attacks and Strength characteristics of that model\u2019s Destructor weapon for each other friendly AELDARI PSYKER model within 6\" of that model (to a maximum of +2).",
-          "name": "Psychic Communion (Psychic)"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1-2 Warlock Skyrunners"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "Destructor; shuriken pistol; twin shuriken catapult; witchblade.",
-          "label": "Every model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -235,5 +189,87 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY"
+    ]
+  }
 }

@@ -3,7 +3,11 @@
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Vanguard-Veteran-Squad",
     "faction_slug": "space-marines",
     "datasheet_slug": "Vanguard-Veteran-Squad",
-    "output_slug": "space-wolves"
+    "output_slug": "space-wolves",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Vanguard-Veteran-Squad",
+    "canonicalSourceId": "wahapedia:01eb2b524ed0dab9920de700f69b5113b1cc9346",
+    "fetchedAt": "2026-03-19T17:35:02+00:00",
+    "contentHash": "d8b9d265f39956e0e667853d111a896c0be022834103475819218d221de6e708"
   },
   "name": "Vanguard Veteran Squad",
   "base_size": "\u230032mm",
@@ -110,33 +114,13 @@
   },
   "abilities": {
     "core": [
-      "Scouts 6\""
+      "Scouts 6\" FACTION: Oath of Moment Vanguard Assault: Each time this unit ends a Charge move , until the end of the turn, melee weapons equipped by models in this unit have the [LETHAL HITS] ability."
     ],
-    "faction": [
-      "Oath of Moment"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "Each time this unit ends a Charge move , until the end of the turn, melee weapons equipped by models in this unit have the [LETHAL HITS] ability.",
-        "name": "Vanguard Assault"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Vanguard Veteran Sergeant",
-        "4-9 Vanguard Veterans"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "bolt pistol; heirloom weapon.",
-      "label": "Every model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -162,26 +146,30 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "Any number of models can each have their bolt pistol replaced one of the following:",
+          "items": [
+            "1 storm shield",
+            "1 grav-pistol",
+            "1 hand flamer",
+            "1 inferno pistol",
+            "1 plasma pistol"
+          ]
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Scouts 6\""
+            "Scouts 6\" FACTION: Oath of Moment Vanguard Assault: Each time this unit ends a Charge move , until the end of the turn, melee weapons equipped by models in this unit have the [LETHAL HITS] ability."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Oath of Moment"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "Each time this unit ends a Charge move , until the end of the turn, melee weapons equipped by models in this unit have the [LETHAL HITS] ability.",
-          "name": "Vanguard Assault"
         }
       ]
     },
@@ -189,27 +177,14 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "statement",
-          "text": "The bearer has a 4+ invulnerable save .",
-          "label": "Storm Shield"
+          "type": "text",
+          "text": "Storm Shield: The bearer has a 4+ invulnerable save ."
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Vanguard Veteran Sergeant",
-            "4-9 Vanguard Veterans"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "bolt pistol; heirloom weapon.",
-          "label": "Every model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -234,5 +209,24 @@
         }
       ]
     }
-  ]
+  ],
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "quality": {
+    "rawSectionTitles": [
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "ATTACHED UNITS"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "ATTACHED UNITS"
+    ],
+    "missingExpectedSections": [],
+    "warnings": []
+  }
 }

@@ -1,8 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Hunter",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Hunter",
+    "canonicalSourceId": "wahapedia:01a5715778a4ad3a4aca887c912f4886a0ef4f30",
     "faction_slug": "space-marines",
-    "datasheet_slug": "Hunter"
+    "datasheet_slug": "Hunter",
+    "fetchedAt": "2026-03-19T17:31:21+00:00",
+    "contentHash": "76fc72b14761c7cffaf89cd0287ac88ad6053d04d6c04bf42de413f7bdb154ad",
+    "output_slug": "space-marines"
   },
   "name": "Hunter",
   "base_size": "\u2300Use model",
@@ -68,32 +75,13 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D3"
+      "Deadly Demise D3 FACTION: Oath of Moment Hunter Missile Targeting: Each time this model makes an attack with its skyspear missile launcher that targets a MONSTER or VEHICLE unit, that attack scores a hit on an unmodified Hit roll of 2+."
     ],
-    "faction": [
-      "Oath of Moment"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "Each time this model makes an attack with its skyspear missile launcher that targets a MONSTER or VEHICLE unit, that attack scores a hit on an unmodified Hit roll of 2+.",
-        "name": "Hunter Missile Targeting"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Hunter"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "skyspear missile launcher; armoured tracks.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -115,43 +103,35 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model can be equipped with 1 hunter-killer missile.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "This model can be equipped with 1 storm bolter.",
+          "items": []
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D3"
+            "Deadly Demise D3 FACTION: Oath of Moment Hunter Missile Targeting: Each time this model makes an attack with its skyspear missile launcher that targets a MONSTER or VEHICLE unit, that attack scores a hit on an unmodified Hit roll of 2+."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Oath of Moment"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "Each time this model makes an attack with its skyspear missile launcher that targets a MONSTER or VEHICLE unit, that attack scores a hit on an unmodified Hit roll of 2+.",
-          "name": "Hunter Missile Targeting"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Hunter"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "skyspear missile launcher; armoured tracks.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -172,5 +152,91 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-4 WOUNDS REMAINING",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-4 WOUNDS REMAINING"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS"
+    ]
+  }
 }

@@ -1,15 +1,25 @@
 import argparse
 import concurrent.futures
 import json
+import sys
 import time
+from collections import defaultdict
 from pathlib import Path
+
+try:
+    from datasheet_schema import EXPORT_SCHEMA_VERSION, PARSER_VERSION
+except ModuleNotFoundError:
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from datasheet_schema import EXPORT_SCHEMA_VERSION, PARSER_VERSION
 
 from export_datasheet_json import (
     faction_from_url,
+    fetch_soup,
     filtered_items,
     load_manifest,
     normalize_wahapedia_url,
-    parse_datasheet,
+    parse_datasheet_from_soup,
+    section_titles_in_markup,
     slug_from_url,
 )
 
@@ -62,6 +72,16 @@ def parse_args() -> argparse.Namespace:
         help="Where to write the validation report JSON.",
     )
     parser.add_argument(
+        "--json-root",
+        default="out/json",
+        help="Root directory containing exported datasheet JSON.",
+    )
+    parser.add_argument(
+        "--local-only",
+        action="store_true",
+        help="Validate exported JSON locally instead of re-fetching source pages.",
+    )
+    parser.add_argument(
         "--strict",
         action="store_true",
         help="Exit non-zero if any failures or warnings are found.",
@@ -89,8 +109,19 @@ def limit_items(items: list[dict[str, str]], max_cards_per_faction: int | None) 
     return items[:max_cards_per_faction]
 
 
-def validate_payload(payload: dict[str, object]) -> list[str]:
+def validate_payload(
+    payload: dict[str, object],
+    raw_section_titles: list[str] | None = None,
+) -> list[str]:
     warnings = []
+    if payload.get("exportSchemaVersion") != EXPORT_SCHEMA_VERSION:
+        warnings.append(
+            f"export schema version mismatch: expected {EXPORT_SCHEMA_VERSION}, got {payload.get('exportSchemaVersion')}"
+        )
+    if payload.get("parserVersion") != PARSER_VERSION:
+        warnings.append(
+            f"parser version mismatch: expected {PARSER_VERSION}, got {payload.get('parserVersion')}"
+        )
     characteristics = payload.get("characteristics", {})
     if not isinstance(characteristics, dict):
         warnings.append("characteristics not parsed as an object")
@@ -110,6 +141,8 @@ def validate_payload(payload: dict[str, object]) -> list[str]:
             warnings.append("ABILITIES section missing")
         if "UNIT COMPOSITION" not in section_titles:
             warnings.append("UNIT COMPOSITION section missing")
+        if raw_section_titles and "WARGEAR OPTIONS" in raw_section_titles and "WARGEAR OPTIONS" not in section_titles:
+            warnings.append("WARGEAR OPTIONS header present in markup but missing from exported sections")
 
     if not payload.get("keywords"):
         warnings.append("keywords missing")
@@ -126,6 +159,127 @@ def validate_payload(payload: dict[str, object]) -> list[str]:
         warnings.append("source datasheet slug missing")
 
     return warnings
+
+
+def load_export_manifest(json_root: Path) -> dict[str, object]:
+    manifest_path = json_root / "export-manifest.json"
+    if not manifest_path.exists():
+        raise FileNotFoundError(f"Export manifest not found: {manifest_path}")
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    if not isinstance(manifest, dict) or not isinstance(manifest.get("records"), list):
+        raise ValueError(f"Export manifest has unexpected shape: {manifest_path}")
+    return manifest
+
+
+def filter_manifest_records(
+    records: list[dict[str, object]],
+    output_slugs: list[str],
+    card_slugs: list[str],
+) -> list[dict[str, object]]:
+    output_filter = {slug.strip() for slug in output_slugs if slug.strip()}
+    card_filter = {slug.strip() for slug in card_slugs if slug.strip()}
+    filtered = []
+    for record in records:
+        if output_filter and str(record.get("outputSlug") or "") not in output_filter:
+            continue
+        if card_filter and str(record.get("datasheetSlug") or "") not in card_filter:
+            continue
+        filtered.append(record)
+    return filtered
+
+
+def detect_duplicate_source_drift(records: list[dict[str, object]]) -> list[dict[str, object]]:
+    grouped: dict[str, list[dict[str, object]]] = defaultdict(list)
+    for record in records:
+        canonical_source_id = str(record.get("canonicalSourceId") or "").strip()
+        if canonical_source_id:
+            grouped[canonical_source_id].append(record)
+
+    drift_records: list[dict[str, object]] = []
+    for canonical_source_id, members in sorted(grouped.items()):
+        shared_hashes = defaultdict(list)
+        for member in members:
+            shared_hashes[str(member.get("sharedCoreHash") or "")].append(member)
+        if len(shared_hashes) <= 1:
+            continue
+        drift_records.append(
+            {
+                "canonicalSourceId": canonical_source_id,
+                "normalizedSourceUrl": members[0].get("normalizedSourceUrl"),
+                "variantCount": len(shared_hashes),
+                "members": [
+                    {
+                        "outputSlug": member.get("outputSlug"),
+                        "datasheetSlug": member.get("datasheetSlug"),
+                        "sharedCoreHash": member.get("sharedCoreHash"),
+                    }
+                    for member in sorted(
+                        members,
+                        key=lambda value: (
+                            str(value.get("outputSlug") or ""),
+                            str(value.get("datasheetSlug") or ""),
+                        ),
+                    )
+                ],
+            }
+        )
+    return drift_records
+
+
+def validate_local_exports(
+    json_root: Path,
+    output_slugs: list[str],
+    card_slugs: list[str],
+) -> dict[str, object]:
+    json_root = Path(json_root)
+    manifest = load_export_manifest(json_root)
+    records = filter_manifest_records(manifest.get("records", []), output_slugs, card_slugs)
+    output_filter = {slug.strip() for slug in output_slugs if slug.strip()}
+    card_filter = {slug.strip() for slug in card_slugs if slug.strip()}
+
+    results = []
+    failure_count = 0
+    warning_count = 0
+
+    for output_dir in sorted(path for path in json_root.iterdir() if path.is_dir()):
+        if output_filter and output_dir.name not in output_filter:
+            continue
+        for path in sorted(output_dir.glob("*.json")):
+            if path.name == "index.json":
+                continue
+            if card_filter and path.stem not in card_filter:
+                continue
+            payload = json.loads(path.read_text(encoding="utf-8"))
+            raw_titles = (
+                payload.get("quality", {}).get("rawSectionTitles", [])
+                if isinstance(payload.get("quality"), dict)
+                else []
+            )
+            warnings = validate_payload(payload, raw_section_titles=raw_titles)
+            record = {
+                "path": str(path.resolve()),
+                "outputSlug": output_dir.name,
+                "datasheetSlug": path.stem,
+                "status": "ok",
+                "warnings": warnings,
+            }
+            if warnings:
+                warning_count += 1
+            results.append(record)
+
+    drift_records = detect_duplicate_source_drift(records)
+    warning_count += len(drift_records)
+
+    return {
+        "jsonRoot": str(json_root.resolve()),
+        "exportSchemaVersion": manifest.get("exportSchemaVersion"),
+        "parserVersion": manifest.get("parserVersion"),
+        "recordCount": len(results),
+        "failureCount": failure_count,
+        "warningCount": warning_count,
+        "records": results,
+        "driftRecords": drift_records,
+    }
 
 
 def validate_manifest(
@@ -160,7 +314,8 @@ def validate_manifest(
         }
 
         try:
-            payload = parse_datasheet(normalized_url)
+            soup = fetch_soup(normalized_url)
+            payload = parse_datasheet_from_soup(normalized_url, soup)
             parsed_faction = faction_from_url(normalized_url)
             if parsed_faction != faction_slug:
                 record["warnings"].append(
@@ -168,7 +323,8 @@ def validate_manifest(
                 )
             if payload.get("source", {}).get("datasheet_slug") != slug:
                 record["warnings"].append("datasheet slug mismatch in payload source")
-            record["warnings"].extend(validate_payload(payload))
+            raw_titles = section_titles_in_markup(soup.select_one("div.dsOuterFrame.datasheet"))
+            record["warnings"].extend(validate_payload(payload, raw_section_titles=raw_titles))
         except Exception as error:
             record["status"] = "error"
             record["error"] = str(error)
@@ -220,10 +376,6 @@ def validate_manifest(
 
 def main() -> int:
     args = parse_args()
-    manifests = discover_manifests(args)
-    if not manifests:
-        raise SystemExit("No manifests found to validate.")
-
     report = {
         "generated_at_epoch": time.time(),
         "manifests": [],
@@ -233,43 +385,55 @@ def main() -> int:
     total_success = 0
     total_failures = 0
     total_warning_records = 0
+    local_report = validate_local_exports(
+        json_root=Path(args.json_root),
+        output_slugs=args.output_slug,
+        card_slugs=args.card_slug,
+    )
+    report["localExports"] = local_report
+    total_warning_records += local_report["warningCount"]
 
-    for manifest_path in manifests:
-        if not manifest_path.exists():
-            report["manifests"].append(
-                {
-                    "manifest_path": str(manifest_path.resolve()),
-                    "faction_slug": manifest_path.name.removesuffix("-links.json"),
-                    "datasheet_count": 0,
-                    "success_count": 0,
-                    "failure_count": 1,
-                    "warning_count": 0,
-                    "results": [
-                        {
-                            "slug": None,
-                            "url": None,
-                            "status": "error",
-                            "warnings": [],
-                            "error": f"Manifest not found: {manifest_path}",
-                        }
-                    ],
-                }
+    if not args.local_only:
+        manifests = discover_manifests(args)
+        if not manifests:
+            raise SystemExit("No manifests found to validate.")
+
+        for manifest_path in manifests:
+            if not manifest_path.exists():
+                report["manifests"].append(
+                    {
+                        "manifest_path": str(manifest_path.resolve()),
+                        "faction_slug": manifest_path.name.removesuffix("-links.json"),
+                        "datasheet_count": 0,
+                        "success_count": 0,
+                        "failure_count": 1,
+                        "warning_count": 0,
+                        "results": [
+                            {
+                                "slug": None,
+                                "url": None,
+                                "status": "error",
+                                "warnings": [],
+                                "error": f"Manifest not found: {manifest_path}",
+                            }
+                        ],
+                    }
+                )
+                total_failures += 1
+                continue
+
+            manifest_report = validate_manifest(
+                manifest_path=manifest_path,
+                card_slugs=args.card_slug,
+                max_cards_per_faction=args.max_cards_per_faction,
+                delay=args.delay,
+                workers=max(1, args.workers),
             )
-            total_failures += 1
-            continue
-
-        manifest_report = validate_manifest(
-            manifest_path=manifest_path,
-            card_slugs=args.card_slug,
-            max_cards_per_faction=args.max_cards_per_faction,
-            delay=args.delay,
-            workers=max(1, args.workers),
-        )
-        report["manifests"].append(manifest_report)
-        total_datasheets += manifest_report["datasheet_count"]
-        total_success += manifest_report["success_count"]
-        total_failures += manifest_report["failure_count"]
-        total_warning_records += manifest_report["warning_count"]
+            report["manifests"].append(manifest_report)
+            total_datasheets += manifest_report["datasheet_count"]
+            total_success += manifest_report["success_count"]
+            total_failures += manifest_report["failure_count"]
+            total_warning_records += manifest_report["warning_count"]
 
     report["summary"] = {
         "manifest_count": len(report["manifests"]),
@@ -277,6 +441,8 @@ def main() -> int:
         "success_count": total_success,
         "failure_count": total_failures,
         "warning_count": total_warning_records,
+        "local_record_count": local_report["recordCount"],
+        "drift_count": len(local_report["driftRecords"]),
     }
 
     report_path = Path(args.report_path)
@@ -289,12 +455,16 @@ def main() -> int:
     print(f"Successes: {report['summary']['success_count']}", flush=True)
     print(f"Failures: {report['summary']['failure_count']}", flush=True)
     print(f"Warning records: {report['summary']['warning_count']}", flush=True)
+    print(f"Local export records: {report['summary']['local_record_count']}", flush=True)
+    print(f"Drift records: {report['summary']['drift_count']}", flush=True)
     print(f"Report: {report_path.resolve()}", flush=True)
 
-    if args.strict and (
-        report["summary"]["failure_count"] > 0 or report["summary"]["warning_count"] > 0
-    ):
-        return 1
+    if args.strict:
+        if args.local_only:
+            if report["summary"]["failure_count"] > 0 or report["summary"]["drift_count"] > 0:
+                return 1
+        elif report["summary"]["failure_count"] > 0 or report["summary"]["warning_count"] > 0:
+            return 1
 
     return 0
 

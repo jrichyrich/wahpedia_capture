@@ -3,7 +3,11 @@
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Sokar-pattern-Stormbird",
     "faction_slug": "space-marines",
     "datasheet_slug": "Sokar-pattern-Stormbird",
-    "output_slug": "ultramarines"
+    "output_slug": "ultramarines",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Sokar-pattern-Stormbird",
+    "canonicalSourceId": "wahapedia:a96b76d5ca919ef450d3862a2ecaad8ea1e1a402",
+    "fetchedAt": "2026-03-19T17:35:03+00:00",
+    "contentHash": "cfdbb5101e29680eb68dfd83df6ced043c28eca22b22674c0e68b9a079a94df3"
   },
   "name": "Sokar-pattern Stormbird",
   "base_size": "\u2300Use model",
@@ -71,32 +75,13 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise 2D6 , Hover"
+      "Deadly Demise 2D6 , Hover FACTION: Oath of Moment Aerial Assault: Each time a unit with the Deep Strike ability disembarks from this model after it has made a Normal move , that unit is still eligible to declare a charge this turn."
     ],
-    "faction": [
-      "Oath of Moment"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "Each time a unit with the Deep Strike ability disembarks from this model after it has made a Normal move , that unit is still eligible to declare a charge this turn.",
-        "name": "Aerial Assault"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Sokar-pattern Stormbird"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "hellstrike missile battery; 3 twin heavy bolters; 4 twin lascannons; armoured hull.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -122,43 +107,31 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "None"
+          ]
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise 2D6 , Hover"
+            "Deadly Demise 2D6 , Hover FACTION: Oath of Moment Aerial Assault: Each time a unit with the Deep Strike ability disembarks from this model after it has made a Normal move , that unit is still eligible to declare a charge this turn."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Oath of Moment"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "Each time a unit with the Deep Strike ability disembarks from this model after it has made a Normal move , that unit is still eligible to declare a charge this turn.",
-          "name": "Aerial Assault"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Sokar-pattern Stormbird"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "hellstrike missile battery; 3 twin heavy bolters; 4 twin lascannons; armoured hull.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -188,5 +161,24 @@
         }
       ]
     }
-  ]
+  ],
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "quality": {
+    "rawSectionTitles": [
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-13 WOUNDS REMAINING",
+      "TRANSPORT"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-13 WOUNDS REMAINING",
+      "TRANSPORT"
+    ],
+    "missingExpectedSections": [],
+    "warnings": []
+  }
 }

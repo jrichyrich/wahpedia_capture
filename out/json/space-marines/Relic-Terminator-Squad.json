@@ -1,8 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Relic-Terminator-Squad",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Relic-Terminator-Squad",
+    "canonicalSourceId": "wahapedia:57dfa76b97397f2406e0869bfa8400bb27470617",
     "faction_slug": "space-marines",
-    "datasheet_slug": "Relic-Terminator-Squad"
+    "datasheet_slug": "Relic-Terminator-Squad",
+    "fetchedAt": "2026-03-19T17:32:30+00:00",
+    "contentHash": "6c57536b8c88903b2fb85ac13ca1fe79d781b209297cbb32c22c998b3769a3d2",
+    "output_slug": "space-marines"
   },
   "name": "Relic Terminator Squad",
   "base_size": "\u230040mm",
@@ -139,33 +146,13 @@
   },
   "abilities": {
     "core": [
-      "Deep Strike"
+      "Deep Strike FACTION: Oath of Moment Fury of the First: Each time a model in this unit makes an attack, you can ignore any or all modifiers to that attack\u2019s Ballistic Skill or Weapon Skill characteristic and/or to the Hit roll . In addition, each time a model in this unit makes an attack that targets the enemy unit you selected for the Oath of Moment ability this turn, add 1 to the Hit roll."
     ],
-    "faction": [
-      "Oath of Moment"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "Each time a model in this unit makes an attack, you can ignore any or all modifiers to that attack\u2019s Ballistic Skill or Weapon Skill characteristic and/or to the Hit roll . In addition, each time a model in this unit makes an attack that targets the enemy unit you selected for the Oath of Moment ability this turn, add 1 to the Hit roll.",
-        "name": "Fury of the First"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Relic Terminator Sergeant",
-        "4-9 Relic Terminators"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "combi-bolter; power fist.",
-      "label": "Every model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -192,26 +179,55 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "The Relic Terminator Sergeant\u2019s combi-bolter can be replaced with one of the following:",
+          "items": [
+            "1 plasma blaster",
+            "1 volkite charger"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "For every 5 models in this unit, 1 Relic Terminator\u2019s combi-bolter can be replaced with one of the following:",
+          "items": [
+            "1 heavy flamer",
+            "1 reaper autocannon"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "For every 5 models in this unit, 1 model can be equipped with 1 grenade harness.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "Any number of models can each have their power fist replaced with 1 power weapon.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "Any number of models can each have their power fist replaced with one 1 chainfist.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "Any number of models can each have their combi-bolter and power fist replaced with 1 twin lightning claws.",
+          "items": []
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deep Strike"
+            "Deep Strike FACTION: Oath of Moment Fury of the First: Each time a model in this unit makes an attack, you can ignore any or all modifiers to that attack\u2019s Ballistic Skill or Weapon Skill characteristic and/or to the Hit roll . In addition, each time a model in this unit makes an attack that targets the enemy unit you selected for the Oath of Moment ability this turn, add 1 to the Hit roll."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Oath of Moment"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "Each time a model in this unit makes an attack, you can ignore any or all modifiers to that attack\u2019s Ballistic Skill or Weapon Skill characteristic and/or to the Hit roll . In addition, each time a model in this unit makes an attack that targets the enemy unit you selected for the Oath of Moment ability this turn, add 1 to the Hit roll.",
-          "name": "Fury of the First"
         }
       ]
     },
@@ -219,27 +235,14 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "statement",
-          "text": "The bearer has the GRENADES keyword.",
-          "label": "Grenade Harness"
+          "type": "text",
+          "text": "Grenade Harness: The bearer has the GRENADES keyword."
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Relic Terminator Sergeant",
-            "4-9 Relic Terminators"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "combi-bolter; power fist.",
-          "label": "Every model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -264,5 +267,97 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "ATTACHED UNITS",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "ATTACHED UNITS"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS"
+    ]
+  }
 }

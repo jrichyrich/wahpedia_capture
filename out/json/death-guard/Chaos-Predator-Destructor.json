@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Chaos-Predator-Destructor",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Chaos-Predator-Destructor",
+    "canonicalSourceId": "wahapedia:d849329691cc9394f94f8c609d290f00e2aac1d3",
     "faction_slug": "death-guard",
     "datasheet_slug": "Chaos-Predator-Destructor",
+    "fetchedAt": "2026-03-19T17:16:43+00:00",
+    "contentHash": "042578f23266891d2d5c5bb272998c962849ea43613693203641008f4a2c70a8",
     "output_slug": "death-guard"
   },
   "name": "Chaos Predator Destructor",
@@ -108,32 +114,13 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D3"
+      "Deadly Demise D3 FACTION: Nurgle\u2019s Gift (Aura) Hail of Corrosive Disease: In your Shooting phase , after this model has shot, select one enemy unit (excluding MONSTERS and VEHICLES ) hit by one or more of those attacks. Until the end of the phase, each time a friendly DEATH GUARD unit makes a ranged attack that targets that enemy unit, improve the Armour Penetration characteristic of that attack by 1. The same enemy unit can only be affected by this ability once per phase."
     ],
-    "faction": [
-      "Nurgle\u2019s Gift (Aura)"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "In your Shooting phase , after this model has shot, select one enemy unit (excluding MONSTERS and VEHICLES ) hit by one or more of those attacks. Until the end of the phase, each time a friendly DEATH GUARD unit makes a ranged attack that targets that enemy unit, improve the Armour Penetration characteristic of that attack by 1. The same enemy unit can only be affected by this ability once per phase.",
-        "name": "Hail of Corrosive Disease"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Chaos Predator Destructor"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "predator autocannon; armoured tracks.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -188,37 +175,14 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D3"
+            "Deadly Demise D3 FACTION: Nurgle\u2019s Gift (Aura) Hail of Corrosive Disease: In your Shooting phase , after this model has shot, select one enemy unit (excluding MONSTERS and VEHICLES ) hit by one or more of those attacks. Until the end of the phase, each time a friendly DEATH GUARD unit makes a ranged attack that targets that enemy unit, improve the Armour Penetration characteristic of that attack by 1. The same enemy unit can only be affected by this ability once per phase."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Nurgle\u2019s Gift (Aura)"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "In your Shooting phase , after this model has shot, select one enemy unit (excluding MONSTERS and VEHICLES ) hit by one or more of those attacks. Until the end of the phase, each time a friendly DEATH GUARD unit makes a ranged attack that targets that enemy unit, improve the Armour Penetration characteristic of that attack by 1. The same enemy unit can only be affected by this ability once per phase.",
-          "name": "Hail of Corrosive Disease"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Chaos Predator Destructor"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "predator autocannon; armoured tracks.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -239,5 +203,87 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-4 WOUNDS REMAINING",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-4 WOUNDS REMAINING"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY"
+    ]
+  }
 }

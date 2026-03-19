@@ -1,8 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Deredeo-Dreadnought",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Deredeo-Dreadnought",
+    "canonicalSourceId": "wahapedia:d42235c9821a9f9f3c80ff4fea797cc9f2d675d4",
     "faction_slug": "space-marines",
-    "datasheet_slug": "Deredeo-Dreadnought"
+    "datasheet_slug": "Deredeo-Dreadnought",
+    "fetchedAt": "2026-03-19T17:31:12+00:00",
+    "contentHash": "7485fcc7d3917dd57f4d44266d8eaf6602b2d00c4ddc94c189af3ebf6f8ec587",
+    "output_slug": "space-marines"
   },
   "name": "Deredeo Dreadnought",
   "base_size": "\u230080mm",
@@ -140,32 +147,13 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D3"
+      "Deadly Demise D3 FACTION: Oath of Moment Deredeo Strike: Each time this model makes a ranged attack that targets a unit that is not Below Half-strength , you can re-roll the Hit roll ."
     ],
-    "faction": [
-      "Oath of Moment"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "Each time this model makes a ranged attack that targets a unit that is not Below Half-strength , you can re-roll the Hit roll .",
-        "name": "Deredeo Strike"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Deredeo Dreadnought"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "anvilus autocannon battery; twin heavy bolter; armoured feet.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -190,43 +178,47 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s anvilus autocannon battery can be replaced with one of the following",
+          "items": [
+            "1 arachnus heavy lascannon battery",
+            "1 hellfire plasma carronade",
+            "1 volkite falconet battery"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "This model\u2019s twin heavy bolter can be replaced with 1 twin heavy flamer.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "This model can be equipped with one of the following:",
+          "items": [
+            "1 aiolos missile launcher",
+            "1 boreas air defence missiles"
+          ]
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D3"
+            "Deadly Demise D3 FACTION: Oath of Moment Deredeo Strike: Each time this model makes a ranged attack that targets a unit that is not Below Half-strength , you can re-roll the Hit roll ."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Oath of Moment"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "Each time this model makes a ranged attack that targets a unit that is not Below Half-strength , you can re-roll the Hit roll .",
-          "name": "Deredeo Strike"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Deredeo Dreadnought"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "anvilus autocannon battery; twin heavy bolter; armoured feet.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -247,5 +239,91 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-4 WOUNDS REMAINING",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-4 WOUNDS REMAINING"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS"
+    ]
+  }
 }

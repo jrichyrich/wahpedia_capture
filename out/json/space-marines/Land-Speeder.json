@@ -1,8 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Land-Speeder",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Land-Speeder",
+    "canonicalSourceId": "wahapedia:ebd1cec6cfa5f5651147ea4ff7d52a9290ab819d",
     "faction_slug": "space-marines",
-    "datasheet_slug": "Land-Speeder"
+    "datasheet_slug": "Land-Speeder",
+    "fetchedAt": "2026-03-19T17:31:50+00:00",
+    "contentHash": "21f8f1292f3098c44b9afeea1ddd25ffb244ed6a577334588b7a3621b3339256",
+    "output_slug": "space-marines"
   },
   "name": "Land Speeder",
   "base_size": "\u230060mm flying base",
@@ -56,32 +63,13 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise 1 , Deep Strike"
+      "Deadly Demise 1 , Deep Strike FACTION: Oath of Moment Target Sighted: At the start of your Shooting phase , select one enemy unit that is visible to this model. Until the end of the phase, each time a friendly Adeptus Astartes model makes an attack with a Blast weapon that targets that enemy unit, add 1 to the Hit roll and that attack has the [IGNORES COVER] ability."
     ],
-    "faction": [
-      "Oath of Moment"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "At the start of your Shooting phase , select one enemy unit that is visible to this model. Until the end of the phase, each time a friendly Adeptus Astartes model makes an attack with a Blast weapon that targets that enemy unit, add 1 to the Hit roll and that attack has the [IGNORES COVER] ability.",
-        "name": "Target Sighted"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Land Speeder"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "heavy bolter; close combat weapon.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -104,43 +92,30 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s heavy bolter can be replaced with 1 multi-melta.",
+          "items": []
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise 1 , Deep Strike"
+            "Deadly Demise 1 , Deep Strike FACTION: Oath of Moment Target Sighted: At the start of your Shooting phase , select one enemy unit that is visible to this model. Until the end of the phase, each time a friendly Adeptus Astartes model makes an attack with a Blast weapon that targets that enemy unit, add 1 to the Hit roll and that attack has the [IGNORES COVER] ability."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Oath of Moment"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "At the start of your Shooting phase , select one enemy unit that is visible to this model. Until the end of the phase, each time a friendly Adeptus Astartes model makes an attack with a Blast weapon that targets that enemy unit, add 1 to the Hit roll and that attack has the [IGNORES COVER] ability.",
-          "name": "Target Sighted"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Land Speeder"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "heavy bolter; close combat weapon.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -152,5 +127,89 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS"
+    ]
+  }
 }

@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Storm-Eagle-Gunship",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Storm-Eagle-Gunship",
+    "canonicalSourceId": "wahapedia:ba82c49b9bc156e0bd7bdcc88033c92aa786538a",
     "faction_slug": "space-marines",
     "datasheet_slug": "Storm-Eagle-Gunship",
+    "fetchedAt": "2026-03-19T17:32:50+00:00",
+    "contentHash": "57c0fb31f50020242b4ecec967d6701b6b55d4b9357faab4bae4f0c8d2079fc0",
     "output_slug": "space-marines"
   },
   "name": "Storm Eagle Gunship",
@@ -118,32 +124,13 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D6 , Hover"
+      "Deadly Demise D6 , Hover FACTION: Oath of Moment Armoured Resilience: Each time an attack is allocated to this model, subtract 1 from the Damage characteristic of that attack."
     ],
-    "faction": [
-      "Oath of Moment"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "Each time an attack is allocated to this model, subtract 1 from the Damage characteristic of that attack.",
-        "name": "Armoured Resilience"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Storm Eagle Gunship"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "twin heavy bolter; 2 twin hellstrike launchers; vengeance launcher; armoured hull.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -168,43 +155,38 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s twin heavy bolter can be replaced with one of the following:",
+          "items": [
+            "1 twin multi-melta",
+            "1 typhoon missile launcher"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "This model\u2019s 2 twin hellstrike missile launchers can be replaced with 2 twin lascannons",
+          "items": []
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D6 , Hover"
+            "Deadly Demise D6 , Hover FACTION: Oath of Moment Armoured Resilience: Each time an attack is allocated to this model, subtract 1 from the Damage characteristic of that attack."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Oath of Moment"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "Each time an attack is allocated to this model, subtract 1 from the Damage characteristic of that attack.",
-          "name": "Armoured Resilience"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Storm Eagle Gunship"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "twin heavy bolter; 2 twin hellstrike launchers; vengeance launcher; armoured hull.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -234,5 +216,93 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-6 WOUNDS REMAINING",
+      "TRANSPORT",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-6 WOUNDS REMAINING",
+      "TRANSPORT"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS"
+    ]
+  }
 }

@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Troupe-Master",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Troupe-Master",
+    "canonicalSourceId": "wahapedia:39afb22bb7147fa7f851b6dc887a2f764b63cfc6",
     "faction_slug": "drukhari",
     "datasheet_slug": "Troupe-Master",
+    "fetchedAt": "2026-03-19T17:17:29+00:00",
+    "contentHash": "29af05cec64b5527b3a98d35415a97a3b921a39f25a874521acf4c60b43eedbb",
     "output_slug": "drukhari"
   },
   "name": "Troupe Master",
@@ -89,37 +95,13 @@
   },
   "abilities": {
     "core": [
-      "Leader"
+      "Leader FACTION: Battle Focus , Disparate Paths Choreographer of War: While this model is leading a unit, each time a model in that unit makes a Pile-in or Consolidation move , it can move up to 6\" instead of up to 3\". In addition, it does not need to end that move closer to the closest enemy model, provided it ends it as close as possible to the closest enemy unit. Cegorach\u2019s Favour: Each time this model makes a melee attack, you can re-roll a Hit roll of 1 and add 1 to the Wound roll ."
     ],
-    "faction": [
-      "Battle Focus , Disparate Paths"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "While this model is leading a unit, each time a model in that unit makes a Pile-in or Consolidation move , it can move up to 6\" instead of up to 3\". In addition, it does not need to end that move closer to the closest enemy model, provided it ends it as close as possible to the closest enemy unit.",
-        "name": "Choreographer of War"
-      },
-      {
-        "type": "rule",
-        "text": "Each time this model makes a melee attack, you can re-roll a Hit roll of 1 and add 1 to the Wound roll .",
-        "name": "Cegorach\u2019s Favour"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Troupe Master"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "shuriken pistol; Troupe Master\u2019s blade; flip belt.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -175,25 +157,8 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Leader"
+            "Leader FACTION: Battle Focus , Disparate Paths Choreographer of War: While this model is leading a unit, each time a model in that unit makes a Pile-in or Consolidation move , it can move up to 6\" instead of up to 3\". In addition, it does not need to end that move closer to the closest enemy model, provided it ends it as close as possible to the closest enemy unit. Cegorach\u2019s Favour: Each time this model makes a melee attack, you can re-roll a Hit roll of 1 and add 1 to the Wound roll ."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Battle Focus , Disparate Paths"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "While this model is leading a unit, each time a model in that unit makes a Pile-in or Consolidation move , it can move up to 6\" instead of up to 3\". In addition, it does not need to end that move closer to the closest enemy model, provided it ends it as close as possible to the closest enemy unit.",
-          "name": "Choreographer of War"
-        },
-        {
-          "type": "rule",
-          "text": "Each time this model makes a melee attack, you can re-roll a Hit roll of 1 and add 1 to the Wound roll .",
-          "name": "Cegorach\u2019s Favour"
         }
       ]
     },
@@ -201,26 +166,14 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "statement",
-          "text": "Each time the bearer\u2019s unit makes a Normal , Advance , Fall Back or Charge move , ignore any vertical distance when determining the total distance the bearer can be moved during that move.",
-          "label": "Flip Belt"
+          "type": "text",
+          "text": "Flip Belt: Each time the bearer\u2019s unit makes a Normal , Advance , Fall Back or Charge move , ignore any vertical distance when determining the total distance the bearer can be moved during that move."
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Troupe Master"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "shuriken pistol; Troupe Master\u2019s blade; flip belt.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -243,5 +196,95 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "TRAVELLING PLAYERS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "TRAVELLING PLAYERS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS"
+    ]
+  }
 }

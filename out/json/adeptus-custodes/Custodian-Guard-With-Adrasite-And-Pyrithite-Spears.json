@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Custodian-Guard-With-Adrasite-And-Pyrithite-Spears",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Custodian-Guard-With-Adrasite-And-Pyrithite-Spears",
+    "canonicalSourceId": "wahapedia:687196a1bd207b8b9cfb9da7267b61955422cbaa",
     "faction_slug": "adeptus-custodes",
     "datasheet_slug": "Custodian-Guard-With-Adrasite-And-Pyrithite-Spears",
+    "fetchedAt": "2026-03-19T17:10:57+00:00",
+    "contentHash": "e9815588ae5f0a01652d8d6ce7a1a807833eaf25521317cad4bf42b43aee081d",
     "output_slug": "adeptus-custodes"
   },
   "name": "Custodian Guard With Adrasite And Pyrithite Spears",
@@ -66,37 +72,13 @@
   },
   "abilities": {
     "core": [
-      "Deep Strike"
+      "Deep Strike FACTION: Martial Ka\u2019tah Stand Vigil: Each time a model in this unit makes an attack, re-roll a Wound roll of 1. While this unit is within range of an objective marker you control, you can re-roll the Wound roll instead. No Foe Shall Stand: Once per battle, at the start of your Shooting phase , this unit can use this ability. If it does, until the end of the phase, ranged weapons equipped by models in this unit have the [LETHAL HITS] and [IGNORES COVER] abilities."
     ],
-    "faction": [
-      "Martial Ka\u2019tah"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "Each time a model in this unit makes an attack, re-roll a Wound roll of 1. While this unit is within range of an objective marker you control, you can re-roll the Wound roll instead.",
-        "name": "Stand Vigil"
-      },
-      {
-        "type": "rule",
-        "text": "Once per battle, at the start of your Shooting phase , this unit can use this ability. If it does, until the end of the phase, ranged weapons equipped by models in this unit have the [LETHAL HITS] and [IGNORES COVER] abilities.",
-        "name": "No Foe Shall Stand"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "5 Custodian Guard with Adrasite and Pyrithite Spears"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "adrasite spear.",
-      "label": "Every model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -133,42 +115,14 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deep Strike"
+            "Deep Strike FACTION: Martial Ka\u2019tah Stand Vigil: Each time a model in this unit makes an attack, re-roll a Wound roll of 1. While this unit is within range of an objective marker you control, you can re-roll the Wound roll instead. No Foe Shall Stand: Once per battle, at the start of your Shooting phase , this unit can use this ability. If it does, until the end of the phase, ranged weapons equipped by models in this unit have the [LETHAL HITS] and [IGNORES COVER] abilities."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Martial Ka\u2019tah"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "Each time a model in this unit makes an attack, re-roll a Wound roll of 1. While this unit is within range of an objective marker you control, you can re-roll the Wound roll instead.",
-          "name": "Stand Vigil"
-        },
-        {
-          "type": "rule",
-          "text": "Once per battle, at the start of your Shooting phase , this unit can use this ability. If it does, until the end of the phase, ranged weapons equipped by models in this unit have the [LETHAL HITS] and [IGNORES COVER] abilities.",
-          "name": "No Foe Shall Stand"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "5 Custodian Guard with Adrasite and Pyrithite Spears"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "adrasite spear.",
-          "label": "Every model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -189,5 +143,91 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "CUSTODIAN GUARD",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "CUSTODIAN GUARD"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS"
+    ]
+  }
 }

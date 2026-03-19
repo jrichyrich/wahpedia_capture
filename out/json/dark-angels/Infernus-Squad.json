@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Infernus-Squad",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Infernus-Squad",
+    "canonicalSourceId": "wahapedia:f16bfc8b0058e0cc2133367a787a958745a5dd4d",
     "faction_slug": "space-marines",
     "datasheet_slug": "Infernus-Squad",
+    "fetchedAt": "2026-03-19T17:14:39+00:00",
+    "contentHash": "c73d51c82a0c837c18f3490a26bf22d56dc767717d3e8e9115cb1d169b9800cd",
     "output_slug": "dark-angels"
   },
   "name": "Infernus Squad",
@@ -59,30 +65,12 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Oath of Moment"
+      "Oath of Moment Incendiary Terror: In your Shooting phase , after this unit has shot, you can select one enemy INFANTRY unit hit by one or more of those attacks made with a pyreblaster. That enemy unit must take a Battle-shock test , subtracting 1 from that test."
     ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "In your Shooting phase , after this unit has shot, you can select one enemy INFANTRY unit hit by one or more of those attacks made with a pyreblaster. That enemy unit must take a Battle-shock test , subtracting 1 from that test.",
-        "name": "Incendiary Terror"
-      }
-    ],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Infernus Sergeant",
-        "4-9 Infernus Marines"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "bolt pistol; pyreblaster; close combat weapon.",
-      "label": "Every model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -115,31 +103,14 @@
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Oath of Moment"
+            "Oath of Moment Incendiary Terror: In your Shooting phase , after this unit has shot, you can select one enemy INFANTRY unit hit by one or more of those attacks made with a pyreblaster. That enemy unit must take a Battle-shock test , subtracting 1 from that test."
           ]
-        },
-        {
-          "type": "rule",
-          "text": "In your Shooting phase , after this unit has shot, you can select one enemy INFANTRY unit hit by one or more of those attacks made with a pyreblaster. That enemy unit must take a Battle-shock test , subtracting 1 from that test.",
-          "name": "Incendiary Terror"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Infernus Sergeant",
-            "4-9 Infernus Marines"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "bolt pistol; pyreblaster; close combat weapon.",
-          "label": "Every model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -155,5 +126,91 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "exportedSectionTitles": [
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS"
+    ]
+  }
 }

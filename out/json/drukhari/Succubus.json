@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Succubus",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Succubus",
+    "canonicalSourceId": "wahapedia:bfcd55f484371f572e65d7eac9a0546aac4cccd7",
     "faction_slug": "drukhari",
     "datasheet_slug": "Succubus",
+    "fetchedAt": "2026-03-19T17:17:29+00:00",
+    "contentHash": "8ba36f2e3d574db508b180bc3ac61e625685ca8e2641ca044da381e6a8e0a645",
     "output_slug": "drukhari"
   },
   "name": "Succubus",
@@ -35,37 +41,13 @@
   },
   "abilities": {
     "core": [
-      "Leader"
+      "Leader FACTION: Power from Pain Lithe Agility (Pain): In your Movement phase when you select this model\u2019s unit to Advance , or in your Charge phase before you make a Charge roll for this model\u2019s unit, you can spend 1 Pain token to Empower that unit. While that unit is Empowered, you can re-roll Advance and Charge rolls made for that unit. Storm of Blades: While this model is leading a unit, melee weapons equipped by models in that unit have the [SUSTAINED HITS 1] ability. Bloody Spectacle: Each time this model makes a melee attack that targets a CHARACTER unit, you can re-roll the Hit roll and you can re-roll the Wound roll . Each time this model\u2019s unit destroys a CHARACTER model, you gain 1CP."
     ],
-    "faction": [
-      "Power from Pain"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "While this model is leading a unit, melee weapons equipped by models in that unit have the [SUSTAINED HITS 1] ability.",
-        "name": "Storm of Blades"
-      },
-      {
-        "type": "rule",
-        "text": "Each time this model makes a melee attack that targets a CHARACTER unit, you can re-roll the Hit roll and you can re-roll the Wound roll . Each time this model\u2019s unit destroys a CHARACTER model, you gain 1CP.",
-        "name": "Bloody Spectacle"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Succubus"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "Archite glaive and agoniser.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -94,42 +76,14 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Leader"
+            "Leader FACTION: Power from Pain Lithe Agility (Pain): In your Movement phase when you select this model\u2019s unit to Advance , or in your Charge phase before you make a Charge roll for this model\u2019s unit, you can spend 1 Pain token to Empower that unit. While that unit is Empowered, you can re-roll Advance and Charge rolls made for that unit. Storm of Blades: While this model is leading a unit, melee weapons equipped by models in that unit have the [SUSTAINED HITS 1] ability. Bloody Spectacle: Each time this model makes a melee attack that targets a CHARACTER unit, you can re-roll the Hit roll and you can re-roll the Wound roll . Each time this model\u2019s unit destroys a CHARACTER model, you gain 1CP."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Power from Pain"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "While this model is leading a unit, melee weapons equipped by models in that unit have the [SUSTAINED HITS 1] ability.",
-          "name": "Storm of Blades"
-        },
-        {
-          "type": "rule",
-          "text": "Each time this model makes a melee attack that targets a CHARACTER unit, you can re-roll the Hit roll and you can re-roll the Wound roll . Each time this model\u2019s unit destroys a CHARACTER model, you gain 1CP.",
-          "name": "Bloody Spectacle"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Succubus"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "Archite glaive and agoniser.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -152,5 +106,61 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "exportedSectionTitles": [
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "missingExpectedSections": [
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "warnings": [
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS"
+    ]
+  }
 }

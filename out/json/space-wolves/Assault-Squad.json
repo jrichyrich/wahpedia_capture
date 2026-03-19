@@ -3,7 +3,11 @@
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Assault-Squad",
     "faction_slug": "space-marines",
     "datasheet_slug": "Assault-Squad",
-    "output_slug": "space-wolves"
+    "output_slug": "space-wolves",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Assault-Squad",
+    "canonicalSourceId": "wahapedia:9956a02ae4e26e76eace9ffed9bcd70a486aefbd",
+    "fetchedAt": "2026-03-19T17:35:02+00:00",
+    "contentHash": "d6f2a5269b237f988000af232bb99a0fbf44f6a7b333bacfcd1d6fd307a18b38"
   },
   "name": "Assault Squad",
   "base_size": "\u230032mm",
@@ -227,39 +231,12 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Oath of Moment"
+      "Oath of Moment Chainsword Doctrines: Each time this unit is selected to fight, select one of the following abilities to apply to all Astartes chainswords equipped by models in this unit until the end of the phase: [SUSTAINED HITS 1] [LETHAL HITS] [LANCE]"
     ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "Each time this unit is selected to fight, select one of the following abilities to apply to all Astartes chainswords equipped by models in this unit until the end of the phase: [SUSTAINED HITS 1] [LETHAL HITS] [LANCE]",
-        "name": "Chainsword Doctrines"
-      }
-    ],
-    "other": [
-      {
-        "type": "list",
-        "items": [
-          "[SUSTAINED HITS 1]",
-          "[LETHAL HITS]",
-          "[LANCE]"
-        ]
-      }
-    ]
+    "datasheet": [],
+    "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Assault Sergeant",
-        "4-9 Assault Marines"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "bolt pistol; Astartes chainsword.",
-      "label": "Every model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -285,27 +262,61 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "The Assault Sergeant\u2019s bolt pistol can be replaced with one of the following:",
+          "items": [
+            "1 grav-pistol",
+            "1 hand flamer",
+            "1 inferno pistol",
+            "1 plasma pistol"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "The Assault Sergeant\u2019s Astartes chainsword can be replaced with one of the following:",
+          "items": [
+            "1 power fist",
+            "1 power weapon",
+            "1 thunder hammer"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "The Assault Sergeant can do one of the following:",
+          "items": [
+            "Replace its bolt pistol and Astartes chainsword with 1 twin lightning claws.",
+            "Be equipped with 1 Astartes shield."
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "Up to 2 Assault Marines can each have their bolt pistol and Astartes chainsword replaced with one of the following:",
+          "items": [
+            "1 plasma pistol and 1 Astartes chainsword",
+            "1 flamer and 1 close combat weapon",
+            "1 meltagun and 1 close combat weapon",
+            "1 plasma gun and 1 close combat weapon"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "For every 5 models in this unit, 1 model\u2019s Astartes chainsword can be replaced with 1 eviscerator.",
+          "items": []
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Oath of Moment"
+            "Oath of Moment Chainsword Doctrines: Each time this unit is selected to fight, select one of the following abilities to apply to all Astartes chainswords equipped by models in this unit until the end of the phase: [SUSTAINED HITS 1] [LETHAL HITS] [LANCE]"
           ]
-        },
-        {
-          "type": "list",
-          "items": [
-            "[SUSTAINED HITS 1]",
-            "[LETHAL HITS]",
-            "[LANCE]"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "Each time this unit is selected to fight, select one of the following abilities to apply to all Astartes chainswords equipped by models in this unit until the end of the phase: [SUSTAINED HITS 1] [LETHAL HITS] [LANCE]",
-          "name": "Chainsword Doctrines"
         }
       ]
     },
@@ -313,27 +324,14 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "statement",
-          "text": "The bearer has a 4+ invulnerable save .",
-          "label": "Astartes Shield"
+          "type": "text",
+          "text": "Astartes Shield: The bearer has a 4+ invulnerable save ."
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Assault Sergeant",
-            "4-9 Assault Marines"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "bolt pistol; Astartes chainsword.",
-          "label": "Every model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -358,5 +356,24 @@
         }
       ]
     }
-  ]
+  ],
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "quality": {
+    "rawSectionTitles": [
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "ATTACHED UNITS"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "ATTACHED UNITS"
+    ],
+    "missingExpectedSections": [],
+    "warnings": []
+  }
 }

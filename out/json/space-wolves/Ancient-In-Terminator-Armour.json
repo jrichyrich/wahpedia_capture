@@ -3,7 +3,11 @@
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Ancient-In-Terminator-Armour",
     "faction_slug": "space-marines",
     "datasheet_slug": "Ancient-In-Terminator-Armour",
-    "output_slug": "space-wolves"
+    "output_slug": "space-wolves",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Ancient-In-Terminator-Armour",
+    "canonicalSourceId": "wahapedia:ab2d122112b91ec5ba8dc6b5f72eee899635b133",
+    "fetchedAt": "2026-03-19T17:35:02+00:00",
+    "contentHash": "d26d64a6ea5f6334ef9ce55034bf9849308ad32551ffca497ffa21b1c14b0fcf"
   },
   "name": "Ancient In Terminator Armour",
   "base_size": "\u230040mm",
@@ -102,37 +106,13 @@
   },
   "abilities": {
     "core": [
-      "Deep Strike , Leader"
+      "Deep Strike , Leader FACTION: Oath of Moment Astartes Banner: While this model is leading a unit, add 1 to the Objective Control characteristic of models in that unit. Keep the Banner High: While this model is leading a unit, each time a model in that unit makes an attack, add 1 to the Hit roll if that unit is below its Starting Strength , and add 1 to the Wound roll as well if that unit is Below Half-strength ."
     ],
-    "faction": [
-      "Oath of Moment"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "While this model is leading a unit, add 1 to the Objective Control characteristic of models in that unit.",
-        "name": "Astartes Banner"
-      },
-      {
-        "type": "rule",
-        "text": "While this model is leading a unit, each time a model in that unit makes an attack, add 1 to the Hit roll if that unit is below its Starting Strength , and add 1 to the Wound roll as well if that unit is Below Half-strength .",
-        "name": "Keep the Banner High"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Ancient in Terminator Armour"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "storm bolter; power fist.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -156,31 +136,37 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s power fist can be replaced with one of the following:",
+          "items": [
+            "1 chainfist",
+            "1 close combat weapon",
+            "1 power weapon",
+            "1 thunder hammer"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "This model\u2019s storm bolter and power fist can be replaced with one of the following:",
+          "items": [
+            "1 twin lightning claws",
+            "1 thunder hammer and 1 Terminator storm shield"
+          ]
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deep Strike , Leader"
+            "Deep Strike , Leader FACTION: Oath of Moment Astartes Banner: While this model is leading a unit, add 1 to the Objective Control characteristic of models in that unit. Keep the Banner High: While this model is leading a unit, each time a model in that unit makes an attack, add 1 to the Hit roll if that unit is below its Starting Strength , and add 1 to the Wound roll as well if that unit is Below Half-strength ."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Oath of Moment"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "While this model is leading a unit, add 1 to the Objective Control characteristic of models in that unit.",
-          "name": "Astartes Banner"
-        },
-        {
-          "type": "rule",
-          "text": "While this model is leading a unit, each time a model in that unit makes an attack, add 1 to the Hit roll if that unit is below its Starting Strength , and add 1 to the Wound roll as well if that unit is Below Half-strength .",
-          "name": "Keep the Banner High"
         }
       ]
     },
@@ -188,26 +174,14 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "statement",
-          "text": "The bearer has a Wounds characteristic of 6.",
-          "label": "Terminator Storm Shield"
+          "type": "text",
+          "text": "Terminator Storm Shield: The bearer has a Wounds characteristic of 6."
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Ancient in Terminator Armour"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "storm bolter; power fist.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -237,5 +211,24 @@
         }
       ]
     }
-  ]
+  ],
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "quality": {
+    "rawSectionTitles": [
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "missingExpectedSections": [],
+    "warnings": []
+  }
 }

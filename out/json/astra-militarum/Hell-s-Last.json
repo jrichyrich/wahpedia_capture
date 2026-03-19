@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Hell-s-Last",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Hell-s-Last",
+    "canonicalSourceId": "wahapedia:3e8ebe97a2b8d9248f9842bf792e871748877e4f",
     "faction_slug": "astra-militarum",
     "datasheet_slug": "Hell-s-Last",
+    "fetchedAt": "2026-03-19T17:11:42+00:00",
+    "contentHash": "23cffdf51e970e7542bd247d2fdd0820eb190961aa62f74e5a475e82960a151e",
     "output_slug": "astra-militarum"
   },
   "name": "Hell\u2019s Last",
@@ -102,58 +108,13 @@
   },
   "abilities": {
     "core": [
-      "Leader"
+      "Leader FACTION: Voice of Command Heroic Example: While this unit\u2019s Minka Lesk model is on the battlefield, each time a model in this unit makes an attack, you can re-roll the Hit roll . Lesk\u2019s Heroes: Add 1 to the Leadership characteristic of models in this unit and you can re-roll Battle-shock and Leadership tests taken for this unit."
     ],
-    "faction": [
-      "Voice of Command"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "While this unit\u2019s Minka Lesk model is on the battlefield, each time a model in this unit makes an attack, you can re-roll the Hit roll .",
-        "name": "Heroic Example"
-      },
-      {
-        "type": "rule",
-        "text": "Add 1 to the Leadership characteristic of models in this unit and you can re-roll Battle-shock and Leadership tests taken for this unit.",
-        "name": "Lesk\u2019s Heroes"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Minka Lesk - EPIC HERO",
-        "4 Lesk\u2019s Heroes"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "bolt pistol; power weapon.",
-      "label": "Minka Lesk is equipped with"
-    },
-    {
-      "type": "statement",
-      "text": "demolitions; meltagun; close combat weapon.",
-      "label": "1 Lesk\u2019s Hero is equipped with"
-    },
-    {
-      "type": "statement",
-      "text": "hot-shot laspistol; dirk",
-      "label": "1 Lesk\u2019s Hero is equipped with"
-    },
-    {
-      "type": "statement",
-      "text": "bolt pistol; power weapon.",
-      "label": "1 Lesk\u2019s Hero is equipped with"
-    },
-    {
-      "type": "statement",
-      "text": "power weapon; regimental banner.",
-      "label": "1 Lesk\u2019s Hero is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -204,25 +165,8 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Leader"
+            "Leader FACTION: Voice of Command Heroic Example: While this unit\u2019s Minka Lesk model is on the battlefield, each time a model in this unit makes an attack, you can re-roll the Hit roll . Lesk\u2019s Heroes: Add 1 to the Leadership characteristic of models in this unit and you can re-roll Battle-shock and Leadership tests taken for this unit."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Voice of Command"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "While this unit\u2019s Minka Lesk model is on the battlefield, each time a model in this unit makes an attack, you can re-roll the Hit roll .",
-          "name": "Heroic Example"
-        },
-        {
-          "type": "rule",
-          "text": "Add 1 to the Leadership characteristic of models in this unit and you can re-roll Battle-shock and Leadership tests taken for this unit.",
-          "name": "Lesk\u2019s Heroes"
         }
       ]
     },
@@ -230,47 +174,14 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "statement",
-          "text": "Add 1 to the Objective Control characteristic of models in the bearer\u2019s unit.",
-          "label": "Regimental Banner"
+          "type": "text",
+          "text": "Regimental Banner: Add 1 to the Objective Control characteristic of models in the bearer\u2019s unit."
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Minka Lesk - EPIC HERO",
-            "4 Lesk\u2019s Heroes"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "bolt pistol; power weapon.",
-          "label": "Minka Lesk is equipped with"
-        },
-        {
-          "type": "statement",
-          "text": "demolitions; meltagun; close combat weapon.",
-          "label": "1 Lesk\u2019s Hero is equipped with"
-        },
-        {
-          "type": "statement",
-          "text": "hot-shot laspistol; dirk",
-          "label": "1 Lesk\u2019s Hero is equipped with"
-        },
-        {
-          "type": "statement",
-          "text": "bolt pistol; power weapon.",
-          "label": "1 Lesk\u2019s Hero is equipped with"
-        },
-        {
-          "type": "statement",
-          "text": "power weapon; regimental banner.",
-          "label": "1 Lesk\u2019s Hero is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -293,5 +204,95 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ORDERS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ORDERS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS"
+    ]
+  }
 }

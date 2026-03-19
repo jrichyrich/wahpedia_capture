@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Death-Guard-Chaos-Lord",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Death-Guard-Chaos-Lord",
+    "canonicalSourceId": "wahapedia:da1621125698a9c7832cb4aa74243f7311e7a025",
     "faction_slug": "death-guard",
     "datasheet_slug": "Death-Guard-Chaos-Lord",
+    "fetchedAt": "2026-03-19T17:16:46+00:00",
+    "contentHash": "5638662c2f11581647af35065458014800dc2279312bd404c311497c197577c8",
     "output_slug": "death-guard"
   },
   "name": "Death Guard Chaos Lord",
@@ -135,37 +141,13 @@
   },
   "abilities": {
     "core": [
-      "Leader"
+      "Leader FACTION: Nurgle\u2019s Gift (Aura) Chaos Lord: While this model is leading a unit, each time a model in that unit makes an attack, re-roll a Hit roll of 1. Desiccation Conduit (Aura): While an enemy unit is within Contagion Range of this model, at the end of the turn, roll one D6: on a 4+, that enemy unit suffers D3 mortal wounds ."
     ],
-    "faction": [
-      "Nurgle\u2019s Gift (Aura)"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "While this model is leading a unit, each time a model in that unit makes an attack, re-roll a Hit roll of 1.",
-        "name": "Chaos Lord"
-      },
-      {
-        "type": "rule",
-        "text": "While an enemy unit is within Contagion Range of this model, at the end of the turn, roll one D6: on a 4+, that enemy unit suffers D3 mortal wounds .",
-        "name": "Desiccation Conduit (Aura)"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Death Guard Chaos Lord"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "plague bolt pistol; Astartes chainsword.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -215,42 +197,14 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Leader"
+            "Leader FACTION: Nurgle\u2019s Gift (Aura) Chaos Lord: While this model is leading a unit, each time a model in that unit makes an attack, re-roll a Hit roll of 1. Desiccation Conduit (Aura): While an enemy unit is within Contagion Range of this model, at the end of the turn, roll one D6: on a 4+, that enemy unit suffers D3 mortal wounds ."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Nurgle\u2019s Gift (Aura)"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "While this model is leading a unit, each time a model in that unit makes an attack, re-roll a Hit roll of 1.",
-          "name": "Chaos Lord"
-        },
-        {
-          "type": "rule",
-          "text": "While an enemy unit is within Contagion Range of this model, at the end of the turn, roll one D6: on a 4+, that enemy unit suffers D3 mortal wounds .",
-          "name": "Desiccation Conduit (Aura)"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Death Guard Chaos Lord"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "plague bolt pistol; Astartes chainsword.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -273,5 +227,83 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER",
+      "STRATAGEMS"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS"
+    ]
+  }
 }

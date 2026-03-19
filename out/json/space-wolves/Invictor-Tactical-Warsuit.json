@@ -3,7 +3,11 @@
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Invictor-Tactical-Warsuit",
     "faction_slug": "space-marines",
     "datasheet_slug": "Invictor-Tactical-Warsuit",
-    "output_slug": "space-wolves"
+    "output_slug": "space-wolves",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Invictor-Tactical-Warsuit",
+    "canonicalSourceId": "wahapedia:4e43d7f27255063a16bd5e9e35c8e9a842a9248a",
+    "fetchedAt": "2026-03-19T17:35:02+00:00",
+    "contentHash": "3293cf960cad483c63400476f47f9ad7b2282311409646bbc2cdc0c78cb055db"
   },
   "name": "Invictor Tactical Warsuit",
   "base_size": "\u230090mm",
@@ -95,32 +99,13 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D3 , Scouts 8\""
+      "Deadly Demise D3 , Scouts 8\" FACTION: Oath of Moment Combat Support: Once per turn, in your opponent\u2019s Shooting phase , when a friendly ADEPTUS ASTARTES PHOBOS INFANTRY unit within 6\" of this model is selected as the target of an attack, one model from your army with this ability can use it. If it does, after that enemy unit has finished making its attacks, that model can shoot as if it were your Shooting phase, but when resolving those attacks it can only target that enemy unit [and only if it is an eligible target)."
     ],
-    "faction": [
-      "Oath of Moment"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "Once per turn, in your opponent\u2019s Shooting phase , when a friendly ADEPTUS ASTARTES PHOBOS INFANTRY unit within 6\" of this model is selected as the target of an attack, one model from your army with this ability can use it. If it does, after that enemy unit has finished making its attacks, that model can shoot as if it were your Shooting phase, but when resolving those attacks it can only target that enemy unit [and only if it is an eligible target).",
-        "name": "Combat Support"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Invictor Tactical Warsuit"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "fragstorm grenade launcher; heavy bolter; incendium cannon; twin ironhail heavy stubber; Invictor fist.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -143,43 +128,30 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s incendium cannon can be replaced with 1 twin ironhail autocannon.",
+          "items": []
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D3 , Scouts 8\""
+            "Deadly Demise D3 , Scouts 8\" FACTION: Oath of Moment Combat Support: Once per turn, in your opponent\u2019s Shooting phase , when a friendly ADEPTUS ASTARTES PHOBOS INFANTRY unit within 6\" of this model is selected as the target of an attack, one model from your army with this ability can use it. If it does, after that enemy unit has finished making its attacks, that model can shoot as if it were your Shooting phase, but when resolving those attacks it can only target that enemy unit [and only if it is an eligible target)."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Oath of Moment"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "Once per turn, in your opponent\u2019s Shooting phase , when a friendly ADEPTUS ASTARTES PHOBOS INFANTRY unit within 6\" of this model is selected as the target of an attack, one model from your army with this ability can use it. If it does, after that enemy unit has finished making its attacks, that model can shoot as if it were your Shooting phase, but when resolving those attacks it can only target that enemy unit [and only if it is an eligible target).",
-          "name": "Combat Support"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Invictor Tactical Warsuit"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "fragstorm grenade launcher; heavy bolter; incendium cannon; twin ironhail heavy stubber; Invictor fist.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -200,5 +172,22 @@
         }
       ]
     }
-  ]
+  ],
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "quality": {
+    "rawSectionTitles": [
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-4 WOUNDS REMAINING"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-4 WOUNDS REMAINING"
+    ],
+    "missingExpectedSections": [],
+    "warnings": []
+  }
 }

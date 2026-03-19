@@ -3,7 +3,11 @@
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Primaris-Company-Champion",
     "faction_slug": "space-marines",
     "datasheet_slug": "Primaris-Company-Champion",
-    "output_slug": "space-wolves"
+    "output_slug": "space-wolves",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Primaris-Company-Champion",
+    "canonicalSourceId": "wahapedia:81464ff0143c4a1ff7c7cdb399acb4a930ea2fcc",
+    "fetchedAt": "2026-03-19T17:35:02+00:00",
+    "contentHash": "7d025839a3bd377aae4fc555321ba2238c6d8718388b48f303dc902f060798d5"
   },
   "name": "Primaris Company Champion",
   "base_size": "\u230032mm",
@@ -47,37 +51,13 @@
   },
   "abilities": {
     "core": [
-      "Leader"
+      "Leader FACTION: Oath of Moment Honour or Death: While this model is leading a unit, add 1 to Advance and Charge rolls made for that unit and you can target that unit with the Heroic Intervention Stratagem for 0CP, even if you have already used that Stratagem on a different unit this phase. Martial Superiority: Each time this model makes a melee attack that targets a CHARACTER unit, you can re-roll the Hit roll and you can re-roll the Wound roll ."
     ],
-    "faction": [
-      "Oath of Moment"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "While this model is leading a unit, add 1 to Advance and Charge rolls made for that unit and you can target that unit with the Heroic Intervention Stratagem for 0CP, even if you have already used that Stratagem on a different unit this phase.",
-        "name": "Honour or Death"
-      },
-      {
-        "type": "rule",
-        "text": "Each time this model makes a melee attack that targets a CHARACTER unit, you can re-roll the Hit roll and you can re-roll the Wound roll .",
-        "name": "Martial Superiority"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Primaris Company Champion"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "bolt pistol; master-crafted power weapon.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -101,48 +81,31 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "None"
+          ]
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Leader"
+            "Leader FACTION: Oath of Moment Honour or Death: While this model is leading a unit, add 1 to Advance and Charge rolls made for that unit and you can target that unit with the Heroic Intervention Stratagem for 0CP, even if you have already used that Stratagem on a different unit this phase. Martial Superiority: Each time this model makes a melee attack that targets a CHARACTER unit, you can re-roll the Hit roll and you can re-roll the Wound roll ."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Oath of Moment"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "While this model is leading a unit, add 1 to Advance and Charge rolls made for that unit and you can target that unit with the Heroic Intervention Stratagem for 0CP, even if you have already used that Stratagem on a different unit this phase.",
-          "name": "Honour or Death"
-        },
-        {
-          "type": "rule",
-          "text": "Each time this model makes a melee attack that targets a CHARACTER unit, you can re-roll the Hit roll and you can re-roll the Wound roll .",
-          "name": "Martial Superiority"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Primaris Company Champion"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "bolt pistol; master-crafted power weapon.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -179,5 +142,22 @@
         }
       ]
     }
-  ]
+  ],
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "quality": {
+    "rawSectionTitles": [
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "missingExpectedSections": [],
+    "warnings": []
+  }
 }

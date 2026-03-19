@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Kabalite-Warriors",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Kabalite-Warriors",
+    "canonicalSourceId": "wahapedia:73bba38f4421afd19f68af9d684ea4abbac2bcac",
     "faction_slug": "drukhari",
     "datasheet_slug": "Kabalite-Warriors",
+    "fetchedAt": "2026-03-19T17:17:23+00:00",
+    "contentHash": "d3846fb0ab47978775cc1d1933b41b29ec1c31890bcc66d5415437cafb666e81",
     "output_slug": "drukhari"
   },
   "name": "Kabalite Warriors",
@@ -137,30 +143,12 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Power from Pain"
+      "Power from Pain Sadistic Raiders (Pain): In your Shooting phase or the Fight phase , when you select this unit to shoot or fight, you can spend 1 Pain token to Empower this unit. While Empowered, each time a model in this unit makes an attack, re-roll a Wound roll of 1. If the target is within range of an objective marker , you can re-roll the Wound roll instead. Cruel Enforcers: At the end of your Command phase , if this unit is within range of an objective marker you control, that objective marker remains under your control until your opponent\u2019s Level of Control over that objective marker is greater than yours at the end of a phase."
     ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "At the end of your Command phase , if this unit is within range of an objective marker you control, that objective marker remains under your control until your opponent\u2019s Level of Control over that objective marker is greater than yours at the end of a phase.",
-        "name": "Cruel Enforcers"
-      }
-    ],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Sybarite",
-        "9 Kabalite Warriors"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "splinter rifle; close combat weapon.",
-      "label": "Every model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -235,13 +223,8 @@
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Power from Pain"
+            "Power from Pain Sadistic Raiders (Pain): In your Shooting phase or the Fight phase , when you select this unit to shoot or fight, you can spend 1 Pain token to Empower this unit. While Empowered, each time a model in this unit makes an attack, re-roll a Wound roll of 1. If the target is within range of an objective marker , you can re-roll the Wound roll instead. Cruel Enforcers: At the end of your Command phase , if this unit is within range of an objective marker you control, that objective marker remains under your control until your opponent\u2019s Level of Control over that objective marker is greater than yours at the end of a phase."
           ]
-        },
-        {
-          "type": "rule",
-          "text": "At the end of your Command phase , if this unit is within range of an objective marker you control, that objective marker remains under your control until your opponent\u2019s Level of Control over that objective marker is greater than yours at the end of a phase.",
-          "name": "Cruel Enforcers"
         }
       ]
     },
@@ -249,32 +232,14 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "statement",
-          "text": "While the bearer\u2019s unit is not Battle-shocked , add 1 to the bearer\u2019s Objective Control characteristic.",
-          "label": "Kabalite Icon"
-        },
-        {
-          "type": "statement",
-          "text": "The bearer\u2019s unit has the SMOKE and GRENADES keywords.",
-          "label": "Phantasm Grenade Launcher"
+          "type": "text",
+          "text": "Kabalite Icon: While the bearer\u2019s unit is not Battle-shocked , add 1 to the bearer\u2019s Objective Control characteristic. Phantasm Grenade Launcher: The bearer\u2019s unit has the SMOKE and GRENADES keywords."
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Sybarite",
-            "9 Kabalite Warriors"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "splinter rifle; close combat weapon.",
-          "label": "Every model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -286,5 +251,91 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY"
+    ]
+  }
 }

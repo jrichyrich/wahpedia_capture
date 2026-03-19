@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Plague-Surgeon",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Plague-Surgeon",
+    "canonicalSourceId": "wahapedia:505fb8d3c3116f8834efe398ce19ac1647c12a52",
     "faction_slug": "death-guard",
     "datasheet_slug": "Plague-Surgeon",
+    "fetchedAt": "2026-03-19T17:17:05+00:00",
+    "contentHash": "44492e5a7df52f1e192d07f660d93d80a87f1e7d3240920a2e8a31f9557771b5",
     "output_slug": "death-guard"
   },
   "name": "Plague Surgeon",
@@ -48,37 +54,13 @@
   },
   "abilities": {
     "core": [
-      "Leader"
+      "Leader FACTION: Nurgle\u2019s Gift (Aura) Tainted Narthecium: While this model is leading a unit, in your Command phase , you can return 1 destroyed Bodyguard model to that unit. Inflamed Infections: At the start of the Fight phase , select one enemy unit within Engagement Range of this model. Until the end of the phase, each time this model makes an attack that targets that unit, an unmodified Hit roll of 5+ scores a Critical Hit . If that unit is Below Half-strength , an unmodified Hit roll of 4+ scores a Critical Hit instead."
     ],
-    "faction": [
-      "Nurgle\u2019s Gift (Aura)"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "While this model is leading a unit, in your Command phase , you can return 1 destroyed Bodyguard model to that unit.",
-        "name": "Tainted Narthecium"
-      },
-      {
-        "type": "rule",
-        "text": "At the start of the Fight phase , select one enemy unit within Engagement Range of this model. Until the end of the phase, each time this model makes an attack that targets that unit, an unmodified Hit roll of 5+ scores a Critical Hit . If that unit is Below Half-strength , an unmodified Hit roll of 4+ scores a Critical Hit instead.",
-        "name": "Inflamed Infections"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Plague Surgeon"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "bolt pistol; balesword.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -107,42 +89,14 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Leader"
+            "Leader FACTION: Nurgle\u2019s Gift (Aura) Tainted Narthecium: While this model is leading a unit, in your Command phase , you can return 1 destroyed Bodyguard model to that unit. Inflamed Infections: At the start of the Fight phase , select one enemy unit within Engagement Range of this model. Until the end of the phase, each time this model makes an attack that targets that unit, an unmodified Hit roll of 5+ scores a Critical Hit . If that unit is Below Half-strength , an unmodified Hit roll of 4+ scores a Critical Hit instead."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Nurgle\u2019s Gift (Aura)"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "While this model is leading a unit, in your Command phase , you can return 1 destroyed Bodyguard model to that unit.",
-          "name": "Tainted Narthecium"
-        },
-        {
-          "type": "rule",
-          "text": "At the start of the Fight phase , select one enemy unit within Engagement Range of this model. Until the end of the phase, each time this model makes an attack that targets that unit, an unmodified Hit roll of 5+ scores a Critical Hit . If that unit is Below Half-strength , an unmodified Hit roll of 4+ scores a Critical Hit instead.",
-          "name": "Inflamed Infections"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Plague Surgeon"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "bolt pistol; balesword.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -165,5 +119,89 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "exportedSectionTitles": [
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS"
+    ]
+  }
 }

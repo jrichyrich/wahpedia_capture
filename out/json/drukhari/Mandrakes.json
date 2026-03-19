@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Mandrakes",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Mandrakes",
+    "canonicalSourceId": "wahapedia:6f1eaa057ee8ac1aeca2d4652a0fabbb9632e001",
     "faction_slug": "drukhari",
     "datasheet_slug": "Mandrakes",
+    "fetchedAt": "2026-03-19T17:17:23+00:00",
+    "contentHash": "1f59a2e5fc76034fa838977c82b4d85d46d20007bc8e38165c1362ee8235c936",
     "output_slug": "drukhari"
   },
   "name": "Mandrakes",
@@ -50,33 +56,13 @@
   },
   "abilities": {
     "core": [
-      "Deep Strike , Infiltrators , Stealth"
+      "Deep Strike , Infiltrators , Stealth FACTION: Power from Pain Fade Away (Pain): At the end of your opponent\u2019s Fight phase , if this unit is not within Engagement Range of one or more enemy units, you can spend 1 Pain token to Empower this unit. Each time you do, remove this unit from the battlefield and place it into Strategic Reserves . Shade Weavers: This unit cannot be targeted by ranged attacks unless the attacking model is within 18\"."
     ],
-    "faction": [
-      "Power from Pain"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "This unit cannot be targeted by ranged attacks unless the attacking model is within 18\".",
-        "name": "Shade Weavers"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Nightfiend",
-        "4-9 Mandrakes"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "baleblast; glimmersteel blade.",
-      "label": "Every model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -108,38 +94,14 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deep Strike , Infiltrators , Stealth"
+            "Deep Strike , Infiltrators , Stealth FACTION: Power from Pain Fade Away (Pain): At the end of your opponent\u2019s Fight phase , if this unit is not within Engagement Range of one or more enemy units, you can spend 1 Pain token to Empower this unit. Each time you do, remove this unit from the battlefield and place it into Strategic Reserves . Shade Weavers: This unit cannot be targeted by ranged attacks unless the attacking model is within 18\"."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Power from Pain"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "This unit cannot be targeted by ranged attacks unless the attacking model is within 18\".",
-          "name": "Shade Weavers"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Nightfiend",
-            "4-9 Mandrakes"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "baleblast; glimmersteel blade.",
-          "label": "Every model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -155,5 +117,83 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY"
+    ],
+    "exportedSectionTitles": [
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY"
+    ]
+  }
 }

@@ -1,8 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Eradicator-Squad",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Eradicator-Squad",
+    "canonicalSourceId": "wahapedia:394292bca1375b9f48ebe67ffe3d0a69d2fef67d",
     "faction_slug": "space-marines",
-    "datasheet_slug": "Eradicator-Squad"
+    "datasheet_slug": "Eradicator-Squad",
+    "fetchedAt": "2026-03-19T17:28:43+00:00",
+    "contentHash": "ae61e679d258b9dc1501b74c022dd6403b44c94d411d5ec3edc6acc746c82346",
+    "output_slug": "space-marines"
   },
   "name": "Eradicator Squad",
   "base_size": "\u230040mm",
@@ -71,30 +78,12 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Oath of Moment"
+      "Oath of Moment Total Obliteration: Each time a ranged attack made by a model in this unit targets a MONSTER or VEHICLE model, you can re-roll the Hit roll , you can re-roll the Wound roll and you can re-roll the Damage roll."
     ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "Each time a ranged attack made by a model in this unit targets a MONSTER or VEHICLE model, you can re-roll the Hit roll , you can re-roll the Wound roll and you can re-roll the Damage roll.",
-        "name": "Total Obliteration"
-      }
-    ],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Eradicator Sergeant",
-        "2-5 Eradicators"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "bolt pistol; melta rifle; close combat weapon.",
-      "label": "Every model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -121,37 +110,30 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "For every 3 models in this unit, 1 Eradicator\u2019s melta rifle can be replaced with 1 multi-melta.",
+          "items": []
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Oath of Moment"
+            "Oath of Moment Total Obliteration: Each time a ranged attack made by a model in this unit targets a MONSTER or VEHICLE model, you can re-roll the Hit roll , you can re-roll the Wound roll and you can re-roll the Damage roll."
           ]
-        },
-        {
-          "type": "rule",
-          "text": "Each time a ranged attack made by a model in this unit targets a MONSTER or VEHICLE model, you can re-roll the Hit roll , you can re-roll the Wound roll and you can re-roll the Damage roll.",
-          "name": "Total Obliteration"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Eradicator Sergeant",
-            "2-5 Eradicators"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "bolt pistol; melta rifle; close combat weapon.",
-          "label": "Every model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -167,5 +149,93 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS"
+    ]
+  }
 }

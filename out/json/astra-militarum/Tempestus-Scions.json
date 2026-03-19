@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Tempestus-Scions",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Tempestus-Scions",
+    "canonicalSourceId": "wahapedia:43028f1ac41501fc9a5a9bb1758d2a92c0a7652c",
     "faction_slug": "astra-militarum",
     "datasheet_slug": "Tempestus-Scions",
+    "fetchedAt": "2026-03-19T17:12:06+00:00",
+    "contentHash": "a34843251c75949d0e4eef97cc14e577a7befeae08a8e50028ca021832c0ee34",
     "output_slug": "astra-militarum"
   },
   "name": "Tempestus Scions",
@@ -208,36 +214,13 @@
   },
   "abilities": {
     "core": [
-      "Deep Strike"
+      "Deep Strike Storm Troopers: Each time a model in this unit makes an attack, re-roll a Wound roll of 1. If the target of that attack is an enemy unit within range of an objective marker , you can re-roll the Wound roll instead."
     ],
     "faction": [],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "Each time a model in this unit makes an attack, re-roll a Wound roll of 1. If the target of that attack is an enemy unit within range of an objective marker , you can re-roll the Wound roll instead.",
-        "name": "Storm Troopers"
-      }
-    ],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Tempestor",
-        "4-9 Tempestus Scions"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "hot-shot laspistol; chainsword.",
-      "label": "The Tempestor is equipped with"
-    },
-    {
-      "type": "statement",
-      "text": "hot-shot lasgun; close combat weapon. This unit can have up to two Leader units attached to it, provided no more than one of those units is a COMMAND SQUAD unit. If it does, and this Bodyguard unit is destroyed, the Leader units attached to it become separate units, with their original Starting Strengths .",
-      "label": "Every Tempestus Scion is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -312,13 +295,8 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deep Strike"
+            "Deep Strike Storm Troopers: Each time a model in this unit makes an attack, re-roll a Wound roll of 1. If the target of that attack is an enemy unit within range of an objective marker , you can re-roll the Wound roll instead."
           ]
-        },
-        {
-          "type": "rule",
-          "text": "Each time a model in this unit makes an attack, re-roll a Wound roll of 1. If the target of that attack is an enemy unit within range of an objective marker , you can re-roll the Wound roll instead.",
-          "name": "Storm Troopers"
         }
       ]
     },
@@ -326,32 +304,14 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "statement",
-          "text": "Each time you target the bearer\u2019s unit with a Stratagem , roll one D6, adding 1 to the result if there are one or more friendly OFFICER models within 6\": on a 5+, you gain 1CP.",
-          "label": "Vox-caster"
+          "type": "text",
+          "text": "Vox-caster: Each time you target the bearer\u2019s unit with a Stratagem , roll one D6, adding 1 to the result if there are one or more friendly OFFICER models within 6\": on a 5+, you gain 1CP."
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Tempestor",
-            "4-9 Tempestus Scions"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "hot-shot laspistol; chainsword.",
-          "label": "The Tempestor is equipped with"
-        },
-        {
-          "type": "statement",
-          "text": "hot-shot lasgun; close combat weapon. This unit can have up to two Leader units attached to it, provided no more than one of those units is a COMMAND SQUAD unit. If it does, and this Bodyguard unit is destroyed, the Leader units attached to it become separate units, with their original Starting Strengths .",
-          "label": "Every Tempestus Scion is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -367,5 +327,91 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY"
+    ]
+  }
 }

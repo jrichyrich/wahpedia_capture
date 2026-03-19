@@ -3,7 +3,11 @@
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Cerberus",
     "faction_slug": "space-marines",
     "datasheet_slug": "Cerberus",
-    "output_slug": "ultramarines"
+    "output_slug": "ultramarines",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Cerberus",
+    "canonicalSourceId": "wahapedia:38081c44eed633b5cc898c1c14f89b1a743e7f8e",
+    "fetchedAt": "2026-03-19T17:35:02+00:00",
+    "contentHash": "83ea3ae7d0efae543bbe789e91f575a2ae2699c7477263fc9e3c67d9d79ea639"
   },
   "name": "Cerberus",
   "base_size": "\u2300Use model",
@@ -104,32 +108,13 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D6"
+      "Deadly Demise D6 FACTION: Oath of Moment Atomantic Arc-reactor: Each time this unit shoots its Cerberus neutron pulse array in your Shooting phase , provided it Remained Stationary this turn, that weapon has the [LETHAL HITS] ability."
     ],
-    "faction": [
-      "Oath of Moment"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "Each time this unit shoots its Cerberus neutron pulse array in your Shooting phase , provided it Remained Stationary this turn, that weapon has the [LETHAL HITS] ability.",
-        "name": "Atomantic Arc-reactor"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Cerberus"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "Cerberus neutron pulse array; armoured tracks.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -151,43 +136,43 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model can be equipped with one of the following:",
+          "items": [
+            "2 heavy bolters",
+            "2 lascannons"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "This model can be equipped with one of the following:",
+          "items": [
+            "1 heavy bolter",
+            "1 heavy flamer",
+            "1 multi-melta",
+            "1 storm bolter"
+          ]
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D6"
+            "Deadly Demise D6 FACTION: Oath of Moment Atomantic Arc-reactor: Each time this unit shoots its Cerberus neutron pulse array in your Shooting phase , provided it Remained Stationary this turn, that weapon has the [LETHAL HITS] ability."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Oath of Moment"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "Each time this unit shoots its Cerberus neutron pulse array in your Shooting phase , provided it Remained Stationary this turn, that weapon has the [LETHAL HITS] ability.",
-          "name": "Atomantic Arc-reactor"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Cerberus"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "Cerberus neutron pulse array; armoured tracks.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -208,5 +193,22 @@
         }
       ]
     }
-  ]
+  ],
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "quality": {
+    "rawSectionTitles": [
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-6 WOUNDS REMAINING"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-6 WOUNDS REMAINING"
+    ],
+    "missingExpectedSections": [],
+    "warnings": []
+  }
 }

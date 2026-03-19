@@ -1,8 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Sicaran-Punisher",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Sicaran-Punisher",
+    "canonicalSourceId": "wahapedia:fd448a60def65b3fa9ec4865988cf2d6cd0363b6",
     "faction_slug": "space-marines",
-    "datasheet_slug": "Sicaran-Punisher"
+    "datasheet_slug": "Sicaran-Punisher",
+    "fetchedAt": "2026-03-19T17:32:40+00:00",
+    "contentHash": "b2dd4655fc22fd85bfc5eb1e69dba8c39d8ae077b9cd737307d0bbcb6fac9c3c",
+    "output_slug": "space-marines"
   },
   "name": "Sicaran Punisher",
   "base_size": "\u2300Use model",
@@ -88,32 +95,13 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D3"
+      "Deadly Demise D3 FACTION: Oath of Moment Rotating Death: This model\u2019s Punisher rotary cannon has the [SUSTAINED HITS 1] ability when targeting INFANTRY units."
     ],
-    "faction": [
-      "Oath of Moment"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "This model\u2019s Punisher rotary cannon has the [SUSTAINED HITS 1] ability when targeting INFANTRY units.",
-        "name": "Rotating Death"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Sicaran Punisher"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "heavy bolter; Punisher rotary cannon; armoured tracks.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -135,43 +123,43 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model can be equipped with one of the following:",
+          "items": [
+            "2 heavy bolters",
+            "2 lascannons"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "This model can be equipped with 1 hunter-killer missile.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "This model can be equipped with 1 storm bolter.",
+          "items": []
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D3"
+            "Deadly Demise D3 FACTION: Oath of Moment Rotating Death: This model\u2019s Punisher rotary cannon has the [SUSTAINED HITS 1] ability when targeting INFANTRY units."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Oath of Moment"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "This model\u2019s Punisher rotary cannon has the [SUSTAINED HITS 1] ability when targeting INFANTRY units.",
-          "name": "Rotating Death"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Sicaran Punisher"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "heavy bolter; Punisher rotary cannon; armoured tracks.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -192,5 +180,91 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-5 WOUNDS REMAINING",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-5 WOUNDS REMAINING"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS"
+    ]
+  }
 }

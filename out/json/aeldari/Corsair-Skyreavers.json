@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Corsair-Skyreavers",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Corsair-Skyreavers",
+    "canonicalSourceId": "wahapedia:2e9c0c4c88a14d6177f301e7ac14e74587b2405b",
     "faction_slug": "aeldari",
     "datasheet_slug": "Corsair-Skyreavers",
+    "fetchedAt": "2026-03-19T17:11:14+00:00",
+    "contentHash": "152cc65d265acf75a27526c57a58ef5e2337b92da73e07e2566f7f18d9405aa0",
     "output_slug": "aeldari"
   },
   "name": "Corsair Skyreavers",
@@ -135,33 +141,13 @@
   },
   "abilities": {
     "core": [
-      "Deep Strike , Scouts 7\""
+      "Deep Strike , Scouts 7\" FACTION: Battle Focus Raid and Run: At the end of the Fight phase , if this unit was eligible to fight this phase, and is not within Engagement Range of one or more enemy units, it can make a Normal move of up to D3+3\". Otherwise, if this unit was eligible to fight this phase, this unit can make a Fall Back move of up to D3+3\"."
     ],
-    "faction": [
-      "Battle Focus"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "At the end of the Fight phase , if this unit was eligible to fight this phase, and is not within Engagement Range of one or more enemy units, it can make a Normal move of up to D3+3\". Otherwise, if this unit was eligible to fight this phase, this unit can make a Fall Back move of up to D3+3\".",
-        "name": "Raid and Run"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Skyreaver Felarch",
-        "4-9 Skyreavers"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "shuriken pistol; Corsair blade.",
-      "label": "Every model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -223,38 +209,14 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deep Strike , Scouts 7\""
+            "Deep Strike , Scouts 7\" FACTION: Battle Focus Raid and Run: At the end of the Fight phase , if this unit was eligible to fight this phase, and is not within Engagement Range of one or more enemy units, it can make a Normal move of up to D3+3\". Otherwise, if this unit was eligible to fight this phase, this unit can make a Fall Back move of up to D3+3\"."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Battle Focus"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "At the end of the Fight phase , if this unit was eligible to fight this phase, and is not within Engagement Range of one or more enemy units, it can make a Normal move of up to D3+3\". Otherwise, if this unit was eligible to fight this phase, this unit can make a Fall Back move of up to D3+3\".",
-          "name": "Raid and Run"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Skyreaver Felarch",
-            "4-9 Skyreavers"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "shuriken pistol; Corsair blade.",
-          "label": "Every model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -270,5 +232,89 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS"
+    ]
+  }
 }

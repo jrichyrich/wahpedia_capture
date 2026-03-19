@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Sentinel-Powerlifter",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Sentinel-Powerlifter",
+    "canonicalSourceId": "wahapedia:922377ae09ee76d377b889fff3aab08de7bdd1bd",
     "faction_slug": "astra-militarum",
     "datasheet_slug": "Sentinel-Powerlifter",
+    "fetchedAt": "2026-03-19T17:12:22+00:00",
+    "contentHash": "14c430b72cf3a23b87e22c6f7f15590d4bae7f7d77e996fbe10d8c284cc7e2fd",
     "output_slug": "astra-militarum"
   },
   "name": "Sentinel Powerlifter",
@@ -31,30 +37,13 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise 1"
+      "Deadly Demise 1 Powerlifter Charge: Each time this model ends a Charge move , select one enemy unit within Engagement Range of it and roll one D6: on a 2-5, that enemy unit suffers D3 mortal wounds ; on a 6, that enemy unit suffers 3 mortal wounds."
     ],
     "faction": [],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "Each time this model ends a Charge move , select one enemy unit within Engagement Range of it and roll one D6: on a 2-5, that enemy unit suffers D3 mortal wounds ; on a 6, that enemy unit suffers 3 mortal wounds.",
-        "name": "Powerlifter Charge"
-      }
-    ],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Sentinel Powerlifter"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "powerlifter.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -96,30 +85,14 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise 1"
+            "Deadly Demise 1 Powerlifter Charge: Each time this model ends a Charge move , select one enemy unit within Engagement Range of it and roll one D6: on a 2-5, that enemy unit suffers D3 mortal wounds ; on a 6, that enemy unit suffers 3 mortal wounds."
           ]
-        },
-        {
-          "type": "rule",
-          "text": "Each time this model ends a Charge move , select one enemy unit within Engagement Range of it and roll one D6: on a 2-5, that enemy unit suffers D3 mortal wounds ; on a 6, that enemy unit suffers 3 mortal wounds.",
-          "name": "Powerlifter Charge"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Sentinel Powerlifter"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "powerlifter.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -131,5 +104,57 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY"
+    ],
+    "warnings": [
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY"
+    ]
+  }
 }

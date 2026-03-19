@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Illic-Nightspear",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Illic-Nightspear",
+    "canonicalSourceId": "wahapedia:c3be40d25a3ee6a2914b0294c558788da726f3ca",
     "faction_slug": "aeldari",
     "datasheet_slug": "Illic-Nightspear",
+    "fetchedAt": "2026-03-19T17:11:09+00:00",
+    "contentHash": "9b3c4e50b122a7eec70a5093545f9af7163777d553c6bd4b487cb38de9602a23",
     "output_slug": "aeldari"
   },
   "name": "Illic Nightspear",
@@ -61,37 +67,13 @@
   },
   "abilities": {
     "core": [
-      "Infiltrators , Leader , Stealth"
+      "Infiltrators , Leader , Stealth FACTION: Battle Focus Bringer of the True Death: While this model is leading a unit, each time a model in that unit makes an attack, you can re-roll the Wound roll . Hunter Unseen: This model\u2019s unit can only be selected as the target of a ranged attack if the attacking model is within 12\"."
     ],
-    "faction": [
-      "Battle Focus"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "While this model is leading a unit, each time a model in that unit makes an attack, you can re-roll the Wound roll .",
-        "name": "Bringer of the True Death"
-      },
-      {
-        "type": "rule",
-        "text": "This model\u2019s unit can only be selected as the target of a ranged attack if the attacking model is within 12\".",
-        "name": "Hunter Unseen"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Illic Nightspear \u2013 EPIC HERO"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "Voidbringer; shuriken pistol; Aeldari power sword.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -117,9 +99,10 @@
       "title": "WARGEAR OPTIONS",
       "entries": [
         {
-          "type": "option_group",
-          "label": "None",
-          "items": []
+          "type": "list",
+          "items": [
+            "None"
+          ]
         }
       ]
     },
@@ -130,42 +113,14 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Infiltrators , Leader , Stealth"
+            "Infiltrators , Leader , Stealth FACTION: Battle Focus Bringer of the True Death: While this model is leading a unit, each time a model in that unit makes an attack, you can re-roll the Wound roll . Hunter Unseen: This model\u2019s unit can only be selected as the target of a ranged attack if the attacking model is within 12\"."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Battle Focus"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "While this model is leading a unit, each time a model in that unit makes an attack, you can re-roll the Wound roll .",
-          "name": "Bringer of the True Death"
-        },
-        {
-          "type": "rule",
-          "text": "This model\u2019s unit can only be selected as the target of a ranged attack if the attacking model is within 12\".",
-          "name": "Hunter Unseen"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Illic Nightspear \u2013 EPIC HERO"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "Voidbringer; shuriken pistol; Aeldari power sword.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -188,5 +143,87 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY"
+    ]
+  }
 }

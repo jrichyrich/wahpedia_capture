@@ -3,7 +3,11 @@
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Typhon",
     "faction_slug": "space-marines",
     "datasheet_slug": "Typhon",
-    "output_slug": "ultramarines"
+    "output_slug": "ultramarines",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Typhon",
+    "canonicalSourceId": "wahapedia:b77b2016811a3bf61035184c4123db9fc8b57281",
+    "fetchedAt": "2026-03-19T17:35:03+00:00",
+    "contentHash": "aa87c56ba71656080db056ff6818d0e53e4420baba63c85a9ae87e967c3dfc16"
   },
   "name": "Typhon",
   "base_size": "\u2300Use model",
@@ -104,32 +108,13 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D6"
+      "Deadly Demise D6 FACTION: Oath of Moment Sunderer of Fortresses: Each time this model makes an attack that targets a VEHICLE , improve the Strength and Damage characteristic of that attack by 1 (if that attack targets a FORTIFICATION unit, improve the Strength and Damage characteristics of that attack by 2 instead)."
     ],
-    "faction": [
-      "Oath of Moment"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "Each time this model makes an attack that targets a VEHICLE , improve the Strength and Damage characteristic of that attack by 1 (if that attack targets a FORTIFICATION unit, improve the Strength and Damage characteristics of that attack by 2 instead).",
-        "name": "Sunderer of Fortresses"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Typhon"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "dreadhammer siege cannon; armoured tracks.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -151,43 +136,43 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model can be equipped with one of the following:",
+          "items": [
+            "2 heavy bolters",
+            "2 lascannons"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "This model can be equipped with one of the following:",
+          "items": [
+            "1 heavy bolter",
+            "1 heavy flamer",
+            "1 multi-melta",
+            "1 storm bolter"
+          ]
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D6"
+            "Deadly Demise D6 FACTION: Oath of Moment Sunderer of Fortresses: Each time this model makes an attack that targets a VEHICLE , improve the Strength and Damage characteristic of that attack by 1 (if that attack targets a FORTIFICATION unit, improve the Strength and Damage characteristics of that attack by 2 instead)."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Oath of Moment"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "Each time this model makes an attack that targets a VEHICLE , improve the Strength and Damage characteristic of that attack by 1 (if that attack targets a FORTIFICATION unit, improve the Strength and Damage characteristics of that attack by 2 instead).",
-          "name": "Sunderer of Fortresses"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Typhon"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "dreadhammer siege cannon; armoured tracks.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -208,5 +193,22 @@
         }
       ]
     }
-  ]
+  ],
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "quality": {
+    "rawSectionTitles": [
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-6 WOUNDS REMAINING"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-6 WOUNDS REMAINING"
+    ],
+    "missingExpectedSections": [],
+    "warnings": []
+  }
 }

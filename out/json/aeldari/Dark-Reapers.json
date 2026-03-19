@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Dark-Reapers",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Dark-Reapers",
+    "canonicalSourceId": "wahapedia:8b4f24abcda5b5574ec6d212de6a8ea1f0359e93",
     "faction_slug": "aeldari",
     "datasheet_slug": "Dark-Reapers",
+    "fetchedAt": "2026-03-19T17:11:15+00:00",
+    "contentHash": "7715ec8ebecfe7b06ed0a1fdb78fd37c88fd936637c1935bc2b0adb738cfc4c3",
     "output_slug": "aeldari"
   },
   "name": "Dark Reapers",
@@ -110,30 +116,12 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Battle Focus"
+      "Battle Focus Inescapable Accuracy: Each time a model in this unit makes a ranged attack, you can ignore any or all modifiers to that attack\u2019s Ballistic Skill characteristic and any or all modifiers to the Hit roll ."
     ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "Each time a model in this unit makes a ranged attack, you can ignore any or all modifiers to that attack\u2019s Ballistic Skill characteristic and any or all modifiers to the Hit roll .",
-        "name": "Inescapable Accuracy"
-      }
-    ],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Dark Reaper Exarch",
-        "4-9 Dark Reapers"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "Reaper launcher; close combat weapon.",
-      "label": "Every model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -184,13 +172,8 @@
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Battle Focus"
+            "Battle Focus Inescapable Accuracy: Each time a model in this unit makes a ranged attack, you can ignore any or all modifiers to that attack\u2019s Ballistic Skill characteristic and any or all modifiers to the Hit roll ."
           ]
-        },
-        {
-          "type": "rule",
-          "text": "Each time a model in this unit makes a ranged attack, you can ignore any or all modifiers to that attack\u2019s Ballistic Skill characteristic and any or all modifiers to the Hit roll .",
-          "name": "Inescapable Accuracy"
         }
       ]
     },
@@ -198,32 +181,14 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "statement",
-          "text": "Once per battle for each Aspect Shrine token this unit has, you can change the result of one Hit roll or one Wound roll made for a model in this unit (excluding CHARACTER models) to an unmodified 6.",
-          "label": "Aspect Shrine Token"
-        },
-        {
-          "type": "statement",
-          "text": "Place an Aspect Shrine token next to the unit for each Aspect Shrine token it has, removing one each time this ability is used.",
-          "label": "Designer\u2019s Note"
+          "type": "text",
+          "text": "Aspect Shrine Token: Once per battle for each Aspect Shrine token this unit has, you can change the result of one Hit roll or one Wound roll made for a model in this unit (excluding CHARACTER models) to an unmodified 6. Designer\u2019s Note: Place an Aspect Shrine token next to the unit for each Aspect Shrine token it has, removing one each time this ability is used."
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Dark Reaper Exarch",
-            "4-9 Dark Reapers"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "Reaper launcher; close combat weapon.",
-          "label": "Every model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -239,5 +204,91 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY"
+    ]
+  }
 }

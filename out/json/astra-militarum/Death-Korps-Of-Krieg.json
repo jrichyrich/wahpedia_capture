@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Death-Korps-Of-Krieg",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Death-Korps-Of-Krieg",
+    "canonicalSourceId": "wahapedia:07df47d079c96dfa6bf009aacfd88e4925d886ee",
     "faction_slug": "astra-militarum",
     "datasheet_slug": "Death-Korps-Of-Krieg",
+    "fetchedAt": "2026-03-19T17:11:44+00:00",
+    "contentHash": "154f7b186e1240381d4c279dd60b6746ef5ab2d0083111f9b8076c8dfa46ba8a",
     "output_slug": "astra-militarum"
   },
   "name": "Death Korps Of Krieg",
@@ -212,38 +218,15 @@
   "abilities": {
     "core": [],
     "faction": [],
-    "datasheet": [
+    "datasheet": [],
+    "other": [
       {
-        "type": "rule",
-        "text": "Each time a model in this unit makes an attack, add 1 to the Hit roll if this unit is below its Starting Strength , and add 1 to the Wound roll as well if this unit is Below Half-strength .",
-        "name": "Grim Demeanour"
+        "type": "text",
+        "text": "Grim Demeanour: Each time a model in this unit makes an attack, add 1 to the Hit roll if this unit is below its Starting Strength , and add 1 to the Wound roll as well if this unit is Below Half-strength ."
       }
-    ],
-    "other": []
+    ]
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Death Korps Watchmaster and 9 Death Korps Troopers",
-        "2 Death Korps Watchmasters and 18 Death Korps Troopers"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "2 Death Korps Watchmasters and 18 Death Korps Troopers",
-      "label": "OR"
-    },
-    {
-      "type": "statement",
-      "text": "laspistol; chainsword.",
-      "label": "Every Death Korps Watchmaster is equipped with"
-    },
-    {
-      "type": "statement",
-      "text": "close combat weapon. This unit can have up to two Leader units attached to it, provided no more than one of those units is a COMMAND SQUAD unit. If it does, and this Bodyguard unit is destroyed, the Leader units attached to it become separate units, with their original Starting Strengths .",
-      "label": "Every Death Korps Trooper is equipped with: lasgun;"
-    },
     {
       "type": "points",
       "rows": [
@@ -327,9 +310,8 @@
       "title": "ABILITIES",
       "entries": [
         {
-          "type": "rule",
-          "text": "Each time a model in this unit makes an attack, add 1 to the Hit roll if this unit is below its Starting Strength , and add 1 to the Wound roll as well if this unit is Below Half-strength .",
-          "name": "Grim Demeanour"
+          "type": "text",
+          "text": "Grim Demeanour: Each time a model in this unit makes an attack, add 1 to the Hit roll if this unit is below its Starting Strength , and add 1 to the Wound roll as well if this unit is Below Half-strength ."
         }
       ]
     },
@@ -337,42 +319,14 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "statement",
-          "text": "Each time you target the bearer\u2019s unit with a Stratagem , roll one D6, adding 1 to the result if there are one or more friendly OFFICER models within 6\": on a 5+, you gain 1CP.",
-          "label": "Vox-caster"
-        },
-        {
-          "type": "statement",
-          "text": "At the start of your Command phase , if the bearer\u2019s unit is below its Starting Strength , you can return up to D3 destroyed Death Korps Troopers to this unit (if this unit contains two models equipped with a Death Korps medi-pack, return up to D3+1 destroyed Death Korps Troopers to this unit instead).",
-          "label": "Death Korps Medi-pack"
+          "type": "text",
+          "text": "Vox-caster: Each time you target the bearer\u2019s unit with a Stratagem , roll one D6, adding 1 to the result if there are one or more friendly OFFICER models within 6\": on a 5+, you gain 1CP. Death Korps Medi-pack: At the start of your Command phase , if the bearer\u2019s unit is below its Starting Strength , you can return up to D3 destroyed Death Korps Troopers to this unit (if this unit contains two models equipped with a Death Korps medi-pack, return up to D3+1 destroyed Death Korps Troopers to this unit instead)."
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Death Korps Watchmaster and 9 Death Korps Troopers",
-            "2 Death Korps Watchmasters and 18 Death Korps Troopers"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "2 Death Korps Watchmasters and 18 Death Korps Troopers",
-          "label": "OR"
-        },
-        {
-          "type": "statement",
-          "text": "laspistol; chainsword.",
-          "label": "Every Death Korps Watchmaster is equipped with"
-        },
-        {
-          "type": "statement",
-          "text": "close combat weapon. This unit can have up to two Leader units attached to it, provided no more than one of those units is a COMMAND SQUAD unit. If it does, and this Bodyguard unit is destroyed, the Leader units attached to it become separate units, with their original Starting Strengths .",
-          "label": "Every Death Korps Trooper is equipped with: lasgun;"
-        },
         {
           "type": "points",
           "rows": [
@@ -388,5 +342,91 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY"
+    ]
+  }
 }

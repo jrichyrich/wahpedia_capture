@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Allarus-Custodians",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Allarus-Custodians",
+    "canonicalSourceId": "wahapedia:1efb3c8483c9d8e86e715134649ca09cd7003201",
     "faction_slug": "adeptus-custodes",
     "datasheet_slug": "Allarus-Custodians",
+    "fetchedAt": "2026-03-19T17:10:53+00:00",
+    "contentHash": "bfc686a9411140fcd275471003c1d334ad5eeac79ca6374fa390835dd75c597b",
     "output_slug": "adeptus-custodes"
   },
   "name": "Allarus Custodians",
@@ -90,37 +96,13 @@
   },
   "abilities": {
     "core": [
-      "Deep Strike"
+      "Deep Strike FACTION: Martial Ka\u2019tah Slayers of Tyrants: Each time a model in this unit makes an attack that targets a CHARACTER , MONSTER or VEHICLE unit, you can re-roll the Wound roll . From Golden Light: Once per battle, at the end of your opponent\u2019s turn, if this unit is not within Engagement Range of one or more enemy units, you can remove it from the battlefield and place it into Strategic Reserves ."
     ],
-    "faction": [
-      "Martial Ka\u2019tah"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "Each time a model in this unit makes an attack that targets a CHARACTER , MONSTER or VEHICLE unit, you can re-roll the Wound roll .",
-        "name": "Slayers of Tyrants"
-      },
-      {
-        "type": "rule",
-        "text": "Once per battle, at the end of your opponent\u2019s turn, if this unit is not within Engagement Range of one or more enemy units, you can remove it from the battlefield and place it into Strategic Reserves .",
-        "name": "From Golden Light"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "2-6 Allarus Custodians"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "balistus grenade launcher; guardian spear.",
-      "label": "Every model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -175,25 +157,8 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deep Strike"
+            "Deep Strike FACTION: Martial Ka\u2019tah Slayers of Tyrants: Each time a model in this unit makes an attack that targets a CHARACTER , MONSTER or VEHICLE unit, you can re-roll the Wound roll . From Golden Light: Once per battle, at the end of your opponent\u2019s turn, if this unit is not within Engagement Range of one or more enemy units, you can remove it from the battlefield and place it into Strategic Reserves ."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Martial Ka\u2019tah"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "Each time a model in this unit makes an attack that targets a CHARACTER , MONSTER or VEHICLE unit, you can re-roll the Wound roll .",
-          "name": "Slayers of Tyrants"
-        },
-        {
-          "type": "rule",
-          "text": "Once per battle, at the end of your opponent\u2019s turn, if this unit is not within Engagement Range of one or more enemy units, you can remove it from the battlefield and place it into Strategic Reserves .",
-          "name": "From Golden Light"
         }
       ]
     },
@@ -201,26 +166,14 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "statement",
-          "text": "Add 1 to the Objective Control characteristic of models in the bearer\u2019s unit.",
-          "label": "Vexilla"
+          "type": "text",
+          "text": "Vexilla: Add 1 to the Objective Control characteristic of models in the bearer\u2019s unit."
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "2-6 Allarus Custodians"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "balistus grenade launcher; guardian spear.",
-          "label": "Every model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -244,5 +197,95 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS"
+    ]
+  }
 }

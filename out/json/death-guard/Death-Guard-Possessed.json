@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Death-Guard-Possessed",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Death-Guard-Possessed",
+    "canonicalSourceId": "wahapedia:b376356eca06650f6dc118a627cc714e9e45711e",
     "faction_slug": "death-guard",
     "datasheet_slug": "Death-Guard-Possessed",
+    "fetchedAt": "2026-03-19T17:16:47+00:00",
+    "contentHash": "c09090cff5360b2638db3c91c2f102b02e313e0fb757443c346d15ceea956422",
     "output_slug": "death-guard"
   },
   "name": "Death Guard Possessed",
@@ -33,25 +39,12 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Nurgle\u2019s Gift (Aura)"
+      "Nurgle\u2019s Gift (Aura) Infectious Bloodshed: Each time this unit makes a Charge move , until the end of the turn, weapons equipped by models in this unit have the [SUSTAINED HITS 1] ability."
     ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "Each time this unit makes a Charge move , until the end of the turn, weapons equipped by models in this unit have the [SUSTAINED HITS 1] ability.",
-        "name": "Infectious Bloodshed"
-      }
-    ],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Possessed Champion",
-        "4-9 Possessed"
-      ]
-    },
     {
       "type": "points",
       "rows": [
@@ -93,13 +86,8 @@
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Nurgle\u2019s Gift (Aura)"
+            "Nurgle\u2019s Gift (Aura) Infectious Bloodshed: Each time this unit makes a Charge move , until the end of the turn, weapons equipped by models in this unit have the [SUSTAINED HITS 1] ability."
           ]
-        },
-        {
-          "type": "rule",
-          "text": "Each time this unit makes a Charge move , until the end of the turn, weapons equipped by models in this unit have the [SUSTAINED HITS 1] ability.",
-          "name": "Infectious Bloodshed"
         }
       ]
     },
@@ -107,22 +95,14 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "statement",
-          "text": "Melee weapons in the bearer\u2019s unit have the [LETHAL HITS] ability.",
-          "label": "Diseased Icon"
+          "type": "text",
+          "text": "Diseased Icon: Melee weapons in the bearer\u2019s unit have the [LETHAL HITS] ability."
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Possessed Champion",
-            "4-9 Possessed"
-          ]
-        },
         {
           "type": "points",
           "rows": [
@@ -147,5 +127,65 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "POSSESSED",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "POSSESSED"
+    ],
+    "missingExpectedSections": [
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "warnings": [
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS"
+    ]
+  }
 }

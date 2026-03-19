@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Reaper",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Reaper",
+    "canonicalSourceId": "wahapedia:01962fae24aaa21b702e1a516208e7863e015363",
     "faction_slug": "drukhari",
     "datasheet_slug": "Reaper",
+    "fetchedAt": "2026-03-19T17:17:26+00:00",
+    "contentHash": "e101da8acc561ac32a9bf91d68869c19078353a5ec3ccd850ac9ecdd6015b5aa",
     "output_slug": "drukhari"
   },
   "name": "Reaper",
@@ -70,40 +76,13 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D3 , Deep Strike"
+      "Deadly Demise D3 , Deep Strike FACTION: Power from Pain Electromagentic Cascade (Pain): In your Shooting phase , when you select this model to shoot, you can spend 1 Pain token to Empower this model. While Empowered: Each time this model makes a ranged attack that targets a VEHICLE unit, that attack has the [SUSTAINED HITS 2] ability. Each time this model makes a ranged attack that targets a non- VEHICLE unit, that attack has the [SUSTAINED HITS 1] ability. Eradicate the Foe: Each time this model makes an attack that targets an enemy unit that is at its Starting Strength , re-roll a Hit roll of 1. If the target unit has a Starting Strength of 1, this ability only applies if that unit has its starting number of wounds."
     ],
-    "faction": [
-      "Power from Pain"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "Each time this model makes an attack that targets an enemy unit that is at its Starting Strength , re-roll a Hit roll of 1. If the target unit has a Starting Strength of 1, this ability only applies if that unit has its starting number of wounds.",
-        "name": "Eradicate the Foe"
-      }
-    ],
-    "other": [
-      {
-        "type": "list",
-        "items": [
-          "Each time this model makes a ranged attack that targets a VEHICLE unit, that attack has the [SUSTAINED HITS 2] ability.",
-          "Each time this model makes a ranged attack that targets a non- VEHICLE unit, that attack has the [SUSTAINED HITS 1] ability."
-        ]
-      }
-    ]
+    "faction": [],
+    "datasheet": [],
+    "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Reaper"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "storm vortex projector; bladevanes; prow blade.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -143,44 +122,14 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D3 , Deep Strike"
+            "Deadly Demise D3 , Deep Strike FACTION: Power from Pain Electromagentic Cascade (Pain): In your Shooting phase , when you select this model to shoot, you can spend 1 Pain token to Empower this model. While Empowered: Each time this model makes a ranged attack that targets a VEHICLE unit, that attack has the [SUSTAINED HITS 2] ability. Each time this model makes a ranged attack that targets a non- VEHICLE unit, that attack has the [SUSTAINED HITS 1] ability. Eradicate the Foe: Each time this model makes an attack that targets an enemy unit that is at its Starting Strength , re-roll a Hit roll of 1. If the target unit has a Starting Strength of 1, this ability only applies if that unit has its starting number of wounds."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Power from Pain"
-          ]
-        },
-        {
-          "type": "list",
-          "items": [
-            "Each time this model makes a ranged attack that targets a VEHICLE unit, that attack has the [SUSTAINED HITS 2] ability.",
-            "Each time this model makes a ranged attack that targets a non- VEHICLE unit, that attack has the [SUSTAINED HITS 1] ability."
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "Each time this model makes an attack that targets an enemy unit that is at its Starting Strength , re-roll a Hit roll of 1. If the target unit has a Starting Strength of 1, this ability only applies if that unit has its starting number of wounds.",
-          "name": "Eradicate the Foe"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Reaper"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "storm vortex projector; bladevanes; prow blade.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -201,5 +150,87 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-4 WOUNDS REMAINING",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-4 WOUNDS REMAINING"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY"
+    ]
+  }
 }

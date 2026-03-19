@@ -1,12 +1,12 @@
 # Builder Catalog Build Report
 
-- Generated at: 2026-03-19T16:10:46+00:00
+- Generated at: 2026-03-19T17:37:48+00:00
 - Source root: `/Users/jasricha/Documents/Github_Personal/wahpedia_capture/out/json`
 - Factions imported: 9
 - Total units: 1064
 - Units with missing stats: 0
 - Manual selection units: 0
-- Units with manual wargear: 2
+- Units with manual wargear: 34
 - Source cards copied: 986
 - Source cards missing: 78
 
@@ -48,7 +48,7 @@
 - Units: 174
 - Missing stats: 0
 - Manual selection units: 0
-- Manual wargear units: 0
+- Manual wargear units: 8
 - Source cards copied: 174
 - Source cards missing: 0
 
@@ -78,7 +78,7 @@
 - Units: 155
 - Missing stats: 0
 - Manual selection units: 0
-- Manual wargear units: 0
+- Manual wargear units: 8
 - Source cards copied: 155
 - Source cards missing: 0
 
@@ -88,7 +88,7 @@
 - Units: 191
 - Missing stats: 0
 - Manual selection units: 0
-- Manual wargear units: 0
+- Manual wargear units: 8
 - Source cards copied: 191
 - Source cards missing: 0
 
@@ -98,6 +98,6 @@
 - Units: 170
 - Missing stats: 0
 - Manual selection units: 0
-- Manual wargear units: 0
+- Manual wargear units: 8
 - Source cards copied: 92
 - Source cards missing: 78

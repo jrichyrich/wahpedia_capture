@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Lord-of-Virulence",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Lord-of-Virulence",
+    "canonicalSourceId": "wahapedia:9d02013c2fa3c46916fa8df98d2e8b9a99696305",
     "faction_slug": "death-guard",
     "datasheet_slug": "Lord-of-Virulence",
+    "fetchedAt": "2026-03-19T17:17:00+00:00",
+    "contentHash": "dd1a0ed96644aa4a22d57dc161949a2639b3eabb235000eef10fc3ce1845861f",
     "output_slug": "death-guard"
   },
   "name": "Lord of Virulence",
@@ -51,37 +57,13 @@
   },
   "abilities": {
     "core": [
-      "Deep Strike , Leader"
+      "Deep Strike , Leader FACTION: Nurgle\u2019s Gift (Aura) Virulent Aura: While this model is leading a unit, each time a model in that unit makes a ranged attack, you can re-roll the Wound roll . Blight Bombardment: At the start of your Shooting phase , select one enemy unit within 30\" of and visible to this model. Until the end of the phase, each time a friendly DEATH GUARD model makes a ranged attack that targets that unit, re-roll a Hit roll of 1 (if that attack is made with a Blast weapon , you can re-roll the Hit roll instead)."
     ],
-    "faction": [
-      "Nurgle\u2019s Gift (Aura)"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "While this model is leading a unit, each time a model in that unit makes a ranged attack, you can re-roll the Wound roll .",
-        "name": "Virulent Aura"
-      },
-      {
-        "type": "rule",
-        "text": "At the start of your Shooting phase , select one enemy unit within 30\" of and visible to this model. Until the end of the phase, each time a friendly DEATH GUARD model makes a ranged attack that targets that unit, re-roll a Hit roll of 1 (if that attack is made with a Blast weapon , you can re-roll the Hit roll instead).",
-        "name": "Blight Bombardment"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Lord of Virulence"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "twin plague spewer; power fist.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -111,42 +93,14 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deep Strike , Leader"
+            "Deep Strike , Leader FACTION: Nurgle\u2019s Gift (Aura) Virulent Aura: While this model is leading a unit, each time a model in that unit makes a ranged attack, you can re-roll the Wound roll . Blight Bombardment: At the start of your Shooting phase , select one enemy unit within 30\" of and visible to this model. Until the end of the phase, each time a friendly DEATH GUARD model makes a ranged attack that targets that unit, re-roll a Hit roll of 1 (if that attack is made with a Blast weapon , you can re-roll the Hit roll instead)."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Nurgle\u2019s Gift (Aura)"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "While this model is leading a unit, each time a model in that unit makes a ranged attack, you can re-roll the Wound roll .",
-          "name": "Virulent Aura"
-        },
-        {
-          "type": "rule",
-          "text": "At the start of your Shooting phase , select one enemy unit within 30\" of and visible to this model. Until the end of the phase, each time a friendly DEATH GUARD model makes a ranged attack that targets that unit, re-roll a Hit roll of 1 (if that attack is made with a Blast weapon , you can re-roll the Hit roll instead).",
-          "name": "Blight Bombardment"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Lord of Virulence"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "twin plague spewer; power fist.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -170,5 +124,89 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "exportedSectionTitles": [
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS"
+    ]
+  }
 }

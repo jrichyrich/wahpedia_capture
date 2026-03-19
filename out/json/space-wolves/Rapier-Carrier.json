@@ -3,7 +3,11 @@
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Rapier-Carrier",
     "faction_slug": "space-marines",
     "datasheet_slug": "Rapier-Carrier",
-    "output_slug": "space-wolves"
+    "output_slug": "space-wolves",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Rapier-Carrier",
+    "canonicalSourceId": "wahapedia:fa2931500cbd983518084143b1dc7aa0118f17e9",
+    "fetchedAt": "2026-03-19T17:35:02+00:00",
+    "contentHash": "970eb2c289bd2181e3810318fe19df634b493c99904c704f41ff95351fb6af14"
   },
   "name": "Rapier Carrier",
   "base_size": "\u2300Use model",
@@ -110,29 +114,12 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Oath of Moment"
+      "Oath of Moment Powerful Volley: Each time this model shoots in your Shooting phase , provided it Remained Stationary this turn, all [HEAVY] weapons equipped by models in this unit have the [LETHAL HITS] ability."
     ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "Each time this model shoots in your Shooting phase , provided it Remained Stationary this turn, all [HEAVY] weapons equipped by models in this unit have the [LETHAL HITS] ability.",
-        "name": "Powerful Volley"
-      }
-    ],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Rapier Carrier"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "boltgun; quad heavy bolter; close combat weapon.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -154,36 +141,34 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s quad heavy bolter can be replaced with one of the following",
+          "items": [
+            "1 graviton cannon",
+            "1 laser destroyer",
+            "1 quad launcher"
+          ]
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Oath of Moment"
+            "Oath of Moment Powerful Volley: Each time this model shoots in your Shooting phase , provided it Remained Stationary this turn, all [HEAVY] weapons equipped by models in this unit have the [LETHAL HITS] ability."
           ]
-        },
-        {
-          "type": "rule",
-          "text": "Each time this model shoots in your Shooting phase , provided it Remained Stationary this turn, all [HEAVY] weapons equipped by models in this unit have the [LETHAL HITS] ability.",
-          "name": "Powerful Volley"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Rapier Carrier"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "boltgun; quad heavy bolter; close combat weapon.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -195,5 +180,20 @@
         }
       ]
     }
-  ]
+  ],
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "quality": {
+    "rawSectionTitles": [
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [],
+    "warnings": []
+  }
 }

@@ -3,7 +3,11 @@
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Judiciar",
     "faction_slug": "space-marines",
     "datasheet_slug": "Judiciar",
-    "output_slug": "space-wolves"
+    "output_slug": "space-wolves",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Judiciar",
+    "canonicalSourceId": "wahapedia:f6a077d4c8a77394a5750cb670f3567aeddeb3fa",
+    "fetchedAt": "2026-03-19T17:35:02+00:00",
+    "contentHash": "bc1a98cf758491aca55f2a5f8f964f202368880d839b8d34a499f1168fe8f66b"
   },
   "name": "Judiciar",
   "base_size": "\u230040mm",
@@ -49,37 +53,13 @@
   },
   "abilities": {
     "core": [
-      "Leader"
+      "Leader FACTION: Oath of Moment Tempormortis: While this model is leading a unit, that unit has the Fights First ability. Silent Fury: Each time this model destroys an enemy CHARACTER model, until the end of the battle, add 1 to the Attacks characteristic of its executioner relic blade."
     ],
-    "faction": [
-      "Oath of Moment"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "While this model is leading a unit, that unit has the Fights First ability.",
-        "name": "Tempormortis"
-      },
-      {
-        "type": "rule",
-        "text": "Each time this model destroys an enemy CHARACTER model, until the end of the battle, add 1 to the Attacks characteristic of its executioner relic blade.",
-        "name": "Silent Fury"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Judiciar"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "absolvor bolt pistol; executioner relic blade.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -108,42 +88,14 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Leader"
+            "Leader FACTION: Oath of Moment Tempormortis: While this model is leading a unit, that unit has the Fights First ability. Silent Fury: Each time this model destroys an enemy CHARACTER model, until the end of the battle, add 1 to the Attacks characteristic of its executioner relic blade."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Oath of Moment"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "While this model is leading a unit, that unit has the Fights First ability.",
-          "name": "Tempormortis"
-        },
-        {
-          "type": "rule",
-          "text": "Each time this model destroys an enemy CHARACTER model, until the end of the battle, add 1 to the Attacks characteristic of its executioner relic blade.",
-          "name": "Silent Fury"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Judiciar"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "absolvor bolt pistol; executioner relic blade.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -182,5 +134,21 @@
         }
       ]
     }
-  ]
+  ],
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "quality": {
+    "rawSectionTitles": [
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "exportedSectionTitles": [
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "missingExpectedSections": [],
+    "warnings": []
+  }
 }

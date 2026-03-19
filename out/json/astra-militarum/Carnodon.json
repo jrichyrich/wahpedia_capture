@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Carnodon",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Carnodon",
+    "canonicalSourceId": "wahapedia:c59e987073a6eb959822981367d5d09958b49b7a",
     "faction_slug": "astra-militarum",
     "datasheet_slug": "Carnodon",
+    "fetchedAt": "2026-03-19T17:12:09+00:00",
+    "contentHash": "826456a09232703e05c37115e6d8fd949616fee6e3b99851f1ff1a47e82d030b",
     "output_slug": "astra-militarum"
   },
   "name": "Carnodon",
@@ -158,30 +164,13 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D3"
+      "Deadly Demise D3 Ancient Conquest: Each time this model makes an attack that targets an enemy unit that is within your opponent\u2019s deployment zone, re-roll a Hit roll of 1 and re-roll a Wound roll of 1."
     ],
     "faction": [],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "Each time this model makes an attack that targets an enemy unit that is within your opponent\u2019s deployment zone, re-roll a Hit roll of 1 and re-roll a Wound roll of 1.",
-        "name": "Ancient Conquest"
-      }
-    ],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Carnodon"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "2 autocannons; Carnodon twin autocannon; armoured tracks.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -240,30 +229,14 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D3"
+            "Deadly Demise D3 Ancient Conquest: Each time this model makes an attack that targets an enemy unit that is within your opponent\u2019s deployment zone, re-roll a Hit roll of 1 and re-roll a Wound roll of 1."
           ]
-        },
-        {
-          "type": "rule",
-          "text": "Each time this model makes an attack that targets an enemy unit that is within your opponent\u2019s deployment zone, re-roll a Hit roll of 1 and re-roll a Wound roll of 1.",
-          "name": "Ancient Conquest"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Carnodon"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "2 autocannons; Carnodon twin autocannon; armoured tracks.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -284,5 +257,87 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-4 WOUNDS REMAINING",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-4 WOUNDS REMAINING"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY"
+    ]
+  }
 }

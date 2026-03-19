@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Rangers",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Rangers",
+    "canonicalSourceId": "wahapedia:61553503b8c1baf219294e2b386171e5dea859b8",
     "faction_slug": "aeldari",
     "datasheet_slug": "Rangers",
+    "fetchedAt": "2026-03-19T17:11:17+00:00",
+    "contentHash": "626cc6a899bbc0624a7842fa68235b3d5bdc1e6f3fc571a2b25f3fe0ad30ce5c",
     "output_slug": "aeldari"
   },
   "name": "Rangers",
@@ -60,32 +66,13 @@
   },
   "abilities": {
     "core": [
-      "Infiltrators , Stealth"
+      "Infiltrators , Stealth FACTION: Battle Focus Path of the Outcast: Once per turn, when an enemy unit ends a Normal , Advance or Fall Back move within 9\" of this unit, it can make a Normal move of up to D6\"."
     ],
-    "faction": [
-      "Battle Focus"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "Once per turn, when an enemy unit ends a Normal , Advance or Fall Back move within 9\" of this unit, it can make a Normal move of up to D6\".",
-        "name": "Path of the Outcast"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "5-10 Rangers"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "long rifle; shuriken pistol; close combat weapon.",
-      "label": "Every model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -113,9 +100,10 @@
       "title": "WARGEAR OPTIONS",
       "entries": [
         {
-          "type": "option_group",
-          "label": "None",
-          "items": []
+          "type": "list",
+          "items": [
+            "None"
+          ]
         }
       ]
     },
@@ -126,37 +114,14 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Infiltrators , Stealth"
+            "Infiltrators , Stealth FACTION: Battle Focus Path of the Outcast: Once per turn, when an enemy unit ends a Normal , Advance or Fall Back move within 9\" of this unit, it can make a Normal move of up to D6\"."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Battle Focus"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "Once per turn, when an enemy unit ends a Normal , Advance or Fall Back move within 9\" of this unit, it can make a Normal move of up to D6\".",
-          "name": "Path of the Outcast"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "5-10 Rangers"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "long rifle; shuriken pistol; close combat weapon.",
-          "label": "Every model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -172,5 +137,89 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY"
+    ]
+  }
 }

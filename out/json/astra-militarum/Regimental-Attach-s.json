@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Regimental-Attach-s",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Regimental-Attach-s",
+    "canonicalSourceId": "wahapedia:327e969c035fdd1a3663bdd691cfad578a0dae6b",
     "faction_slug": "astra-militarum",
     "datasheet_slug": "Regimental-Attach-s",
+    "fetchedAt": "2026-03-19T17:12:21+00:00",
+    "contentHash": "4c3a28dc6f5ec252a7236e9056ad48813c02b0bd2a1aecfb303e4068c5519f6c",
     "output_slug": "astra-militarum"
   },
   "name": "Regimental Attach\u00e9s",
@@ -58,42 +64,15 @@
   "abilities": {
     "core": [],
     "faction": [],
-    "datasheet": [
+    "datasheet": [],
+    "other": [
       {
-        "type": "rule",
-        "text": "At the start of your Shooting phase , select one enemy unit within 30\" of and visible to this unit\u2019s Master of Ordnance model that has not already been selected for this ability this phase. Until the end of the phase, Blast weapons equipped by friendly ASTRA MILITARUM ARTILLERY models have the [SUSTAINED HITS 1] ability when targeting that unit.",
-        "name": "Artillery Commander"
-      },
-      {
-        "type": "rule",
-        "text": "At the start of your Shooting phase , select one enemy unit within 30\" of and visible to this unit\u2019s Officer of the Fleet model. Until the end of the phase, each time a friendly ASTRA MILITARUM AIRCRAFT model makes a ranged attack that targets that unit, add 1 to the Hit roll .",
-        "name": "Aeronautica Commander"
-      },
-      {
-        "type": "rule",
-        "text": "Enemy units that are set up on the battlefield as Reinforcements cannot be set up within 12\" of this unit\u2019s Astropath model.",
-        "name": "Divination (Psychic)"
+        "type": "text",
+        "text": "Artillery Commander: At the start of your Shooting phase , select one enemy unit within 30\" of and visible to this unit\u2019s Master of Ordnance model that has not already been selected for this ability this phase. Until the end of the phase, Blast weapons equipped by friendly ASTRA MILITARUM ARTILLERY models have the [SUSTAINED HITS 1] ability when targeting that unit. Aeronautica Commander: At the start of your Shooting phase , select one enemy unit within 30\" of and visible to this unit\u2019s Officer of the Fleet model. Until the end of the phase, each time a friendly ASTRA MILITARUM AIRCRAFT model makes a ranged attack that targets that unit, add 1 to the Hit roll . Divination (Psychic): Enemy units that are set up on the battlefield as Reinforcements cannot be set up within 12\" of this unit\u2019s Astropath model."
       }
-    ],
-    "other": []
+    ]
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Master of Ordnance, 1 Officer of the Fleet and 1 Astropath."
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "laspistol; close combat weapon.",
-      "label": "The Master of Ordnance and Officer of the Fleet are both equipped with"
-    },
-    {
-      "type": "statement",
-      "text": "laspistol; Astropath\u2019s stave.",
-      "label": "The Astropath is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -128,41 +107,14 @@
       "title": "ABILITIES",
       "entries": [
         {
-          "type": "rule",
-          "text": "At the start of your Shooting phase , select one enemy unit within 30\" of and visible to this unit\u2019s Master of Ordnance model that has not already been selected for this ability this phase. Until the end of the phase, Blast weapons equipped by friendly ASTRA MILITARUM ARTILLERY models have the [SUSTAINED HITS 1] ability when targeting that unit.",
-          "name": "Artillery Commander"
-        },
-        {
-          "type": "rule",
-          "text": "At the start of your Shooting phase , select one enemy unit within 30\" of and visible to this unit\u2019s Officer of the Fleet model. Until the end of the phase, each time a friendly ASTRA MILITARUM AIRCRAFT model makes a ranged attack that targets that unit, add 1 to the Hit roll .",
-          "name": "Aeronautica Commander"
-        },
-        {
-          "type": "rule",
-          "text": "Enemy units that are set up on the battlefield as Reinforcements cannot be set up within 12\" of this unit\u2019s Astropath model.",
-          "name": "Divination (Psychic)"
+          "type": "text",
+          "text": "Artillery Commander: At the start of your Shooting phase , select one enemy unit within 30\" of and visible to this unit\u2019s Master of Ordnance model that has not already been selected for this ability this phase. Until the end of the phase, Blast weapons equipped by friendly ASTRA MILITARUM ARTILLERY models have the [SUSTAINED HITS 1] ability when targeting that unit. Aeronautica Commander: At the start of your Shooting phase , select one enemy unit within 30\" of and visible to this unit\u2019s Officer of the Fleet model. Until the end of the phase, each time a friendly ASTRA MILITARUM AIRCRAFT model makes a ranged attack that targets that unit, add 1 to the Hit roll . Divination (Psychic): Enemy units that are set up on the battlefield as Reinforcements cannot be set up within 12\" of this unit\u2019s Astropath model."
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Master of Ordnance, 1 Officer of the Fleet and 1 Astropath."
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "laspistol; close combat weapon.",
-          "label": "The Master of Ordnance and Officer of the Fleet are both equipped with"
-        },
-        {
-          "type": "statement",
-          "text": "laspistol; Astropath\u2019s stave.",
-          "label": "The Astropath is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -183,5 +135,87 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "ATTACH\u00c9S",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "ATTACH\u00c9S"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY"
+    ]
+  }
 }

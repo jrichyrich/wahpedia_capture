@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Blade-Champion",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Blade-Champion",
+    "canonicalSourceId": "wahapedia:c4a21560a1b9d166708d81f7bde8a4ea12164c1b",
     "faction_slug": "adeptus-custodes",
     "datasheet_slug": "Blade-Champion",
+    "fetchedAt": "2026-03-19T17:10:51+00:00",
+    "contentHash": "63f3225ec987ca10ac6ddea9d425901f5aaee52c54d752c0af4848de4a248567",
     "output_slug": "adeptus-custodes"
   },
   "name": "Blade Champion",
@@ -58,37 +64,13 @@
   },
   "abilities": {
     "core": [
-      "Deep Strike , Leader"
+      "Deep Strike , Leader FACTION: Martial Ka\u2019tah Swift Onslaught: While this model is leading a unit, you can re-roll Charge rolls made for that unit Martial Inspiration: Once per battle, in your Charge phase , this model\u2019s unit is eligible to declare a charge in a turn which it Advanced ."
     ],
-    "faction": [
-      "Martial Ka\u2019tah"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "While this model is leading a unit, you can re-roll Charge rolls made for that unit",
-        "name": "Swift Onslaught"
-      },
-      {
-        "type": "rule",
-        "text": "Once per battle, in your Charge phase , this model\u2019s unit is eligible to declare a charge in a turn which it Advanced .",
-        "name": "Martial Inspiration"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Blade Champion"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "vaultswords.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -116,42 +98,14 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deep Strike , Leader"
+            "Deep Strike , Leader FACTION: Martial Ka\u2019tah Swift Onslaught: While this model is leading a unit, you can re-roll Charge rolls made for that unit Martial Inspiration: Once per battle, in your Charge phase , this model\u2019s unit is eligible to declare a charge in a turn which it Advanced ."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Martial Ka\u2019tah"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "While this model is leading a unit, you can re-roll Charge rolls made for that unit",
-          "name": "Swift Onslaught"
-        },
-        {
-          "type": "rule",
-          "text": "Once per battle, in your Charge phase , this model\u2019s unit is eligible to declare a charge in a turn which it Advanced .",
-          "name": "Martial Inspiration"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Blade Champion"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "vaultswords.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -175,5 +129,61 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "exportedSectionTitles": [
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "missingExpectedSections": [
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "warnings": [
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS"
+    ]
+  }
 }

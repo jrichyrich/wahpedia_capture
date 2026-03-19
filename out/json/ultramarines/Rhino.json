@@ -3,7 +3,11 @@
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Rhino",
     "faction_slug": "space-marines",
     "datasheet_slug": "Rhino",
-    "output_slug": "ultramarines"
+    "output_slug": "ultramarines",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Rhino",
+    "canonicalSourceId": "wahapedia:57376ab376d708811efcbd0bec7603e2a83d1b19",
+    "fetchedAt": "2026-03-19T17:35:03+00:00",
+    "contentHash": "1f16cae4e565df327a15a5cbf45f06dceff5e5582e5e737daa5cedfa96d87596"
   },
   "name": "Rhino",
   "base_size": "\u2300Use model",
@@ -55,32 +59,13 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D3 , Firing Deck 2"
+      "Deadly Demise D3 , Firing Deck 2 FACTION: Oath of Moment Self Repair: At the end of your Command phase , this model regains 1 lost wound."
     ],
-    "faction": [
-      "Oath of Moment"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "At the end of your Command phase , this model regains 1 lost wound.",
-        "name": "Self Repair"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Rhino"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "storm bolter; armoured tracks.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -104,43 +89,30 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model can be equipped with 1 hunter-killer missile.",
+          "items": []
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D3 , Firing Deck 2"
+            "Deadly Demise D3 , Firing Deck 2 FACTION: Oath of Moment Self Repair: At the end of your Command phase , this model regains 1 lost wound."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Oath of Moment"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "At the end of your Command phase , this model regains 1 lost wound.",
-          "name": "Self Repair"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Rhino"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "storm bolter; armoured tracks.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -161,5 +133,22 @@
         }
       ]
     }
-  ]
+  ],
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "quality": {
+    "rawSectionTitles": [
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "TRANSPORT"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "TRANSPORT"
+    ],
+    "missingExpectedSections": [],
+    "warnings": []
+  }
 }

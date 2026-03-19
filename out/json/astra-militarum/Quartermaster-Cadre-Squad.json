@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Quartermaster-Cadre-Squad",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Quartermaster-Cadre-Squad",
+    "canonicalSourceId": "wahapedia:7e833dc811a31d12b0752afb92943926c73e230a",
     "faction_slug": "astra-militarum",
     "datasheet_slug": "Quartermaster-Cadre-Squad",
+    "fetchedAt": "2026-03-19T17:11:42+00:00",
+    "contentHash": "b86a007d10286777fadc440103a35a10a39ac22f10b96db83669a3af34af7543",
     "output_slug": "astra-militarum"
   },
   "name": "Quartermaster Cadre Squad",
@@ -55,41 +61,13 @@
   },
   "abilities": {
     "core": [
-      "Leader"
+      "Leader Medicae Medi-packs: Whilst this unit contains one or more Medicae Servitors, models in this unit have the Feel No Pain 5+ ability. Mindlock: While this unit contains a Quartermaster Revenant model, improve the Weapon Skill characteristic of this unit\u2019s Medical scalpels by 1."
     ],
     "faction": [],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "Whilst this unit contains one or more Medicae Servitors, models in this unit have the Feel No Pain 5+ ability.",
-        "name": "Medicae Medi-packs"
-      },
-      {
-        "type": "rule",
-        "text": "While this unit contains a Quartermaster Revenant model, improve the Weapon Skill characteristic of this unit\u2019s Medical scalpels by 1.",
-        "name": "Mindlock"
-      }
-    ],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Quartermaster Revenant",
-        "4 Medicae Servitors"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "Quartermaster\u2019s pistol; Quartermaster\u2019s close combat weapon.",
-      "label": "The Quartermaster Revenant is equipped with"
-    },
-    {
-      "type": "statement",
-      "text": "medical scalpels",
-      "label": "Every Medicae Servitor is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -129,41 +107,14 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Leader"
+            "Leader Medicae Medi-packs: Whilst this unit contains one or more Medicae Servitors, models in this unit have the Feel No Pain 5+ ability. Mindlock: While this unit contains a Quartermaster Revenant model, improve the Weapon Skill characteristic of this unit\u2019s Medical scalpels by 1."
           ]
-        },
-        {
-          "type": "rule",
-          "text": "Whilst this unit contains one or more Medicae Servitors, models in this unit have the Feel No Pain 5+ ability.",
-          "name": "Medicae Medi-packs"
-        },
-        {
-          "type": "rule",
-          "text": "While this unit contains a Quartermaster Revenant model, improve the Weapon Skill characteristic of this unit\u2019s Medical scalpels by 1.",
-          "name": "Mindlock"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Quartermaster Revenant",
-            "4 Medicae Servitors"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "Quartermaster\u2019s pistol; Quartermaster\u2019s close combat weapon.",
-          "label": "The Quartermaster Revenant is equipped with"
-        },
-        {
-          "type": "statement",
-          "text": "medical scalpels",
-          "label": "Every Medicae Servitor is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -187,5 +138,91 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS"
+    ]
+  }
 }

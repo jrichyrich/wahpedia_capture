@@ -3,7 +3,11 @@
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Apothecary-Biologis",
     "faction_slug": "space-marines",
     "datasheet_slug": "Apothecary-Biologis",
-    "output_slug": "ultramarines"
+    "output_slug": "ultramarines",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Apothecary-Biologis",
+    "canonicalSourceId": "wahapedia:e5c0131c253bdf6187b7c94f9ff2f216b2a8f9c5",
+    "fetchedAt": "2026-03-19T17:35:02+00:00",
+    "contentHash": "a19df6d6fa0cdaf2d42bcd1b7ac254af8ab231c3152ca30fdd03ed706c6908a1"
   },
   "name": "Apothecary Biologis",
   "base_size": "\u230040mm",
@@ -45,37 +49,13 @@
   },
   "abilities": {
     "core": [
-      "Leader"
+      "Leader FACTION: Oath of Moment Surgical Precision: While this model is leading a unit, weapons equipped by models in that unit have the [LETHAL HITS] ability. Vivispectrum: If this model\u2019s unit destroys an enemy unit as the result of a melee attack, until the end of the battle, this model has an Objective Control characteristic of 9."
     ],
-    "faction": [
-      "Oath of Moment"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "While this model is leading a unit, weapons equipped by models in that unit have the [LETHAL HITS] ability.",
-        "name": "Surgical Precision"
-      },
-      {
-        "type": "rule",
-        "text": "If this model\u2019s unit destroys an enemy unit as the result of a melee attack, until the end of the battle, this model has an Objective Control characteristic of 9.",
-        "name": "Vivispectrum"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Apothecary Biologis"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "absolvor bolt pistol; close combat weapon.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -105,42 +85,14 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Leader"
+            "Leader FACTION: Oath of Moment Surgical Precision: While this model is leading a unit, weapons equipped by models in that unit have the [LETHAL HITS] ability. Vivispectrum: If this model\u2019s unit destroys an enemy unit as the result of a melee attack, until the end of the battle, this model has an Objective Control characteristic of 9."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Oath of Moment"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "While this model is leading a unit, weapons equipped by models in that unit have the [LETHAL HITS] ability.",
-          "name": "Surgical Precision"
-        },
-        {
-          "type": "rule",
-          "text": "If this model\u2019s unit destroys an enemy unit as the result of a melee attack, until the end of the battle, this model has an Objective Control characteristic of 9.",
-          "name": "Vivispectrum"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Apothecary Biologis"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "absolvor bolt pistol; close combat weapon.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -166,5 +118,21 @@
         }
       ]
     }
-  ]
+  ],
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "quality": {
+    "rawSectionTitles": [
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "exportedSectionTitles": [
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "missingExpectedSections": [],
+    "warnings": []
+  }
 }

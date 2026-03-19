@@ -3,7 +3,11 @@
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Chaplain-On-Bike",
     "faction_slug": "space-marines",
     "datasheet_slug": "Chaplain-On-Bike",
-    "output_slug": "ultramarines"
+    "output_slug": "ultramarines",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Chaplain-On-Bike",
+    "canonicalSourceId": "wahapedia:7b8d3f675082626bf93da8e7ab78c24f587e13e9",
+    "fetchedAt": "2026-03-19T17:35:02+00:00",
+    "contentHash": "5b26159bef2898c74aacd1b9eb28263067bc2859827992dd78ec7d80e5f82a3e"
   },
   "name": "Chaplain On Bike",
   "base_size": "\u230090 x 52mm",
@@ -58,37 +62,13 @@
   },
   "abilities": {
     "core": [
-      "Leader"
+      "Leader FACTION: Oath of Moment Litany of Hate: While this model is leading a unit, each time a model in that unit makes a melee attack, add 1 to the Wound roll . Catechism of Fire: Each time this model\u2019s unit is selected to shoot, you can select one enemy unit within 12\" of and visible to this model. Until the end of the phase, ranged weapons equipped by models in this model\u2019s unit have the [DEVASTATING WOUNDS] ability when targeting that enemy unit."
     ],
-    "faction": [
-      "Oath of Moment"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "While this model is leading a unit, each time a model in that unit makes a melee attack, add 1 to the Wound roll .",
-        "name": "Litany of Hate"
-      },
-      {
-        "type": "rule",
-        "text": "Each time this model\u2019s unit is selected to shoot, you can select one enemy unit within 12\" of and visible to this model. Until the end of the phase, ranged weapons equipped by models in this model\u2019s unit have the [DEVASTATING WOUNDS] ability when targeting that enemy unit.",
-        "name": "Catechism of Fire"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Chaplain on Bike"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "absolvor bolt pistol; twin bolt rifle; crozius arcanum.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -118,42 +98,14 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Leader"
+            "Leader FACTION: Oath of Moment Litany of Hate: While this model is leading a unit, each time a model in that unit makes a melee attack, add 1 to the Wound roll . Catechism of Fire: Each time this model\u2019s unit is selected to shoot, you can select one enemy unit within 12\" of and visible to this model. Until the end of the phase, ranged weapons equipped by models in this model\u2019s unit have the [DEVASTATING WOUNDS] ability when targeting that enemy unit."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Oath of Moment"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "While this model is leading a unit, each time a model in that unit makes a melee attack, add 1 to the Wound roll .",
-          "name": "Litany of Hate"
-        },
-        {
-          "type": "rule",
-          "text": "Each time this model\u2019s unit is selected to shoot, you can select one enemy unit within 12\" of and visible to this model. Until the end of the phase, ranged weapons equipped by models in this model\u2019s unit have the [DEVASTATING WOUNDS] ability when targeting that enemy unit.",
-          "name": "Catechism of Fire"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Chaplain on Bike"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "absolvor bolt pistol; twin bolt rifle; crozius arcanum.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -179,5 +131,21 @@
         }
       ]
     }
-  ]
+  ],
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "quality": {
+    "rawSectionTitles": [
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "exportedSectionTitles": [
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "missingExpectedSections": [],
+    "warnings": []
+  }
 }

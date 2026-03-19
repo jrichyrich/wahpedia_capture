@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Warlock-Conclave",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Warlock-Conclave",
+    "canonicalSourceId": "wahapedia:55b71622f1d4dda8d49a264b84e1a6938c6b8a9e",
     "faction_slug": "aeldari",
     "datasheet_slug": "Warlock-Conclave",
+    "fetchedAt": "2026-03-19T17:11:22+00:00",
+    "contentHash": "6b7577689dba601d0debb95f68cb7b8e3573eb707eb35493ca302cb7f39577b5",
     "output_slug": "aeldari"
   },
   "name": "Warlock Conclave",
@@ -88,37 +94,13 @@
   },
   "abilities": {
     "core": [
-      "Leader"
+      "Leader FACTION: Battle Focus Protect (Psychic): While a FARSEER model is leading this unit, each time an attack targets this unit, subtract 1 from the Wound roll . Psychic Communion (Psychic): Each time this unit is selected to shoot, for each WARLOCK model in this unit, until the end of the phase, add 1 to the Attacks and Strength characteristics of that model\u2019s Destructor weapon for each other friendly AELDARI PSYKER model within 6\" of that model (to a maximum of +2)."
     ],
-    "faction": [
-      "Battle Focus"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "While a FARSEER model is leading this unit, each time an attack targets this unit, subtract 1 from the Wound roll .",
-        "name": "Protect (Psychic)"
-      },
-      {
-        "type": "rule",
-        "text": "Each time this unit is selected to shoot, for each WARLOCK model in this unit, until the end of the phase, add 1 to the Attacks and Strength characteristics of that model\u2019s Destructor weapon for each other friendly AELDARI PSYKER model within 6\" of that model (to a maximum of +2).",
-        "name": "Psychic Communion (Psychic)"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "2-4 Warlocks"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "Destructor; shuriken pistol; witchblade.",
-      "label": "Every model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -161,42 +143,14 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Leader"
+            "Leader FACTION: Battle Focus Protect (Psychic): While a FARSEER model is leading this unit, each time an attack targets this unit, subtract 1 from the Wound roll . Psychic Communion (Psychic): Each time this unit is selected to shoot, for each WARLOCK model in this unit, until the end of the phase, add 1 to the Attacks and Strength characteristics of that model\u2019s Destructor weapon for each other friendly AELDARI PSYKER model within 6\" of that model (to a maximum of +2)."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Battle Focus"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "While a FARSEER model is leading this unit, each time an attack targets this unit, subtract 1 from the Wound roll .",
-          "name": "Protect (Psychic)"
-        },
-        {
-          "type": "rule",
-          "text": "Each time this unit is selected to shoot, for each WARLOCK model in this unit, until the end of the phase, add 1 to the Attacks and Strength characteristics of that model\u2019s Destructor weapon for each other friendly AELDARI PSYKER model within 6\" of that model (to a maximum of +2).",
-          "name": "Psychic Communion (Psychic)"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "2-4 Warlocks"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "Destructor; shuriken pistol; witchblade.",
-          "label": "Every model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -221,5 +175,91 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY"
+    ]
+  }
 }

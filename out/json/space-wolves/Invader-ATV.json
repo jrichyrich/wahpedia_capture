@@ -3,7 +3,11 @@
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Invader-ATV",
     "faction_slug": "space-marines",
     "datasheet_slug": "Invader-ATV",
-    "output_slug": "space-wolves"
+    "output_slug": "space-wolves",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Invader-ATV",
+    "canonicalSourceId": "wahapedia:ae5d3495c6ef3faf305cb2abc080894395fb9705",
+    "fetchedAt": "2026-03-19T17:35:02+00:00",
+    "contentHash": "d0475f976c1eeeca1b9a2c8a8e05d36d26012e728e4e556a795ce566e475c9c5"
   },
   "name": "Invader ATV",
   "base_size": "\u2300Use model",
@@ -82,29 +86,12 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Oath of Moment"
+      "Oath of Moment Outrider Escort: Once per turn, in your opponent\u2019s Shooting phase , when another friendly ADEPTUS ASTARTES MOUNTED unit within 6\" of this model is selected as the target of an attack, one model from your army with this ability can use it. If it does, after that enemy unit has finished making its attacks, that model can shoot as if it were your Shooting phase, but when resolving those attacks it can only target that enemy unit (and only if it is an eligible target)."
     ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "Once per turn, in your opponent\u2019s Shooting phase , when another friendly ADEPTUS ASTARTES MOUNTED unit within 6\" of this model is selected as the target of an attack, one model from your army with this ability can use it. If it does, after that enemy unit has finished making its attacks, that model can shoot as if it were your Shooting phase, but when resolving those attacks it can only target that enemy unit (and only if it is an eligible target).",
-        "name": "Outrider Escort"
-      }
-    ],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Invader ATV"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "bolt pistol, twin bolt rifle; onslaught gatling cannon; close combat weapon.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -127,36 +114,30 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s onslaught gatling cannon can be replaced with 1 multi-melta.",
+          "items": []
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Oath of Moment"
+            "Oath of Moment Outrider Escort: Once per turn, in your opponent\u2019s Shooting phase , when another friendly ADEPTUS ASTARTES MOUNTED unit within 6\" of this model is selected as the target of an attack, one model from your army with this ability can use it. If it does, after that enemy unit has finished making its attacks, that model can shoot as if it were your Shooting phase, but when resolving those attacks it can only target that enemy unit (and only if it is an eligible target)."
           ]
-        },
-        {
-          "type": "rule",
-          "text": "Once per turn, in your opponent\u2019s Shooting phase , when another friendly ADEPTUS ASTARTES MOUNTED unit within 6\" of this model is selected as the target of an attack, one model from your army with this ability can use it. If it does, after that enemy unit has finished making its attacks, that model can shoot as if it were your Shooting phase, but when resolving those attacks it can only target that enemy unit (and only if it is an eligible target).",
-          "name": "Outrider Escort"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Invader ATV"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "bolt pistol, twin bolt rifle; onslaught gatling cannon; close combat weapon.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -168,5 +149,20 @@
         }
       ]
     }
-  ]
+  ],
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "quality": {
+    "rawSectionTitles": [
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [],
+    "warnings": []
+  }
 }

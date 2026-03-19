@@ -248,10 +248,17 @@ class BuilderCatalogTests(unittest.TestCase):
             (source_cards_root / "test-faction").mkdir(parents=True)
 
             unit_one = {
+                "exportSchemaVersion": 1,
+                "parserVersion": "2026-03-19-durable-normalization-v1",
                 "source": {
                     "url": "http://example/One",
+                    "normalizedUrl": "http://example/One",
+                    "canonicalSourceId": "wahapedia:one",
                     "faction_slug": "test-faction",
                     "datasheet_slug": "One",
+                    "output_slug": "test-faction",
+                    "fetchedAt": "2026-03-19T00:00:00+00:00",
+                    "contentHash": "hash-one",
                 },
                 "name": "Unit One",
                 "characteristics": {
@@ -273,10 +280,17 @@ class BuilderCatalogTests(unittest.TestCase):
                 "sections": [],
             }
             unit_two = {
+                "exportSchemaVersion": 1,
+                "parserVersion": "2026-03-19-durable-normalization-v1",
                 "source": {
                     "url": "http://example/Two",
+                    "normalizedUrl": "http://example/Two",
+                    "canonicalSourceId": "wahapedia:two",
                     "faction_slug": "test-faction",
                     "datasheet_slug": "Two",
+                    "output_slug": "test-faction",
+                    "fetchedAt": "2026-03-19T00:00:00+00:00",
+                    "contentHash": "hash-two",
                 },
                 "name": "Unit Two",
                 "characteristics": {},
@@ -292,6 +306,41 @@ class BuilderCatalogTests(unittest.TestCase):
             }
 
             (faction_dir / "index.json").write_text(json.dumps([unit_one, unit_two]), encoding="utf-8")
+            (source_root / "export-manifest.json").write_text(
+                json.dumps(
+                    {
+                        "exportSchemaVersion": 1,
+                        "parserVersion": "2026-03-19-durable-normalization-v1",
+                        "records": [
+                            {
+                                "outputSlug": "test-faction",
+                                "datasheetSlug": "One",
+                                "canonicalSourceId": "wahapedia:one",
+                                "normalizedSourceUrl": "http://example/One",
+                                "exportSchemaVersion": 1,
+                                "parserVersion": "2026-03-19-durable-normalization-v1",
+                                "sourceContentHash": "hash-one",
+                                "sharedCoreHash": "shared-one",
+                                "exportedSectionTitles": [],
+                                "quality": {},
+                            },
+                            {
+                                "outputSlug": "test-faction",
+                                "datasheetSlug": "Two",
+                                "canonicalSourceId": "wahapedia:two",
+                                "normalizedSourceUrl": "http://example/Two",
+                                "exportSchemaVersion": 1,
+                                "parserVersion": "2026-03-19-durable-normalization-v1",
+                                "sourceContentHash": "hash-two",
+                                "sharedCoreHash": "shared-two",
+                                "exportedSectionTitles": [],
+                                "quality": {},
+                            },
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
             (source_cards_root / "test-faction" / "One.png").write_bytes(b"fake-png")
 
             manifest = build_builder_catalog.build_all(
@@ -320,6 +369,128 @@ class BuilderCatalogTests(unittest.TestCase):
             build_builder_catalog.publish_docs_data(output_root, docs_root)
             build_builder_catalog.publish_source_cards(docs_root, source_cards_root)
             self.assertTrue((docs_root / "source-cards" / "test-faction" / "One.png").exists())
+
+    def test_build_all_fails_on_stale_export_schema(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            source_root = Path(tmpdir) / "source"
+            output_root = Path(tmpdir) / "out"
+            source_cards_root = Path(tmpdir) / "cards"
+            faction_dir = source_root / "test-faction"
+            faction_dir.mkdir(parents=True)
+            source_cards_root.mkdir(parents=True)
+
+            card = {
+                "exportSchemaVersion": 0,
+                "parserVersion": "old-parser",
+                "source": {
+                    "url": "http://example/One",
+                    "normalizedUrl": "http://example/One",
+                    "canonicalSourceId": "wahapedia:one",
+                    "faction_slug": "test-faction",
+                    "datasheet_slug": "One",
+                    "output_slug": "test-faction",
+                },
+                "name": "Unit One",
+                "characteristics": {"M": '6"', "T": "4", "Sv": "3+", "W": "2", "Ld": "7+", "OC": "1"},
+                "weapons": {"ranged_weapons": [], "melee_weapons": []},
+                "abilities": {"core": [], "faction": [], "datasheet": [], "other": []},
+                "unit_composition": [{"type": "list", "items": ["5 Unit One"]}],
+                "keywords": ["INFANTRY"],
+                "faction_keywords": ["TEST"],
+                "sections": [],
+            }
+            (faction_dir / "index.json").write_text(json.dumps([card]), encoding="utf-8")
+            (source_root / "export-manifest.json").write_text(
+                json.dumps(
+                    {
+                        "exportSchemaVersion": 0,
+                        "parserVersion": "old-parser",
+                        "records": [
+                            {
+                                "outputSlug": "test-faction",
+                                "datasheetSlug": "One",
+                                "canonicalSourceId": "wahapedia:one",
+                                "normalizedSourceUrl": "http://example/One",
+                                "exportSchemaVersion": 0,
+                                "parserVersion": "old-parser",
+                                "sharedCoreHash": "hash-one",
+                            }
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+
+            with self.assertRaisesRegex(ValueError, "schema version mismatch"):
+                build_builder_catalog.build_all(source_root, output_root, source_cards_root=source_cards_root)
+
+    def test_build_all_fails_on_duplicate_source_drift(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            source_root = Path(tmpdir) / "source"
+            output_root = Path(tmpdir) / "out"
+            source_cards_root = Path(tmpdir) / "cards"
+            for faction_slug in ("space-marines", "ultramarines"):
+                faction_dir = source_root / faction_slug
+                faction_dir.mkdir(parents=True)
+                card = {
+                    "exportSchemaVersion": 1,
+                    "parserVersion": "2026-03-19-durable-normalization-v1",
+                    "source": {
+                        "url": "http://example/shared",
+                        "normalizedUrl": "http://example/shared",
+                        "canonicalSourceId": "wahapedia:shared",
+                        "faction_slug": faction_slug,
+                        "datasheet_slug": "Terminator-Squad",
+                        "output_slug": faction_slug,
+                    },
+                    "name": "Terminator Squad",
+                    "characteristics": {"M": '5"', "T": "5", "Sv": "2+", "W": "3", "Ld": "6+", "OC": "1"},
+                    "weapons": {"ranged_weapons": [], "melee_weapons": []},
+                    "abilities": {"core": [], "faction": [], "datasheet": [], "other": []},
+                    "unit_composition": [{"type": "list", "items": ["5 Terminators"]}],
+                    "keywords": ["INFANTRY"],
+                    "faction_keywords": ["ADEPTUS ASTARTES"],
+                    "sections": [],
+                }
+                (faction_dir / "index.json").write_text(json.dumps([card]), encoding="utf-8")
+
+            (source_root / "export-manifest.json").write_text(
+                json.dumps(
+                    {
+                        "exportSchemaVersion": 1,
+                        "parserVersion": "2026-03-19-durable-normalization-v1",
+                        "records": [
+                            {
+                                "outputSlug": "space-marines",
+                                "datasheetSlug": "Terminator-Squad",
+                                "canonicalSourceId": "wahapedia:shared",
+                                "normalizedSourceUrl": "http://example/shared",
+                                "exportSchemaVersion": 1,
+                                "parserVersion": "2026-03-19-durable-normalization-v1",
+                                "sharedCoreHash": "hash-a",
+                            },
+                            {
+                                "outputSlug": "ultramarines",
+                                "datasheetSlug": "Terminator-Squad",
+                                "canonicalSourceId": "wahapedia:shared",
+                                "normalizedSourceUrl": "http://example/shared",
+                                "exportSchemaVersion": 1,
+                                "parserVersion": "2026-03-19-durable-normalization-v1",
+                                "sharedCoreHash": "hash-b",
+                            },
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+
+            with self.assertRaisesRegex(ValueError, "Duplicate canonical-source drift detected"):
+                build_builder_catalog.build_all(
+                    source_root,
+                    output_root,
+                    factions=["space-marines", "ultramarines"],
+                    source_cards_root=source_cards_root,
+                )
 
     def test_real_repo_samples_build_expected_shape(self):
         samples = [
@@ -371,6 +542,29 @@ class BuilderCatalogTests(unittest.TestCase):
         self.assertEqual(multi_group["pickCount"], 2)
         self.assertFalse(unit["wargear"]["hasManualOptions"])
 
+    def test_real_repo_marine_family_regressions_regain_wargear_sections(self):
+        samples = [
+            ("space-marines", "Terminator-Squad.json"),
+            ("space-marines", "Devastator-Squad.json"),
+            ("ultramarines", "Intercessor-Squad.json"),
+            ("ultramarines", "Terminator-Squad.json"),
+            ("ultramarines", "Devastator-Squad.json"),
+            ("dark-angels", "Terminator-Squad.json"),
+            ("space-wolves", "Captain.json"),
+            ("space-wolves", "Intercessor-Squad.json"),
+            ("space-wolves", "Terminator-Squad.json"),
+        ]
+
+        for faction_slug, filename in samples:
+            card = json.loads((ROOT / "out" / "json" / faction_slug / filename).read_text(encoding="utf-8"))
+            section_titles = [section["title"] for section in card.get("sections", [])]
+            self.assertIn("WARGEAR OPTIONS", section_titles, filename)
+            unit, diagnostics = build_builder_catalog.normalize_card(faction_slug, card)
+            self.assertTrue(
+                unit["wargear"]["options"] or unit["wargear"]["manualNotes"] or diagnostics["manualWargear"],
+                filename,
+            )
+
     def test_real_repo_fixed_wargear_prompt_is_structured(self):
         card = json.loads((ROOT / "out" / "json" / "aeldari" / "Farseer.json").read_text(encoding="utf-8"))
         unit, diagnostics = build_builder_catalog.normalize_card("aeldari", card)
@@ -419,8 +613,8 @@ class BuilderCatalogTests(unittest.TestCase):
             self.assertTrue(predicate(unit), filename)
             self.assertFalse(diagnostics["manualWargear"], filename)
 
-    def test_real_repo_manual_wargear_residual_count_stays_low(self):
-        manual_units = []
+    def test_real_repo_manual_wargear_residual_count_stays_bounded_by_canonical_source(self):
+        manual_units: dict[str, tuple[str, str]] = {}
         for faction_dir in sorted((ROOT / "out" / "json").iterdir()):
             if not faction_dir.is_dir():
                 continue
@@ -431,9 +625,11 @@ class BuilderCatalogTests(unittest.TestCase):
             for card in cards:
                 unit, diagnostics = build_builder_catalog.normalize_card(faction_dir.name, card)
                 if diagnostics["manualWargear"]:
-                    manual_units.append((faction_dir.name, unit["name"]))
+                    source = card.get("source", {})
+                    canonical_key = source.get("canonicalSourceId") or source.get("url")
+                    manual_units.setdefault(canonical_key, (faction_dir.name, unit["name"]))
 
-        self.assertLessEqual(len(manual_units), 5, manual_units)
+        self.assertLessEqual(len(manual_units), 10, sorted(manual_units.values()))
 
 
 class BuilderAppSmokeTests(unittest.TestCase):

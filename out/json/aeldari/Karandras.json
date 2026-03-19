@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Karandras",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Karandras",
+    "canonicalSourceId": "wahapedia:648db64881e50b76dfdea4ce5ad49db4d97214b5",
     "faction_slug": "aeldari",
     "datasheet_slug": "Karandras",
+    "fetchedAt": "2026-03-19T17:11:10+00:00",
+    "contentHash": "d9651f030ae8101ebfaddea2d6e73a5480c2bd3b44bfbce384b949c0d40cfda1",
     "output_slug": "aeldari"
   },
   "name": "Karandras",
@@ -61,37 +67,13 @@
   },
   "abilities": {
     "core": [
-      "Infiltrators , Leader"
+      "Infiltrators , Leader FACTION: Battle Focus Shadow Hunter: While this model is leading a unit, each time a model in that unit makes an attack, add 1 to the Hit roll . Sustained Assault: Each time this model makes a melee attack, if it made a Charge move this turn, a successful unmodified Hit roll of 4+ scores a Critical Hit ."
     ],
-    "faction": [
-      "Battle Focus"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "While this model is leading a unit, each time a model in that unit makes an attack, add 1 to the Hit roll .",
-        "name": "Shadow Hunter"
-      },
-      {
-        "type": "rule",
-        "text": "Each time this model makes a melee attack, if it made a Charge move this turn, a successful unmodified Hit roll of 4+ scores a Critical Hit .",
-        "name": "Sustained Assault"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Karandras \u2013 EPIC HERO"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "Arhra\u2019s Bane; Isirmathil; the Scorpion\u2019s Bite.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -118,9 +100,10 @@
       "title": "WARGEAR OPTIONS",
       "entries": [
         {
-          "type": "option_group",
-          "label": "None",
-          "items": []
+          "type": "list",
+          "items": [
+            "None"
+          ]
         }
       ]
     },
@@ -131,25 +114,8 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Infiltrators , Leader"
+            "Infiltrators , Leader FACTION: Battle Focus Shadow Hunter: While this model is leading a unit, each time a model in that unit makes an attack, add 1 to the Hit roll . Sustained Assault: Each time this model makes a melee attack, if it made a Charge move this turn, a successful unmodified Hit roll of 4+ scores a Critical Hit ."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Battle Focus"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "While this model is leading a unit, each time a model in that unit makes an attack, add 1 to the Hit roll .",
-          "name": "Shadow Hunter"
-        },
-        {
-          "type": "rule",
-          "text": "Each time this model makes a melee attack, if it made a Charge move this turn, a successful unmodified Hit roll of 4+ scores a Critical Hit .",
-          "name": "Sustained Assault"
         }
       ]
     },
@@ -157,26 +123,14 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "statement",
-          "text": "Melee weapons equipped by the bearer have the [DEVASTATING WOUNDS] ability when targeting units without the TITANIC keyword.",
-          "label": "The Scorpion\u2019s Bite"
+          "type": "text",
+          "text": "The Scorpion\u2019s Bite: Melee weapons equipped by the bearer have the [DEVASTATING WOUNDS] ability when targeting units without the TITANIC keyword."
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Karandras \u2013 EPIC HERO"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "Arhra\u2019s Bane; Isirmathil; the Scorpion\u2019s Bite.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -199,5 +153,89 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY"
+    ]
+  }
 }

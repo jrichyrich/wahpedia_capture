@@ -3,7 +3,11 @@
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Assault-Intercessor-Squad",
     "faction_slug": "space-marines",
     "datasheet_slug": "Assault-Intercessor-Squad",
-    "output_slug": "space-wolves"
+    "output_slug": "space-wolves",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Assault-Intercessor-Squad",
+    "canonicalSourceId": "wahapedia:8fadec15a42a28dc44e57ab8c8502b3b65475c8d",
+    "fetchedAt": "2026-03-19T17:35:02+00:00",
+    "contentHash": "fdd66a4aa03ababe83ced836b722233fd64995e91838d5d26c3b9888de0d7849"
   },
   "name": "Assault Intercessor Squad",
   "base_size": "\u230032mm",
@@ -117,30 +121,12 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Oath of Moment"
+      "Oath of Moment Shock Assault: Each time a model in this unit targets an enemy unit with a melee attack, re-roll a Wound roll of 1. If that enemy unit is within range of an objective marker , you can re-roll the Wound roll instead."
     ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "Each time a model in this unit targets an enemy unit with a melee attack, re-roll a Wound roll of 1. If that enemy unit is within range of an objective marker , you can re-roll the Wound roll instead.",
-        "name": "Shock Assault"
-      }
-    ],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Assault Intercessor Sergeant",
-        "4-9 Assault Intercessors"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "heavy bolt pistol; Astartes chainsword.",
-      "label": "Every model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -168,37 +154,42 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "The Assault Intercessor Sergeant\u2019s heavy bolt pistol can be replaced with one of the following:",
+          "items": [
+            "1 hand flamer",
+            "1 plasma pistol"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "The Assault Intercessor Sergeant\u2019s Astartes chainsword can be replaced with one of the following:",
+          "items": [
+            "1 power fist",
+            "1 power weapon",
+            "1 thunder hammer"
+          ]
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Oath of Moment"
+            "Oath of Moment Shock Assault: Each time a model in this unit targets an enemy unit with a melee attack, re-roll a Wound roll of 1. If that enemy unit is within range of an objective marker , you can re-roll the Wound roll instead."
           ]
-        },
-        {
-          "type": "rule",
-          "text": "Each time a model in this unit targets an enemy unit with a melee attack, re-roll a Wound roll of 1. If that enemy unit is within range of an objective marker , you can re-roll the Wound roll instead.",
-          "name": "Shock Assault"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Assault Intercessor Sergeant",
-            "4-9 Assault Intercessors"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "heavy bolt pistol; Astartes chainsword.",
-          "label": "Every model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -214,5 +205,20 @@
         }
       ]
     }
-  ]
+  ],
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "quality": {
+    "rawSectionTitles": [
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [],
+    "warnings": []
+  }
 }

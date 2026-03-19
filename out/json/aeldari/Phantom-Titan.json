@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Phantom-Titan",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Phantom-Titan",
+    "canonicalSourceId": "wahapedia:8f813a14cd008fe5e7b26c90bd451292352431d5",
     "faction_slug": "aeldari",
     "datasheet_slug": "Phantom-Titan",
+    "fetchedAt": "2026-03-19T17:11:26+00:00",
+    "contentHash": "2493cc259b15b4a64c179f9d8569638d5180a2ff3e33a6a9784c60535e645a66",
     "output_slug": "aeldari"
   },
   "name": "Phantom Titan",
@@ -107,42 +113,13 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D6+6"
+      "Deadly Demise D6+6 FACTION: Battle Focus Titanic Advance: Each time this model makes a Normal , Advance or Fall Back move, it can move over models (excluding TITANIC models) and terrain features that are 4\" or less in height as if they were not there. Towering Wraith Construct: Each time you target this model with a Stratagem , you must spend three times that Stratagem\u2019s stated CP cost to do so. Flawless Poise: This model is eligible to shoot and declare a charge in a turn in which it Fell Back ."
     ],
-    "faction": [
-      "Battle Focus"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "Each time this model makes a Normal , Advance or Fall Back move, it can move over models (excluding TITANIC models) and terrain features that are 4\" or less in height as if they were not there.",
-        "name": "Titanic Advance"
-      },
-      {
-        "type": "rule",
-        "text": "Each time you target this model with a Stratagem , you must spend three times that Stratagem\u2019s stated CP cost to do so.",
-        "name": "Towering Wraith Construct"
-      },
-      {
-        "type": "rule",
-        "text": "This model is eligible to shoot and declare a charge in a turn in which it Fell Back .",
-        "name": "Flawless Poise"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Phantom Titan"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "D-bombard; Phantom pulsar; Phantom starcannon; voidstorm missile launcher; Phantom feet.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -203,47 +180,14 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D6+6"
+            "Deadly Demise D6+6 FACTION: Battle Focus Titanic Advance: Each time this model makes a Normal , Advance or Fall Back move, it can move over models (excluding TITANIC models) and terrain features that are 4\" or less in height as if they were not there. Towering Wraith Construct: Each time you target this model with a Stratagem , you must spend three times that Stratagem\u2019s stated CP cost to do so. Flawless Poise: This model is eligible to shoot and declare a charge in a turn in which it Fell Back ."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Battle Focus"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "Each time this model makes a Normal , Advance or Fall Back move, it can move over models (excluding TITANIC models) and terrain features that are 4\" or less in height as if they were not there.",
-          "name": "Titanic Advance"
-        },
-        {
-          "type": "rule",
-          "text": "Each time you target this model with a Stratagem , you must spend three times that Stratagem\u2019s stated CP cost to do so.",
-          "name": "Towering Wraith Construct"
-        },
-        {
-          "type": "rule",
-          "text": "This model is eligible to shoot and declare a charge in a turn in which it Fell Back .",
-          "name": "Flawless Poise"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Phantom Titan"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "D-bombard; Phantom pulsar; Phantom starcannon; voidstorm missile launcher; Phantom feet.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -264,5 +208,87 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-16 WOUNDS REMAINING",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-16 WOUNDS REMAINING"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY"
+    ]
+  }
 }

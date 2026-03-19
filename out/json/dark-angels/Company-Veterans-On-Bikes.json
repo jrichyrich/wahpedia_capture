@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Company-Veterans-On-Bikes",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Company-Veterans-On-Bikes",
+    "canonicalSourceId": "wahapedia:422a903fd840ecb0a75adc93cb6d01a9a8f5c0c8",
     "faction_slug": "space-marines",
     "datasheet_slug": "Company-Veterans-On-Bikes",
+    "fetchedAt": "2026-03-19T17:15:39+00:00",
+    "contentHash": "d77a1455569769b76e70baa59b97019cdba35fd7380c0fceb2be7c748285b6fc",
     "output_slug": "dark-angels"
   },
   "name": "Company Veterans On Bikes",
@@ -226,30 +232,12 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Oath of Moment"
+      "Oath of Moment Vanguard Assault: Each time this unit ends a Charge move , until the end of the turn, melee weapons equipped by models in this unit have the [LETHAL HITS] ability."
     ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "Each time this unit ends a Charge move , until the end of the turn, melee weapons equipped by models in this unit have the [LETHAL HITS] ability.",
-        "name": "Vanguard Assault"
-      }
-    ],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Veteran Biker Sergeant",
-        "1-4 Veteran Bikers"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "bolt pistol; twin boltgun; Astartes chainsword.",
-      "label": "Every model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -276,19 +264,67 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "The Veteran Biker Sergeant\u2019s bolt pistol can be replaced with one of the following:",
+          "items": [
+            "1 boltgun",
+            "1 combi-weapon",
+            "1 grav-pistol",
+            "1 plasma pistol",
+            "1 storm bolter"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "The Veteran Biker Sergeant\u2019s Astartes chainsword can be replaced with one of the following:",
+          "items": [
+            "1 power fist",
+            "1 power weapon",
+            "1 thunder hammer"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "Any number of Veteran Bikers\u2019 bolt pistols can each be replaced with one of the following:",
+          "items": [
+            "1 grav-pistol",
+            "1 plasma pistol",
+            "1 thunder hammer",
+            "1 power fist",
+            "1 power weapon",
+            "1 storm shield"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "Any number of Veteran Bikers\u2019 Astartes chainswords can each be replaced with one of the following:",
+          "items": [
+            "1 flamer",
+            "1 grav-gun",
+            "1 grav-pistol",
+            "1 meltagun",
+            "1 plasma gun",
+            "1 plasma pistol",
+            "1 power fist",
+            "1 power weapon",
+            "1 thunder hammer",
+            "1 storm shield"
+          ]
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Oath of Moment"
+            "Oath of Moment Vanguard Assault: Each time this unit ends a Charge move , until the end of the turn, melee weapons equipped by models in this unit have the [LETHAL HITS] ability."
           ]
-        },
-        {
-          "type": "rule",
-          "text": "Each time this unit ends a Charge move , until the end of the turn, melee weapons equipped by models in this unit have the [LETHAL HITS] ability.",
-          "name": "Vanguard Assault"
         }
       ]
     },
@@ -296,27 +332,14 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "statement",
-          "text": "The bearer has a 4+ invulnerable save .",
-          "label": "Storm Shield"
+          "type": "text",
+          "text": "Storm Shield: The bearer has a 4+ invulnerable save ."
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Veteran Biker Sergeant",
-            "1-4 Veteran Bikers"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "bolt pistol; twin boltgun; Astartes chainsword.",
-          "label": "Every model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -341,5 +364,97 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "COMMAND SQUAD BODYGUARD",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "COMMAND SQUAD BODYGUARD"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS"
+    ]
+  }
 }

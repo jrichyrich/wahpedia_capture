@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Dire-Avengers",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Dire-Avengers",
+    "canonicalSourceId": "wahapedia:39b94a6fd8793667decf81bfc79c89fa257617ef",
     "faction_slug": "aeldari",
     "datasheet_slug": "Dire-Avengers",
+    "fetchedAt": "2026-03-19T17:11:16+00:00",
+    "contentHash": "305926e2a8f95b43ae71e3fdea15fc894b47a525ce259521aebf523e2b786aa4",
     "output_slug": "aeldari"
   },
   "name": "Dire Avengers",
@@ -80,30 +86,12 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Battle Focus"
+      "Battle Focus Bladestorm: Ranged weapons equipped by models in this unit have the [SUSTAINED HITS 1] ability while targeting an enemy unit within half range."
     ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "Ranged weapons equipped by models in this unit have the [SUSTAINED HITS 1] ability while targeting an enemy unit within half range.",
-        "name": "Bladestorm"
-      }
-    ],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Dire Avenger Exarch",
-        "4-9 Dire Avengers"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "Avenger shuriken catapult; close combat weapon.",
-      "label": "Every model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -164,13 +152,8 @@
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Battle Focus"
+            "Battle Focus Bladestorm: Ranged weapons equipped by models in this unit have the [SUSTAINED HITS 1] ability while targeting an enemy unit within half range."
           ]
-        },
-        {
-          "type": "rule",
-          "text": "Ranged weapons equipped by models in this unit have the [SUSTAINED HITS 1] ability while targeting an enemy unit within half range.",
-          "name": "Bladestorm"
         }
       ]
     },
@@ -178,37 +161,14 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "statement",
-          "text": "The bearer has a 4+ invulnerable save .",
-          "label": "Shimmershield"
-        },
-        {
-          "type": "statement",
-          "text": "Once per battle for each Aspect Shrine token this unit has, you can change the result of one Hit roll or one Wound roll made for a model in this unit (excluding CHARACTER models) to an unmodified 6.",
-          "label": "Aspect Shrine Token"
-        },
-        {
-          "type": "statement",
-          "text": "Place an Aspect Shrine token next to the unit for each Aspect Shrine token it has, removing one each time this ability is used.",
-          "label": "Designer\u2019s Note"
+          "type": "text",
+          "text": "Shimmershield: The bearer has a 4+ invulnerable save . Aspect Shrine Token: Once per battle for each Aspect Shrine token this unit has, you can change the result of one Hit roll or one Wound roll made for a model in this unit (excluding CHARACTER models) to an unmodified 6. Designer\u2019s Note: Place an Aspect Shrine token next to the unit for each Aspect Shrine token it has, removing one each time this ability is used."
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Dire Avenger Exarch",
-            "4-9 Dire Avengers"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "Avenger shuriken catapult; close combat weapon.",
-          "label": "Every model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -224,5 +184,91 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY"
+    ]
+  }
 }

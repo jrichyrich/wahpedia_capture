@@ -3,7 +3,11 @@
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Terrax-pattern-Termite",
     "faction_slug": "space-marines",
     "datasheet_slug": "Terrax-pattern-Termite",
-    "output_slug": "space-wolves"
+    "output_slug": "space-wolves",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Terrax-pattern-Termite",
+    "canonicalSourceId": "wahapedia:d93f86cf4996394d2c7e2e93a00e53e9b2f77391",
+    "fetchedAt": "2026-03-19T17:35:02+00:00",
+    "contentHash": "74f26c7f0bf7cab27fa82ddfbe0a062ccf57e6f2fd6e8a8f31ca653d1826844a"
   },
   "name": "Terrax-pattern Termite",
   "base_size": "\u2300Use model",
@@ -85,32 +89,13 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D3 , Deep Strike"
+      "Deadly Demise D3 , Deep Strike FACTION: Oath of Moment Termite Assault: This model must start the battle in Reserves , but neither it nor any units embarked within it are counted towards any limits placed on the maximum number of Reserves units you can start the battle with. This model can be set up in the Reinforcements step of your first, second or third Movement phase , regardless of any mission rules. Any units embarked within this model can disembark after it has been set up on the battlefield, and if they do they must be set up more than 9\" away from all enemy models."
     ],
-    "faction": [
-      "Oath of Moment"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "This model must start the battle in Reserves , but neither it nor any units embarked within it are counted towards any limits placed on the maximum number of Reserves units you can start the battle with. This model can be set up in the Reinforcements step of your first, second or third Movement phase , regardless of any mission rules. Any units embarked within this model can disembark after it has been set up on the battlefield, and if they do they must be set up more than 9\" away from all enemy models.",
-        "name": "Termite Assault"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Terrax-pattern Termite"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "Terrax melta cutter; 2 combi-bolters; Termite drill.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -133,43 +118,33 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s 2 combi-bolters can be replaced with one of the following",
+          "items": [
+            "2 heavy flamers",
+            "2 twin volkite chargers"
+          ]
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D3 , Deep Strike"
+            "Deadly Demise D3 , Deep Strike FACTION: Oath of Moment Termite Assault: This model must start the battle in Reserves , but neither it nor any units embarked within it are counted towards any limits placed on the maximum number of Reserves units you can start the battle with. This model can be set up in the Reinforcements step of your first, second or third Movement phase , regardless of any mission rules. Any units embarked within this model can disembark after it has been set up on the battlefield, and if they do they must be set up more than 9\" away from all enemy models."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Oath of Moment"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "This model must start the battle in Reserves , but neither it nor any units embarked within it are counted towards any limits placed on the maximum number of Reserves units you can start the battle with. This model can be set up in the Reinforcements step of your first, second or third Movement phase , regardless of any mission rules. Any units embarked within this model can disembark after it has been set up on the battlefield, and if they do they must be set up more than 9\" away from all enemy models.",
-          "name": "Termite Assault"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Terrax-pattern Termite"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "Terrax melta cutter; 2 combi-bolters; Termite drill.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -199,5 +174,24 @@
         }
       ]
     }
-  ]
+  ],
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "quality": {
+    "rawSectionTitles": [
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-5 WOUNDS REMAINING",
+      "TRANSPORT"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-5 WOUNDS REMAINING",
+      "TRANSPORT"
+    ],
+    "missingExpectedSections": [],
+    "warnings": []
+  }
 }

@@ -1,13 +1,42 @@
 import argparse
 import concurrent.futures
+import copy
 import json
 import re
+import sys
 import time
+from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import urlparse
 
 import requests
 from bs4 import BeautifulSoup, NavigableString, Tag
+
+try:
+    from datasheet_schema import (
+        EXPORT_SCHEMA_VERSION,
+        PARSER_VERSION,
+        canonical_source_id,
+        default_quality,
+        export_manifest_record,
+        exported_section_titles,
+        normalize_source_url,
+        stable_json_hash,
+        text_content_hash,
+    )
+except ModuleNotFoundError:
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from datasheet_schema import (
+        EXPORT_SCHEMA_VERSION,
+        PARSER_VERSION,
+        canonical_source_id,
+        default_quality,
+        export_manifest_record,
+        exported_section_titles,
+        normalize_source_url,
+        stable_json_hash,
+        text_content_hash,
+    )
 
 
 USER_AGENT = (
@@ -18,14 +47,18 @@ USER_AGENT = (
 
 
 def normalize_wahapedia_url(url: str) -> str:
-    return (url or "").strip()
+    return normalize_source_url(url)
+
+
+def utc_now() -> str:
+    return datetime.now(timezone.utc).replace(microsecond=0).isoformat()
 
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description="Export Wahapedia datasheets into structured JSON."
     )
-    group = parser.add_mutually_exclusive_group(required=True)
+    group = parser.add_mutually_exclusive_group()
     group.add_argument(
         "--url",
         help="Single datasheet URL to export.",
@@ -60,6 +93,16 @@ def parse_args() -> argparse.Namespace:
         type=int,
         default=1,
         help="Number of concurrent workers to use while fetching datasheets.",
+    )
+    parser.add_argument(
+        "--rewrite-existing",
+        action="store_true",
+        help="Rewrite existing exported JSON under the current export schema/parser version without fetching remote HTML.",
+    )
+    parser.add_argument(
+        "--sync-duplicates",
+        action="store_true",
+        help="Synchronize duplicate canonical-source exports so shared-core content matches across output slugs.",
     )
     return parser.parse_args()
 
@@ -107,15 +150,37 @@ def split_title_and_base_size(value: str) -> tuple[str, str | None]:
     return normalize_space(match.group(1)), normalize_space(match.group(2))
 
 
-def fetch_soup(url: str) -> BeautifulSoup:
+def fetch_html(url: str) -> tuple[str, str]:
     url = normalize_wahapedia_url(url)
-    response = requests.get(
-        url,
-        headers={"User-Agent": USER_AGENT},
-        timeout=30,
-    )
-    response.raise_for_status()
-    return BeautifulSoup(response.text, "html.parser")
+    last_error: Exception | None = None
+    for attempt in range(1, 4):
+        try:
+            response = requests.get(
+                url,
+                headers={"User-Agent": USER_AGENT},
+                timeout=30,
+            )
+            response.raise_for_status()
+            return url, response.text
+        except requests.RequestException as error:
+            last_error = error
+            if attempt == 3:
+                break
+            time.sleep(1.5 * attempt)
+    assert last_error is not None
+    raise last_error
+
+
+def fetch_soup(url: str) -> BeautifulSoup:
+    _, html = fetch_html(url)
+    return BeautifulSoup(html, "html.parser")
+
+
+def find_datasheet_card(soup: BeautifulSoup) -> Tag:
+    card = soup.select_one("div.dsOuterFrame.datasheet")
+    if not card:
+        raise ValueError("Datasheet markup not found")
+    return card
 
 
 def parse_characteristics(card: Tag) -> dict[str, str]:
@@ -437,32 +502,43 @@ def parse_right_column_sections(card: Tag) -> list[dict[str, object]]:
 
     right_column = children[1]
     sections = []
-    current_section: dict[str, object] | None = None
+    current_title: str | None = None
+    current_nodes: list[str] = []
+
+    def flush_current() -> None:
+        nonlocal current_title, current_nodes
+        if not current_title:
+            current_nodes = []
+            return
+        block = BeautifulSoup("".join(current_nodes), "html.parser")
+        entries = parse_section_block(current_title, block)
+        if entries:
+            sections.append({"title": current_title, "entries": entries})
+        current_nodes = []
 
     for child in direct_children(right_column):
         classes = child.get("class", [])
         if "dsHeader" in classes:
-            current_section = {
-                "title": normalize_space(child.get_text(" ", strip=True)),
-                "entries": [],
-            }
-            sections.append(current_section)
+            flush_current()
+            current_title = normalize_space(child.get_text(" ", strip=True))
             continue
+        if current_title:
+            current_nodes.append(str(child))
 
-        if "dsAbility" not in classes:
-            continue
-
-        if current_section is None:
-            current_section = {"title": "UNTITLED", "entries": []}
-            sections.append(current_section)
-
-        current_section["entries"].extend(parse_section_block(current_section["title"], child))
-
+    flush_current()
     return sections
 
 
 def parse_sections(card: Tag) -> list[dict[str, object]]:
     return parse_left_column_sections(card) + parse_right_column_sections(card)
+
+
+def section_titles_in_markup(card: Tag) -> list[str]:
+    return [
+        normalize_space(header.get_text(" ", strip=True))
+        for header in card.select(".dsHeader")
+        if normalize_space(header.get_text(" ", strip=True))
+    ]
 
 
 def parse_keywords(card: Tag) -> dict[str, list[str]]:
@@ -491,13 +567,14 @@ def build_section_lookup(sections: list[dict[str, object]]) -> dict[str, dict[st
     return {slugify_key(str(section["title"])): section for section in sections}
 
 
-def parse_datasheet(url: str) -> dict[str, object]:
+def parse_datasheet_from_soup(
+    url: str,
+    soup: BeautifulSoup,
+    fetched_at: str | None = None,
+    source_content_hash: str | None = None,
+) -> dict[str, object]:
     url = normalize_wahapedia_url(url)
-    soup = fetch_soup(url)
-    card = soup.select_one("div.dsOuterFrame.datasheet")
-    if not card:
-        raise ValueError(f"Datasheet markup not found for {url}")
-
+    card = find_datasheet_card(soup)
     raw_title = normalize_space(card.select_one("div.dsH2Header").get_text(" ", strip=True))
     name, base_size = split_title_and_base_size(raw_title)
     sections = parse_sections(card)
@@ -508,13 +585,21 @@ def parse_datasheet(url: str) -> dict[str, object]:
 
     faction_slug = faction_from_url(url)
     datasheet_slug = slug_from_url(url)
+    normalized_url = normalize_wahapedia_url(url)
+    source = {
+        "url": url,
+        "normalizedUrl": normalized_url,
+        "canonicalSourceId": canonical_source_id(normalized_url),
+        "faction_slug": faction_slug,
+        "datasheet_slug": datasheet_slug,
+        "fetchedAt": fetched_at or utc_now(),
+        "contentHash": source_content_hash or text_content_hash(str(card)),
+    }
 
     payload = {
-        "source": {
-            "url": url,
-            "faction_slug": faction_slug,
-            "datasheet_slug": datasheet_slug,
-        },
+        "exportSchemaVersion": EXPORT_SCHEMA_VERSION,
+        "parserVersion": PARSER_VERSION,
+        "source": source,
         "name": name,
         "base_size": base_size,
         "characteristics": parse_characteristics(card),
@@ -546,8 +631,23 @@ def parse_datasheet(url: str) -> dict[str, object]:
         "faction_keywords": parse_keywords(card)["faction_keywords"],
         "sections": sections,
     }
+    payload["quality"] = default_quality(
+        raw_titles=section_titles_in_markup(card),
+        exported_titles_list=exported_section_titles(payload),
+    )
 
     return payload
+
+
+def parse_datasheet(url: str) -> dict[str, object]:
+    url, html = fetch_html(url)
+    soup = BeautifulSoup(html, "html.parser")
+    return parse_datasheet_from_soup(
+        url,
+        soup,
+        fetched_at=utc_now(),
+        source_content_hash=text_content_hash(html),
+    )
 
 
 def load_manifest(path: Path) -> list[dict[str, str]]:
@@ -555,6 +655,22 @@ def load_manifest(path: Path) -> list[dict[str, str]]:
     if not isinstance(data, list):
         raise ValueError(f"Manifest must be a JSON list: {path}")
     return data
+
+
+def derive_manifest_items_from_bundle(path: Path) -> list[dict[str, str]]:
+    cards = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(cards, list):
+        raise ValueError(f"Bundle must be a JSON list: {path}")
+    items = []
+    for card in cards:
+        source = card.get("source", {}) if isinstance(card, dict) else {}
+        url = normalize_wahapedia_url(str(source.get("url") or ""))
+        if not url:
+            continue
+        items.append({"href": url, "name": str(card.get("name") or "")})
+    if not items:
+        raise ValueError(f"No source URLs found in bundle: {path}")
+    return items
 
 
 def manifest_items(args: argparse.Namespace) -> list[dict[str, str]]:
@@ -566,6 +682,10 @@ def manifest_items(args: argparse.Namespace) -> list[dict[str, str]]:
         if args.manifest_path
         else Path("out") / "source" / f"{args.output_slug}-links.json"
     )
+    if not manifest_path.exists() and args.output_slug:
+        bundle_path = Path(args.out_dir) / args.output_slug / "index.json"
+        if bundle_path.exists():
+            return derive_manifest_items_from_bundle(bundle_path)
     return load_manifest(manifest_path)
 
 
@@ -586,14 +706,225 @@ def filtered_items(items: list[dict[str, str]], card_slugs: list[str]) -> list[d
     return [item for item in items if slug_from_url(item["href"]) in slug_filter]
 
 
+def load_existing_export_payloads(out_root: Path) -> list[dict[str, object]]:
+    payloads: list[dict[str, object]] = []
+    for faction_dir in sorted(path for path in out_root.iterdir() if path.is_dir()):
+        for path in sorted(faction_dir.glob("*.json")):
+            if path.name == "index.json":
+                continue
+            payload = json.loads(path.read_text(encoding="utf-8"))
+            source = payload.setdefault("source", {})
+            source.setdefault("output_slug", faction_dir.name)
+            payloads.append(payload)
+    return payloads
+
+
+def load_existing_export_payload_paths(
+    out_root: Path,
+) -> list[tuple[Path, dict[str, object]]]:
+    payloads: list[tuple[Path, dict[str, object]]] = []
+    for faction_dir in sorted(path for path in out_root.iterdir() if path.is_dir()):
+        for path in sorted(faction_dir.glob("*.json")):
+            if path.name == "index.json":
+                continue
+            payload = json.loads(path.read_text(encoding="utf-8"))
+            source = payload.setdefault("source", {})
+            source.setdefault("output_slug", faction_dir.name)
+            payloads.append((path, payload))
+    return payloads
+
+
+def refresh_existing_payload(payload: dict[str, object], output_slug: str) -> dict[str, object]:
+    source = payload.setdefault("source", {})
+    normalized_url = normalize_wahapedia_url(str(source.get("url") or ""))
+    exported_titles = exported_section_titles(payload)
+    existing_quality = payload.get("quality", {}) if isinstance(payload.get("quality"), dict) else {}
+    raw_titles = list(existing_quality.get("rawSectionTitles", [])) or list(exported_titles)
+    warnings = list(existing_quality.get("warnings", []))
+
+    source["normalizedUrl"] = normalized_url
+    source["canonicalSourceId"] = canonical_source_id(normalized_url)
+    source["output_slug"] = output_slug
+    source.setdefault("faction_slug", output_slug)
+    source.setdefault("datasheet_slug", slug_from_url(normalized_url))
+    source.setdefault("fetchedAt", utc_now())
+    source["contentHash"] = str(source.get("contentHash") or stable_json_hash(payload))
+
+    payload["exportSchemaVersion"] = EXPORT_SCHEMA_VERSION
+    payload["parserVersion"] = PARSER_VERSION
+    payload["quality"] = default_quality(raw_titles, exported_titles, warnings=warnings)
+    return payload
+
+
+def rewrite_existing_exports(out_root: Path, output_slug: str) -> tuple[Path, Path]:
+    faction_dir = out_root / output_slug
+    if not faction_dir.exists():
+        raise FileNotFoundError(f"Faction export directory not found: {faction_dir}")
+
+    bundle = []
+    for path in sorted(faction_dir.glob("*.json")):
+        if path.name == "index.json":
+            continue
+        payload = json.loads(path.read_text(encoding="utf-8"))
+        refreshed = refresh_existing_payload(payload, output_slug)
+        path.write_text(json.dumps(refreshed, indent=2), encoding="utf-8")
+        bundle.append(refreshed)
+
+    bundle_path = faction_dir / "index.json"
+    bundle_path.write_text(json.dumps(bundle, indent=2), encoding="utf-8")
+    manifest_path = write_export_manifest(out_root)
+    return bundle_path, manifest_path
+
+
+def sync_source_fields(
+    payload: dict[str, object],
+    canonical_payload: dict[str, object],
+) -> dict[str, object]:
+    for key in (
+        "name",
+        "base_size",
+        "characteristics",
+        "weapons",
+        "abilities",
+        "unit_composition",
+        "keywords",
+        "faction_keywords",
+        "sections",
+    ):
+        payload[key] = copy.deepcopy(canonical_payload.get(key))
+    return payload
+
+
+def canonical_preference_score(payload: dict[str, object]) -> tuple[int, int, int]:
+    source = payload.get("source", {}) if isinstance(payload.get("source"), dict) else {}
+    normalized_url = normalize_wahapedia_url(str(source.get("normalizedUrl") or source.get("url") or ""))
+    output_slug = str(source.get("output_slug") or "")
+    source_faction = ""
+    try:
+        source_faction = faction_from_url(normalized_url) if normalized_url else ""
+    except ValueError:
+        source_faction = ""
+    quality = payload.get("quality", {}) if isinstance(payload.get("quality"), dict) else {}
+    return (
+        1 if output_slug == source_faction else 0,
+        len(list(quality.get("exportedSectionTitles", []))),
+        len(json.dumps(payload.get("sections", []), sort_keys=True)),
+    )
+
+
+def sync_duplicate_canonical_exports(out_root: Path) -> tuple[int, Path]:
+    payload_entries = load_existing_export_payload_paths(out_root)
+    groups: dict[str, list[tuple[Path, dict[str, object]]]] = {}
+    for path, payload in payload_entries:
+        source = payload.get("source", {}) if isinstance(payload.get("source"), dict) else {}
+        canonical_source = str(source.get("canonicalSourceId") or "").strip()
+        if canonical_source:
+            groups.setdefault(canonical_source, []).append((path, payload))
+
+    rewritten_paths: set[Path] = set()
+    changed_count = 0
+    for members in groups.values():
+        if len(members) < 2:
+            continue
+        canonical_path, canonical_payload = max(
+            members,
+            key=lambda item: canonical_preference_score(item[1]),
+        )
+        canonical_core = stable_json_hash(
+            {
+                "name": canonical_payload.get("name"),
+                "base_size": canonical_payload.get("base_size"),
+                "characteristics": canonical_payload.get("characteristics"),
+                "weapons": canonical_payload.get("weapons"),
+                "abilities": canonical_payload.get("abilities"),
+                "unit_composition": canonical_payload.get("unit_composition"),
+                "keywords": canonical_payload.get("keywords"),
+                "faction_keywords": canonical_payload.get("faction_keywords"),
+                "sections": canonical_payload.get("sections"),
+            }
+        )
+        for path, payload in members:
+            payload_core = stable_json_hash(
+                {
+                    "name": payload.get("name"),
+                    "base_size": payload.get("base_size"),
+                    "characteristics": payload.get("characteristics"),
+                    "weapons": payload.get("weapons"),
+                    "abilities": payload.get("abilities"),
+                    "unit_composition": payload.get("unit_composition"),
+                    "keywords": payload.get("keywords"),
+                    "faction_keywords": payload.get("faction_keywords"),
+                    "sections": payload.get("sections"),
+                }
+            )
+            if path == canonical_path or payload_core == canonical_core:
+                continue
+            output_slug = str(payload.get("source", {}).get("output_slug") or path.parent.name)
+            refreshed = refresh_existing_payload(
+                sync_source_fields(payload, canonical_payload),
+                output_slug,
+            )
+            path.write_text(json.dumps(refreshed, indent=2), encoding="utf-8")
+            rewritten_paths.add(path)
+            changed_count += 1
+
+    for faction_dir in sorted({path.parent for path in rewritten_paths}):
+        bundle = []
+        for path in sorted(faction_dir.glob("*.json")):
+            if path.name == "index.json":
+                continue
+            bundle.append(json.loads(path.read_text(encoding="utf-8")))
+        (faction_dir / "index.json").write_text(json.dumps(bundle, indent=2), encoding="utf-8")
+
+    manifest_path = write_export_manifest(out_root)
+    return changed_count, manifest_path
+
+
+def write_export_manifest(out_root: Path) -> Path:
+    records = [
+        export_manifest_record(payload)
+        for payload in load_existing_export_payloads(out_root)
+    ]
+    records.sort(
+        key=lambda record: (
+            str(record.get("outputSlug") or ""),
+            str(record.get("datasheetSlug") or ""),
+        )
+    )
+    manifest = {
+        "exportSchemaVersion": EXPORT_SCHEMA_VERSION,
+        "parserVersion": PARSER_VERSION,
+        "generatedAt": utc_now(),
+        "records": records,
+    }
+    manifest_path = out_root / "export-manifest.json"
+    manifest_path.write_text(json.dumps(manifest, indent=2), encoding="utf-8")
+    return manifest_path
+
+
 def main() -> int:
     args = parse_args()
+    out_root = Path(args.out_dir)
+    if not args.url and not args.output_slug and not args.sync_duplicates:
+        raise SystemExit("Either --url, --output-slug, or --sync-duplicates is required.")
+    if args.sync_duplicates:
+        changed_count, manifest_path = sync_duplicate_canonical_exports(out_root)
+        print(f"Synchronized {changed_count} duplicate exports", flush=True)
+        print(f"Export manifest written to {manifest_path}", flush=True)
+        return 0
+    if args.rewrite_existing:
+        if not args.output_slug:
+            raise SystemExit("--rewrite-existing requires --output-slug.")
+        bundle_path, manifest_path = rewrite_existing_exports(out_root, args.output_slug)
+        print(f"Bundle written to {bundle_path}", flush=True)
+        print(f"Export manifest written to {manifest_path}", flush=True)
+        return 0
+
     items = filtered_items(manifest_items(args), args.card_slug)
     if not items:
         raise SystemExit("No datasheets matched the requested filters.")
 
     bundle = []
-    out_root = Path(args.out_dir)
 
     def export_item(index: int, item: dict[str, str]) -> tuple[int, dict[str, object], Path]:
         url = item["href"]
@@ -633,6 +964,8 @@ def main() -> int:
     full_bundle = load_existing_faction_bundle(faction_dir)
     bundle_path.write_text(json.dumps(full_bundle, indent=2), encoding="utf-8")
     print(f"Bundle written to {bundle_path}", flush=True)
+    manifest_path = write_export_manifest(out_root)
+    print(f"Export manifest written to {manifest_path}", flush=True)
     return 0
 
 

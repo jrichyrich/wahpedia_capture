@@ -1,8 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Bladeguard-Veteran-Squad",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Bladeguard-Veteran-Squad",
+    "canonicalSourceId": "wahapedia:091239fd70d4a2d6be9d3b480d4c7392db00e410",
     "faction_slug": "space-marines",
-    "datasheet_slug": "Bladeguard-Veteran-Squad"
+    "datasheet_slug": "Bladeguard-Veteran-Squad",
+    "fetchedAt": "2026-03-19T17:28:19+00:00",
+    "contentHash": "445e64e77ece466b617b812861fe9d0c3de35d9c3f71ea58250826741d9eb350",
+    "output_slug": "space-marines"
   },
   "name": "Bladeguard Veteran Squad",
   "base_size": "\u230040mm",
@@ -84,38 +91,12 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Oath of Moment"
+      "Oath of Moment Bladeguard: At the start of the Fight phase , you can select one of the following abilities to apply to models in this unit until the end of the phase: Swords of the Chapter: Each time a model in this unit makes a melee attack, re-roll a Hit roll of 1. Shields of the Chapter: Each time an invulnerable saving throw is made for a model in this unit, re-roll a saving throw of 1."
     ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "At the start of the Fight phase , you can select one of the following abilities to apply to models in this unit until the end of the phase: Swords of the Chapter: Each time a model in this unit makes a melee attack, re-roll a Hit roll of 1. Shields of the Chapter: Each time an invulnerable saving throw is made for a model in this unit, re-roll a saving throw of 1.",
-        "name": "Bladeguard"
-      }
-    ],
-    "other": [
-      {
-        "type": "list",
-        "items": [
-          "Swords of the Chapter: Each time a model in this unit makes a melee attack, re-roll a Hit roll of 1.",
-          "Shields of the Chapter: Each time an invulnerable saving throw is made for a model in this unit, re-roll a saving throw of 1."
-        ]
-      }
-    ]
+    "datasheet": [],
+    "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Bladeguard Veteran Sergeant",
-        "2-5 Bladeguard Veterans"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "heavy bolt pistol; master-crafted power weapon.",
-      "label": "Every model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -143,44 +124,33 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "The Bladeguard Veteran Sergeant\u2019s heavy bolt pistol can be replaced with one of the following:",
+          "items": [
+            "1 neo-volkite pistol",
+            "1 plasma pistol"
+          ]
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Oath of Moment"
+            "Oath of Moment Bladeguard: At the start of the Fight phase , you can select one of the following abilities to apply to models in this unit until the end of the phase: Swords of the Chapter: Each time a model in this unit makes a melee attack, re-roll a Hit roll of 1. Shields of the Chapter: Each time an invulnerable saving throw is made for a model in this unit, re-roll a saving throw of 1."
           ]
-        },
-        {
-          "type": "list",
-          "items": [
-            "Swords of the Chapter: Each time a model in this unit makes a melee attack, re-roll a Hit roll of 1.",
-            "Shields of the Chapter: Each time an invulnerable saving throw is made for a model in this unit, re-roll a saving throw of 1."
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "At the start of the Fight phase , you can select one of the following abilities to apply to models in this unit until the end of the phase: Swords of the Chapter: Each time a model in this unit makes a melee attack, re-roll a Hit roll of 1. Shields of the Chapter: Each time an invulnerable saving throw is made for a model in this unit, re-roll a saving throw of 1.",
-          "name": "Bladeguard"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Bladeguard Veteran Sergeant",
-            "2-5 Bladeguard Veterans"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "heavy bolt pistol; master-crafted power weapon.",
-          "label": "Every model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -196,5 +166,93 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS"
+    ]
+  }
 }

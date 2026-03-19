@@ -3,7 +3,11 @@
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Chaplain-In-Terminator-Armour",
     "faction_slug": "space-marines",
     "datasheet_slug": "Chaplain-In-Terminator-Armour",
-    "output_slug": "space-wolves"
+    "output_slug": "space-wolves",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Chaplain-In-Terminator-Armour",
+    "canonicalSourceId": "wahapedia:059d2ce205508d2e3ea0856f4bf847c4fca8f85d",
+    "fetchedAt": "2026-03-19T17:35:02+00:00",
+    "contentHash": "878a7243e7643da0ff46c0084edd8aa2d240d8b3f80e3803cb03c0a4fb3f43a5"
   },
   "name": "Chaplain In Terminator Armour",
   "base_size": "\u230040mm",
@@ -46,37 +50,13 @@
   },
   "abilities": {
     "core": [
-      "Deep Strike , Leader"
+      "Deep Strike , Leader FACTION: Oath of Moment Litany of Hate: While this model is leading a unit, each time a model in that unit makes a melee attack, add 1 to the Wound roll . Recitation of Faith: While this model is leading a unit, models in that unit have the Feel No Pain 4+ ability against mortal wounds ."
     ],
-    "faction": [
-      "Oath of Moment"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "While this model is leading a unit, each time a model in that unit makes a melee attack, add 1 to the Wound roll .",
-        "name": "Litany of Hate"
-      },
-      {
-        "type": "rule",
-        "text": "While this model is leading a unit, models in that unit have the Feel No Pain 4+ ability against mortal wounds .",
-        "name": "Recitation of Faith"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Chaplain in Terminator Armour"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "storm bolter; crozius arcanum.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -100,31 +80,24 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s storm bolter can be replaced with 1 relic shield.",
+          "items": []
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deep Strike , Leader"
+            "Deep Strike , Leader FACTION: Oath of Moment Litany of Hate: While this model is leading a unit, each time a model in that unit makes a melee attack, add 1 to the Wound roll . Recitation of Faith: While this model is leading a unit, models in that unit have the Feel No Pain 4+ ability against mortal wounds ."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Oath of Moment"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "While this model is leading a unit, each time a model in that unit makes a melee attack, add 1 to the Wound roll .",
-          "name": "Litany of Hate"
-        },
-        {
-          "type": "rule",
-          "text": "While this model is leading a unit, models in that unit have the Feel No Pain 4+ ability against mortal wounds .",
-          "name": "Recitation of Faith"
         }
       ]
     },
@@ -132,26 +105,14 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "statement",
-          "text": "The bearer has a Wounds characteristic of 6.",
-          "label": "Relic Shield"
+          "type": "text",
+          "text": "Relic Shield: The bearer has a Wounds characteristic of 6."
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Chaplain in Terminator Armour"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "storm bolter; crozius arcanum.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -181,5 +142,24 @@
         }
       ]
     }
-  ]
+  ],
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "quality": {
+    "rawSectionTitles": [
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "missingExpectedSections": [],
+    "warnings": []
+  }
 }

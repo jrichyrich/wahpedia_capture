@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Wraithseer",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Wraithseer",
+    "canonicalSourceId": "wahapedia:921e70d5a44503f074a3c4223917b4fc9693a049",
     "faction_slug": "aeldari",
     "datasheet_slug": "Wraithseer",
+    "fetchedAt": "2026-03-19T17:11:33+00:00",
+    "contentHash": "fe44561ae3b867187f9b6e986d1608a0c8218e8dad79ee853ff842092a17a9f6",
     "output_slug": "aeldari"
   },
   "name": "Wraithseer",
@@ -140,32 +146,13 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise 1"
+      "Deadly Demise 1 FACTION: Battle Focus Horrify (Psychic): In your Shooting phase , after this model has shot, select one enemy unit hit by one or more of those attacks. That enemy unit must take a Battle-shock test ."
     ],
-    "faction": [
-      "Battle Focus"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "In your Shooting phase , after this model has shot, select one enemy unit hit by one or more of those attacks. That enemy unit must take a Battle-shock test .",
-        "name": "Horrify (Psychic)"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Wraithseer"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "destructor; ghostspear.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -212,37 +199,14 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise 1"
+            "Deadly Demise 1 FACTION: Battle Focus Horrify (Psychic): In your Shooting phase , after this model has shot, select one enemy unit hit by one or more of those attacks. That enemy unit must take a Battle-shock test ."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Battle Focus"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "In your Shooting phase , after this model has shot, select one enemy unit hit by one or more of those attacks. That enemy unit must take a Battle-shock test .",
-          "name": "Horrify (Psychic)"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Wraithseer"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "destructor; ghostspear.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -254,5 +218,85 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY"
+    ]
+  }
 }

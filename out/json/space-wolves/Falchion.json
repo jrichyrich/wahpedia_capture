@@ -3,7 +3,11 @@
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Falchion",
     "faction_slug": "space-marines",
     "datasheet_slug": "Falchion",
-    "output_slug": "space-wolves"
+    "output_slug": "space-wolves",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Falchion",
+    "canonicalSourceId": "wahapedia:b50962995dfe64b81ae2d122f1b35a6ec5b9fd30",
+    "fetchedAt": "2026-03-19T17:35:02+00:00",
+    "contentHash": "934716688d651e1d1c9c625cbbc58a464f7d64c53ba0eca99d5a1c4cc6e58e92"
   },
   "name": "Falchion",
   "base_size": "\u2300Use model",
@@ -144,32 +148,13 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D6+2"
+      "Deadly Demise D6+2 FACTION: Oath of Moment Titan-killer: Each time this model makes a ranged attack with its twin Falchion volcano cannon that targets a MONSTER or VEHICLE unit, that attack has the [DEVASTATING WOUNDS] ability."
     ],
-    "faction": [
-      "Oath of Moment"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "Each time this model makes a ranged attack with its twin Falchion volcano cannon that targets a MONSTER or VEHICLE unit, that attack has the [DEVASTATING WOUNDS] ability.",
-        "name": "Titan-killer"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Falchion"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "2 quad lascannons; twin heavy bolter; twin Falchion volcano cannon; armoured tracks.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -192,43 +177,45 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s 2 quad lascannons can be replaced with 2 laser destroyers.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "This model\u2019s twin heavy bolter can be replaced with 1 twin heavy flamer",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "This model can be equipped with one of the following:",
+          "items": [
+            "1 heavy bolter",
+            "1 heavy flamer",
+            "1 multi-melta",
+            "1 storm bolter"
+          ]
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D6+2"
+            "Deadly Demise D6+2 FACTION: Oath of Moment Titan-killer: Each time this model makes a ranged attack with its twin Falchion volcano cannon that targets a MONSTER or VEHICLE unit, that attack has the [DEVASTATING WOUNDS] ability."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Oath of Moment"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "Each time this model makes a ranged attack with its twin Falchion volcano cannon that targets a MONSTER or VEHICLE unit, that attack has the [DEVASTATING WOUNDS] ability.",
-          "name": "Titan-killer"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Falchion"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "2 quad lascannons; twin heavy bolter; twin Falchion volcano cannon; armoured tracks.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -249,5 +236,22 @@
         }
       ]
     }
-  ]
+  ],
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "quality": {
+    "rawSectionTitles": [
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-8 WOUNDS REMAINING"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-8 WOUNDS REMAINING"
+    ],
+    "missingExpectedSections": [],
+    "warnings": []
+  }
 }

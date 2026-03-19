@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Shining-Spears",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Shining-Spears",
+    "canonicalSourceId": "wahapedia:15970c4502f7aedf50bf1eb6a62b6c1d0eb36ae0",
     "faction_slug": "aeldari",
     "datasheet_slug": "Shining-Spears",
+    "fetchedAt": "2026-03-19T17:11:19+00:00",
+    "contentHash": "22ff015a5e32c5718d3338c9fb5851febfd76f9fdb67f30876ada397b1aff555",
     "output_slug": "aeldari"
   },
   "name": "Shining Spears",
@@ -112,30 +118,12 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Battle Focus"
+      "Battle Focus Extreme Mobility: Each time this unit makes a Normal , Advance , Fall Back or Charge move , ignore any vertical distance when determining the total distance models in this unit can be moved during that move."
     ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "Each time this unit makes a Normal , Advance , Fall Back or Charge move , ignore any vertical distance when determining the total distance models in this unit can be moved during that move.",
-        "name": "Extreme Mobility"
-      }
-    ],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Shining Spear Exarch",
-        "2-5 Shining Spears"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "laser lance; twin shuriken catapult.",
-      "label": "Every model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -191,13 +179,8 @@
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Battle Focus"
+            "Battle Focus Extreme Mobility: Each time this unit makes a Normal , Advance , Fall Back or Charge move , ignore any vertical distance when determining the total distance models in this unit can be moved during that move."
           ]
-        },
-        {
-          "type": "rule",
-          "text": "Each time this unit makes a Normal , Advance , Fall Back or Charge move , ignore any vertical distance when determining the total distance models in this unit can be moved during that move.",
-          "name": "Extreme Mobility"
         }
       ]
     },
@@ -205,27 +188,14 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "statement",
-          "text": "The bearer has a 4+ invulnerable save .",
-          "label": "Shimmershield"
+          "type": "text",
+          "text": "Shimmershield: The bearer has a 4+ invulnerable save ."
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Shining Spear Exarch",
-            "2-5 Shining Spears"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "laser lance; twin shuriken catapult.",
-          "label": "Every model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -241,5 +211,87 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY"
+    ]
+  }
 }

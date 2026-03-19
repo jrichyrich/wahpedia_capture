@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Custodian-Guard",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Custodian-Guard",
+    "canonicalSourceId": "wahapedia:70b029519b431f57f19cb395d39c0e45ec431727",
     "faction_slug": "adeptus-custodes",
     "datasheet_slug": "Custodian-Guard",
+    "fetchedAt": "2026-03-19T17:10:53+00:00",
+    "contentHash": "646294059b0abea9fb0a408969c0b5f0c746855a3cb5c060fa22d852d90dc629",
     "output_slug": "adeptus-custodes"
   },
   "name": "Custodian Guard",
@@ -79,37 +85,13 @@
   },
   "abilities": {
     "core": [
-      "Deep Strike"
+      "Deep Strike FACTION: Martial Ka\u2019tah Stand Vigil: Each time a model in this unit makes an attack, re-roll a Wound roll of 1. While this unit is within range of an objective marker you control, you can re-roll the Wound roll instead. Sentinel Storm: Once per battle, in your Shooting phase , after this unit has shot, it can shoot again ."
     ],
-    "faction": [
-      "Martial Ka\u2019tah"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "Each time a model in this unit makes an attack, re-roll a Wound roll of 1. While this unit is within range of an objective marker you control, you can re-roll the Wound roll instead.",
-        "name": "Stand Vigil"
-      },
-      {
-        "type": "rule",
-        "text": "Once per battle, in your Shooting phase , after this unit has shot, it can shoot again .",
-        "name": "Sentinel Storm"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "4-5 Custodian Guard"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "guardian spear.",
-      "label": "Every model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -159,25 +141,8 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deep Strike"
+            "Deep Strike FACTION: Martial Ka\u2019tah Stand Vigil: Each time a model in this unit makes an attack, re-roll a Wound roll of 1. While this unit is within range of an objective marker you control, you can re-roll the Wound roll instead. Sentinel Storm: Once per battle, in your Shooting phase , after this unit has shot, it can shoot again ."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Martial Ka\u2019tah"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "Each time a model in this unit makes an attack, re-roll a Wound roll of 1. While this unit is within range of an objective marker you control, you can re-roll the Wound roll instead.",
-          "name": "Stand Vigil"
-        },
-        {
-          "type": "rule",
-          "text": "Once per battle, in your Shooting phase , after this unit has shot, it can shoot again .",
-          "name": "Sentinel Storm"
         }
       ]
     },
@@ -185,31 +150,14 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "statement",
-          "text": "Add 1 to the bearer\u2019s Wounds characteristic.",
-          "label": "Praesidium Shield"
-        },
-        {
-          "type": "statement",
-          "text": "Add 1 to the Objective Control characteristic of models in the bearer\u2019s unit.",
-          "label": "Vexilla"
+          "type": "text",
+          "text": "Praesidium Shield: Add 1 to the bearer\u2019s Wounds characteristic. Vexilla: Add 1 to the Objective Control characteristic of models in the bearer\u2019s unit."
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "4-5 Custodian Guard"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "guardian spear.",
-          "label": "Every model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -225,5 +173,95 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS"
+    ]
+  }
 }

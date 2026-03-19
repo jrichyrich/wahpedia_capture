@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Catachan-Command-Squad",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Catachan-Command-Squad",
+    "canonicalSourceId": "wahapedia:02160c37f54d88e9e14361d82d080fcf0ef983c6",
     "faction_slug": "astra-militarum",
     "datasheet_slug": "Catachan-Command-Squad",
+    "fetchedAt": "2026-03-19T17:11:37+00:00",
+    "contentHash": "095309adf0a173d212ce7ea2401165041edcf212ddce9c70f445a338abda8843",
     "output_slug": "astra-militarum"
   },
   "name": "Catachan Command Squad",
@@ -234,38 +240,13 @@
   },
   "abilities": {
     "core": [
-      "Leader , Scouts 6\""
+      "Leader , Scouts 6\" FACTION: Voice of Command Gung-ho Command: While this unit contains an OFFICER , ranged weapons equipped by models in this unit have the [ASSAULT] ability."
     ],
-    "faction": [
-      "Voice of Command"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "While this unit contains an OFFICER , ranged weapons equipped by models in this unit have the [ASSAULT] ability.",
-        "name": "Gung-ho Command"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Catachan Commander",
-        "4 Veteran Guardsmen"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "laspistol; close combat weapon.",
-      "label": "The Catachan Commander is equipped with"
-    },
-    {
-      "type": "statement",
-      "text": "lasgun; laspistol; close combat weapon.",
-      "label": "Every Veteran Guardsman is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -354,20 +335,8 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Leader , Scouts 6\""
+            "Leader , Scouts 6\" FACTION: Voice of Command Gung-ho Command: While this unit contains an OFFICER , ranged weapons equipped by models in this unit have the [ASSAULT] ability."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Voice of Command"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "While this unit contains an OFFICER , ranged weapons equipped by models in this unit have the [ASSAULT] ability.",
-          "name": "Gung-ho Command"
         }
       ]
     },
@@ -375,42 +344,14 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "statement",
-          "text": "Each time the OFFICER in the bearer\u2019s unit issues an Order , it can issue it to an eligible unit up to 24\" away.",
-          "label": "Master Vox"
-        },
-        {
-          "type": "statement",
-          "text": "At the start of your Command phase , if the bearer\u2019s unit is below its Starting Strength , you can return up to D3 destroyed PLATOON models (excluding CHARACTERS ) to this unit.",
-          "label": "Medi-pack"
-        },
-        {
-          "type": "statement",
-          "text": "Add 1 to the Objective Control characteristic of models in the bearer\u2019s unit.",
-          "label": "Regimental Standard"
+          "type": "text",
+          "text": "Master Vox: Each time the OFFICER in the bearer\u2019s unit issues an Order , it can issue it to an eligible unit up to 24\" away. Medi-pack: At the start of your Command phase , if the bearer\u2019s unit is below its Starting Strength , you can return up to D3 destroyed PLATOON models (excluding CHARACTERS ) to this unit. Regimental Standard: Add 1 to the Objective Control characteristic of models in the bearer\u2019s unit."
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Catachan Commander",
-            "4 Veteran Guardsmen"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "laspistol; close combat weapon.",
-          "label": "The Catachan Commander is equipped with"
-        },
-        {
-          "type": "statement",
-          "text": "lasgun; laspistol; close combat weapon.",
-          "label": "Every Veteran Guardsman is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -442,5 +383,95 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER",
+      "ORDERS",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER",
+      "ORDERS"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS"
+    ]
+  }
 }

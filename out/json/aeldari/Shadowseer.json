@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Shadowseer",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Shadowseer",
+    "canonicalSourceId": "wahapedia:2fe8c74c848919bacf5488efbd454950ee59f6f0",
     "faction_slug": "aeldari",
     "datasheet_slug": "Shadowseer",
+    "fetchedAt": "2026-03-19T17:11:06+00:00",
+    "contentHash": "2ee082952c042f28926ff1ecac336ae498d0e5a64b67dbc5c154fea93c34e8bb",
     "output_slug": "aeldari"
   },
   "name": "Shadowseer",
@@ -63,37 +69,13 @@
   },
   "abilities": {
     "core": [
-      "Leader , Stealth"
+      "Leader , Stealth FACTION: Battle Focus , Disparate Paths Fog of Dreams (Psychic): While this model is leading a unit, that unit can only be selected as the target of a ranged attack if the attacking model is within 18\". Treacherous Illusion (Psychic): Melee weapons equipped by enemy models have the [HAZARDOUS] ability while targeting this model\u2019s unit."
     ],
-    "faction": [
-      "Battle Focus , Disparate Paths"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "While this model is leading a unit, that unit can only be selected as the target of a ranged attack if the attacking model is within 18\".",
-        "name": "Fog of Dreams (Psychic)"
-      },
-      {
-        "type": "rule",
-        "text": "Melee weapons equipped by enemy models have the [HAZARDOUS] ability while targeting this model\u2019s unit.",
-        "name": "Treacherous Illusion (Psychic)"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Shadowseer"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "shuriken pistol; miststave; flip belt.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -142,25 +124,8 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Leader , Stealth"
+            "Leader , Stealth FACTION: Battle Focus , Disparate Paths Fog of Dreams (Psychic): While this model is leading a unit, that unit can only be selected as the target of a ranged attack if the attacking model is within 18\". Treacherous Illusion (Psychic): Melee weapons equipped by enemy models have the [HAZARDOUS] ability while targeting this model\u2019s unit."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Battle Focus , Disparate Paths"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "While this model is leading a unit, that unit can only be selected as the target of a ranged attack if the attacking model is within 18\".",
-          "name": "Fog of Dreams (Psychic)"
-        },
-        {
-          "type": "rule",
-          "text": "Melee weapons equipped by enemy models have the [HAZARDOUS] ability while targeting this model\u2019s unit.",
-          "name": "Treacherous Illusion (Psychic)"
         }
       ]
     },
@@ -168,26 +133,14 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "statement",
-          "text": "Each time the bearer\u2019s unit makes a Normal , Advance , Fall Back or Charge move , ignore any vertical distance when determining the total distance the bearer can be moved during that move.",
-          "label": "Flip Belt"
+          "type": "text",
+          "text": "Flip Belt: Each time the bearer\u2019s unit makes a Normal , Advance , Fall Back or Charge move , ignore any vertical distance when determining the total distance the bearer can be moved during that move."
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Shadowseer"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "shuriken pistol; miststave; flip belt.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -210,5 +163,95 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "TRAVELLING PLAYERS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "TRAVELLING PLAYERS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS"
+    ]
+  }
 }

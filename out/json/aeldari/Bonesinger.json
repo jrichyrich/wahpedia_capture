@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Bonesinger",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Bonesinger",
+    "canonicalSourceId": "wahapedia:b1e3467c9003173584a910ab9bbca4b3a4055bdf",
     "faction_slug": "aeldari",
     "datasheet_slug": "Bonesinger",
+    "fetchedAt": "2026-03-19T17:11:10+00:00",
+    "contentHash": "61006912f1b79df9dbafa01651c6011cbb3385cd9b76ccad3b138a4caa33366c",
     "output_slug": "aeldari"
   },
   "name": "Bonesinger",
@@ -34,42 +40,13 @@
   },
   "abilities": {
     "core": [
-      "Leader"
+      "Leader FACTION: Battle Focus Way of the Shaper (Psychic): While this model is leading a unit, WRAITH CONSTRUCT models in that unit have the Feel No Pain 6+ ability. Bonesinger: While this model is within 3\" of one or more friendly WRAITH CONSTRUCT or ASURYANI VEHICLE units, unless it is leading a unit, this model has the Lone Operative ability. Psytronome Shaper: In your Command phase , you can select one friendly WRAITH CONSTRUCT or ASURYANI VEHICLE model within 3\" of this model. That WRAITH CONSTRUCT or ASURYANI VEHICLE model regains up to D3 lost wounds."
     ],
-    "faction": [
-      "Battle Focus"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "While this model is leading a unit, WRAITH CONSTRUCT models in that unit have the Feel No Pain 6+ ability.",
-        "name": "Way of the Shaper (Psychic)"
-      },
-      {
-        "type": "rule",
-        "text": "While this model is within 3\" of one or more friendly WRAITH CONSTRUCT or ASURYANI VEHICLE units, unless it is leading a unit, this model has the Lone Operative ability.",
-        "name": "Bonesinger"
-      },
-      {
-        "type": "rule",
-        "text": "In your Command phase , you can select one friendly WRAITH CONSTRUCT or ASURYANI VEHICLE model within 3\" of this model. That WRAITH CONSTRUCT or ASURYANI VEHICLE model regains up to D3 lost wounds.",
-        "name": "Psytronome Shaper"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Bonesinger"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "psytronome shaper.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -95,9 +72,10 @@
       "title": "WARGEAR OPTIONS",
       "entries": [
         {
-          "type": "option_group",
-          "label": "None",
-          "items": []
+          "type": "list",
+          "items": [
+            "None"
+          ]
         }
       ]
     },
@@ -108,47 +86,14 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Leader"
+            "Leader FACTION: Battle Focus Way of the Shaper (Psychic): While this model is leading a unit, WRAITH CONSTRUCT models in that unit have the Feel No Pain 6+ ability. Bonesinger: While this model is within 3\" of one or more friendly WRAITH CONSTRUCT or ASURYANI VEHICLE units, unless it is leading a unit, this model has the Lone Operative ability. Psytronome Shaper: In your Command phase , you can select one friendly WRAITH CONSTRUCT or ASURYANI VEHICLE model within 3\" of this model. That WRAITH CONSTRUCT or ASURYANI VEHICLE model regains up to D3 lost wounds."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Battle Focus"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "While this model is leading a unit, WRAITH CONSTRUCT models in that unit have the Feel No Pain 6+ ability.",
-          "name": "Way of the Shaper (Psychic)"
-        },
-        {
-          "type": "rule",
-          "text": "While this model is within 3\" of one or more friendly WRAITH CONSTRUCT or ASURYANI VEHICLE units, unless it is leading a unit, this model has the Lone Operative ability.",
-          "name": "Bonesinger"
-        },
-        {
-          "type": "rule",
-          "text": "In your Command phase , you can select one friendly WRAITH CONSTRUCT or ASURYANI VEHICLE model within 3\" of this model. That WRAITH CONSTRUCT or ASURYANI VEHICLE model regains up to D3 lost wounds.",
-          "name": "Psytronome Shaper"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Bonesinger"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "psytronome shaper.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -173,5 +118,63 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "missingExpectedSections": [
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "warnings": [
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS"
+    ]
+  }
 }

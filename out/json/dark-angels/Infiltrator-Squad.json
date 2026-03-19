@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Infiltrator-Squad",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Infiltrator-Squad",
+    "canonicalSourceId": "wahapedia:0079faf95e59788b254885b548cc417a8ca75690",
     "faction_slug": "space-marines",
     "datasheet_slug": "Infiltrator-Squad",
+    "fetchedAt": "2026-03-19T17:14:36+00:00",
+    "contentHash": "0c3749d9234dd892e0f9c18feee6e89670ad42f4574ebd612361004a2d45917c",
     "output_slug": "dark-angels"
   },
   "name": "Infiltrator Squad",
@@ -57,33 +63,13 @@
   },
   "abilities": {
     "core": [
-      "Infiltrators"
+      "Infiltrators FACTION: Oath of Moment Omni-scramblers: Enemy units that are set up on the battlefield from Reserves cannot be set up within 12\" of this unit."
     ],
-    "faction": [
-      "Oath of Moment"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "Enemy units that are set up on the battlefield from Reserves cannot be set up within 12\" of this unit.",
-        "name": "Omni-scramblers"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Infiltrator Sergeant",
-        "4-9 Infiltrators"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "bolt pistol; marksman bolt carbine; close combat weapon.",
-      "label": "Every model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -136,20 +122,8 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Infiltrators"
+            "Infiltrators FACTION: Oath of Moment Omni-scramblers: Enemy units that are set up on the battlefield from Reserves cannot be set up within 12\" of this unit."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Oath of Moment"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "Enemy units that are set up on the battlefield from Reserves cannot be set up within 12\" of this unit.",
-          "name": "Omni-scramblers"
         }
       ]
     },
@@ -157,32 +131,14 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "statement",
-          "text": "Models in the bearer\u2019s unit have the Feel No Pain 6+ ability.",
-          "label": "Helix Gauntlet"
-        },
-        {
-          "type": "statement",
-          "text": "Each time you target the bearer\u2019s unit with a Stratagem, roll one D6: on a 5+, you gain 1CP.",
-          "label": "Infiltrator Comms Array"
+          "type": "text",
+          "text": "Helix Gauntlet: Models in the bearer\u2019s unit have the Feel No Pain 6+ ability. Infiltrator Comms Array: Each time you target the bearer\u2019s unit with a Stratagem, roll one D6: on a 5+, you gain 1CP."
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Infiltrator Sergeant",
-            "4-9 Infiltrators"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "bolt pistol; marksman bolt carbine; close combat weapon.",
-          "label": "Every model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -198,5 +154,95 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS"
+    ]
+  }
 }

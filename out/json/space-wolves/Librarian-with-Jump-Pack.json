@@ -3,7 +3,11 @@
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Librarian-with-Jump-Pack",
     "faction_slug": "space-marines",
     "datasheet_slug": "Librarian-with-Jump-Pack",
-    "output_slug": "space-wolves"
+    "output_slug": "space-wolves",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Librarian-with-Jump-Pack",
+    "canonicalSourceId": "wahapedia:8e0d8606248862fb1d2d16408204c75da83f6d3a",
+    "fetchedAt": "2026-03-19T17:35:02+00:00",
+    "contentHash": "32973479dcbc99df2daecae6a234b148529a3f0a923d1e291c9037a920aa6889"
   },
   "name": "Librarian With Jump Pack",
   "base_size": "\u230025mm",
@@ -174,37 +178,13 @@
   },
   "abilities": {
     "core": [
-      "Deep Strike , Leader"
+      "Deep Strike , Leader FACTION: Oath of Moment Psychic Hood: While this model is leading a unit, models in that unit have the Feel No Pain 4+ ability against Psychic Attacks. Might of Heroes (Psychic): While this model is leading a unit, improve the Armour Penetration characteristic of melee weapons equipped by models in that unit by 1."
     ],
-    "faction": [
-      "Oath of Moment"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "While this model is leading a unit, models in that unit have the Feel No Pain 4+ ability against Psychic Attacks.",
-        "name": "Psychic Hood"
-      },
-      {
-        "type": "rule",
-        "text": "While this model is leading a unit, improve the Armour Penetration characteristic of melee weapons equipped by models in that unit by 1.",
-        "name": "Might of Heroes (Psychic)"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Librarian with Jump Pack"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "bolt pistol; Smite; force weapon.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -230,48 +210,38 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s bolt pistol can be replaced with one of the following:",
+          "items": [
+            "1 boltgun",
+            "1 combi-weapon",
+            "1 grav-pistol",
+            "1 hand flamer",
+            "1 inferno pistol",
+            "1 plasma pistol",
+            "1 storm bolter"
+          ]
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deep Strike , Leader"
+            "Deep Strike , Leader FACTION: Oath of Moment Psychic Hood: While this model is leading a unit, models in that unit have the Feel No Pain 4+ ability against Psychic Attacks. Might of Heroes (Psychic): While this model is leading a unit, improve the Armour Penetration characteristic of melee weapons equipped by models in that unit by 1."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Oath of Moment"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "While this model is leading a unit, models in that unit have the Feel No Pain 4+ ability against Psychic Attacks.",
-          "name": "Psychic Hood"
-        },
-        {
-          "type": "rule",
-          "text": "While this model is leading a unit, improve the Armour Penetration characteristic of melee weapons equipped by models in that unit by 1.",
-          "name": "Might of Heroes (Psychic)"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Librarian with Jump Pack"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "bolt pistol; Smite; force weapon.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -297,5 +267,22 @@
         }
       ]
     }
-  ]
+  ],
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "quality": {
+    "rawSectionTitles": [
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "missingExpectedSections": [],
+    "warnings": []
+  }
 }

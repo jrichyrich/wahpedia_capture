@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Ynnari-Incubi",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Ynnari-Incubi",
+    "canonicalSourceId": "wahapedia:292fafe071397a6c9b5c2ca7324ff10788b4f196",
     "faction_slug": "aeldari",
     "datasheet_slug": "Ynnari-Incubi",
+    "fetchedAt": "2026-03-19T17:11:25+00:00",
+    "contentHash": "82f8f8d0213698502e217dcf32bfd682d15fbcb20c656794128729327568591c",
     "output_slug": "aeldari"
   },
   "name": "Ynnari Incubi",
@@ -55,30 +61,12 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Battle Focus , Disparate Paths"
+      "Battle Focus , Disparate Paths Tormentors: At the start of the Fight phase , each enemy unit within Engagement Range of one or more units from your army with this ability must take a Battle-shock test ."
     ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "At the start of the Fight phase , each enemy unit within Engagement Range of one or more units from your army with this ability must take a Battle-shock test .",
-        "name": "Tormentors"
-      }
-    ],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Klaivex",
-        "4-9 Incubi"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "klaive.",
-      "label": "Every model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -119,31 +107,14 @@
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Battle Focus , Disparate Paths"
+            "Battle Focus , Disparate Paths Tormentors: At the start of the Fight phase , each enemy unit within Engagement Range of one or more units from your army with this ability must take a Battle-shock test ."
           ]
-        },
-        {
-          "type": "rule",
-          "text": "At the start of the Fight phase , each enemy unit within Engagement Range of one or more units from your army with this ability must take a Battle-shock test .",
-          "name": "Tormentors"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Klaivex",
-            "4-9 Incubi"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "klaive.",
-          "label": "Every model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -159,5 +130,61 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY"
+    ],
+    "warnings": [
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY"
+    ]
+  }
 }

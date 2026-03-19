@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Lady-Malys",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Lady-Malys",
+    "canonicalSourceId": "wahapedia:dfd085461939d3255d9efc5dcbf90df318f30e57",
     "faction_slug": "drukhari",
     "datasheet_slug": "Lady-Malys",
+    "fetchedAt": "2026-03-19T17:17:23+00:00",
+    "contentHash": "eead0974d362a787d3ed76105df02b33669a4558d81387f079f73b20fda0a029",
     "output_slug": "drukhari"
   },
   "name": "Lady Malys",
@@ -47,37 +53,13 @@
   },
   "abilities": {
     "core": [
-      "Feel No Pain 5+ , Leader"
+      "Feel No Pain 5+ , Leader FACTION: Power from Pain Archon of the Poisoned Tongue (Pain): In your Shooting phase or the Fight phase , when you select this model\u2019s unit to shoot or fight, you can spend 1 Pain token to Empower that unit. If you do, select one of the following abilities: [SUSTAINED HITS 1] ; [LETHAL HITS] . Until the end of the phase, while that unit is Empowered, weapons equipped by models in that unit have that selected ability. Precognisant: If your army includes this model, after both players have deployed their armies, select up to three DRUKHARI units from your army and redeploy them. When doing so, you can set those units up in Strategic Reserves if you wish, regardless of how many units are already in Strategic Reserves. Mind Like a Steel Trap (Aura): Each time your opponent targets a unit from their army with a Stratagem, if that unit is within 12\" of this model, increase the cost of that use of that Stratagem by 1CP."
     ],
-    "faction": [
-      "Power from Pain"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "If your army includes this model, after both players have deployed their armies, select up to three DRUKHARI units from your army and redeploy them. When doing so, you can set those units up in Strategic Reserves if you wish, regardless of how many units are already in Strategic Reserves.",
-        "name": "Precognisant"
-      },
-      {
-        "type": "rule",
-        "text": "Each time your opponent targets a unit from their army with a Stratagem, if that unit is within 12\" of this model, increase the cost of that use of that Stratagem by 1CP.",
-        "name": "Mind Like a Steel Trap (Aura)"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Lady Malys \u2013 EPIC HERO"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "Lady\u2019s Blade; razor fan.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -108,42 +90,14 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Feel No Pain 5+ , Leader"
+            "Feel No Pain 5+ , Leader FACTION: Power from Pain Archon of the Poisoned Tongue (Pain): In your Shooting phase or the Fight phase , when you select this model\u2019s unit to shoot or fight, you can spend 1 Pain token to Empower that unit. If you do, select one of the following abilities: [SUSTAINED HITS 1] ; [LETHAL HITS] . Until the end of the phase, while that unit is Empowered, weapons equipped by models in that unit have that selected ability. Precognisant: If your army includes this model, after both players have deployed their armies, select up to three DRUKHARI units from your army and redeploy them. When doing so, you can set those units up in Strategic Reserves if you wish, regardless of how many units are already in Strategic Reserves. Mind Like a Steel Trap (Aura): Each time your opponent targets a unit from their army with a Stratagem, if that unit is within 12\" of this model, increase the cost of that use of that Stratagem by 1CP."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Power from Pain"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "If your army includes this model, after both players have deployed their armies, select up to three DRUKHARI units from your army and redeploy them. When doing so, you can set those units up in Strategic Reserves if you wish, regardless of how many units are already in Strategic Reserves.",
-          "name": "Precognisant"
-        },
-        {
-          "type": "rule",
-          "text": "Each time your opponent targets a unit from their army with a Stratagem, if that unit is within 12\" of this model, increase the cost of that use of that Stratagem by 1CP.",
-          "name": "Mind Like a Steel Trap (Aura)"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Lady Malys \u2013 EPIC HERO"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "Lady\u2019s Blade; razor fan.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -168,5 +122,57 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY"
+    ],
+    "exportedSectionTitles": [
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "missingExpectedSections": [
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY"
+    ],
+    "warnings": [
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY"
+    ]
+  }
 }

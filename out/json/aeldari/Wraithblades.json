@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Wraithblades",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Wraithblades",
+    "canonicalSourceId": "wahapedia:5c0e792bf3184e66598ed3790352a18566d1a469",
     "faction_slug": "aeldari",
     "datasheet_slug": "Wraithblades",
+    "fetchedAt": "2026-03-19T17:11:25+00:00",
+    "contentHash": "a529229e653a8356b053884b809236c0d11e14f19f18994b6a287e2413c51d56",
     "output_slug": "aeldari"
   },
   "name": "Wraithblades",
@@ -42,32 +48,15 @@
   "abilities": {
     "core": [],
     "faction": [],
-    "datasheet": [
+    "datasheet": [],
+    "other": [
       {
-        "type": "rule",
-        "text": "Each time a model in this unit is destroyed by a melee attack, if that model has not fought this phase, roll one D6. On a 3+, do not remove it from play; that destroyed model can fight after the attacking unit has finished making its attacks, and is then removed from play.",
-        "name": "Malevolent Souls"
-      },
-      {
-        "type": "rule",
-        "text": "While this unit is within 12\" of one or more friendly AELDARI PSYKER models, models in this unit have a Leadership characteristic of 6+ and each time a model in this unit makes an attack, add 1 to the Hit roll .",
-        "name": "Psychic Guidance"
+        "type": "text",
+        "text": "Malevolent Souls: Each time a model in this unit is destroyed by a melee attack, if that model has not fought this phase, roll one D6. On a 3+, do not remove it from play; that destroyed model can fight after the attacking unit has finished making its attacks, and is then removed from play. Psychic Guidance: While this unit is within 12\" of one or more friendly AELDARI PSYKER models, models in this unit have a Leadership characteristic of 6+ and each time a model in this unit makes an attack, add 1 to the Hit roll ."
       }
-    ],
-    "other": []
+    ]
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "5 Wraithblades"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "ghostswords.",
-      "label": "Every model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -102,14 +91,8 @@
       "title": "ABILITIES",
       "entries": [
         {
-          "type": "rule",
-          "text": "Each time a model in this unit is destroyed by a melee attack, if that model has not fought this phase, roll one D6. On a 3+, do not remove it from play; that destroyed model can fight after the attacking unit has finished making its attacks, and is then removed from play.",
-          "name": "Malevolent Souls"
-        },
-        {
-          "type": "rule",
-          "text": "While this unit is within 12\" of one or more friendly AELDARI PSYKER models, models in this unit have a Leadership characteristic of 6+ and each time a model in this unit makes an attack, add 1 to the Hit roll .",
-          "name": "Psychic Guidance"
+          "type": "text",
+          "text": "Malevolent Souls: Each time a model in this unit is destroyed by a melee attack, if that model has not fought this phase, roll one D6. On a 3+, do not remove it from play; that destroyed model can fight after the attacking unit has finished making its attacks, and is then removed from play. Psychic Guidance: While this unit is within 12\" of one or more friendly AELDARI PSYKER models, models in this unit have a Leadership characteristic of 6+ and each time a model in this unit makes an attack, add 1 to the Hit roll ."
         }
       ]
     },
@@ -117,26 +100,14 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "statement",
-          "text": "The bearer has a 4+ invulnerable save .",
-          "label": "Forceshield"
+          "type": "text",
+          "text": "Forceshield: The bearer has a 4+ invulnerable save ."
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "5 Wraithblades"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "ghostswords.",
-          "label": "Every model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -148,5 +119,63 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY"
+    ],
+    "warnings": [
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY"
+    ]
+  }
 }

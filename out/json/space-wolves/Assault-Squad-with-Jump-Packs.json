@@ -3,7 +3,11 @@
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Assault-Squad-with-Jump-Packs",
     "faction_slug": "space-marines",
     "datasheet_slug": "Assault-Squad-with-Jump-Packs",
-    "output_slug": "space-wolves"
+    "output_slug": "space-wolves",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Assault-Squad-with-Jump-Packs",
+    "canonicalSourceId": "wahapedia:236e7c8071b120f6b7bef32b57b30fe8ac25d2f2",
+    "fetchedAt": "2026-03-19T17:35:02+00:00",
+    "contentHash": "7b8f14e77d21ccb0efb32ffa68abccdb283e4145ab3fbe6d59b407dd15cce56d"
   },
   "name": "Assault Squad With Jump Packs",
   "base_size": "\u230032mm",
@@ -226,33 +230,13 @@
   },
   "abilities": {
     "core": [
-      "Deep Strike"
+      "Deep Strike FACTION: Oath of Moment Hammer of Wrath: Each time this unit ends a Charge move , select one enemy unit within Engagement Range of it and roll one D6 for each model in this unit: for each 4+, that enemy unit suffers 1 mortal wound ."
     ],
-    "faction": [
-      "Oath of Moment"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "Each time this unit ends a Charge move , select one enemy unit within Engagement Range of it and roll one D6 for each model in this unit: for each 4+, that enemy unit suffers 1 mortal wound .",
-        "name": "Hammer of Wrath"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Assault Sergeant with Jump Pack",
-        "4-9 Assault Marines with Jump Packs"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "bolt pistol; Astartes chainsword.",
-      "label": "Every model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -280,26 +264,61 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "The Assault Sergeant with Jump Pack\u2019s bolt pistol can be replaced with one of the following:",
+          "items": [
+            "1 grav-pistol",
+            "1 hand flamer",
+            "1 inferno pistol",
+            "1 plasma pistol"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "The Assault Sergeant with Jump Pack\u2019s Astartes chainsword can be replaced with one of the following:",
+          "items": [
+            "1 power fist",
+            "1 power weapon",
+            "1 thunder hammer"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "The Assault Sergeant with Jump Pack can do one of the following:",
+          "items": [
+            "Replace its bolt pistol and Astartes chainsword with 1 twin lightning claws.",
+            "Be equipped with 1 Astartes shield."
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "Up to 2 Assault Marines with Jump Packs can each have their bolt pistol and Astartes chainsword replaced with one of the following:",
+          "items": [
+            "1 plasma pistol and 1 Astartes chainsword",
+            "1 flamer and 1 close combat weapon",
+            "1 meltagun and 1 close combat weapon",
+            "1 plasma gun and 1 close combat weapon"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "For every 5 models in this unit, 1 model\u2019s Astartes chainsword can be replaced with 1 eviscerator.",
+          "items": []
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deep Strike"
+            "Deep Strike FACTION: Oath of Moment Hammer of Wrath: Each time this unit ends a Charge move , select one enemy unit within Engagement Range of it and roll one D6 for each model in this unit: for each 4+, that enemy unit suffers 1 mortal wound ."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Oath of Moment"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "Each time this unit ends a Charge move , select one enemy unit within Engagement Range of it and roll one D6 for each model in this unit: for each 4+, that enemy unit suffers 1 mortal wound .",
-          "name": "Hammer of Wrath"
         }
       ]
     },
@@ -307,27 +326,14 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "statement",
-          "text": "The bearer has a 4+ invulnerable save .",
-          "label": "Astartes Shield"
+          "type": "text",
+          "text": "Astartes Shield: The bearer has a 4+ invulnerable save ."
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Assault Sergeant with Jump Pack",
-            "4-9 Assault Marines with Jump Packs"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "bolt pistol; Astartes chainsword.",
-          "label": "Every model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -352,5 +358,24 @@
         }
       ]
     }
-  ]
+  ],
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "quality": {
+    "rawSectionTitles": [
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "ATTACHED UNITS"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "ATTACHED UNITS"
+    ],
+    "missingExpectedSections": [],
+    "warnings": []
+  }
 }

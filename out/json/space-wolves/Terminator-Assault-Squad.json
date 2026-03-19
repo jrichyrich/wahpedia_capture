@@ -3,7 +3,11 @@
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Terminator-Assault-Squad",
     "faction_slug": "space-marines",
     "datasheet_slug": "Terminator-Assault-Squad",
-    "output_slug": "space-wolves"
+    "output_slug": "space-wolves",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Terminator-Assault-Squad",
+    "canonicalSourceId": "wahapedia:0f08206ed9afa10f05b08469eb197696fbd20ffd",
+    "fetchedAt": "2026-03-19T17:35:02+00:00",
+    "contentHash": "8ec7399215a329d3b413cb6f28a794e30782f47c4483c9e6646387a41d2152bb"
   },
   "name": "Terminator Assault Squad",
   "base_size": "\u230040mm",
@@ -46,38 +50,13 @@
   },
   "abilities": {
     "core": [
-      "Deep Strike"
+      "Deep Strike FACTION: Oath of Moment Teleport Homer: At the start of the battle, you can set up one Teleport Homer token for this unit anywhere on the battlefield that is not in your opponent\u2019s deployment zone. If you do, once per battle, you can target this unit with the Rapid Ingress Stratagem for 0CP, but when resolving that Stratagem, you must set this unit up within 3\" horizontally of that token and not within 9\" horizontally of any enemy models. That token is then removed. Terminatus Assault: At the start of the Fight phase , each enemy unit within Engagement Range of this unit must take a Battle-shock test ."
     ],
-    "faction": [
-      "Oath of Moment"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "At the start of the battle, you can set up one Teleport Homer token for this unit anywhere on the battlefield that is not in your opponent\u2019s deployment zone. If you do, once per battle, you can target this unit with the Rapid Ingress Stratagem for 0CP, but when resolving that Stratagem, you must set this unit up within 3\" horizontally of that token and not within 9\" horizontally of any enemy models. That token is then removed.",
-        "name": "Teleport Homer"
-      },
-      {
-        "type": "rule",
-        "text": "At the start of the Fight phase , each enemy unit within Engagement Range of this unit must take a Battle-shock test .",
-        "name": "Terminatus Assault"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Assault Terminator Sergeant",
-        "4-9 Assault Terminators"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "thunder hammer; storm shield.",
-      "label": "Every model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -104,31 +83,24 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "Any number of models can each have their thunder hammer and storm shield replaced with 1 twin lightning claws.",
+          "items": []
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deep Strike"
+            "Deep Strike FACTION: Oath of Moment Teleport Homer: At the start of the battle, you can set up one Teleport Homer token for this unit anywhere on the battlefield that is not in your opponent\u2019s deployment zone. If you do, once per battle, you can target this unit with the Rapid Ingress Stratagem for 0CP, but when resolving that Stratagem, you must set this unit up within 3\" horizontally of that token and not within 9\" horizontally of any enemy models. That token is then removed. Terminatus Assault: At the start of the Fight phase , each enemy unit within Engagement Range of this unit must take a Battle-shock test ."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Oath of Moment"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "At the start of the battle, you can set up one Teleport Homer token for this unit anywhere on the battlefield that is not in your opponent\u2019s deployment zone. If you do, once per battle, you can target this unit with the Rapid Ingress Stratagem for 0CP, but when resolving that Stratagem, you must set this unit up within 3\" horizontally of that token and not within 9\" horizontally of any enemy models. That token is then removed.",
-          "name": "Teleport Homer"
-        },
-        {
-          "type": "rule",
-          "text": "At the start of the Fight phase , each enemy unit within Engagement Range of this unit must take a Battle-shock test .",
-          "name": "Terminatus Assault"
         }
       ]
     },
@@ -136,27 +108,14 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "statement",
-          "text": "The bearer has a Wounds characteristic of 4.",
-          "label": "Storm Shield"
+          "type": "text",
+          "text": "Storm Shield: The bearer has a Wounds characteristic of 4."
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Assault Terminator Sergeant",
-            "4-9 Assault Terminators"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "thunder hammer; storm shield.",
-          "label": "Every model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -172,5 +131,22 @@
         }
       ]
     }
-  ]
+  ],
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "quality": {
+    "rawSectionTitles": [
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [],
+    "warnings": []
+  }
 }

@@ -1,8 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Chaplain-With-Jump-Pack",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Chaplain-With-Jump-Pack",
+    "canonicalSourceId": "wahapedia:856cb9207e5cabafa144455e07947cb78c02c483",
     "faction_slug": "space-marines",
-    "datasheet_slug": "Chaplain-With-Jump-Pack"
+    "datasheet_slug": "Chaplain-With-Jump-Pack",
+    "fetchedAt": "2026-03-19T17:26:37+00:00",
+    "contentHash": "a873de1d44eb65bf6cd07bfc42324653534e63bc6caeb6d3afc4f5578bfb8439",
+    "output_slug": "space-marines"
   },
   "name": "Chaplain With Jump Pack",
   "base_size": "\u230032mm",
@@ -156,37 +163,13 @@
   },
   "abilities": {
     "core": [
-      "Deep Strike , Leader"
+      "Deep Strike , Leader FACTION: Oath of Moment Litany of Hate: While this model is leading a unit, each time a model in that unit makes a melee attack, add 1 to the Wound roll . Exhortation of Rage: Each time this model\u2019s unit is selected to fight, you can select one enemy unit within Engagement Range of this model\u2019s unit and roll one D6: on a 4-5, that enemy unit suffers D3 mortal wounds ; on a 6, that enemy unit suffers 3 mortal wounds."
     ],
-    "faction": [
-      "Oath of Moment"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "While this model is leading a unit, each time a model in that unit makes a melee attack, add 1 to the Wound roll .",
-        "name": "Litany of Hate"
-      },
-      {
-        "type": "rule",
-        "text": "Each time this model\u2019s unit is selected to fight, you can select one enemy unit within Engagement Range of this model\u2019s unit and roll one D6: on a 4-5, that enemy unit suffers D3 mortal wounds ; on a 6, that enemy unit suffers 3 mortal wounds.",
-        "name": "Exhortation of Rage"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Chaplain with Jump Pack"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "bolt pistol; crozius arcanum.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -210,48 +193,39 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s bolt pistol can be replaced with one of the following:",
+          "items": [
+            "1 boltgun",
+            "1 combi-weapon",
+            "1 grav-pistol",
+            "1 hand flamer",
+            "1 inferno pistol",
+            "1 plasma pistol",
+            "1 storm bolter",
+            "1 power fist"
+          ]
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deep Strike , Leader"
+            "Deep Strike , Leader FACTION: Oath of Moment Litany of Hate: While this model is leading a unit, each time a model in that unit makes a melee attack, add 1 to the Wound roll . Exhortation of Rage: Each time this model\u2019s unit is selected to fight, you can select one enemy unit within Engagement Range of this model\u2019s unit and roll one D6: on a 4-5, that enemy unit suffers D3 mortal wounds ; on a 6, that enemy unit suffers 3 mortal wounds."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Oath of Moment"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "While this model is leading a unit, each time a model in that unit makes a melee attack, add 1 to the Wound roll .",
-          "name": "Litany of Hate"
-        },
-        {
-          "type": "rule",
-          "text": "Each time this model\u2019s unit is selected to fight, you can select one enemy unit within Engagement Range of this model\u2019s unit and roll one D6: on a 4-5, that enemy unit suffers D3 mortal wounds ; on a 6, that enemy unit suffers 3 mortal wounds.",
-          "name": "Exhortation of Rage"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Chaplain with Jump Pack"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "bolt pistol; crozius arcanum.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -281,5 +255,91 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS"
+    ]
+  }
 }

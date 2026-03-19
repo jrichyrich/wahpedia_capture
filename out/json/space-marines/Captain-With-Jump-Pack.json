@@ -1,8 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Captain-With-Jump-Pack",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Captain-With-Jump-Pack",
+    "canonicalSourceId": "wahapedia:220c95917b02dc50203bfab9f897f27c0c1dc75a",
     "faction_slug": "space-marines",
-    "datasheet_slug": "Captain-With-Jump-Pack"
+    "datasheet_slug": "Captain-With-Jump-Pack",
+    "fetchedAt": "2026-03-19T17:26:10+00:00",
+    "contentHash": "0cd1f0464ce6e7c895b2dff2ab68f046b90a8bf1dd682efcc43106d78f2f0ab9",
+    "output_slug": "space-marines"
   },
   "name": "Captain With Jump Pack",
   "base_size": "\u230040mm",
@@ -116,37 +123,13 @@
   },
   "abilities": {
     "core": [
-      "Deep Strike , Leader"
+      "Deep Strike , Leader FACTION: Oath of Moment Angel\u2019s Wrath: While this model is leading a unit, each time that unit ends a Charge move , until the end of the turn, add 1 to the Strength characteristic of melee weapons equipped by models in that unit. Rites of Battle: Once per battle round , one unit from your army with this ability can use it when its unit is targeted with a Stratagem . If it does, reduce the CP cost of that use of that Stratagem by 1CP."
     ],
-    "faction": [
-      "Oath of Moment"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "While this model is leading a unit, each time that unit ends a Charge move , until the end of the turn, add 1 to the Strength characteristic of melee weapons equipped by models in that unit.",
-        "name": "Angel\u2019s Wrath"
-      },
-      {
-        "type": "rule",
-        "text": "Once per battle round , one unit from your army with this ability can use it when its unit is targeted with a Stratagem . If it does, reduce the CP cost of that use of that Stratagem by 1CP.",
-        "name": "Rites of Battle"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Captain with Jump Pack"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "heavy bolt pistol; Astartes chainsword.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -172,31 +155,45 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s heavy bolt pistol can be replaced with one of the following:",
+          "items": [
+            "1 plasma pistol",
+            "1 hand flamer"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "This model\u2019s Astartes chainsword can be replaced with one of the following:",
+          "items": [
+            "1 power fist",
+            "1 relic weapon"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "This model\u2019s heavy bolt pistol and Astartes chainsword can be replaced with 1 thunder hammer and 1 relic shield.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "If this model is equipped with a heavy bolt pistol and an Astartes chainsword, it can be equipped with 1 relic shield. This model\u2019s heavy bolt pistol and Astartes chainsword cannot be replaced.",
+          "items": []
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deep Strike , Leader"
+            "Deep Strike , Leader FACTION: Oath of Moment Angel\u2019s Wrath: While this model is leading a unit, each time that unit ends a Charge move , until the end of the turn, add 1 to the Strength characteristic of melee weapons equipped by models in that unit. Rites of Battle: Once per battle round , one unit from your army with this ability can use it when its unit is targeted with a Stratagem . If it does, reduce the CP cost of that use of that Stratagem by 1CP."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Oath of Moment"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "While this model is leading a unit, each time that unit ends a Charge move , until the end of the turn, add 1 to the Strength characteristic of melee weapons equipped by models in that unit.",
-          "name": "Angel\u2019s Wrath"
-        },
-        {
-          "type": "rule",
-          "text": "Once per battle round , one unit from your army with this ability can use it when its unit is targeted with a Stratagem . If it does, reduce the CP cost of that use of that Stratagem by 1CP.",
-          "name": "Rites of Battle"
         }
       ]
     },
@@ -204,26 +201,14 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "statement",
-          "text": "The bearer has a Wounds characteristic of 6.",
-          "label": "Relic Shield"
+          "type": "text",
+          "text": "Relic Shield: The bearer has a Wounds characteristic of 6."
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Captain with Jump Pack"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "heavy bolt pistol; Astartes chainsword.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -252,5 +237,93 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS"
+    ]
+  }
 }

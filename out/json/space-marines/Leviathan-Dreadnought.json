@@ -1,8 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Leviathan-Dreadnought",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Leviathan-Dreadnought",
+    "canonicalSourceId": "wahapedia:3b8b3c38e27845c5c2a94e1434279328e4b5ede7",
     "faction_slug": "space-marines",
-    "datasheet_slug": "Leviathan-Dreadnought"
+    "datasheet_slug": "Leviathan-Dreadnought",
+    "fetchedAt": "2026-03-19T17:32:06+00:00",
+    "contentHash": "9d4a8e45da25e41ce049a102f12682b64ad2869b7b3b8e82ade8e1a5fdb7903d",
+    "output_slug": "space-marines"
   },
   "name": "Leviathan Dreadnought",
   "base_size": "\u230080mm",
@@ -140,32 +147,13 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D3"
+      "Deadly Demise D3 FACTION: Oath of Moment Duty Eternal: Each time an attack is allocated to this model, subtract 1 from the Damage characteristic of that attack."
     ],
-    "faction": [
-      "Oath of Moment"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "Each time an attack is allocated to this model, subtract 1 from the Damage characteristic of that attack.",
-        "name": "Duty Eternal"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Leviathan Dreadnought"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "2 heavy flamers; 2 grav-flux bombards; armoured feet.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -190,43 +178,45 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "Each of this model\u2019s grav-flux bombards can be replaced with one of the following",
+          "items": [
+            "1 cyclonic melta lance",
+            "1 storm cannon",
+            "1 meltagun and 1 Leviathan siege claw",
+            "1 meltagun and 1 Leviathan siege drill"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "This model\u2019s 2 heavy flamers can be replaced with 2 twin volkite calivers.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "This model can be equipped with 3 hunter-killer missiles.",
+          "items": []
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D3"
+            "Deadly Demise D3 FACTION: Oath of Moment Duty Eternal: Each time an attack is allocated to this model, subtract 1 from the Damage characteristic of that attack."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Oath of Moment"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "Each time an attack is allocated to this model, subtract 1 from the Damage characteristic of that attack.",
-          "name": "Duty Eternal"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Leviathan Dreadnought"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "2 heavy flamers; 2 grav-flux bombards; armoured feet.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -247,5 +237,91 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-4 WOUNDS REMAINING",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-4 WOUNDS REMAINING"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS"
+    ]
+  }
 }

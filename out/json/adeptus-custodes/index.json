@@ -1,9 +1,15 @@
 [
   {
+    "exportSchemaVersion": 1,
+    "parserVersion": "2026-03-19-durable-normalization-v1",
     "source": {
       "url": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Agamatus-Custodians",
+      "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Agamatus-Custodians",
+      "canonicalSourceId": "wahapedia:c6429dca4d0c6dd7066045da57a0a34ab5ccc875",
       "faction_slug": "adeptus-custodes",
       "datasheet_slug": "Agamatus-Custodians",
+      "fetchedAt": "2026-03-19T17:10:55+00:00",
+      "contentHash": "9b36bce5e0da9525efd8c6e78d3a97b71fddc2658c85309ed8845c5272945b5d",
       "output_slug": "adeptus-custodes"
     },
     "name": "Agamatus Custodians",
@@ -72,34 +78,12 @@
     "abilities": {
       "core": [],
       "faction": [
-        "Martial Ka\u2019tah"
+        "Martial Ka\u2019tah Turbo-boost: Each time this unit Advances , do not make an Advance roll. Instead, until the end of the phase, add 6\" to the Move characteristic of models in this unit. Implacable Vanguard: Once per battle, in your Shooting phase , after this unit has shot, if it is not within Engagement Range of one or more enemy units, it can make a Normal move of up to 6\". If it does, until the end of the turn, this unit is not eligible to declare a charge ."
       ],
-      "datasheet": [
-        {
-          "type": "rule",
-          "text": "Each time this unit Advances , do not make an Advance roll. Instead, until the end of the phase, add 6\" to the Move characteristic of models in this unit.",
-          "name": "Turbo-boost"
-        },
-        {
-          "type": "rule",
-          "text": "Once per battle, in your Shooting phase , after this unit has shot, if it is not within Engagement Range of one or more enemy units, it can make a Normal move of up to 6\". If it does, until the end of the turn, this unit is not eligible to declare a charge .",
-          "name": "Implacable Vanguard"
-        }
-      ],
+      "datasheet": [],
       "other": []
     },
     "unit_composition": [
-      {
-        "type": "list",
-        "items": [
-          "3-6 Agamatus Custodians"
-        ]
-      },
-      {
-        "type": "statement",
-        "text": "lastrum bolt cannon; interceptor lance.",
-        "label": "Every model is equipped with"
-      },
       {
         "type": "points",
         "rows": [
@@ -144,35 +128,14 @@
             "type": "tagged_list",
             "label": "FACTION",
             "items": [
-              "Martial Ka\u2019tah"
+              "Martial Ka\u2019tah Turbo-boost: Each time this unit Advances , do not make an Advance roll. Instead, until the end of the phase, add 6\" to the Move characteristic of models in this unit. Implacable Vanguard: Once per battle, in your Shooting phase , after this unit has shot, if it is not within Engagement Range of one or more enemy units, it can make a Normal move of up to 6\". If it does, until the end of the turn, this unit is not eligible to declare a charge ."
             ]
-          },
-          {
-            "type": "rule",
-            "text": "Each time this unit Advances , do not make an Advance roll. Instead, until the end of the phase, add 6\" to the Move characteristic of models in this unit.",
-            "name": "Turbo-boost"
-          },
-          {
-            "type": "rule",
-            "text": "Once per battle, in your Shooting phase , after this unit has shot, if it is not within Engagement Range of one or more enemy units, it can make a Normal move of up to 6\". If it does, until the end of the turn, this unit is not eligible to declare a charge .",
-            "name": "Implacable Vanguard"
           }
         ]
       },
       {
         "title": "UNIT COMPOSITION",
         "entries": [
-          {
-            "type": "list",
-            "items": [
-              "3-6 Agamatus Custodians"
-            ]
-          },
-          {
-            "type": "statement",
-            "text": "lastrum bolt cannon; interceptor lance.",
-            "label": "Every model is equipped with"
-          },
           {
             "type": "points",
             "rows": [
@@ -197,13 +160,105 @@
           }
         ]
       }
-    ]
+    ],
+    "quality": {
+      "rawSectionTitles": [
+        "RANGED WEAPONS",
+        "RANGE",
+        "A",
+        "BS",
+        "S",
+        "AP",
+        "D",
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "WARGEAR OPTIONS",
+        "ABILITIES",
+        "UNIT COMPOSITION",
+        "JETBIKE OUTRIDERS",
+        "STRATAGEMS",
+        "DETACHMENT ABILITY",
+        "ENHANCEMENTS"
+      ],
+      "exportedSectionTitles": [
+        "WARGEAR OPTIONS",
+        "ABILITIES",
+        "UNIT COMPOSITION",
+        "JETBIKE OUTRIDERS"
+      ],
+      "missingExpectedSections": [
+        "RANGED WEAPONS",
+        "RANGE",
+        "A",
+        "BS",
+        "S",
+        "AP",
+        "D",
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "STRATAGEMS",
+        "DETACHMENT ABILITY",
+        "ENHANCEMENTS"
+      ],
+      "warnings": [
+        "section-missing:RANGED WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:BS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:DETACHMENT ABILITY",
+        "section-missing:ENHANCEMENTS",
+        "section-missing:RANGED WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:BS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:DETACHMENT ABILITY",
+        "section-missing:ENHANCEMENTS"
+      ]
+    }
   },
   {
+    "exportSchemaVersion": 1,
+    "parserVersion": "2026-03-19-durable-normalization-v1",
     "source": {
       "url": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Aleya",
+      "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Aleya",
+      "canonicalSourceId": "wahapedia:f0d4f77fdb6124844addea0480ae4c2c875dd5d4",
       "faction_slug": "adeptus-custodes",
       "datasheet_slug": "Aleya",
+      "fetchedAt": "2026-03-19T17:10:51+00:00",
+      "contentHash": "c4237eb8e34e8107af4cbeb7493e878d9d6a55fe7ff1619d655b9bb1c6f28fbd",
       "output_slug": "adeptus-custodes"
     },
     "name": "Aleya",
@@ -236,40 +291,13 @@
     },
     "abilities": {
       "core": [
-        "Feel No Pain 5+ , Leader , Scouts 6\""
+        "Feel No Pain 5+ , Leader , Scouts 6\" Tactical Perception: While this model is leading a unit, models in that unit have the Fights First ability. Tenacious Spirit: While this model is leading a unit, each time a model in that unit makes an attack, add 1 to the Hit roll if that unit is below its Starting Strength , and add 1 to the Wound roll as well if that unit is Below Half-strength . Daughter of the Abyss: This model has the Feel No Pain 3+ ability against Psychic Attacks and mortal wounds ."
       ],
       "faction": [],
-      "datasheet": [
-        {
-          "type": "rule",
-          "text": "While this model is leading a unit, models in that unit have the Fights First ability.",
-          "name": "Tactical Perception"
-        },
-        {
-          "type": "rule",
-          "text": "While this model is leading a unit, each time a model in that unit makes an attack, add 1 to the Hit roll if that unit is below its Starting Strength , and add 1 to the Wound roll as well if that unit is Below Half-strength .",
-          "name": "Tenacious Spirit"
-        },
-        {
-          "type": "rule",
-          "text": "This model has the Feel No Pain 3+ ability against Psychic Attacks and mortal wounds .",
-          "name": "Daughter of the Abyss"
-        }
-      ],
+      "datasheet": [],
       "other": []
     },
     "unit_composition": [
-      {
-        "type": "list",
-        "items": [
-          "1 Aleya \u2013 EPIC HERO"
-        ]
-      },
-      {
-        "type": "statement",
-        "text": "Somnus.",
-        "label": "This model is equipped with"
-      },
       {
         "type": "points",
         "rows": [
@@ -299,40 +327,14 @@
             "type": "tagged_list",
             "label": "CORE",
             "items": [
-              "Feel No Pain 5+ , Leader , Scouts 6\""
+              "Feel No Pain 5+ , Leader , Scouts 6\" Tactical Perception: While this model is leading a unit, models in that unit have the Fights First ability. Tenacious Spirit: While this model is leading a unit, each time a model in that unit makes an attack, add 1 to the Hit roll if that unit is below its Starting Strength , and add 1 to the Wound roll as well if that unit is Below Half-strength . Daughter of the Abyss: This model has the Feel No Pain 3+ ability against Psychic Attacks and mortal wounds ."
             ]
-          },
-          {
-            "type": "rule",
-            "text": "While this model is leading a unit, models in that unit have the Fights First ability.",
-            "name": "Tactical Perception"
-          },
-          {
-            "type": "rule",
-            "text": "While this model is leading a unit, each time a model in that unit makes an attack, add 1 to the Hit roll if that unit is below its Starting Strength , and add 1 to the Wound roll as well if that unit is Below Half-strength .",
-            "name": "Tenacious Spirit"
-          },
-          {
-            "type": "rule",
-            "text": "This model has the Feel No Pain 3+ ability against Psychic Attacks and mortal wounds .",
-            "name": "Daughter of the Abyss"
           }
         ]
       },
       {
         "title": "UNIT COMPOSITION",
         "entries": [
-          {
-            "type": "list",
-            "items": [
-              "1 Aleya \u2013 EPIC HERO"
-            ]
-          },
-          {
-            "type": "statement",
-            "text": "Somnus.",
-            "label": "This model is equipped with"
-          },
           {
             "type": "points",
             "rows": [
@@ -357,13 +359,71 @@
           }
         ]
       }
-    ]
+    ],
+    "quality": {
+      "rawSectionTitles": [
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "ABILITIES",
+        "UNIT COMPOSITION",
+        "LEADER",
+        "STRATAGEMS",
+        "DETACHMENT ABILITY"
+      ],
+      "exportedSectionTitles": [
+        "ABILITIES",
+        "UNIT COMPOSITION",
+        "LEADER"
+      ],
+      "missingExpectedSections": [
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "STRATAGEMS",
+        "DETACHMENT ABILITY"
+      ],
+      "warnings": [
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:DETACHMENT ABILITY",
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:DETACHMENT ABILITY"
+      ]
+    }
   },
   {
+    "exportSchemaVersion": 1,
+    "parserVersion": "2026-03-19-durable-normalization-v1",
     "source": {
       "url": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Allarus-Custodians",
+      "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Allarus-Custodians",
+      "canonicalSourceId": "wahapedia:1efb3c8483c9d8e86e715134649ca09cd7003201",
       "faction_slug": "adeptus-custodes",
       "datasheet_slug": "Allarus-Custodians",
+      "fetchedAt": "2026-03-19T17:10:53+00:00",
+      "contentHash": "bfc686a9411140fcd275471003c1d334ad5eeac79ca6374fa390835dd75c597b",
       "output_slug": "adeptus-custodes"
     },
     "name": "Allarus Custodians",
@@ -451,37 +511,13 @@
     },
     "abilities": {
       "core": [
-        "Deep Strike"
+        "Deep Strike FACTION: Martial Ka\u2019tah Slayers of Tyrants: Each time a model in this unit makes an attack that targets a CHARACTER , MONSTER or VEHICLE unit, you can re-roll the Wound roll . From Golden Light: Once per battle, at the end of your opponent\u2019s turn, if this unit is not within Engagement Range of one or more enemy units, you can remove it from the battlefield and place it into Strategic Reserves ."
       ],
-      "faction": [
-        "Martial Ka\u2019tah"
-      ],
-      "datasheet": [
-        {
-          "type": "rule",
-          "text": "Each time a model in this unit makes an attack that targets a CHARACTER , MONSTER or VEHICLE unit, you can re-roll the Wound roll .",
-          "name": "Slayers of Tyrants"
-        },
-        {
-          "type": "rule",
-          "text": "Once per battle, at the end of your opponent\u2019s turn, if this unit is not within Engagement Range of one or more enemy units, you can remove it from the battlefield and place it into Strategic Reserves .",
-          "name": "From Golden Light"
-        }
-      ],
+      "faction": [],
+      "datasheet": [],
       "other": []
     },
     "unit_composition": [
-      {
-        "type": "list",
-        "items": [
-          "2-6 Allarus Custodians"
-        ]
-      },
-      {
-        "type": "statement",
-        "text": "balistus grenade launcher; guardian spear.",
-        "label": "Every model is equipped with"
-      },
       {
         "type": "points",
         "rows": [
@@ -536,25 +572,8 @@
             "type": "tagged_list",
             "label": "CORE",
             "items": [
-              "Deep Strike"
+              "Deep Strike FACTION: Martial Ka\u2019tah Slayers of Tyrants: Each time a model in this unit makes an attack that targets a CHARACTER , MONSTER or VEHICLE unit, you can re-roll the Wound roll . From Golden Light: Once per battle, at the end of your opponent\u2019s turn, if this unit is not within Engagement Range of one or more enemy units, you can remove it from the battlefield and place it into Strategic Reserves ."
             ]
-          },
-          {
-            "type": "tagged_list",
-            "label": "FACTION",
-            "items": [
-              "Martial Ka\u2019tah"
-            ]
-          },
-          {
-            "type": "rule",
-            "text": "Each time a model in this unit makes an attack that targets a CHARACTER , MONSTER or VEHICLE unit, you can re-roll the Wound roll .",
-            "name": "Slayers of Tyrants"
-          },
-          {
-            "type": "rule",
-            "text": "Once per battle, at the end of your opponent\u2019s turn, if this unit is not within Engagement Range of one or more enemy units, you can remove it from the battlefield and place it into Strategic Reserves .",
-            "name": "From Golden Light"
           }
         ]
       },
@@ -562,26 +581,14 @@
         "title": "WARGEAR ABILITIES",
         "entries": [
           {
-            "type": "statement",
-            "text": "Add 1 to the Objective Control characteristic of models in the bearer\u2019s unit.",
-            "label": "Vexilla"
+            "type": "text",
+            "text": "Vexilla: Add 1 to the Objective Control characteristic of models in the bearer\u2019s unit."
           }
         ]
       },
       {
         "title": "UNIT COMPOSITION",
         "entries": [
-          {
-            "type": "list",
-            "items": [
-              "2-6 Allarus Custodians"
-            ]
-          },
-          {
-            "type": "statement",
-            "text": "balistus grenade launcher; guardian spear.",
-            "label": "Every model is equipped with"
-          },
           {
             "type": "points",
             "rows": [
@@ -605,13 +612,109 @@
           }
         ]
       }
-    ]
+    ],
+    "quality": {
+      "rawSectionTitles": [
+        "RANGED WEAPONS",
+        "RANGE",
+        "A",
+        "BS",
+        "S",
+        "AP",
+        "D",
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "WARGEAR OPTIONS",
+        "ABILITIES",
+        "WARGEAR ABILITIES",
+        "UNIT COMPOSITION",
+        "STRATAGEMS",
+        "LED BY",
+        "DETACHMENT ABILITY",
+        "ENHANCEMENTS"
+      ],
+      "exportedSectionTitles": [
+        "WARGEAR OPTIONS",
+        "ABILITIES",
+        "WARGEAR ABILITIES",
+        "UNIT COMPOSITION"
+      ],
+      "missingExpectedSections": [
+        "RANGED WEAPONS",
+        "RANGE",
+        "A",
+        "BS",
+        "S",
+        "AP",
+        "D",
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "STRATAGEMS",
+        "LED BY",
+        "DETACHMENT ABILITY",
+        "ENHANCEMENTS"
+      ],
+      "warnings": [
+        "section-missing:RANGED WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:BS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:LED BY",
+        "section-missing:DETACHMENT ABILITY",
+        "section-missing:ENHANCEMENTS",
+        "section-missing:RANGED WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:BS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:LED BY",
+        "section-missing:DETACHMENT ABILITY",
+        "section-missing:ENHANCEMENTS"
+      ]
+    }
   },
   {
+    "exportSchemaVersion": 1,
+    "parserVersion": "2026-03-19-durable-normalization-v1",
     "source": {
       "url": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Anathema-Psykana-Rhino",
+      "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Anathema-Psykana-Rhino",
+      "canonicalSourceId": "wahapedia:c6b7e3e1f89d4d050c7560189343e72af8ce6f51",
       "faction_slug": "adeptus-custodes",
       "datasheet_slug": "Anathema-Psykana-Rhino",
+      "fetchedAt": "2026-03-19T17:10:53+00:00",
+      "contentHash": "5f559efc92351848981d16107c86329791706a7beb4cc6919eb24b49b4547e58",
       "output_slug": "adeptus-custodes"
     },
     "name": "Anathema Psykana Rhino",
@@ -664,35 +767,13 @@
     },
     "abilities": {
       "core": [
-        "Deadly Demise D3 , Firing Deck 2"
+        "Deadly Demise D3 , Firing Deck 2 Daughters of the Abyss: This model has the Feel No Pain 3+ ability against Psychic Attacks and mortal wounds . Self Repair: At the start of your Command phase , this model regains 1 lost wound."
       ],
       "faction": [],
-      "datasheet": [
-        {
-          "type": "rule",
-          "text": "This model has the Feel No Pain 3+ ability against Psychic Attacks and mortal wounds .",
-          "name": "Daughters of the Abyss"
-        },
-        {
-          "type": "rule",
-          "text": "At the start of your Command phase , this model regains 1 lost wound.",
-          "name": "Self Repair"
-        }
-      ],
+      "datasheet": [],
       "other": []
     },
     "unit_composition": [
-      {
-        "type": "list",
-        "items": [
-          "1 Anathema Psykana Rhino"
-        ]
-      },
-      {
-        "type": "statement",
-        "text": "storm bolter; armoured tracks.",
-        "label": "This model is equipped with"
-      },
       {
         "type": "points",
         "rows": [
@@ -733,35 +814,14 @@
             "type": "tagged_list",
             "label": "CORE",
             "items": [
-              "Deadly Demise D3 , Firing Deck 2"
+              "Deadly Demise D3 , Firing Deck 2 Daughters of the Abyss: This model has the Feel No Pain 3+ ability against Psychic Attacks and mortal wounds . Self Repair: At the start of your Command phase , this model regains 1 lost wound."
             ]
-          },
-          {
-            "type": "rule",
-            "text": "This model has the Feel No Pain 3+ ability against Psychic Attacks and mortal wounds .",
-            "name": "Daughters of the Abyss"
-          },
-          {
-            "type": "rule",
-            "text": "At the start of your Command phase , this model regains 1 lost wound.",
-            "name": "Self Repair"
           }
         ]
       },
       {
         "title": "UNIT COMPOSITION",
         "entries": [
-          {
-            "type": "list",
-            "items": [
-              "1 Anathema Psykana Rhino"
-            ]
-          },
-          {
-            "type": "statement",
-            "text": "storm bolter; armoured tracks.",
-            "label": "This model is equipped with"
-          },
           {
             "type": "points",
             "rows": [
@@ -782,13 +842,105 @@
           }
         ]
       }
-    ]
+    ],
+    "quality": {
+      "rawSectionTitles": [
+        "RANGED WEAPONS",
+        "RANGE",
+        "A",
+        "BS",
+        "S",
+        "AP",
+        "D",
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "WARGEAR OPTIONS",
+        "ABILITIES",
+        "UNIT COMPOSITION",
+        "TRANSPORT",
+        "STRATAGEMS",
+        "DETACHMENT ABILITY",
+        "ENHANCEMENTS"
+      ],
+      "exportedSectionTitles": [
+        "WARGEAR OPTIONS",
+        "ABILITIES",
+        "UNIT COMPOSITION",
+        "TRANSPORT"
+      ],
+      "missingExpectedSections": [
+        "RANGED WEAPONS",
+        "RANGE",
+        "A",
+        "BS",
+        "S",
+        "AP",
+        "D",
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "STRATAGEMS",
+        "DETACHMENT ABILITY",
+        "ENHANCEMENTS"
+      ],
+      "warnings": [
+        "section-missing:RANGED WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:BS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:DETACHMENT ABILITY",
+        "section-missing:ENHANCEMENTS",
+        "section-missing:RANGED WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:BS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:DETACHMENT ABILITY",
+        "section-missing:ENHANCEMENTS"
+      ]
+    }
   },
   {
+    "exportSchemaVersion": 1,
+    "parserVersion": "2026-03-19-durable-normalization-v1",
     "source": {
       "url": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Aquilon-Custodians",
+      "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Aquilon-Custodians",
+      "canonicalSourceId": "wahapedia:1e4b5d99688029f63998be23929d945efb886ed1",
       "faction_slug": "adeptus-custodes",
       "datasheet_slug": "Aquilon-Custodians",
+      "fetchedAt": "2026-03-19T17:10:55+00:00",
+      "contentHash": "2e379571c3ecd84849fae71219bb469c2f92071f91d76f07fda7b111882cd886",
       "output_slug": "adeptus-custodes"
     },
     "name": "Aquilon Custodians",
@@ -867,37 +1019,13 @@
     },
     "abilities": {
       "core": [
-        "Deep Strike"
+        "Deep Strike FACTION: Martial Ka\u2019tah Heavy Assault Infantry: Each time a model in this unit makes a ranged attack that targets the closest eligible target, re-roll a Wound roll of 1. From Golden Light: Once per battle, at the end of your opponent\u2019s turn, if this unit is not within Engagement Range of one or more enemy units, you can remove it from the battlefield and place it into Strategic Reserves ."
       ],
-      "faction": [
-        "Martial Ka\u2019tah"
-      ],
-      "datasheet": [
-        {
-          "type": "rule",
-          "text": "Each time a model in this unit makes a ranged attack that targets the closest eligible target, re-roll a Wound roll of 1.",
-          "name": "Heavy Assault Infantry"
-        },
-        {
-          "type": "rule",
-          "text": "Once per battle, at the end of your opponent\u2019s turn, if this unit is not within Engagement Range of one or more enemy units, you can remove it from the battlefield and place it into Strategic Reserves .",
-          "name": "From Golden Light"
-        }
-      ],
+      "faction": [],
+      "datasheet": [],
       "other": []
     },
     "unit_composition": [
-      {
-        "type": "list",
-        "items": [
-          "3-6 Aquilon Custodians"
-        ]
-      },
-      {
-        "type": "statement",
-        "text": "lastrum storm bolter; solerite power gauntlet.",
-        "label": "Every model is equipped with"
-      },
       {
         "type": "points",
         "rows": [
@@ -947,42 +1075,14 @@
             "type": "tagged_list",
             "label": "CORE",
             "items": [
-              "Deep Strike"
+              "Deep Strike FACTION: Martial Ka\u2019tah Heavy Assault Infantry: Each time a model in this unit makes a ranged attack that targets the closest eligible target, re-roll a Wound roll of 1. From Golden Light: Once per battle, at the end of your opponent\u2019s turn, if this unit is not within Engagement Range of one or more enemy units, you can remove it from the battlefield and place it into Strategic Reserves ."
             ]
-          },
-          {
-            "type": "tagged_list",
-            "label": "FACTION",
-            "items": [
-              "Martial Ka\u2019tah"
-            ]
-          },
-          {
-            "type": "rule",
-            "text": "Each time a model in this unit makes a ranged attack that targets the closest eligible target, re-roll a Wound roll of 1.",
-            "name": "Heavy Assault Infantry"
-          },
-          {
-            "type": "rule",
-            "text": "Once per battle, at the end of your opponent\u2019s turn, if this unit is not within Engagement Range of one or more enemy units, you can remove it from the battlefield and place it into Strategic Reserves .",
-            "name": "From Golden Light"
           }
         ]
       },
       {
         "title": "UNIT COMPOSITION",
         "entries": [
-          {
-            "type": "list",
-            "items": [
-              "3-6 Aquilon Custodians"
-            ]
-          },
-          {
-            "type": "statement",
-            "text": "lastrum storm bolter; solerite power gauntlet.",
-            "label": "Every model is equipped with"
-          },
           {
             "type": "points",
             "rows": [
@@ -1007,13 +1107,105 @@
           }
         ]
       }
-    ]
+    ],
+    "quality": {
+      "rawSectionTitles": [
+        "RANGED WEAPONS",
+        "RANGE",
+        "A",
+        "BS",
+        "S",
+        "AP",
+        "D",
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "WARGEAR OPTIONS",
+        "ABILITIES",
+        "UNIT COMPOSITION",
+        "LIONS OF THE EMPEROR",
+        "STRATAGEMS",
+        "DETACHMENT ABILITY",
+        "ENHANCEMENTS"
+      ],
+      "exportedSectionTitles": [
+        "WARGEAR OPTIONS",
+        "ABILITIES",
+        "UNIT COMPOSITION",
+        "LIONS OF THE EMPEROR"
+      ],
+      "missingExpectedSections": [
+        "RANGED WEAPONS",
+        "RANGE",
+        "A",
+        "BS",
+        "S",
+        "AP",
+        "D",
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "STRATAGEMS",
+        "DETACHMENT ABILITY",
+        "ENHANCEMENTS"
+      ],
+      "warnings": [
+        "section-missing:RANGED WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:BS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:DETACHMENT ABILITY",
+        "section-missing:ENHANCEMENTS",
+        "section-missing:RANGED WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:BS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:DETACHMENT ABILITY",
+        "section-missing:ENHANCEMENTS"
+      ]
+    }
   },
   {
+    "exportSchemaVersion": 1,
+    "parserVersion": "2026-03-19-durable-normalization-v1",
     "source": {
       "url": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Ares-Gunship",
+      "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Ares-Gunship",
+      "canonicalSourceId": "wahapedia:8139bab655b23ee2484e966d2ac18bee4e683aca",
       "faction_slug": "adeptus-custodes",
       "datasheet_slug": "Ares-Gunship",
+      "fetchedAt": "2026-03-19T17:10:55+00:00",
+      "contentHash": "2a95b90087d31dd542b40379e4b948710cc4707642da0c46a247b98d5bc39a32",
       "output_slug": "adeptus-custodes"
     },
     "name": "Ares Gunship",
@@ -1065,32 +1257,13 @@
     },
     "abilities": {
       "core": [
-        "Deadly Demise D6 , Hover"
+        "Deadly Demise D6 , Hover FACTION: Martial Ka\u2019tah Infernus Firebombs: Each time this model ends a Normal move , you can select one enemy unit it moved over during that move. Until the end of the turn, models in that unit cannot have the Benefit of Cover . In addition, roll one D6 for each model in that unit: for each 6, that unit suffers 1 mortal wound ."
       ],
-      "faction": [
-        "Martial Ka\u2019tah"
-      ],
-      "datasheet": [
-        {
-          "type": "rule",
-          "text": "Each time this model ends a Normal move , you can select one enemy unit it moved over during that move. Until the end of the turn, models in that unit cannot have the Benefit of Cover . In addition, roll one D6 for each model in that unit: for each 6, that unit suffers 1 mortal wound .",
-          "name": "Infernus Firebombs"
-        }
-      ],
+      "faction": [],
+      "datasheet": [],
       "other": []
     },
     "unit_composition": [
-      {
-        "type": "list",
-        "items": [
-          "1 Ares Gunship"
-        ]
-      },
-      {
-        "type": "statement",
-        "text": "2 arachnus heavy blaze cannons; arachnus magna-blaze cannon; armoured hull.",
-        "label": "This model is equipped with"
-      },
       {
         "type": "points",
         "rows": [
@@ -1116,9 +1289,10 @@
         "title": "WARGEAR OPTIONS",
         "entries": [
           {
-            "type": "option_group",
-            "label": "None",
-            "items": []
+            "type": "list",
+            "items": [
+              "None"
+            ]
           }
         ]
       },
@@ -1129,37 +1303,14 @@
             "type": "tagged_list",
             "label": "CORE",
             "items": [
-              "Deadly Demise D6 , Hover"
+              "Deadly Demise D6 , Hover FACTION: Martial Ka\u2019tah Infernus Firebombs: Each time this model ends a Normal move , you can select one enemy unit it moved over during that move. Until the end of the turn, models in that unit cannot have the Benefit of Cover . In addition, roll one D6 for each model in that unit: for each 6, that unit suffers 1 mortal wound ."
             ]
-          },
-          {
-            "type": "tagged_list",
-            "label": "FACTION",
-            "items": [
-              "Martial Ka\u2019tah"
-            ]
-          },
-          {
-            "type": "rule",
-            "text": "Each time this model ends a Normal move , you can select one enemy unit it moved over during that move. Until the end of the turn, models in that unit cannot have the Benefit of Cover . In addition, roll one D6 for each model in that unit: for each 6, that unit suffers 1 mortal wound .",
-            "name": "Infernus Firebombs"
           }
         ]
       },
       {
         "title": "UNIT COMPOSITION",
         "entries": [
-          {
-            "type": "list",
-            "items": [
-              "1 Ares Gunship"
-            ]
-          },
-          {
-            "type": "statement",
-            "text": "2 arachnus heavy blaze cannons; arachnus magna-blaze cannon; armoured hull.",
-            "label": "This model is equipped with"
-          },
           {
             "type": "points",
             "rows": [
@@ -1180,13 +1331,101 @@
           }
         ]
       }
-    ]
+    ],
+    "quality": {
+      "rawSectionTitles": [
+        "RANGED WEAPONS",
+        "RANGE",
+        "A",
+        "BS",
+        "S",
+        "AP",
+        "D",
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "WARGEAR OPTIONS",
+        "ABILITIES",
+        "UNIT COMPOSITION",
+        "DAMAGED: 1-7 WOUNDS REMAINING",
+        "STRATAGEMS",
+        "DETACHMENT ABILITY"
+      ],
+      "exportedSectionTitles": [
+        "WARGEAR OPTIONS",
+        "ABILITIES",
+        "UNIT COMPOSITION",
+        "DAMAGED: 1-7 WOUNDS REMAINING"
+      ],
+      "missingExpectedSections": [
+        "RANGED WEAPONS",
+        "RANGE",
+        "A",
+        "BS",
+        "S",
+        "AP",
+        "D",
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "STRATAGEMS",
+        "DETACHMENT ABILITY"
+      ],
+      "warnings": [
+        "section-missing:RANGED WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:BS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:DETACHMENT ABILITY",
+        "section-missing:RANGED WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:BS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:DETACHMENT ABILITY"
+      ]
+    }
   },
   {
+    "exportSchemaVersion": 1,
+    "parserVersion": "2026-03-19-durable-normalization-v1",
     "source": {
       "url": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Blade-Champion",
+      "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Blade-Champion",
+      "canonicalSourceId": "wahapedia:c4a21560a1b9d166708d81f7bde8a4ea12164c1b",
       "faction_slug": "adeptus-custodes",
       "datasheet_slug": "Blade-Champion",
+      "fetchedAt": "2026-03-19T17:10:51+00:00",
+      "contentHash": "63f3225ec987ca10ac6ddea9d425901f5aaee52c54d752c0af4848de4a248567",
       "output_slug": "adeptus-custodes"
     },
     "name": "Blade Champion",
@@ -1242,37 +1481,13 @@
     },
     "abilities": {
       "core": [
-        "Deep Strike , Leader"
+        "Deep Strike , Leader FACTION: Martial Ka\u2019tah Swift Onslaught: While this model is leading a unit, you can re-roll Charge rolls made for that unit Martial Inspiration: Once per battle, in your Charge phase , this model\u2019s unit is eligible to declare a charge in a turn which it Advanced ."
       ],
-      "faction": [
-        "Martial Ka\u2019tah"
-      ],
-      "datasheet": [
-        {
-          "type": "rule",
-          "text": "While this model is leading a unit, you can re-roll Charge rolls made for that unit",
-          "name": "Swift Onslaught"
-        },
-        {
-          "type": "rule",
-          "text": "Once per battle, in your Charge phase , this model\u2019s unit is eligible to declare a charge in a turn which it Advanced .",
-          "name": "Martial Inspiration"
-        }
-      ],
+      "faction": [],
+      "datasheet": [],
       "other": []
     },
     "unit_composition": [
-      {
-        "type": "list",
-        "items": [
-          "1 Blade Champion"
-        ]
-      },
-      {
-        "type": "statement",
-        "text": "vaultswords.",
-        "label": "This model is equipped with"
-      },
       {
         "type": "points",
         "rows": [
@@ -1300,42 +1515,14 @@
             "type": "tagged_list",
             "label": "CORE",
             "items": [
-              "Deep Strike , Leader"
+              "Deep Strike , Leader FACTION: Martial Ka\u2019tah Swift Onslaught: While this model is leading a unit, you can re-roll Charge rolls made for that unit Martial Inspiration: Once per battle, in your Charge phase , this model\u2019s unit is eligible to declare a charge in a turn which it Advanced ."
             ]
-          },
-          {
-            "type": "tagged_list",
-            "label": "FACTION",
-            "items": [
-              "Martial Ka\u2019tah"
-            ]
-          },
-          {
-            "type": "rule",
-            "text": "While this model is leading a unit, you can re-roll Charge rolls made for that unit",
-            "name": "Swift Onslaught"
-          },
-          {
-            "type": "rule",
-            "text": "Once per battle, in your Charge phase , this model\u2019s unit is eligible to declare a charge in a turn which it Advanced .",
-            "name": "Martial Inspiration"
           }
         ]
       },
       {
         "title": "UNIT COMPOSITION",
         "entries": [
-          {
-            "type": "list",
-            "items": [
-              "1 Blade Champion"
-            ]
-          },
-          {
-            "type": "statement",
-            "text": "vaultswords.",
-            "label": "This model is equipped with"
-          },
           {
             "type": "points",
             "rows": [
@@ -1359,13 +1546,75 @@
           }
         ]
       }
-    ]
+    ],
+    "quality": {
+      "rawSectionTitles": [
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "ABILITIES",
+        "UNIT COMPOSITION",
+        "LEADER",
+        "STRATAGEMS",
+        "DETACHMENT ABILITY",
+        "ENHANCEMENTS"
+      ],
+      "exportedSectionTitles": [
+        "ABILITIES",
+        "UNIT COMPOSITION",
+        "LEADER"
+      ],
+      "missingExpectedSections": [
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "STRATAGEMS",
+        "DETACHMENT ABILITY",
+        "ENHANCEMENTS"
+      ],
+      "warnings": [
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:DETACHMENT ABILITY",
+        "section-missing:ENHANCEMENTS",
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:DETACHMENT ABILITY",
+        "section-missing:ENHANCEMENTS"
+      ]
+    }
   },
   {
+    "exportSchemaVersion": 1,
+    "parserVersion": "2026-03-19-durable-normalization-v1",
     "source": {
       "url": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Caladius-Grav-tank",
+      "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Caladius-Grav-tank",
+      "canonicalSourceId": "wahapedia:e8112a82e795a951dbcaee4e59ae88589b449f6e",
       "faction_slug": "adeptus-custodes",
       "datasheet_slug": "Caladius-Grav-tank",
+      "fetchedAt": "2026-03-19T17:10:56+00:00",
+      "contentHash": "e94f4996f039edcae51a433de80475be1dbf75605e31808f030728bfd05a7fa6",
       "output_slug": "adeptus-custodes"
     },
     "name": "Caladius Grav-tank",
@@ -1434,32 +1683,13 @@
     },
     "abilities": {
       "core": [
-        "Deadly Demise D3"
+        "Deadly Demise D3 FACTION: Martial Ka\u2019tah Advanced Firepower: Each time this model makes an attack with its twin iliastus accelerator cannon that targets an enemy unit (excluding MONSTERS and VEHICLES ), that attack has the [LETHAL HITS] ability. Each time this model makes an attack with its twin arachnus heavy blaze cannon that targets an enemy MONSTER or VEHICLE unit, that attack has the [LETHAL HITS] ability."
       ],
-      "faction": [
-        "Martial Ka\u2019tah"
-      ],
-      "datasheet": [
-        {
-          "type": "rule",
-          "text": "Each time this model makes an attack with its twin iliastus accelerator cannon that targets an enemy unit (excluding MONSTERS and VEHICLES ), that attack has the [LETHAL HITS] ability. Each time this model makes an attack with its twin arachnus heavy blaze cannon that targets an enemy MONSTER or VEHICLE unit, that attack has the [LETHAL HITS] ability.",
-          "name": "Advanced Firepower"
-        }
-      ],
+      "faction": [],
+      "datasheet": [],
       "other": []
     },
     "unit_composition": [
-      {
-        "type": "list",
-        "items": [
-          "1 Caladius Grav-tank"
-        ]
-      },
-      {
-        "type": "statement",
-        "text": "twin iliastus accelerator cannon; twin lastrum bolt cannon; armoured hull.",
-        "label": "This model is equipped with"
-      },
       {
         "type": "points",
         "rows": [
@@ -1497,37 +1727,14 @@
             "type": "tagged_list",
             "label": "CORE",
             "items": [
-              "Deadly Demise D3"
+              "Deadly Demise D3 FACTION: Martial Ka\u2019tah Advanced Firepower: Each time this model makes an attack with its twin iliastus accelerator cannon that targets an enemy unit (excluding MONSTERS and VEHICLES ), that attack has the [LETHAL HITS] ability. Each time this model makes an attack with its twin arachnus heavy blaze cannon that targets an enemy MONSTER or VEHICLE unit, that attack has the [LETHAL HITS] ability."
             ]
-          },
-          {
-            "type": "tagged_list",
-            "label": "FACTION",
-            "items": [
-              "Martial Ka\u2019tah"
-            ]
-          },
-          {
-            "type": "rule",
-            "text": "Each time this model makes an attack with its twin iliastus accelerator cannon that targets an enemy unit (excluding MONSTERS and VEHICLES ), that attack has the [LETHAL HITS] ability. Each time this model makes an attack with its twin arachnus heavy blaze cannon that targets an enemy MONSTER or VEHICLE unit, that attack has the [LETHAL HITS] ability.",
-            "name": "Advanced Firepower"
           }
         ]
       },
       {
         "title": "UNIT COMPOSITION",
         "entries": [
-          {
-            "type": "list",
-            "items": [
-              "1 Caladius Grav-tank"
-            ]
-          },
-          {
-            "type": "statement",
-            "text": "twin iliastus accelerator cannon; twin lastrum bolt cannon; armoured hull.",
-            "label": "This model is equipped with"
-          },
           {
             "type": "points",
             "rows": [
@@ -1548,13 +1755,105 @@
           }
         ]
       }
-    ]
+    ],
+    "quality": {
+      "rawSectionTitles": [
+        "RANGED WEAPONS",
+        "RANGE",
+        "A",
+        "BS",
+        "S",
+        "AP",
+        "D",
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "WARGEAR OPTIONS",
+        "ABILITIES",
+        "UNIT COMPOSITION",
+        "DAMAGED: 1-5 WOUNDS REMAINING",
+        "STRATAGEMS",
+        "DETACHMENT ABILITY",
+        "ENHANCEMENTS"
+      ],
+      "exportedSectionTitles": [
+        "WARGEAR OPTIONS",
+        "ABILITIES",
+        "UNIT COMPOSITION",
+        "DAMAGED: 1-5 WOUNDS REMAINING"
+      ],
+      "missingExpectedSections": [
+        "RANGED WEAPONS",
+        "RANGE",
+        "A",
+        "BS",
+        "S",
+        "AP",
+        "D",
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "STRATAGEMS",
+        "DETACHMENT ABILITY",
+        "ENHANCEMENTS"
+      ],
+      "warnings": [
+        "section-missing:RANGED WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:BS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:DETACHMENT ABILITY",
+        "section-missing:ENHANCEMENTS",
+        "section-missing:RANGED WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:BS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:DETACHMENT ABILITY",
+        "section-missing:ENHANCEMENTS"
+      ]
+    }
   },
   {
+    "exportSchemaVersion": 1,
+    "parserVersion": "2026-03-19-durable-normalization-v1",
     "source": {
       "url": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Contemptor-achillus-Dreadnought",
+      "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Contemptor-achillus-Dreadnought",
+      "canonicalSourceId": "wahapedia:bb6efea8e040b81145eba9904febe904e93ad344",
       "faction_slug": "adeptus-custodes",
       "datasheet_slug": "Contemptor-achillus-Dreadnought",
+      "fetchedAt": "2026-03-19T17:10:56+00:00",
+      "contentHash": "6c57a84b5467aa097712ea858e0dd3bed622db5d7378af066fcf56d65a5f114b",
       "output_slug": "adeptus-custodes"
     },
     "name": "Contemptor-achillus Dreadnought",
@@ -1635,32 +1934,13 @@
     },
     "abilities": {
       "core": [
-        "Deadly Demise 1"
+        "Deadly Demise 1 FACTION: Martial Ka\u2019tah Dread Foe: Each time this model is selected to fight, you can select one enemy unit within Engagement Range of it and roll one D6, adding 2 to the result if this model made a Charge move this turn: on a 4-5, that enemy unit suffers D3 mortal wounds ; on a 6+, that enemy unit suffers 3 mortal wounds."
       ],
-      "faction": [
-        "Martial Ka\u2019tah"
-      ],
-      "datasheet": [
-        {
-          "type": "rule",
-          "text": "Each time this model is selected to fight, you can select one enemy unit within Engagement Range of it and roll one D6, adding 2 to the result if this model made a Charge move this turn: on a 4-5, that enemy unit suffers D3 mortal wounds ; on a 6+, that enemy unit suffers 3 mortal wounds.",
-          "name": "Dread Foe"
-        }
-      ],
+      "faction": [],
+      "datasheet": [],
       "other": []
     },
     "unit_composition": [
-      {
-        "type": "list",
-        "items": [
-          "1 Contemptor-Achillus Dreadnought"
-        ]
-      },
-      {
-        "type": "statement",
-        "text": "2 lastrum storm bolters; Achillus dreadspear.",
-        "label": "This model is equipped with"
-      },
       {
         "type": "points",
         "rows": [
@@ -1704,37 +1984,14 @@
             "type": "tagged_list",
             "label": "CORE",
             "items": [
-              "Deadly Demise 1"
+              "Deadly Demise 1 FACTION: Martial Ka\u2019tah Dread Foe: Each time this model is selected to fight, you can select one enemy unit within Engagement Range of it and roll one D6, adding 2 to the result if this model made a Charge move this turn: on a 4-5, that enemy unit suffers D3 mortal wounds ; on a 6+, that enemy unit suffers 3 mortal wounds."
             ]
-          },
-          {
-            "type": "tagged_list",
-            "label": "FACTION",
-            "items": [
-              "Martial Ka\u2019tah"
-            ]
-          },
-          {
-            "type": "rule",
-            "text": "Each time this model is selected to fight, you can select one enemy unit within Engagement Range of it and roll one D6, adding 2 to the result if this model made a Charge move this turn: on a 4-5, that enemy unit suffers D3 mortal wounds ; on a 6+, that enemy unit suffers 3 mortal wounds.",
-            "name": "Dread Foe"
           }
         ]
       },
       {
         "title": "UNIT COMPOSITION",
         "entries": [
-          {
-            "type": "list",
-            "items": [
-              "1 Contemptor-Achillus Dreadnought"
-            ]
-          },
-          {
-            "type": "statement",
-            "text": "2 lastrum storm bolters; Achillus dreadspear.",
-            "label": "This model is equipped with"
-          },
           {
             "type": "points",
             "rows": [
@@ -1746,13 +2003,103 @@
           }
         ]
       }
-    ]
+    ],
+    "quality": {
+      "rawSectionTitles": [
+        "RANGED WEAPONS",
+        "RANGE",
+        "A",
+        "BS",
+        "S",
+        "AP",
+        "D",
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "WARGEAR OPTIONS",
+        "ABILITIES",
+        "UNIT COMPOSITION",
+        "STRATAGEMS",
+        "DETACHMENT ABILITY",
+        "ENHANCEMENTS"
+      ],
+      "exportedSectionTitles": [
+        "WARGEAR OPTIONS",
+        "ABILITIES",
+        "UNIT COMPOSITION"
+      ],
+      "missingExpectedSections": [
+        "RANGED WEAPONS",
+        "RANGE",
+        "A",
+        "BS",
+        "S",
+        "AP",
+        "D",
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "STRATAGEMS",
+        "DETACHMENT ABILITY",
+        "ENHANCEMENTS"
+      ],
+      "warnings": [
+        "section-missing:RANGED WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:BS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:DETACHMENT ABILITY",
+        "section-missing:ENHANCEMENTS",
+        "section-missing:RANGED WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:BS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:DETACHMENT ABILITY",
+        "section-missing:ENHANCEMENTS"
+      ]
+    }
   },
   {
+    "exportSchemaVersion": 1,
+    "parserVersion": "2026-03-19-durable-normalization-v1",
     "source": {
       "url": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Contemptor-galatus-Dreadnought",
+      "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Contemptor-galatus-Dreadnought",
+      "canonicalSourceId": "wahapedia:ea334b6c0f2adfa66e5fbc0f75cc6232b624499f",
       "faction_slug": "adeptus-custodes",
       "datasheet_slug": "Contemptor-galatus-Dreadnought",
+      "fetchedAt": "2026-03-19T17:10:55+00:00",
+      "contentHash": "36c3c1300f31a76411eb6d1ff6ac5e2cb973d5cb4a84200ce2dd57a8535d733f",
       "output_slug": "adeptus-custodes"
     },
     "name": "Contemptor-galatus Dreadnought",
@@ -1798,32 +2145,13 @@
     },
     "abilities": {
       "core": [
-        "Deadly Demise 1"
+        "Deadly Demise 1 FACTION: Martial Ka\u2019tah Galatus Shield: Each time a melee attack targets this model, subtract 1 from the Wound roll ."
       ],
-      "faction": [
-        "Martial Ka\u2019tah"
-      ],
-      "datasheet": [
-        {
-          "type": "rule",
-          "text": "Each time a melee attack targets this model, subtract 1 from the Wound roll .",
-          "name": "Galatus Shield"
-        }
-      ],
+      "faction": [],
+      "datasheet": [],
       "other": []
     },
     "unit_composition": [
-      {
-        "type": "list",
-        "items": [
-          "1 Contemptor-Galatus Dreadnought"
-        ]
-      },
-      {
-        "type": "statement",
-        "text": "Galatus warblade.",
-        "label": "This model is equipped with"
-      },
       {
         "type": "points",
         "rows": [
@@ -1848,9 +2176,10 @@
         "title": "WARGEAR OPTIONS",
         "entries": [
           {
-            "type": "option_group",
-            "label": "None",
-            "items": []
+            "type": "list",
+            "items": [
+              "None"
+            ]
           }
         ]
       },
@@ -1861,37 +2190,14 @@
             "type": "tagged_list",
             "label": "CORE",
             "items": [
-              "Deadly Demise 1"
+              "Deadly Demise 1 FACTION: Martial Ka\u2019tah Galatus Shield: Each time a melee attack targets this model, subtract 1 from the Wound roll ."
             ]
-          },
-          {
-            "type": "tagged_list",
-            "label": "FACTION",
-            "items": [
-              "Martial Ka\u2019tah"
-            ]
-          },
-          {
-            "type": "rule",
-            "text": "Each time a melee attack targets this model, subtract 1 from the Wound roll .",
-            "name": "Galatus Shield"
           }
         ]
       },
       {
         "title": "UNIT COMPOSITION",
         "entries": [
-          {
-            "type": "list",
-            "items": [
-              "1 Contemptor-Galatus Dreadnought"
-            ]
-          },
-          {
-            "type": "statement",
-            "text": "Galatus warblade.",
-            "label": "This model is equipped with"
-          },
           {
             "type": "points",
             "rows": [
@@ -1903,13 +2209,103 @@
           }
         ]
       }
-    ]
+    ],
+    "quality": {
+      "rawSectionTitles": [
+        "RANGED WEAPONS",
+        "RANGE",
+        "A",
+        "BS",
+        "S",
+        "AP",
+        "D",
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "WARGEAR OPTIONS",
+        "ABILITIES",
+        "UNIT COMPOSITION",
+        "STRATAGEMS",
+        "DETACHMENT ABILITY",
+        "ENHANCEMENTS"
+      ],
+      "exportedSectionTitles": [
+        "WARGEAR OPTIONS",
+        "ABILITIES",
+        "UNIT COMPOSITION"
+      ],
+      "missingExpectedSections": [
+        "RANGED WEAPONS",
+        "RANGE",
+        "A",
+        "BS",
+        "S",
+        "AP",
+        "D",
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "STRATAGEMS",
+        "DETACHMENT ABILITY",
+        "ENHANCEMENTS"
+      ],
+      "warnings": [
+        "section-missing:RANGED WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:BS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:DETACHMENT ABILITY",
+        "section-missing:ENHANCEMENTS",
+        "section-missing:RANGED WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:BS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:DETACHMENT ABILITY",
+        "section-missing:ENHANCEMENTS"
+      ]
+    }
   },
   {
+    "exportSchemaVersion": 1,
+    "parserVersion": "2026-03-19-durable-normalization-v1",
     "source": {
       "url": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Coronus-Grav-carrier",
+      "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Coronus-Grav-carrier",
+      "canonicalSourceId": "wahapedia:0f7d3693d09d4f94b46332db42be457769e10481",
       "faction_slug": "adeptus-custodes",
       "datasheet_slug": "Coronus-Grav-carrier",
+      "fetchedAt": "2026-03-19T17:10:56+00:00",
+      "contentHash": "271746c140d50dfc522ee333c9de445db3e463e43391a57ed185c40c0e7ede3d",
       "output_slug": "adeptus-custodes"
     },
     "name": "Coronus Grav-carrier",
@@ -1966,32 +2362,13 @@
     },
     "abilities": {
       "core": [
-        "Deadly Demise D6"
+        "Deadly Demise D6 FACTION: Martial Ka\u2019tah Fire Support: In your Shooting phase , after this model has shot, select one enemy unit hit by one or more of those attacks. Until the end of the phase, each time a friendly model that disembarked from this TRANSPORT this turn makes an attack that targets that enemy unit, you can re-roll the Wound roll ."
       ],
-      "faction": [
-        "Martial Ka\u2019tah"
-      ],
-      "datasheet": [
-        {
-          "type": "rule",
-          "text": "In your Shooting phase , after this model has shot, select one enemy unit hit by one or more of those attacks. Until the end of the phase, each time a friendly model that disembarked from this TRANSPORT this turn makes an attack that targets that enemy unit, you can re-roll the Wound roll .",
-          "name": "Fire Support"
-        }
-      ],
+      "faction": [],
+      "datasheet": [],
       "other": []
     },
     "unit_composition": [
-      {
-        "type": "list",
-        "items": [
-          "1 Coronus Grav-carrier"
-        ]
-      },
-      {
-        "type": "statement",
-        "text": "twin arachnus blaze cannon; twin lastrum bolt cannon; armoured hull.",
-        "label": "This model is equipped with"
-      },
       {
         "type": "points",
         "rows": [
@@ -2017,9 +2394,10 @@
         "title": "WARGEAR OPTIONS",
         "entries": [
           {
-            "type": "option_group",
-            "label": "None",
-            "items": []
+            "type": "list",
+            "items": [
+              "None"
+            ]
           }
         ]
       },
@@ -2030,37 +2408,14 @@
             "type": "tagged_list",
             "label": "CORE",
             "items": [
-              "Deadly Demise D6"
+              "Deadly Demise D6 FACTION: Martial Ka\u2019tah Fire Support: In your Shooting phase , after this model has shot, select one enemy unit hit by one or more of those attacks. Until the end of the phase, each time a friendly model that disembarked from this TRANSPORT this turn makes an attack that targets that enemy unit, you can re-roll the Wound roll ."
             ]
-          },
-          {
-            "type": "tagged_list",
-            "label": "FACTION",
-            "items": [
-              "Martial Ka\u2019tah"
-            ]
-          },
-          {
-            "type": "rule",
-            "text": "In your Shooting phase , after this model has shot, select one enemy unit hit by one or more of those attacks. Until the end of the phase, each time a friendly model that disembarked from this TRANSPORT this turn makes an attack that targets that enemy unit, you can re-roll the Wound roll .",
-            "name": "Fire Support"
           }
         ]
       },
       {
         "title": "UNIT COMPOSITION",
         "entries": [
-          {
-            "type": "list",
-            "items": [
-              "1 Coronus Grav-carrier"
-            ]
-          },
-          {
-            "type": "statement",
-            "text": "twin arachnus blaze cannon; twin lastrum bolt cannon; armoured hull.",
-            "label": "This model is equipped with"
-          },
           {
             "type": "points",
             "rows": [
@@ -2090,13 +2445,107 @@
           }
         ]
       }
-    ]
+    ],
+    "quality": {
+      "rawSectionTitles": [
+        "RANGED WEAPONS",
+        "RANGE",
+        "A",
+        "BS",
+        "S",
+        "AP",
+        "D",
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "WARGEAR OPTIONS",
+        "ABILITIES",
+        "UNIT COMPOSITION",
+        "DAMAGED: 1-5 WOUNDS REMAINING",
+        "TRANSPORT",
+        "STRATAGEMS",
+        "DETACHMENT ABILITY",
+        "ENHANCEMENTS"
+      ],
+      "exportedSectionTitles": [
+        "WARGEAR OPTIONS",
+        "ABILITIES",
+        "UNIT COMPOSITION",
+        "DAMAGED: 1-5 WOUNDS REMAINING",
+        "TRANSPORT"
+      ],
+      "missingExpectedSections": [
+        "RANGED WEAPONS",
+        "RANGE",
+        "A",
+        "BS",
+        "S",
+        "AP",
+        "D",
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "STRATAGEMS",
+        "DETACHMENT ABILITY",
+        "ENHANCEMENTS"
+      ],
+      "warnings": [
+        "section-missing:RANGED WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:BS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:DETACHMENT ABILITY",
+        "section-missing:ENHANCEMENTS",
+        "section-missing:RANGED WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:BS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:DETACHMENT ABILITY",
+        "section-missing:ENHANCEMENTS"
+      ]
+    }
   },
   {
+    "exportSchemaVersion": 1,
+    "parserVersion": "2026-03-19-durable-normalization-v1",
     "source": {
       "url": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Custodian-Guard-With-Adrasite-And-Pyrithite-Spears",
+      "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Custodian-Guard-With-Adrasite-And-Pyrithite-Spears",
+      "canonicalSourceId": "wahapedia:687196a1bd207b8b9cfb9da7267b61955422cbaa",
       "faction_slug": "adeptus-custodes",
       "datasheet_slug": "Custodian-Guard-With-Adrasite-And-Pyrithite-Spears",
+      "fetchedAt": "2026-03-19T17:10:57+00:00",
+      "contentHash": "e9815588ae5f0a01652d8d6ce7a1a807833eaf25521317cad4bf42b43aee081d",
       "output_slug": "adeptus-custodes"
     },
     "name": "Custodian Guard With Adrasite And Pyrithite Spears",
@@ -2160,37 +2609,13 @@
     },
     "abilities": {
       "core": [
-        "Deep Strike"
+        "Deep Strike FACTION: Martial Ka\u2019tah Stand Vigil: Each time a model in this unit makes an attack, re-roll a Wound roll of 1. While this unit is within range of an objective marker you control, you can re-roll the Wound roll instead. No Foe Shall Stand: Once per battle, at the start of your Shooting phase , this unit can use this ability. If it does, until the end of the phase, ranged weapons equipped by models in this unit have the [LETHAL HITS] and [IGNORES COVER] abilities."
       ],
-      "faction": [
-        "Martial Ka\u2019tah"
-      ],
-      "datasheet": [
-        {
-          "type": "rule",
-          "text": "Each time a model in this unit makes an attack, re-roll a Wound roll of 1. While this unit is within range of an objective marker you control, you can re-roll the Wound roll instead.",
-          "name": "Stand Vigil"
-        },
-        {
-          "type": "rule",
-          "text": "Once per battle, at the start of your Shooting phase , this unit can use this ability. If it does, until the end of the phase, ranged weapons equipped by models in this unit have the [LETHAL HITS] and [IGNORES COVER] abilities.",
-          "name": "No Foe Shall Stand"
-        }
-      ],
+      "faction": [],
+      "datasheet": [],
       "other": []
     },
     "unit_composition": [
-      {
-        "type": "list",
-        "items": [
-          "5 Custodian Guard with Adrasite and Pyrithite Spears"
-        ]
-      },
-      {
-        "type": "statement",
-        "text": "adrasite spear.",
-        "label": "Every model is equipped with"
-      },
       {
         "type": "points",
         "rows": [
@@ -2227,42 +2652,14 @@
             "type": "tagged_list",
             "label": "CORE",
             "items": [
-              "Deep Strike"
+              "Deep Strike FACTION: Martial Ka\u2019tah Stand Vigil: Each time a model in this unit makes an attack, re-roll a Wound roll of 1. While this unit is within range of an objective marker you control, you can re-roll the Wound roll instead. No Foe Shall Stand: Once per battle, at the start of your Shooting phase , this unit can use this ability. If it does, until the end of the phase, ranged weapons equipped by models in this unit have the [LETHAL HITS] and [IGNORES COVER] abilities."
             ]
-          },
-          {
-            "type": "tagged_list",
-            "label": "FACTION",
-            "items": [
-              "Martial Ka\u2019tah"
-            ]
-          },
-          {
-            "type": "rule",
-            "text": "Each time a model in this unit makes an attack, re-roll a Wound roll of 1. While this unit is within range of an objective marker you control, you can re-roll the Wound roll instead.",
-            "name": "Stand Vigil"
-          },
-          {
-            "type": "rule",
-            "text": "Once per battle, at the start of your Shooting phase , this unit can use this ability. If it does, until the end of the phase, ranged weapons equipped by models in this unit have the [LETHAL HITS] and [IGNORES COVER] abilities.",
-            "name": "No Foe Shall Stand"
           }
         ]
       },
       {
         "title": "UNIT COMPOSITION",
         "entries": [
-          {
-            "type": "list",
-            "items": [
-              "5 Custodian Guard with Adrasite and Pyrithite Spears"
-            ]
-          },
-          {
-            "type": "statement",
-            "text": "adrasite spear.",
-            "label": "Every model is equipped with"
-          },
           {
             "type": "points",
             "rows": [
@@ -2283,13 +2680,105 @@
           }
         ]
       }
-    ]
+    ],
+    "quality": {
+      "rawSectionTitles": [
+        "RANGED WEAPONS",
+        "RANGE",
+        "A",
+        "BS",
+        "S",
+        "AP",
+        "D",
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "WARGEAR OPTIONS",
+        "ABILITIES",
+        "UNIT COMPOSITION",
+        "CUSTODIAN GUARD",
+        "STRATAGEMS",
+        "DETACHMENT ABILITY",
+        "ENHANCEMENTS"
+      ],
+      "exportedSectionTitles": [
+        "WARGEAR OPTIONS",
+        "ABILITIES",
+        "UNIT COMPOSITION",
+        "CUSTODIAN GUARD"
+      ],
+      "missingExpectedSections": [
+        "RANGED WEAPONS",
+        "RANGE",
+        "A",
+        "BS",
+        "S",
+        "AP",
+        "D",
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "STRATAGEMS",
+        "DETACHMENT ABILITY",
+        "ENHANCEMENTS"
+      ],
+      "warnings": [
+        "section-missing:RANGED WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:BS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:DETACHMENT ABILITY",
+        "section-missing:ENHANCEMENTS",
+        "section-missing:RANGED WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:BS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:DETACHMENT ABILITY",
+        "section-missing:ENHANCEMENTS"
+      ]
+    }
   },
   {
+    "exportSchemaVersion": 1,
+    "parserVersion": "2026-03-19-durable-normalization-v1",
     "source": {
       "url": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Custodian-Guard",
+      "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Custodian-Guard",
+      "canonicalSourceId": "wahapedia:70b029519b431f57f19cb395d39c0e45ec431727",
       "faction_slug": "adeptus-custodes",
       "datasheet_slug": "Custodian-Guard",
+      "fetchedAt": "2026-03-19T17:10:53+00:00",
+      "contentHash": "646294059b0abea9fb0a408969c0b5f0c746855a3cb5c060fa22d852d90dc629",
       "output_slug": "adeptus-custodes"
     },
     "name": "Custodian Guard",
@@ -2366,37 +2855,13 @@
     },
     "abilities": {
       "core": [
-        "Deep Strike"
+        "Deep Strike FACTION: Martial Ka\u2019tah Stand Vigil: Each time a model in this unit makes an attack, re-roll a Wound roll of 1. While this unit is within range of an objective marker you control, you can re-roll the Wound roll instead. Sentinel Storm: Once per battle, in your Shooting phase , after this unit has shot, it can shoot again ."
       ],
-      "faction": [
-        "Martial Ka\u2019tah"
-      ],
-      "datasheet": [
-        {
-          "type": "rule",
-          "text": "Each time a model in this unit makes an attack, re-roll a Wound roll of 1. While this unit is within range of an objective marker you control, you can re-roll the Wound roll instead.",
-          "name": "Stand Vigil"
-        },
-        {
-          "type": "rule",
-          "text": "Once per battle, in your Shooting phase , after this unit has shot, it can shoot again .",
-          "name": "Sentinel Storm"
-        }
-      ],
+      "faction": [],
+      "datasheet": [],
       "other": []
     },
     "unit_composition": [
-      {
-        "type": "list",
-        "items": [
-          "4-5 Custodian Guard"
-        ]
-      },
-      {
-        "type": "statement",
-        "text": "guardian spear.",
-        "label": "Every model is equipped with"
-      },
       {
         "type": "points",
         "rows": [
@@ -2446,25 +2911,8 @@
             "type": "tagged_list",
             "label": "CORE",
             "items": [
-              "Deep Strike"
+              "Deep Strike FACTION: Martial Ka\u2019tah Stand Vigil: Each time a model in this unit makes an attack, re-roll a Wound roll of 1. While this unit is within range of an objective marker you control, you can re-roll the Wound roll instead. Sentinel Storm: Once per battle, in your Shooting phase , after this unit has shot, it can shoot again ."
             ]
-          },
-          {
-            "type": "tagged_list",
-            "label": "FACTION",
-            "items": [
-              "Martial Ka\u2019tah"
-            ]
-          },
-          {
-            "type": "rule",
-            "text": "Each time a model in this unit makes an attack, re-roll a Wound roll of 1. While this unit is within range of an objective marker you control, you can re-roll the Wound roll instead.",
-            "name": "Stand Vigil"
-          },
-          {
-            "type": "rule",
-            "text": "Once per battle, in your Shooting phase , after this unit has shot, it can shoot again .",
-            "name": "Sentinel Storm"
           }
         ]
       },
@@ -2472,31 +2920,14 @@
         "title": "WARGEAR ABILITIES",
         "entries": [
           {
-            "type": "statement",
-            "text": "Add 1 to the bearer\u2019s Wounds characteristic.",
-            "label": "Praesidium Shield"
-          },
-          {
-            "type": "statement",
-            "text": "Add 1 to the Objective Control characteristic of models in the bearer\u2019s unit.",
-            "label": "Vexilla"
+            "type": "text",
+            "text": "Praesidium Shield: Add 1 to the bearer\u2019s Wounds characteristic. Vexilla: Add 1 to the Objective Control characteristic of models in the bearer\u2019s unit."
           }
         ]
       },
       {
         "title": "UNIT COMPOSITION",
         "entries": [
-          {
-            "type": "list",
-            "items": [
-              "4-5 Custodian Guard"
-            ]
-          },
-          {
-            "type": "statement",
-            "text": "guardian spear.",
-            "label": "Every model is equipped with"
-          },
           {
             "type": "points",
             "rows": [
@@ -2512,13 +2943,109 @@
           }
         ]
       }
-    ]
+    ],
+    "quality": {
+      "rawSectionTitles": [
+        "RANGED WEAPONS",
+        "RANGE",
+        "A",
+        "BS",
+        "S",
+        "AP",
+        "D",
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "WARGEAR OPTIONS",
+        "ABILITIES",
+        "WARGEAR ABILITIES",
+        "UNIT COMPOSITION",
+        "STRATAGEMS",
+        "LED BY",
+        "DETACHMENT ABILITY",
+        "ENHANCEMENTS"
+      ],
+      "exportedSectionTitles": [
+        "WARGEAR OPTIONS",
+        "ABILITIES",
+        "WARGEAR ABILITIES",
+        "UNIT COMPOSITION"
+      ],
+      "missingExpectedSections": [
+        "RANGED WEAPONS",
+        "RANGE",
+        "A",
+        "BS",
+        "S",
+        "AP",
+        "D",
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "STRATAGEMS",
+        "LED BY",
+        "DETACHMENT ABILITY",
+        "ENHANCEMENTS"
+      ],
+      "warnings": [
+        "section-missing:RANGED WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:BS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:LED BY",
+        "section-missing:DETACHMENT ABILITY",
+        "section-missing:ENHANCEMENTS",
+        "section-missing:RANGED WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:BS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:LED BY",
+        "section-missing:DETACHMENT ABILITY",
+        "section-missing:ENHANCEMENTS"
+      ]
+    }
   },
   {
+    "exportSchemaVersion": 1,
+    "parserVersion": "2026-03-19-durable-normalization-v1",
     "source": {
       "url": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Custodian-Wardens",
+      "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Custodian-Wardens",
+      "canonicalSourceId": "wahapedia:de3e7bf25a81812d92610c6d8369de7270cb9016",
       "faction_slug": "adeptus-custodes",
       "datasheet_slug": "Custodian-Wardens",
+      "fetchedAt": "2026-03-19T17:10:53+00:00",
+      "contentHash": "2f481ad9dd6f4978dc504d042e4b8856e41b88d37da0f1c0b525778601cbb7a1",
       "output_slug": "adeptus-custodes"
     },
     "name": "Custodian Wardens",
@@ -2584,37 +3111,13 @@
     },
     "abilities": {
       "core": [
-        "Deep Strike"
+        "Deep Strike FACTION: Martial Ka\u2019tah Resolute Will: While a CHARACTER is leading this unit, each time an attack targets this unit, if the Strength characteristic of that attack is greater than the Toughness characteristic of this unit, subtract 1 from the Wound roll . Living Fortress: Once per battle, at the start of any phase, this unit can use this ability. If it does, until the end of the phase, models in this unit have the Feel No Pain 4+ ability."
       ],
-      "faction": [
-        "Martial Ka\u2019tah"
-      ],
-      "datasheet": [
-        {
-          "type": "rule",
-          "text": "While a CHARACTER is leading this unit, each time an attack targets this unit, if the Strength characteristic of that attack is greater than the Toughness characteristic of this unit, subtract 1 from the Wound roll .",
-          "name": "Resolute Will"
-        },
-        {
-          "type": "rule",
-          "text": "Once per battle, at the start of any phase, this unit can use this ability. If it does, until the end of the phase, models in this unit have the Feel No Pain 4+ ability.",
-          "name": "Living Fortress"
-        }
-      ],
+      "faction": [],
+      "datasheet": [],
       "other": []
     },
     "unit_composition": [
-      {
-        "type": "list",
-        "items": [
-          "4-5 Custodian Wardens"
-        ]
-      },
-      {
-        "type": "statement",
-        "text": "guardian spear.",
-        "label": "Every model is equipped with"
-      },
       {
         "type": "points",
         "rows": [
@@ -2660,25 +3163,8 @@
             "type": "tagged_list",
             "label": "CORE",
             "items": [
-              "Deep Strike"
+              "Deep Strike FACTION: Martial Ka\u2019tah Resolute Will: While a CHARACTER is leading this unit, each time an attack targets this unit, if the Strength characteristic of that attack is greater than the Toughness characteristic of this unit, subtract 1 from the Wound roll . Living Fortress: Once per battle, at the start of any phase, this unit can use this ability. If it does, until the end of the phase, models in this unit have the Feel No Pain 4+ ability."
             ]
-          },
-          {
-            "type": "tagged_list",
-            "label": "FACTION",
-            "items": [
-              "Martial Ka\u2019tah"
-            ]
-          },
-          {
-            "type": "rule",
-            "text": "While a CHARACTER is leading this unit, each time an attack targets this unit, if the Strength characteristic of that attack is greater than the Toughness characteristic of this unit, subtract 1 from the Wound roll .",
-            "name": "Resolute Will"
-          },
-          {
-            "type": "rule",
-            "text": "Once per battle, at the start of any phase, this unit can use this ability. If it does, until the end of the phase, models in this unit have the Feel No Pain 4+ ability.",
-            "name": "Living Fortress"
           }
         ]
       },
@@ -2686,26 +3172,14 @@
         "title": "WARGEAR ABILITIES",
         "entries": [
           {
-            "type": "statement",
-            "text": "Add 1 to the Objective Control characteristic of models in the bearer\u2019s unit.",
-            "label": "Vexilla"
+            "type": "text",
+            "text": "Vexilla: Add 1 to the Objective Control characteristic of models in the bearer\u2019s unit."
           }
         ]
       },
       {
         "title": "UNIT COMPOSITION",
         "entries": [
-          {
-            "type": "list",
-            "items": [
-              "4-5 Custodian Wardens"
-            ]
-          },
-          {
-            "type": "statement",
-            "text": "guardian spear.",
-            "label": "Every model is equipped with"
-          },
           {
             "type": "points",
             "rows": [
@@ -2721,13 +3195,109 @@
           }
         ]
       }
-    ]
+    ],
+    "quality": {
+      "rawSectionTitles": [
+        "RANGED WEAPONS",
+        "RANGE",
+        "A",
+        "BS",
+        "S",
+        "AP",
+        "D",
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "WARGEAR OPTIONS",
+        "ABILITIES",
+        "WARGEAR ABILITIES",
+        "UNIT COMPOSITION",
+        "STRATAGEMS",
+        "LED BY",
+        "DETACHMENT ABILITY",
+        "ENHANCEMENTS"
+      ],
+      "exportedSectionTitles": [
+        "WARGEAR OPTIONS",
+        "ABILITIES",
+        "WARGEAR ABILITIES",
+        "UNIT COMPOSITION"
+      ],
+      "missingExpectedSections": [
+        "RANGED WEAPONS",
+        "RANGE",
+        "A",
+        "BS",
+        "S",
+        "AP",
+        "D",
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "STRATAGEMS",
+        "LED BY",
+        "DETACHMENT ABILITY",
+        "ENHANCEMENTS"
+      ],
+      "warnings": [
+        "section-missing:RANGED WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:BS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:LED BY",
+        "section-missing:DETACHMENT ABILITY",
+        "section-missing:ENHANCEMENTS",
+        "section-missing:RANGED WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:BS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:LED BY",
+        "section-missing:DETACHMENT ABILITY",
+        "section-missing:ENHANCEMENTS"
+      ]
+    }
   },
   {
+    "exportSchemaVersion": 1,
+    "parserVersion": "2026-03-19-durable-normalization-v1",
     "source": {
       "url": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Knight-centura",
+      "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Knight-centura",
+      "canonicalSourceId": "wahapedia:3af2f4e4924c0e2029e517b5670107728ba09d7e",
       "faction_slug": "adeptus-custodes",
       "datasheet_slug": "Knight-centura",
+      "fetchedAt": "2026-03-19T17:10:51+00:00",
+      "contentHash": "f7f3c1315db3990f5e3b72d1d6d8cf7bdf90b094c4ae15709a6db1d85803e8e8",
       "output_slug": "adeptus-custodes"
     },
     "name": "Knight-centura",
@@ -2797,40 +3367,13 @@
     },
     "abilities": {
       "core": [
-        "Leader , Scouts 6\""
+        "Leader , Scouts 6\" Seeker\u2019s Instincts: While this model is leading a unit, add 2\" to the Move characteristic of models in that unit and add 2 to Advance and Charge rolls made for that unit. Daughter of the Abyss: This model has the Feel No Pain 3+ ability against Psychic Attacks and mortal wounds . Corner the Quarry: Each time an enemy unit (excluding MONSTERS and VEHICLES ) that is within Engagement Range of this model\u2019s unit Falls Back , all models in that enemy unit must take a Desperate Escape test. When doing so, if that enemy unit is Battle-shocked , subtract 1 from each of those tests."
       ],
       "faction": [],
-      "datasheet": [
-        {
-          "type": "rule",
-          "text": "While this model is leading a unit, add 2\" to the Move characteristic of models in that unit and add 2 to Advance and Charge rolls made for that unit.",
-          "name": "Seeker\u2019s Instincts"
-        },
-        {
-          "type": "rule",
-          "text": "This model has the Feel No Pain 3+ ability against Psychic Attacks and mortal wounds .",
-          "name": "Daughter of the Abyss"
-        },
-        {
-          "type": "rule",
-          "text": "Each time an enemy unit (excluding MONSTERS and VEHICLES ) that is within Engagement Range of this model\u2019s unit Falls Back , all models in that enemy unit must take a Desperate Escape test. When doing so, if that enemy unit is Battle-shocked , subtract 1 from each of those tests.",
-          "name": "Corner the Quarry"
-        }
-      ],
+      "datasheet": [],
       "other": []
     },
     "unit_composition": [
-      {
-        "type": "list",
-        "items": [
-          "1 Knight-Centura"
-        ]
-      },
-      {
-        "type": "statement",
-        "text": "executioner greatblade.",
-        "label": "This model is equipped with"
-      },
       {
         "type": "points",
         "rows": [
@@ -2872,40 +3415,14 @@
             "type": "tagged_list",
             "label": "CORE",
             "items": [
-              "Leader , Scouts 6\""
+              "Leader , Scouts 6\" Seeker\u2019s Instincts: While this model is leading a unit, add 2\" to the Move characteristic of models in that unit and add 2 to Advance and Charge rolls made for that unit. Daughter of the Abyss: This model has the Feel No Pain 3+ ability against Psychic Attacks and mortal wounds . Corner the Quarry: Each time an enemy unit (excluding MONSTERS and VEHICLES ) that is within Engagement Range of this model\u2019s unit Falls Back , all models in that enemy unit must take a Desperate Escape test. When doing so, if that enemy unit is Battle-shocked , subtract 1 from each of those tests."
             ]
-          },
-          {
-            "type": "rule",
-            "text": "While this model is leading a unit, add 2\" to the Move characteristic of models in that unit and add 2 to Advance and Charge rolls made for that unit.",
-            "name": "Seeker\u2019s Instincts"
-          },
-          {
-            "type": "rule",
-            "text": "This model has the Feel No Pain 3+ ability against Psychic Attacks and mortal wounds .",
-            "name": "Daughter of the Abyss"
-          },
-          {
-            "type": "rule",
-            "text": "Each time an enemy unit (excluding MONSTERS and VEHICLES ) that is within Engagement Range of this model\u2019s unit Falls Back , all models in that enemy unit must take a Desperate Escape test. When doing so, if that enemy unit is Battle-shocked , subtract 1 from each of those tests.",
-            "name": "Corner the Quarry"
           }
         ]
       },
       {
         "title": "UNIT COMPOSITION",
         "entries": [
-          {
-            "type": "list",
-            "items": [
-              "1 Knight-Centura"
-            ]
-          },
-          {
-            "type": "statement",
-            "text": "executioner greatblade.",
-            "label": "This model is equipped with"
-          },
           {
             "type": "points",
             "rows": [
@@ -2930,13 +3447,105 @@
           }
         ]
       }
-    ]
+    ],
+    "quality": {
+      "rawSectionTitles": [
+        "RANGED WEAPONS",
+        "RANGE",
+        "A",
+        "BS",
+        "S",
+        "AP",
+        "D",
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "WARGEAR OPTIONS",
+        "ABILITIES",
+        "UNIT COMPOSITION",
+        "LEADER",
+        "STRATAGEMS",
+        "DETACHMENT ABILITY",
+        "ENHANCEMENTS"
+      ],
+      "exportedSectionTitles": [
+        "WARGEAR OPTIONS",
+        "ABILITIES",
+        "UNIT COMPOSITION",
+        "LEADER"
+      ],
+      "missingExpectedSections": [
+        "RANGED WEAPONS",
+        "RANGE",
+        "A",
+        "BS",
+        "S",
+        "AP",
+        "D",
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "STRATAGEMS",
+        "DETACHMENT ABILITY",
+        "ENHANCEMENTS"
+      ],
+      "warnings": [
+        "section-missing:RANGED WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:BS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:DETACHMENT ABILITY",
+        "section-missing:ENHANCEMENTS",
+        "section-missing:RANGED WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:BS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:DETACHMENT ABILITY",
+        "section-missing:ENHANCEMENTS"
+      ]
+    }
   },
   {
+    "exportSchemaVersion": 1,
+    "parserVersion": "2026-03-19-durable-normalization-v1",
     "source": {
       "url": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Orion-Assault-Dropship",
+      "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Orion-Assault-Dropship",
+      "canonicalSourceId": "wahapedia:482191fc6c3a216da9aedccabba6f8298c1bbb74",
       "faction_slug": "adeptus-custodes",
       "datasheet_slug": "Orion-Assault-Dropship",
+      "fetchedAt": "2026-03-19T17:10:58+00:00",
+      "contentHash": "0ce6781f5b6ebe4015f7828161b393d5e568986b55ceecd12a14cc99ff708ca2",
       "output_slug": "adeptus-custodes"
     },
     "name": "Orion Assault Dropship",
@@ -3002,32 +3611,13 @@
     },
     "abilities": {
       "core": [
-        "Deadly Demise D6 , Hover"
+        "Deadly Demise D6 , Hover FACTION: Martial Ka\u2019tah Assault Dropship: If a unit disembarks from this TRANSPORT before it moves, until the end of the turn, that unit is eligible to charge in a turn in which it Advanced ."
       ],
-      "faction": [
-        "Martial Ka\u2019tah"
-      ],
-      "datasheet": [
-        {
-          "type": "rule",
-          "text": "If a unit disembarks from this TRANSPORT before it moves, until the end of the turn, that unit is eligible to charge in a turn in which it Advanced .",
-          "name": "Assault Dropship"
-        }
-      ],
+      "faction": [],
+      "datasheet": [],
       "other": []
     },
     "unit_composition": [
-      {
-        "type": "list",
-        "items": [
-          "1 Orion Assault Dropship"
-        ]
-      },
-      {
-        "type": "statement",
-        "text": "2 arachnus heavy blaze cannons; 2 twin lastrum bolt cannons; 2 spiculus heavy bolt launchers; armoured hull.",
-        "label": "This model is equipped with"
-      },
       {
         "type": "points",
         "rows": [
@@ -3054,9 +3644,10 @@
         "title": "WARGEAR OPTIONS",
         "entries": [
           {
-            "type": "option_group",
-            "label": "None",
-            "items": []
+            "type": "list",
+            "items": [
+              "None"
+            ]
           }
         ]
       },
@@ -3067,37 +3658,14 @@
             "type": "tagged_list",
             "label": "CORE",
             "items": [
-              "Deadly Demise D6 , Hover"
+              "Deadly Demise D6 , Hover FACTION: Martial Ka\u2019tah Assault Dropship: If a unit disembarks from this TRANSPORT before it moves, until the end of the turn, that unit is eligible to charge in a turn in which it Advanced ."
             ]
-          },
-          {
-            "type": "tagged_list",
-            "label": "FACTION",
-            "items": [
-              "Martial Ka\u2019tah"
-            ]
-          },
-          {
-            "type": "rule",
-            "text": "If a unit disembarks from this TRANSPORT before it moves, until the end of the turn, that unit is eligible to charge in a turn in which it Advanced .",
-            "name": "Assault Dropship"
           }
         ]
       },
       {
         "title": "UNIT COMPOSITION",
         "entries": [
-          {
-            "type": "list",
-            "items": [
-              "1 Orion Assault Dropship"
-            ]
-          },
-          {
-            "type": "statement",
-            "text": "2 arachnus heavy blaze cannons; 2 twin lastrum bolt cannons; 2 spiculus heavy bolt launchers; armoured hull.",
-            "label": "This model is equipped with"
-          },
           {
             "type": "points",
             "rows": [
@@ -3127,13 +3695,103 @@
           }
         ]
       }
-    ]
+    ],
+    "quality": {
+      "rawSectionTitles": [
+        "RANGED WEAPONS",
+        "RANGE",
+        "A",
+        "BS",
+        "S",
+        "AP",
+        "D",
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "WARGEAR OPTIONS",
+        "ABILITIES",
+        "UNIT COMPOSITION",
+        "DAMAGED: 1-7 WOUNDS REMAINING",
+        "TRANSPORT",
+        "STRATAGEMS",
+        "DETACHMENT ABILITY"
+      ],
+      "exportedSectionTitles": [
+        "WARGEAR OPTIONS",
+        "ABILITIES",
+        "UNIT COMPOSITION",
+        "DAMAGED: 1-7 WOUNDS REMAINING",
+        "TRANSPORT"
+      ],
+      "missingExpectedSections": [
+        "RANGED WEAPONS",
+        "RANGE",
+        "A",
+        "BS",
+        "S",
+        "AP",
+        "D",
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "STRATAGEMS",
+        "DETACHMENT ABILITY"
+      ],
+      "warnings": [
+        "section-missing:RANGED WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:BS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:DETACHMENT ABILITY",
+        "section-missing:RANGED WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:BS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:DETACHMENT ABILITY"
+      ]
+    }
   },
   {
+    "exportSchemaVersion": 1,
+    "parserVersion": "2026-03-19-durable-normalization-v1",
     "source": {
       "url": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Pallas-Grav-attack",
+      "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Pallas-Grav-attack",
+      "canonicalSourceId": "wahapedia:3cb6ff0d92ad15ca9f8339e9e54d9474e073a70e",
       "faction_slug": "adeptus-custodes",
       "datasheet_slug": "Pallas-Grav-attack",
+      "fetchedAt": "2026-03-19T17:10:57+00:00",
+      "contentHash": "674906857c2c847219250c6edb2752325f2746c30d4940f9a4f3806607bccac0",
       "output_slug": "adeptus-custodes"
     },
     "name": "Pallas Grav-attack",
@@ -3178,32 +3836,13 @@
     },
     "abilities": {
       "core": [
-        "Deadly Demise D3"
+        "Deadly Demise D3 FACTION: Martial Ka\u2019tah Merciless Hunter: In your Shooting phase , each time this model makes an attack that targets an enemy unit that is Below Half-strength , add 1 to the Wound roll ."
       ],
-      "faction": [
-        "Martial Ka\u2019tah"
-      ],
-      "datasheet": [
-        {
-          "type": "rule",
-          "text": "In your Shooting phase , each time this model makes an attack that targets an enemy unit that is Below Half-strength , add 1 to the Wound roll .",
-          "name": "Merciless Hunter"
-        }
-      ],
+      "faction": [],
+      "datasheet": [],
       "other": []
     },
     "unit_composition": [
-      {
-        "type": "list",
-        "items": [
-          "1 Pallas Grav-attack"
-        ]
-      },
-      {
-        "type": "statement",
-        "text": "twin arachnus blaze cannon; armoured hull.",
-        "label": "This model is equipped with"
-      },
       {
         "type": "points",
         "rows": [
@@ -3228,9 +3867,10 @@
         "title": "WARGEAR OPTIONS",
         "entries": [
           {
-            "type": "option_group",
-            "label": "None",
-            "items": []
+            "type": "list",
+            "items": [
+              "None"
+            ]
           }
         ]
       },
@@ -3241,37 +3881,14 @@
             "type": "tagged_list",
             "label": "CORE",
             "items": [
-              "Deadly Demise D3"
+              "Deadly Demise D3 FACTION: Martial Ka\u2019tah Merciless Hunter: In your Shooting phase , each time this model makes an attack that targets an enemy unit that is Below Half-strength , add 1 to the Wound roll ."
             ]
-          },
-          {
-            "type": "tagged_list",
-            "label": "FACTION",
-            "items": [
-              "Martial Ka\u2019tah"
-            ]
-          },
-          {
-            "type": "rule",
-            "text": "In your Shooting phase , each time this model makes an attack that targets an enemy unit that is Below Half-strength , add 1 to the Wound roll .",
-            "name": "Merciless Hunter"
           }
         ]
       },
       {
         "title": "UNIT COMPOSITION",
         "entries": [
-          {
-            "type": "list",
-            "items": [
-              "1 Pallas Grav-attack"
-            ]
-          },
-          {
-            "type": "statement",
-            "text": "twin arachnus blaze cannon; armoured hull.",
-            "label": "This model is equipped with"
-          },
           {
             "type": "points",
             "rows": [
@@ -3283,13 +3900,103 @@
           }
         ]
       }
-    ]
+    ],
+    "quality": {
+      "rawSectionTitles": [
+        "RANGED WEAPONS",
+        "RANGE",
+        "A",
+        "BS",
+        "S",
+        "AP",
+        "D",
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "WARGEAR OPTIONS",
+        "ABILITIES",
+        "UNIT COMPOSITION",
+        "STRATAGEMS",
+        "DETACHMENT ABILITY",
+        "ENHANCEMENTS"
+      ],
+      "exportedSectionTitles": [
+        "WARGEAR OPTIONS",
+        "ABILITIES",
+        "UNIT COMPOSITION"
+      ],
+      "missingExpectedSections": [
+        "RANGED WEAPONS",
+        "RANGE",
+        "A",
+        "BS",
+        "S",
+        "AP",
+        "D",
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "STRATAGEMS",
+        "DETACHMENT ABILITY",
+        "ENHANCEMENTS"
+      ],
+      "warnings": [
+        "section-missing:RANGED WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:BS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:DETACHMENT ABILITY",
+        "section-missing:ENHANCEMENTS",
+        "section-missing:RANGED WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:BS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:DETACHMENT ABILITY",
+        "section-missing:ENHANCEMENTS"
+      ]
+    }
   },
   {
+    "exportSchemaVersion": 1,
+    "parserVersion": "2026-03-19-durable-normalization-v1",
     "source": {
       "url": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Prosecutors",
+      "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Prosecutors",
+      "canonicalSourceId": "wahapedia:f674eaba703256fa0609d65bb9299f45c6fd6814",
       "faction_slug": "adeptus-custodes",
       "datasheet_slug": "Prosecutors",
+      "fetchedAt": "2026-03-19T17:10:53+00:00",
+      "contentHash": "54e8bacbdf65267c61af739fdb14e5d990f6242bdd034e9b0781232a2a4728e2",
       "output_slug": "adeptus-custodes"
     },
     "name": "Prosecutors",
@@ -3333,33 +4040,15 @@
     "abilities": {
       "core": [],
       "faction": [],
-      "datasheet": [
+      "datasheet": [],
+      "other": [
         {
-          "type": "rule",
-          "text": "Models in this unit have the Feel No Pain 3+ ability against Psychic Attacks and mortal wounds .",
-          "name": "Daughters of the Abyss"
-        },
-        {
-          "type": "rule",
-          "text": "Each time a model in this unit makes a ranged attack that targets a PSYKER unit, that attack has the [PRECISION] and [DEVASTATING WOUNDS] abilities.",
-          "name": "Purity of Execution"
+          "type": "text",
+          "text": "Daughters of the Abyss: Models in this unit have the Feel No Pain 3+ ability against Psychic Attacks and mortal wounds . Purity of Execution: Each time a model in this unit makes a ranged attack that targets a PSYKER unit, that attack has the [PRECISION] and [DEVASTATING WOUNDS] abilities."
         }
-      ],
-      "other": []
+      ]
     },
     "unit_composition": [
-      {
-        "type": "list",
-        "items": [
-          "1 Prosecutor Sister Superior",
-          "3-9 Prosecutors"
-        ]
-      },
-      {
-        "type": "statement",
-        "text": "boltgun; close combat weapon.",
-        "label": "Every model is equipped with"
-      },
       {
         "type": "points",
         "rows": [
@@ -3396,32 +4085,14 @@
         "title": "ABILITIES",
         "entries": [
           {
-            "type": "rule",
-            "text": "Models in this unit have the Feel No Pain 3+ ability against Psychic Attacks and mortal wounds .",
-            "name": "Daughters of the Abyss"
-          },
-          {
-            "type": "rule",
-            "text": "Each time a model in this unit makes a ranged attack that targets a PSYKER unit, that attack has the [PRECISION] and [DEVASTATING WOUNDS] abilities.",
-            "name": "Purity of Execution"
+            "type": "text",
+            "text": "Daughters of the Abyss: Models in this unit have the Feel No Pain 3+ ability against Psychic Attacks and mortal wounds . Purity of Execution: Each time a model in this unit makes a ranged attack that targets a PSYKER unit, that attack has the [PRECISION] and [DEVASTATING WOUNDS] abilities."
           }
         ]
       },
       {
         "title": "UNIT COMPOSITION",
         "entries": [
-          {
-            "type": "list",
-            "items": [
-              "1 Prosecutor Sister Superior",
-              "3-9 Prosecutors"
-            ]
-          },
-          {
-            "type": "statement",
-            "text": "boltgun; close combat weapon.",
-            "label": "Every model is equipped with"
-          },
           {
             "type": "points",
             "rows": [
@@ -3445,13 +4116,105 @@
           }
         ]
       }
-    ]
+    ],
+    "quality": {
+      "rawSectionTitles": [
+        "RANGED WEAPONS",
+        "RANGE",
+        "A",
+        "BS",
+        "S",
+        "AP",
+        "D",
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "ABILITIES",
+        "UNIT COMPOSITION",
+        "STRATAGEMS",
+        "LED BY",
+        "DETACHMENT ABILITY",
+        "ENHANCEMENTS"
+      ],
+      "exportedSectionTitles": [
+        "ABILITIES",
+        "UNIT COMPOSITION"
+      ],
+      "missingExpectedSections": [
+        "RANGED WEAPONS",
+        "RANGE",
+        "A",
+        "BS",
+        "S",
+        "AP",
+        "D",
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "STRATAGEMS",
+        "LED BY",
+        "DETACHMENT ABILITY",
+        "ENHANCEMENTS"
+      ],
+      "warnings": [
+        "section-missing:RANGED WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:BS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:LED BY",
+        "section-missing:DETACHMENT ABILITY",
+        "section-missing:ENHANCEMENTS",
+        "section-missing:RANGED WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:BS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:LED BY",
+        "section-missing:DETACHMENT ABILITY",
+        "section-missing:ENHANCEMENTS"
+      ]
+    }
   },
   {
+    "exportSchemaVersion": 1,
+    "parserVersion": "2026-03-19-durable-normalization-v1",
     "source": {
       "url": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Sagittarum-Custodians",
+      "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Sagittarum-Custodians",
+      "canonicalSourceId": "wahapedia:ad67995e2b65abb7509fec2f9f1bd969a958404f",
       "faction_slug": "adeptus-custodes",
       "datasheet_slug": "Sagittarum-Custodians",
+      "fetchedAt": "2026-03-19T17:10:57+00:00",
+      "contentHash": "6c4a9cb18510f38b523bca58297e788d91f8d4523da0dd085ed39075e08071e9",
       "output_slug": "adeptus-custodes"
     },
     "name": "Sagittarum Custodians",
@@ -3495,37 +4258,13 @@
     },
     "abilities": {
       "core": [
-        "Deep Strike"
+        "Deep Strike FACTION: Martial Ka\u2019tah Saturation Volleys: In your Shooting phase , after this unit has shot, select one enemy unit (excluding MONSTERS and VEHICLES ) hit by one or more of those attacks. Until the start of your next turn, while this unit is on the battlefield, that enemy unit is suppressed. While a unit is suppressed, each time a model in that unit makes an attack, subtract 1 from the Hit roll . Disintegration Beams: Once per battle, at the start of your Shooting phase , this unit can use this ability. If it does, until the end of the phase, ranged weapons equipped by models in this unit have the [DEVASTATING WOUNDS] ability."
       ],
-      "faction": [
-        "Martial Ka\u2019tah"
-      ],
-      "datasheet": [
-        {
-          "type": "rule",
-          "text": "In your Shooting phase , after this unit has shot, select one enemy unit (excluding MONSTERS and VEHICLES ) hit by one or more of those attacks. Until the start of your next turn, while this unit is on the battlefield, that enemy unit is suppressed. While a unit is suppressed, each time a model in that unit makes an attack, subtract 1 from the Hit roll .",
-          "name": "Saturation Volleys"
-        },
-        {
-          "type": "rule",
-          "text": "Once per battle, at the start of your Shooting phase , this unit can use this ability. If it does, until the end of the phase, ranged weapons equipped by models in this unit have the [DEVASTATING WOUNDS] ability.",
-          "name": "Disintegration Beams"
-        }
-      ],
+      "faction": [],
+      "datasheet": [],
       "other": []
     },
     "unit_composition": [
-      {
-        "type": "list",
-        "items": [
-          "5 Sagittarum Custodians"
-        ]
-      },
-      {
-        "type": "statement",
-        "text": "adrastus bolt caliver; misericordia.",
-        "label": "Every model is equipped with"
-      },
       {
         "type": "points",
         "rows": [
@@ -3549,9 +4288,10 @@
         "title": "WARGEAR OPTIONS",
         "entries": [
           {
-            "type": "option_group",
-            "label": "None",
-            "items": []
+            "type": "list",
+            "items": [
+              "None"
+            ]
           }
         ]
       },
@@ -3562,42 +4302,14 @@
             "type": "tagged_list",
             "label": "CORE",
             "items": [
-              "Deep Strike"
+              "Deep Strike FACTION: Martial Ka\u2019tah Saturation Volleys: In your Shooting phase , after this unit has shot, select one enemy unit (excluding MONSTERS and VEHICLES ) hit by one or more of those attacks. Until the start of your next turn, while this unit is on the battlefield, that enemy unit is suppressed. While a unit is suppressed, each time a model in that unit makes an attack, subtract 1 from the Hit roll . Disintegration Beams: Once per battle, at the start of your Shooting phase , this unit can use this ability. If it does, until the end of the phase, ranged weapons equipped by models in this unit have the [DEVASTATING WOUNDS] ability."
             ]
-          },
-          {
-            "type": "tagged_list",
-            "label": "FACTION",
-            "items": [
-              "Martial Ka\u2019tah"
-            ]
-          },
-          {
-            "type": "rule",
-            "text": "In your Shooting phase , after this unit has shot, select one enemy unit (excluding MONSTERS and VEHICLES ) hit by one or more of those attacks. Until the start of your next turn, while this unit is on the battlefield, that enemy unit is suppressed. While a unit is suppressed, each time a model in that unit makes an attack, subtract 1 from the Hit roll .",
-            "name": "Saturation Volleys"
-          },
-          {
-            "type": "rule",
-            "text": "Once per battle, at the start of your Shooting phase , this unit can use this ability. If it does, until the end of the phase, ranged weapons equipped by models in this unit have the [DEVASTATING WOUNDS] ability.",
-            "name": "Disintegration Beams"
           }
         ]
       },
       {
         "title": "UNIT COMPOSITION",
         "entries": [
-          {
-            "type": "list",
-            "items": [
-              "5 Sagittarum Custodians"
-            ]
-          },
-          {
-            "type": "statement",
-            "text": "adrastus bolt caliver; misericordia.",
-            "label": "Every model is equipped with"
-          },
           {
             "type": "points",
             "rows": [
@@ -3618,13 +4330,105 @@
           }
         ]
       }
-    ]
+    ],
+    "quality": {
+      "rawSectionTitles": [
+        "RANGED WEAPONS",
+        "RANGE",
+        "A",
+        "BS",
+        "S",
+        "AP",
+        "D",
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "WARGEAR OPTIONS",
+        "ABILITIES",
+        "UNIT COMPOSITION",
+        "CUSTODIAN GUARD",
+        "STRATAGEMS",
+        "DETACHMENT ABILITY",
+        "ENHANCEMENTS"
+      ],
+      "exportedSectionTitles": [
+        "WARGEAR OPTIONS",
+        "ABILITIES",
+        "UNIT COMPOSITION",
+        "CUSTODIAN GUARD"
+      ],
+      "missingExpectedSections": [
+        "RANGED WEAPONS",
+        "RANGE",
+        "A",
+        "BS",
+        "S",
+        "AP",
+        "D",
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "STRATAGEMS",
+        "DETACHMENT ABILITY",
+        "ENHANCEMENTS"
+      ],
+      "warnings": [
+        "section-missing:RANGED WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:BS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:DETACHMENT ABILITY",
+        "section-missing:ENHANCEMENTS",
+        "section-missing:RANGED WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:BS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:DETACHMENT ABILITY",
+        "section-missing:ENHANCEMENTS"
+      ]
+    }
   },
   {
+    "exportSchemaVersion": 1,
+    "parserVersion": "2026-03-19-durable-normalization-v1",
     "source": {
       "url": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Shield-captain-In-Allarus-Terminator-Armour",
+      "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Shield-captain-In-Allarus-Terminator-Armour",
+      "canonicalSourceId": "wahapedia:dc895008153bf077af5ee7ce7e5c99f3c184290f",
       "faction_slug": "adeptus-custodes",
       "datasheet_slug": "Shield-captain-In-Allarus-Terminator-Armour",
+      "fetchedAt": "2026-03-19T17:10:51+00:00",
+      "contentHash": "175b7bfb1cec895ff30640633f6490e93accc8770ae8bfb7278e95f8dc106677",
       "output_slug": "adeptus-custodes"
     },
     "name": "Shield-captain In Allarus Terminator Armour",
@@ -3702,37 +4506,13 @@
     },
     "abilities": {
       "core": [
-        "Deep Strike , Leader"
+        "Deep Strike , Leader FACTION: Martial Ka\u2019tah Auramite and Adamantine: Once per battle, at the start of any phase, this model can use this ability If it does, until the end of the phase, each time an attack is allocated to this model, change the Damage characteristic of that attack to 1. Strategic Mastery: Once per battle round , you can select one model from your army with this ability and target that model\u2019s unit with a Stratagem . If it does, reduce the CP cost of that use of that Stratagem by 1CP."
       ],
-      "faction": [
-        "Martial Ka\u2019tah"
-      ],
-      "datasheet": [
-        {
-          "type": "rule",
-          "text": "Once per battle, at the start of any phase, this model can use this ability If it does, until the end of the phase, each time an attack is allocated to this model, change the Damage characteristic of that attack to 1.",
-          "name": "Auramite and Adamantine"
-        },
-        {
-          "type": "rule",
-          "text": "Once per battle round , you can select one model from your army with this ability and target that model\u2019s unit with a Stratagem . If it does, reduce the CP cost of that use of that Stratagem by 1CP.",
-          "name": "Strategic Mastery"
-        }
-      ],
+      "faction": [],
+      "datasheet": [],
       "other": []
     },
     "unit_composition": [
-      {
-        "type": "list",
-        "items": [
-          "1 Shield-Captain in Allarus Terminator Armour"
-        ]
-      },
-      {
-        "type": "statement",
-        "text": "balistus grenade launcher; guardian spear.",
-        "label": "This model is equipped with"
-      },
       {
         "type": "points",
         "rows": [
@@ -3771,42 +4551,14 @@
             "type": "tagged_list",
             "label": "CORE",
             "items": [
-              "Deep Strike , Leader"
+              "Deep Strike , Leader FACTION: Martial Ka\u2019tah Auramite and Adamantine: Once per battle, at the start of any phase, this model can use this ability If it does, until the end of the phase, each time an attack is allocated to this model, change the Damage characteristic of that attack to 1. Strategic Mastery: Once per battle round , you can select one model from your army with this ability and target that model\u2019s unit with a Stratagem . If it does, reduce the CP cost of that use of that Stratagem by 1CP."
             ]
-          },
-          {
-            "type": "tagged_list",
-            "label": "FACTION",
-            "items": [
-              "Martial Ka\u2019tah"
-            ]
-          },
-          {
-            "type": "rule",
-            "text": "Once per battle, at the start of any phase, this model can use this ability If it does, until the end of the phase, each time an attack is allocated to this model, change the Damage characteristic of that attack to 1.",
-            "name": "Auramite and Adamantine"
-          },
-          {
-            "type": "rule",
-            "text": "Once per battle round , you can select one model from your army with this ability and target that model\u2019s unit with a Stratagem . If it does, reduce the CP cost of that use of that Stratagem by 1CP.",
-            "name": "Strategic Mastery"
           }
         ]
       },
       {
         "title": "UNIT COMPOSITION",
         "entries": [
-          {
-            "type": "list",
-            "items": [
-              "1 Shield-Captain in Allarus Terminator Armour"
-            ]
-          },
-          {
-            "type": "statement",
-            "text": "balistus grenade launcher; guardian spear.",
-            "label": "This model is equipped with"
-          },
           {
             "type": "points",
             "rows": [
@@ -3829,13 +4581,105 @@
           }
         ]
       }
-    ]
+    ],
+    "quality": {
+      "rawSectionTitles": [
+        "RANGED WEAPONS",
+        "RANGE",
+        "A",
+        "BS",
+        "S",
+        "AP",
+        "D",
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "WARGEAR OPTIONS",
+        "ABILITIES",
+        "UNIT COMPOSITION",
+        "LEADER",
+        "STRATAGEMS",
+        "DETACHMENT ABILITY",
+        "ENHANCEMENTS"
+      ],
+      "exportedSectionTitles": [
+        "WARGEAR OPTIONS",
+        "ABILITIES",
+        "UNIT COMPOSITION",
+        "LEADER"
+      ],
+      "missingExpectedSections": [
+        "RANGED WEAPONS",
+        "RANGE",
+        "A",
+        "BS",
+        "S",
+        "AP",
+        "D",
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "STRATAGEMS",
+        "DETACHMENT ABILITY",
+        "ENHANCEMENTS"
+      ],
+      "warnings": [
+        "section-missing:RANGED WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:BS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:DETACHMENT ABILITY",
+        "section-missing:ENHANCEMENTS",
+        "section-missing:RANGED WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:BS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:DETACHMENT ABILITY",
+        "section-missing:ENHANCEMENTS"
+      ]
+    }
   },
   {
+    "exportSchemaVersion": 1,
+    "parserVersion": "2026-03-19-durable-normalization-v1",
     "source": {
       "url": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Shield-captain-On-Dawneagle-Jetbike",
+      "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Shield-captain-On-Dawneagle-Jetbike",
+      "canonicalSourceId": "wahapedia:d8e4375e870416b20d4067e22a9962c85959bf8e",
       "faction_slug": "adeptus-custodes",
       "datasheet_slug": "Shield-captain-On-Dawneagle-Jetbike",
+      "fetchedAt": "2026-03-19T17:10:51+00:00",
+      "contentHash": "7de1b3f59c3ef7e869b7405ba89a62f3ab9eb8871df921609d752f9da838bddd",
       "output_slug": "adeptus-custodes"
     },
     "name": "Shield-captain On Dawneagle Jetbike",
@@ -3894,37 +4738,13 @@
     },
     "abilities": {
       "core": [
-        "Leader"
+        "Leader FACTION: Martial Ka\u2019tah Sweeping Advance: Once per battle, at the end of the Fight phase , if this model\u2019s unit has fought this phase, if it is within Engagement Range of one or more enemy units, it can make a Fall Back move or, if it is not within Engagement Range of one or more enemy units, it can make a Normal move Strategic Mastery: Once per battle round , you can select one model from your army with this ability and target that model\u2019s unit with a Stratagem . If it does, reduce the CP cost of that use of that Stratagem by 1CP."
       ],
-      "faction": [
-        "Martial Ka\u2019tah"
-      ],
-      "datasheet": [
-        {
-          "type": "rule",
-          "text": "Once per battle, at the end of the Fight phase , if this model\u2019s unit has fought this phase, if it is within Engagement Range of one or more enemy units, it can make a Fall Back move or, if it is not within Engagement Range of one or more enemy units, it can make a Normal move",
-          "name": "Sweeping Advance"
-        },
-        {
-          "type": "rule",
-          "text": "Once per battle round , you can select one model from your army with this ability and target that model\u2019s unit with a Stratagem . If it does, reduce the CP cost of that use of that Stratagem by 1CP.",
-          "name": "Strategic Mastery"
-        }
-      ],
+      "faction": [],
+      "datasheet": [],
       "other": []
     },
     "unit_composition": [
-      {
-        "type": "list",
-        "items": [
-          "1 Shield-Captain on Dawneagle Jetbike"
-        ]
-      },
-      {
-        "type": "statement",
-        "text": "salvo launcher; interceptor lance.",
-        "label": "This model is equipped with"
-      },
       {
         "type": "points",
         "rows": [
@@ -3964,42 +4784,14 @@
             "type": "tagged_list",
             "label": "CORE",
             "items": [
-              "Leader"
+              "Leader FACTION: Martial Ka\u2019tah Sweeping Advance: Once per battle, at the end of the Fight phase , if this model\u2019s unit has fought this phase, if it is within Engagement Range of one or more enemy units, it can make a Fall Back move or, if it is not within Engagement Range of one or more enemy units, it can make a Normal move Strategic Mastery: Once per battle round , you can select one model from your army with this ability and target that model\u2019s unit with a Stratagem . If it does, reduce the CP cost of that use of that Stratagem by 1CP."
             ]
-          },
-          {
-            "type": "tagged_list",
-            "label": "FACTION",
-            "items": [
-              "Martial Ka\u2019tah"
-            ]
-          },
-          {
-            "type": "rule",
-            "text": "Once per battle, at the end of the Fight phase , if this model\u2019s unit has fought this phase, if it is within Engagement Range of one or more enemy units, it can make a Fall Back move or, if it is not within Engagement Range of one or more enemy units, it can make a Normal move",
-            "name": "Sweeping Advance"
-          },
-          {
-            "type": "rule",
-            "text": "Once per battle round , you can select one model from your army with this ability and target that model\u2019s unit with a Stratagem . If it does, reduce the CP cost of that use of that Stratagem by 1CP.",
-            "name": "Strategic Mastery"
           }
         ]
       },
       {
         "title": "UNIT COMPOSITION",
         "entries": [
-          {
-            "type": "list",
-            "items": [
-              "1 Shield-Captain on Dawneagle Jetbike"
-            ]
-          },
-          {
-            "type": "statement",
-            "text": "salvo launcher; interceptor lance.",
-            "label": "This model is equipped with"
-          },
           {
             "type": "points",
             "rows": [
@@ -4022,13 +4814,105 @@
           }
         ]
       }
-    ]
+    ],
+    "quality": {
+      "rawSectionTitles": [
+        "RANGED WEAPONS",
+        "RANGE",
+        "A",
+        "BS",
+        "S",
+        "AP",
+        "D",
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "WARGEAR OPTIONS",
+        "ABILITIES",
+        "UNIT COMPOSITION",
+        "LEADER",
+        "STRATAGEMS",
+        "DETACHMENT ABILITY",
+        "ENHANCEMENTS"
+      ],
+      "exportedSectionTitles": [
+        "WARGEAR OPTIONS",
+        "ABILITIES",
+        "UNIT COMPOSITION",
+        "LEADER"
+      ],
+      "missingExpectedSections": [
+        "RANGED WEAPONS",
+        "RANGE",
+        "A",
+        "BS",
+        "S",
+        "AP",
+        "D",
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "STRATAGEMS",
+        "DETACHMENT ABILITY",
+        "ENHANCEMENTS"
+      ],
+      "warnings": [
+        "section-missing:RANGED WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:BS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:DETACHMENT ABILITY",
+        "section-missing:ENHANCEMENTS",
+        "section-missing:RANGED WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:BS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:DETACHMENT ABILITY",
+        "section-missing:ENHANCEMENTS"
+      ]
+    }
   },
   {
+    "exportSchemaVersion": 1,
+    "parserVersion": "2026-03-19-durable-normalization-v1",
     "source": {
       "url": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Shield-captain",
+      "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Shield-captain",
+      "canonicalSourceId": "wahapedia:b64cf89318a465ced499d9a0a12dad0820746dd7",
       "faction_slug": "adeptus-custodes",
       "datasheet_slug": "Shield-captain",
+      "fetchedAt": "2026-03-19T17:10:51+00:00",
+      "contentHash": "0a847db5f300f2f0fead6ddc0e48c6f5e6f2b6bb937d214d70f47e0c7d4616f2",
       "output_slug": "adeptus-custodes"
     },
     "name": "Shield-captain",
@@ -4139,37 +5023,13 @@
     },
     "abilities": {
       "core": [
-        "Deep Strike , Leader"
+        "Deep Strike , Leader FACTION: Martial Ka\u2019tah Master of the Stances: Once per battle, when this models unit is selected to fight , it can use this ability. if it does until that fight is resolved, both Ka\u2019tah Stances are active for that unit, instead of only one. Strategic Mastery: Once per battle round , you can select one model from your army with this ability. That model\u2019s unit can be targeted with a Stratagem . If it does, reduce the CP cost of that use of that Stratagem by 1CP."
       ],
-      "faction": [
-        "Martial Ka\u2019tah"
-      ],
-      "datasheet": [
-        {
-          "type": "rule",
-          "text": "Once per battle, when this models unit is selected to fight , it can use this ability. if it does until that fight is resolved, both Ka\u2019tah Stances are active for that unit, instead of only one.",
-          "name": "Master of the Stances"
-        },
-        {
-          "type": "rule",
-          "text": "Once per battle round , you can select one model from your army with this ability. That model\u2019s unit can be targeted with a Stratagem . If it does, reduce the CP cost of that use of that Stratagem by 1CP.",
-          "name": "Strategic Mastery"
-        }
-      ],
+      "faction": [],
+      "datasheet": [],
       "other": []
     },
     "unit_composition": [
-      {
-        "type": "list",
-        "items": [
-          "1 Shield-Captain"
-        ]
-      },
-      {
-        "type": "statement",
-        "text": "guardian spear.",
-        "label": "This model is equipped with"
-      },
       {
         "type": "points",
         "rows": [
@@ -4212,25 +5072,8 @@
             "type": "tagged_list",
             "label": "CORE",
             "items": [
-              "Deep Strike , Leader"
+              "Deep Strike , Leader FACTION: Martial Ka\u2019tah Master of the Stances: Once per battle, when this models unit is selected to fight , it can use this ability. if it does until that fight is resolved, both Ka\u2019tah Stances are active for that unit, instead of only one. Strategic Mastery: Once per battle round , you can select one model from your army with this ability. That model\u2019s unit can be targeted with a Stratagem . If it does, reduce the CP cost of that use of that Stratagem by 1CP."
             ]
-          },
-          {
-            "type": "tagged_list",
-            "label": "FACTION",
-            "items": [
-              "Martial Ka\u2019tah"
-            ]
-          },
-          {
-            "type": "rule",
-            "text": "Once per battle, when this models unit is selected to fight , it can use this ability. if it does until that fight is resolved, both Ka\u2019tah Stances are active for that unit, instead of only one.",
-            "name": "Master of the Stances"
-          },
-          {
-            "type": "rule",
-            "text": "Once per battle round , you can select one model from your army with this ability. That model\u2019s unit can be targeted with a Stratagem . If it does, reduce the CP cost of that use of that Stratagem by 1CP.",
-            "name": "Strategic Mastery"
           }
         ]
       },
@@ -4238,26 +5081,14 @@
         "title": "WARGEAR ABILITIES",
         "entries": [
           {
-            "type": "statement",
-            "text": "Add 1 to the bearer\u2019s Wounds characteristic.",
-            "label": "Praesidium shield"
+            "type": "text",
+            "text": "Praesidium shield: Add 1 to the bearer\u2019s Wounds characteristic."
           }
         ]
       },
       {
         "title": "UNIT COMPOSITION",
         "entries": [
-          {
-            "type": "list",
-            "items": [
-              "1 Shield-Captain"
-            ]
-          },
-          {
-            "type": "statement",
-            "text": "guardian spear.",
-            "label": "This model is equipped with"
-          },
           {
             "type": "points",
             "rows": [
@@ -4281,13 +5112,107 @@
           }
         ]
       }
-    ]
+    ],
+    "quality": {
+      "rawSectionTitles": [
+        "RANGED WEAPONS",
+        "RANGE",
+        "A",
+        "BS",
+        "S",
+        "AP",
+        "D",
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "WARGEAR OPTIONS",
+        "ABILITIES",
+        "WARGEAR ABILITIES",
+        "UNIT COMPOSITION",
+        "LEADER",
+        "STRATAGEMS",
+        "DETACHMENT ABILITY",
+        "ENHANCEMENTS"
+      ],
+      "exportedSectionTitles": [
+        "WARGEAR OPTIONS",
+        "ABILITIES",
+        "WARGEAR ABILITIES",
+        "UNIT COMPOSITION",
+        "LEADER"
+      ],
+      "missingExpectedSections": [
+        "RANGED WEAPONS",
+        "RANGE",
+        "A",
+        "BS",
+        "S",
+        "AP",
+        "D",
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "STRATAGEMS",
+        "DETACHMENT ABILITY",
+        "ENHANCEMENTS"
+      ],
+      "warnings": [
+        "section-missing:RANGED WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:BS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:DETACHMENT ABILITY",
+        "section-missing:ENHANCEMENTS",
+        "section-missing:RANGED WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:BS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:DETACHMENT ABILITY",
+        "section-missing:ENHANCEMENTS"
+      ]
+    }
   },
   {
+    "exportSchemaVersion": 1,
+    "parserVersion": "2026-03-19-durable-normalization-v1",
     "source": {
       "url": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Telemon-Heavy-Dreadnought",
+      "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Telemon-Heavy-Dreadnought",
+      "canonicalSourceId": "wahapedia:436aed0e1ae850504ad0afa96dc8766af87b85eb",
       "faction_slug": "adeptus-custodes",
       "datasheet_slug": "Telemon-Heavy-Dreadnought",
+      "fetchedAt": "2026-03-19T17:10:57+00:00",
+      "contentHash": "fb3fb5932df60b2a1884a47802e52b5677d6dfa1578fc6573bb3e8ab1c8358db",
       "output_slug": "adeptus-custodes"
     },
     "name": "Telemon Heavy Dreadnought",
@@ -4376,37 +5301,13 @@
     },
     "abilities": {
       "core": [
-        "Deadly Demise D3"
+        "Deadly Demise D3 FACTION: Martial Ka\u2019tah Guardian Eternal: Each time an attack is allocated to this model, subtract 1 from the Damage characteristic of that attack. Devoted to Destruction: If this model is equipped with 2 Telemon caestus weapons in addition to its armoured feet weapon, add 2 to the Attacks characteristic of those Telemon caestus weapons."
       ],
-      "faction": [
-        "Martial Ka\u2019tah"
-      ],
-      "datasheet": [
-        {
-          "type": "rule",
-          "text": "Each time an attack is allocated to this model, subtract 1 from the Damage characteristic of that attack.",
-          "name": "Guardian Eternal"
-        },
-        {
-          "type": "rule",
-          "text": "If this model is equipped with 2 Telemon caestus weapons in addition to its armoured feet weapon, add 2 to the Attacks characteristic of those Telemon caestus weapons.",
-          "name": "Devoted to Destruction"
-        }
-      ],
+      "faction": [],
+      "datasheet": [],
       "other": []
     },
     "unit_composition": [
-      {
-        "type": "list",
-        "items": [
-          "1 Telemon Heavy Dreadnought"
-        ]
-      },
-      {
-        "type": "statement",
-        "text": "2 iliastus accelerator culverins; spiculus bolt launcher; armoured feet.",
-        "label": "This model is equipped with"
-      },
       {
         "type": "points",
         "rows": [
@@ -4450,42 +5351,14 @@
             "type": "tagged_list",
             "label": "CORE",
             "items": [
-              "Deadly Demise D3"
+              "Deadly Demise D3 FACTION: Martial Ka\u2019tah Guardian Eternal: Each time an attack is allocated to this model, subtract 1 from the Damage characteristic of that attack. Devoted to Destruction: If this model is equipped with 2 Telemon caestus weapons in addition to its armoured feet weapon, add 2 to the Attacks characteristic of those Telemon caestus weapons."
             ]
-          },
-          {
-            "type": "tagged_list",
-            "label": "FACTION",
-            "items": [
-              "Martial Ka\u2019tah"
-            ]
-          },
-          {
-            "type": "rule",
-            "text": "Each time an attack is allocated to this model, subtract 1 from the Damage characteristic of that attack.",
-            "name": "Guardian Eternal"
-          },
-          {
-            "type": "rule",
-            "text": "If this model is equipped with 2 Telemon caestus weapons in addition to its armoured feet weapon, add 2 to the Attacks characteristic of those Telemon caestus weapons.",
-            "name": "Devoted to Destruction"
           }
         ]
       },
       {
         "title": "UNIT COMPOSITION",
         "entries": [
-          {
-            "type": "list",
-            "items": [
-              "1 Telemon Heavy Dreadnought"
-            ]
-          },
-          {
-            "type": "statement",
-            "text": "2 iliastus accelerator culverins; spiculus bolt launcher; armoured feet.",
-            "label": "This model is equipped with"
-          },
           {
             "type": "points",
             "rows": [
@@ -4506,13 +5379,105 @@
           }
         ]
       }
-    ]
+    ],
+    "quality": {
+      "rawSectionTitles": [
+        "RANGED WEAPONS",
+        "RANGE",
+        "A",
+        "BS",
+        "S",
+        "AP",
+        "D",
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "WARGEAR OPTIONS",
+        "ABILITIES",
+        "UNIT COMPOSITION",
+        "DAMAGED: 1-4 WOUNDS REMAINING",
+        "STRATAGEMS",
+        "DETACHMENT ABILITY",
+        "ENHANCEMENTS"
+      ],
+      "exportedSectionTitles": [
+        "WARGEAR OPTIONS",
+        "ABILITIES",
+        "UNIT COMPOSITION",
+        "DAMAGED: 1-4 WOUNDS REMAINING"
+      ],
+      "missingExpectedSections": [
+        "RANGED WEAPONS",
+        "RANGE",
+        "A",
+        "BS",
+        "S",
+        "AP",
+        "D",
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "STRATAGEMS",
+        "DETACHMENT ABILITY",
+        "ENHANCEMENTS"
+      ],
+      "warnings": [
+        "section-missing:RANGED WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:BS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:DETACHMENT ABILITY",
+        "section-missing:ENHANCEMENTS",
+        "section-missing:RANGED WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:BS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:DETACHMENT ABILITY",
+        "section-missing:ENHANCEMENTS"
+      ]
+    }
   },
   {
+    "exportSchemaVersion": 1,
+    "parserVersion": "2026-03-19-durable-normalization-v1",
     "source": {
       "url": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Trajann-Valoris",
+      "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Trajann-Valoris",
+      "canonicalSourceId": "wahapedia:6860ea1de58df8e1274e310893b5c3fcb3a2f5d1",
       "faction_slug": "adeptus-custodes",
       "datasheet_slug": "Trajann-Valoris",
+      "fetchedAt": "2026-03-19T17:10:51+00:00",
+      "contentHash": "a39651ec6e85b56c12565320f57c959a3bdcaffa34ab21d565a51780bd24a9ad",
       "output_slug": "adeptus-custodes"
     },
     "name": "Trajann Valoris",
@@ -4556,45 +5521,13 @@
     },
     "abilities": {
       "core": [
-        "Deep Strike , Feel No Pain 5+ , Leader"
+        "Deep Strike , Feel No Pain 5+ , Leader FACTION: Martial Ka\u2019tah Captain-General: While this model is leading a unit, each time a model in this unit makes an attack, you can ignore any or all modifiers to that attack\u2019s Ballistic skill or Weapon skill characteristics and/or all modifiers to the Hit roll Moment Shackle: Once per battle, at the start of the Fight phase , you can select one of the following to take effect until the end of the phase: This model\u2019s Watcher\u2019s Axe melee weapon has an Attacks characteristic of 12. This model has a 2+ invulnerable save ."
       ],
-      "faction": [
-        "Martial Ka\u2019tah"
-      ],
-      "datasheet": [
-        {
-          "type": "rule",
-          "text": "While this model is leading a unit, each time a model in this unit makes an attack, you can ignore any or all modifiers to that attack\u2019s Ballistic skill or Weapon skill characteristics and/or all modifiers to the Hit roll",
-          "name": "Captain-General"
-        },
-        {
-          "type": "rule",
-          "text": "Once per battle, at the start of the Fight phase , you can select one of the following to take effect until the end of the phase: This model\u2019s Watcher\u2019s Axe melee weapon has an Attacks characteristic of 12. This model has a 2+ invulnerable save .",
-          "name": "Moment Shackle"
-        }
-      ],
-      "other": [
-        {
-          "type": "list",
-          "items": [
-            "This model\u2019s Watcher\u2019s Axe melee weapon has an Attacks characteristic of 12.",
-            "This model has a 2+ invulnerable save ."
-          ]
-        }
-      ]
+      "faction": [],
+      "datasheet": [],
+      "other": []
     },
     "unit_composition": [
-      {
-        "type": "list",
-        "items": [
-          "1 Trajann Valoris \u2013 EPIC HERO"
-        ]
-      },
-      {
-        "type": "statement",
-        "text": "Watcher\u2019s Axe.",
-        "label": "This model is equipped with"
-      },
       {
         "type": "points",
         "rows": [
@@ -4623,49 +5556,14 @@
             "type": "tagged_list",
             "label": "CORE",
             "items": [
-              "Deep Strike , Feel No Pain 5+ , Leader"
+              "Deep Strike , Feel No Pain 5+ , Leader FACTION: Martial Ka\u2019tah Captain-General: While this model is leading a unit, each time a model in this unit makes an attack, you can ignore any or all modifiers to that attack\u2019s Ballistic skill or Weapon skill characteristics and/or all modifiers to the Hit roll Moment Shackle: Once per battle, at the start of the Fight phase , you can select one of the following to take effect until the end of the phase: This model\u2019s Watcher\u2019s Axe melee weapon has an Attacks characteristic of 12. This model has a 2+ invulnerable save ."
             ]
-          },
-          {
-            "type": "tagged_list",
-            "label": "FACTION",
-            "items": [
-              "Martial Ka\u2019tah"
-            ]
-          },
-          {
-            "type": "list",
-            "items": [
-              "This model\u2019s Watcher\u2019s Axe melee weapon has an Attacks characteristic of 12.",
-              "This model has a 2+ invulnerable save ."
-            ]
-          },
-          {
-            "type": "rule",
-            "text": "While this model is leading a unit, each time a model in this unit makes an attack, you can ignore any or all modifiers to that attack\u2019s Ballistic skill or Weapon skill characteristics and/or all modifiers to the Hit roll",
-            "name": "Captain-General"
-          },
-          {
-            "type": "rule",
-            "text": "Once per battle, at the start of the Fight phase , you can select one of the following to take effect until the end of the phase: This model\u2019s Watcher\u2019s Axe melee weapon has an Attacks characteristic of 12. This model has a 2+ invulnerable save .",
-            "name": "Moment Shackle"
           }
         ]
       },
       {
         "title": "UNIT COMPOSITION",
         "entries": [
-          {
-            "type": "list",
-            "items": [
-              "1 Trajann Valoris \u2013 EPIC HERO"
-            ]
-          },
-          {
-            "type": "statement",
-            "text": "Watcher\u2019s Axe.",
-            "label": "This model is equipped with"
-          },
           {
             "type": "points",
             "rows": [
@@ -4698,13 +5596,101 @@
           }
         ]
       }
-    ]
+    ],
+    "quality": {
+      "rawSectionTitles": [
+        "RANGED WEAPONS",
+        "RANGE",
+        "A",
+        "BS",
+        "S",
+        "AP",
+        "D",
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "ABILITIES",
+        "UNIT COMPOSITION",
+        "LEADER",
+        "SUPREME COMMANDER",
+        "STRATAGEMS",
+        "DETACHMENT ABILITY"
+      ],
+      "exportedSectionTitles": [
+        "ABILITIES",
+        "UNIT COMPOSITION",
+        "LEADER",
+        "SUPREME COMMANDER"
+      ],
+      "missingExpectedSections": [
+        "RANGED WEAPONS",
+        "RANGE",
+        "A",
+        "BS",
+        "S",
+        "AP",
+        "D",
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "STRATAGEMS",
+        "DETACHMENT ABILITY"
+      ],
+      "warnings": [
+        "section-missing:RANGED WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:BS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:DETACHMENT ABILITY",
+        "section-missing:RANGED WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:BS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:DETACHMENT ABILITY"
+      ]
+    }
   },
   {
+    "exportSchemaVersion": 1,
+    "parserVersion": "2026-03-19-durable-normalization-v1",
     "source": {
       "url": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Valerian",
+      "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Valerian",
+      "canonicalSourceId": "wahapedia:b9124442c27a66383880293e0ce4ee4d98f5a27e",
       "faction_slug": "adeptus-custodes",
       "datasheet_slug": "Valerian",
+      "fetchedAt": "2026-03-19T17:10:51+00:00",
+      "contentHash": "189940d1c831a6859e92a8739d49c0c087189f11db2f2d4f60c85bef5b68e58c",
       "output_slug": "adeptus-custodes"
     },
     "name": "Valerian",
@@ -4748,37 +5734,13 @@
     },
     "abilities": {
       "core": [
-        "Deep Strike , Feel No Pain 6+ , Leader"
+        "Deep Strike , Feel No Pain 6+ , Leader FACTION: Martial Ka\u2019tah Golden Laurels: While this model is leading a unit, each time a melee attack targets that unit, worsen the Armour Penetration characteristic of that attack by 1. Hero of Lion\u2019s Gate: Once per battle, after making a Hit roll , Wound roll or saving throw for this model, you can change the result of that roll to an unmodified 6."
       ],
-      "faction": [
-        "Martial Ka\u2019tah"
-      ],
-      "datasheet": [
-        {
-          "type": "rule",
-          "text": "While this model is leading a unit, each time a melee attack targets that unit, worsen the Armour Penetration characteristic of that attack by 1.",
-          "name": "Golden Laurels"
-        },
-        {
-          "type": "rule",
-          "text": "Once per battle, after making a Hit roll , Wound roll or saving throw for this model, you can change the result of that roll to an unmodified 6.",
-          "name": "Hero of Lion\u2019s Gate"
-        }
-      ],
+      "faction": [],
+      "datasheet": [],
       "other": []
     },
     "unit_composition": [
-      {
-        "type": "list",
-        "items": [
-          "1 Valerian \u2013 EPIC HERO"
-        ]
-      },
-      {
-        "type": "statement",
-        "text": "Gnosis.",
-        "label": "This model is equipped with"
-      },
       {
         "type": "points",
         "rows": [
@@ -4808,42 +5770,14 @@
             "type": "tagged_list",
             "label": "CORE",
             "items": [
-              "Deep Strike , Feel No Pain 6+ , Leader"
+              "Deep Strike , Feel No Pain 6+ , Leader FACTION: Martial Ka\u2019tah Golden Laurels: While this model is leading a unit, each time a melee attack targets that unit, worsen the Armour Penetration characteristic of that attack by 1. Hero of Lion\u2019s Gate: Once per battle, after making a Hit roll , Wound roll or saving throw for this model, you can change the result of that roll to an unmodified 6."
             ]
-          },
-          {
-            "type": "tagged_list",
-            "label": "FACTION",
-            "items": [
-              "Martial Ka\u2019tah"
-            ]
-          },
-          {
-            "type": "rule",
-            "text": "While this model is leading a unit, each time a melee attack targets that unit, worsen the Armour Penetration characteristic of that attack by 1.",
-            "name": "Golden Laurels"
-          },
-          {
-            "type": "rule",
-            "text": "Once per battle, after making a Hit roll , Wound roll or saving throw for this model, you can change the result of that roll to an unmodified 6.",
-            "name": "Hero of Lion\u2019s Gate"
           }
         ]
       },
       {
         "title": "UNIT COMPOSITION",
         "entries": [
-          {
-            "type": "list",
-            "items": [
-              "1 Valerian \u2013 EPIC HERO"
-            ]
-          },
-          {
-            "type": "statement",
-            "text": "Gnosis.",
-            "label": "This model is equipped with"
-          },
           {
             "type": "points",
             "rows": [
@@ -4867,13 +5801,99 @@
           }
         ]
       }
-    ]
+    ],
+    "quality": {
+      "rawSectionTitles": [
+        "RANGED WEAPONS",
+        "RANGE",
+        "A",
+        "BS",
+        "S",
+        "AP",
+        "D",
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "ABILITIES",
+        "UNIT COMPOSITION",
+        "LEADER",
+        "STRATAGEMS",
+        "DETACHMENT ABILITY"
+      ],
+      "exportedSectionTitles": [
+        "ABILITIES",
+        "UNIT COMPOSITION",
+        "LEADER"
+      ],
+      "missingExpectedSections": [
+        "RANGED WEAPONS",
+        "RANGE",
+        "A",
+        "BS",
+        "S",
+        "AP",
+        "D",
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "STRATAGEMS",
+        "DETACHMENT ABILITY"
+      ],
+      "warnings": [
+        "section-missing:RANGED WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:BS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:DETACHMENT ABILITY",
+        "section-missing:RANGED WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:BS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:DETACHMENT ABILITY"
+      ]
+    }
   },
   {
+    "exportSchemaVersion": 1,
+    "parserVersion": "2026-03-19-durable-normalization-v1",
     "source": {
       "url": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Venatari-Custodians",
+      "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Venatari-Custodians",
+      "canonicalSourceId": "wahapedia:aea525b2d473a4faa7ede85804bef1a70d009bda",
       "faction_slug": "adeptus-custodes",
       "datasheet_slug": "Venatari-Custodians",
+      "fetchedAt": "2026-03-19T17:10:58+00:00",
+      "contentHash": "be943695d927d68f9b23a78c1f8f1345d9f15b71d8558f2221b28425aba41f5f",
       "output_slug": "adeptus-custodes"
     },
     "name": "Venatari Custodians",
@@ -4942,37 +5962,13 @@
     },
     "abilities": {
       "core": [
-        "Deep Strike"
+        "Deep Strike FACTION: Martial Ka\u2019tah Strike from the Skies: This unit is eligible to shoot and declare a charge in a turn in which it Fell Back . Swooping Dive: Once per battle, you can target this unit with the Rapid Ingress Stratagem for 0CP, and can do so even if you have already targeted a different unit with that Stratagem this phase."
       ],
-      "faction": [
-        "Martial Ka\u2019tah"
-      ],
-      "datasheet": [
-        {
-          "type": "rule",
-          "text": "This unit is eligible to shoot and declare a charge in a turn in which it Fell Back .",
-          "name": "Strike from the Skies"
-        },
-        {
-          "type": "rule",
-          "text": "Once per battle, you can target this unit with the Rapid Ingress Stratagem for 0CP, and can do so even if you have already targeted a different unit with that Stratagem this phase.",
-          "name": "Swooping Dive"
-        }
-      ],
+      "faction": [],
+      "datasheet": [],
       "other": []
     },
     "unit_composition": [
-      {
-        "type": "list",
-        "items": [
-          "3-6 Venatari Custodians"
-        ]
-      },
-      {
-        "type": "statement",
-        "text": "Venatari lance.",
-        "label": "Every model is equipped with"
-      },
       {
         "type": "points",
         "rows": [
@@ -5015,25 +6011,8 @@
             "type": "tagged_list",
             "label": "CORE",
             "items": [
-              "Deep Strike"
+              "Deep Strike FACTION: Martial Ka\u2019tah Strike from the Skies: This unit is eligible to shoot and declare a charge in a turn in which it Fell Back . Swooping Dive: Once per battle, you can target this unit with the Rapid Ingress Stratagem for 0CP, and can do so even if you have already targeted a different unit with that Stratagem this phase."
             ]
-          },
-          {
-            "type": "tagged_list",
-            "label": "FACTION",
-            "items": [
-              "Martial Ka\u2019tah"
-            ]
-          },
-          {
-            "type": "rule",
-            "text": "This unit is eligible to shoot and declare a charge in a turn in which it Fell Back .",
-            "name": "Strike from the Skies"
-          },
-          {
-            "type": "rule",
-            "text": "Once per battle, you can target this unit with the Rapid Ingress Stratagem for 0CP, and can do so even if you have already targeted a different unit with that Stratagem this phase.",
-            "name": "Swooping Dive"
           }
         ]
       },
@@ -5041,26 +6020,14 @@
         "title": "WARGEAR ABILITIES",
         "entries": [
           {
-            "type": "statement",
-            "text": "The bearer has a Wounds characteristic of 4.",
-            "label": "Tarsis Buckler"
+            "type": "text",
+            "text": "Tarsis Buckler: The bearer has a Wounds characteristic of 4."
           }
         ]
       },
       {
         "title": "UNIT COMPOSITION",
         "entries": [
-          {
-            "type": "list",
-            "items": [
-              "3-6 Venatari Custodians"
-            ]
-          },
-          {
-            "type": "statement",
-            "text": "Venatari lance.",
-            "label": "Every model is equipped with"
-          },
           {
             "type": "points",
             "rows": [
@@ -5085,13 +6052,107 @@
           }
         ]
       }
-    ]
+    ],
+    "quality": {
+      "rawSectionTitles": [
+        "RANGED WEAPONS",
+        "RANGE",
+        "A",
+        "BS",
+        "S",
+        "AP",
+        "D",
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "WARGEAR OPTIONS",
+        "ABILITIES",
+        "WARGEAR ABILITIES",
+        "UNIT COMPOSITION",
+        "JUMP PACKS",
+        "STRATAGEMS",
+        "DETACHMENT ABILITY",
+        "ENHANCEMENTS"
+      ],
+      "exportedSectionTitles": [
+        "WARGEAR OPTIONS",
+        "ABILITIES",
+        "WARGEAR ABILITIES",
+        "UNIT COMPOSITION",
+        "JUMP PACKS"
+      ],
+      "missingExpectedSections": [
+        "RANGED WEAPONS",
+        "RANGE",
+        "A",
+        "BS",
+        "S",
+        "AP",
+        "D",
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "STRATAGEMS",
+        "DETACHMENT ABILITY",
+        "ENHANCEMENTS"
+      ],
+      "warnings": [
+        "section-missing:RANGED WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:BS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:DETACHMENT ABILITY",
+        "section-missing:ENHANCEMENTS",
+        "section-missing:RANGED WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:BS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:DETACHMENT ABILITY",
+        "section-missing:ENHANCEMENTS"
+      ]
+    }
   },
   {
+    "exportSchemaVersion": 1,
+    "parserVersion": "2026-03-19-durable-normalization-v1",
     "source": {
       "url": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Venerable-Contemptor-Dreadnought",
+      "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Venerable-Contemptor-Dreadnought",
+      "canonicalSourceId": "wahapedia:f171aa7ea7b578edadcf8c211e846025c3989513",
       "faction_slug": "adeptus-custodes",
       "datasheet_slug": "Venerable-Contemptor-Dreadnought",
+      "fetchedAt": "2026-03-19T17:10:53+00:00",
+      "contentHash": "07f379f0fa9d0c38df7446d67732bb2a9d6c352b7d45a6f3b615e0f60c6f3ee9",
       "output_slug": "adeptus-custodes"
     },
     "name": "Venerable Contemptor Dreadnought",
@@ -5159,32 +6220,13 @@
     },
     "abilities": {
       "core": [
-        "Deadly Demise 1"
+        "Deadly Demise 1 FACTION: Martial Ka\u2019tah Unyielding Ancient: The first time this model is destroyed, remove it from play without resolving its Deadly Demise ability. Then, at the end of the phase, roll one D6: on a 2+, set this model back up on the battlefield as close as possible to where it was destroyed and not within Engagement Range of any enemy units, with D6 wounds remaining."
       ],
-      "faction": [
-        "Martial Ka\u2019tah"
-      ],
-      "datasheet": [
-        {
-          "type": "rule",
-          "text": "The first time this model is destroyed, remove it from play without resolving its Deadly Demise ability. Then, at the end of the phase, roll one D6: on a 2+, set this model back up on the battlefield as close as possible to where it was destroyed and not within Engagement Range of any enemy units, with D6 wounds remaining.",
-          "name": "Unyielding Ancient"
-        }
-      ],
+      "faction": [],
+      "datasheet": [],
       "other": []
     },
     "unit_composition": [
-      {
-        "type": "list",
-        "items": [
-          "1 Venerable Contemptor Dreadnought"
-        ]
-      },
-      {
-        "type": "statement",
-        "text": "combi-bolter; multi-melta; Contemptor combat weapon.",
-        "label": "This model is equipped with"
-      },
       {
         "type": "points",
         "rows": [
@@ -5222,37 +6264,14 @@
             "type": "tagged_list",
             "label": "CORE",
             "items": [
-              "Deadly Demise 1"
+              "Deadly Demise 1 FACTION: Martial Ka\u2019tah Unyielding Ancient: The first time this model is destroyed, remove it from play without resolving its Deadly Demise ability. Then, at the end of the phase, roll one D6: on a 2+, set this model back up on the battlefield as close as possible to where it was destroyed and not within Engagement Range of any enemy units, with D6 wounds remaining."
             ]
-          },
-          {
-            "type": "tagged_list",
-            "label": "FACTION",
-            "items": [
-              "Martial Ka\u2019tah"
-            ]
-          },
-          {
-            "type": "rule",
-            "text": "The first time this model is destroyed, remove it from play without resolving its Deadly Demise ability. Then, at the end of the phase, roll one D6: on a 2+, set this model back up on the battlefield as close as possible to where it was destroyed and not within Engagement Range of any enemy units, with D6 wounds remaining.",
-            "name": "Unyielding Ancient"
           }
         ]
       },
       {
         "title": "UNIT COMPOSITION",
         "entries": [
-          {
-            "type": "list",
-            "items": [
-              "1 Venerable Contemptor Dreadnought"
-            ]
-          },
-          {
-            "type": "statement",
-            "text": "combi-bolter; multi-melta; Contemptor combat weapon.",
-            "label": "This model is equipped with"
-          },
           {
             "type": "points",
             "rows": [
@@ -5264,13 +6283,103 @@
           }
         ]
       }
-    ]
+    ],
+    "quality": {
+      "rawSectionTitles": [
+        "RANGED WEAPONS",
+        "RANGE",
+        "A",
+        "BS",
+        "S",
+        "AP",
+        "D",
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "WARGEAR OPTIONS",
+        "ABILITIES",
+        "UNIT COMPOSITION",
+        "STRATAGEMS",
+        "DETACHMENT ABILITY",
+        "ENHANCEMENTS"
+      ],
+      "exportedSectionTitles": [
+        "WARGEAR OPTIONS",
+        "ABILITIES",
+        "UNIT COMPOSITION"
+      ],
+      "missingExpectedSections": [
+        "RANGED WEAPONS",
+        "RANGE",
+        "A",
+        "BS",
+        "S",
+        "AP",
+        "D",
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "STRATAGEMS",
+        "DETACHMENT ABILITY",
+        "ENHANCEMENTS"
+      ],
+      "warnings": [
+        "section-missing:RANGED WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:BS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:DETACHMENT ABILITY",
+        "section-missing:ENHANCEMENTS",
+        "section-missing:RANGED WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:BS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:DETACHMENT ABILITY",
+        "section-missing:ENHANCEMENTS"
+      ]
+    }
   },
   {
+    "exportSchemaVersion": 1,
+    "parserVersion": "2026-03-19-durable-normalization-v1",
     "source": {
       "url": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Venerable-Land-Raider",
+      "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Venerable-Land-Raider",
+      "canonicalSourceId": "wahapedia:4f3ba9a59f50936f2bd5ce5df2ca316edfdfe1d1",
       "faction_slug": "adeptus-custodes",
       "datasheet_slug": "Venerable-Land-Raider",
+      "fetchedAt": "2026-03-19T17:10:53+00:00",
+      "contentHash": "0116677f0c3d2cb99a81ffc1b3d1a572f14db88cd1b52b4b7fdf7e3f27cea9b8",
       "output_slug": "adeptus-custodes"
     },
     "name": "Venerable Land Raider",
@@ -5346,32 +6455,13 @@
     },
     "abilities": {
       "core": [
-        "Deadly Demise D6"
+        "Deadly Demise D6 FACTION: Martial Ka\u2019tah Assault Ramp: Each time a unit disembarks from this model after it has made a Normal move , that unit is still eligible to declare a charge this turn."
       ],
-      "faction": [
-        "Martial Ka\u2019tah"
-      ],
-      "datasheet": [
-        {
-          "type": "rule",
-          "text": "Each time a unit disembarks from this model after it has made a Normal move , that unit is still eligible to declare a charge this turn.",
-          "name": "Assault Ramp"
-        }
-      ],
+      "faction": [],
+      "datasheet": [],
       "other": []
     },
     "unit_composition": [
-      {
-        "type": "list",
-        "items": [
-          "1 Venerable Land Raider"
-        ]
-      },
-      {
-        "type": "statement",
-        "text": "2 godhammer lascannons; twin heavy bolter; armoured tracks.",
-        "label": "This model is equipped with"
-      },
       {
         "type": "points",
         "rows": [
@@ -5415,37 +6505,14 @@
             "type": "tagged_list",
             "label": "CORE",
             "items": [
-              "Deadly Demise D6"
+              "Deadly Demise D6 FACTION: Martial Ka\u2019tah Assault Ramp: Each time a unit disembarks from this model after it has made a Normal move , that unit is still eligible to declare a charge this turn."
             ]
-          },
-          {
-            "type": "tagged_list",
-            "label": "FACTION",
-            "items": [
-              "Martial Ka\u2019tah"
-            ]
-          },
-          {
-            "type": "rule",
-            "text": "Each time a unit disembarks from this model after it has made a Normal move , that unit is still eligible to declare a charge this turn.",
-            "name": "Assault Ramp"
           }
         ]
       },
       {
         "title": "UNIT COMPOSITION",
         "entries": [
-          {
-            "type": "list",
-            "items": [
-              "1 Venerable Land Raider"
-            ]
-          },
-          {
-            "type": "statement",
-            "text": "2 godhammer lascannons; twin heavy bolter; armoured tracks.",
-            "label": "This model is equipped with"
-          },
           {
             "type": "points",
             "rows": [
@@ -5475,13 +6542,107 @@
           }
         ]
       }
-    ]
+    ],
+    "quality": {
+      "rawSectionTitles": [
+        "RANGED WEAPONS",
+        "RANGE",
+        "A",
+        "BS",
+        "S",
+        "AP",
+        "D",
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "WARGEAR OPTIONS",
+        "ABILITIES",
+        "UNIT COMPOSITION",
+        "DAMAGED: 1-5 WOUNDS REMAINING",
+        "TRANSPORT",
+        "STRATAGEMS",
+        "DETACHMENT ABILITY",
+        "ENHANCEMENTS"
+      ],
+      "exportedSectionTitles": [
+        "WARGEAR OPTIONS",
+        "ABILITIES",
+        "UNIT COMPOSITION",
+        "DAMAGED: 1-5 WOUNDS REMAINING",
+        "TRANSPORT"
+      ],
+      "missingExpectedSections": [
+        "RANGED WEAPONS",
+        "RANGE",
+        "A",
+        "BS",
+        "S",
+        "AP",
+        "D",
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "STRATAGEMS",
+        "DETACHMENT ABILITY",
+        "ENHANCEMENTS"
+      ],
+      "warnings": [
+        "section-missing:RANGED WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:BS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:DETACHMENT ABILITY",
+        "section-missing:ENHANCEMENTS",
+        "section-missing:RANGED WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:BS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:DETACHMENT ABILITY",
+        "section-missing:ENHANCEMENTS"
+      ]
+    }
   },
   {
+    "exportSchemaVersion": 1,
+    "parserVersion": "2026-03-19-durable-normalization-v1",
     "source": {
       "url": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Vertus-Praetors",
+      "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Vertus-Praetors",
+      "canonicalSourceId": "wahapedia:7b26905a89603bb8fd8dec815c2307cb65592bcf",
       "faction_slug": "adeptus-custodes",
       "datasheet_slug": "Vertus-Praetors",
+      "fetchedAt": "2026-03-19T17:10:53+00:00",
+      "contentHash": "5edc899861dd203ff8a10db572ed868a0a6712211242a5f50ac29f8c196168eb",
       "output_slug": "adeptus-custodes"
     },
     "name": "Vertus Praetors",
@@ -5541,34 +6702,12 @@
     "abilities": {
       "core": [],
       "faction": [
-        "Martial Ka\u2019tah"
+        "Martial Ka\u2019tah Turbo-boost: Each time this unit Advances , do not make an Advance roll. Instead, until the end of the phase, add 6\" to the Move characteristic of models in this unit. Quicksilver Execution: Once per battle, after this unit ends a Normal Move or Advance move , you can select one enemy unit (excluding MONSTER and VEHICLE units) that it moved over during that move, then roll one D6 for each model in this unit: for each 2+, that enemy unit suffers 2 mortal wounds ."
       ],
-      "datasheet": [
-        {
-          "type": "rule",
-          "text": "Each time this unit Advances , do not make an Advance roll. Instead, until the end of the phase, add 6\" to the Move characteristic of models in this unit.",
-          "name": "Turbo-boost"
-        },
-        {
-          "type": "rule",
-          "text": "Once per battle, after this unit ends a Normal Move or Advance move , you can select one enemy unit (excluding MONSTER and VEHICLE units) that it moved over during that move, then roll one D6 for each model in this unit: for each 2+, that enemy unit suffers 2 mortal wounds .",
-          "name": "Quicksilver Execution"
-        }
-      ],
+      "datasheet": [],
       "other": []
     },
     "unit_composition": [
-      {
-        "type": "list",
-        "items": [
-          "2-3 Vertus Praetors"
-        ]
-      },
-      {
-        "type": "statement",
-        "text": "salvo launcher; interceptor lance.",
-        "label": "Every model is equipped with"
-      },
       {
         "type": "points",
         "rows": [
@@ -5610,35 +6749,14 @@
             "type": "tagged_list",
             "label": "FACTION",
             "items": [
-              "Martial Ka\u2019tah"
+              "Martial Ka\u2019tah Turbo-boost: Each time this unit Advances , do not make an Advance roll. Instead, until the end of the phase, add 6\" to the Move characteristic of models in this unit. Quicksilver Execution: Once per battle, after this unit ends a Normal Move or Advance move , you can select one enemy unit (excluding MONSTER and VEHICLE units) that it moved over during that move, then roll one D6 for each model in this unit: for each 2+, that enemy unit suffers 2 mortal wounds ."
             ]
-          },
-          {
-            "type": "rule",
-            "text": "Each time this unit Advances , do not make an Advance roll. Instead, until the end of the phase, add 6\" to the Move characteristic of models in this unit.",
-            "name": "Turbo-boost"
-          },
-          {
-            "type": "rule",
-            "text": "Once per battle, after this unit ends a Normal Move or Advance move , you can select one enemy unit (excluding MONSTER and VEHICLE units) that it moved over during that move, then roll one D6 for each model in this unit: for each 2+, that enemy unit suffers 2 mortal wounds .",
-            "name": "Quicksilver Execution"
           }
         ]
       },
       {
         "title": "UNIT COMPOSITION",
         "entries": [
-          {
-            "type": "list",
-            "items": [
-              "2-3 Vertus Praetors"
-            ]
-          },
-          {
-            "type": "statement",
-            "text": "salvo launcher; interceptor lance.",
-            "label": "Every model is equipped with"
-          },
           {
             "type": "points",
             "rows": [
@@ -5654,13 +6772,107 @@
           }
         ]
       }
-    ]
+    ],
+    "quality": {
+      "rawSectionTitles": [
+        "RANGED WEAPONS",
+        "RANGE",
+        "A",
+        "BS",
+        "S",
+        "AP",
+        "D",
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "WARGEAR OPTIONS",
+        "ABILITIES",
+        "UNIT COMPOSITION",
+        "STRATAGEMS",
+        "LED BY",
+        "DETACHMENT ABILITY",
+        "ENHANCEMENTS"
+      ],
+      "exportedSectionTitles": [
+        "WARGEAR OPTIONS",
+        "ABILITIES",
+        "UNIT COMPOSITION"
+      ],
+      "missingExpectedSections": [
+        "RANGED WEAPONS",
+        "RANGE",
+        "A",
+        "BS",
+        "S",
+        "AP",
+        "D",
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "STRATAGEMS",
+        "LED BY",
+        "DETACHMENT ABILITY",
+        "ENHANCEMENTS"
+      ],
+      "warnings": [
+        "section-missing:RANGED WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:BS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:LED BY",
+        "section-missing:DETACHMENT ABILITY",
+        "section-missing:ENHANCEMENTS",
+        "section-missing:RANGED WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:BS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:LED BY",
+        "section-missing:DETACHMENT ABILITY",
+        "section-missing:ENHANCEMENTS"
+      ]
+    }
   },
   {
+    "exportSchemaVersion": 1,
+    "parserVersion": "2026-03-19-durable-normalization-v1",
     "source": {
       "url": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Vigilators",
+      "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Vigilators",
+      "canonicalSourceId": "wahapedia:11a0b2c7fc6b5f07a2c72addd42f756a6f6c30ce",
       "faction_slug": "adeptus-custodes",
       "datasheet_slug": "Vigilators",
+      "fetchedAt": "2026-03-19T17:10:55+00:00",
+      "contentHash": "cbbe76feec1f01bedf546fd8359f2768ba9c51a857c30ff5240002e4f6bf7d7a",
       "output_slug": "adeptus-custodes"
     },
     "name": "Vigilators",
@@ -5693,33 +6905,15 @@
     "abilities": {
       "core": [],
       "faction": [],
-      "datasheet": [
+      "datasheet": [],
+      "other": [
         {
-          "type": "rule",
-          "text": "Models in this unit have the Feel No Pain 3+ ability against Psychic Attacks and mortal wounds .",
-          "name": "Daughters of the Abyss"
-        },
-        {
-          "type": "rule",
-          "text": "Each time a melee attack targets this unit, subtract 1 from the Hit roll .",
-          "name": "Deft Parry"
+          "type": "text",
+          "text": "Daughters of the Abyss: Models in this unit have the Feel No Pain 3+ ability against Psychic Attacks and mortal wounds . Deft Parry: Each time a melee attack targets this unit, subtract 1 from the Hit roll ."
         }
-      ],
-      "other": []
+      ]
     },
     "unit_composition": [
-      {
-        "type": "list",
-        "items": [
-          "1 Vigilator Sister Superior",
-          "3-9 Vigilators"
-        ]
-      },
-      {
-        "type": "statement",
-        "text": "executioner greatblade.",
-        "label": "Every model is equipped with"
-      },
       {
         "type": "points",
         "rows": [
@@ -5756,32 +6950,14 @@
         "title": "ABILITIES",
         "entries": [
           {
-            "type": "rule",
-            "text": "Models in this unit have the Feel No Pain 3+ ability against Psychic Attacks and mortal wounds .",
-            "name": "Daughters of the Abyss"
-          },
-          {
-            "type": "rule",
-            "text": "Each time a melee attack targets this unit, subtract 1 from the Hit roll .",
-            "name": "Deft Parry"
+            "type": "text",
+            "text": "Daughters of the Abyss: Models in this unit have the Feel No Pain 3+ ability against Psychic Attacks and mortal wounds . Deft Parry: Each time a melee attack targets this unit, subtract 1 from the Hit roll ."
           }
         ]
       },
       {
         "title": "UNIT COMPOSITION",
         "entries": [
-          {
-            "type": "list",
-            "items": [
-              "1 Vigilator Sister Superior",
-              "3-9 Vigilators"
-            ]
-          },
-          {
-            "type": "statement",
-            "text": "executioner greatblade.",
-            "label": "Every model is equipped with"
-          },
           {
             "type": "points",
             "rows": [
@@ -5805,13 +6981,77 @@
           }
         ]
       }
-    ]
+    ],
+    "quality": {
+      "rawSectionTitles": [
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "ABILITIES",
+        "UNIT COMPOSITION",
+        "STRATAGEMS",
+        "LED BY",
+        "DETACHMENT ABILITY",
+        "ENHANCEMENTS"
+      ],
+      "exportedSectionTitles": [
+        "ABILITIES",
+        "UNIT COMPOSITION"
+      ],
+      "missingExpectedSections": [
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "STRATAGEMS",
+        "LED BY",
+        "DETACHMENT ABILITY",
+        "ENHANCEMENTS"
+      ],
+      "warnings": [
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:LED BY",
+        "section-missing:DETACHMENT ABILITY",
+        "section-missing:ENHANCEMENTS",
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:LED BY",
+        "section-missing:DETACHMENT ABILITY",
+        "section-missing:ENHANCEMENTS"
+      ]
+    }
   },
   {
+    "exportSchemaVersion": 1,
+    "parserVersion": "2026-03-19-durable-normalization-v1",
     "source": {
       "url": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Witchseekers",
+      "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Witchseekers",
+      "canonicalSourceId": "wahapedia:b570bc137b7655d19229704d210bf98b4d5d6fdb",
       "faction_slug": "adeptus-custodes",
       "datasheet_slug": "Witchseekers",
+      "fetchedAt": "2026-03-19T17:10:55+00:00",
+      "contentHash": "e5f300211125c152af10f2215289c81d36f180e3f647bd0a3c36b4171344936a",
       "output_slug": "adeptus-custodes"
     },
     "name": "Witchseekers",
@@ -5855,36 +7095,13 @@
     },
     "abilities": {
       "core": [
-        "Scouts 6\""
+        "Scouts 6\" Daughters of the Abyss: Models in this unit have the Feel No Pain 3+ ability against Psychic Attacks and mortal wounds . Sanctified Flames: In your Shooting phase , after this unit has shot, select one enemy unit hit by one or more of those attacks. That enemy unit must take a Battle-shock test ."
       ],
       "faction": [],
-      "datasheet": [
-        {
-          "type": "rule",
-          "text": "Models in this unit have the Feel No Pain 3+ ability against Psychic Attacks and mortal wounds .",
-          "name": "Daughters of the Abyss"
-        },
-        {
-          "type": "rule",
-          "text": "In your Shooting phase , after this unit has shot, select one enemy unit hit by one or more of those attacks. That enemy unit must take a Battle-shock test .",
-          "name": "Sanctified Flames"
-        }
-      ],
+      "datasheet": [],
       "other": []
     },
     "unit_composition": [
-      {
-        "type": "list",
-        "items": [
-          "1 Witchseeker Sister Superior",
-          "3-9 Witchseekers"
-        ]
-      },
-      {
-        "type": "statement",
-        "text": "Witchseeker flamer; close combat weapon.",
-        "label": "Every model is equipped with"
-      },
       {
         "type": "points",
         "rows": [
@@ -5921,9 +7138,10 @@
         "title": "WARGEAR OPTIONS",
         "entries": [
           {
-            "type": "option_group",
-            "label": "None",
-            "items": []
+            "type": "list",
+            "items": [
+              "None"
+            ]
           }
         ]
       },
@@ -5934,36 +7152,14 @@
             "type": "tagged_list",
             "label": "CORE",
             "items": [
-              "Scouts 6\""
+              "Scouts 6\" Daughters of the Abyss: Models in this unit have the Feel No Pain 3+ ability against Psychic Attacks and mortal wounds . Sanctified Flames: In your Shooting phase , after this unit has shot, select one enemy unit hit by one or more of those attacks. That enemy unit must take a Battle-shock test ."
             ]
-          },
-          {
-            "type": "rule",
-            "text": "Models in this unit have the Feel No Pain 3+ ability against Psychic Attacks and mortal wounds .",
-            "name": "Daughters of the Abyss"
-          },
-          {
-            "type": "rule",
-            "text": "In your Shooting phase , after this unit has shot, select one enemy unit hit by one or more of those attacks. That enemy unit must take a Battle-shock test .",
-            "name": "Sanctified Flames"
           }
         ]
       },
       {
         "title": "UNIT COMPOSITION",
         "entries": [
-          {
-            "type": "list",
-            "items": [
-              "1 Witchseeker Sister Superior",
-              "3-9 Witchseekers"
-            ]
-          },
-          {
-            "type": "statement",
-            "text": "Witchseeker flamer; close combat weapon.",
-            "label": "Every model is equipped with"
-          },
           {
             "type": "points",
             "rows": [
@@ -5987,6 +7183,94 @@
           }
         ]
       }
-    ]
+    ],
+    "quality": {
+      "rawSectionTitles": [
+        "RANGED WEAPONS",
+        "RANGE",
+        "A",
+        "BS",
+        "S",
+        "AP",
+        "D",
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "WARGEAR OPTIONS",
+        "ABILITIES",
+        "UNIT COMPOSITION",
+        "STRATAGEMS",
+        "LED BY",
+        "DETACHMENT ABILITY",
+        "ENHANCEMENTS"
+      ],
+      "exportedSectionTitles": [
+        "WARGEAR OPTIONS",
+        "ABILITIES",
+        "UNIT COMPOSITION"
+      ],
+      "missingExpectedSections": [
+        "RANGED WEAPONS",
+        "RANGE",
+        "A",
+        "BS",
+        "S",
+        "AP",
+        "D",
+        "MELEE WEAPONS",
+        "RANGE",
+        "A",
+        "WS",
+        "S",
+        "AP",
+        "D",
+        "STRATAGEMS",
+        "LED BY",
+        "DETACHMENT ABILITY",
+        "ENHANCEMENTS"
+      ],
+      "warnings": [
+        "section-missing:RANGED WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:BS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:LED BY",
+        "section-missing:DETACHMENT ABILITY",
+        "section-missing:ENHANCEMENTS",
+        "section-missing:RANGED WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:BS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:MELEE WEAPONS",
+        "section-missing:RANGE",
+        "section-missing:A",
+        "section-missing:WS",
+        "section-missing:S",
+        "section-missing:AP",
+        "section-missing:D",
+        "section-missing:STRATAGEMS",
+        "section-missing:LED BY",
+        "section-missing:DETACHMENT ABILITY",
+        "section-missing:ENHANCEMENTS"
+      ]
+    }
   }
 ]

@@ -3,7 +3,11 @@
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Mastodon",
     "faction_slug": "space-marines",
     "datasheet_slug": "Mastodon",
-    "output_slug": "space-wolves"
+    "output_slug": "space-wolves",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Mastodon",
+    "canonicalSourceId": "wahapedia:aaed0b509864ae747b17fe1c9a5ab22cf52898ab",
+    "fetchedAt": "2026-03-19T17:35:02+00:00",
+    "contentHash": "f76f3d25e5575ef4261f300f112fd4bb2f498b98c1eb342c0fc038791a156c6d"
   },
   "name": "Mastodon",
   "base_size": "\u2300Use model",
@@ -104,32 +108,13 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise 2D6"
+      "Deadly Demise 2D6 FACTION: Oath of Moment Inviolable Transport: Once per battle round , when an attack is allocated to this model, you can change the Damage characteristic of that attack to 0."
     ],
-    "faction": [
-      "Oath of Moment"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "Once per battle round , when an attack is allocated to this model, you can change the Damage characteristic of that attack to 0.",
-        "name": "Inviolable Transport"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Mastodon"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "2 heavy flamers; 2 lascannons; siege melta array; skyreaper battery; armoured tracks.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -153,43 +138,43 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s 2 heavy flamers can be replaced with one of the following",
+          "items": [
+            "2 heavy bolters",
+            "2 lascannons",
+            "2 volkite culverins"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "This model\u2019s 2 lascannons can be replaced with on of the following:",
+          "items": [
+            "2 heavy bolters",
+            "2 heavy flamers",
+            "2 volkite culverins"
+          ]
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise 2D6"
+            "Deadly Demise 2D6 FACTION: Oath of Moment Inviolable Transport: Once per battle round , when an attack is allocated to this model, you can change the Damage characteristic of that attack to 0."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Oath of Moment"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "Once per battle round , when an attack is allocated to this model, you can change the Damage characteristic of that attack to 0.",
-          "name": "Inviolable Transport"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Mastodon"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "2 heavy flamers; 2 lascannons; siege melta array; skyreaper battery; armoured tracks.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -219,5 +204,24 @@
         }
       ]
     }
-  ]
+  ],
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "quality": {
+    "rawSectionTitles": [
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-10 WOUNDS REMAINING",
+      "TRANSPORT"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-10 WOUNDS REMAINING",
+      "TRANSPORT"
+    ],
+    "missingExpectedSections": [],
+    "warnings": []
+  }
 }

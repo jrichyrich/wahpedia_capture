@@ -1,8 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Hammerfall-Bunker",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Hammerfall-Bunker",
+    "canonicalSourceId": "wahapedia:31d95ba5df2dc70cfc146accfe6f7943a670a9cb",
     "faction_slug": "space-marines",
-    "datasheet_slug": "Hammerfall-Bunker"
+    "datasheet_slug": "Hammerfall-Bunker",
+    "fetchedAt": "2026-03-19T17:28:10+00:00",
+    "contentHash": "0343a3475e499effbefb32c2c49130988d48a3ca028588ef45474b2ab6705b66",
+    "output_slug": "space-marines"
   },
   "name": "Hammerfall Bunker",
   "base_size": "\u2300Use model",
@@ -69,50 +76,13 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D6"
+      "Deadly Demise D6 FACTION: Oath of Moment Fortification: While an enemy unit is only within Engagement Range of one or more FORTIFICATIONS from your army: That unit can still be selected as the target of ranged attacks, but each time such an attack is made, unless it is made with a Pistol , subtract 1 from the Hit roll . Models in that unit do not need to take Desperate Escape tests due to Falling Back while Battle-shocked , except for those that will move over enemy models when doing so. Ceramite Cover: Each time a ranged attack is allocated to a model, if that model is not fully visible to every model in the attacking unit because of this FORTIFICATION , that model has the Benefit of Cover against that attack. Defensive Array: You can target this FORTIFICATION with the Fire Overwatch Stratagem for 0CP, and can do so even if you have already targeted another unit with that Stratagem this turn. This FORTIFICATION can only be targeted with that Stratagem once per turn."
     ],
-    "faction": [
-      "Oath of Moment"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "While an enemy unit is only within Engagement Range of one or more FORTIFICATIONS from your army: That unit can still be selected as the target of ranged attacks, but each time such an attack is made, unless it is made with a Pistol , subtract 1 from the Hit roll . Models in that unit do not need to take Desperate Escape tests due to Falling Back while Battle-shocked , except for those that will move over enemy models when doing so.",
-        "name": "Fortification"
-      },
-      {
-        "type": "rule",
-        "text": "Each time a ranged attack is allocated to a model, if that model is not fully visible to every model in the attacking unit because of this FORTIFICATION , that model has the Benefit of Cover against that attack.",
-        "name": "Ceramite Cover"
-      },
-      {
-        "type": "rule",
-        "text": "You can target this FORTIFICATION with the Fire Overwatch Stratagem for 0CP, and can do so even if you have already targeted another unit with that Stratagem this turn. This FORTIFICATION can only be targeted with that Stratagem once per turn.",
-        "name": "Defensive Array"
-      }
-    ],
-    "other": [
-      {
-        "type": "list",
-        "items": [
-          "That unit can still be selected as the target of ranged attacks, but each time such an attack is made, unless it is made with a Pistol , subtract 1 from the Hit roll .",
-          "Models in that unit do not need to take Desperate Escape tests due to Falling Back while Battle-shocked , except for those that will move over enemy models when doing so."
-        ]
-      }
-    ]
+    "faction": [],
+    "datasheet": [],
+    "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Hammerfall Bunker"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "Hammerfall heavy bolter array; Hammerfall missile launcher.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -134,60 +104,30 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s Hammerfall heavy bolter array can be replaced with 1 Hammerfall heavy flamer array.",
+          "items": []
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D6"
+            "Deadly Demise D6 FACTION: Oath of Moment Fortification: While an enemy unit is only within Engagement Range of one or more FORTIFICATIONS from your army: That unit can still be selected as the target of ranged attacks, but each time such an attack is made, unless it is made with a Pistol , subtract 1 from the Hit roll . Models in that unit do not need to take Desperate Escape tests due to Falling Back while Battle-shocked , except for those that will move over enemy models when doing so. Ceramite Cover: Each time a ranged attack is allocated to a model, if that model is not fully visible to every model in the attacking unit because of this FORTIFICATION , that model has the Benefit of Cover against that attack. Defensive Array: You can target this FORTIFICATION with the Fire Overwatch Stratagem for 0CP, and can do so even if you have already targeted another unit with that Stratagem this turn. This FORTIFICATION can only be targeted with that Stratagem once per turn."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Oath of Moment"
-          ]
-        },
-        {
-          "type": "list",
-          "items": [
-            "That unit can still be selected as the target of ranged attacks, but each time such an attack is made, unless it is made with a Pistol , subtract 1 from the Hit roll .",
-            "Models in that unit do not need to take Desperate Escape tests due to Falling Back while Battle-shocked , except for those that will move over enemy models when doing so."
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "While an enemy unit is only within Engagement Range of one or more FORTIFICATIONS from your army: That unit can still be selected as the target of ranged attacks, but each time such an attack is made, unless it is made with a Pistol , subtract 1 from the Hit roll . Models in that unit do not need to take Desperate Escape tests due to Falling Back while Battle-shocked , except for those that will move over enemy models when doing so.",
-          "name": "Fortification"
-        },
-        {
-          "type": "rule",
-          "text": "Each time a ranged attack is allocated to a model, if that model is not fully visible to every model in the attacking unit because of this FORTIFICATION , that model has the Benefit of Cover against that attack.",
-          "name": "Ceramite Cover"
-        },
-        {
-          "type": "rule",
-          "text": "You can target this FORTIFICATION with the Fire Overwatch Stratagem for 0CP, and can do so even if you have already targeted another unit with that Stratagem this turn. This FORTIFICATION can only be targeted with that Stratagem once per turn.",
-          "name": "Defensive Array"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Hammerfall Bunker"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "Hammerfall heavy bolter array; Hammerfall missile launcher.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -208,5 +148,63 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-5 WOUNDS REMAINING",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-5 WOUNDS REMAINING"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS"
+    ]
+  }
 }

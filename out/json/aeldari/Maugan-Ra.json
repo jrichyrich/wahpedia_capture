@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Maugan-Ra",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Maugan-Ra",
+    "canonicalSourceId": "wahapedia:43a604070272c1c23146ebf5db2ab6cfcc25f62f",
     "faction_slug": "aeldari",
     "datasheet_slug": "Maugan-Ra",
+    "fetchedAt": "2026-03-19T17:11:04+00:00",
+    "contentHash": "e4eb8608a22eda9a1549d002ea31831a46331821996d1ec2d0bec943bedcf50e",
     "output_slug": "aeldari"
   },
   "name": "Maugan Ra",
@@ -47,37 +53,13 @@
   },
   "abilities": {
     "core": [
-      "Leader"
+      "Leader FACTION: Battle Focus Harvester of Souls: While this model is leading a unit, in your Shooting phase , after selecting targets for that unit\u2019s attacks, if every attack targets the same unit, roll one D6 for the target unit and one D6 for every other enemy unit within 3\" of the target unit. On a 5+, the unit being rolled for is struck by explosive debris; after resolving all of that unit\u2019s attacks against the target unit, each unit struck by explosive debris suffers D3 mortal wounds . Face of Death: In your Shooting phase , after this model has shot, select one enemy unit hit by one or more of those attacks. That enemy unit must take a Battle-shock test , subtracting 1 from the result."
     ],
-    "faction": [
-      "Battle Focus"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "While this model is leading a unit, in your Shooting phase , after selecting targets for that unit\u2019s attacks, if every attack targets the same unit, roll one D6 for the target unit and one D6 for every other enemy unit within 3\" of the target unit. On a 5+, the unit being rolled for is struck by explosive debris; after resolving all of that unit\u2019s attacks against the target unit, each unit struck by explosive debris suffers D3 mortal wounds .",
-        "name": "Harvester of Souls"
-      },
-      {
-        "type": "rule",
-        "text": "In your Shooting phase , after this model has shot, select one enemy unit hit by one or more of those attacks. That enemy unit must take a Battle-shock test , subtracting 1 from the result.",
-        "name": "Face of Death"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Maugan Ra"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "Maugetar.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -108,42 +90,14 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Leader"
+            "Leader FACTION: Battle Focus Harvester of Souls: While this model is leading a unit, in your Shooting phase , after selecting targets for that unit\u2019s attacks, if every attack targets the same unit, roll one D6 for the target unit and one D6 for every other enemy unit within 3\" of the target unit. On a 5+, the unit being rolled for is struck by explosive debris; after resolving all of that unit\u2019s attacks against the target unit, each unit struck by explosive debris suffers D3 mortal wounds . Face of Death: In your Shooting phase , after this model has shot, select one enemy unit hit by one or more of those attacks. That enemy unit must take a Battle-shock test , subtracting 1 from the result."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Battle Focus"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "While this model is leading a unit, in your Shooting phase , after selecting targets for that unit\u2019s attacks, if every attack targets the same unit, roll one D6 for the target unit and one D6 for every other enemy unit within 3\" of the target unit. On a 5+, the unit being rolled for is struck by explosive debris; after resolving all of that unit\u2019s attacks against the target unit, each unit struck by explosive debris suffers D3 mortal wounds .",
-          "name": "Harvester of Souls"
-        },
-        {
-          "type": "rule",
-          "text": "In your Shooting phase , after this model has shot, select one enemy unit hit by one or more of those attacks. That enemy unit must take a Battle-shock test , subtracting 1 from the result.",
-          "name": "Face of Death"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Maugan Ra"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "Maugetar.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -166,5 +120,85 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY"
+    ],
+    "exportedSectionTitles": [
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY"
+    ]
+  }
 }

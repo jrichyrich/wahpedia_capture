@@ -3,7 +3,11 @@
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Captain-In-Terminator-Armour",
     "faction_slug": "space-marines",
     "datasheet_slug": "Captain-In-Terminator-Armour",
-    "output_slug": "space-wolves"
+    "output_slug": "space-wolves",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Captain-In-Terminator-Armour",
+    "canonicalSourceId": "wahapedia:0119c2d676d18c4a77f29738478ed040bc251529",
+    "fetchedAt": "2026-03-19T17:35:02+00:00",
+    "contentHash": "7a4a16031d019b397fa7d95ca05610e5bf7c48eb936d2d3e20c5a804693884f4"
   },
   "name": "Captain In Terminator Armour",
   "base_size": "\u230050mm",
@@ -70,37 +74,13 @@
   },
   "abilities": {
     "core": [
-      "Deep Strike , Leader"
+      "Deep Strike , Leader FACTION: Oath of Moment Rites of Battle: Once per battle round , one unit from your army with this ability can use it when its unit is targeted with a Stratagem . If it does, reduce the CP cost of that use of that Stratagem by 1CP. The Imperium\u2019s Sword: You can re-roll Charge rolls made for this model\u2019s unit."
     ],
-    "faction": [
-      "Oath of Moment"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "Once per battle round , one unit from your army with this ability can use it when its unit is targeted with a Stratagem . If it does, reduce the CP cost of that use of that Stratagem by 1CP.",
-        "name": "Rites of Battle"
-      },
-      {
-        "type": "rule",
-        "text": "You can re-roll Charge rolls made for this model\u2019s unit.",
-        "name": "The Imperium\u2019s Sword"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Captain in Terminator Armour"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "storm bolter; relic weapon.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -124,48 +104,35 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s storm bolter can be replaced with 1 combi-weapon",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "This model\u2019s relic weapon can be replaced with 1 relic fist",
+          "items": []
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deep Strike , Leader"
+            "Deep Strike , Leader FACTION: Oath of Moment Rites of Battle: Once per battle round , one unit from your army with this ability can use it when its unit is targeted with a Stratagem . If it does, reduce the CP cost of that use of that Stratagem by 1CP. The Imperium\u2019s Sword: You can re-roll Charge rolls made for this model\u2019s unit."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Oath of Moment"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "Once per battle round , one unit from your army with this ability can use it when its unit is targeted with a Stratagem . If it does, reduce the CP cost of that use of that Stratagem by 1CP.",
-          "name": "Rites of Battle"
-        },
-        {
-          "type": "rule",
-          "text": "You can re-roll Charge rolls made for this model\u2019s unit.",
-          "name": "The Imperium\u2019s Sword"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Captain in Terminator Armour"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "storm bolter; relic weapon.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -195,5 +162,22 @@
         }
       ]
     }
-  ]
+  ],
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "quality": {
+    "rawSectionTitles": [
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "missingExpectedSections": [],
+    "warnings": []
+  }
 }

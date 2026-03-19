@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Gellerpox-Infected",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Gellerpox-Infected",
+    "canonicalSourceId": "wahapedia:3827b4ac425241bc67df2ed9e145fd4299f8a5aa",
     "faction_slug": "death-guard",
     "datasheet_slug": "Gellerpox-Infected",
+    "fetchedAt": "2026-03-19T17:16:51+00:00",
+    "contentHash": "7b2d4b207bfd2aa9776e5f172e33115e35932bb93912cb65e579ff434bd1fcd0",
     "output_slug": "death-guard"
   },
   "name": "Gellerpox Infected",
@@ -56,43 +62,13 @@
   },
   "abilities": {
     "core": [
-      "Feel No Pain 5+"
+      "Feel No Pain 5+ FACTION: Nurgle\u2019s Gift (Aura) Fearsome (Aura): While an enemy unit is within 6\" of this unit, each time that enemy unit takes a Battle-shock or Leadership test , subtract 1 from the result."
     ],
-    "faction": [
-      "Nurgle\u2019s Gift (Aura)"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "While an enemy unit is within 6\" of this unit, each time that enemy unit takes a Battle-shock or Leadership test , subtract 1 from the result.",
-        "name": "Fearsome (Aura)"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "4 Nightmare Hulks",
-        "3 Gellerpox Mutants"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "brutal weapons.",
-      "label": "Every Gellerpox Mutant is equipped with"
-    },
-    {
-      "type": "statement",
-      "text": "belly-flamer; hideous mutations.",
-      "label": "One Nightmare Hulk is equipped with"
-    },
-    {
-      "type": "statement",
-      "text": "hideous mutations.",
-      "label": "Every other Nightmare Hulk is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -132,48 +108,14 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Feel No Pain 5+"
+            "Feel No Pain 5+ FACTION: Nurgle\u2019s Gift (Aura) Fearsome (Aura): While an enemy unit is within 6\" of this unit, each time that enemy unit takes a Battle-shock or Leadership test , subtract 1 from the result."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Nurgle\u2019s Gift (Aura)"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "While an enemy unit is within 6\" of this unit, each time that enemy unit takes a Battle-shock or Leadership test , subtract 1 from the result.",
-          "name": "Fearsome (Aura)"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "4 Nightmare Hulks",
-            "3 Gellerpox Mutants"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "brutal weapons.",
-          "label": "Every Gellerpox Mutant is equipped with"
-        },
-        {
-          "type": "statement",
-          "text": "belly-flamer; hideous mutations.",
-          "label": "One Nightmare Hulk is equipped with"
-        },
-        {
-          "type": "statement",
-          "text": "hideous mutations.",
-          "label": "Every other Nightmare Hulk is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -185,5 +127,89 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS"
+    ]
+  }
 }

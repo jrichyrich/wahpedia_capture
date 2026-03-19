@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Farseer-Skyrunner",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Farseer-Skyrunner",
+    "canonicalSourceId": "wahapedia:8514178fb9bc6ef1375a81259916b14c9b2d6d6e",
     "faction_slug": "aeldari",
     "datasheet_slug": "Farseer-Skyrunner",
+    "fetchedAt": "2026-03-19T17:11:03+00:00",
+    "contentHash": "7c379d90446afc30a3d0219fde343a51aa7ec7ac75aa48b120de872ff6c0d7a1",
     "output_slug": "aeldari"
   },
   "name": "Farseer Skyrunner",
@@ -101,37 +107,13 @@
   },
   "abilities": {
     "core": [
-      "Leader"
+      "Leader FACTION: Battle Focus Branching Fates (Psychic): While this model is leading a unit, once per phase, you can change the result of one Hit roll , one Wound roll or one Damage roll made for a model in that unit to an unmodified 6. Misfortune (Psychic): At the end of your Movement phase , select one enemy unit within 18\" of and visible to this model. Until the start of your next Command phase , each time a model in that unit makes an attack, subtract 1 from the Wound roll . Each unit can only be selected for this ability once per turn."
     ],
-    "faction": [
-      "Battle Focus"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "While this model is leading a unit, once per phase, you can change the result of one Hit roll , one Wound roll or one Damage roll made for a model in that unit to an unmodified 6.",
-        "name": "Branching Fates (Psychic)"
-      },
-      {
-        "type": "rule",
-        "text": "At the end of your Movement phase , select one enemy unit within 18\" of and visible to this model. Until the start of your next Command phase , each time a model in that unit makes an attack, subtract 1 from the Wound roll . Each unit can only be selected for this ability once per turn.",
-        "name": "Misfortune (Psychic)"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Farseer Skyrunner"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "Eldritch Storm; shuriken pistol; twin shuriken catapult; witchblade.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -172,42 +154,14 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Leader"
+            "Leader FACTION: Battle Focus Branching Fates (Psychic): While this model is leading a unit, once per phase, you can change the result of one Hit roll , one Wound roll or one Damage roll made for a model in that unit to an unmodified 6. Misfortune (Psychic): At the end of your Movement phase , select one enemy unit within 18\" of and visible to this model. Until the start of your next Command phase , each time a model in that unit makes an attack, subtract 1 from the Wound roll . Each unit can only be selected for this ability once per turn."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Battle Focus"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "While this model is leading a unit, once per phase, you can change the result of one Hit roll , one Wound roll or one Damage roll made for a model in that unit to an unmodified 6.",
-          "name": "Branching Fates (Psychic)"
-        },
-        {
-          "type": "rule",
-          "text": "At the end of your Movement phase , select one enemy unit within 18\" of and visible to this model. Until the start of your next Command phase , each time a model in that unit makes an attack, subtract 1 from the Wound roll . Each unit can only be selected for this ability once per turn.",
-          "name": "Misfortune (Psychic)"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Farseer Skyrunner"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "Eldritch Storm; shuriken pistol; twin shuriken catapult; witchblade.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -230,5 +184,91 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS"
+    ]
+  }
 }

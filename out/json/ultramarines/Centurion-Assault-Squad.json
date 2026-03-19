@@ -3,7 +3,11 @@
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Centurion-Assault-Squad",
     "faction_slug": "space-marines",
     "datasheet_slug": "Centurion-Assault-Squad",
-    "output_slug": "ultramarines"
+    "output_slug": "ultramarines",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Centurion-Assault-Squad",
+    "canonicalSourceId": "wahapedia:7906ba31d5d76baeeb5a45078e5c529df0366484",
+    "fetchedAt": "2026-03-19T17:35:02+00:00",
+    "contentHash": "9a60af4bb4b90edda1e543a7af9950a739ca5b774c08219d9c1a8e2d36e1a439"
   },
   "name": "Centurion Assault Squad",
   "base_size": "\u230050mm",
@@ -76,30 +80,12 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Oath of Moment"
+      "Oath of Moment Annihilator Protocols: Melee weapons equipped by models in this unit have the [SUSTAINED HITS 2] ability when targeting MONSTER , VEHICLE or FORTIFICATION units."
     ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "Melee weapons equipped by models in this unit have the [SUSTAINED HITS 2] ability when targeting MONSTER , VEHICLE or FORTIFICATION units.",
-        "name": "Annihilator Protocols"
-      }
-    ],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Assault Centurion Sergeant",
-        "2-5 Assault Centurions"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "twin flamer; siege drills; Centurion bolters.",
-      "label": "Every model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -125,19 +111,29 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "Any number of models can each have their twin flamer replaced with 1 twin meltagun.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "Any number of models can each have their Centurion bolters replaced with 1 Centurion assault launcher.",
+          "items": []
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Oath of Moment"
+            "Oath of Moment Annihilator Protocols: Melee weapons equipped by models in this unit have the [SUSTAINED HITS 2] ability when targeting MONSTER , VEHICLE or FORTIFICATION units."
           ]
-        },
-        {
-          "type": "rule",
-          "text": "Melee weapons equipped by models in this unit have the [SUSTAINED HITS 2] ability when targeting MONSTER , VEHICLE or FORTIFICATION units.",
-          "name": "Annihilator Protocols"
         }
       ]
     },
@@ -145,27 +141,14 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "statement",
-          "text": "The bearer has the Grenades keyword.",
-          "label": "Centurion Assault Launcher"
+          "type": "text",
+          "text": "Centurion Assault Launcher: The bearer has the Grenades keyword."
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Assault Centurion Sergeant",
-            "2-5 Assault Centurions"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "twin flamer; siege drills; Centurion bolters.",
-          "label": "Every model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -181,5 +164,22 @@
         }
       ]
     }
-  ]
+  ],
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "quality": {
+    "rawSectionTitles": [
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [],
+    "warnings": []
+  }
 }

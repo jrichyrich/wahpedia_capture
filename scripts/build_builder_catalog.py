@@ -2,9 +2,16 @@ import argparse
 import json
 import re
 import shutil
+import sys
 from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
+
+try:
+    from datasheet_schema import EXPORT_SCHEMA_VERSION, PARSER_VERSION
+except ModuleNotFoundError:
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from datasheet_schema import EXPORT_SCHEMA_VERSION, PARSER_VERSION
 
 
 SCHEMA_VERSION = 4
@@ -67,6 +74,118 @@ def normalize_space(value: object) -> str:
 
 def normalize_label_key(text: str) -> str:
     return re.sub(r"[^a-z0-9]+", " ", (text or "").lower()).strip()
+
+
+def load_export_manifest(source_root: Path) -> dict[str, object]:
+    manifest_path = Path(source_root) / "export-manifest.json"
+    if not manifest_path.exists():
+        raise FileNotFoundError(f"Export manifest not found: {manifest_path}")
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    if not isinstance(manifest, dict) or not isinstance(manifest.get("records"), list):
+        raise ValueError(f"Export manifest has unexpected shape: {manifest_path}")
+    return manifest
+
+
+def filter_export_manifest_records(
+    records: list[dict[str, object]],
+    target_factions: list[str],
+) -> list[dict[str, object]]:
+    target = set(target_factions)
+    return [
+        record
+        for record in records
+        if str(record.get("outputSlug") or "") in target
+    ]
+
+
+def validate_export_contract(
+    source_root: Path,
+    target_factions: list[str],
+) -> dict[tuple[str, str], dict[str, object]]:
+    manifest = load_export_manifest(source_root)
+    if manifest.get("exportSchemaVersion") != EXPORT_SCHEMA_VERSION:
+        raise ValueError(
+            f"Export manifest schema version mismatch: expected {EXPORT_SCHEMA_VERSION}, got {manifest.get('exportSchemaVersion')}"
+        )
+    if manifest.get("parserVersion") != PARSER_VERSION:
+        raise ValueError(
+            f"Export manifest parser version mismatch: expected {PARSER_VERSION}, got {manifest.get('parserVersion')}"
+        )
+
+    records = filter_export_manifest_records(manifest.get("records", []), target_factions)
+    stale_records = [
+        record
+        for record in records
+        if record.get("exportSchemaVersion") != EXPORT_SCHEMA_VERSION
+        or record.get("parserVersion") != PARSER_VERSION
+    ]
+    if stale_records:
+        sample = stale_records[0]
+        raise ValueError(
+            "Stale exported datasheet detected: "
+            f"{sample.get('outputSlug')}/{sample.get('datasheetSlug')} "
+            f"(schema={sample.get('exportSchemaVersion')}, parser={sample.get('parserVersion')})"
+        )
+
+    drift_by_source: dict[str, dict[str, list[str]]] = {}
+    for record in records:
+        canonical_source_id = str(record.get("canonicalSourceId") or "").strip()
+        shared_core_hash = str(record.get("sharedCoreHash") or "").strip()
+        if not canonical_source_id or not shared_core_hash:
+            continue
+        entries = drift_by_source.setdefault(canonical_source_id, {})
+        entries.setdefault(shared_core_hash, []).append(
+            f"{record.get('outputSlug')}/{record.get('datasheetSlug')}"
+        )
+
+    drift_sources = [
+        (canonical_source_id, variants)
+        for canonical_source_id, variants in drift_by_source.items()
+        if len(variants) > 1
+    ]
+    if drift_sources:
+        canonical_source_id, variants = sorted(drift_sources, key=lambda item: item[0])[0]
+        variant_labels = [
+            ", ".join(sorted(entries))
+            for _, entries in sorted(variants.items(), key=lambda item: item[0])
+        ]
+        raise ValueError(
+            "Duplicate canonical-source drift detected for "
+            f"{canonical_source_id}: " + " | ".join(variant_labels)
+        )
+
+    return {
+        (str(record.get("outputSlug") or ""), str(record.get("datasheetSlug") or "")): record
+        for record in records
+    }
+
+
+def validate_card_export_metadata(
+    card: dict[str, object],
+    faction_slug: str,
+    record_lookup: dict[tuple[str, str], dict[str, object]],
+    index_path: Path,
+) -> None:
+    if card.get("exportSchemaVersion") != EXPORT_SCHEMA_VERSION:
+        raise ValueError(
+            f"Card export schema version mismatch in {index_path}: expected {EXPORT_SCHEMA_VERSION}, got {card.get('exportSchemaVersion')}"
+        )
+    if card.get("parserVersion") != PARSER_VERSION:
+        raise ValueError(
+            f"Card parser version mismatch in {index_path}: expected {PARSER_VERSION}, got {card.get('parserVersion')}"
+        )
+    source = card.get("source", {})
+    output_slug = str(source.get("output_slug") or faction_slug)
+    datasheet_slug = str(source.get("datasheet_slug") or "")
+    record = record_lookup.get((output_slug, datasheet_slug))
+    if not record:
+        raise ValueError(
+            f"Card missing export-manifest record in {index_path}: {output_slug}/{datasheet_slug}"
+        )
+    if source.get("canonicalSourceId") != record.get("canonicalSourceId"):
+        raise ValueError(
+            f"Canonical source mismatch in {index_path}: {output_slug}/{datasheet_slug}"
+        )
 
 
 def parse_points_value(value: object) -> int | None:
@@ -1083,9 +1202,13 @@ def normalize_card(faction_slug: str, card: dict[str, object]) -> tuple[dict[str
         "factionSlug": faction_slug,
         "source": {
             "url": source.get("url"),
+            "normalizedUrl": source.get("normalizedUrl"),
+            "canonicalSourceId": source.get("canonicalSourceId"),
             "sourceFactionSlug": source.get("faction_slug"),
             "datasheetSlug": source.get("datasheet_slug"),
             "outputSlug": source.get("output_slug") or faction_slug,
+            "fetchedAt": source.get("fetchedAt"),
+            "contentHash": source.get("contentHash"),
         },
         "baseSize": card.get("base_size"),
         "stats": {
@@ -1364,6 +1487,7 @@ def build_all(
 
     available_factions = sorted(path.name for path in source_root.iterdir() if path.is_dir())
     target_factions = factions or available_factions
+    record_lookup = validate_export_contract(source_root, target_factions)
 
     manifest_factions = []
     report_factions = []
@@ -1378,6 +1502,8 @@ def build_all(
         if not index_path.exists():
             raise FileNotFoundError(f"Faction index not found: {index_path}")
         cards = json.loads(index_path.read_text(encoding="utf-8"))
+        for card in cards:
+            validate_card_export_metadata(card, faction_slug, record_lookup, index_path)
         output_catalog_path = catalog_dir / f"{faction_slug}.json"
         catalog = build_faction_catalog(faction_slug, cards, output_catalog_path)
         built_catalogs.append(catalog)

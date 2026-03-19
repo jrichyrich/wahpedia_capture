@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Nork-Deddog",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Nork-Deddog",
+    "canonicalSourceId": "wahapedia:1242eda8b50c4c79a05c1c3fefabc33513c49cca",
     "faction_slug": "astra-militarum",
     "datasheet_slug": "Nork-Deddog",
+    "fetchedAt": "2026-03-19T17:11:39+00:00",
+    "contentHash": "7e7a9b184d5aebda83a0ede85eca34212b16c874489893ff91c02319d43131dd",
     "output_slug": "astra-militarum"
   },
   "name": "Nork Deddog",
@@ -47,35 +53,13 @@
   },
   "abilities": {
     "core": [
-      "Feel No Pain 5+"
+      "Feel No Pain 5+ Ogryn Bodyguard: While one or more OFFICER models are in the same unit as this model, those OFFICER models have the Feel No Pain 4+ ability. Thunderous Head-butt: Each time this model\u2019s unit is selected to fight, you can select one enemy unit within Engagement Range of this model and roll one D6: on a 2-5, that enemy unit suffers D3 mortal wounds ; on a 6, that enemy unit suffers D3+3 mortal wounds."
     ],
     "faction": [],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "While one or more OFFICER models are in the same unit as this model, those OFFICER models have the Feel No Pain 4+ ability.",
-        "name": "Ogryn Bodyguard"
-      },
-      {
-        "type": "rule",
-        "text": "Each time this model\u2019s unit is selected to fight, you can select one enemy unit within Engagement Range of this model and roll one D6: on a 2-5, that enemy unit suffers D3 mortal wounds ; on a 6, that enemy unit suffers D3+3 mortal wounds.",
-        "name": "Thunderous Head-butt"
-      }
-    ],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Nork Deddog \u2013 EPIC HERO"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "ripper gun; huge knife.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -116,35 +100,14 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Feel No Pain 5+"
+            "Feel No Pain 5+ Ogryn Bodyguard: While one or more OFFICER models are in the same unit as this model, those OFFICER models have the Feel No Pain 4+ ability. Thunderous Head-butt: Each time this model\u2019s unit is selected to fight, you can select one enemy unit within Engagement Range of this model and roll one D6: on a 2-5, that enemy unit suffers D3 mortal wounds ; on a 6, that enemy unit suffers D3+3 mortal wounds."
           ]
-        },
-        {
-          "type": "rule",
-          "text": "While one or more OFFICER models are in the same unit as this model, those OFFICER models have the Feel No Pain 4+ ability.",
-          "name": "Ogryn Bodyguard"
-        },
-        {
-          "type": "rule",
-          "text": "Each time this model\u2019s unit is selected to fight, you can select one enemy unit within Engagement Range of this model and roll one D6: on a 2-5, that enemy unit suffers D3 mortal wounds ; on a 6, that enemy unit suffers D3+3 mortal wounds.",
-          "name": "Thunderous Head-butt"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Nork Deddog \u2013 EPIC HERO"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "ripper gun; huge knife.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -156,5 +119,85 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "LOYAL PROTECTOR",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY"
+    ],
+    "exportedSectionTitles": [
+      "LOYAL PROTECTOR",
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY"
+    ]
+  }
 }

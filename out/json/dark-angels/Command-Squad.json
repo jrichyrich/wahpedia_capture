@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Command-Squad",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Command-Squad",
+    "canonicalSourceId": "wahapedia:8bcb52b865a895858442d54f6bfb2ce213f14bb1",
     "faction_slug": "space-marines",
     "datasheet_slug": "Command-Squad",
+    "fetchedAt": "2026-03-19T17:15:38+00:00",
+    "contentHash": "04d541d86c18ca250909e3a1829448ee28a2327c11d1aff9a54455cd6b17e72c",
     "output_slug": "dark-angels"
   },
   "name": "Command Squad",
@@ -390,57 +396,12 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Oath of Moment"
+      "Oath of Moment Narthecium: While this unit contains an APOTHECARY , in your Command phase , you can return 1 destroyed model (excluding CHARACTER models) to this unit. Astartes Banner: While this unit contains a Company Ancient, add 1 to the Objective Control characteristic of models in this unit. Honour or Death: While this unit contains a Company Champion, add 1 to Advance and Charge rolls made for this unit and you can target this unit with the Heroic Intervention Stratagem for 0CP, even if you have already used that Stratagem on a different unit this phase."
     ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "While this unit contains an APOTHECARY , in your Command phase , you can return 1 destroyed model (excluding CHARACTER models) to this unit.",
-        "name": "Narthecium"
-      },
-      {
-        "type": "rule",
-        "text": "While this unit contains a Company Ancient, add 1 to the Objective Control characteristic of models in this unit.",
-        "name": "Astartes Banner"
-      },
-      {
-        "type": "rule",
-        "text": "While this unit contains a Company Champion, add 1 to Advance and Charge rolls made for this unit and you can target this unit with the Heroic Intervention Stratagem for 0CP, even if you have already used that Stratagem on a different unit this phase.",
-        "name": "Honour or Death"
-      }
-    ],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Apothecary",
-        "1 Company Ancient",
-        "1 Company Champion",
-        "2 Company Veterans"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "bolt pistol; Astartes chainsword.",
-      "label": "The Apothecary is equipped with"
-    },
-    {
-      "type": "statement",
-      "text": "bolt pistol; close combat weapon.",
-      "label": "The Company Ancient is equipped with"
-    },
-    {
-      "type": "statement",
-      "text": "bolt pistol; Champion\u2019s blade; Astartes shield.",
-      "label": "The Company Champion is equipped with"
-    },
-    {
-      "type": "statement",
-      "text": "bolt pistol; boltgun, close combat weapon.",
-      "label": "Each Company Veteran is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -462,29 +423,71 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "Any number of models can each have their bolt pistol replaced with one of the following:",
+          "items": [
+            "1 hand flamer",
+            "1 grav-pistol",
+            "1 inferno pistol",
+            "1 plasma pistol"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "Any number of Company Veterans can each have their bolt pistol replaced with 1 Astartes shield.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "Any number of Company Veterans can each have their bolt pistol and boltgun replaced with 1 twin lightning claws.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "The Company Ancient\u2019s bolt pistol can be replaced with one of the following:",
+          "items": [
+            "1 boltgun",
+            "1 combi-weapon"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "Any number of Company Veterans can each have their boltgun replaced with one of the following:",
+          "items": [
+            "1 Astartes chainsword",
+            "1 Astartes shield",
+            "1 combi-weapon",
+            "1 flamer",
+            "1 heavy bolter",
+            "1 heavy flamer",
+            "1 grav-cannon",
+            "1 grav-gun",
+            "1 lascannon",
+            "1 meltagun",
+            "1 missile launcher",
+            "1 multi-melta",
+            "1 plasma cannon",
+            "1 plasma gun",
+            "1 storm bolter",
+            "1 power fist",
+            "1 power weapon",
+            "1 thunder hammer"
+          ]
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Oath of Moment"
+            "Oath of Moment Narthecium: While this unit contains an APOTHECARY , in your Command phase , you can return 1 destroyed model (excluding CHARACTER models) to this unit. Astartes Banner: While this unit contains a Company Ancient, add 1 to the Objective Control characteristic of models in this unit. Honour or Death: While this unit contains a Company Champion, add 1 to Advance and Charge rolls made for this unit and you can target this unit with the Heroic Intervention Stratagem for 0CP, even if you have already used that Stratagem on a different unit this phase."
           ]
-        },
-        {
-          "type": "rule",
-          "text": "While this unit contains an APOTHECARY , in your Command phase , you can return 1 destroyed model (excluding CHARACTER models) to this unit.",
-          "name": "Narthecium"
-        },
-        {
-          "type": "rule",
-          "text": "While this unit contains a Company Ancient, add 1 to the Objective Control characteristic of models in this unit.",
-          "name": "Astartes Banner"
-        },
-        {
-          "type": "rule",
-          "text": "While this unit contains a Company Champion, add 1 to Advance and Charge rolls made for this unit and you can target this unit with the Heroic Intervention Stratagem for 0CP, even if you have already used that Stratagem on a different unit this phase.",
-          "name": "Honour or Death"
         }
       ]
     },
@@ -492,44 +495,14 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "statement",
-          "text": "The bearer has a 4+ invulnerable save .",
-          "label": "Astartes Shield"
+          "type": "text",
+          "text": "Astartes Shield: The bearer has a 4+ invulnerable save ."
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Apothecary",
-            "1 Company Ancient",
-            "1 Company Champion",
-            "2 Company Veterans"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "bolt pistol; Astartes chainsword.",
-          "label": "The Apothecary is equipped with"
-        },
-        {
-          "type": "statement",
-          "text": "bolt pistol; close combat weapon.",
-          "label": "The Company Ancient is equipped with"
-        },
-        {
-          "type": "statement",
-          "text": "bolt pistol; Champion\u2019s blade; Astartes shield.",
-          "label": "The Company Champion is equipped with"
-        },
-        {
-          "type": "statement",
-          "text": "bolt pistol; boltgun, close combat weapon.",
-          "label": "Each Company Veteran is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -550,5 +523,97 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "ATTACHED UNITS",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "ATTACHED UNITS"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS"
+    ]
+  }
 }

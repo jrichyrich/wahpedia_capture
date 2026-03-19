@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Cronos",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Cronos",
+    "canonicalSourceId": "wahapedia:8ee04e7a03e5f9efd4319f9c2a324c869cdee348",
     "faction_slug": "drukhari",
     "datasheet_slug": "Cronos",
+    "fetchedAt": "2026-03-19T17:17:20+00:00",
+    "contentHash": "b5ddea630fd226f9d7cd755d21c7ca9176b6a946430f9dd69270d70ad067155c",
     "output_slug": "drukhari"
   },
   "name": "Cronos",
@@ -62,32 +68,13 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise 1 , Feel No Pain 5+"
+      "Deadly Demise 1 , Feel No Pain 5+ FACTION: Power from Pain Pain Parasite (Pain): In your Shooting phase or the Fight phase , when you select this unit to shoot or fight, you can spend 1 Pain token to Empower this unit. While Empowered, each time this unit shoots or fights, after it has resolved its attacks, if one or more enemy models were destroyed as a result of those attacks, one model in this unit regains up to 3 lost wounds (if all models in this unit have their starting number of wounds and this unit is below its Starting Strength , 1 model is returned to this unit with 3 wounds remaining). Pain Engine (Aura): Each time you spend 1 Pain token to Empower a friendly unit within 9\" of this unit, roll one D6, adding 1 to the result if one or more models in this unit are not equipped with a spirit vortex: on a 5+, you gain 1 Pain token. Designer\u2019s Note: Pain tokens you spend for reasons other than Empowering a unit do not trigger this ability."
     ],
-    "faction": [
-      "Power from Pain"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "Each time you spend 1 Pain token to Empower a friendly unit within 9\" of this unit, roll one D6, adding 1 to the result if one or more models in this unit are not equipped with a spirit vortex: on a 5+, you gain 1 Pain token.",
-        "name": "Pain Engine (Aura)"
-      },
-      {
-        "type": "rule",
-        "text": "Pain tokens you spend for reasons other than Empowering a unit do not trigger this ability.",
-        "name": "Designer\u2019s Note"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1-2 Cronos"
-      ]
-    },
     {
       "type": "points",
       "rows": [
@@ -130,37 +117,14 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise 1 , Feel No Pain 5+"
+            "Deadly Demise 1 , Feel No Pain 5+ FACTION: Power from Pain Pain Parasite (Pain): In your Shooting phase or the Fight phase , when you select this unit to shoot or fight, you can spend 1 Pain token to Empower this unit. While Empowered, each time this unit shoots or fights, after it has resolved its attacks, if one or more enemy models were destroyed as a result of those attacks, one model in this unit regains up to 3 lost wounds (if all models in this unit have their starting number of wounds and this unit is below its Starting Strength , 1 model is returned to this unit with 3 wounds remaining). Pain Engine (Aura): Each time you spend 1 Pain token to Empower a friendly unit within 9\" of this unit, roll one D6, adding 1 to the result if one or more models in this unit are not equipped with a spirit vortex: on a 5+, you gain 1 Pain token. Designer\u2019s Note: Pain tokens you spend for reasons other than Empowering a unit do not trigger this ability."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Power from Pain"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "Each time you spend 1 Pain token to Empower a friendly unit within 9\" of this unit, roll one D6, adding 1 to the result if one or more models in this unit are not equipped with a spirit vortex: on a 5+, you gain 1 Pain token.",
-          "name": "Pain Engine (Aura)"
-        },
-        {
-          "type": "rule",
-          "text": "Pain tokens you spend for reasons other than Empowering a unit do not trigger this ability.",
-          "name": "Designer\u2019s Note"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1-2 Cronos"
-          ]
-        },
         {
           "type": "points",
           "rows": [
@@ -176,5 +140,85 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY"
+    ]
+  }
 }

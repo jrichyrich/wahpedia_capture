@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Vertus-Praetors",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Vertus-Praetors",
+    "canonicalSourceId": "wahapedia:7b26905a89603bb8fd8dec815c2307cb65592bcf",
     "faction_slug": "adeptus-custodes",
     "datasheet_slug": "Vertus-Praetors",
+    "fetchedAt": "2026-03-19T17:10:53+00:00",
+    "contentHash": "5edc899861dd203ff8a10db572ed868a0a6712211242a5f50ac29f8c196168eb",
     "output_slug": "adeptus-custodes"
   },
   "name": "Vertus Praetors",
@@ -62,34 +68,12 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Martial Ka\u2019tah"
+      "Martial Ka\u2019tah Turbo-boost: Each time this unit Advances , do not make an Advance roll. Instead, until the end of the phase, add 6\" to the Move characteristic of models in this unit. Quicksilver Execution: Once per battle, after this unit ends a Normal Move or Advance move , you can select one enemy unit (excluding MONSTER and VEHICLE units) that it moved over during that move, then roll one D6 for each model in this unit: for each 2+, that enemy unit suffers 2 mortal wounds ."
     ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "Each time this unit Advances , do not make an Advance roll. Instead, until the end of the phase, add 6\" to the Move characteristic of models in this unit.",
-        "name": "Turbo-boost"
-      },
-      {
-        "type": "rule",
-        "text": "Once per battle, after this unit ends a Normal Move or Advance move , you can select one enemy unit (excluding MONSTER and VEHICLE units) that it moved over during that move, then roll one D6 for each model in this unit: for each 2+, that enemy unit suffers 2 mortal wounds .",
-        "name": "Quicksilver Execution"
-      }
-    ],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "2-3 Vertus Praetors"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "salvo launcher; interceptor lance.",
-      "label": "Every model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -131,35 +115,14 @@
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Martial Ka\u2019tah"
+            "Martial Ka\u2019tah Turbo-boost: Each time this unit Advances , do not make an Advance roll. Instead, until the end of the phase, add 6\" to the Move characteristic of models in this unit. Quicksilver Execution: Once per battle, after this unit ends a Normal Move or Advance move , you can select one enemy unit (excluding MONSTER and VEHICLE units) that it moved over during that move, then roll one D6 for each model in this unit: for each 2+, that enemy unit suffers 2 mortal wounds ."
           ]
-        },
-        {
-          "type": "rule",
-          "text": "Each time this unit Advances , do not make an Advance roll. Instead, until the end of the phase, add 6\" to the Move characteristic of models in this unit.",
-          "name": "Turbo-boost"
-        },
-        {
-          "type": "rule",
-          "text": "Once per battle, after this unit ends a Normal Move or Advance move , you can select one enemy unit (excluding MONSTER and VEHICLE units) that it moved over during that move, then roll one D6 for each model in this unit: for each 2+, that enemy unit suffers 2 mortal wounds .",
-          "name": "Quicksilver Execution"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "2-3 Vertus Praetors"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "salvo launcher; interceptor lance.",
-          "label": "Every model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -175,5 +138,93 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS"
+    ]
+  }
 }

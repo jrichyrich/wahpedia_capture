@@ -1,8 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Company-Heroes",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Company-Heroes",
+    "canonicalSourceId": "wahapedia:54c5af985db32130c57bf17cc1e811ae8ba05d23",
     "faction_slug": "space-marines",
-    "datasheet_slug": "Company-Heroes"
+    "datasheet_slug": "Company-Heroes",
+    "fetchedAt": "2026-03-19T17:28:32+00:00",
+    "contentHash": "b81382ebbf86197070177aaa4fcfaa63972124b46acf04d7f087106503468253",
+    "output_slug": "space-marines"
   },
   "name": "Company Heroes",
   "base_size": "\u230040mm",
@@ -93,51 +100,12 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Oath of Moment"
+      "Oath of Moment Astartes Banner: While this unit contains an Ancient, add 1 to the Objective Control characteristic of models in this unit. Command Squad: While a CHARACTER model is leading this unit, each time an attack targets this unit, subtract 1 from the Wound roll ."
     ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "While this unit contains an Ancient, add 1 to the Objective Control characteristic of models in this unit.",
-        "name": "Astartes Banner"
-      },
-      {
-        "type": "rule",
-        "text": "While a CHARACTER model is leading this unit, each time an attack targets this unit, subtract 1 from the Wound roll .",
-        "name": "Command Squad"
-      }
-    ],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Ancient",
-        "1 Company Champion",
-        "2 Company Veterans"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "bolt pistol; bolt rifle; close combat weapon.",
-      "label": "The Ancient is equipped with"
-    },
-    {
-      "type": "statement",
-      "text": "bolt pistol; master-crafted power weapon.",
-      "label": "The Company Champion is equipped with"
-    },
-    {
-      "type": "statement",
-      "text": "bolt pistol; master-crafted heavy bolter; close combat weapon.",
-      "label": "One Company Veteran is equipped with"
-    },
-    {
-      "type": "statement",
-      "text": "bolt pistol; master-crafted bolt rifle; close combat weapon.",
-      "label": "One Company Veteran is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -166,52 +134,14 @@
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Oath of Moment"
+            "Oath of Moment Astartes Banner: While this unit contains an Ancient, add 1 to the Objective Control characteristic of models in this unit. Command Squad: While a CHARACTER model is leading this unit, each time an attack targets this unit, subtract 1 from the Wound roll ."
           ]
-        },
-        {
-          "type": "rule",
-          "text": "While this unit contains an Ancient, add 1 to the Objective Control characteristic of models in this unit.",
-          "name": "Astartes Banner"
-        },
-        {
-          "type": "rule",
-          "text": "While a CHARACTER model is leading this unit, each time an attack targets this unit, subtract 1 from the Wound roll .",
-          "name": "Command Squad"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Ancient",
-            "1 Company Champion",
-            "2 Company Veterans"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "bolt pistol; bolt rifle; close combat weapon.",
-          "label": "The Ancient is equipped with"
-        },
-        {
-          "type": "statement",
-          "text": "bolt pistol; master-crafted power weapon.",
-          "label": "The Company Champion is equipped with"
-        },
-        {
-          "type": "statement",
-          "text": "bolt pistol; master-crafted heavy bolter; close combat weapon.",
-          "label": "One Company Veteran is equipped with"
-        },
-        {
-          "type": "statement",
-          "text": "bolt pistol; master-crafted bolt rifle; close combat weapon.",
-          "label": "One Company Veteran is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -232,5 +162,93 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "COMPANY HEROES",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "exportedSectionTitles": [
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "COMPANY HEROES"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS"
+    ]
+  }
 }

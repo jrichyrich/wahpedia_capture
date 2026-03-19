@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Plagueburst-Crawler",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Plagueburst-Crawler",
+    "canonicalSourceId": "wahapedia:4a466dbb07d91e9325dc0e34ed57f659ab04cb9a",
     "faction_slug": "death-guard",
     "datasheet_slug": "Plagueburst-Crawler",
+    "fetchedAt": "2026-03-19T17:17:05+00:00",
+    "contentHash": "c39c2c38a5bad723bfd1ba1033bba3859c77f4e08f493fa8f52df628eefee358",
     "output_slug": "death-guard"
   },
   "name": "Plagueburst Crawler",
@@ -99,32 +105,13 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D3"
+      "Deadly Demise D3 FACTION: Nurgle\u2019s Gift (Aura) Spore-laced Shock Waves: In your Shooting phase , each time you select a target for this model\u2019s Plagueburst mortar, roll one D6 for the target unit and every other enemy unit within 3\" of the target unit, adding 1 to that roll if the unit being rolled for is Afflicted . On a 6+, the unit being rolled for is struck by spores; after resolving all of this model\u2019s attacks against the target unit, each unit struck by spores suffers D3 mortal wounds ."
     ],
-    "faction": [
-      "Nurgle\u2019s Gift (Aura)"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "In your Shooting phase , each time you select a target for this model\u2019s Plagueburst mortar, roll one D6 for the target unit and every other enemy unit within 3\" of the target unit, adding 1 to that roll if the unit being rolled for is Afflicted . On a 6+, the unit being rolled for is struck by spores; after resolving all of this model\u2019s attacks against the target unit, each unit struck by spores suffers D3 mortal wounds .",
-        "name": "Spore-laced Shock Waves"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Plagueburst Crawler"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "2 entropy cannons; heavy slugger; Plagueburst mortar; armoured tracks.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -168,37 +155,14 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D3"
+            "Deadly Demise D3 FACTION: Nurgle\u2019s Gift (Aura) Spore-laced Shock Waves: In your Shooting phase , each time you select a target for this model\u2019s Plagueburst mortar, roll one D6 for the target unit and every other enemy unit within 3\" of the target unit, adding 1 to that roll if the unit being rolled for is Afflicted . On a 6+, the unit being rolled for is struck by spores; after resolving all of this model\u2019s attacks against the target unit, each unit struck by spores suffers D3 mortal wounds ."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Nurgle\u2019s Gift (Aura)"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "In your Shooting phase , each time you select a target for this model\u2019s Plagueburst mortar, roll one D6 for the target unit and every other enemy unit within 3\" of the target unit, adding 1 to that roll if the unit being rolled for is Afflicted . On a 6+, the unit being rolled for is struck by spores; after resolving all of this model\u2019s attacks against the target unit, each unit struck by spores suffers D3 mortal wounds .",
-          "name": "Spore-laced Shock Waves"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Plagueburst Crawler"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "2 entropy cannons; heavy slugger; Plagueburst mortar; armoured tracks.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -219,5 +183,87 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-4 WOUNDS REMAINING",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-4 WOUNDS REMAINING"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY"
+    ]
+  }
 }

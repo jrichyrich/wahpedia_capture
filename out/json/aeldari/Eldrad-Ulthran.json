@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Eldrad-Ulthran",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Eldrad-Ulthran",
+    "canonicalSourceId": "wahapedia:87ac4278c64fbe51a37ba413855698438e0827c9",
     "faction_slug": "aeldari",
     "datasheet_slug": "Eldrad-Ulthran",
+    "fetchedAt": "2026-03-19T17:11:01+00:00",
+    "contentHash": "36abc25a64bd082116f005aeddfcc24da43a8f75fd1dbade0df91290e9512af4",
     "output_slug": "aeldari"
   },
   "name": "Eldrad Ulthran",
@@ -64,37 +70,13 @@
   },
   "abilities": {
     "core": [
-      "Leader"
+      "Leader FACTION: Battle Focus Diviner of Futures: At the start of your Command phase , if this model is on the battlefield, you gain 1CP. Doom (Psychic): At the end of your Movement phase , select one enemy unit within 18\" of and visible to this model. Until the start of your next Command phase , each time a friendly AELDARI model makes an attack that targets that enemy unit, add 1 to the Wound roll ."
     ],
-    "faction": [
-      "Battle Focus"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "At the start of your Command phase , if this model is on the battlefield, you gain 1CP.",
-        "name": "Diviner of Futures"
-      },
-      {
-        "type": "rule",
-        "text": "At the end of your Movement phase , select one enemy unit within 18\" of and visible to this model. Until the start of your next Command phase , each time a friendly AELDARI model makes an attack that targets that enemy unit, add 1 to the Wound roll .",
-        "name": "Doom (Psychic)"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Eldrad Ulthran \u2013 EPIC HERO"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "Mind War; shuriken pistol; Staff of Ulthamar and witchblade.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -125,42 +107,14 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Leader"
+            "Leader FACTION: Battle Focus Diviner of Futures: At the start of your Command phase , if this model is on the battlefield, you gain 1CP. Doom (Psychic): At the end of your Movement phase , select one enemy unit within 18\" of and visible to this model. Until the start of your next Command phase , each time a friendly AELDARI model makes an attack that targets that enemy unit, add 1 to the Wound roll ."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Battle Focus"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "At the start of your Command phase , if this model is on the battlefield, you gain 1CP.",
-          "name": "Diviner of Futures"
-        },
-        {
-          "type": "rule",
-          "text": "At the end of your Movement phase , select one enemy unit within 18\" of and visible to this model. Until the start of your next Command phase , each time a friendly AELDARI model makes an attack that targets that enemy unit, add 1 to the Wound roll .",
-          "name": "Doom (Psychic)"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Eldrad Ulthran \u2013 EPIC HERO"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "Mind War; shuriken pistol; Staff of Ulthamar and witchblade.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -185,5 +139,85 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY"
+    ],
+    "exportedSectionTitles": [
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY"
+    ]
+  }
 }

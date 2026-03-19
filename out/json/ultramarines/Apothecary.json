@@ -3,7 +3,11 @@
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Apothecary",
     "faction_slug": "space-marines",
     "datasheet_slug": "Apothecary",
-    "output_slug": "ultramarines"
+    "output_slug": "ultramarines",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Apothecary",
+    "canonicalSourceId": "wahapedia:d91f12c38fec2fd4a9489e319e564cf034c8a06b",
+    "fetchedAt": "2026-03-19T17:35:02+00:00",
+    "contentHash": "9a615e8e925e1e333d67e02842eeeec83f7f6f1bd360e1b90ea9fe3f1c1ab725"
   },
   "name": "Apothecary",
   "base_size": "\u230040mm",
@@ -57,37 +61,13 @@
   },
   "abilities": {
     "core": [
-      "Leader"
+      "Leader FACTION: Oath of Moment Narthecium: While this model is leading a unit, in your Command phase , you can return 1 destroyed model (excluding CHARACTER models) to that unit. Gene-seed Recovery: When this model\u2019s Bodyguard unit is destroyed, roll one D6: on a 2+, you gain 1CP"
     ],
-    "faction": [
-      "Oath of Moment"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "While this model is leading a unit, in your Command phase , you can return 1 destroyed model (excluding CHARACTER models) to that unit.",
-        "name": "Narthecium"
-      },
-      {
-        "type": "rule",
-        "text": "When this model\u2019s Bodyguard unit is destroyed, roll one D6: on a 2+, you gain 1CP",
-        "name": "Gene-seed Recovery"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Apothecary"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "absolvor bolt pistol; reductor pistol; close combat weapon.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -117,42 +97,14 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Leader"
+            "Leader FACTION: Oath of Moment Narthecium: While this model is leading a unit, in your Command phase , you can return 1 destroyed model (excluding CHARACTER models) to that unit. Gene-seed Recovery: When this model\u2019s Bodyguard unit is destroyed, roll one D6: on a 2+, you gain 1CP"
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Oath of Moment"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "While this model is leading a unit, in your Command phase , you can return 1 destroyed model (excluding CHARACTER models) to that unit.",
-          "name": "Narthecium"
-        },
-        {
-          "type": "rule",
-          "text": "When this model\u2019s Bodyguard unit is destroyed, roll one D6: on a 2+, you gain 1CP",
-          "name": "Gene-seed Recovery"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Apothecary"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "absolvor bolt pistol; reductor pistol; close combat weapon.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -194,5 +146,21 @@
         }
       ]
     }
-  ]
+  ],
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "quality": {
+    "rawSectionTitles": [
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "exportedSectionTitles": [
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "missingExpectedSections": [],
+    "warnings": []
+  }
 }

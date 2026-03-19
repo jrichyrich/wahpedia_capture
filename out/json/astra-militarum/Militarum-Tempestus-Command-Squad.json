@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Militarum-Tempestus-Command-Squad",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Militarum-Tempestus-Command-Squad",
+    "canonicalSourceId": "wahapedia:90ab227ab1f3b4a176886da27802c37bcfc7f6e0",
     "faction_slug": "astra-militarum",
     "datasheet_slug": "Militarum-Tempestus-Command-Squad",
+    "fetchedAt": "2026-03-19T17:11:39+00:00",
+    "contentHash": "e8eca7026371d4b3cc43a771bf82d02eb7c23e22764de31e2f77da340352a775",
     "output_slug": "astra-militarum"
   },
   "name": "Militarum Tempestus Command Squad",
@@ -188,38 +194,13 @@
   },
   "abilities": {
     "core": [
-      "Deep Strike , Leader"
+      "Deep Strike , Leader FACTION: Voice of Command Tempestor Prime: While this unit contains a Tempestor Prime, ranged weapons equipped by models in this unit have the [SUSTAINED HITS 1] ability."
     ],
-    "faction": [
-      "Voice of Command"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "While this unit contains a Tempestor Prime, ranged weapons equipped by models in this unit have the [SUSTAINED HITS 1] ability.",
-        "name": "Tempestor Prime"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Tempestor Prime",
-        "4 Tempestus Scions"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "bolt pistol; Tempestus dagger.",
-      "label": "The Tempestor Prime is equipped with"
-    },
-    {
-      "type": "statement",
-      "text": "hot-shot lasgun; close combat weapon.",
-      "label": "Every Tempestus Scion is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -295,20 +276,8 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deep Strike , Leader"
+            "Deep Strike , Leader FACTION: Voice of Command Tempestor Prime: While this unit contains a Tempestor Prime, ranged weapons equipped by models in this unit have the [SUSTAINED HITS 1] ability."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Voice of Command"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "While this unit contains a Tempestor Prime, ranged weapons equipped by models in this unit have the [SUSTAINED HITS 1] ability.",
-          "name": "Tempestor Prime"
         }
       ]
     },
@@ -316,47 +285,14 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "statement",
-          "text": "At the start of your Command phase , if the bearer\u2019s unit is below its Starting Strength , you can return up to D3 destroyed Tempestus Scions models to this unit.",
-          "label": "Medi-pack"
-        },
-        {
-          "type": "statement",
-          "text": "Add 1 to the Objective Control characteristic of models in the bearer\u2019s unit.",
-          "label": "Regimental Standard"
-        },
-        {
-          "type": "statement",
-          "text": "While the bearer is leading a unit, that unit can be affected by up to two different Orders at the same time.",
-          "label": "Command Rod"
-        },
-        {
-          "type": "statement",
-          "text": "Each time the OFFICER in the bearer\u2019s unit issues an Order , it can issue it to an eligible unit up to 24\" away.",
-          "label": "Master Vox"
+          "type": "text",
+          "text": "Medi-pack: At the start of your Command phase , if the bearer\u2019s unit is below its Starting Strength , you can return up to D3 destroyed Tempestus Scions models to this unit. Regimental Standard: Add 1 to the Objective Control characteristic of models in the bearer\u2019s unit. Command Rod: While the bearer is leading a unit, that unit can be affected by up to two different Orders at the same time. Master Vox: Each time the OFFICER in the bearer\u2019s unit issues an Order , it can issue it to an eligible unit up to 24\" away."
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Tempestor Prime",
-            "4 Tempestus Scions"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "bolt pistol; Tempestus dagger.",
-          "label": "The Tempestor Prime is equipped with"
-        },
-        {
-          "type": "statement",
-          "text": "hot-shot lasgun; close combat weapon.",
-          "label": "Every Tempestus Scion is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -388,5 +324,95 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER",
+      "ORDERS",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER",
+      "ORDERS"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS"
+    ]
+  }
 }

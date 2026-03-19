@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Storm-Eagle-Gunship",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Storm-Eagle-Gunship",
+    "canonicalSourceId": "wahapedia:7cb749880670362f54e20e3eb52983a70b48594a",
     "faction_slug": "death-guard",
     "datasheet_slug": "Storm-Eagle-Gunship",
+    "fetchedAt": "2026-03-19T17:17:10+00:00",
+    "contentHash": "debe6c4d75f6a85529b09e637c0a9442bb8899b68d2305a3555dcd845752b0d7",
     "output_slug": "death-guard"
   },
   "name": "Storm Eagle Gunship",
@@ -118,32 +124,13 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D6 , Hover"
+      "Deadly Demise D6 , Hover FACTION: Nurgle\u2019s Gift (Aura) Armoured Resilience: Each time an attack is allocated to this model, subtract 1 from the Damage characteristic of that attack."
     ],
-    "faction": [
-      "Nurgle\u2019s Gift (Aura)"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "Each time an attack is allocated to this model, subtract 1 from the Damage characteristic of that attack.",
-        "name": "Armoured Resilience"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Storm Eagle Gunship"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "twin heavy bolter; 2 twin hellstrike launchers; vengeance launcher; armoured hull.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -192,37 +179,14 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D6 , Hover"
+            "Deadly Demise D6 , Hover FACTION: Nurgle\u2019s Gift (Aura) Armoured Resilience: Each time an attack is allocated to this model, subtract 1 from the Damage characteristic of that attack."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Nurgle\u2019s Gift (Aura)"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "Each time an attack is allocated to this model, subtract 1 from the Damage characteristic of that attack.",
-          "name": "Armoured Resilience"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Storm Eagle Gunship"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "twin heavy bolter; 2 twin hellstrike launchers; vengeance launcher; armoured hull.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -252,5 +216,89 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-6 WOUNDS REMAINING",
+      "TRANSPORT",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-6 WOUNDS REMAINING",
+      "TRANSPORT"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY"
+    ]
+  }
 }

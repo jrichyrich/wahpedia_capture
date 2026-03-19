@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Taurox-Prime",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Taurox-Prime",
+    "canonicalSourceId": "wahapedia:8aff14b7e14042a855e58c7f44860bc3e2c54cc4",
     "faction_slug": "astra-militarum",
     "datasheet_slug": "Taurox-Prime",
+    "fetchedAt": "2026-03-19T17:11:44+00:00",
+    "contentHash": "3411b8c8176cb70cd43a18510ecea4651fb37057918ceef2dbf02bc269640b7c",
     "output_slug": "astra-militarum"
   },
   "name": "Taurox Prime",
@@ -120,30 +126,13 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D3"
+      "Deadly Demise D3 Transport Support: In your Shooting phase , after this model has shot, select one enemy unit that was hit by one or more of those attacks. Until the end of the phase, each time a model that disembarked from this TRANSPORT this turn makes an attack that targets that enemy unit, you can re-roll the Hit roll ."
     ],
     "faction": [],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "In your Shooting phase , after this model has shot, select one enemy unit that was hit by one or more of those attacks. Until the end of the phase, each time a model that disembarked from this TRANSPORT this turn makes an attack that targets that enemy unit, you can re-roll the Hit roll .",
-        "name": "Transport Support"
-      }
-    ],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Taurox Prime"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "Taurox battle cannon; twin Taurox hot-shot volley gun; armoured tracks.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -196,30 +185,14 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D3"
+            "Deadly Demise D3 Transport Support: In your Shooting phase , after this model has shot, select one enemy unit that was hit by one or more of those attacks. Until the end of the phase, each time a model that disembarked from this TRANSPORT this turn makes an attack that targets that enemy unit, you can re-roll the Hit roll ."
           ]
-        },
-        {
-          "type": "rule",
-          "text": "In your Shooting phase , after this model has shot, select one enemy unit that was hit by one or more of those attacks. Until the end of the phase, each time a model that disembarked from this TRANSPORT this turn makes an attack that targets that enemy unit, you can re-roll the Hit roll .",
-          "name": "Transport Support"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Taurox Prime"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "Taurox battle cannon; twin Taurox hot-shot volley gun; armoured tracks.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -240,5 +213,87 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "TRANSPORT",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "TRANSPORT"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY"
+    ]
+  }
 }

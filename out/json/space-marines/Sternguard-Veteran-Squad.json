@@ -1,8 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Sternguard-Veteran-Squad",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Sternguard-Veteran-Squad",
+    "canonicalSourceId": "wahapedia:84d67d90674cf5c1424719fbc304891935702052",
     "faction_slug": "space-marines",
-    "datasheet_slug": "Sternguard-Veteran-Squad"
+    "datasheet_slug": "Sternguard-Veteran-Squad",
+    "fetchedAt": "2026-03-19T17:29:49+00:00",
+    "contentHash": "d66abeeb6e99646b8f9f8ded7fea0ab0971318a53e84d04f1f84939e25f954a2",
+    "output_slug": "space-marines"
   },
   "name": "Sternguard Veteran Squad",
   "base_size": "\u230032mm",
@@ -132,30 +139,12 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Oath of Moment"
+      "Oath of Moment Sternguard Focus: Each time a model in this unit makes an attack that targets your Oath of Moment target , you can re-roll the Wound roll ."
     ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "Each time a model in this unit makes an attack that targets your Oath of Moment target , you can re-roll the Wound roll .",
-        "name": "Sternguard Focus"
-      }
-    ],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Sternguard Veteran Sergeant",
-        "4-9 Sternguard Veterans"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "Sternguard bolt pistol; Sternguard bolt rifle; close combat weapon.",
-      "label": "Every model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -183,37 +172,55 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "The Sternguard Veteran Sergeant\u2019s Sternguard bolt rifle can be replaced with one of the following:",
+          "items": [
+            "1 Astartes chainsword",
+            "1 combi-weapon",
+            "1 power weapon",
+            "1 power fist",
+            "1 Astartes chainsword and 1 Sternguard bolt rifle*",
+            "1 power weapon and 1 Sternguard bolt rifle*",
+            "1 power fist and 1 Sternguard bolt rifle*"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "Any number of Sternguard Veterans can each have their Sternguard bolt rifle replaced with 1 combi-weapon.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "For every 5 models in this unit, 1 Sternguard Veteran\u2019s Sternguard bolt rifle can be replaced with one of the following:",
+          "items": [
+            "1 pyrecannon",
+            "1 Sternguard heavy bolter"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "* This model's Sternguard bolt rifle cannot be replaced."
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Oath of Moment"
+            "Oath of Moment Sternguard Focus: Each time a model in this unit makes an attack that targets your Oath of Moment target , you can re-roll the Wound roll ."
           ]
-        },
-        {
-          "type": "rule",
-          "text": "Each time a model in this unit makes an attack that targets your Oath of Moment target , you can re-roll the Wound roll .",
-          "name": "Sternguard Focus"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Sternguard Veteran Sergeant",
-            "4-9 Sternguard Veterans"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "Sternguard bolt pistol; Sternguard bolt rifle; close combat weapon.",
-          "label": "Every model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -229,5 +236,93 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS"
+    ]
+  }
 }

@@ -3,7 +3,11 @@
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Imperial-Space-Marine",
     "faction_slug": "space-marines",
     "datasheet_slug": "Imperial-Space-Marine",
-    "output_slug": "ultramarines"
+    "output_slug": "ultramarines",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Imperial-Space-Marine",
+    "canonicalSourceId": "wahapedia:77c46492e3f1cf4faf14ecfa2814707682038ddc",
+    "fetchedAt": "2026-03-19T17:35:02+00:00",
+    "contentHash": "27e5192c379ceafcf8907c1b4dcca16941ff1ca4270cfa1a41d55043303e3b5d"
   },
   "name": "Imperial Space Marine",
   "base_size": "\u230032mm",
@@ -61,37 +65,13 @@
   },
   "abilities": {
     "core": [
-      "Leader"
+      "Leader FACTION: Oath of Moment Swift Assault: While this model is leading a unit, ranged weapons equipped by models in that unit have the [ASSAULT] ability. Unbreakable Duty: While this model is within range of an objective marker and/or within 6\" of the centre of the battlefield, this model has the Feel No Pain 4+ ability."
     ],
-    "faction": [
-      "Oath of Moment"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "While this model is leading a unit, ranged weapons equipped by models in that unit have the [ASSAULT] ability.",
-        "name": "Swift Assault"
-      },
-      {
-        "type": "rule",
-        "text": "While this model is within range of an objective marker and/or within 6\" of the centre of the battlefield, this model has the Feel No Pain 4+ ability.",
-        "name": "Unbreakable Duty"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Imperial Space Marine"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "disintegration combi-gun; disintegration pistol; close combat weapon.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -114,48 +94,31 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "None"
+          ]
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Leader"
+            "Leader FACTION: Oath of Moment Swift Assault: While this model is leading a unit, ranged weapons equipped by models in that unit have the [ASSAULT] ability. Unbreakable Duty: While this model is within range of an objective marker and/or within 6\" of the centre of the battlefield, this model has the Feel No Pain 4+ ability."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Oath of Moment"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "While this model is leading a unit, ranged weapons equipped by models in that unit have the [ASSAULT] ability.",
-          "name": "Swift Assault"
-        },
-        {
-          "type": "rule",
-          "text": "While this model is within range of an objective marker and/or within 6\" of the centre of the battlefield, this model has the Feel No Pain 4+ ability.",
-          "name": "Unbreakable Duty"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Imperial Space Marine"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "disintegration combi-gun; disintegration pistol; close combat weapon.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -186,5 +149,22 @@
         }
       ]
     }
-  ]
+  ],
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "quality": {
+    "rawSectionTitles": [
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "missingExpectedSections": [],
+    "warnings": []
+  }
 }

@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Inner-Circle-Companions",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Inner-Circle-Companions",
+    "canonicalSourceId": "wahapedia:f7f8dc6ff3360d716dfc883afe42d3990bcb1842",
     "faction_slug": "space-marines",
     "datasheet_slug": "Inner-Circle-Companions",
+    "fetchedAt": "2026-03-19T17:15:12+00:00",
+    "contentHash": "3c7ed42e9cc3d87e579d8ddbe000fc0e7faf4347dcf5fa29a3e22d7d0f80d5d0",
     "output_slug": "dark-angels"
   },
   "name": "Inner Circle Companions",
@@ -60,34 +66,12 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Oath of Moment"
+      "Oath of Moment Braziers of Judgement: While a CHARACTER model is leading this unit, each time an attack targets this unit, subtract 1 from the Hit roll . Enmity for the Unworthy: Each time a model in this unit makes an attack that targets a CHARACTER unit, add 1 to the Hit roll ."
     ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "While a CHARACTER model is leading this unit, each time an attack targets this unit, subtract 1 from the Hit roll .",
-        "name": "Braziers of Judgement"
-      },
-      {
-        "type": "rule",
-        "text": "Each time a model in this unit makes an attack that targets a CHARACTER unit, add 1 to the Hit roll .",
-        "name": "Enmity for the Unworthy"
-      }
-    ],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "3-6 Inner Circle Companions"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "heavy bolt pistol; Calibanite greatsword.",
-      "label": "Every Inner Circle Companion is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -121,35 +105,14 @@
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Oath of Moment"
+            "Oath of Moment Braziers of Judgement: While a CHARACTER model is leading this unit, each time an attack targets this unit, subtract 1 from the Hit roll . Enmity for the Unworthy: Each time a model in this unit makes an attack that targets a CHARACTER unit, add 1 to the Hit roll ."
           ]
-        },
-        {
-          "type": "rule",
-          "text": "While a CHARACTER model is leading this unit, each time an attack targets this unit, subtract 1 from the Hit roll .",
-          "name": "Braziers of Judgement"
-        },
-        {
-          "type": "rule",
-          "text": "Each time a model in this unit makes an attack that targets a CHARACTER unit, add 1 to the Hit roll .",
-          "name": "Enmity for the Unworthy"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "3-6 Inner Circle Companions"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "heavy bolt pistol; Calibanite greatsword.",
-          "label": "Every Inner Circle Companion is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -174,5 +137,93 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "Attached Unit",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "exportedSectionTitles": [
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "Attached Unit"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS"
+    ]
+  }
 }

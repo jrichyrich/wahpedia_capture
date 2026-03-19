@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Witchseekers",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Witchseekers",
+    "canonicalSourceId": "wahapedia:b570bc137b7655d19229704d210bf98b4d5d6fdb",
     "faction_slug": "adeptus-custodes",
     "datasheet_slug": "Witchseekers",
+    "fetchedAt": "2026-03-19T17:10:55+00:00",
+    "contentHash": "e5f300211125c152af10f2215289c81d36f180e3f647bd0a3c36b4171344936a",
     "output_slug": "adeptus-custodes"
   },
   "name": "Witchseekers",
@@ -46,36 +52,13 @@
   },
   "abilities": {
     "core": [
-      "Scouts 6\""
+      "Scouts 6\" Daughters of the Abyss: Models in this unit have the Feel No Pain 3+ ability against Psychic Attacks and mortal wounds . Sanctified Flames: In your Shooting phase , after this unit has shot, select one enemy unit hit by one or more of those attacks. That enemy unit must take a Battle-shock test ."
     ],
     "faction": [],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "Models in this unit have the Feel No Pain 3+ ability against Psychic Attacks and mortal wounds .",
-        "name": "Daughters of the Abyss"
-      },
-      {
-        "type": "rule",
-        "text": "In your Shooting phase , after this unit has shot, select one enemy unit hit by one or more of those attacks. That enemy unit must take a Battle-shock test .",
-        "name": "Sanctified Flames"
-      }
-    ],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Witchseeker Sister Superior",
-        "3-9 Witchseekers"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "Witchseeker flamer; close combat weapon.",
-      "label": "Every model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -112,9 +95,10 @@
       "title": "WARGEAR OPTIONS",
       "entries": [
         {
-          "type": "option_group",
-          "label": "None",
-          "items": []
+          "type": "list",
+          "items": [
+            "None"
+          ]
         }
       ]
     },
@@ -125,36 +109,14 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Scouts 6\""
+            "Scouts 6\" Daughters of the Abyss: Models in this unit have the Feel No Pain 3+ ability against Psychic Attacks and mortal wounds . Sanctified Flames: In your Shooting phase , after this unit has shot, select one enemy unit hit by one or more of those attacks. That enemy unit must take a Battle-shock test ."
           ]
-        },
-        {
-          "type": "rule",
-          "text": "Models in this unit have the Feel No Pain 3+ ability against Psychic Attacks and mortal wounds .",
-          "name": "Daughters of the Abyss"
-        },
-        {
-          "type": "rule",
-          "text": "In your Shooting phase , after this unit has shot, select one enemy unit hit by one or more of those attacks. That enemy unit must take a Battle-shock test .",
-          "name": "Sanctified Flames"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Witchseeker Sister Superior",
-            "3-9 Witchseekers"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "Witchseeker flamer; close combat weapon.",
-          "label": "Every model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -178,5 +140,93 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS"
+    ]
+  }
 }

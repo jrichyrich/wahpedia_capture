@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Plague-Marines",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Plague-Marines",
+    "canonicalSourceId": "wahapedia:35545038c4c249dc0a80e9a673da15d33cb95444",
     "faction_slug": "death-guard",
     "datasheet_slug": "Plague-Marines",
+    "fetchedAt": "2026-03-19T17:17:03+00:00",
+    "contentHash": "884cebcee12f8fbd8077d6e14d6e926adf13e06a8d9e951ef498cb3a311e075c",
     "output_slug": "death-guard"
   },
   "name": "Plague Marines",
@@ -200,30 +206,12 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Nurgle\u2019s Gift (Aura)"
+      "Nurgle\u2019s Gift (Aura) Infused with the Blessings of Nurgle: In your Shooting phase , each time this unit is selected to shoot, after this unit has shot, select one enemy unit hit by one or more of those attacks. Until the start of your next turn, that enemy unit is Afflicted ."
     ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "In your Shooting phase , each time this unit is selected to shoot, after this unit has shot, select one enemy unit hit by one or more of those attacks. Until the start of your next turn, that enemy unit is Afflicted .",
-        "name": "Infused with the Blessings of Nurgle"
-      }
-    ],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Plague Champion",
-        "4-9 Plague Marines"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "boltgun; plague knives.",
-      "label": "Every model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -317,13 +305,8 @@
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Nurgle\u2019s Gift (Aura)"
+            "Nurgle\u2019s Gift (Aura) Infused with the Blessings of Nurgle: In your Shooting phase , each time this unit is selected to shoot, after this unit has shot, select one enemy unit hit by one or more of those attacks. Until the start of your next turn, that enemy unit is Afflicted ."
           ]
-        },
-        {
-          "type": "rule",
-          "text": "In your Shooting phase , each time this unit is selected to shoot, after this unit has shot, select one enemy unit hit by one or more of those attacks. Until the start of your next turn, that enemy unit is Afflicted .",
-          "name": "Infused with the Blessings of Nurgle"
         }
       ]
     },
@@ -331,27 +314,14 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "statement",
-          "text": "While an enemy unit is within 6\" of the bearer, worsen the Leadership characteristic of models in that unit by 1.",
-          "label": "Icon of Despair (Aura)"
+          "type": "text",
+          "text": "Icon of Despair (Aura): While an enemy unit is within 6\" of the bearer, worsen the Leadership characteristic of models in that unit by 1."
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Plague Champion",
-            "4-9 Plague Marines"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "boltgun; plague knives.",
-          "label": "Every model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -371,5 +341,95 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS"
+    ]
+  }
 }

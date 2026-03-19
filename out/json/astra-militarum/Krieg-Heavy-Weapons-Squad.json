@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Krieg-Heavy-Weapons-Squad",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Krieg-Heavy-Weapons-Squad",
+    "canonicalSourceId": "wahapedia:ae15c630af59e2d6c5eb03cc6086da8ec46ad11f",
     "faction_slug": "astra-militarum",
     "datasheet_slug": "Krieg-Heavy-Weapons-Squad",
+    "fetchedAt": "2026-03-19T17:11:56+00:00",
+    "contentHash": "659c05e85e1eab5a3ffc0351ae6dbd52b8da7f5ee9d8a12c283e4bd4e7bf5b58",
     "output_slug": "astra-militarum"
   },
   "name": "Krieg Heavy Weapons Squad",
@@ -85,33 +91,15 @@
   "abilities": {
     "core": [],
     "faction": [],
-    "datasheet": [
+    "datasheet": [],
+    "other": [
       {
-        "type": "rule",
-        "text": "While the Fire Coordinator model is on the battlefield, each time a Heavy Weapons Gunner model is destroyed, roll one D6: on a 3+, do not remove it from play. The destroyed model can shoot after the attacking model\u2019s unit has finished making its attacks, and is then removed from play.",
-        "name": "Final Duty"
+        "type": "text",
+        "text": "Final Duty: While the Fire Coordinator model is on the battlefield, each time a Heavy Weapons Gunner model is destroyed, roll one D6: on a 3+, do not remove it from play. The destroyed model can shoot after the attacking model\u2019s unit has finished making its attacks, and is then removed from play."
       }
-    ],
-    "other": []
+    ]
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "3 Heavy Weapons Gunners",
-        "1 Fire Coordinator"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "lascannon; laspistol; close combat weapon.",
-      "label": "Each Heavy Weapons Gunner is equipped with"
-    },
-    {
-      "type": "statement",
-      "text": "laspistol; close combat weapon.",
-      "label": "The Fire Coordinator is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -150,32 +138,14 @@
       "title": "ABILITIES",
       "entries": [
         {
-          "type": "rule",
-          "text": "While the Fire Coordinator model is on the battlefield, each time a Heavy Weapons Gunner model is destroyed, roll one D6: on a 3+, do not remove it from play. The destroyed model can shoot after the attacking model\u2019s unit has finished making its attacks, and is then removed from play.",
-          "name": "Final Duty"
+          "type": "text",
+          "text": "Final Duty: While the Fire Coordinator model is on the battlefield, each time a Heavy Weapons Gunner model is destroyed, roll one D6: on a 3+, do not remove it from play. The destroyed model can shoot after the attacking model\u2019s unit has finished making its attacks, and is then removed from play."
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "3 Heavy Weapons Gunners",
-            "1 Fire Coordinator"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "lascannon; laspistol; close combat weapon.",
-          "label": "Each Heavy Weapons Gunner is equipped with"
-        },
-        {
-          "type": "statement",
-          "text": "laspistol; close combat weapon.",
-          "label": "The Fire Coordinator is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -196,5 +166,87 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "EMBARKING",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "EMBARKING"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY"
+    ]
+  }
 }

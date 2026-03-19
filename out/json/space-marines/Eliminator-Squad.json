@@ -1,8 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Eliminator-Squad",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Eliminator-Squad",
+    "canonicalSourceId": "wahapedia:cfbe92380f6ad8d127bbcd81365078a33709d0d1",
     "faction_slug": "space-marines",
-    "datasheet_slug": "Eliminator-Squad"
+    "datasheet_slug": "Eliminator-Squad",
+    "fetchedAt": "2026-03-19T17:28:40+00:00",
+    "contentHash": "658fc18edfd053db879c9cc7fb1d8fccb70bd0785977c588831c9b2ec2206a44",
+    "output_slug": "space-marines"
   },
   "name": "Eliminator Squad",
   "base_size": "\u230040mm",
@@ -81,38 +88,13 @@
   },
   "abilities": {
     "core": [
-      "Infiltrators , Stealth"
+      "Infiltrators , Stealth FACTION: Oath of Moment Reposition Under Covering Fire: In your Shooting phase , after this unit has shot, if it contains an Eliminator Sergeant equipped with an instigator bolt carbine, this unit can make a Normal move . If it does so, until the end of the turn, this unit is not eligible to declare a charge . Mark the Target: Each time this unit Remains Stationary , until the start of your next Movement phase , ranged weapons equipped by models in this unit have the [DEVASTATING WOUNDS] ability."
     ],
-    "faction": [
-      "Oath of Moment"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "In your Shooting phase , after this unit has shot, if it contains an Eliminator Sergeant equipped with an instigator bolt carbine, this unit can make a Normal move . If it does so, until the end of the turn, this unit is not eligible to declare a charge .",
-        "name": "Reposition Under Covering Fire"
-      },
-      {
-        "type": "rule",
-        "text": "Each time this unit Remains Stationary , until the start of your next Movement phase , ranged weapons equipped by models in this unit have the [DEVASTATING WOUNDS] ability.",
-        "name": "Mark the Target"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Eliminator Sergeant",
-        "2 Eliminators"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "bolt pistol; bolt sniper rifle; close combat weapon.",
-      "label": "Every model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -135,49 +117,38 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "The Eliminator Sergeant\u2019s bolt sniper rifle can be replaced with one of the following:",
+          "items": [
+            "1 instigator bolt carbine",
+            "1 las fusil"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "All Eliminators in this unit can each have their bolt sniper rifle replaced with 1 las fusil.",
+          "items": []
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Infiltrators , Stealth"
+            "Infiltrators , Stealth FACTION: Oath of Moment Reposition Under Covering Fire: In your Shooting phase , after this unit has shot, if it contains an Eliminator Sergeant equipped with an instigator bolt carbine, this unit can make a Normal move . If it does so, until the end of the turn, this unit is not eligible to declare a charge . Mark the Target: Each time this unit Remains Stationary , until the start of your next Movement phase , ranged weapons equipped by models in this unit have the [DEVASTATING WOUNDS] ability."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Oath of Moment"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "In your Shooting phase , after this unit has shot, if it contains an Eliminator Sergeant equipped with an instigator bolt carbine, this unit can make a Normal move . If it does so, until the end of the turn, this unit is not eligible to declare a charge .",
-          "name": "Reposition Under Covering Fire"
-        },
-        {
-          "type": "rule",
-          "text": "Each time this unit Remains Stationary , until the start of your next Movement phase , ranged weapons equipped by models in this unit have the [DEVASTATING WOUNDS] ability.",
-          "name": "Mark the Target"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Eliminator Sergeant",
-            "2 Eliminators"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "bolt pistol; bolt sniper rifle; close combat weapon.",
-          "label": "Every model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -189,5 +160,93 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS"
+    ]
+  }
 }

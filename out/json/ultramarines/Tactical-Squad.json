@@ -3,7 +3,11 @@
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Tactical-Squad",
     "faction_slug": "space-marines",
     "datasheet_slug": "Tactical-Squad",
-    "output_slug": "ultramarines"
+    "output_slug": "ultramarines",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Tactical-Squad",
+    "canonicalSourceId": "wahapedia:56d68fc9530e5c1120a22c798b5a92cb81f70cf2",
+    "fetchedAt": "2026-03-19T17:35:03+00:00",
+    "contentHash": "8f00a8d284d384ee6d64ee596eeaf8f864b22aee698764d0954a27b35532de8d"
   },
   "name": "Tactical Squad",
   "base_size": "\u230032mm",
@@ -339,30 +343,12 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Oath of Moment"
+      "Oath of Moment Combat Squads: At the start of the Declare Battle Formations step, before any units have been set up, this unit can be split into two units, each containing five models."
     ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "At the start of the Declare Battle Formations step, before any units have been set up, this unit can be split into two units, each containing five models.",
-        "name": "Combat Squads"
-      }
-    ],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Tactical Sergeant",
-        "9 Tactical Marines"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "bolt pistol; boltgun; close combat weapon.",
-      "label": "Every model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -442,31 +428,14 @@
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Oath of Moment"
+            "Oath of Moment Combat Squads: At the start of the Declare Battle Formations step, before any units have been set up, this unit can be split into two units, each containing five models."
           ]
-        },
-        {
-          "type": "rule",
-          "text": "At the start of the Declare Battle Formations step, before any units have been set up, this unit can be split into two units, each containing five models.",
-          "name": "Combat Squads"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Tactical Sergeant",
-            "9 Tactical Marines"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "bolt pistol; boltgun; close combat weapon.",
-          "label": "Every model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -478,5 +447,21 @@
         }
       ]
     }
-  ]
+  ],
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [],
+    "warnings": []
+  }
 }

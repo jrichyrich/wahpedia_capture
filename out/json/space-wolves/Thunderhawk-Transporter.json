@@ -3,7 +3,11 @@
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Thunderhawk-Transporter",
     "faction_slug": "space-marines",
     "datasheet_slug": "Thunderhawk-Transporter",
-    "output_slug": "space-wolves"
+    "output_slug": "space-wolves",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Thunderhawk-Transporter",
+    "canonicalSourceId": "wahapedia:ead7c1947f60d0ceb693607bccd8d1e30a0080e9",
+    "fetchedAt": "2026-03-19T17:35:02+00:00",
+    "contentHash": "91e692a7cdc3409391a4e1a958ab9945e5e76ab172668c1356b292f8a75a80e5"
   },
   "name": "Thunderhawk Transporter",
   "base_size": "\u2300120 x 92mm",
@@ -58,32 +62,13 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D6+2 , Hover"
+      "Deadly Demise D6+2 , Hover FACTION: Oath of Moment Aerial Deployment: If this model starts the game in Hover mode and in Strategic Reserves , it can be set up in the Reinforcements step of your first, second or third Movement phase , regardless of any mission rules."
     ],
-    "faction": [
-      "Oath of Moment"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "If this model starts the game in Hover mode and in Strategic Reserves , it can be set up in the Reinforcements step of your first, second or third Movement phase , regardless of any mission rules.",
-        "name": "Aerial Deployment"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Thunderhawk Transporter"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "hellstrike missile battery; 4 twin heavy bolters; armoured hull.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -109,43 +94,31 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "None"
+          ]
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D6+2 , Hover"
+            "Deadly Demise D6+2 , Hover FACTION: Oath of Moment Aerial Deployment: If this model starts the game in Hover mode and in Strategic Reserves , it can be set up in the Reinforcements step of your first, second or third Movement phase , regardless of any mission rules."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Oath of Moment"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "If this model starts the game in Hover mode and in Strategic Reserves , it can be set up in the Reinforcements step of your first, second or third Movement phase , regardless of any mission rules.",
-          "name": "Aerial Deployment"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Thunderhawk Transporter"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "hellstrike missile battery; 4 twin heavy bolters; armoured hull.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -175,5 +148,24 @@
         }
       ]
     }
-  ]
+  ],
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "quality": {
+    "rawSectionTitles": [
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-10 WOUNDS REMAINING",
+      "TRANSPORT"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-10 WOUNDS REMAINING",
+      "TRANSPORT"
+    ],
+    "missingExpectedSections": [],
+    "warnings": []
+  }
 }

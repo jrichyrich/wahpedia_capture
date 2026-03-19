@@ -3,7 +3,11 @@
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Reiver-Squad",
     "faction_slug": "space-marines",
     "datasheet_slug": "Reiver-Squad",
-    "output_slug": "ultramarines"
+    "output_slug": "ultramarines",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Reiver-Squad",
+    "canonicalSourceId": "wahapedia:fe43d9bd1724eec5987ce432c71275d645903997",
+    "fetchedAt": "2026-03-19T17:35:03+00:00",
+    "contentHash": "6484cd2b10baa306d3f68f819cb97dec826de231f85f1f5b9e2b7abc396b8036"
   },
   "name": "Reiver Squad",
   "base_size": "\u230032mm",
@@ -70,38 +74,13 @@
   },
   "abilities": {
     "core": [
-      "Scouts 6\""
+      "Scouts 6\" FACTION: Oath of Moment Fearsome Assault: At the start of the Fight phase , each enemy unit within Engagement Range of one or more units with this ability must take a Battle-shock test , subtracting 1 from that test. Terror Troops (Aura): While an enemy unit (excluding MONSTERS and VEHICLES ) is within 3\" of one or more units with this ability, subtract 1 from the Objective Control characteristic of models in that enemy unit."
     ],
-    "faction": [
-      "Oath of Moment"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "At the start of the Fight phase , each enemy unit within Engagement Range of one or more units with this ability must take a Battle-shock test , subtracting 1 from that test.",
-        "name": "Fearsome Assault"
-      },
-      {
-        "type": "rule",
-        "text": "While an enemy unit (excluding MONSTERS and VEHICLES ) is within 3\" of one or more units with this ability, subtract 1 from the Objective Control characteristic of models in that enemy unit.",
-        "name": "Terror Troops (Aura)"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Reiver Sergeant",
-        "4-9 Reivers"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "special issue bolt pistol; combat knife.",
-      "label": "Every model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -129,31 +108,39 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "All models in this unit can each have their combat knife replaced with 1 bolt carbine and 1 close combat weapon.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "If the Reiver Sergeant is equipped with 1 bolt carbine, it can be equipped with 1 combat knife.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "All models in this unit can each be equipped with 1 Reiver grav-chute.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "All models in this unit can each be equipped with 1 grapnel launcher.",
+          "items": []
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Scouts 6\""
+            "Scouts 6\" FACTION: Oath of Moment Fearsome Assault: At the start of the Fight phase , each enemy unit within Engagement Range of one or more units with this ability must take a Battle-shock test , subtracting 1 from that test. Terror Troops (Aura): While an enemy unit (excluding MONSTERS and VEHICLES ) is within 3\" of one or more units with this ability, subtract 1 from the Objective Control characteristic of models in that enemy unit."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Oath of Moment"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "At the start of the Fight phase , each enemy unit within Engagement Range of one or more units with this ability must take a Battle-shock test , subtracting 1 from that test.",
-          "name": "Fearsome Assault"
-        },
-        {
-          "type": "rule",
-          "text": "While an enemy unit (excluding MONSTERS and VEHICLES ) is within 3\" of one or more units with this ability, subtract 1 from the Objective Control characteristic of models in that enemy unit.",
-          "name": "Terror Troops (Aura)"
         }
       ]
     },
@@ -161,32 +148,14 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "statement",
-          "text": "Each time the bearer\u2019s unit makes a Normal , Advance , Fall Back or Charge move , ignore any vertical distance when determining the total distance the bearer can be moved during that move.",
-          "label": "Grapnel Launcher"
-        },
-        {
-          "type": "statement",
-          "text": "The bearer has the Deep Strike ability.",
-          "label": "Reiver Grav-chute"
+          "type": "text",
+          "text": "Grapnel Launcher: Each time the bearer\u2019s unit makes a Normal , Advance , Fall Back or Charge move , ignore any vertical distance when determining the total distance the bearer can be moved during that move. Reiver Grav-chute: The bearer has the Deep Strike ability."
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Reiver Sergeant",
-            "4-9 Reivers"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "special issue bolt pistol; combat knife.",
-          "label": "Every model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -202,5 +171,22 @@
         }
       ]
     }
-  ]
+  ],
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "quality": {
+    "rawSectionTitles": [
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [],
+    "warnings": []
+  }
 }

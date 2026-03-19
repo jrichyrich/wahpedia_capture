@@ -3,7 +3,11 @@
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Relic-Contemptor-Dreadnought",
     "faction_slug": "space-marines",
     "datasheet_slug": "Relic-Contemptor-Dreadnought",
-    "output_slug": "space-wolves"
+    "output_slug": "space-wolves",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Relic-Contemptor-Dreadnought",
+    "canonicalSourceId": "wahapedia:787c1fe3b8c99e19ef721da079d221a2aeb88081",
+    "fetchedAt": "2026-03-19T17:35:02+00:00",
+    "contentHash": "e000e080b7c5947c931af288a91cf9fc73a8dc61ba9ed8b317eb2761dc558c21"
   },
   "name": "Relic Contemptor Dreadnought",
   "base_size": "\u230060mm",
@@ -248,32 +252,13 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise 1"
+      "Deadly Demise 1 FACTION: Oath of Moment Even In Death I Serve: The first time this model is destroyed, remove it from play without resolving its Deadly Demise ability. Then, at the end of the phase, roll one D6: on a 2+, set this model back up on the battlefield as close as possible to where it was destroyed and not within Engagement Range of any enemy units, with D6 wounds remaining."
     ],
-    "faction": [
-      "Oath of Moment"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "The first time this model is destroyed, remove it from play without resolving its Deadly Demise ability. Then, at the end of the phase, roll one D6: on a 2+, set this model back up on the battlefield as close as possible to where it was destroyed and not within Engagement Range of any enemy units, with D6 wounds remaining.",
-        "name": "Even In Death I Serve"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Relic Contemptor Dreadnought"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "2 heavy plasma cannons; armoured feet.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -297,43 +282,54 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "Each of this model\u2019s heavy plasma cannons can be replaced with one of the following:",
+          "items": [
+            "1 conversion beam cannon",
+            "1 kheres-pattern assault cannon",
+            "1 multi-melta",
+            "1 twin autocannon",
+            "1 twin heavy bolter",
+            "1 twin lascannon",
+            "1 twin volkite culverin",
+            "1 Dreadnought chainfist and 1 combi-bolter",
+            "1 Dreadnought combat weapon and 1 combi-bolter"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "Each of this model\u2019s combi-bolters can be replaced with one of the following:",
+          "items": [
+            "1 graviton blaster",
+            "1 heavy flamer",
+            "1 plasma blaster"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "This model can be equipped with 1 cyclone missile launcher.",
+          "items": []
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise 1"
+            "Deadly Demise 1 FACTION: Oath of Moment Even In Death I Serve: The first time this model is destroyed, remove it from play without resolving its Deadly Demise ability. Then, at the end of the phase, roll one D6: on a 2+, set this model back up on the battlefield as close as possible to where it was destroyed and not within Engagement Range of any enemy units, with D6 wounds remaining."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Oath of Moment"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "The first time this model is destroyed, remove it from play without resolving its Deadly Demise ability. Then, at the end of the phase, roll one D6: on a 2+, set this model back up on the battlefield as close as possible to where it was destroyed and not within Engagement Range of any enemy units, with D6 wounds remaining.",
-          "name": "Even In Death I Serve"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Relic Contemptor Dreadnought"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "2 heavy plasma cannons; armoured feet.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -345,5 +341,20 @@
         }
       ]
     }
-  ]
+  ],
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "quality": {
+    "rawSectionTitles": [
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [],
+    "warnings": []
+  }
 }

@@ -3,7 +3,11 @@
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Kratos",
     "faction_slug": "space-marines",
     "datasheet_slug": "Kratos",
-    "output_slug": "space-wolves"
+    "output_slug": "space-wolves",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Kratos",
+    "canonicalSourceId": "wahapedia:6387d8a3a7656178cd51b359c983a93c35874037",
+    "fetchedAt": "2026-03-19T17:35:02+00:00",
+    "contentHash": "30c45d8eaa236ab86bddc1ab21e0da45d43b2caf147fe52f06669c42621fe776"
   },
   "name": "Kratos",
   "base_size": "\u2300Use model",
@@ -210,32 +214,13 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D6"
+      "Deadly Demise D6 FACTION: Oath of Moment Line-breaker: When making ranged attacks, this model can target enemy units within Engagement Range of it with Blast weapons (provided no other friendly units are also within Engagement Range of that enemy unit). In addition, when making ranged attacks, this model does not suffer the penalty to its Hit rolls for being within Engagement Range of one or more enemy units."
     ],
-    "faction": [
-      "Oath of Moment"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "When making ranged attacks, this model can target enemy units within Engagement Range of it with Blast weapons (provided no other friendly units are also within Engagement Range of that enemy unit). In addition, when making ranged attacks, this model does not suffer the penalty to its Hit rolls for being within Engagement Range of one or more enemy units.",
-        "name": "Line-breaker"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Kratos"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "autocannon; Kratos battle cannon; 4 heavy bolters; armoured tracks.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -257,43 +242,68 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s Kratos battle cannon can be replaced with one of the following:",
+          "items": [
+            "1 melta blast-gun",
+            "1 volkite cardanelle"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "2 of this model\u2019s heavy bolters can be replaced with one of the following:",
+          "items": [
+            "2 autocannons",
+            "2 lascannons",
+            "2 volkite calivers"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "2 of this model\u2019s heavy bolters can be replaced with one of the following:",
+          "items": [
+            "2 heavy flamers",
+            "2 lascannons",
+            "2 volkite culverins"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "This model can be equipped with one of the following:",
+          "items": [
+            "1 combi-weapon",
+            "1 havoc launcher",
+            "1 heavy bolter",
+            "1 heavy flamer",
+            "1 multi-melta",
+            "1 twin boltgun"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "This model can be equipped with 1 hunter killer missile",
+          "items": []
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D6"
+            "Deadly Demise D6 FACTION: Oath of Moment Line-breaker: When making ranged attacks, this model can target enemy units within Engagement Range of it with Blast weapons (provided no other friendly units are also within Engagement Range of that enemy unit). In addition, when making ranged attacks, this model does not suffer the penalty to its Hit rolls for being within Engagement Range of one or more enemy units."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Oath of Moment"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "When making ranged attacks, this model can target enemy units within Engagement Range of it with Blast weapons (provided no other friendly units are also within Engagement Range of that enemy unit). In addition, when making ranged attacks, this model does not suffer the penalty to its Hit rolls for being within Engagement Range of one or more enemy units.",
-          "name": "Line-breaker"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Kratos"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "autocannon; Kratos battle cannon; 4 heavy bolters; armoured tracks.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -314,5 +324,22 @@
         }
       ]
     }
-  ]
+  ],
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "quality": {
+    "rawSectionTitles": [
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-6 WOUNDS REMAINING"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-6 WOUNDS REMAINING"
+    ],
+    "missingExpectedSections": [],
+    "warnings": []
+  }
 }

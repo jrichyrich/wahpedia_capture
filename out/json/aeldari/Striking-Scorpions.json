@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Striking-Scorpions",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Striking-Scorpions",
+    "canonicalSourceId": "wahapedia:d289c4083e1cc118522511a8d34cdc6952b3e89d",
     "faction_slug": "aeldari",
     "datasheet_slug": "Striking-Scorpions",
+    "fetchedAt": "2026-03-19T17:11:20+00:00",
+    "contentHash": "9d8b3ec95a5a3657b9f64f0d73cc10a062228fe853b725982577b7a181c6eca2",
     "output_slug": "aeldari"
   },
   "name": "Striking Scorpions",
@@ -98,38 +104,13 @@
   },
   "abilities": {
     "core": [
-      "Infiltrators , Scouts 7\" , Stealth"
+      "Infiltrators , Scouts 7\" , Stealth FACTION: Battle Focus Mandiblasters: Each time a model in this unit makes a melee attack, if it made a Charge move this turn, an unmodified Hit roll of 5+ scores a Critical Hit."
     ],
-    "faction": [
-      "Battle Focus"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "Each time a model in this unit makes a melee attack, if it made a Charge move this turn, an unmodified Hit roll of 5+ scores a Critical Hit.",
-        "name": "Mandiblasters"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Striking Scorpion Exarch",
-        "4-9 Striking Scorpions"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "shuriken pistol; Scorpion chainsword; Scorpion\u2019s claw.",
-      "label": "The Striking Scorpion Exarch is equipped with"
-    },
-    {
-      "type": "statement",
-      "text": "shuriken pistol; Scorpion chainsword.",
-      "label": "Every Striking Scorpion is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -179,20 +160,8 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Infiltrators , Scouts 7\" , Stealth"
+            "Infiltrators , Scouts 7\" , Stealth FACTION: Battle Focus Mandiblasters: Each time a model in this unit makes a melee attack, if it made a Charge move this turn, an unmodified Hit roll of 5+ scores a Critical Hit."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Battle Focus"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "Each time a model in this unit makes a melee attack, if it made a Charge move this turn, an unmodified Hit roll of 5+ scores a Critical Hit.",
-          "name": "Mandiblasters"
         }
       ]
     },
@@ -200,37 +169,14 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "statement",
-          "text": "Once per battle for each Aspect Shrine token this unit has, you can change the result of one Hit roll or one Wound roll made for a model in this unit (excluding CHARACTER models) to an unmodified 6.",
-          "label": "Aspect Shrine Token"
-        },
-        {
-          "type": "statement",
-          "text": "Place an Aspect Shrine token next to the unit for each Aspect Shrine token it has, removing one each time this ability is used.",
-          "label": "Designer\u2019s Note"
+          "type": "text",
+          "text": "Aspect Shrine Token: Once per battle for each Aspect Shrine token this unit has, you can change the result of one Hit roll or one Wound roll made for a model in this unit (excluding CHARACTER models) to an unmodified 6. Designer\u2019s Note: Place an Aspect Shrine token next to the unit for each Aspect Shrine token it has, removing one each time this ability is used."
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Striking Scorpion Exarch",
-            "4-9 Striking Scorpions"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "shuriken pistol; Scorpion chainsword; Scorpion\u2019s claw.",
-          "label": "The Striking Scorpion Exarch is equipped with"
-        },
-        {
-          "type": "statement",
-          "text": "shuriken pistol; Scorpion chainsword.",
-          "label": "Every Striking Scorpion is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -246,5 +192,91 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY"
+    ]
+  }
 }

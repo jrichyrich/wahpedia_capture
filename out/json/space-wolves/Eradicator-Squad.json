@@ -3,7 +3,11 @@
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Eradicator-Squad",
     "faction_slug": "space-marines",
     "datasheet_slug": "Eradicator-Squad",
-    "output_slug": "space-wolves"
+    "output_slug": "space-wolves",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Eradicator-Squad",
+    "canonicalSourceId": "wahapedia:394292bca1375b9f48ebe67ffe3d0a69d2fef67d",
+    "fetchedAt": "2026-03-19T17:35:02+00:00",
+    "contentHash": "a7329da59559c8f97c5da957e83c49ed703165e10ea4268920652645c4763bbc"
   },
   "name": "Eradicator Squad",
   "base_size": "\u230040mm",
@@ -72,30 +76,12 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Oath of Moment"
+      "Oath of Moment Total Obliteration: Each time a ranged attack made by a model in this unit targets a MONSTER or VEHICLE model, you can re-roll the Hit roll , you can re-roll the Wound roll and you can re-roll the Damage roll."
     ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "Each time a ranged attack made by a model in this unit targets a MONSTER or VEHICLE model, you can re-roll the Hit roll , you can re-roll the Wound roll and you can re-roll the Damage roll.",
-        "name": "Total Obliteration"
-      }
-    ],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Eradicator Sergeant",
-        "2-5 Eradicators"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "bolt pistol; melta rifle; close combat weapon.",
-      "label": "Every model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -122,37 +108,30 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "For every 3 models in this unit, 1 Eradicator\u2019s melta rifle can be replaced with 1 multi-melta.",
+          "items": []
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Oath of Moment"
+            "Oath of Moment Total Obliteration: Each time a ranged attack made by a model in this unit targets a MONSTER or VEHICLE model, you can re-roll the Hit roll , you can re-roll the Wound roll and you can re-roll the Damage roll."
           ]
-        },
-        {
-          "type": "rule",
-          "text": "Each time a ranged attack made by a model in this unit targets a MONSTER or VEHICLE model, you can re-roll the Hit roll , you can re-roll the Wound roll and you can re-roll the Damage roll.",
-          "name": "Total Obliteration"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Eradicator Sergeant",
-            "2-5 Eradicators"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "bolt pistol; melta rifle; close combat weapon.",
-          "label": "Every model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -168,5 +147,20 @@
         }
       ]
     }
-  ]
+  ],
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "quality": {
+    "rawSectionTitles": [
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [],
+    "warnings": []
+  }
 }

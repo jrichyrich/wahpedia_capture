@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Cyclops-Demolition-Vehicle",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Cyclops-Demolition-Vehicle",
+    "canonicalSourceId": "wahapedia:4b01e07706cbd19dbdd2f8c37cbe32bb8408a3d5",
     "faction_slug": "astra-militarum",
     "datasheet_slug": "Cyclops-Demolition-Vehicle",
+    "fetchedAt": "2026-03-19T17:12:06+00:00",
+    "contentHash": "02985fc3a86b4d22fbadddf558a647445228dbc2d47d0abd1e03ee840520d3d3",
     "output_slug": "astra-militarum"
   },
   "name": "Cyclops Demolition Vehicle",
@@ -18,35 +24,13 @@
   "weapons": {},
   "abilities": {
     "core": [
-      "Deadly Demise 1"
+      "Deadly Demise 1 Demolition Charges: Each time this model or an enemy unit ends a move, if this model is within 3\" of one or more enemy units, select one of those enemy units. This model is destroyed, but instead of rolling for its Deadly Demise ability, roll one D6: on a 2-5, that enemy unit suffers D3 mortal wounds ; on a 6, that enemy unit suffers D6 mortal wounds. Unstable Payload: When rolling for this model\u2019s Deadly Demise ability, units within 6\" suffer mortal wounds on a 4+, instead of on a 6."
     ],
     "faction": [],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "Each time this model or an enemy unit ends a move, if this model is within 3\" of one or more enemy units, select one of those enemy units. This model is destroyed, but instead of rolling for its Deadly Demise ability, roll one D6: on a 2-5, that enemy unit suffers D3 mortal wounds ; on a 6, that enemy unit suffers D6 mortal wounds.",
-        "name": "Demolition Charges"
-      },
-      {
-        "type": "rule",
-        "text": "When rolling for this model\u2019s Deadly Demise ability, units within 6\" suffer mortal wounds on a 4+, instead of on a 6.",
-        "name": "Unstable Payload"
-      }
-    ],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Cyclops Demolition Vehicle"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "nothing.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -73,35 +57,14 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise 1"
+            "Deadly Demise 1 Demolition Charges: Each time this model or an enemy unit ends a move, if this model is within 3\" of one or more enemy units, select one of those enemy units. This model is destroyed, but instead of rolling for its Deadly Demise ability, roll one D6: on a 2-5, that enemy unit suffers D3 mortal wounds ; on a 6, that enemy unit suffers D6 mortal wounds. Unstable Payload: When rolling for this model\u2019s Deadly Demise ability, units within 6\" suffer mortal wounds on a 4+, instead of on a 6."
           ]
-        },
-        {
-          "type": "rule",
-          "text": "Each time this model or an enemy unit ends a move, if this model is within 3\" of one or more enemy units, select one of those enemy units. This model is destroyed, but instead of rolling for its Deadly Demise ability, roll one D6: on a 2-5, that enemy unit suffers D3 mortal wounds ; on a 6, that enemy unit suffers D6 mortal wounds.",
-          "name": "Demolition Charges"
-        },
-        {
-          "type": "rule",
-          "text": "When rolling for this model\u2019s Deadly Demise ability, units within 6\" suffer mortal wounds on a 4+, instead of on a 6.",
-          "name": "Unstable Payload"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Cyclops Demolition Vehicle"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "nothing.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -122,5 +85,33 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "COMPACT",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY"
+    ],
+    "exportedSectionTitles": [
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "COMPACT"
+    ],
+    "missingExpectedSections": [
+      "WARGEAR OPTIONS",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY"
+    ],
+    "warnings": [
+      "section-missing:WARGEAR OPTIONS",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:WARGEAR OPTIONS",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY"
+    ]
+  }
 }

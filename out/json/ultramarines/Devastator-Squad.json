@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Devastator-Squad",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Devastator-Squad",
+    "canonicalSourceId": "wahapedia:096e1abc5b32223a828dea3b28210d5e8fc15236",
     "faction_slug": "space-marines",
     "datasheet_slug": "Devastator-Squad",
+    "fetchedAt": "2026-03-19T17:34:44+00:00",
+    "contentHash": "27710064e910ebf632b7e024e75e09cca06b6954bae9d7db035cd679c128b1b7",
     "output_slug": "ultramarines"
   },
   "name": "Devastator Squad",
@@ -265,40 +271,12 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Oath of Moment"
+      "Oath of Moment Signum: Each time this unit Remains Stationary , until the start of your next Movement phase , ranged weapons equipped by models in this unit have the [IGNORES COVER] ability. Armorium Cherub: Once per battle, after making a Hit roll for a model in this unit, you can change that roll to an unmodified 6. Designer\u2019s Note: Place an Armorium Cherub token next to the unit, removing it once this ability has been used."
     ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "Each time this unit Remains Stationary , until the start of your next Movement phase , ranged weapons equipped by models in this unit have the [IGNORES COVER] ability.",
-        "name": "Signum"
-      },
-      {
-        "type": "rule",
-        "text": "Once per battle, after making a Hit roll for a model in this unit, you can change that roll to an unmodified 6.",
-        "name": "Armorium Cherub"
-      },
-      {
-        "type": "rule",
-        "text": "Place an Armorium Cherub token next to the unit, removing it once this ability has been used.",
-        "name": "Designer\u2019s Note"
-      }
-    ],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Devastator Sergeant",
-        "4-9 Devastator Marines"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "bolt pistol; boltgun; close combat weapon.",
-      "label": "Every model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -324,47 +302,56 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "Up to 4 Devastator Marines can each have their boltgun replaced with one of the following:",
+          "items": [
+            "1 grav-cannon",
+            "1 heavy bolter",
+            "1 lascannon",
+            "1 missile launcher",
+            "1 multi-melta",
+            "1 plasma cannon"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "The Devastator Sergeant\u2019s bolt pistol and boltgun can be replaced with two different weapons from the following list:*",
+          "items": [
+            "1 Astartes chain sword",
+            "1 bolt pistol",
+            "1 boltgun",
+            "1 combi-weapon",
+            "1 grav-pistol",
+            "1 plasma pistol",
+            "1 power fist",
+            "1 power weapon",
+            "1 thunder hammer"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "* This model can only be equipped with two ranged weapons if one of them is a Pistol (and it can only have one Pistol)"
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Oath of Moment"
+            "Oath of Moment Signum: Each time this unit Remains Stationary , until the start of your next Movement phase , ranged weapons equipped by models in this unit have the [IGNORES COVER] ability. Armorium Cherub: Once per battle, after making a Hit roll for a model in this unit, you can change that roll to an unmodified 6. Designer\u2019s Note: Place an Armorium Cherub token next to the unit, removing it once this ability has been used."
           ]
-        },
-        {
-          "type": "rule",
-          "text": "Each time this unit Remains Stationary , until the start of your next Movement phase , ranged weapons equipped by models in this unit have the [IGNORES COVER] ability.",
-          "name": "Signum"
-        },
-        {
-          "type": "rule",
-          "text": "Once per battle, after making a Hit roll for a model in this unit, you can change that roll to an unmodified 6.",
-          "name": "Armorium Cherub"
-        },
-        {
-          "type": "rule",
-          "text": "Place an Armorium Cherub token next to the unit, removing it once this ability has been used.",
-          "name": "Designer\u2019s Note"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Devastator Sergeant",
-            "4-9 Devastator Marines"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "bolt pistol; boltgun; close combat weapon.",
-          "label": "Every model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -380,5 +367,93 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [
+      "RANGED WEAPONS",
+      "RANGE",
+      "A",
+      "BS",
+      "S",
+      "AP",
+      "D",
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "LED BY",
+      "DETACHMENT ABILITY",
+      "ENHANCEMENTS"
+    ],
+    "warnings": [
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS",
+      "section-missing:RANGED WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:BS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:LED BY",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:ENHANCEMENTS"
+    ]
+  }
 }

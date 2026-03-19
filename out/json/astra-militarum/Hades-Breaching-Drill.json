@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Hades-Breaching-Drill",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Hades-Breaching-Drill",
+    "canonicalSourceId": "wahapedia:2d36a4dbc8f45ad9ca3a0e7a5dd24bfa93ec8ce6",
     "faction_slug": "astra-militarum",
     "datasheet_slug": "Hades-Breaching-Drill",
+    "fetchedAt": "2026-03-19T17:12:12+00:00",
+    "contentHash": "115789ebf2c621a2e8367c5319b23e291b2e159b54055ac3f35fc922cceeeceb",
     "output_slug": "astra-militarum"
   },
   "name": "Hades Breaching Drill",
@@ -31,30 +37,13 @@
   },
   "abilities": {
     "core": [
-      "Deep Strike"
+      "Deep Strike Subterranean Assault: Each time you set up this model on the battlefield using the Deep Strike ability, you can select one friendly ASTRA MILITARUM INFANTRY unit in Strategic Reserves . If you do, set up that unit anywhere on the battlefield that is wholly within 9\" of this model and more than 9\" away from all enemy units."
     ],
     "faction": [],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "Each time you set up this model on the battlefield using the Deep Strike ability, you can select one friendly ASTRA MILITARUM INFANTRY unit in Strategic Reserves . If you do, set up that unit anywhere on the battlefield that is wholly within 9\" of this model and more than 9\" away from all enemy units.",
-        "name": "Subterranean Assault"
-      }
-    ],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Hades Breaching Drill"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "melta-cutter drill.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -92,30 +81,14 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deep Strike"
+            "Deep Strike Subterranean Assault: Each time you set up this model on the battlefield using the Deep Strike ability, you can select one friendly ASTRA MILITARUM INFANTRY unit in Strategic Reserves . If you do, set up that unit anywhere on the battlefield that is wholly within 9\" of this model and more than 9\" away from all enemy units."
           ]
-        },
-        {
-          "type": "rule",
-          "text": "Each time you set up this model on the battlefield using the Deep Strike ability, you can select one friendly ASTRA MILITARUM INFANTRY unit in Strategic Reserves . If you do, set up that unit anywhere on the battlefield that is wholly within 9\" of this model and more than 9\" away from all enemy units.",
-          "name": "Subterranean Assault"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Hades Breaching Drill"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "melta-cutter drill.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -127,5 +100,57 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [
+      "MELEE WEAPONS",
+      "RANGE",
+      "A",
+      "WS",
+      "S",
+      "AP",
+      "D",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY"
+    ],
+    "warnings": [
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:MELEE WEAPONS",
+      "section-missing:RANGE",
+      "section-missing:A",
+      "section-missing:WS",
+      "section-missing:S",
+      "section-missing:AP",
+      "section-missing:D",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY"
+    ]
+  }
 }

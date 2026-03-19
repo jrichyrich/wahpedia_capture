@@ -1,8 +1,14 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Aegis-Defence-Line",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Aegis-Defence-Line",
+    "canonicalSourceId": "wahapedia:3f8d802a60469a151c123e92a8397a5842c5342b",
     "faction_slug": "astra-militarum",
     "datasheet_slug": "Aegis-Defence-Line",
+    "fetchedAt": "2026-03-19T17:11:45+00:00",
+    "contentHash": "4c4a84e6f44e980794cf5c6332531e7feabe69967d9c0a1962e91cc5d85d9ae3",
     "output_slug": "astra-militarum"
   },
   "name": "Aegis Defence Line",
@@ -19,28 +25,7 @@
   "abilities": {
     "core": [],
     "faction": [],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "Friendly ASTRA MILITARUM INFANTRY models can be set up or end any type of move on top of the platform section of this FORTIFICATION .",
-        "name": "Emplacement Platform"
-      },
-      {
-        "type": "rule",
-        "text": "Each time a ranged attack is allocated to a model, if that model is not fully visible to every model in the attacking unit because of this FORTIFICATION , that model has the Benefit of Cover against that attack.",
-        "name": "Reinforced Cover"
-      },
-      {
-        "type": "rule",
-        "text": "While an ASTRA MILITARUM INFANTRY model has the Benefit of Cover as a result of this terrain feature (see above), that model has a 4+ invulnerable save .",
-        "name": "Defence Line"
-      },
-      {
-        "type": "rule",
-        "text": "While an enemy unit is only within Engagement Range of one or more FORTIFICATIONS from your army: That unit can still be selected as the target of ranged attacks, but each time such an attack is made, unless it is made with a Pistol , subtract 1 from the Hit roll . Models in that unit do not need to take Desperate Escape tests due to Falling Back while Battle-shocked , except for those that will move over enemy models when doing so.",
-        "name": "Fortification"
-      }
-    ],
+    "datasheet": [],
     "other": [
       {
         "type": "list",
@@ -52,12 +37,6 @@
     ]
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Aegis Defence Line"
-      ]
-    },
     {
       "type": "points",
       "rows": [
@@ -86,38 +65,12 @@
             "That unit can still be selected as the target of ranged attacks, but each time such an attack is made, unless it is made with a Pistol , subtract 1 from the Hit roll .",
             "Models in that unit do not need to take Desperate Escape tests due to Falling Back while Battle-shocked , except for those that will move over enemy models when doing so."
           ]
-        },
-        {
-          "type": "rule",
-          "text": "Friendly ASTRA MILITARUM INFANTRY models can be set up or end any type of move on top of the platform section of this FORTIFICATION .",
-          "name": "Emplacement Platform"
-        },
-        {
-          "type": "rule",
-          "text": "Each time a ranged attack is allocated to a model, if that model is not fully visible to every model in the attacking unit because of this FORTIFICATION , that model has the Benefit of Cover against that attack.",
-          "name": "Reinforced Cover"
-        },
-        {
-          "type": "rule",
-          "text": "While an ASTRA MILITARUM INFANTRY model has the Benefit of Cover as a result of this terrain feature (see above), that model has a 4+ invulnerable save .",
-          "name": "Defence Line"
-        },
-        {
-          "type": "rule",
-          "text": "While an enemy unit is only within Engagement Range of one or more FORTIFICATIONS from your army: That unit can still be selected as the target of ranged attacks, but each time such an attack is made, unless it is made with a Pistol , subtract 1 from the Hit roll . Models in that unit do not need to take Desperate Escape tests due to Falling Back while Battle-shocked , except for those that will move over enemy models when doing so.",
-          "name": "Fortification"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Aegis Defence Line"
-          ]
-        },
         {
           "type": "points",
           "rows": [
@@ -138,5 +91,33 @@
         }
       ]
     }
-  ]
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DEPLOYMENT",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY"
+    ],
+    "exportedSectionTitles": [
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DEPLOYMENT"
+    ],
+    "missingExpectedSections": [
+      "WARGEAR OPTIONS",
+      "STRATAGEMS",
+      "DETACHMENT ABILITY"
+    ],
+    "warnings": [
+      "section-missing:WARGEAR OPTIONS",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY",
+      "section-missing:WARGEAR OPTIONS",
+      "section-missing:STRATAGEMS",
+      "section-missing:DETACHMENT ABILITY"
+    ]
+  }
 }

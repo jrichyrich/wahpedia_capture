@@ -3,7 +3,11 @@
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Land-Speeder-Tornado",
     "faction_slug": "space-marines",
     "datasheet_slug": "Land-Speeder-Tornado",
-    "output_slug": "ultramarines"
+    "output_slug": "ultramarines",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Land-Speeder-Tornado",
+    "canonicalSourceId": "wahapedia:79d9e63616f65962841f958f8bab8ed360bd5c5b",
+    "fetchedAt": "2026-03-19T17:35:03+00:00",
+    "contentHash": "bfde6025c8612a2f98828ee4cc092ec2608383de6b2ff015eedd75465fa179ea"
   },
   "name": "Land Speeder Tornado",
   "base_size": "\u230060mm flying base",
@@ -82,32 +86,13 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise 1 , Deep Strike"
+      "Deadly Demise 1 , Deep Strike FACTION: Oath of Moment Strafing Enfilade: Each time this model ends a Normal move , you can select one enemy unit (excluding MONSTER and VEHICLE units) that it moved over during that move, then roll six D6: for each 4+, that enemy unit suffers 1 mortal wound ."
     ],
-    "faction": [
-      "Oath of Moment"
-    ],
-    "datasheet": [
-      {
-        "type": "rule",
-        "text": "Each time this model ends a Normal move , you can select one enemy unit (excluding MONSTER and VEHICLE units) that it moved over during that move, then roll six D6: for each 4+, that enemy unit suffers 1 mortal wound .",
-        "name": "Strafing Enfilade"
-      }
-    ],
+    "faction": [],
+    "datasheet": [],
     "other": []
   },
   "unit_composition": [
-    {
-      "type": "list",
-      "items": [
-        "1 Land Speeder Tornado"
-      ]
-    },
-    {
-      "type": "statement",
-      "text": "assault cannon; heavy bolter; close combat weapon.",
-      "label": "This model is equipped with"
-    },
     {
       "type": "points",
       "rows": [
@@ -130,43 +115,35 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s heavy bolter can be replaced with 1 multi-melta.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "This model\u2019s assault cannon can be replaced with 1 heavy flamer.",
+          "items": []
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise 1 , Deep Strike"
+            "Deadly Demise 1 , Deep Strike FACTION: Oath of Moment Strafing Enfilade: Each time this model ends a Normal move , you can select one enemy unit (excluding MONSTER and VEHICLE units) that it moved over during that move, then roll six D6: for each 4+, that enemy unit suffers 1 mortal wound ."
           ]
-        },
-        {
-          "type": "tagged_list",
-          "label": "FACTION",
-          "items": [
-            "Oath of Moment"
-          ]
-        },
-        {
-          "type": "rule",
-          "text": "Each time this model ends a Normal move , you can select one enemy unit (excluding MONSTER and VEHICLE units) that it moved over during that move, then roll six D6: for each 4+, that enemy unit suffers 1 mortal wound .",
-          "name": "Strafing Enfilade"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
-        {
-          "type": "list",
-          "items": [
-            "1 Land Speeder Tornado"
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "assault cannon; heavy bolter; close combat weapon.",
-          "label": "This model is equipped with"
-        },
         {
           "type": "points",
           "rows": [
@@ -178,5 +155,20 @@
         }
       ]
     }
-  ]
+  ],
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "quality": {
+    "rawSectionTitles": [
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [],
+    "warnings": []
+  }
 }
