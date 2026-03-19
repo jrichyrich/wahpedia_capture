@@ -305,7 +305,7 @@
 
         .roster-manager-grid {
             display: grid;
-            grid-template-columns: minmax(0, 240px) minmax(0, 1fr);
+            grid-template-columns: minmax(0, 240px) minmax(0, 1fr) minmax(0, 220px);
             gap: 12px;
         }
 
@@ -319,6 +319,25 @@
             min-height: 18px;
             font-size: 12px;
             color: #5d5448;
+        }
+
+        .legality-summary {
+            display: grid;
+            gap: 10px;
+            padding: 14px 16px;
+            border: 1px solid var(--line);
+            background: #f4efe3;
+        }
+
+        .legality-summary-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .legality-summary-lines {
+            display: grid;
+            gap: 6px;
         }
 
         .preview-header {
@@ -454,6 +473,11 @@
         }
 
         .inline-note-warning {
+            color: #8c2f39;
+            font-weight: 700;
+        }
+
+        .inline-note-error {
             color: #8c2f39;
             font-weight: 700;
         }
@@ -714,7 +738,7 @@
                     </div>
                     <div>
                         <div id="total-points" class="points-tally">0</div>
-                        <div class="points-caption">Total points</div>
+                        <div id="points-caption" class="points-caption">Total points</div>
                     </div>
                 </div>
 
@@ -730,6 +754,14 @@
                             <label class="field-label" for="roster-name">Roster name</label>
                             <input id="roster-name" type="text" placeholder="Aeldari Roster" maxlength="80" disabled>
                         </div>
+                        <div class="field-group">
+                            <label class="field-label" for="battle-size-select">Battle size</label>
+                            <select id="battle-size-select" disabled>
+                                <option value="incursion">Incursion (1000)</option>
+                                <option value="strike-force" selected>Strike Force (2000)</option>
+                                <option value="onslaught">Onslaught (3000)</option>
+                            </select>
+                        </div>
                     </div>
                     <div class="roster-manager-actions">
                         <button id="save-roster" class="btn">Save roster</button>
@@ -738,6 +770,7 @@
                         <button id="export-roster" class="btn">Export JSON</button>
                         <button id="delete-roster" class="btn">Delete roster</button>
                     </div>
+                    <div id="legality-summary" class="legality-summary"></div>
                     <div id="roster-status" class="roster-status"></div>
                 </div>
 
@@ -800,6 +833,7 @@
             catalog: null,
             rosterFactionSlug: "",
             roster: [],
+            army: Store.normalizeArmyState({}),
             activeRosterId: null,
             activeRosterName: "",
             rosterNameDraft: "",
@@ -825,6 +859,7 @@
             rosterSubtitle: document.getElementById("roster-subtitle"),
             rosterBody: document.getElementById("roster-body"),
             totalPoints: document.getElementById("total-points"),
+            pointsCaption: document.getElementById("points-caption"),
             previewBody: document.getElementById("preview-body"),
             previewToggle: document.getElementById("preview-toggle"),
             previewModeConfigured: document.getElementById("preview-mode-configured"),
@@ -834,12 +869,14 @@
             clearRoster: document.getElementById("clear-roster"),
             printRoster: document.getElementById("print-roster"),
             rosterName: document.getElementById("roster-name"),
+            battleSizeSelect: document.getElementById("battle-size-select"),
             savedRosterSelect: document.getElementById("saved-roster-select"),
             saveRoster: document.getElementById("save-roster"),
             newRoster: document.getElementById("new-roster"),
             importRoster: document.getElementById("import-roster"),
             exportRoster: document.getElementById("export-roster"),
             deleteRoster: document.getElementById("delete-roster"),
+            legalitySummary: document.getElementById("legality-summary"),
             rosterStatus: document.getElementById("roster-status"),
             importRosterFile: document.getElementById("import-roster-file"),
         };
@@ -853,7 +890,7 @@
         }
 
         async function fetchJson(path) {
-            const response = await fetch(path);
+            const response = await fetch(path, { cache: "no-store" });
             if (!response.ok) {
                 throw new Error(`Failed to load ${path} (${response.status})`);
             }
@@ -897,8 +934,53 @@
                 appVersion: appVersion(),
                 factionSlug: state.rosterFactionSlug || state.factionSlug,
                 name: state.rosterNameDraft,
+                army: state.army,
                 entries: state.roster,
             });
+        }
+
+        function battleSizeLabel(battleSize) {
+            return {
+                incursion: "Incursion",
+                "strike-force": "Strike Force",
+                onslaught: "Onslaught",
+            }[battleSize] || "Strike Force";
+        }
+
+        function renderPointsTally(derived) {
+            const battleSize = derived && derived.army ? derived.army.battleSize : Store.DEFAULT_BATTLE_SIZE;
+            const pointsLimit = derived && typeof derived.pointsLimit === "number"
+                ? derived.pointsLimit
+                : Store.battleSizePoints(battleSize);
+            const totalPoints = derived && typeof derived.totalPoints === "number" ? derived.totalPoints : 0;
+            els.totalPoints.textContent = `${totalPoints} / ${pointsLimit}`;
+            els.pointsCaption.textContent = `${battleSizeLabel(battleSize)} cap`;
+        }
+
+        function renderLegalitySummary(derived) {
+            if (!derived) {
+                els.legalitySummary.innerHTML = "";
+                return;
+            }
+
+            const armyIssueCount = derived.armyIssues.length;
+            const entryIssueCount = derived.invalidEntries.length;
+            const warningCount = derived.armyWarnings.length;
+            const totalIssueCount = armyIssueCount + entryIssueCount;
+            const pills = [
+                `<div class="pill ${totalIssueCount ? "pill-danger" : ""}">${totalIssueCount ? `${totalIssueCount} issue(s)` : "Legal foundation checks passed"}</div>`,
+                `<div class="pill">${battleSizeLabel(derived.army.battleSize)} | ${derived.totalPoints}/${derived.pointsLimit} pts</div>`,
+                `<div class="pill ${warningCount ? "pill-warning" : ""}">${warningCount ? `${warningCount} warning(s)` : "No advisory warnings"}</div>`,
+            ];
+            const lines = [
+                ...derived.armyIssues.map((issue) => `<div class="inline-note inline-note-error">${issue.message}</div>`),
+                ...(entryIssueCount ? [`<div class="inline-note inline-note-warning">${entryIssueCount} roster entr${entryIssueCount === 1 ? "y has" : "ies have"} unit-level issues. See the affected rows below.</div>`] : []),
+                ...derived.armyWarnings.map((warning) => `<div class="inline-note inline-note-warning">${warning.message}</div>`),
+            ];
+            els.legalitySummary.innerHTML = `
+                <div class="legality-summary-pills">${pills.join("")}</div>
+                <div class="legality-summary-lines">${lines.join("") || `<div class="inline-note">Roster legality checks are advisory and do not block editing, saving, export, or print.</div>`}</div>
+            `;
         }
 
         function refreshSavedRosterList() {
@@ -973,30 +1055,34 @@
             return {
                 simple: groups.filter((group) => group.selectionMode === "single"),
                 allocation: groups.filter((group) => group.selectionMode === "allocation"),
+                multi: groups.filter((group) => group.selectionMode === "multi"),
                 manual: groups.filter((group) => group.selectionMode === "manual"),
             };
         }
 
-        function allocationLimit(group, entry) {
-            if (!group || group.selectionMode !== "allocation") {
-                return null;
-            }
+        function resolveSelectionLimit(limitSpec, entry) {
             const modelCount = entry && entry.selectedOption && typeof entry.selectedOption.modelCount === "number"
                 ? entry.selectedOption.modelCount
                 : null;
-            if (!group.allocationLimit || group.allocationLimit === "modelCount") {
+            if (typeof limitSpec === "undefined") {
                 return modelCount;
             }
-            if (typeof group.allocationLimit === "object") {
-                if (group.allocationLimit.kind === "modelCount") {
+            if (limitSpec === null) {
+                return null;
+            }
+            if (limitSpec === "modelCount") {
+                return modelCount;
+            }
+            if (typeof limitSpec === "object") {
+                if (limitSpec.kind === "modelCount") {
                     return modelCount;
                 }
-                if (group.allocationLimit.kind === "static") {
-                    return typeof group.allocationLimit.max === "number" ? group.allocationLimit.max : null;
+                if (limitSpec.kind === "static") {
+                    return typeof limitSpec.max === "number" ? limitSpec.max : null;
                 }
-                if (group.allocationLimit.kind === "ratio" && modelCount !== null) {
-                    const perModels = Number(group.allocationLimit.perModels) || 0;
-                    const maxPerStep = Number(group.allocationLimit.maxPerStep) || 0;
+                if (limitSpec.kind === "ratio" && modelCount !== null) {
+                    const perModels = Number(limitSpec.perModels) || 0;
+                    const maxPerStep = Number(limitSpec.maxPerStep) || 0;
                     if (perModels > 0 && maxPerStep > 0) {
                         return Math.floor(modelCount / perModels) * maxPerStep;
                     }
@@ -1004,6 +1090,13 @@
                 }
             }
             return null;
+        }
+
+        function allocationLimit(group, entry) {
+            if (!group || group.selectionMode !== "allocation") {
+                return null;
+            }
+            return resolveSelectionLimit(group.allocationLimit, entry);
         }
 
         function isMobileViewport() {
@@ -1089,6 +1182,7 @@
             els.factionSelect.disabled = factions.length === 0;
             els.unitSearch.disabled = factions.length === 0;
             els.rosterName.disabled = factions.length === 0;
+            els.battleSizeSelect.disabled = factions.length === 0;
             els.importRoster.disabled = factions.length === 0;
             els.exportRoster.disabled = factions.length === 0;
             els.newRoster.disabled = factions.length === 0;
@@ -1198,6 +1292,10 @@
             if (els.rosterName.value !== nextRosterName) {
                 els.rosterName.value = nextRosterName;
             }
+            const battleSize = state.army && state.army.battleSize ? state.army.battleSize : Store.DEFAULT_BATTLE_SIZE;
+            if (els.battleSizeSelect.value !== battleSize) {
+                els.battleSizeSelect.value = battleSize;
+            }
             renderCatalogSummary();
         }
 
@@ -1209,6 +1307,7 @@
             state.rosterNameDraft = state.activeRosterName;
             state.rosterFactionSlug = rosterFaction;
             state.roster = [];
+            state.army = Store.normalizeArmyState({});
             state.lastSavedAt = null;
             renderSavedRosterState();
             renderRoster();
@@ -1225,6 +1324,7 @@
             state.rosterFactionSlug = savedRoster.factionSlug;
             state.lastSavedAt = savedRoster.savedAt;
             state.roster = Store.createRuntimeEntries(savedRoster.entries);
+            state.army = Store.normalizeArmyState(savedRoster.army);
 
             const factions = availableFactionSlugs();
             const targetFaction = factions.includes(savedRoster.factionSlug) ? savedRoster.factionSlug : (factions[0] || "");
@@ -1271,6 +1371,7 @@
             state.activeRosterId = result.roster.id;
             state.activeRosterName = result.roster.name;
             state.rosterFactionSlug = result.roster.factionSlug;
+            state.army = Store.normalizeArmyState(result.roster.army);
             state.lastSavedAt = result.roster.savedAt;
             refreshSavedRosterList();
             renderSavedRosterState();
@@ -1289,9 +1390,10 @@
 
         function renderRoster() {
             const derived = deriveRoster();
+            renderPointsTally(derived);
+            renderLegalitySummary(derived);
             if (!state.catalog || !derived.entries.length) {
                 els.rosterBody.innerHTML = `<tr><td colspan="5" class="table-empty">No roster entries yet.</td></tr>`;
-                els.totalPoints.textContent = "0";
                 return;
             }
 
@@ -1311,7 +1413,9 @@
                     : `<option value="-1">Unavailable</option>`;
                 const issueText = entry.issues.map((issue) => `<div class="inline-note inline-note-warning">${issue}</div>`).join("");
                 const unitMissingStats = entry.unit ? missingStats(entry.unit) : [];
-                const groups = entry.unit ? wargearGroups(entry.unit) : { simple: [], allocation: [], manual: [] };
+                const isCharacter = Boolean(entry.unit && Array.isArray(entry.unit.keywords) && entry.unit.keywords.includes("CHARACTER"));
+                const isWarlord = Boolean(derived.army.warlordInstanceId && derived.army.warlordInstanceId === runtimeInstanceId);
+                const groups = entry.unit ? wargearGroups(entry.unit) : { simple: [], allocation: [], multi: [], manual: [] };
                 const upgradeControls = (entry.upgradeOptions || []).map((upgrade) => {
                     const checked = (entry.selectedUpgrades || []).some((selected) => selected.id === upgrade.id);
                     return `
@@ -1340,6 +1444,8 @@
                     return `
                         <div>
                             <div class="inline-note">${group.target || group.label}</div>
+                            ${group.eligibilityText ? `<div class="inline-note">${escapeHtml(group.eligibilityText)}</div>` : ""}
+                            ${selected && selected.poolUsage && selected.poolUsage.used > 0 ? `<div class="inline-note">${typeof selected.poolUsage.max === "number" ? `Shared pool: ${selected.poolUsage.used}/${selected.poolUsage.max}` : `Shared pool usage: ${selected.poolUsage.used}`}</div>` : ""}
                             <select class="entry-subselect" data-action="wargear-select" data-instance-id="${runtimeInstanceId}" data-group-id="${group.id}">
                                 ${optionsHtml}
                             </select>
@@ -1378,7 +1484,44 @@
                         <div>
                             <div class="inline-note">${group.label}</div>
                             <div class="inline-note">${group.target ? `Replaces ${group.target}` : "Allocate replacements across the unit."}</div>
+                            ${group.eligibilityText ? `<div class="inline-note">${escapeHtml(group.eligibilityText)}</div>` : ""}
                             <div class="inline-note">${maxAllowed !== null ? `Selected ${selectedTotal}/${maxAllowed} model weapon swaps.` : `Selected ${selectedTotal} weapon swaps.`}</div>
+                            ${selected && selected.poolUsage && selected.poolUsage.used > 0 ? `<div class="inline-note">${typeof selected.poolUsage.max === "number" ? `Shared pool: ${selected.poolUsage.used}/${selected.poolUsage.max}` : `Shared pool usage: ${selected.poolUsage.used}`}</div>` : ""}
+                            ${choiceRows}
+                        </div>
+                    `;
+                }).join("");
+                const multiControls = groups.multi.map((group) => {
+                    const selected = (entry.wargearSelections || []).find((item) => item.group && item.group.id === group.id);
+                    const selectedIds = selected && Array.isArray(selected.selectedChoices)
+                        ? selected.selectedChoices.map((item) => item.choice.id)
+                        : [];
+                    const totalSelected = selected && typeof selected.totalSelected === "number"
+                        ? selected.totalSelected
+                        : 0;
+                    const maxAllowed = typeof group.pickCount === "number" ? group.pickCount : null;
+                    const choiceRows = group.choices.map((choice) => {
+                        const pickCost = Math.max(1, Number.parseInt(choice.pickCost, 10) || 1);
+                        return `
+                            <label class="inline-note">
+                                <input
+                                    type="checkbox"
+                                    data-action="wargear-multi-toggle"
+                                    data-instance-id="${runtimeInstanceId}"
+                                    data-group-id="${group.id}"
+                                    data-choice-id="${choice.id}"
+                                    ${selectedIds.includes(choice.id) ? "checked" : ""}
+                                >
+                                ${choice.label}${pickCost > 1 ? ` (${pickCost} picks)` : ""}
+                            </label>
+                        `;
+                    }).join("");
+                    return `
+                        <div>
+                            <div class="inline-note">${group.label}</div>
+                            ${group.eligibilityText ? `<div class="inline-note">${escapeHtml(group.eligibilityText)}</div>` : ""}
+                            <div class="inline-note">${maxAllowed !== null ? `Selected ${totalSelected}/${maxAllowed} picks.` : `Selected ${totalSelected} picks.`}${group.requireDistinct ? " Choices must be different." : ""}</div>
+                            ${selected && selected.poolUsage && selected.poolUsage.used > 0 ? `<div class="inline-note">${typeof selected.poolUsage.max === "number" ? `Shared pool: ${selected.poolUsage.used}/${selected.poolUsage.max}` : `Shared pool usage: ${selected.poolUsage.used}`}</div>` : ""}
                             ${choiceRows}
                         </div>
                     `;
@@ -1391,11 +1534,24 @@
                 const wargearManualComments = entry.unit && entry.unit.wargear && Array.isArray(entry.unit.wargear.manualNotes)
                     ? entry.unit.wargear.manualNotes.map((note) => `<div class="inline-note inline-note-warning">${note}</div>`).join("")
                     : "";
+                const warlordControl = isCharacter ? `
+                    <label class="inline-note">
+                        <input
+                            type="radio"
+                            name="warlord-entry"
+                            data-action="warlord-select"
+                            data-instance-id="${runtimeInstanceId}"
+                            ${isWarlord ? "checked" : ""}
+                        >
+                        Warlord
+                    </label>
+                ` : "";
 
                 return `
                     <tr class="roster-entry">
                         <td data-label="Unit">
                             <strong>${entry.displayName}</strong>
+                            ${isWarlord ? `<div class="inline-note">Selected as Warlord.</div>` : ""}
                             ${entry.unit && entry.unit.selectionMode === "manual" ? `<div class="inline-note inline-note-warning">Source labels are preserved verbatim for this unit.</div>` : ""}
                             ${unitMissingStats.length ? `<div class="inline-note inline-note-warning">Missing stats: ${unitMissingStats.join(", ")}.</div>` : ""}
                             ${issueText}
@@ -1406,9 +1562,11 @@
                                     <select data-action="option-select" data-instance-id="${runtimeInstanceId}">
                                         ${optionsHtml}
                                     </select>
+                                    ${warlordControl}
                                     ${upgradeControls}
                                     ${wargearControls}
                                     ${allocationControls}
+                                    ${multiControls}
                                     ${manualWargearNotes}
                                     ${wargearManualComments}
                                 </div>
@@ -1429,27 +1587,26 @@
                     </tr>
                 `;
             }).join("");
-
-            els.totalPoints.textContent = String(derived.totalPoints);
         }
 
         function renderPreview() {
             const derived = deriveRoster();
-            if (!state.catalog || !derived.validEntries.length) {
-                els.previewBody.innerHTML = derived.invalidEntries.length
-                    ? `<div class="inline-note">Only valid roster entries are shown in the preview. Repair or remove unresolved entries to print them.</div>`
+            const renderableEntries = derived.entries.filter((entry) => entry.unit && entry.selectedOption);
+            if (!state.catalog || !renderableEntries.length) {
+                els.previewBody.innerHTML = derived.entries.length
+                    ? `<div class="inline-note">Only roster entries that can be resolved against the current catalog are shown in the preview. Legality warnings do not block card rendering.</div>`
                     : `<div class="inline-note">Add one or more units to preview printable datacards.</div>`;
                 renderPreviewVisibility();
                 return;
             }
 
             if (state.previewSourceMode === "source-image") {
-                els.previewBody.innerHTML = derived.validEntries.map((entry) => renderSourceCard(entry)).join("");
+                els.previewBody.innerHTML = renderableEntries.map((entry) => renderSourceCard(entry)).join("");
                 renderPreviewVisibility();
                 return;
             }
 
-            els.previewBody.innerHTML = derived.validEntries.map((entry) => {
+            els.previewBody.innerHTML = renderableEntries.map((entry) => {
                 return window.WahBuilderCardRenderer.renderCard(entry.unit, {
                     selectedOption: entry.selectedOption,
                     selectedUpgrades: entry.selectedUpgrades,
@@ -1582,6 +1739,14 @@
             scheduleAutoSave();
         });
 
+        els.battleSizeSelect.addEventListener("change", (event) => {
+            interactionController.updateArmyBattleSize(event.target.value);
+            state.army = Store.normalizeArmyState({
+                ...state.army,
+                battleSize: event.target.value,
+            });
+        });
+
         els.saveRoster.addEventListener("click", () => {
             persistActiveRoster({ announce: true });
         });
@@ -1667,8 +1832,9 @@
         });
         els.printRoster.addEventListener("click", () => {
             const derived = deriveRoster();
-            if (!derived.validEntries.length) {
-                alert("Add at least one valid unit before printing.");
+            const renderableEntries = derived.entries.filter((entry) => entry.unit && entry.selectedOption);
+            if (!renderableEntries.length) {
+                alert("Add at least one resolved unit before printing.");
                 return;
             }
             if (state.previewSourceMode === "configured") {

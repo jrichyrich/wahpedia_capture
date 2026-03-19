@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generatedAt": "2026-03-18T21:01:18+00:00",
+  "generatedAt": "2026-03-19T16:10:46+00:00",
   "faction": {
     "slug": "ultramarines",
     "name": "Ultramarines",
@@ -4474,7 +4474,7 @@
             "id": "this-model-s-bolt-pistol-master-crafted-bolter-and-close-combat-weapon-can-be-replaced-with-one-of-the-following-1",
             "label": "This model\u2019s bolt pistol, master-crafted bolter and close combat weapon can be replaced with one of the following:",
             "target": "bolt pistol, master-crafted bolter and close combat weapon",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -4507,13 +4507,15 @@
                 "label": "1 heavy bolt pistol, 1 master-crafted power weapon and 1 relic shield"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-bolt-pistol-master-crafted-bolter-and-close-combat-weapon",
+            "poolLimit": null
           },
           {
             "id": "this-model-s-close-combat-weapon-can-be-replaced-with-one-of-the-following-2",
             "label": "This model\u2019s close combat weapon can be replaced with one of the following:",
             "target": "close combat weapon",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -4526,7 +4528,9 @@
                 "label": "1 power fist"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-close-combat-weapon",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
@@ -29141,8 +29145,8 @@
           {
             "id": "1-tactical-marine-s-boltgun-can-be-replaced-with-one-of-the-following-1",
             "label": "1 Tactical Marine\u2019s boltgun can be replaced with one of the following:",
-            "target": "1 Tactical Marine\u2019s boltgun",
-            "actor": null,
+            "target": "boltgun",
+            "actor": "Tactical Marine",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -29187,13 +29191,15 @@
                 "label": "1 plasma gun"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "tactical-marine-boltgun",
+            "poolLimit": "modelCount"
           },
           {
             "id": "1-tactical-marine-s-boltgun-can-be-replaced-with-one-of-the-following-2",
             "label": "1 Tactical Marine\u2019s boltgun can be replaced with one of the following:",
-            "target": "1 Tactical Marine\u2019s boltgun",
-            "actor": null,
+            "target": "boltgun",
+            "actor": "Tactical Marine",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -29214,7 +29220,9 @@
                 "label": "1 plasma gun"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "tactical-marine-boltgun",
+            "poolLimit": "modelCount"
           },
           {
             "id": "the-tactical-sergeant-s-bolt-pistol-and-boltgun-can-be-replaced-with-1-twin-lightning-claws-or-two-different-weapons-from-the-following-list-3",
@@ -29222,8 +29230,13 @@
             "target": "The Tactical Sergeant\u2019s bolt pistol and boltgun",
             "actor": null,
             "action": "replace",
-            "selectionMode": "single",
+            "selectionMode": "multi",
             "choices": [
+              {
+                "id": "1-twin-lightning-claws",
+                "label": "1 twin lightning claws",
+                "pickCost": 2
+              },
               {
                 "id": "1-astartes-chainsword",
                 "label": "1 Astartes chainsword"
@@ -29265,7 +29278,9 @@
                 "label": "1 thunder hammer"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "pickCount": 2,
+            "requireDistinct": true
           }
         ],
         "manualNotes": [

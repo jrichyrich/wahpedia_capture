@@ -8,6 +8,7 @@ function sampleUnit() {
     return {
         unitId: "caladius-grav-tank",
         name: "Caladius Grav-tank",
+        keywords: ["VEHICLE"],
         pointsOptions: [
             { id: "1-model", label: "1 model", points: 215, selectionKind: "models", modelCount: 1 },
             { id: "3-models", label: "3 models", points: 300, selectionKind: "models", modelCount: 3 },
@@ -33,6 +34,20 @@ function sampleUnit() {
                         { id: "scatter-laser", label: "1 scatter laser" },
                     ],
                 },
+                {
+                    id: "sergeant-armory",
+                    label: "The sergeant’s sidearm can be replaced with 1 twin blades, or two different weapons from the following list:",
+                    target: "sidearm",
+                    action: "replace",
+                    selectionMode: "multi",
+                    pickCount: 2,
+                    requireDistinct: true,
+                    choices: [
+                        { id: "twin-blades", label: "1 twin blades", pickCost: 2 },
+                        { id: "bolt-pistol", label: "1 bolt pistol" },
+                        { id: "power-weapon", label: "1 power weapon" },
+                    ],
+                },
             ],
         },
     };
@@ -50,6 +65,7 @@ function createDeps() {
             quantity: 1,
             wargearSelections: {},
         }],
+        army: Store.normalizeArmyState({}),
     };
     const calls = { renderRoster: 0, renderPreview: 0, scheduleAutoSave: 0, setRosterStatus: [] };
     return {
@@ -176,6 +192,46 @@ test("handleRosterBodyChange enforces static allocation caps", () => {
     assert.equal(state.roster[0].wargearSelections["catapult-allocation"].counts["scatter-laser"], 1);
 });
 
+test("handleRosterBodyChange updates multi-pick wargear and respects pick caps", () => {
+    const { controller, state, calls } = createDeps();
+
+    assert.equal(controller.handleRosterBodyChange(
+        makeEvent(
+            '[data-action="wargear-multi-toggle"]',
+            { instanceId: "entry-1", groupId: "sergeant-armory", choiceId: "bolt-pistol" },
+            { checked: true }
+        )
+    ), true);
+    assert.equal(controller.handleRosterBodyChange(
+        makeEvent(
+            '[data-action="wargear-multi-toggle"]',
+            { instanceId: "entry-1", groupId: "sergeant-armory", choiceId: "power-weapon" },
+            { checked: true }
+        )
+    ), true);
+
+    assert.deepEqual(
+        state.roster[0].wargearSelections["sergeant-armory"].choiceIds,
+        ["bolt-pistol", "power-weapon"]
+    );
+
+    const rejectedEvent = makeEvent(
+        '[data-action="wargear-multi-toggle"]',
+        { instanceId: "entry-1", groupId: "sergeant-armory", choiceId: "twin-blades" },
+        { checked: true }
+    );
+    assert.equal(controller.handleRosterBodyChange(rejectedEvent), true);
+    assert.deepEqual(
+        state.roster[0].wargearSelections["sergeant-armory"].choiceIds,
+        ["bolt-pistol", "power-weapon"]
+    );
+    assert.equal(rejectedEvent.target.checked, false);
+
+    assert.equal(calls.renderRoster, 2);
+    assert.equal(calls.renderPreview, 2);
+    assert.equal(calls.scheduleAutoSave, 2);
+});
+
 test("clearRoster empties the roster and records a status message", () => {
     const { controller, state, calls } = createDeps();
     controller.clearRoster();
@@ -185,4 +241,119 @@ test("clearRoster empties the roster and records a status message", () => {
     assert.equal(calls.renderPreview, 1);
     assert.equal(calls.scheduleAutoSave, 1);
     assert.equal(calls.setRosterStatus[0].message, "Cleared the active roster.");
+});
+
+test("updateArmyBattleSize persists the selected battle size and rerenders", () => {
+    const { controller, state, calls } = createDeps();
+    const handled = controller.updateArmyBattleSize("onslaught");
+
+    assert.equal(handled, true);
+    assert.equal(state.army.battleSize, "onslaught");
+    assert.equal(calls.renderRoster, 1);
+    assert.equal(calls.renderPreview, 1);
+    assert.equal(calls.scheduleAutoSave, 1);
+});
+
+test("updateArmyWarlord selects a Character entry and ignores non-Characters", () => {
+    const characterUnit = {
+        unitId: "autarch",
+        name: "Autarch",
+        keywords: ["CHARACTER", "INFANTRY"],
+        pointsOptions: [{ id: "1-model", label: "1 model", points: 90, selectionKind: "models", modelCount: 1 }],
+        wargear: { options: [] },
+    };
+    const vehicleUnit = sampleUnit();
+    const state = {
+        roster: [
+            { instanceId: "entry-1", unitId: characterUnit.unitId, optionId: "1-model", optionIndex: 0, upgradeOptionIds: [], quantity: 1, wargearSelections: {} },
+            { instanceId: "entry-2", unitId: vehicleUnit.unitId, optionId: "1-model", optionIndex: 0, upgradeOptionIds: [], quantity: 1, wargearSelections: {} },
+        ],
+        army: Store.normalizeArmyState({}),
+    };
+    const calls = { renderRoster: 0, renderPreview: 0, scheduleAutoSave: 0 };
+    const controller = App.createInteractionController({
+        state,
+        Store,
+        renderer: { defaultPointsOption: (value) => value.pointsOptions[0] || null },
+        catalogUnitById: (unitId) => {
+            if (unitId === characterUnit.unitId) {
+                return characterUnit;
+            }
+            if (unitId === vehicleUnit.unitId) {
+                return vehicleUnit;
+            }
+            return null;
+        },
+        pointsGroups: (value) => ({
+            base: value.pointsOptions.filter((option) => option.selectionKind !== "upgrade"),
+            upgrades: value.pointsOptions.filter((option) => option.selectionKind === "upgrade"),
+        }),
+        renderRoster: () => { calls.renderRoster += 1; },
+        renderPreview: () => { calls.renderPreview += 1; },
+        scheduleAutoSave: () => { calls.scheduleAutoSave += 1; },
+        setRosterStatus: () => {},
+    });
+
+    assert.equal(controller.updateArmyWarlord("entry-2"), false);
+    assert.equal(state.army.warlordInstanceId, null);
+
+    assert.equal(controller.updateArmyWarlord("entry-1"), true);
+    assert.equal(state.army.warlordInstanceId, "entry-1");
+    assert.equal(calls.renderRoster, 1);
+    assert.equal(calls.renderPreview, 1);
+    assert.equal(calls.scheduleAutoSave, 1);
+});
+
+test("adding the first Character auto-selects Warlord and removing it falls back", () => {
+    const characterUnit = {
+        unitId: "autarch",
+        name: "Autarch",
+        keywords: ["CHARACTER", "INFANTRY"],
+        pointsOptions: [{ id: "1-model", label: "1 model", points: 90, selectionKind: "models", modelCount: 1 }],
+        wargear: { options: [] },
+    };
+    const secondCharacterUnit = {
+        unitId: "farseer",
+        name: "Farseer",
+        keywords: ["CHARACTER", "INFANTRY"],
+        pointsOptions: [{ id: "1-model", label: "1 model", points: 80, selectionKind: "models", modelCount: 1 }],
+        wargear: { options: [] },
+    };
+    const state = { roster: [], army: Store.normalizeArmyState({}) };
+    const controller = App.createInteractionController({
+        state,
+        Store,
+        renderer: { defaultPointsOption: (value) => value.pointsOptions[0] || null },
+        catalogUnitById: (unitId) => {
+            if (unitId === characterUnit.unitId) {
+                return characterUnit;
+            }
+            if (unitId === secondCharacterUnit.unitId) {
+                return secondCharacterUnit;
+            }
+            return null;
+        },
+        pointsGroups: (value) => ({
+            base: value.pointsOptions.filter((option) => option.selectionKind !== "upgrade"),
+            upgrades: value.pointsOptions.filter((option) => option.selectionKind === "upgrade"),
+        }),
+        renderRoster: () => {},
+        renderPreview: () => {},
+        scheduleAutoSave: () => {},
+        setRosterStatus: () => {},
+    });
+
+    controller.addToRoster("autarch");
+    const firstId = state.roster[0].instanceId;
+    assert.equal(state.army.warlordInstanceId, firstId);
+
+    controller.addToRoster("farseer");
+    const secondId = state.roster[1].instanceId;
+    assert.equal(state.army.warlordInstanceId, firstId);
+
+    controller.removeFromRoster(firstId);
+    assert.equal(state.army.warlordInstanceId, secondId);
+
+    controller.removeFromRoster(secondId);
+    assert.equal(state.army.warlordInstanceId, null);
 });

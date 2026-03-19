@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generatedAt": "2026-03-18T21:01:18+00:00",
+  "generatedAt": "2026-03-19T16:10:46+00:00",
   "faction": {
     "slug": "space-wolves",
     "name": "Space Wolves",
@@ -11,12 +11,7 @@
     "catalogUnitCount": 191,
     "missingStats": [],
     "manualSelectionUnits": [],
-    "manualWargearUnits": [
-      {
-        "unitId": "wolf-guard-pack-leader-in-terminator-armour",
-        "name": "Wolf Guard Pack Leader In Terminator Armour"
-      }
-    ]
+    "manualWargearUnits": []
   },
   "units": [
     {
@@ -3929,8 +3924,8 @@
           {
             "id": "the-blood-claw-pack-leader-s-bolt-pistol-can-be-replaced-with-1-plasma-pistol-1",
             "label": "The Blood Claw Pack Leader\u2019s bolt pistol can be replaced with 1 plasma pistol.",
-            "target": "The Blood Claw Pack Leader\u2019s bolt pistol",
-            "actor": null,
+            "target": "bolt pistol",
+            "actor": "The Blood Claw Pack Leader",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -3939,13 +3934,15 @@
                 "label": "1 plasma pistol"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "the-blood-claw-pack-leader-bolt-pistol",
+            "poolLimit": "modelCount"
           },
           {
             "id": "the-blood-claw-pack-leader-s-astartes-chainsword-can-be-replaced-with-1-power-weapon-2",
             "label": "The Blood Claw Pack Leader\u2019s Astartes chainsword can be replaced with 1 power weapon.",
-            "target": "The Blood Claw Pack Leader\u2019s Astartes chainsword",
-            "actor": null,
+            "target": "Astartes chainsword",
+            "actor": "The Blood Claw Pack Leader",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -3954,7 +3951,9 @@
                 "label": "1 power weapon"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "the-blood-claw-pack-leader-astartes-chainsword",
+            "poolLimit": "modelCount"
           }
         ],
         "manualNotes": [],
@@ -34561,8 +34560,8 @@
           {
             "id": "any-number-of-models-can-have-their-bolt-pistol-replaced-with-one-of-the-following-1",
             "label": "Any number of models can have their bolt pistol replaced with one of the following:",
-            "target": "models",
-            "actor": "models",
+            "target": "bolt pistol",
+            "actor": "Any number of models",
             "action": "replace",
             "selectionMode": "allocation",
             "choices": [
@@ -34589,7 +34588,9 @@
             ],
             "allocationLimit": {
               "kind": "modelCount"
-            }
+            },
+            "poolKey": "model-bolt-pistol",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
@@ -36079,7 +36080,7 @@
             "id": "this-model-s-storm-bolter-and-power-weapon-can-be-replaced-with-1-twin-lightning-claws-1",
             "label": "This model\u2019s storm bolter and power weapon can be replaced with 1 twin lightning claws.",
             "target": "storm bolter and power weapon",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -36088,15 +36089,17 @@
                 "label": "1 twin lightning claws"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-storm-bolter-and-power-weapon",
+            "poolLimit": null
           },
           {
             "id": "this-model-s-storm-bolter-and-power-weapon-can-be-replaced-with-two-different-options-from-the-following-list-2",
             "label": "This model\u2019s storm bolter and power weapon can be replaced with two different options from the following list:*",
-            "target": null,
+            "target": "This model\u2019s storm bolter and power weapon",
             "actor": null,
-            "action": null,
-            "selectionMode": "manual",
+            "action": "replace",
+            "selectionMode": "multi",
             "choices": [
               {
                 "id": "1-assault-cannon",
@@ -36131,13 +36134,15 @@
                 "label": "1 storm shield"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "pickCount": 2,
+            "requireDistinct": true
           },
           {
             "id": "this-model-s-storm-bolter-can-be-replaced-with-1-combi-weapon-3",
             "label": "This model\u2019s storm bolter can be replaced with 1 combi-weapon.",
             "target": "storm bolter",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -36146,20 +36151,22 @@
                 "label": "1 combi-weapon"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-storm-bolter",
+            "poolLimit": null
           }
         ],
         "manualNotes": [
           "* This model can only be equipped with two ranged weapons if one of them is a cyclone missile launcher and the other is either a storm bolter or a combi-weapon."
         ],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generatedAt": "2026-03-18T21:01:18+00:00",
+  "generatedAt": "2026-03-19T16:10:46+00:00",
   "faction": {
     "slug": "drukhari",
     "name": "Drukhari",
@@ -13,32 +13,8 @@
     "manualSelectionUnits": [],
     "manualWargearUnits": [
       {
-        "unitId": "corsair-skyreavers",
-        "name": "Corsair Skyreavers"
-      },
-      {
-        "unitId": "grotesques",
-        "name": "Grotesques"
-      },
-      {
-        "unitId": "ravager",
-        "name": "Ravager"
-      },
-      {
-        "unitId": "scourges-with-heavy-weapons",
-        "name": "Scourges with Heavy Weapons"
-      },
-      {
-        "unitId": "talos",
-        "name": "Talos"
-      },
-      {
         "unitId": "troupe",
         "name": "Troupe"
-      },
-      {
-        "unitId": "wracks",
-        "name": "Wracks"
       }
     ]
   },
@@ -201,7 +177,7 @@
             "id": "this-model-s-splinter-pistol-can-be-replaced-with-one-of-the-following-1",
             "label": "This model's splinter pistol can be replaced with one of the following:",
             "target": "splinter pistol",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -214,13 +190,15 @@
                 "label": "1 soul trap"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-splinter-pistol",
+            "poolLimit": null
           },
           {
             "id": "this-model-s-huskblade-can-be-replaced-with-one-of-the-following-2",
             "label": "This model\u2019s huskblade can be replaced with one of the following:",
             "target": "huskblade",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -233,7 +211,9 @@
                 "label": "1 master-crafted power weapon"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-huskblade",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
@@ -711,8 +691,8 @@
           {
             "id": "any-number-of-models-can-each-have-their-twin-shuriken-catapult-replaced-with-one-of-the-following-1",
             "label": "Any number of models can each have their twin shuriken catapult replaced with one of the following:",
-            "target": "models",
-            "actor": "models",
+            "target": "twin shuriken catapult",
+            "actor": "Any number of models",
             "action": "replace",
             "selectionMode": "allocation",
             "choices": [
@@ -739,7 +719,9 @@
             ],
             "allocationLimit": {
               "kind": "modelCount"
-            }
+            },
+            "poolKey": "model-twin-shuriken-catapult",
+            "poolLimit": null
           },
           {
             "id": "the-cloud-dancer-felarch-can-be-equipped-with-one-of-the-following-2",
@@ -758,7 +740,9 @@
                 "label": "1 void sabre"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount",
+            "eligibilityText": "equipped with of the following:"
           }
         ],
         "manualNotes": [],
@@ -1077,8 +1061,8 @@
           {
             "id": "any-number-of-models-can-each-have-their-corsair-firearm-replaced-with-1-spar-glaive-1",
             "label": "Any number of models can each have their Corsair firearm replaced with 1 spar-glaive.",
-            "target": "models",
-            "actor": "models",
+            "target": "Corsair firearm",
+            "actor": "Any number of models",
             "action": "replace",
             "selectionMode": "allocation",
             "choices": [
@@ -1089,16 +1073,22 @@
             ],
             "allocationLimit": {
               "kind": "modelCount"
-            }
+            },
+            "poolKey": "model-corsair-firearm",
+            "poolLimit": null
           },
           {
             "id": "for-every-5-models-in-this-unit-1-model-s-corsair-firearm-can-be-replaced-with-one-of-the-following-2",
             "label": "For every 5 models in this unit, 1 model\u2019s Corsair firearm can be replaced with one of the following:",
-            "target": "For every 5 models in this unit, 1 model\u2019s Corsair firearm",
-            "actor": null,
+            "target": "Corsair firearm",
+            "actor": "model",
             "action": "replace",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
+              {
+                "id": "one-of-the-following",
+                "label": "one of the following"
+              },
               {
                 "id": "1-aeldari-missile-launcher",
                 "label": "1 Aeldari missile launcher"
@@ -1132,7 +1122,13 @@
                 "label": "1 splinter cannon"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": {
+              "kind": "ratio",
+              "perModels": 5,
+              "maxPerStep": 1
+            },
+            "poolKey": "model-corsair-firearm",
+            "poolLimit": null
           },
           {
             "id": "the-corsair-reaver-felarch-can-be-equipped-with-one-of-the-following-3",
@@ -1151,7 +1147,9 @@
                 "label": "1 void sabre"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount",
+            "eligibilityText": "equipped with of the following:"
           }
         ],
         "manualNotes": [],
@@ -1512,8 +1510,8 @@
           {
             "id": "any-number-of-models-can-each-have-their-corsair-firearm-replaced-with-one-of-the-following-1",
             "label": "Any number of models can each have their Corsair firearm replaced with one of the following:",
-            "target": "models",
-            "actor": "models",
+            "target": "Corsair firearm",
+            "actor": "Any number of models",
             "action": "replace",
             "selectionMode": "allocation",
             "choices": [
@@ -1532,16 +1530,22 @@
             ],
             "allocationLimit": {
               "kind": "modelCount"
-            }
+            },
+            "poolKey": "model-corsair-firearm",
+            "poolLimit": null
           },
           {
             "id": "for-every-5-models-in-this-unit-1-model-s-corsair-firearm-can-be-replaced-with-one-of-the-following-2",
             "label": "For every 5 models in this unit, 1 model\u2019s Corsair firearm can be replaced with one of the following:",
-            "target": "For every 5 models in this unit, 1 model\u2019s Corsair firearm",
-            "actor": null,
+            "target": "Corsair firearm",
+            "actor": "model",
             "action": "replace",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
+              {
+                "id": "one-of-the-following",
+                "label": "one of the following"
+              },
               {
                 "id": "1-aeldari-missile-launcher",
                 "label": "1 Aeldari missile launcher"
@@ -1575,7 +1579,13 @@
                 "label": "1 splinter cannon"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": {
+              "kind": "ratio",
+              "perModels": 5,
+              "maxPerStep": 1
+            },
+            "poolKey": "model-corsair-firearm",
+            "poolLimit": null
           },
           {
             "id": "the-corsair-skyreaver-felarch-can-be-equipped-with-one-of-the-following-3",
@@ -1594,7 +1604,9 @@
                 "label": "1 void sabre"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount",
+            "eligibilityText": "equipped with of the following:"
           }
         ],
         "manualNotes": [],
@@ -1832,10 +1844,10 @@
           {
             "id": "the-skyreaver-felarch-can-replace-its-shuriken-pistol-with-one-of-the-following-1",
             "label": "The Skyreaver Felarch can replace its shuriken pistol with one of the following:",
-            "target": null,
-            "actor": null,
-            "action": null,
-            "selectionMode": "manual",
+            "target": "shuriken pistol",
+            "actor": "The Skyreaver Felarch",
+            "action": "replace",
+            "selectionMode": "single",
             "choices": [
               {
                 "id": "1-blast-pistol",
@@ -1846,12 +1858,14 @@
                 "label": "1 neuro disruptor"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "the-skyreaver-felarch-shuriken-pistol",
+            "poolLimit": "modelCount"
           },
           {
             "id": "for-every-5-models-in-the-unit-up-to-2-skyreaver-models-can-each-have-their-shuriken-pistol-and-corsair-blade-replaced-with-one-of-the-following-2",
             "label": "For every 5 models in the unit, up to 2 Skyreaver models can each have their shuriken pistol and Corsair blade replaced with one of the following*:",
-            "target": "Skyreaver models",
+            "target": "shuriken pistol and Corsair blade",
             "actor": "Skyreaver models",
             "action": "replace",
             "selectionMode": "allocation",
@@ -1877,20 +1891,22 @@
               "kind": "ratio",
               "perModels": 5,
               "maxPerStep": 2
-            }
+            },
+            "poolKey": "model-shuriken-pistol-and-corsair-blade",
+            "poolLimit": null
           }
         ],
         "manualNotes": [
           "* You cannot select the same option more than once per unit unless it contains 10 models, in which case you cannot select the same weapon more than twice per unit."
         ],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -2118,8 +2134,8 @@
           {
             "id": "the-voidreaver-felarch-s-shuriken-pistol-can-be-replaced-with-one-of-the-following-1",
             "label": "The Voidreaver Felarch\u2019s shuriken pistol can be replaced with one of the following:",
-            "target": "The Voidreaver Felarch\u2019s shuriken pistol",
-            "actor": null,
+            "target": "shuriken pistol",
+            "actor": "The Voidreaver Felarch",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -2132,7 +2148,9 @@
                 "label": "1 shuriken rifle"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "the-voidreaver-felarch-shuriken-pistol",
+            "poolLimit": "modelCount"
           },
           {
             "id": "the-voidreaver-felarch-can-be-equipped-with-2",
@@ -2147,13 +2165,14 @@
                 "label": "1 mistshield"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           },
           {
             "id": "any-number-of-corsair-voidreavers-in-this-unit-can-each-have-their-shuriken-pistol-and-power-sword-replaced-with-1-shuriken-rifle-3",
             "label": "Any number of Corsair Voidreavers in this unit can each have their shuriken pistol and power sword replaced with 1 shuriken rifle.",
-            "target": "models",
-            "actor": "models",
+            "target": "shuriken pistol and power sword",
+            "actor": "Any number of Corsair Voidreavers in this unit",
             "action": "replace",
             "selectionMode": "allocation",
             "choices": [
@@ -2164,16 +2183,24 @@
             ],
             "allocationLimit": {
               "kind": "modelCount"
+            },
+            "poolKey": "any-number-of-corsair-voidreavers-in-this-unit-shuriken-pistol-and-power-sword",
+            "poolLimit": {
+              "kind": "modelCount"
             }
           },
           {
             "id": "for-every-5-models-in-this-unit-1-corsair-voidreaver-s-power-sword-or-shuriken-rifle-can-be-replaced-with-one-of-the-following-4",
             "label": "For every 5 models in this unit, 1 Corsair Voidreaver\u2019s power sword or shuriken rifle can be replaced with one of the following:",
-            "target": "For every 5 models in this unit, 1 Corsair Voidreaver\u2019s power sword or shuriken rifle",
-            "actor": null,
+            "target": "power sword or shuriken rifle",
+            "actor": "Corsair Voidreaver",
             "action": "replace",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
+              {
+                "id": "one-of-the-following",
+                "label": "one of the following"
+              },
               {
                 "id": "1-blaster",
                 "label": "1 blaster"
@@ -2183,13 +2210,23 @@
                 "label": "1 shredder"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": {
+              "kind": "ratio",
+              "perModels": 5,
+              "maxPerStep": 1
+            },
+            "poolKey": "corsair-voidreaver-power-sword-or-shuriken-rifle",
+            "poolLimit": {
+              "kind": "ratio",
+              "perModels": 5,
+              "maxPerStep": 1
+            }
           },
           {
             "id": "if-this-unit-contains-10-models-1-corsair-voidreaver-s-shuriken-rifle-can-be-replaced-with-one-of-the-following-5",
             "label": "If this unit contains 10 models, 1 Corsair Voidreaver\u2019s shuriken rifle can be replaced with one of the following:",
-            "target": "If this unit contains 10 models, 1 Corsair Voidreaver\u2019s shuriken rifle",
-            "actor": null,
+            "target": "shuriken rifle",
+            "actor": "If this unit contains 10 models, 1 Corsair Voidreaver",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -2202,7 +2239,9 @@
                 "label": "1 wraithcannon"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "if-this-unit-contains-10-models-1-corsair-voidreaver-shuriken-rifle",
+            "poolLimit": "modelCount"
           }
         ],
         "manualNotes": [],
@@ -2570,8 +2609,8 @@
           {
             "id": "any-number-of-corsair-voidscarred-can-each-have-their-shuriken-pistol-and-power-sword-replaced-with-1-shuriken-rifle-1",
             "label": "Any number of Corsair Voidscarred can each have their shuriken pistol and power sword replaced with 1 shuriken rifle.",
-            "target": "models",
-            "actor": "models",
+            "target": "shuriken pistol and power sword",
+            "actor": "Any number of Corsair Voidscarred",
             "action": "replace",
             "selectionMode": "allocation",
             "choices": [
@@ -2582,13 +2621,17 @@
             ],
             "allocationLimit": {
               "kind": "modelCount"
+            },
+            "poolKey": "any-number-of-corsair-voidscarred-shuriken-pistol-and-power-sword",
+            "poolLimit": {
+              "kind": "modelCount"
             }
           },
           {
             "id": "the-voidscarred-felarch-s-shuriken-pistol-can-be-replaced-with-one-of-the-following-2",
             "label": "The Voidscarred Felarch\u2019s shuriken pistol can be replaced with one of the following:",
-            "target": "The Voidscarred Felarch\u2019s shuriken pistol",
-            "actor": null,
+            "target": "shuriken pistol",
+            "actor": "The Voidscarred Felarch",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -2601,7 +2644,9 @@
                 "label": "1 shuriken rifle"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "the-voidscarred-felarch-shuriken-pistol",
+            "poolLimit": "modelCount"
           },
           {
             "id": "the-voidscarred-felarch-can-be-equipped-with-1-mistshield-3",
@@ -2616,16 +2661,21 @@
                 "label": "1 mistshield"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           },
           {
             "id": "for-every-5-models-in-this-unit-1-corsair-voidscarred-s-shuriken-rifle-can-be-replaced-with-one-of-the-following-4",
             "label": "For every 5 models in this unit, 1 Corsair Voidscarred\u2019s shuriken rifle can be replaced with one of the following:",
-            "target": "For every 5 models in this unit, 1 Corsair Voidscarred\u2019s shuriken rifle",
-            "actor": null,
+            "target": "shuriken rifle",
+            "actor": "Corsair Voidscarred",
             "action": "replace",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
+              {
+                "id": "one-of-the-following",
+                "label": "one of the following"
+              },
               {
                 "id": "1-blaster",
                 "label": "1 blaster"
@@ -2635,13 +2685,23 @@
                 "label": "1 shredder"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": {
+              "kind": "ratio",
+              "perModels": 5,
+              "maxPerStep": 1
+            },
+            "poolKey": "corsair-voidscarred-shuriken-rifle",
+            "poolLimit": {
+              "kind": "ratio",
+              "perModels": 5,
+              "maxPerStep": 1
+            }
           },
           {
             "id": "if-this-unit-contains-10-models-1-corsair-voidscarred-s-shuriken-rifle-can-be-replaced-with-one-of-the-following-5",
             "label": "If this unit contains 10 models, 1 Corsair Voidscarred\u2019s shuriken rifle can be replaced with one of the following:",
-            "target": "If this unit contains 10 models, 1 Corsair Voidscarred\u2019s shuriken rifle",
-            "actor": null,
+            "target": "shuriken rifle",
+            "actor": "If this unit contains 10 models, 1 Corsair Voidscarred",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -2654,13 +2714,15 @@
                 "label": "1 wraithcannon"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "if-this-unit-contains-10-models-1-corsair-voidscarred-shuriken-rifle",
+            "poolLimit": "modelCount"
           },
           {
             "id": "if-this-unit-contains-10-models-1-corsair-voidscarred-s-shuriken-rifle-can-be-replaced-with-1-long-rifle-6",
             "label": "If this unit contains 10 models, 1 Corsair Voidscarred\u2019s shuriken rifle can be replaced with 1 long rifle.",
-            "target": "If this unit contains 10 models, 1 Corsair Voidscarred\u2019s shuriken rifle",
-            "actor": null,
+            "target": "shuriken rifle",
+            "actor": "If this unit contains 10 models, 1 Corsair Voidscarred",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -2669,13 +2731,15 @@
                 "label": "1 long rifle"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "if-this-unit-contains-10-models-1-corsair-voidscarred-shuriken-rifle",
+            "poolLimit": "modelCount"
           },
           {
             "id": "if-this-unit-contains-10-models-1-corsair-voidscarred-s-power-sword-can-be-replaced-with-1-fusion-pistol-7",
             "label": "If this unit contains 10 models, 1 Corsair Voidscarred\u2019s power sword can be replaced with 1 fusion pistol.",
-            "target": "If this unit contains 10 models, 1 Corsair Voidscarred\u2019s power sword",
-            "actor": null,
+            "target": "power sword",
+            "actor": "If this unit contains 10 models, 1 Corsair Voidscarred",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -2684,13 +2748,15 @@
                 "label": "1 fusion pistol"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "if-this-unit-contains-10-models-1-corsair-voidscarred-power-sword",
+            "poolLimit": "modelCount"
           },
           {
             "id": "1-corsair-voidscarred-model-equipped-with-a-shuriken-pistol-and-power-sword-can-be-equipped-with-1-faolch-8",
             "label": "1 Corsair Voidscarred model equipped with a shuriken pistol and power sword can be equipped with 1 Faolch\u00fa.",
-            "target": "1 Corsair Voidscarred model equipped with a shuriken pistol and power sword",
-            "actor": null,
+            "target": "Corsair Voidscarred model",
+            "actor": "Corsair Voidscarred model",
             "action": "equip",
             "selectionMode": "single",
             "choices": [
@@ -2699,7 +2765,10 @@
                 "label": "1 Faolch\u00fa"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "corsair-voidscarred-model-shuriken-pistol-and-power-sword",
+            "poolLimit": "modelCount",
+            "eligibilityText": "equipped with shuriken pistol and power sword"
           }
         ],
         "manualNotes": [],
@@ -3108,7 +3177,7 @@
             "id": "any-number-of-models-can-each-be-equipped-with-1-spirit-vortex-1",
             "label": "Any number of models can each be equipped with 1 spirit vortex.",
             "target": "models",
-            "actor": "models",
+            "actor": "Any number of models",
             "action": "equip",
             "selectionMode": "allocation",
             "choices": [
@@ -3119,7 +3188,9 @@
             ],
             "allocationLimit": {
               "kind": "modelCount"
-            }
+            },
+            "poolKey": "model-models",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
@@ -3562,23 +3633,30 @@
           {
             "id": "any-number-of-models-can-each-replace-their-paired-monstrous-weapons-with-1-monstrous-weapon-and-1-liquifier-gun-1",
             "label": "Any number of models can each replace their paired monstrous weapons with 1 monstrous weapon and 1 liquifier gun.",
-            "target": null,
-            "actor": null,
-            "action": null,
-            "selectionMode": "manual",
-            "choices": [],
-            "allocationLimit": null
+            "target": "paired monstrous weapons",
+            "actor": "Any number of models",
+            "action": "replace",
+            "selectionMode": "allocation",
+            "choices": [
+              {
+                "id": "1-monstrous-weapon-and-1-liquifier-gun",
+                "label": "1 monstrous weapon and 1 liquifier gun"
+              }
+            ],
+            "allocationLimit": null,
+            "poolKey": "model-paired-monstrous-weapons",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -4016,8 +4094,8 @@
           {
             "id": "the-kabalite-archsybarite-s-close-combat-weapon-can-be-replaced-with-1-power-weapon-1",
             "label": "The Kabalite Archsybarite\u2019s close combat weapon can be replaced with 1 power weapon.",
-            "target": "The Kabalite Archsybarite\u2019s close combat weapon",
-            "actor": null,
+            "target": "close combat weapon",
+            "actor": "The Kabalite Archsybarite",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -4026,13 +4104,15 @@
                 "label": "1 power weapon"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "the-kabalite-archsybarite-close-combat-weapon",
+            "poolLimit": "modelCount"
           },
           {
             "id": "the-kabalite-archsybarite-s-splinter-rifle-can-be-replaced-with-one-of-the-following-2",
             "label": "The Kabalite Archsybarite\u2019s splinter rifle can be replaced with one of the following:",
-            "target": "The Kabalite Archsybarite\u2019s splinter rifle",
-            "actor": null,
+            "target": "splinter rifle",
+            "actor": "The Kabalite Archsybarite",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -4045,7 +4125,9 @@
                 "label": "1 splinter pistol"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "the-kabalite-archsybarite-splinter-rifle",
+            "poolLimit": "modelCount"
           },
           {
             "id": "the-kabalite-archsybarite-can-be-equipped-with-one-of-the-following-3",
@@ -4064,13 +4146,15 @@
                 "label": "1 phantasm grenade launcher"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount",
+            "eligibilityText": "equipped with of the following:"
           },
           {
             "id": "1-kabalite-agent-s-splinter-rifle-can-be-replaced-with-one-of-the-following-4",
             "label": "1 Kabalite Agent's splinter rifle can be replaced with one of the following:",
-            "target": "1 Kabalite Agent's splinter rifle",
-            "actor": null,
+            "target": "splinter rifle",
+            "actor": "Kabalite Agent",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -4083,13 +4167,15 @@
                 "label": "1 shredder"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "kabalite-agent-splinter-rifle",
+            "poolLimit": "modelCount"
           },
           {
             "id": "1-kabalite-agent-s-splinter-rifle-can-be-replaced-with-one-of-the-following-5",
             "label": "1 Kabalite Agent\u2019s splinter rifle can be replaced with one of the following:",
-            "target": "1 Kabalite Agent\u2019s splinter rifle",
-            "actor": null,
+            "target": "splinter rifle",
+            "actor": "Kabalite Agent",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -4102,13 +4188,15 @@
                 "label": "1 splinter cannon"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "kabalite-agent-splinter-rifle",
+            "poolLimit": "modelCount"
           },
           {
             "id": "1-kabalite-agent-s-splinter-rifle-can-be-replaced-with-1-stinger-pistol-6",
             "label": "1 Kabalite Agent\u2019s splinter rifle can be replaced with 1 stinger pistol.",
-            "target": "1 Kabalite Agent\u2019s splinter rifle",
-            "actor": null,
+            "target": "splinter rifle",
+            "actor": "Kabalite Agent",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -4117,13 +4205,15 @@
                 "label": "1 stinger pistol"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "kabalite-agent-splinter-rifle",
+            "poolLimit": "modelCount"
           },
           {
             "id": "1-kabalite-agent-s-splinter-rifle-can-be-replaced-with-1-shardcarbine-7",
             "label": "1 Kabalite Agent\u2019s splinter rifle can be replaced with 1 shardcarbine.",
-            "target": "1 Kabalite Agent\u2019s splinter rifle",
-            "actor": null,
+            "target": "splinter rifle",
+            "actor": "Kabalite Agent",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -4132,13 +4222,15 @@
                 "label": "1 shardcarbine"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "kabalite-agent-splinter-rifle",
+            "poolLimit": "modelCount"
           },
           {
             "id": "1-kabalite-agent-s-splinter-rifle-can-be-replaced-with-1-pain-sculptors-8",
             "label": "1 Kabalite Agent\u2019s splinter rifle can be replaced with 1 pain sculptors.",
-            "target": "1 Kabalite Agent\u2019s splinter rifle",
-            "actor": null,
+            "target": "splinter rifle",
+            "actor": "Kabalite Agent",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -4147,13 +4239,15 @@
                 "label": "1 pain sculptors"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "kabalite-agent-splinter-rifle",
+            "poolLimit": "modelCount"
           },
           {
             "id": "1-kabalite-agent-s-splinter-rifle-can-be-replaced-with-1-splinter-pistol-and-1-razorflail-9",
             "label": "1 Kabalite Agent\u2019s splinter rifle can be replaced with 1 splinter pistol and 1 razorflail.",
-            "target": "1 Kabalite Agent\u2019s splinter rifle",
-            "actor": null,
+            "target": "splinter rifle",
+            "actor": "Kabalite Agent",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -4162,22 +4256,27 @@
                 "label": "1 splinter pistol and 1 razorflail"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "kabalite-agent-splinter-rifle",
+            "poolLimit": "modelCount"
           },
           {
             "id": "1-kabalite-agent-equipped-with-a-splinter-rifle-can-be-equipped-with-1-stimm-needler-this-model-s-splinter-rifle-cannot-be-replaced-10",
             "label": "1 Kabalite Agent equipped with a splinter rifle can be equipped with 1 stimm-needler. This model\u2019s splinter rifle cannot be replaced.",
-            "target": "1 Kabalite Agent equipped with a splinter rifle",
-            "actor": null,
+            "target": "Kabalite Agent",
+            "actor": "Kabalite Agent",
             "action": "equip",
             "selectionMode": "single",
             "choices": [
               {
-                "id": "1-stimm-needler-this-model-s-splinter-rifle-cannot-be-replaced",
-                "label": "1 stimm-needler. This model\u2019s splinter rifle cannot be replaced"
+                "id": "1-stimm-needler",
+                "label": "1 stimm-needler"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "kabalite-agent-splinter-rifle",
+            "poolLimit": "modelCount",
+            "eligibilityText": "equipped with splinter rifle"
           }
         ],
         "manualNotes": [],
@@ -4413,26 +4512,29 @@
                 "label": "1 phantasm grenade launcher"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           },
           {
             "id": "the-helliarch-s-hellglaive-can-be-replaced-with-one-of-the-following-2",
             "label": "The Helliarch\u2019s hellglaive can be replaced with one of the following:",
-            "target": "The Helliarch\u2019s hellglaive",
-            "actor": null,
+            "target": "hellglaive",
+            "actor": "The Helliarch",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
               {
                 "id": "1-splinter-pistol-and-1-power-weapon",
-                "label": "1 splinter pistol and 1 power weapon."
+                "label": "1 splinter pistol and 1 power weapon"
               },
               {
                 "id": "1-splinter-pistol-and-1-stunclaw",
-                "label": "1 splinter pistol and 1 stunclaw."
+                "label": "1 splinter pistol and 1 stunclaw"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "the-helliarch-hellglaive",
+            "poolLimit": "modelCount"
           },
           {
             "id": "if-the-helliarch-is-equipped-with-1-splinter-pistol-it-can-be-equipped-with-1-hellglaive-that-model-s-hellglaive-cannot-be-replaced-3",
@@ -4447,7 +4549,8 @@
                 "label": "1 hellglaive (that model\u2019s hellglaive cannot be replaced)"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           }
         ],
         "manualNotes": [],
@@ -4616,8 +4719,8 @@
           {
             "id": "the-klaivex-s-klaive-can-be-replaced-with-1-demiklaives-1",
             "label": "The Klaivex\u2019s klaive can be replaced with 1 demiklaives.",
-            "target": "The Klaivex\u2019s klaive",
-            "actor": null,
+            "target": "klaive",
+            "actor": "The Klaivex",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -4626,7 +4729,9 @@
                 "label": "1 demiklaives"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "the-klaivex-klaive",
+            "poolLimit": "modelCount"
           },
           {
             "id": "for-every-5-models-in-this-unit-it-can-be-equipped-with-1-incubi-shrine-token-2",
@@ -4641,7 +4746,8 @@
                 "label": "1 Incubi Shrine token"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           }
         ],
         "manualNotes": [],
@@ -4894,8 +5000,8 @@
           {
             "id": "the-sybarite-s-close-combat-weapon-can-be-replaced-with-1-power-weapon-1",
             "label": "The Sybarite\u2019s close combat weapon can be replaced with 1 power weapon.",
-            "target": "The Sybarite\u2019s close combat weapon",
-            "actor": null,
+            "target": "close combat weapon",
+            "actor": "The Sybarite",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -4904,7 +5010,9 @@
                 "label": "1 power weapon"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "the-sybarite-close-combat-weapon",
+            "poolLimit": "modelCount"
           },
           {
             "id": "the-sybarite-can-be-equipped-with-one-of-the-following-2",
@@ -4923,13 +5031,15 @@
                 "label": "1 phantasm grenade launcher"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount",
+            "eligibilityText": "equipped with of the following:"
           },
           {
             "id": "the-sybarite-s-splinter-rifle-can-be-replaced-with-one-of-the-following-3",
             "label": "The Sybarite\u2019s splinter rifle can be replaced with one of the following:",
-            "target": "The Sybarite\u2019s splinter rifle",
-            "actor": null,
+            "target": "splinter rifle",
+            "actor": "The Sybarite",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -4942,13 +5052,15 @@
                 "label": "1 splinter pistol"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "the-sybarite-splinter-rifle",
+            "poolLimit": "modelCount"
           },
           {
             "id": "1-kabalite-warrior-s-splinter-rifle-can-be-replaced-with-1-blaster-4",
             "label": "1 Kabalite Warrior\u2019s splinter rifle can be replaced with 1 blaster.",
-            "target": "1 Kabalite Warrior\u2019s splinter rifle",
-            "actor": null,
+            "target": "splinter rifle",
+            "actor": "Kabalite Warrior",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -4957,13 +5069,15 @@
                 "label": "1 blaster"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "kabalite-warrior-splinter-rifle",
+            "poolLimit": "modelCount"
           },
           {
             "id": "1-kabalite-warrior-s-splinter-rifle-can-be-replaced-with-1-dark-lance-5",
             "label": "1 Kabalite Warrior\u2019s splinter rifle can be replaced with 1 dark lance.",
-            "target": "1 Kabalite Warrior\u2019s splinter rifle",
-            "actor": null,
+            "target": "splinter rifle",
+            "actor": "Kabalite Warrior",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -4972,13 +5086,15 @@
                 "label": "1 dark lance"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "kabalite-warrior-splinter-rifle",
+            "poolLimit": "modelCount"
           },
           {
             "id": "1-kabalite-warrior-s-splinter-rifle-can-be-replaced-with-1-shredder-6",
             "label": "1 Kabalite Warrior\u2019s splinter rifle can be replaced with 1 shredder.",
-            "target": "1 Kabalite Warrior\u2019s splinter rifle",
-            "actor": null,
+            "target": "splinter rifle",
+            "actor": "Kabalite Warrior",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -4987,13 +5103,15 @@
                 "label": "1 shredder"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "kabalite-warrior-splinter-rifle",
+            "poolLimit": "modelCount"
           },
           {
             "id": "1-kabalite-warrior-s-splinter-rifle-can-be-replaced-with-1-splinter-cannon-7",
             "label": "1 Kabalite Warrior\u2019s splinter rifle can be replaced with 1 splinter cannon.",
-            "target": "1 Kabalite Warrior\u2019s splinter rifle",
-            "actor": null,
+            "target": "splinter rifle",
+            "actor": "Kabalite Warrior",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -5002,7 +5120,9 @@
                 "label": "1 splinter cannon"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "kabalite-warrior-splinter-rifle",
+            "poolLimit": "modelCount"
           }
         ],
         "manualNotes": [],
@@ -5866,7 +5986,7 @@
             "id": "this-model-s-dark-lance-can-be-replaced-with-1-disintegrator-cannon-1",
             "label": "This model\u2019s dark lance can be replaced with 1 disintegrator cannon.",
             "target": "dark lance",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -5875,7 +5995,9 @@
                 "label": "1 disintegrator cannon"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-dark-lance",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
@@ -6031,23 +6153,30 @@
           {
             "id": "any-number-of-this-model-s-dark-lances-can-each-be-replaced-with-1-disintegrator-cannon-1",
             "label": "Any number of this model\u2019s dark lances can each be replaced with 1 disintegrator cannon.",
-            "target": null,
-            "actor": null,
-            "action": null,
-            "selectionMode": "manual",
-            "choices": [],
-            "allocationLimit": null
+            "target": "dark lances",
+            "actor": "this model",
+            "action": "replace",
+            "selectionMode": "allocation",
+            "choices": [
+              {
+                "id": "1-disintegrator-cannon",
+                "label": "1 disintegrator cannon"
+              }
+            ],
+            "allocationLimit": null,
+            "poolKey": "this-model-dark-lances",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -6383,7 +6512,7 @@
             "id": "this-model-s-2-dark-lances-can-be-replaced-with-2-disintegrator-cannons-1",
             "label": "This model\u2019s 2 dark lances can be replaced with 2 disintegrator cannons.",
             "target": "2 dark lances",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -6392,13 +6521,15 @@
                 "label": "2 disintegrator cannons"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-dark-lances",
+            "poolLimit": null
           },
           {
             "id": "this-model-s-twin-splinter-rifle-can-be-replaced-with-1-splinter-cannon-2",
             "label": "This model\u2019s twin splinter rifle can be replaced with 1 splinter cannon.",
             "target": "twin splinter rifle",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -6407,7 +6538,9 @@
                 "label": "1 splinter cannon"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-twin-splinter-rifle",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
@@ -6763,11 +6896,15 @@
           {
             "id": "for-every-3-models-in-this-unit-1-model-s-splinter-rifle-can-be-replaced-with-one-of-the-following-1",
             "label": "For every 3 models in this unit, 1 model\u2019s splinter rifle can be replaced with one of the following:",
-            "target": "For every 3 models in this unit, 1 model\u2019s splinter rifle",
-            "actor": null,
+            "target": "splinter rifle",
+            "actor": "model",
             "action": "replace",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
+              {
+                "id": "one-of-the-following",
+                "label": "one of the following"
+              },
               {
                 "id": "1-blaster",
                 "label": "1 blaster"
@@ -6777,7 +6914,13 @@
                 "label": "1 heat lance"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": {
+              "kind": "ratio",
+              "perModels": 3,
+              "maxPerStep": 1
+            },
+            "poolKey": "model-splinter-rifle",
+            "poolLimit": null
           },
           {
             "id": "for-every-3-models-in-this-unit-1-model-can-be-equipped-with-one-of-the-following-2",
@@ -6787,6 +6930,10 @@
             "action": "equip",
             "selectionMode": "allocation",
             "choices": [
+              {
+                "id": "of-the-following",
+                "label": "of the following"
+              },
               {
                 "id": "1-cluster-caltrops",
                 "label": "1 cluster caltrops"
@@ -6800,7 +6947,10 @@
               "kind": "ratio",
               "perModels": 3,
               "maxPerStep": 1
-            }
+            },
+            "poolKey": "model-of-the-following",
+            "poolLimit": null,
+            "eligibilityText": "equipped with of the following:"
           }
         ],
         "manualNotes": [],
@@ -7080,8 +7230,8 @@
           {
             "id": "the-solarite-s-shardcarbine-can-be-replaced-with-one-of-the-following-1",
             "label": "The Solarite\u2019s shardcarbine can be replaced with one of the following:",
-            "target": "The Solarite\u2019s shardcarbine",
-            "actor": null,
+            "target": "shardcarbine",
+            "actor": "The Solarite",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -7094,15 +7244,17 @@
                 "label": "1 splinter pistol and 1 power weapon"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "the-solarite-shardcarbine",
+            "poolLimit": "modelCount"
           },
           {
             "id": "any-number-of-scourges-can-each-replace-their-splinter-cannon-with-one-of-the-following-2",
             "label": "Any number of Scourges can each replace their splinter cannon with one of the following:",
-            "target": null,
-            "actor": null,
-            "action": null,
-            "selectionMode": "manual",
+            "target": "splinter cannon",
+            "actor": "Any number of Scourges",
+            "action": "replace",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-blaster",
@@ -7125,18 +7277,20 @@
                 "label": "1 shredder"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "any-number-of-scourge-splinter-cannon",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -7328,8 +7482,8 @@
           {
             "id": "the-solarite-s-shardcarbine-can-be-replaced-with-one-of-the-following-1",
             "label": "The Solarite\u2019s shardcarbine can be replaced with one of the following:",
-            "target": "The Solarite\u2019s shardcarbine",
-            "actor": null,
+            "target": "shardcarbine",
+            "actor": "The Solarite",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -7342,13 +7496,15 @@
                 "label": "1 splinter pistol and 1 power weapon"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "the-solarite-shardcarbine",
+            "poolLimit": "modelCount"
           },
           {
             "id": "1-scourge-s-shardcarbine-can-be-replaced-with-one-of-the-following-2",
             "label": "1 Scourge\u2019s shardcarbine can be replaced with one of the following:",
-            "target": "1 Scourge\u2019s shardcarbine",
-            "actor": null,
+            "target": "shardcarbine",
+            "actor": "Scourge",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -7361,7 +7517,9 @@
                 "label": "1 shredder"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "scourge-shardcarbine",
+            "poolLimit": "modelCount"
           }
         ],
         "manualNotes": [],
@@ -7519,7 +7677,7 @@
             "id": "this-model-s-shuriken-pistol-can-be-replaced-with-1-neuro-disruptor-1",
             "label": "This model\u2019s shuriken pistol can be replaced with 1 neuro disruptor.",
             "target": "shuriken pistol",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -7528,7 +7686,9 @@
                 "label": "1 neuro disruptor"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-shuriken-pistol",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
@@ -7729,8 +7889,8 @@
           {
             "id": "any-number-of-models-can-each-have-their-shuriken-cannon-replaced-with-1-skyweaver-haywire-cannon-1",
             "label": "Any number of models can each have their shuriken cannon replaced with 1 Skyweaver haywire cannon.",
-            "target": "models",
-            "actor": "models",
+            "target": "shuriken cannon",
+            "actor": "Any number of models",
             "action": "replace",
             "selectionMode": "allocation",
             "choices": [
@@ -7741,13 +7901,15 @@
             ],
             "allocationLimit": {
               "kind": "modelCount"
-            }
+            },
+            "poolKey": "model-shuriken-cannon",
+            "poolLimit": null
           },
           {
             "id": "any-number-of-models-can-each-have-their-star-bolas-replaced-with-1-zephyrglaive-2",
             "label": "Any number of models can each have their star bolas replaced with 1 zephyrglaive.",
-            "target": "models",
-            "actor": "models",
+            "target": "star bolas",
+            "actor": "Any number of models",
             "action": "replace",
             "selectionMode": "allocation",
             "choices": [
@@ -7758,7 +7920,9 @@
             ],
             "allocationLimit": {
               "kind": "modelCount"
-            }
+            },
+            "poolKey": "model-star-bolas",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
@@ -8529,10 +8693,10 @@
           {
             "id": "any-number-of-models-can-each-replace-their-twin-splinter-cannon-with-one-of-the-following-1",
             "label": "Any number of models can each replace their twin splinter cannon with one of the following:",
-            "target": null,
-            "actor": null,
-            "action": null,
-            "selectionMode": "manual",
+            "target": "twin splinter cannon",
+            "actor": "Any number of models",
+            "action": "replace",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-stinger-pod",
@@ -8547,15 +8711,17 @@
                 "label": "1 twin heat lance"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "model-twin-splinter-cannon",
+            "poolLimit": null
           },
           {
             "id": "any-number-of-models-can-each-replace-one-of-their-macro-scalpels-with-one-of-the-following-2",
             "label": "Any number of models can each replace one of their macro-scalpels with one of the following:",
-            "target": null,
-            "actor": null,
-            "action": null,
-            "selectionMode": "manual",
+            "target": "macro-scalpels",
+            "actor": "Any number of models",
+            "action": "replace",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-talos-ichor-injector",
@@ -8566,15 +8732,17 @@
                 "label": "1 twin liquifier gun"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "model-macro-scalpels",
+            "poolLimit": null
           },
           {
             "id": "any-number-of-models-can-each-replace-one-of-their-macro-scalpels-with-one-of-the-following-3",
             "label": "Any number of models can each replace one of their macro-scalpels with one of the following:",
-            "target": null,
-            "actor": null,
-            "action": null,
-            "selectionMode": "manual",
+            "target": "macro-scalpels",
+            "actor": "Any number of models",
+            "action": "replace",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-chain-flails",
@@ -8585,18 +8753,20 @@
                 "label": "1 Talos gauntlet"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "model-macro-scalpels",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "MONSTER",
@@ -8951,8 +9121,8 @@
           {
             "id": "any-number-of-models-can-each-have-their-harlequin-s-blade-replaced-with-1-harlequin-s-special-weapon-1",
             "label": "Any number of models can each have their Harlequin\u2019s blade replaced with 1 Harlequin\u2019s special weapon.",
-            "target": "models",
-            "actor": "models",
+            "target": "Harlequin\u2019s blade",
+            "actor": "Any number of models",
             "action": "replace",
             "selectionMode": "allocation",
             "choices": [
@@ -8963,13 +9133,15 @@
             ],
             "allocationLimit": {
               "kind": "modelCount"
-            }
+            },
+            "poolKey": "model-harlequin-s-blade",
+            "poolLimit": null
           },
           {
             "id": "the-lead-player-s-harlequin-s-blade-can-be-replaced-with-1-power-sword-2",
             "label": "The Lead Player\u2019s Harlequin\u2019s blade can be replaced with 1 power sword.",
-            "target": "The Lead Player\u2019s Harlequin\u2019s blade",
-            "actor": null,
+            "target": "Harlequin\u2019s blade",
+            "actor": "The Lead Player",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -8978,7 +9150,9 @@
                 "label": "1 power sword"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "the-lead-player-harlequin-s-blade",
+            "poolLimit": "modelCount"
           },
           {
             "id": "if-this-unit-contains-9-or-fewer-models-3",
@@ -9210,7 +9384,7 @@
             "id": "this-model-s-shuriken-pistol-can-be-replaced-with-one-of-the-following-1",
             "label": "This model\u2019s shuriken pistol can be replaced with one of the following:",
             "target": "shuriken pistol",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -9223,13 +9397,15 @@
                 "label": "1 neuro disruptor"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-shuriken-pistol",
+            "poolLimit": null
           },
           {
             "id": "this-model-s-troupe-master-s-blade-can-be-replaced-with-1-harlequin-s-special-weapon-2",
             "label": "This model's Troupe Master's blade can be replaced with 1 Harlequin's special weapon.",
             "target": "Troupe Master's blade",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -9238,7 +9414,9 @@
                 "label": "1 Harlequin's special weapon"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-troupe-master-s-blade",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
@@ -9558,7 +9736,7 @@
             "id": "this-model-s-twin-splinter-rifle-can-be-replaced-with-1-splinter-cannon-1",
             "label": "This model\u2019s twin splinter rifle can be replaced with 1 splinter cannon.",
             "target": "twin splinter rifle",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -9567,7 +9745,9 @@
                 "label": "1 splinter cannon"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-twin-splinter-rifle",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
@@ -9749,13 +9929,14 @@
                 "label": "1 Voidraven missiles"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           },
           {
             "id": "this-model-s-2-void-lances-can-be-replaced-with-2-dark-scythes-2",
             "label": "This model\u2019s 2 void lances can be replaced with 2 dark scythes.",
             "target": "2 void lances",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -9764,7 +9945,9 @@
                 "label": "2 dark scythes"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-void-lances",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
@@ -9939,7 +10122,7 @@
             "id": "this-model-s-voidweaver-haywire-cannon-can-be-replaced-with-1-prismatic-cannon-1",
             "label": "This model\u2019s Voidweaver haywire cannon can be replaced with 1 prismatic cannon.",
             "target": "Voidweaver haywire cannon",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -9948,7 +10131,9 @@
                 "label": "1 prismatic cannon"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-voidweaver-haywire-cannon",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
@@ -10170,11 +10355,27 @@
           {
             "id": "for-every-5-models-in-this-unit-1",
             "label": "For every 5 models in this unit:",
-            "target": null,
-            "actor": null,
-            "action": null,
-            "selectionMode": "manual",
+            "target": "twin torturer\u2019s tools",
+            "actor": "model",
+            "action": "replace",
+            "selectionMode": "allocation",
             "choices": [
+              {
+                "id": "1-hexrifle-and-1-torturer-s-tool",
+                "label": "1 hexrifle and 1 torturer\u2019s tool"
+              },
+              {
+                "id": "1-liquifier-gun-and-1-torturer-s-tool",
+                "label": "1 liquifier gun and 1 torturer\u2019s tool"
+              },
+              {
+                "id": "1-ossefactor-and-1-torturer-s-tool",
+                "label": "1 ossefactor and 1 torturer\u2019s tool"
+              },
+              {
+                "id": "1-stinger-pistol-and-1-torturer-s-tool",
+                "label": "1 stinger pistol and 1 torturer\u2019s tool"
+              },
               {
                 "id": "1-model-s-twin-torturer-s-tools-can-be-replaced-with-1-hexrifle-and-1-torturer-s-tool",
                 "label": "1 model\u2019s twin torturer\u2019s tools can be replaced with 1 hexrifle and 1 torturer\u2019s tool"
@@ -10192,13 +10393,19 @@
                 "label": "1 model\u2019s twin torturer\u2019s tools can be replaced with 1 stinger pistol and 1 torturer\u2019s tool"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": {
+              "kind": "ratio",
+              "perModels": 5,
+              "maxPerStep": 1
+            },
+            "poolKey": "model-twin-torturer-s-tools",
+            "poolLimit": null
           },
           {
             "id": "the-acothyst-s-twin-torturer-s-tools-can-be-replaced-with-1-power-weapon-and-1-torturer-s-tool-2",
             "label": "The Acothyst\u2019s twin torturer\u2019s tools can be replaced with 1 power weapon and 1 torturer\u2019s tool.",
-            "target": "The Acothyst\u2019s twin torturer\u2019s tools",
-            "actor": null,
+            "target": "twin torturer\u2019s tools",
+            "actor": "The Acothyst",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -10207,13 +10414,15 @@
                 "label": "1 power weapon and 1 torturer\u2019s tool"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "the-acothyst-twin-torturer-s-tools",
+            "poolLimit": "modelCount"
           },
           {
             "id": "if-the-acothyst-is-not-equipped-with-a-power-weapon-its-torturer-s-tool-can-be-replaced-with-1-power-weapon-3",
             "label": "If the Acothyst is not equipped with a power weapon, its torturer\u2019s tool can be replaced with 1 power weapon.",
-            "target": "If the Acothyst is not equipped with a power weapon, its torturer\u2019s tool",
-            "actor": null,
+            "target": "tool",
+            "actor": "If the Acothyst is not equipped with a power weapon, its torturer",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -10222,18 +10431,21 @@
                 "label": "1 power weapon"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "if-the-acothyst-is-not-equipped-with-a-power-weapon-its-torturer-power-weapon",
+            "poolLimit": "modelCount",
+            "eligibilityText": "equipped with power weapon"
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -10390,8 +10602,8 @@
           {
             "id": "the-hekatrix-s-splinter-pistol-can-be-replaced-with-1-blast-pistol-1",
             "label": "The Hekatrix\u2019s splinter pistol can be replaced with 1 blast pistol.",
-            "target": "The Hekatrix\u2019s splinter pistol",
-            "actor": null,
+            "target": "splinter pistol",
+            "actor": "The Hekatrix",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -10400,13 +10612,15 @@
                 "label": "1 blast pistol"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "the-hekatrix-splinter-pistol",
+            "poolLimit": "modelCount"
           },
           {
             "id": "the-hekatrix-s-hekatarii-blade-can-be-replaced-with-1-power-weapon-2",
             "label": "The Hekatrix\u2019s Hekatarii blade can be replaced with 1 power weapon.",
-            "target": "The Hekatrix\u2019s Hekatarii blade",
-            "actor": null,
+            "target": "Hekatarii blade",
+            "actor": "The Hekatrix",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -10415,13 +10629,15 @@
                 "label": "1 power weapon"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "the-hekatrix-hekatarii-blade",
+            "poolLimit": "modelCount"
           },
           {
             "id": "up-to-3-wyches-can-each-have-their-splinter-pistol-and-hekatarii-blade-replaced-with-1-gladiatorial-weapons-3",
             "label": "Up to 3 Wyches can each have their splinter pistol and Hekatarii blade replaced with 1 gladiatorial weapons.",
-            "target": "models",
-            "actor": "splinter pistol and Hekatarii blade",
+            "target": "splinter pistol and Hekatarii blade",
+            "actor": "Wyches",
             "action": "replace",
             "selectionMode": "allocation",
             "choices": [
@@ -10431,6 +10647,11 @@
               }
             ],
             "allocationLimit": {
+              "kind": "static",
+              "max": 3
+            },
+            "poolKey": "wyche-splinter-pistol-and-hekatarii-blade",
+            "poolLimit": {
               "kind": "static",
               "max": 3
             }

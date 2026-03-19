@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generatedAt": "2026-03-18T21:01:18+00:00",
+  "generatedAt": "2026-03-19T16:10:46+00:00",
   "faction": {
     "slug": "dark-angels",
     "name": "Dark Angels",
@@ -11,16 +11,7 @@
     "catalogUnitCount": 174,
     "missingStats": [],
     "manualSelectionUnits": [],
-    "manualWargearUnits": [
-      {
-        "unitId": "bike-squad",
-        "name": "Bike Squad"
-      },
-      {
-        "unitId": "devastator-squad",
-        "name": "Devastator Squad"
-      }
-    ]
+    "manualWargearUnits": []
   },
   "units": [
     {
@@ -174,7 +165,8 @@
                 "label": "1 auto boltstorm gauntlets and 1 fragstorm grenade launcher"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           }
         ],
         "manualNotes": [],
@@ -553,7 +545,7 @@
             "id": "this-model-s-power-fist-can-be-replaced-with-one-of-the-following-1",
             "label": "This model\u2019s power fist can be replaced with one of the following:",
             "target": "power fist",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -574,13 +566,15 @@
                 "label": "1 thunder hammer"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-power-fist",
+            "poolLimit": null
           },
           {
             "id": "this-model-s-storm-bolter-and-power-fist-can-be-replaced-with-one-of-the-following-2",
             "label": "This model\u2019s storm bolter and power fist can be replaced with one of the following:",
             "target": "storm bolter and power fist",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -593,7 +587,9 @@
                 "label": "1 thunder hammer and 1 Terminator storm shield"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-storm-bolter-and-power-fist",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
@@ -1745,8 +1741,8 @@
           {
             "id": "the-assault-intercessor-sergeant-s-heavy-bolt-pistol-can-be-replaced-with-one-of-the-following-1",
             "label": "The Assault Intercessor Sergeant\u2019s heavy bolt pistol can be replaced with one of the following:",
-            "target": "The Assault Intercessor Sergeant\u2019s heavy bolt pistol",
-            "actor": null,
+            "target": "heavy bolt pistol",
+            "actor": "The Assault Intercessor Sergeant",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -1759,13 +1755,15 @@
                 "label": "1 plasma pistol"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "the-assault-intercessor-sergeant-heavy-bolt-pistol",
+            "poolLimit": "modelCount"
           },
           {
             "id": "the-assault-intercessor-sergeant-s-astartes-chainsword-can-be-replaced-with-one-of-the-following-2",
             "label": "The Assault Intercessor Sergeant\u2019s Astartes chainsword can be replaced with one of the following:",
-            "target": "The Assault Intercessor Sergeant\u2019s Astartes chainsword",
-            "actor": null,
+            "target": "Astartes chainsword",
+            "actor": "The Assault Intercessor Sergeant",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -1782,7 +1780,9 @@
                 "label": "1 thunder hammer"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "the-assault-intercessor-sergeant-astartes-chainsword",
+            "poolLimit": "modelCount"
           }
         ],
         "manualNotes": [],
@@ -1985,8 +1985,8 @@
           {
             "id": "for-every-5-models-in-this-unit-1-assault-intercessor-with-jump-pack-s-heavy-bolt-pistol-can-be-replaced-with-1-plasma-pistol-1",
             "label": "For every 5 models in this unit, 1 Assault Intercessor with Jump Pack\u2019s heavy bolt pistol can be replaced with 1 plasma pistol.",
-            "target": "Assault Intercessor with Jump Pack",
-            "actor": "heavy bolt pistol",
+            "target": "heavy bolt pistol",
+            "actor": "Assault Intercessor with Jump Pack",
             "action": "replace",
             "selectionMode": "allocation",
             "choices": [
@@ -1999,13 +1999,19 @@
               "kind": "ratio",
               "perModels": 5,
               "maxPerStep": 1
+            },
+            "poolKey": "assault-intercessor-with-jump-pack-heavy-bolt-pistol",
+            "poolLimit": {
+              "kind": "ratio",
+              "perModels": 5,
+              "maxPerStep": 1
             }
           },
           {
             "id": "the-assault-intercessor-sergeant-with-jump-pack-s-astartes-chainsword-can-be-replaced-with-one-of-the-following-2",
             "label": "The Assault Intercessor Sergeant with Jump Pack\u2019s Astartes chainsword can be replaced with one of the following:",
-            "target": "The Assault Intercessor Sergeant with Jump Pack\u2019s Astartes chainsword",
-            "actor": null,
+            "target": "Astartes chainsword",
+            "actor": "The Assault Intercessor Sergeant with Jump Pack",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -2018,13 +2024,15 @@
                 "label": "1 power fist"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "the-assault-intercessor-sergeant-with-jump-pack-astartes-chainsword",
+            "poolLimit": "modelCount"
           },
           {
             "id": "the-assault-intercessor-sergeant-with-jump-pack-s-heavy-bolt-pistol-can-be-replaced-with-one-of-the-following-3",
             "label": "The Assault Intercessor Sergeant with Jump Pack\u2019s heavy bolt pistol can be replaced with one of the following:",
-            "target": "The Assault Intercessor Sergeant with Jump Pack\u2019s heavy bolt pistol",
-            "actor": null,
+            "target": "heavy bolt pistol",
+            "actor": "The Assault Intercessor Sergeant with Jump Pack",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -2037,7 +2045,9 @@
                 "label": "1 plasma pistol"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "the-assault-intercessor-sergeant-with-jump-pack-heavy-bolt-pistol",
+            "poolLimit": "modelCount"
           }
         ],
         "manualNotes": [],
@@ -4241,8 +4251,8 @@
           {
             "id": "the-biker-sergeant-s-bolt-pistol-can-be-replaced-with-one-of-the-following-1",
             "label": "The Biker Sergeant\u2019s bolt pistol can be replaced with one of the following:",
-            "target": "The Biker Sergeant\u2019s bolt pistol",
-            "actor": null,
+            "target": "bolt pistol",
+            "actor": "The Biker Sergeant",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -4291,13 +4301,15 @@
                 "label": "1 thunder hammer"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "the-biker-sergeant-bolt-pistol",
+            "poolLimit": "modelCount"
           },
           {
             "id": "any-number-of-space-marine-bikers-can-each-have-their-bolt-pistol-replaced-with-1-astartes-chainsword-2",
             "label": "Any number of Space Marine Bikers can each have their bolt pistol replaced with 1 Astartes chainsword.",
-            "target": "models",
-            "actor": "models",
+            "target": "bolt pistol",
+            "actor": "Any number of Space Marine Bikers",
             "action": "replace",
             "selectionMode": "allocation",
             "choices": [
@@ -4308,16 +4320,24 @@
             ],
             "allocationLimit": {
               "kind": "modelCount"
+            },
+            "poolKey": "any-number-of-space-marine-biker-bolt-pistol",
+            "poolLimit": {
+              "kind": "modelCount"
             }
           },
           {
             "id": "up-to-2-space-marine-bikers-can-each-have-their-bolt-pistol-replaced-with-one-of-the-following-3",
             "label": "Up to 2 Space Marine Bikers can each have their bolt pistol replaced with one of the following:",
-            "target": null,
-            "actor": null,
-            "action": null,
-            "selectionMode": "manual",
+            "target": "bolt pistol",
+            "actor": "Space Marine Bikers",
+            "action": "replace",
+            "selectionMode": "allocation",
             "choices": [
+              {
+                "id": "one-of-the-following",
+                "label": "one of the following"
+              },
               {
                 "id": "1-flamer",
                 "label": "1 flamer"
@@ -4339,13 +4359,21 @@
                 "label": "1 plasma pistol"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": {
+              "kind": "static",
+              "max": 2
+            },
+            "poolKey": "space-marine-biker-bolt-pistol",
+            "poolLimit": {
+              "kind": "static",
+              "max": 2
+            }
           },
           {
             "id": "an-attack-bike-s-heavy-bolter-can-be-replaced-with-1-multi-melta-4",
             "label": "An Attack Bike\u2019s heavy bolter can be replaced with 1 multi-melta.",
-            "target": "An Attack Bike\u2019s heavy bolter",
-            "actor": null,
+            "target": "heavy bolter",
+            "actor": "An Attack Bike",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -4354,18 +4382,20 @@
                 "label": "1 multi-melta"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "an-attack-bike-heavy-bolter",
+            "poolLimit": "modelCount"
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "MOUNTED",
@@ -4882,7 +4912,7 @@
             "id": "this-model-s-twin-heavy-bolter-can-be-replaced-with-1-twin-multi-melta-1",
             "label": "This model\u2019s twin heavy bolter can be replaced with 1 twin multi-melta.",
             "target": "twin heavy bolter",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -4891,13 +4921,15 @@
                 "label": "1 twin multi-melta"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-twin-heavy-bolter",
+            "poolLimit": null
           },
           {
             "id": "this-model-s-brutalis-fists-and-brutalis-bolt-rifles-can-be-replaced-with-1-brutalis-talons-2",
             "label": "This model\u2019s Brutalis fists and Brutalis bolt rifles can be replaced with 1 Brutalis talons.",
             "target": "Brutalis fists and Brutalis bolt rifles",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -4906,7 +4938,9 @@
                 "label": "1 Brutalis talons"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-brutalis-fists-and-brutalis-bolt-rifles",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
@@ -5301,7 +5335,7 @@
             "id": "this-model-s-bolt-pistol-master-crafted-bolter-and-close-combat-weapon-can-be-replaced-with-one-of-the-following-1",
             "label": "This model\u2019s bolt pistol, master-crafted bolter and close combat weapon can be replaced with one of the following:",
             "target": "bolt pistol, master-crafted bolter and close combat weapon",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -5334,13 +5368,15 @@
                 "label": "1 heavy bolt pistol, 1 master-crafted power weapon and 1 relic shield"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-bolt-pistol-master-crafted-bolter-and-close-combat-weapon",
+            "poolLimit": null
           },
           {
             "id": "this-model-s-close-combat-weapon-can-be-replaced-with-one-of-the-following-2",
             "label": "This model\u2019s close combat weapon can be replaced with one of the following:",
             "target": "close combat weapon",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -5353,7 +5389,9 @@
                 "label": "1 power fist"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-close-combat-weapon",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
@@ -5610,7 +5648,8 @@
                 "label": "1 boltstorm gauntlet, 1 power fist and 1 relic fist"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           }
         ],
         "manualNotes": [],
@@ -5942,7 +5981,7 @@
             "id": "this-model-s-storm-bolter-can-be-replaced-with-1-combi-weapon-1",
             "label": "This model\u2019s storm bolter can be replaced with 1 combi-weapon",
             "target": "storm bolter",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -5951,13 +5990,15 @@
                 "label": "1 combi-weapon"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-storm-bolter",
+            "poolLimit": null
           },
           {
             "id": "this-model-s-relic-weapon-can-be-replaced-with-1-relic-fist-2",
             "label": "This model\u2019s relic weapon can be replaced with 1 relic fist",
             "target": "relic weapon",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -5966,7 +6007,9 @@
                 "label": "1 relic fist"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-relic-weapon",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
@@ -6305,7 +6348,7 @@
             "id": "this-model-s-bolt-pistol-can-be-replaced-with-one-of-the-following-1",
             "label": "This model\u2019s bolt pistol can be replaced with one of the following:",
             "target": "bolt pistol",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -6335,7 +6378,7 @@
               },
               {
                 "id": "1-relic-shield",
-                "label": "1 relic shield*"
+                "label": "1 relic shield"
               },
               {
                 "id": "1-relic-weapon",
@@ -6350,19 +6393,21 @@
                 "label": "1 thunder hammer"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-bolt-pistol",
+            "poolLimit": null
           },
           {
             "id": "this-model-s-astartes-chainsword-can-be-replaced-with-one-of-the-following-2",
             "label": "This model\u2019s Astartes chainsword can be replaced with one of the following:",
             "target": "Astartes chainsword",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
               {
                 "id": "1-close-combat-weapon-and-1-relic-shield",
-                "label": "1 close combat weapon and 1 relic shield*"
+                "label": "1 close combat weapon and 1 relic shield"
               },
               {
                 "id": "1-power-fist",
@@ -6373,13 +6418,15 @@
                 "label": "1 relic weapon"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-astartes-chainsword",
+            "poolLimit": null
           },
           {
             "id": "this-model-s-bolt-pistol-and-astartes-chainsword-can-be-replaced-with-1-twin-lightning-claws-3",
             "label": "This model\u2019s bolt pistol and Astartes chainsword can be replaced with 1 twin lightning claws.",
             "target": "bolt pistol and Astartes chainsword",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -6388,7 +6435,9 @@
                 "label": "1 twin lightning claws"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-bolt-pistol-and-astartes-chainsword",
+            "poolLimit": null
           }
         ],
         "manualNotes": [
@@ -7010,8 +7059,8 @@
           {
             "id": "any-number-of-models-can-each-have-their-twin-flamer-replaced-with-1-twin-meltagun-1",
             "label": "Any number of models can each have their twin flamer replaced with 1 twin meltagun.",
-            "target": "models",
-            "actor": "models",
+            "target": "twin flamer",
+            "actor": "Any number of models",
             "action": "replace",
             "selectionMode": "allocation",
             "choices": [
@@ -7022,13 +7071,15 @@
             ],
             "allocationLimit": {
               "kind": "modelCount"
-            }
+            },
+            "poolKey": "model-twin-flamer",
+            "poolLimit": null
           },
           {
             "id": "any-number-of-models-can-each-have-their-centurion-bolters-replaced-with-1-centurion-assault-launcher-2",
             "label": "Any number of models can each have their Centurion bolters replaced with 1 Centurion assault launcher.",
-            "target": "models",
-            "actor": "models",
+            "target": "Centurion bolters",
+            "actor": "Any number of models",
             "action": "replace",
             "selectionMode": "allocation",
             "choices": [
@@ -7039,7 +7090,9 @@
             ],
             "allocationLimit": {
               "kind": "modelCount"
-            }
+            },
+            "poolKey": "model-centurion-bolters",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
@@ -7240,8 +7293,8 @@
           {
             "id": "any-number-of-models-can-each-have-their-centurion-bolters-replaced-with-1-centurion-missile-launcher-1",
             "label": "Any number of models can each have their Centurion bolters replaced with 1 Centurion missile launcher.",
-            "target": "models",
-            "actor": "models",
+            "target": "Centurion bolters",
+            "actor": "Any number of models",
             "action": "replace",
             "selectionMode": "allocation",
             "choices": [
@@ -7252,13 +7305,15 @@
             ],
             "allocationLimit": {
               "kind": "modelCount"
-            }
+            },
+            "poolKey": "model-centurion-bolters",
+            "poolLimit": null
           },
           {
             "id": "any-number-of-models-can-each-have-their-grav-cannon-replaced-with-one-of-the-following-2",
             "label": "Any number of models can each have their grav-cannon replaced with one of the following:",
-            "target": "models",
-            "actor": "models",
+            "target": "grav-cannon",
+            "actor": "Any number of models",
             "action": "replace",
             "selectionMode": "allocation",
             "choices": [
@@ -7273,7 +7328,9 @@
             ],
             "allocationLimit": {
               "kind": "modelCount"
-            }
+            },
+            "poolKey": "model-grav-cannon",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
@@ -7760,7 +7817,7 @@
             "id": "this-model-s-storm-bolter-can-be-replaced-with-1-relic-shield-1",
             "label": "This model\u2019s storm bolter can be replaced with 1 relic shield.",
             "target": "storm bolter",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -7769,7 +7826,9 @@
                 "label": "1 relic shield"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-storm-bolter",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
@@ -8431,7 +8490,7 @@
             "id": "this-model-s-bolt-pistol-can-be-replaced-with-one-of-the-following-1",
             "label": "This model\u2019s bolt pistol can be replaced with one of the following:",
             "target": "bolt pistol",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -8468,7 +8527,9 @@
                 "label": "1 power fist"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-bolt-pistol",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
@@ -10630,6 +10691,10 @@
             "selectionMode": "single",
             "choices": [
               {
+                "id": "1-twin-lightning-claws-or-two-different-weapons-from-the-following-list",
+                "label": "1 twin lightning claws, or two different weapons from the following list:"
+              },
+              {
                 "id": "1-storm-bolter",
                 "label": "1 storm bolter"
               },
@@ -10654,7 +10719,8 @@
                 "label": "1 storm shield"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           }
         ],
         "manualNotes": [],
@@ -11645,13 +11711,14 @@
                 "label": "1 superkrak rocket launcher"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           },
           {
             "id": "the-desolation-sergeant-s-superfrag-rocket-launcher-or-superkrak-rocket-launcher-can-be-replaced-with-1-vengor-launcher-2",
             "label": "The Desolation Sergeant\u2019s superfrag rocket launcher or superkrak rocket launcher can be replaced with 1 vengor launcher.",
-            "target": "The Desolation Sergeant\u2019s superfrag rocket launcher or superkrak rocket launcher",
-            "actor": null,
+            "target": "superfrag rocket launcher or superkrak rocket launcher",
+            "actor": "The Desolation Sergeant",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -11660,7 +11727,9 @@
                 "label": "1 vengor launcher"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "the-desolation-sergeant-superfrag-rocket-launcher-or-superkrak-rocket-launcher",
+            "poolLimit": "modelCount"
           }
         ],
         "manualNotes": [],
@@ -12043,11 +12112,15 @@
           {
             "id": "up-to-4-devastator-marines-can-each-have-their-boltgun-replaced-with-one-of-the-following-1",
             "label": "Up to 4 Devastator Marines can each have their boltgun replaced with one of the following:",
-            "target": null,
-            "actor": null,
-            "action": null,
-            "selectionMode": "manual",
+            "target": "boltgun",
+            "actor": "Devastator Marines",
+            "action": "replace",
+            "selectionMode": "allocation",
             "choices": [
+              {
+                "id": "one-of-the-following",
+                "label": "one of the following"
+              },
               {
                 "id": "1-grav-cannon",
                 "label": "1 grav-cannon"
@@ -12073,15 +12146,23 @@
                 "label": "1 plasma cannon"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": {
+              "kind": "static",
+              "max": 4
+            },
+            "poolKey": "devastator-marine-boltgun",
+            "poolLimit": {
+              "kind": "static",
+              "max": 4
+            }
           },
           {
             "id": "the-devastator-sergeant-s-bolt-pistol-and-boltgun-can-be-replaced-with-two-different-weapons-from-the-following-list-2",
             "label": "The Devastator Sergeant\u2019s bolt pistol and boltgun can be replaced with two different weapons from the following list:*",
-            "target": null,
+            "target": "The Devastator Sergeant\u2019s bolt pistol and boltgun",
             "actor": null,
-            "action": null,
-            "selectionMode": "manual",
+            "action": "replace",
+            "selectionMode": "multi",
             "choices": [
               {
                 "id": "1-astartes-chain-sword",
@@ -12120,20 +12201,22 @@
                 "label": "1 thunder hammer"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "pickCount": 2,
+            "requireDistinct": true
           }
         ],
         "manualNotes": [
           "* This model can only be equipped with two ranged weapons if one of them is a Pistol (and it can only have one Pistol)"
         ],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -12362,7 +12445,7 @@
             "id": "this-model-s-assault-cannon-can-be-replaced-with-one-of-the-following-1",
             "label": "This model\u2019s assault cannon can be replaced with one of the following:",
             "target": "assault cannon",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -12379,13 +12462,15 @@
                 "label": "1 twin lascannon"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-assault-cannon",
+            "poolLimit": null
           },
           {
             "id": "this-model-s-dreadnought-combat-weapon-and-storm-bolter-can-be-replaced-with-one-of-the-following-2",
             "label": "This model\u2019s Dreadnought combat weapon and storm bolter can be replaced with one of the following:",
             "target": "Dreadnought combat weapon and storm bolter",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -12398,7 +12483,9 @@
                 "label": "1 heavy flamer and 1 Dreadnought combat weapon"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-dreadnought-combat-weapon-and-storm-bolter",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
@@ -12786,8 +12873,8 @@
           {
             "id": "the-eliminator-sergeant-s-bolt-sniper-rifle-can-be-replaced-with-one-of-the-following-1",
             "label": "The Eliminator Sergeant\u2019s bolt sniper rifle can be replaced with one of the following:",
-            "target": "The Eliminator Sergeant\u2019s bolt sniper rifle",
-            "actor": null,
+            "target": "bolt sniper rifle",
+            "actor": "The Eliminator Sergeant",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -12800,7 +12887,9 @@
                 "label": "1 las fusil"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "the-eliminator-sergeant-bolt-sniper-rifle",
+            "poolLimit": "modelCount"
           },
           {
             "id": "all-eliminators-in-this-unit-can-each-have-their-bolt-sniper-rifle-replaced-with-1-las-fusil-2",
@@ -12815,7 +12904,8 @@
                 "label": "1 las fusil"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           }
         ],
         "manualNotes": [],
@@ -12979,8 +13069,8 @@
           {
             "id": "for-every-3-models-in-this-unit-1-eradicator-s-melta-rifle-can-be-replaced-with-1-multi-melta-1",
             "label": "For every 3 models in this unit, 1 Eradicator\u2019s melta rifle can be replaced with 1 multi-melta.",
-            "target": "Eradicator",
-            "actor": "melta rifle",
+            "target": "melta rifle",
+            "actor": "Eradicator",
             "action": "replace",
             "selectionMode": "allocation",
             "choices": [
@@ -12990,6 +13080,12 @@
               }
             ],
             "allocationLimit": {
+              "kind": "ratio",
+              "perModels": 3,
+              "maxPerStep": 1
+            },
+            "poolKey": "eradicator-melta-rifle",
+            "poolLimit": {
               "kind": "ratio",
               "perModels": 3,
               "maxPerStep": 1
@@ -14243,8 +14339,8 @@
           {
             "id": "any-number-of-models-can-each-have-their-twin-firestrike-las-talon-replaced-with-1-twin-firestrike-autocannon-1",
             "label": "Any number of models can each have their twin Firestrike las-talon replaced with 1 twin Firestrike autocannon.",
-            "target": "models",
-            "actor": "models",
+            "target": "twin Firestrike las-talon",
+            "actor": "Any number of models",
             "action": "replace",
             "selectionMode": "allocation",
             "choices": [
@@ -14255,7 +14351,9 @@
             ],
             "allocationLimit": {
               "kind": "modelCount"
-            }
+            },
+            "poolKey": "model-twin-firestrike-las-talon",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
@@ -14432,7 +14530,7 @@
             "id": "this-model-s-2-storm-bolters-can-be-replaced-with-2-fragstorm-grenade-launchers-1",
             "label": "This model\u2019s 2 storm bolters can be replaced with 2 fragstorm grenade launchers.",
             "target": "2 storm bolters",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -14441,7 +14539,9 @@
                 "label": "2 fragstorm grenade launchers"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-storm-bolters",
+            "poolLimit": null
           },
           {
             "id": "this-model-can-be-equipped-with-1-ironhail-heavy-stubber-2",
@@ -14456,7 +14556,8 @@
                 "label": "1 ironhail heavy stubber"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           },
           {
             "id": "this-model-can-be-equipped-with-1-icarus-rocket-pod-3",
@@ -14471,7 +14572,8 @@
                 "label": "1 Icarus rocket pod"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           }
         ],
         "manualNotes": [],
@@ -14656,7 +14758,8 @@
                 "label": "1 ironhail heavy stubber"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           },
           {
             "id": "this-model-can-be-equipped-with-1-icarus-rocket-pod-2",
@@ -14671,7 +14774,8 @@
                 "label": "1 Icarus rocket pod"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           }
         ],
         "manualNotes": [],
@@ -14855,7 +14959,8 @@
                 "label": "1 ironhail heavy stubber"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           },
           {
             "id": "this-model-can-be-equipped-with-1-icarus-rocket-pod-2",
@@ -14870,7 +14975,8 @@
                 "label": "1 Icarus rocket pod"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           }
         ],
         "manualNotes": [],
@@ -15052,7 +15158,7 @@
             "id": "this-model-s-hammerfall-heavy-bolter-array-can-be-replaced-with-1-hammerfall-heavy-flamer-array-1",
             "label": "This model\u2019s Hammerfall heavy bolter array can be replaced with 1 Hammerfall heavy flamer array.",
             "target": "Hammerfall heavy bolter array",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -15061,7 +15167,9 @@
                 "label": "1 Hammerfall heavy flamer array"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-hammerfall-heavy-bolter-array",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
@@ -15236,8 +15344,8 @@
           {
             "id": "for-every-5-models-in-this-unit-1-heavy-intercessor-s-heavy-bolt-rifle-can-be-replaced-with-1-heavy-bolter-1",
             "label": "For every 5 models in this unit, 1 Heavy Intercessor\u2019s heavy bolt rifle can be replaced with 1 heavy bolter.",
-            "target": "Heavy Intercessor",
-            "actor": "heavy bolt rifle",
+            "target": "heavy bolt rifle",
+            "actor": "Heavy Intercessor",
             "action": "replace",
             "selectionMode": "allocation",
             "choices": [
@@ -15247,6 +15355,12 @@
               }
             ],
             "allocationLimit": {
+              "kind": "ratio",
+              "perModels": 5,
+              "maxPerStep": 1
+            },
+            "poolKey": "heavy-intercessor-heavy-bolt-rifle",
+            "poolLimit": {
               "kind": "ratio",
               "perModels": 5,
               "maxPerStep": 1
@@ -15448,8 +15562,8 @@
           {
             "id": "the-hellblaster-sergeant-s-bolt-pistol-can-be-replaced-with-1-plasma-pistol-1",
             "label": "The Hellblaster Sergeant\u2019s bolt pistol can be replaced with 1 plasma pistol.",
-            "target": "The Hellblaster Sergeant\u2019s bolt pistol",
-            "actor": null,
+            "target": "bolt pistol",
+            "actor": "The Hellblaster Sergeant",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -15458,7 +15572,9 @@
                 "label": "1 plasma pistol"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "the-hellblaster-sergeant-bolt-pistol",
+            "poolLimit": "modelCount"
           }
         ],
         "manualNotes": [],
@@ -15998,13 +16114,14 @@
                 "label": "1 ironhail heavy stubber"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           },
           {
             "id": "this-model-s-2-storm-bolters-can-be-replaced-with-2-fragstorm-grenade-launchers-2",
             "label": "This model\u2019s 2 storm bolters can be replaced with 2 fragstorm grenade launchers.",
             "target": "2 storm bolters",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -16013,7 +16130,9 @@
                 "label": "2 fragstorm grenade launchers"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-storm-bolters",
+            "poolLimit": null
           },
           {
             "id": "this-model-can-be-equipped-with-one-of-the-following-3",
@@ -16040,7 +16159,9 @@
                 "label": "1 shield dome"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount",
+            "eligibilityText": "equipped with of the following:"
           }
         ],
         "manualNotes": [],
@@ -16249,7 +16370,8 @@
                 "label": "1 plasma exterminators"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           }
         ],
         "manualNotes": [],
@@ -16420,7 +16542,8 @@
                 "label": "1 haywire mine"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           }
         ],
         "manualNotes": [],
@@ -16746,10 +16869,11 @@
             "choices": [
               {
                 "id": "1-helix-gauntlet",
-                "label": "1 helix gauntlet.*"
+                "label": "1 helix gauntlet"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           },
           {
             "id": "1-infiltrator-can-be-equipped-with-1-infiltrator-comms-array-2",
@@ -16761,10 +16885,11 @@
             "choices": [
               {
                 "id": "1-infiltrator-comms-array",
-                "label": "1 Infiltrator comms array.*"
+                "label": "1 Infiltrator comms array"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           }
         ],
         "manualNotes": [
@@ -17207,8 +17332,8 @@
           {
             "id": "the-intercessor-sergeant-s-bolt-rifle-can-be-replaced-with-one-of-the-following-1",
             "label": "The Intercessor Sergeant\u2019s bolt rifle can be replaced with one of the following:",
-            "target": "The Intercessor Sergeant\u2019s bolt rifle",
-            "actor": null,
+            "target": "bolt rifle",
+            "actor": "The Intercessor Sergeant",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -17229,13 +17354,15 @@
                 "label": "1 power weapon"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "the-intercessor-sergeant-bolt-rifle",
+            "poolLimit": "modelCount"
           },
           {
             "id": "the-intercessor-sergeant-s-close-combat-weapon-can-be-replaced-with-one-of-the-following-2",
             "label": "The Intercessor Sergeant\u2019s close combat weapon can be replaced with one of the following:",
-            "target": "The Intercessor Sergeant\u2019s close combat weapon",
-            "actor": null,
+            "target": "close combat weapon",
+            "actor": "The Intercessor Sergeant",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -17256,7 +17383,9 @@
                 "label": "1 thunder hammer"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "the-intercessor-sergeant-close-combat-weapon",
+            "poolLimit": "modelCount"
           },
           {
             "id": "for-every-5-models-in-this-unit-1-model-equipped-with-a-bolt-rifle-can-be-equipped-with-1-astartes-grenade-launcher-3",
@@ -17275,7 +17404,10 @@
               "kind": "ratio",
               "perModels": 5,
               "maxPerStep": 1
-            }
+            },
+            "poolKey": "model-bolt-rifle",
+            "poolLimit": null,
+            "eligibilityText": "equipped with bolt rifle"
           }
         ],
         "manualNotes": [],
@@ -17439,7 +17571,7 @@
             "id": "this-model-s-onslaught-gatling-cannon-can-be-replaced-with-1-multi-melta-1",
             "label": "This model\u2019s onslaught gatling cannon can be replaced with 1 multi-melta.",
             "target": "onslaught gatling cannon",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -17448,7 +17580,9 @@
                 "label": "1 multi-melta"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-onslaught-gatling-cannon",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
@@ -17628,7 +17762,7 @@
             "id": "this-model-s-incendium-cannon-can-be-replaced-with-1-twin-ironhail-autocannon-1",
             "label": "This model\u2019s incendium cannon can be replaced with 1 twin ironhail autocannon.",
             "target": "incendium cannon",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -17637,7 +17771,9 @@
                 "label": "1 twin ironhail autocannon"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-incendium-cannon",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
@@ -18689,7 +18825,8 @@
                 "label": "1 hunter-killer missile"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           },
           {
             "id": "this-model-can-be-equipped-with-1-multi-melta-2",
@@ -18704,7 +18841,8 @@
                 "label": "1 multi-melta"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           },
           {
             "id": "this-model-can-be-equipped-with-1-storm-bolter-3",
@@ -18719,7 +18857,8 @@
                 "label": "1 storm bolter"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           }
         ],
         "manualNotes": [],
@@ -19132,7 +19271,8 @@
                 "label": "1 hunter-killer missile"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           },
           {
             "id": "this-model-can-be-equipped-with-1-multi-melta-2",
@@ -19147,7 +19287,8 @@
                 "label": "1 multi-melta"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           },
           {
             "id": "this-model-can-be-equipped-with-1-storm-bolter-3",
@@ -19162,7 +19303,8 @@
                 "label": "1 storm bolter"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           }
         ],
         "manualNotes": [],
@@ -20170,7 +20312,8 @@
                 "label": "1 hunter-killer missile"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           },
           {
             "id": "this-model-can-be-equipped-with-1-multi-melta-2",
@@ -20185,7 +20328,8 @@
                 "label": "1 multi-melta"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           },
           {
             "id": "this-model-can-be-equipped-with-1-storm-bolter-3",
@@ -20200,7 +20344,8 @@
                 "label": "1 storm bolter"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           }
         ],
         "manualNotes": [],
@@ -22072,7 +22217,9 @@
                 "label": "1 storm bolter"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount",
+            "eligibilityText": "equipped with of the following:"
           }
         ],
         "manualNotes": [],
@@ -22348,7 +22495,7 @@
             "id": "this-model-s-bolt-pistol-can-be-replaced-with-one-of-the-following-1",
             "label": "This model\u2019s bolt pistol can be replaced with one of the following:",
             "target": "bolt pistol",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -22373,7 +22520,9 @@
                 "label": "1 storm bolter"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-bolt-pistol",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
@@ -22661,7 +22810,7 @@
             "id": "this-model-s-bolt-pistol-can-be-replaced-with-one-of-the-following-1",
             "label": "This model\u2019s bolt pistol can be replaced with one of the following:",
             "target": "bolt pistol",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -22694,7 +22843,9 @@
                 "label": "1 storm bolter"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-bolt-pistol",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
@@ -22937,7 +23088,7 @@
             "id": "this-model-s-master-crafted-bolter-can-be-replaced-with-one-of-the-following-1",
             "label": "This model\u2019s master-crafted bolter can be replaced with one of the following:",
             "target": "master-crafted bolter",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -22954,13 +23105,15 @@
                 "label": "1 power fist"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-master-crafted-bolter",
+            "poolLimit": null
           },
           {
             "id": "this-model-s-bolt-pistol-master-crafted-bolter-and-close-combat-weapon-can-be-replaced-with-1-neo-volkite-pistol-1-master-crafted-power-weapon-and-1-storm-shield-2",
             "label": "This model\u2019s bolt pistol, master-crafted bolter and close combat weapon can be replaced with 1 neo volkite pistol, 1 master-crafted power weapon and 1 storm shield.",
             "target": "bolt pistol, master-crafted bolter and close combat weapon",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -22969,13 +23122,15 @@
                 "label": "1 neo volkite pistol, 1 master-crafted power weapon and 1 storm shield"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-bolt-pistol-master-crafted-bolter-and-close-combat-weapon",
+            "poolLimit": null
           },
           {
             "id": "this-model-s-bolt-pistol-can-be-replaced-with-1-heavy-bolt-pistol-3",
             "label": "This model\u2019s bolt pistol can be replaced with 1 heavy bolt pistol.",
             "target": "bolt pistol",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -22984,13 +23139,15 @@
                 "label": "1 heavy bolt pistol"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-bolt-pistol",
+            "poolLimit": null
           },
           {
             "id": "this-model-s-close-combat-weapon-can-be-replaced-with-one-of-the-following-4",
             "label": "This model\u2019s close combat weapon can be replaced with one of the following:",
             "target": "close combat weapon",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -23003,7 +23160,9 @@
                 "label": "1 power fist"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-close-combat-weapon",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
@@ -24498,8 +24657,8 @@
           {
             "id": "an-invader-atv-s-onslaught-gatling-cannon-can-be-replaced-with-1-multi-melta-1",
             "label": "An Invader ATV\u2019s onslaught gatling cannon can be replaced with 1 multi-melta.",
-            "target": "An Invader ATV\u2019s onslaught gatling cannon",
-            "actor": null,
+            "target": "onslaught gatling cannon",
+            "actor": "An Invader ATV",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -24508,7 +24667,9 @@
                 "label": "1 multi-melta"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "an-invader-atv-onslaught-gatling-cannon",
+            "poolLimit": "modelCount"
           }
         ],
         "manualNotes": [],
@@ -24695,7 +24856,9 @@
                 "label": "2 lascannons"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount",
+            "eligibilityText": "equipped with of the following:"
           },
           {
             "id": "this-model-can-be-equipped-with-1-hunter-killer-missile-2",
@@ -24710,7 +24873,8 @@
                 "label": "1 hunter-killer missile"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           },
           {
             "id": "this-model-can-be-equipped-with-1-storm-bolter-3",
@@ -24725,7 +24889,8 @@
                 "label": "1 storm bolter"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           }
         ],
         "manualNotes": [],
@@ -24922,7 +25087,9 @@
                 "label": "2 lascannons"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount",
+            "eligibilityText": "equipped with of the following:"
           },
           {
             "id": "this-model-can-be-equipped-with-1-hunter-killer-missile-2",
@@ -24937,7 +25104,8 @@
                 "label": "1 hunter-killer missile"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           },
           {
             "id": "this-model-can-be-equipped-with-1-storm-bolter-3",
@@ -24952,7 +25120,8 @@
                 "label": "1 storm bolter"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           }
         ],
         "manualNotes": [],
@@ -25712,8 +25881,8 @@
           {
             "id": "for-every-3-models-in-this-unit-1-model-s-plasma-talon-can-be-replaced-with-1-astartes-grenade-launcher-1",
             "label": "For every 3 models in this unit, 1 model\u2019s plasma talon can be replaced with 1 Astartes grenade launcher.",
-            "target": "model",
-            "actor": "plasma talon",
+            "target": "plasma talon",
+            "actor": "model",
             "action": "replace",
             "selectionMode": "allocation",
             "choices": [
@@ -25726,7 +25895,9 @@
               "kind": "ratio",
               "perModels": 3,
               "maxPerStep": 1
-            }
+            },
+            "poolKey": "model-plasma-talon",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
@@ -26333,7 +26504,7 @@
             "id": "this-model-s-twin-heavy-bolter-can-be-replaced-with-1-twin-lascannon-1",
             "label": "This model\u2019s twin heavy bolter can be replaced with 1 twin lascannon.",
             "target": "twin heavy bolter",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -26342,7 +26513,9 @@
                 "label": "1 twin lascannon"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-twin-heavy-bolter",
+            "poolLimit": null
           },
           {
             "id": "this-model-can-be-equipped-with-1-hunter-killer-missile-2",
@@ -26357,7 +26530,8 @@
                 "label": "1 hunter-killer missile"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           },
           {
             "id": "this-model-can-be-equipped-with-1-storm-bolter-3",
@@ -26372,7 +26546,8 @@
                 "label": "1 storm bolter"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           }
         ],
         "manualNotes": [],
@@ -26614,13 +26789,14 @@
                 "label": "1 Icarus rocket pod"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           },
           {
             "id": "this-model-s-heavy-flamer-can-be-replaced-with-1-onslaught-gatling-cannon-2",
             "label": "This model\u2019s heavy flamer can be replaced with 1 onslaught gatling cannon.",
             "target": "heavy flamer",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -26629,13 +26805,15 @@
                 "label": "1 onslaught gatling cannon"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-heavy-flamer",
+            "poolLimit": null
           },
           {
             "id": "this-model-s-heavy-onslaught-gatling-cannon-can-be-replaced-with-1-macro-plasma-incinerator-3",
             "label": "This model\u2019s heavy onslaught gatling cannon can be replaced with 1 macro plasma incinerator.",
             "target": "heavy onslaught gatling cannon",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -26644,13 +26822,15 @@
                 "label": "1 macro plasma incinerator"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-heavy-onslaught-gatling-cannon",
+            "poolLimit": null
           },
           {
             "id": "this-model-s-twin-fragstorm-grenade-launcher-can-be-replaced-with-1-twin-storm-bolter-4",
             "label": "This model\u2019s twin fragstorm grenade launcher can be replaced with 1 twin storm bolter.",
             "target": "twin fragstorm grenade launcher",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -26659,7 +26839,9 @@
                 "label": "1 twin storm bolter"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-twin-fragstorm-grenade-launcher",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
@@ -26862,7 +27044,8 @@
                 "label": "1 bolt carbine and 1 close combat weapon"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           },
           {
             "id": "if-the-reiver-sergeant-is-equipped-with-1-bolt-carbine-it-can-be-equipped-with-1-combat-knife-2",
@@ -26877,7 +27060,8 @@
                 "label": "1 combat knife"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           },
           {
             "id": "all-models-in-this-unit-can-each-be-equipped-with-1-reiver-grav-chute-3",
@@ -26892,7 +27076,8 @@
                 "label": "1 Reiver grav-chute"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           },
           {
             "id": "all-models-in-this-unit-can-each-be-equipped-with-1-grapnel-launcher-4",
@@ -26907,7 +27092,8 @@
                 "label": "1 grapnel launcher"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           }
         ],
         "manualNotes": [],
@@ -27455,7 +27641,7 @@
             "id": "this-model-s-twin-heavy-bolter-can-be-replaced-with-one-of-the-following-1",
             "label": "This model\u2019s twin heavy bolter can be replaced with one of the following:",
             "target": "twin heavy bolter",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -27472,7 +27658,9 @@
                 "label": "1 twin lascannon"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-twin-heavy-bolter",
+            "poolLimit": null
           },
           {
             "id": "this-model-can-be-equipped-with-1-hunter-killer-missile-2",
@@ -27487,7 +27675,8 @@
                 "label": "1 hunter-killer missile"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           },
           {
             "id": "this-model-can-be-equipped-with-1-storm-bolter-3",
@@ -27502,7 +27691,8 @@
                 "label": "1 storm bolter"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           }
         ],
         "manualNotes": [],
@@ -27964,7 +28154,7 @@
             "id": "this-model-s-twin-heavy-bolter-can-be-replaced-with-1-twin-lascannon-1",
             "label": "This model\u2019s twin heavy bolter can be replaced with 1 twin lascannon.",
             "target": "twin heavy bolter",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -27973,13 +28163,15 @@
                 "label": "1 twin lascannon"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-twin-heavy-bolter",
+            "poolLimit": null
           },
           {
             "id": "this-model-s-heavy-onslaught-gatling-cannon-can-be-replaced-with-1-las-talon-2",
             "label": "This model\u2019s heavy onslaught gatling cannon can be replaced with 1 las-talon.",
             "target": "heavy onslaught gatling cannon",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -27988,7 +28180,9 @@
                 "label": "1 las-talon"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-heavy-onslaught-gatling-cannon",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
@@ -28242,7 +28436,7 @@
             "id": "this-model-s-macro-plasma-incinerator-can-be-replaced-with-1-heavy-laser-destroyer-1",
             "label": "This model\u2019s macro plasma incinerator can be replaced with 1 heavy laser destroyer.",
             "target": "macro plasma incinerator",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -28251,7 +28445,9 @@
                 "label": "1 heavy laser destroyer"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-macro-plasma-incinerator",
+            "poolLimit": null
           },
           {
             "id": "this-model-can-be-equipped-with-1-ironhail-heavy-stubber-2",
@@ -28266,7 +28462,8 @@
                 "label": "1 ironhail heavy stubber"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           },
           {
             "id": "this-model-can-be-equipped-with-1-icarus-rocket-pod-3",
@@ -28281,7 +28478,8 @@
                 "label": "1 Icarus rocket pod"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           }
         ],
         "manualNotes": [],
@@ -28449,7 +28647,8 @@
                 "label": "1 hunter-killer missile"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           }
         ],
         "manualNotes": [],
@@ -29547,8 +29746,8 @@
           {
             "id": "the-scout-sergeant-s-boltgun-can-be-replaced-with-1-astartes-chainsword-1",
             "label": "The Scout Sergeant's boltgun can be replaced with 1 Astartes chainsword.",
-            "target": "The Scout Sergeant's boltgun",
-            "actor": null,
+            "target": "boltgun",
+            "actor": "The Scout Sergeant",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -29557,13 +29756,15 @@
                 "label": "1 Astartes chainsword"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "the-scout-sergeant-boltgun",
+            "poolLimit": "modelCount"
           },
           {
             "id": "any-number-of-models-can-each-have-their-boltgun-replaced-with-one-of-the-following-2",
             "label": "Any number of models can each have their boltgun replaced with one of the following:",
-            "target": "models",
-            "actor": "models",
+            "target": "boltgun",
+            "actor": "Any number of models",
             "action": "replace",
             "selectionMode": "allocation",
             "choices": [
@@ -29578,13 +29779,15 @@
             ],
             "allocationLimit": {
               "kind": "modelCount"
-            }
+            },
+            "poolKey": "model-boltgun",
+            "poolLimit": null
           },
           {
             "id": "for-every-5-models-in-this-unit-1-scout-s-boltgun-can-be-replaced-with-1-scout-sniper-rifle-3",
             "label": "For every 5 models in this unit, 1 Scout\u2019s boltgun can be replaced with 1 Scout sniper rifle.",
-            "target": "Scout",
-            "actor": "boltgun",
+            "target": "boltgun",
+            "actor": "Scout",
             "action": "replace",
             "selectionMode": "allocation",
             "choices": [
@@ -29597,16 +29800,26 @@
               "kind": "ratio",
               "perModels": 5,
               "maxPerStep": 1
+            },
+            "poolKey": "scout-boltgun",
+            "poolLimit": {
+              "kind": "ratio",
+              "perModels": 5,
+              "maxPerStep": 1
             }
           },
           {
             "id": "for-every-5-models-in-this-unit-1-scout-s-boltgun-can-be-replaced-with-one-of-the-following-4",
             "label": "For every 5 models in this unit, 1 Scout\u2019s boltgun can be replaced with one of the following:",
-            "target": "For every 5 models in this unit, 1 Scout\u2019s boltgun",
-            "actor": null,
+            "target": "boltgun",
+            "actor": "Scout",
             "action": "replace",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
+              {
+                "id": "one-of-the-following",
+                "label": "one of the following"
+              },
               {
                 "id": "1-heavy-bolter",
                 "label": "1 heavy bolter"
@@ -29616,7 +29829,17 @@
                 "label": "1 missile launcher"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": {
+              "kind": "ratio",
+              "perModels": 5,
+              "maxPerStep": 1
+            },
+            "poolKey": "scout-boltgun",
+            "poolLimit": {
+              "kind": "ratio",
+              "perModels": 5,
+              "maxPerStep": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -33174,8 +33397,8 @@
           {
             "id": "1-tactical-marine-s-boltgun-can-be-replaced-with-one-of-the-following-1",
             "label": "1 Tactical Marine\u2019s boltgun can be replaced with one of the following:",
-            "target": "1 Tactical Marine\u2019s boltgun",
-            "actor": null,
+            "target": "boltgun",
+            "actor": "Tactical Marine",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -33220,13 +33443,15 @@
                 "label": "1 plasma gun"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "tactical-marine-boltgun",
+            "poolLimit": "modelCount"
           },
           {
             "id": "1-tactical-marine-s-boltgun-can-be-replaced-with-one-of-the-following-2",
             "label": "1 Tactical Marine\u2019s boltgun can be replaced with one of the following:",
-            "target": "1 Tactical Marine\u2019s boltgun",
-            "actor": null,
+            "target": "boltgun",
+            "actor": "Tactical Marine",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -33247,7 +33472,9 @@
                 "label": "1 plasma gun"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "tactical-marine-boltgun",
+            "poolLimit": "modelCount"
           },
           {
             "id": "the-tactical-sergeant-s-bolt-pistol-and-boltgun-can-be-replaced-with-1-twin-lightning-claws-or-two-different-weapons-from-the-following-list-3",
@@ -33255,8 +33482,13 @@
             "target": "The Tactical Sergeant\u2019s bolt pistol and boltgun",
             "actor": null,
             "action": "replace",
-            "selectionMode": "single",
+            "selectionMode": "multi",
             "choices": [
+              {
+                "id": "1-twin-lightning-claws",
+                "label": "1 twin lightning claws",
+                "pickCost": 2
+              },
               {
                 "id": "1-astartes-chainsword",
                 "label": "1 Astartes chainsword"
@@ -33298,7 +33530,9 @@
                 "label": "1 thunder hammer"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "pickCount": 2,
+            "requireDistinct": true
           }
         ],
         "manualNotes": [
@@ -34056,7 +34290,7 @@
             "id": "this-model-s-bolt-pistol-can-be-replaced-with-one-of-the-following-1",
             "label": "This model\u2019s bolt pistol can be replaced with one of the following:",
             "target": "bolt pistol",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -34081,13 +34315,15 @@
                 "label": "1 storm bolter"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-bolt-pistol",
+            "poolLimit": null
           },
           {
             "id": "this-model-s-omnissian-power-axe-can-be-replaced-with-one-of-the-following-2",
             "label": "This model\u2019s Omnissian power axe can be replaced with one of the following:",
             "target": "Omnissian power axe",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -34104,7 +34340,9 @@
                 "label": "1 thunder hammer"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-omnissian-power-axe",
+            "poolLimit": null
           },
           {
             "id": "this-model-must-be-equipped-with-one-of-the-following-3",
@@ -34127,7 +34365,9 @@
                 "label": "1 flamer, 1 plasma cutter and 2 servo-arms"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount",
+            "eligibilityText": "equipped with of the following:"
           }
         ],
         "manualNotes": [],
@@ -34873,7 +35113,7 @@
             "id": "this-model-s-2-combi-bolters-can-be-replaced-with-one-of-the-following-1",
             "label": "This model\u2019s 2 combi-bolters can be replaced with one of the following",
             "target": "2 combi-bolters",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -34886,7 +35126,9 @@
                 "label": "2 twin volkite chargers"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-combi-bolters",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],

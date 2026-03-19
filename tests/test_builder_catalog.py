@@ -115,11 +115,14 @@ class BuilderCatalogTests(unittest.TestCase):
         self.assertEqual(unit["composition"]["modelCountOptions"][0]["minModels"], 1)
         self.assertEqual(unit["wargear"]["options"][0]["selectionMode"], "single")
         self.assertEqual(unit["wargear"]["options"][0]["action"], "replace")
-        self.assertTrue(unit["wargear"]["hasManualOptions"])
+        self.assertEqual(unit["wargear"]["options"][1]["selectionMode"], "multi")
+        self.assertEqual(unit["wargear"]["options"][1]["pickCount"], 2)
+        self.assertEqual(unit["wargear"]["options"][1]["choices"][0]["pickCost"], 2)
+        self.assertFalse(unit["wargear"]["hasManualOptions"])
         self.assertEqual(unit["renderBlocks"][0]["displayStyle"], "damaged")
         self.assertEqual(unit["renderBlocks"][1]["title"], "LEADER")
         self.assertEqual(diagnostics["missingStats"], [])
-        self.assertTrue(diagnostics["manualWargear"])
+        self.assertFalse(diagnostics["manualWargear"])
         self.assertFalse(unit["quality"]["hasMissingStats"])
 
     def test_parse_wargear_prompt_supports_fixed_replacements(self):
@@ -144,6 +147,30 @@ class BuilderCatalogTests(unittest.TestCase):
         self.assertEqual(unit_wide_equip["selectionMode"], "single")
         self.assertEqual(unit_wide_equip["action"], "equip")
         self.assertEqual(unit_wide_equip["choices"][0]["label"], "1 grapnel launcher")
+
+        conditional_equip = build_builder_catalog.parse_wargear_prompt(
+            "1 Kasrkin Trooper equipped with a hot-shot lasgun can be equipped with 1 vox-caster (that model’s hot-shot lasgun cannot be replaced)."
+        )
+        self.assertEqual(conditional_equip["selectionMode"], "single")
+        self.assertEqual(conditional_equip["eligibilityText"], "equipped with hot-shot lasgun")
+        self.assertEqual(conditional_equip["choices"][0]["label"], "1 vox-caster")
+
+        token_option = build_builder_catalog.parse_wargear_prompt(
+            "For every 5 models in this unit, it can have 1 Aspect Shrine token."
+        )
+        self.assertEqual(token_option["selectionMode"], "allocation")
+        self.assertEqual(token_option["choices"][0]["label"], "1 Aspect Shrine token")
+        self.assertEqual(token_option["allocationLimit"], {"kind": "ratio", "perModels": 5, "maxPerStep": 1})
+
+        hybrid_multi = build_builder_catalog.parse_wargear_prompt(
+            "The Tactical Sergeant’s bolt pistol and boltgun can be replaced with 1 twin lightning claws, or two different weapons from the following list:*",
+            ["1 bolt pistol", "1 power weapon"],
+        )
+        self.assertEqual(hybrid_multi["selectionMode"], "multi")
+        self.assertEqual(hybrid_multi["pickCount"], 2)
+        self.assertTrue(hybrid_multi["requireDistinct"])
+        self.assertEqual(hybrid_multi["choices"][0]["label"], "1 twin lightning claws")
+        self.assertEqual(hybrid_multi["choices"][0]["pickCost"], 2)
 
     def test_parse_wargear_prompt_supports_counted_allocations(self):
         allocation = build_builder_catalog.parse_wargear_prompt(
@@ -340,7 +367,9 @@ class BuilderCatalogTests(unittest.TestCase):
         unit, _ = build_builder_catalog.normalize_card("space-marines", card)
         self.assertTrue(unit["wargear"]["options"])
         self.assertEqual(unit["wargear"]["options"][0]["selectionMode"], "single")
-        self.assertTrue(unit["wargear"]["hasManualOptions"])
+        multi_group = next(group for group in unit["wargear"]["options"] if group["selectionMode"] == "multi")
+        self.assertEqual(multi_group["pickCount"], 2)
+        self.assertFalse(unit["wargear"]["hasManualOptions"])
 
     def test_real_repo_fixed_wargear_prompt_is_structured(self):
         card = json.loads((ROOT / "out" / "json" / "aeldari" / "Farseer.json").read_text(encoding="utf-8"))
@@ -374,6 +403,38 @@ class BuilderCatalogTests(unittest.TestCase):
         self.assertEqual(corsair_group["allocationLimit"], {"kind": "ratio", "perModels": 5, "maxPerStep": 1})
         self.assertFalse(corsair_diag["manualWargear"])
 
+    def test_real_repo_sampled_problem_units_use_structured_wargear(self):
+        samples = [
+            ("aeldari", "Dark-Reapers.json", lambda unit: next(group for group in unit["wargear"]["options"] if "aspect shrine token" in group["label"].lower())["selectionMode"] == "allocation"),
+            ("astra-militarum", "Kasrkin.json", lambda unit: any(group.get("poolKey") == "kasrkin-trooper-hot-shot-lasgun" for group in unit["wargear"]["options"])),
+            ("death-guard", "Plague-Marines.json", lambda unit: any(group.get("poolKey") == "plague-marine-boltgun" for group in unit["wargear"]["options"])),
+            ("drukhari", "Talos.json", lambda unit: all(group["selectionMode"] == "allocation" for group in unit["wargear"]["options"])),
+            ("dark-angels", "Devastator-Squad.json", lambda unit: any(group["selectionMode"] == "multi" for group in unit["wargear"]["options"])),
+            ("aeldari", "Corsair-Skyreavers.json", lambda unit: all(group["selectionMode"] != "manual" for group in unit["wargear"]["options"])),
+        ]
+
+        for faction_slug, filename, predicate in samples:
+            card = json.loads((ROOT / "out" / "json" / faction_slug / filename).read_text(encoding="utf-8"))
+            unit, diagnostics = build_builder_catalog.normalize_card(faction_slug, card)
+            self.assertTrue(predicate(unit), filename)
+            self.assertFalse(diagnostics["manualWargear"], filename)
+
+    def test_real_repo_manual_wargear_residual_count_stays_low(self):
+        manual_units = []
+        for faction_dir in sorted((ROOT / "out" / "json").iterdir()):
+            if not faction_dir.is_dir():
+                continue
+            index_path = faction_dir / "index.json"
+            if not index_path.exists():
+                continue
+            cards = json.loads(index_path.read_text(encoding="utf-8"))
+            for card in cards:
+                unit, diagnostics = build_builder_catalog.normalize_card(faction_dir.name, card)
+                if diagnostics["manualWargear"]:
+                    manual_units.append((faction_dir.name, unit["name"]))
+
+        self.assertLessEqual(len(manual_units), 5, manual_units)
+
 
 class BuilderAppSmokeTests(unittest.TestCase):
     def test_builder_page_references_generated_manifest_and_renderer(self):
@@ -387,6 +448,11 @@ class BuilderAppSmokeTests(unittest.TestCase):
         self.assertIn("Import JSON", html)
         self.assertIn("Export JSON", html)
         self.assertIn("Saved rosters", html)
+        self.assertIn("battle-size-select", html)
+        self.assertIn("legality-summary", html)
+        self.assertIn('data-action="warlord-select"', html)
+        self.assertIn('data-action="wargear-multi-toggle"', html)
+        self.assertIn("Legal foundation checks passed", html)
         self.assertIn('window.location.protocol === "file:"', html)
         self.assertIn("Original Wahapedia", html)
         self.assertIn("./data/source-cards/", html)

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generatedAt": "2026-03-18T21:01:18+00:00",
+  "generatedAt": "2026-03-19T16:10:46+00:00",
   "faction": {
     "slug": "death-guard",
     "name": "Death Guard",
@@ -11,20 +11,7 @@
     "catalogUnitCount": 71,
     "missingStats": [],
     "manualSelectionUnits": [],
-    "manualWargearUnits": [
-      {
-        "unitId": "blightlord-terminators",
-        "name": "Blightlord Terminators"
-      },
-      {
-        "unitId": "mastodon",
-        "name": "Mastodon"
-      },
-      {
-        "unitId": "plague-marines",
-        "name": "Plague Marines"
-      }
-    ]
+    "manualWargearUnits": []
   },
   "units": [
     {
@@ -504,18 +491,29 @@
           {
             "id": "for-every-5-models-in-this-unit-up-to-3-models-combi-bolters-can-each-be-replaced-with-1-combi-weapon-1",
             "label": "For every 5 models in this unit, up to 3 models' combi-bolters can each be replaced with 1 combi-weapon.",
-            "target": null,
-            "actor": null,
-            "action": null,
-            "selectionMode": "manual",
-            "choices": [],
-            "allocationLimit": null
+            "target": "combi-bolters",
+            "actor": "3 models",
+            "action": "replace",
+            "selectionMode": "allocation",
+            "choices": [
+              {
+                "id": "1-combi-weapon",
+                "label": "1 combi-weapon"
+              }
+            ],
+            "allocationLimit": {
+              "kind": "ratio",
+              "perModels": 5,
+              "maxPerStep": 3
+            },
+            "poolKey": "model-combi-bolters",
+            "poolLimit": null
           },
           {
             "id": "for-every-5-models-in-this-unit-1-blightlord-terminator-s-combi-bolter-and-bubotic-blade-can-be-replaced-with-1-flail-of-corruption-2",
             "label": "For every 5 models in this unit, 1 Blightlord Terminator\u2019s combi-bolter and bubotic blade can be replaced with 1 flail of corruption.",
-            "target": "Blightlord Terminator",
-            "actor": "combi-bolter and bubotic blade",
+            "target": "combi-bolter and bubotic blade",
+            "actor": "Blightlord Terminator",
             "action": "replace",
             "selectionMode": "allocation",
             "choices": [
@@ -528,13 +526,19 @@
               "kind": "ratio",
               "perModels": 5,
               "maxPerStep": 1
+            },
+            "poolKey": "blightlord-terminator-combi-bolter-and-bubotic-blade",
+            "poolLimit": {
+              "kind": "ratio",
+              "perModels": 5,
+              "maxPerStep": 1
             }
           },
           {
             "id": "for-every-5-models-in-this-unit-1-blightlord-terminator-s-combi-bolter-can-be-replaced-with-1-blight-launcher-3",
             "label": "For every 5 models in this unit, 1 Blightlord Terminator\u2019s combi-bolter can be replaced with 1 blight launcher.",
-            "target": "Blightlord Terminator",
-            "actor": "combi-bolter",
+            "target": "combi-bolter",
+            "actor": "Blightlord Terminator",
             "action": "replace",
             "selectionMode": "allocation",
             "choices": [
@@ -547,13 +551,19 @@
               "kind": "ratio",
               "perModels": 5,
               "maxPerStep": 1
+            },
+            "poolKey": "blightlord-terminator-combi-bolter",
+            "poolLimit": {
+              "kind": "ratio",
+              "perModels": 5,
+              "maxPerStep": 1
             }
           },
           {
             "id": "for-every-5-models-in-this-unit-1-blightlord-terminator-s-combi-bolter-can-be-replaced-with-1-reaper-autocannon-4",
             "label": "For every 5 models in this unit, 1 Blightlord Terminator's combi-bolter can be replaced with 1 reaper autocannon.",
-            "target": "Blightlord Terminator",
-            "actor": "combi-bolter",
+            "target": "combi-bolter",
+            "actor": "Blightlord Terminator",
             "action": "replace",
             "selectionMode": "allocation",
             "choices": [
@@ -566,13 +576,19 @@
               "kind": "ratio",
               "perModels": 5,
               "maxPerStep": 1
+            },
+            "poolKey": "blightlord-terminator-combi-bolter",
+            "poolLimit": {
+              "kind": "ratio",
+              "perModels": 5,
+              "maxPerStep": 1
             }
           },
           {
             "id": "for-every-5-models-in-this-unit-1-blightlord-terminator-s-combi-bolter-can-be-replaced-with-1-plague-spewer-5",
             "label": "For every 5 models in this unit, 1 Blightlord Terminator's combi-bolter can be replaced with 1 plague spewer.",
-            "target": "Blightlord Terminator",
-            "actor": "combi-bolter",
+            "target": "combi-bolter",
+            "actor": "Blightlord Terminator",
             "action": "replace",
             "selectionMode": "allocation",
             "choices": [
@@ -585,13 +601,19 @@
               "kind": "ratio",
               "perModels": 5,
               "maxPerStep": 1
+            },
+            "poolKey": "blightlord-terminator-combi-bolter",
+            "poolLimit": {
+              "kind": "ratio",
+              "perModels": 5,
+              "maxPerStep": 1
             }
           },
           {
             "id": "if-this-unit-contains-only-3-models-1-blightlord-terminator-s-combi-bolter-and-bubotic-blade-can-be-replaced-with-1-plague-spewer-and-1-close-combat-weapon-6",
             "label": "If this unit contains only 3 models, 1 Blightlord Terminator\u2019s combi-bolter and bubotic blade can be replaced with 1 plague spewer and 1 close combat weapon.",
-            "target": "If this unit contains only 3 models, 1 Blightlord Terminator\u2019s combi-bolter and bubotic blade",
-            "actor": null,
+            "target": "combi-bolter and bubotic blade",
+            "actor": "If this unit contains only 3 models, 1 Blightlord Terminator",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -600,18 +622,20 @@
                 "label": "1 plague spewer and 1 close combat weapon"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "if-this-unit-contains-only-3-models-1-blightlord-terminator-combi-bolter-and-bubotic-blade",
+            "poolLimit": "modelCount"
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -803,7 +827,9 @@
                 "label": "2 lascannons"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount",
+            "eligibilityText": "equipped with of the following:"
           },
           {
             "id": "this-model-can-be-equipped-with-one-of-the-following-2",
@@ -830,7 +856,9 @@
                 "label": "1 storm bolter"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount",
+            "eligibilityText": "equipped with of the following:"
           }
         ],
         "manualNotes": [],
@@ -1035,7 +1063,9 @@
                 "label": "1 combi-weapon"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount",
+            "eligibilityText": "equipped with of the following:"
           },
           {
             "id": "this-model-can-be-equipped-with-1-havoc-launcher-2",
@@ -1050,7 +1080,8 @@
                 "label": "1 havoc launcher"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           }
         ],
         "manualNotes": [],
@@ -1318,7 +1349,7 @@
             "id": "this-model-s-bolt-pistol-can-be-replaced-with-one-of-the-following-1",
             "label": "This model\u2019s bolt pistol can be replaced with one of the following:",
             "target": "bolt pistol",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -1343,13 +1374,15 @@
                 "label": "1 power fist"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-bolt-pistol",
+            "poolLimit": null
           },
           {
             "id": "this-model-s-astartes-chainsword-can-be-replaced-with-one-of-the-following-2",
             "label": "This model\u2019s Astartes chainsword can be replaced with one of the following:",
             "target": "Astartes chainsword",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -1370,13 +1403,15 @@
                 "label": "1 power fist"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-astartes-chainsword",
+            "poolLimit": null
           },
           {
             "id": "this-model-s-bolt-pistol-and-astartes-chainsword-can-be-replaced-with-1-paired-accursed-weapons-3",
             "label": "This model\u2019s bolt pistol and Astartes chainsword can be replaced with 1 paired accursed weapons.",
             "target": "bolt pistol and Astartes chainsword",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -1385,7 +1420,9 @@
                 "label": "1 paired accursed weapons"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-bolt-pistol-and-astartes-chainsword",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
@@ -1606,7 +1643,9 @@
                 "label": "2 heavy bolters"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount",
+            "eligibilityText": "equipped with of the following:"
           },
           {
             "id": "this-model-can-be-equipped-with-one-of-the-following-2",
@@ -1625,7 +1664,9 @@
                 "label": "1 combi-bolter"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount",
+            "eligibilityText": "equipped with of the following:"
           },
           {
             "id": "this-model-can-be-equipped-with-1-havoc-launcher-3",
@@ -1640,7 +1681,8 @@
                 "label": "1 havoc launcher"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           }
         ],
         "manualNotes": [],
@@ -1858,7 +1900,9 @@
                 "label": "2 lascannons"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount",
+            "eligibilityText": "equipped with of the following:"
           },
           {
             "id": "this-model-can-be-equipped-with-one-of-the-following-2",
@@ -1877,7 +1921,9 @@
                 "label": "1 combi-weapon"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount",
+            "eligibilityText": "equipped with of the following:"
           },
           {
             "id": "this-model-can-be-equipped-with-1-havoc-launcher-3",
@@ -1892,7 +1938,8 @@
                 "label": "1 havoc launcher"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           }
         ],
         "manualNotes": [],
@@ -2071,7 +2118,9 @@
                 "label": "1 combi-weapon"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount",
+            "eligibilityText": "equipped with of the following:"
           },
           {
             "id": "this-model-can-be-equipped-with-1-havoc-launcher-or-can-replace-1-combi-bolter-with-1-havoc-launcher-2",
@@ -2086,7 +2135,8 @@
                 "label": "1 havoc launcher or can replace 1 combi-bolter with 1 havoc launcher"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           }
         ],
         "manualNotes": [],
@@ -2386,7 +2436,7 @@
             "id": "this-model-s-thunderhawk-heavy-cannon-can-be-replaced-with-1-turbo-laser-destructor-1",
             "label": "This model\u2019s Thunderhawk heavy cannon can be replaced with 1 turbo-laser destructor.",
             "target": "Thunderhawk heavy cannon",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -2395,13 +2445,15 @@
                 "label": "1 turbo-laser destructor"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-thunderhawk-heavy-cannon",
+            "poolLimit": null
           },
           {
             "id": "this-model-s-thunderhawk-cluster-bombs-can-be-replaced-with-1-hellstrike-missile-battery-2",
             "label": "This model\u2019s Thunderhawk cluster bombs can be replaced with 1 hellstrike missile battery",
             "target": "Thunderhawk cluster bombs",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -2410,7 +2462,9 @@
                 "label": "1 hellstrike missile battery"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-thunderhawk-cluster-bombs",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
@@ -2957,7 +3011,7 @@
             "id": "this-model-s-plague-bolt-pistol-can-be-replaced-with-one-of-the-following-1",
             "label": "This model\u2019s plague bolt pistol can be replaced with one of the following:",
             "target": "plague bolt pistol",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -2982,13 +3036,15 @@
                 "label": "1 plasma pistol"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-plague-bolt-pistol",
+            "poolLimit": null
           },
           {
             "id": "this-model-s-astartes-chainsword-can-be-replaced-with-one-of-the-following-2",
             "label": "This model\u2019s Astartes chainsword can be replaced with one of the following:",
             "target": "Astartes chainsword",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -3001,13 +3057,15 @@
                 "label": "1 plague-encrusted exalted weapon"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-astartes-chainsword",
+            "poolLimit": null
           },
           {
             "id": "this-model-s-plague-bolt-pistol-and-astartes-chainsword-can-be-replaced-with-1-twin-lighting-claws-3",
             "label": "This model\u2019s plague bolt pistol and Astartes chainsword can be replaced with 1 twin lighting claws.",
             "target": "plague bolt pistol and Astartes chainsword",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -3016,7 +3074,9 @@
                 "label": "1 twin lighting claws"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-plague-bolt-pistol-and-astartes-chainsword",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
@@ -3209,7 +3269,7 @@
             "id": "this-model-s-plague-combi-bolter-can-be-replaced-with-one-of-the-following-1",
             "label": "This model\u2019s plague combi-bolter can be replaced with one of the following:",
             "target": "plague combi-bolter",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -3222,13 +3282,15 @@
                 "label": "1 plague-encrusted exalted weapon"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-plague-combi-bolter",
+            "poolLimit": null
           },
           {
             "id": "this-model-s-plague-encrusted-exalted-weapon-can-be-replaced-with-one-of-the-following-2",
             "label": "This model\u2019s plague-encrusted exalted weapon can be replaced with one of the following:",
             "target": "plague-encrusted exalted weapon",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -3241,13 +3303,15 @@
                 "label": "1 plague fist"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-plague-encrusted-exalted-weapon",
+            "poolLimit": null
           },
           {
             "id": "this-model-s-plague-combi-bolter-and-plague-encrusted-exalted-weapon-can-be-replaced-with-1-twin-lighting-claws-3",
             "label": "This model\u2019s plague combi-bolter and plague-encrusted exalted weapon can be replaced with 1 twin lighting claws.",
             "target": "plague combi-bolter and plague-encrusted exalted weapon",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -3256,7 +3320,9 @@
                 "label": "1 twin lighting claws"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-plague-combi-bolter-and-plague-encrusted-exalted-weapon",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
@@ -3443,8 +3509,8 @@
           {
             "id": "for-every-10-models-in-the-unit-1-death-guard-cultist-s-cultist-firearm-can-be-replaced-with-1-flamer-1",
             "label": "For every 10 models in the unit, 1 Death Guard Cultist\u2019s Cultist firearm can be replaced with 1 flamer.",
-            "target": "Death Guard Cultist",
-            "actor": "Cultist firearm",
+            "target": "Cultist firearm",
+            "actor": "Death Guard Cultist",
             "action": "replace",
             "selectionMode": "allocation",
             "choices": [
@@ -3457,13 +3523,19 @@
               "kind": "ratio",
               "perModels": 10,
               "maxPerStep": 1
+            },
+            "poolKey": "death-guard-cultist-cultist-firearm",
+            "poolLimit": {
+              "kind": "ratio",
+              "perModels": 10,
+              "maxPerStep": 1
             }
           },
           {
             "id": "for-every-10-models-in-the-unit-1-death-guard-cultist-s-cultist-firearm-can-be-replaced-with-1-heavy-stubber-2",
             "label": "For every 10 models in the unit, 1 Death Guard Cultist\u2019s Cultist firearm can be replaced with 1 heavy stubber.",
-            "target": "Death Guard Cultist",
-            "actor": "Cultist firearm",
+            "target": "Cultist firearm",
+            "actor": "Death Guard Cultist",
             "action": "replace",
             "selectionMode": "allocation",
             "choices": [
@@ -3476,13 +3548,19 @@
               "kind": "ratio",
               "perModels": 10,
               "maxPerStep": 1
+            },
+            "poolKey": "death-guard-cultist-cultist-firearm",
+            "poolLimit": {
+              "kind": "ratio",
+              "perModels": 10,
+              "maxPerStep": 1
             }
           },
           {
             "id": "for-every-10-models-in-the-unit-1-death-guard-cultist-s-cultist-firearm-can-be-replaced-with-1-grenade-launcher-3",
             "label": "For every 10 models in the unit, 1 Death Guard Cultist\u2019s Cultist firearm can be replaced with 1 grenade launcher.",
-            "target": "Death Guard Cultist",
-            "actor": "Cultist firearm",
+            "target": "Cultist firearm",
+            "actor": "Death Guard Cultist",
             "action": "replace",
             "selectionMode": "allocation",
             "choices": [
@@ -3492,6 +3570,12 @@
               }
             ],
             "allocationLimit": {
+              "kind": "ratio",
+              "perModels": 10,
+              "maxPerStep": 1
+            },
+            "poolKey": "death-guard-cultist-cultist-firearm",
+            "poolLimit": {
               "kind": "ratio",
               "perModels": 10,
               "maxPerStep": 1
@@ -3619,7 +3703,8 @@
                 "label": "1 diseased icon"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           }
         ],
         "manualNotes": [],
@@ -3873,7 +3958,7 @@
             "id": "this-model-s-plague-combi-bolter-can-be-replaced-with-one-of-the-following-1",
             "label": "This model\u2019s plague combi-bolter can be replaced with one of the following:",
             "target": "plague combi-bolter",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -3886,13 +3971,15 @@
                 "label": "1 plague-encrusted exalted weapon"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-plague-combi-bolter",
+            "poolLimit": null
           },
           {
             "id": "this-model-s-force-weapon-can-be-replaced-with-one-of-the-following-2",
             "label": "This model\u2019s force weapon can be replaced with one of the following:",
             "target": "force weapon",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -3909,13 +3996,15 @@
                 "label": "1 plague-encrusted exalted weapon"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-force-weapon",
+            "poolLimit": null
           },
           {
             "id": "this-model-s-plague-combi-bolter-and-force-weapon-can-be-replaced-with-1-twin-lighting-claws-3",
             "label": "This model\u2019s plague combi-bolter and force weapon can be replaced with 1 twin lighting claws.",
             "target": "plague combi-bolter and force weapon",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -3924,7 +4013,9 @@
                 "label": "1 twin lighting claws"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-plague-combi-bolter-and-force-weapon",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
@@ -4107,7 +4198,8 @@
                 "label": "1 additional plaguespurt gauntlet"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           },
           {
             "id": "the-deathshroud-champion-can-be-equipped-with-1-icon-of-despair-2",
@@ -4122,7 +4214,8 @@
                 "label": "1 icon of despair"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           }
         ],
         "manualNotes": [],
@@ -4378,7 +4471,7 @@
             "id": "this-model-s-twin-heavy-flamer-can-be-replaced-with-one-of-the-following-1",
             "label": "This model\u2019s twin heavy flamer can be replaced with one of the following:",
             "target": "twin heavy flamer",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -4391,13 +4484,15 @@
                 "label": "1 havoc launcher"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-twin-heavy-flamer",
+            "poolLimit": null
           },
           {
             "id": "this-model-s-reaper-autocannon-can-be-replaced-with-one-of-the-following-2",
             "label": "This model\u2019s reaper autocannon can be replaced with one of the following:",
             "target": "reaper autocannon",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -4410,7 +4505,9 @@
                 "label": "1 twin lascannon"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-reaper-autocannon",
+            "poolLimit": null
           },
           {
             "id": "this-model-can-be-equipped-with-one-of-the-following-3",
@@ -4429,7 +4526,9 @@
                 "label": "1 combi-weapon"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount",
+            "eligibilityText": "equipped with of the following:"
           }
         ],
         "manualNotes": [],
@@ -4671,7 +4770,7 @@
             "id": "this-model-s-anvilus-autocannon-battery-can-be-replaced-with-one-of-the-following-1",
             "label": "This model\u2019s anvilus autocannon battery can be replaced with one of the following",
             "target": "anvilus autocannon battery",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -4688,13 +4787,15 @@
                 "label": "1 volkite falconet battery"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-anvilus-autocannon-battery",
+            "poolLimit": null
           },
           {
             "id": "this-model-s-twin-heavy-bolter-can-be-replaced-with-1-twin-heavy-flamer-2",
             "label": "This model\u2019s twin heavy bolter can be replaced with 1 twin heavy flamer.",
             "target": "twin heavy bolter",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -4703,7 +4804,9 @@
                 "label": "1 twin heavy flamer"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-twin-heavy-bolter",
+            "poolLimit": null
           },
           {
             "id": "this-model-can-be-equipped-with-one-of-the-following-3",
@@ -4722,7 +4825,9 @@
                 "label": "1 boreas air defence missiles"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount",
+            "eligibilityText": "equipped with of the following:"
           }
         ],
         "manualNotes": [],
@@ -4968,7 +5073,7 @@
             "id": "this-model-s-2-quad-lascannons-can-be-replaced-with-2-laser-destroyers-1",
             "label": "This model\u2019s 2 quad lascannons can be replaced with 2 laser destroyers.",
             "target": "2 quad lascannons",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -4977,13 +5082,15 @@
                 "label": "2 laser destroyers"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-quad-lascannons",
+            "poolLimit": null
           },
           {
             "id": "this-model-s-twin-heavy-bolter-can-be-replaced-with-1-twin-heavy-flamer-2",
             "label": "This model\u2019s twin heavy bolter can be replaced with 1 twin heavy flamer",
             "target": "twin heavy bolter",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -4992,7 +5099,9 @@
                 "label": "1 twin heavy flamer"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-twin-heavy-bolter",
+            "poolLimit": null
           },
           {
             "id": "this-model-can-be-equipped-with-one-of-the-following-3",
@@ -5019,7 +5128,9 @@
                 "label": "1 storm bolter"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount",
+            "eligibilityText": "equipped with of the following:"
           }
         ],
         "manualNotes": [],
@@ -5329,7 +5440,7 @@
             "id": "this-model-s-2-quad-lascannons-can-be-replaced-with-one-of-the-following-1",
             "label": "This model\u2019s 2 quad lascannons can be replaced with one of the following:",
             "target": "2 quad lascannons",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -5342,13 +5453,15 @@
                 "label": "2 quad heavy bolters"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-quad-lascannons",
+            "poolLimit": null
           },
           {
             "id": "this-model-s-twin-heavy-bolter-can-be-replaced-with-1-twin-heavy-flamer-2",
             "label": "This model\u2019s twin heavy bolter can be replaced with 1 twin heavy flamer.",
             "target": "twin heavy bolter",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -5357,7 +5470,9 @@
                 "label": "1 twin heavy flamer"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-twin-heavy-bolter",
+            "poolLimit": null
           },
           {
             "id": "this-model-can-be-equipped-with-1-havoc-launcher-3",
@@ -5372,7 +5487,8 @@
                 "label": "1 havoc launcher"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           },
           {
             "id": "this-model-can-be-equipped-with-one-of-the-following-4",
@@ -5403,7 +5519,9 @@
                 "label": "1 storm bolter"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount",
+            "eligibilityText": "equipped with of the following:"
           }
         ],
         "manualNotes": [],
@@ -5595,7 +5713,7 @@
             "id": "this-model-s-2-twin-hellstrike-missile-launchers-can-be-replaced-with-2-twin-lascannons-1",
             "label": "This model\u2019s 2 twin hellstrike missile launchers can be replaced with 2 twin lascannons",
             "target": "2 twin hellstrike missile launchers",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -5604,13 +5722,15 @@
                 "label": "2 twin lascannons"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-twin-hellstrike-missile-launchers",
+            "poolLimit": null
           },
           {
             "id": "this-model-s-2-twin-autocannons-can-be-replaced-with-2-quad-heavy-bolters-2",
             "label": "This model\u2019s 2 twin autocannons can be replaced with 2 quad heavy bolters.",
             "target": "2 twin autocannons",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -5619,7 +5739,9 @@
                 "label": "2 quad heavy bolters"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-twin-autocannons",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
@@ -5774,7 +5896,7 @@
             "id": "this-model-s-fleshmower-can-be-replaced-with-2-plaguespitters-1",
             "label": "This model\u2019s fleshmower can be replaced with 2 plaguespitters.",
             "target": "fleshmower",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -5783,7 +5905,9 @@
                 "label": "2 plaguespitters"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-fleshmower",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
@@ -6379,7 +6503,7 @@
             "id": "this-model-s-plague-flail-can-be-replaced-with-1-bileblade-1",
             "label": "This model\u2019s plague flail can be replaced with 1 bileblade.",
             "target": "plague flail",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -6388,13 +6512,15 @@
                 "label": "1 bileblade"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-plague-flail",
+            "poolLimit": null
           },
           {
             "id": "this-model-s-bilesword-can-be-replaced-with-1-doomsday-bell-2",
             "label": "This model\u2019s bilesword can be replaced with 1 doomsday bell.",
             "target": "bilesword",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -6403,7 +6529,9 @@
                 "label": "1 doomsday bell"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-bilesword",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
@@ -6826,7 +6954,7 @@
             "id": "this-model-s-multi-melta-can-be-replaced-with-one-of-the-following-1",
             "label": "This model\u2019s multi-melta can be replaced with one of the following:",
             "target": "multi-melta",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -6851,13 +6979,15 @@
                 "label": "1 additional Helbrute fist"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-multi-melta",
+            "poolLimit": null
           },
           {
             "id": "1-of-this-model-s-helbrute-fists-can-be-replaced-with-1-missile-launcher-2",
             "label": "1 of this model\u2019s Helbrute fists can be replaced with 1 missile launcher",
-            "target": "1 of this model\u2019s Helbrute fists",
-            "actor": null,
+            "target": "Helbrute fists",
+            "actor": "of this model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -6866,13 +6996,15 @@
                 "label": "1 missile launcher"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "of-this-model-helbrute-fists",
+            "poolLimit": "modelCount"
           },
           {
             "id": "1-of-this-model-s-helbrute-fists-can-be-replaced-with-one-of-the-following-3",
             "label": "1 of this model\u2019s Helbrute fists can be replaced with one of the following:",
-            "target": "1 of this model\u2019s Helbrute fists",
-            "actor": null,
+            "target": "Helbrute fists",
+            "actor": "of this model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -6885,7 +7017,9 @@
                 "label": "1 power scourge"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "of-this-model-helbrute-fists",
+            "poolLimit": "modelCount"
           },
           {
             "id": "for-each-helbrute-fist-this-model-is-equipped-with-it-can-be-equipped-with-one-of-the-following-4",
@@ -6897,14 +7031,16 @@
             "choices": [
               {
                 "id": "1-combi-bolter",
-                "label": "1 combi-bolter*"
+                "label": "1 combi-bolter"
               },
               {
                 "id": "1-heavy-flamer",
-                "label": "1 heavy flamer*"
+                "label": "1 heavy flamer"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount",
+            "eligibilityText": "equipped with of the following:"
           }
         ],
         "manualNotes": [
@@ -7045,7 +7181,7 @@
             "id": "this-model-s-2-twin-autocannons-can-be-replaced-with-2-twin-lascannons-1",
             "label": "This model\u2019s 2 twin autocannons can be replaced with 2 twin lascannons.",
             "target": "2 twin autocannons",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -7054,7 +7190,9 @@
                 "label": "2 twin lascannons"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-twin-autocannons",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
@@ -7205,7 +7343,7 @@
             "id": "this-model-s-autocannon-can-be-replaced-with-1-havoc-launcher-1",
             "label": "This model\u2019s autocannon can be replaced with 1 havoc launcher.",
             "target": "autocannon",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -7214,7 +7352,9 @@
                 "label": "1 havoc launcher"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-autocannon",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
@@ -7671,7 +7811,7 @@
             "id": "this-model-s-kratos-battle-cannon-can-be-replaced-with-one-of-the-following-1",
             "label": "This model\u2019s Kratos battle cannon can be replaced with one of the following:",
             "target": "Kratos battle cannon",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -7684,13 +7824,15 @@
                 "label": "1 volkite cardanelle"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-kratos-battle-cannon",
+            "poolLimit": null
           },
           {
             "id": "2-of-this-model-s-heavy-bolters-can-be-replaced-with-one-of-the-following-2",
             "label": "2 of this model\u2019s heavy bolters can be replaced with one of the following:",
-            "target": "2 of this model\u2019s heavy bolters",
-            "actor": null,
+            "target": "heavy bolters",
+            "actor": "of this model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -7707,13 +7849,15 @@
                 "label": "2 volkite calivers"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "of-this-model-heavy-bolters",
+            "poolLimit": "modelCount"
           },
           {
             "id": "2-of-this-model-s-heavy-bolters-can-be-replaced-with-one-of-the-following-3",
             "label": "2 of this model\u2019s heavy bolters can be replaced with one of the following:",
-            "target": "2 of this model\u2019s heavy bolters",
-            "actor": null,
+            "target": "heavy bolters",
+            "actor": "of this model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -7730,7 +7874,9 @@
                 "label": "2 volkite culverins"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "of-this-model-heavy-bolters",
+            "poolLimit": "modelCount"
           },
           {
             "id": "this-model-can-be-equipped-with-one-of-the-following-4",
@@ -7765,7 +7911,9 @@
                 "label": "1 twin boltgun"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount",
+            "eligibilityText": "equipped with of the following:"
           },
           {
             "id": "this-model-can-be-equipped-with-1-hunter-killer-missile-5",
@@ -7780,7 +7928,8 @@
                 "label": "1 hunter killer missile"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           }
         ],
         "manualNotes": [],
@@ -7981,7 +8130,7 @@
             "id": "this-model-s-2-twin-volkite-culverins-can-be-replaced-with-2-twin-multi-melta-1",
             "label": "This model\u2019s 2 twin volkite culverins can be replaced with 2 twin multi-melta",
             "target": "2 twin volkite culverins",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -7990,7 +8139,9 @@
                 "label": "2 twin multi-melta"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-twin-volkite-culverins",
+            "poolLimit": null
           },
           {
             "id": "this-model-can-be-equipped-with-1-hunter-killer-missile-2",
@@ -8005,7 +8156,8 @@
                 "label": "1 hunter-killer missile"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           },
           {
             "id": "this-model-can-be-equipped-with-1-storm-bolter-3",
@@ -8020,7 +8172,8 @@
                 "label": "1 storm bolter"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           }
         ],
         "manualNotes": [],
@@ -8274,7 +8427,9 @@
                 "label": "1 twin heavy flamer"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount",
+            "eligibilityText": "equipped with of the following:"
           },
           {
             "id": "this-model-can-be-equipped-with-1-hunter-killer-missile-2",
@@ -8289,7 +8444,8 @@
                 "label": "1 hunter-killer missile"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           },
           {
             "id": "this-model-can-be-equipped-with-1-storm-bolter-3",
@@ -8304,7 +8460,8 @@
                 "label": "1 storm bolter"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           },
           {
             "id": "this-model-can-be-equipped-with-1-explorator-augury-web-4",
@@ -8319,7 +8476,8 @@
                 "label": "1 explorator augury web"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           }
         ],
         "manualNotes": [],
@@ -8580,8 +8738,8 @@
           {
             "id": "each-of-this-model-s-grav-flux-bombards-can-be-replaced-with-one-of-the-following-1",
             "label": "Each of this model\u2019s grav-flux bombards can be replaced with one of the following",
-            "target": "Each of this model\u2019s grav-flux bombards",
-            "actor": null,
+            "target": "grav-flux bombards",
+            "actor": "Each of this model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -8602,13 +8760,15 @@
                 "label": "1 meltagun and 1 Leviathan siege drill"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "each-of-this-model-grav-flux-bombards",
+            "poolLimit": "modelCount"
           },
           {
             "id": "this-model-s-2-heavy-flamers-can-be-replaced-with-2-twin-volkite-calivers-2",
             "label": "This model\u2019s 2 heavy flamers can be replaced with 2 twin volkite calivers.",
             "target": "2 heavy flamers",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -8617,7 +8777,9 @@
                 "label": "2 twin volkite calivers"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-heavy-flamers",
+            "poolLimit": null
           },
           {
             "id": "this-model-can-be-equipped-with-3-hunter-killer-missiles-3",
@@ -8632,7 +8794,8 @@
                 "label": "3 hunter-killer missiles"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           }
         ],
         "manualNotes": [],
@@ -9447,7 +9610,7 @@
             "id": "this-model-s-2-heavy-flamers-can-be-replaced-with-one-of-the-following-1",
             "label": "This model\u2019s 2 heavy flamers can be replaced with one of the following",
             "target": "2 heavy flamers",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -9464,15 +9627,17 @@
                 "label": "2 volkite culverins"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-heavy-flamers",
+            "poolLimit": null
           },
           {
             "id": "this-model-s-2-lascannons-can-be-replaced-with-on-of-the-following-2",
             "label": "This model\u2019s 2 lascannons can be replaced with on of the following:",
-            "target": null,
+            "target": "2 lascannons",
             "actor": null,
-            "action": null,
-            "selectionMode": "manual",
+            "action": "replace",
+            "selectionMode": "single",
             "choices": [
               {
                 "id": "2-heavy-bolters",
@@ -9487,18 +9652,19 @@
                 "label": "2 volkite culverins"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -10551,8 +10717,8 @@
           {
             "id": "1-plague-drone-that-is-not-equipped-with-a-daemonic-icon-can-be-equipped-with-1-instrument-of-chaos-1",
             "label": "1 Plague Drone that is not equipped with a daemonic icon can be equipped with 1 instrument of Chaos.",
-            "target": "1 Plague Drone that is not equipped with a daemonic icon",
-            "actor": null,
+            "target": "Plague Drone that is not",
+            "actor": "Plague Drone that is not",
             "action": "equip",
             "selectionMode": "single",
             "choices": [
@@ -10561,13 +10727,16 @@
                 "label": "1 instrument of Chaos"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "plague-drone-that-is-not-daemonic-icon",
+            "poolLimit": "modelCount",
+            "eligibilityText": "equipped with daemonic icon"
           },
           {
             "id": "1-plague-drone-that-is-not-equipped-with-an-instrument-of-chaos-can-be-equipped-with-1-daemonic-icon-2",
             "label": "1 Plague Drone that is not equipped with an instrument of Chaos can be equipped with 1 daemonic icon.",
-            "target": "1 Plague Drone that is not equipped with an instrument of Chaos",
-            "actor": null,
+            "target": "Plague Drone that is not",
+            "actor": "Plague Drone that is not",
             "action": "equip",
             "selectionMode": "single",
             "choices": [
@@ -10576,7 +10745,10 @@
                 "label": "1 daemonic icon"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "plague-drone-that-is-not-instrument-of-chaos",
+            "poolLimit": "modelCount",
+            "eligibilityText": "equipped with instrument of Chaos"
           }
         ],
         "manualNotes": [],
@@ -10910,8 +11082,8 @@
           {
             "id": "the-plague-champion-s-boltgun-can-be-replaced-with-one-of-the-following-1",
             "label": "The Plague Champion\u2019s boltgun can be replaced with one of the following:",
-            "target": "The Plague Champion\u2019s boltgun",
-            "actor": null,
+            "target": "boltgun",
+            "actor": "The Plague Champion",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -10928,13 +11100,15 @@
                 "label": "1 plasma pistol"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "the-plague-champion-boltgun",
+            "poolLimit": "modelCount"
           },
           {
             "id": "the-plague-champion-s-plague-knives-can-be-replaced-with-one-of-the-following-2",
             "label": "The Plague Champion\u2019s plague knives can be replaced with one of the following:",
-            "target": "The Plague Champion\u2019s plague knives",
-            "actor": null,
+            "target": "plague knives",
+            "actor": "The Plague Champion",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -10947,13 +11121,15 @@
                 "label": "1 power fist"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "the-plague-champion-plague-knives",
+            "poolLimit": "modelCount"
           },
           {
             "id": "for-every-5-models-in-this-unit-1-plague-marine-s-boltgun-can-be-replaced-with-1-blight-launcher-3",
             "label": "For every 5 models in this unit, 1 Plague Marine\u2019s boltgun can be replaced with 1 blight launcher.",
-            "target": "Plague Marine",
-            "actor": "boltgun",
+            "target": "boltgun",
+            "actor": "Plague Marine",
             "action": "replace",
             "selectionMode": "allocation",
             "choices": [
@@ -10966,13 +11142,19 @@
               "kind": "ratio",
               "perModels": 5,
               "maxPerStep": 1
+            },
+            "poolKey": "plague-marine-boltgun",
+            "poolLimit": {
+              "kind": "ratio",
+              "perModels": 5,
+              "maxPerStep": 1
             }
           },
           {
             "id": "for-every-5-models-in-this-unit-1-plague-marine-s-boltgun-can-be-replaced-with-1-plague-spewer-4",
             "label": "For every 5 models in this unit, 1 Plague Marine\u2019s boltgun can be replaced with 1 plague spewer.",
-            "target": "Plague Marine",
-            "actor": "boltgun",
+            "target": "boltgun",
+            "actor": "Plague Marine",
             "action": "replace",
             "selectionMode": "allocation",
             "choices": [
@@ -10985,16 +11167,26 @@
               "kind": "ratio",
               "perModels": 5,
               "maxPerStep": 1
+            },
+            "poolKey": "plague-marine-boltgun",
+            "poolLimit": {
+              "kind": "ratio",
+              "perModels": 5,
+              "maxPerStep": 1
             }
           },
           {
             "id": "for-every-5-models-in-this-unit-1-plague-marine-s-boltgun-can-be-replaced-with-one-of-the-following-5",
             "label": "For every 5 models in this unit, 1 Plague Marine\u2019s boltgun can be replaced with one of the following:",
-            "target": "For every 5 models in this unit, 1 Plague Marine\u2019s boltgun",
-            "actor": null,
+            "target": "boltgun",
+            "actor": "Plague Marine",
             "action": "replace",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
+              {
+                "id": "one-of-the-following",
+                "label": "one of the following"
+              },
               {
                 "id": "1-meltagun",
                 "label": "1 meltagun"
@@ -11008,53 +11200,96 @@
                 "label": "1 plasma gun"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": {
+              "kind": "ratio",
+              "perModels": 5,
+              "maxPerStep": 1
+            },
+            "poolKey": "plague-marine-boltgun",
+            "poolLimit": {
+              "kind": "ratio",
+              "perModels": 5,
+              "maxPerStep": 1
+            }
           },
           {
             "id": "for-every-5-models-in-this-unit-up-to-2-plague-marines-can-each-have-their-boltgun-replaced-with-1-bubotic-weapons-6",
             "label": "For every 5 models in this unit, up to 2 Plague Marines can each have their boltgun replaced with 1 bubotic weapons.",
-            "target": null,
-            "actor": null,
-            "action": null,
-            "selectionMode": "manual",
-            "choices": [],
-            "allocationLimit": null
+            "target": "boltgun",
+            "actor": "Plague Marines",
+            "action": "replace",
+            "selectionMode": "allocation",
+            "choices": [
+              {
+                "id": "1-bubotic-weapons",
+                "label": "1 bubotic weapons"
+              }
+            ],
+            "allocationLimit": {
+              "kind": "ratio",
+              "perModels": 5,
+              "maxPerStep": 2
+            },
+            "poolKey": "plague-marine-boltgun",
+            "poolLimit": {
+              "kind": "ratio",
+              "perModels": 5,
+              "maxPerStep": 2
+            }
           },
           {
             "id": "for-every-5-models-in-this-unit-up-to-2-plague-marines-can-each-have-their-boltgun-replaced-with-1-heavy-plague-weapon-7",
             "label": "For every 5 models in this unit, up to 2 Plague Marines can each have their boltgun replaced with 1 heavy plague weapon.",
-            "target": null,
-            "actor": null,
-            "action": null,
-            "selectionMode": "manual",
-            "choices": [],
-            "allocationLimit": null
+            "target": "boltgun",
+            "actor": "Plague Marines",
+            "action": "replace",
+            "selectionMode": "allocation",
+            "choices": [
+              {
+                "id": "1-heavy-plague-weapon",
+                "label": "1 heavy plague weapon"
+              }
+            ],
+            "allocationLimit": {
+              "kind": "ratio",
+              "perModels": 5,
+              "maxPerStep": 2
+            },
+            "poolKey": "plague-marine-boltgun",
+            "poolLimit": {
+              "kind": "ratio",
+              "perModels": 5,
+              "maxPerStep": 2
+            }
           },
           {
             "id": "one-plague-marine-equipped-with-a-boltgun-can-be-equipped-with-1-icon-of-despair-this-model-s-boltgun-cannot-be-replaced-8",
             "label": "One Plague Marine equipped with a boltgun can be equipped with 1 icon of despair. This model\u2019s boltgun cannot be replaced.",
-            "target": "One Plague Marine equipped with a boltgun",
-            "actor": null,
+            "target": "Plague Marine",
+            "actor": "Plague Marine",
             "action": "equip",
             "selectionMode": "single",
             "choices": [
               {
-                "id": "1-icon-of-despair-this-model-s-boltgun-cannot-be-replaced",
-                "label": "1 icon of despair. This model\u2019s boltgun cannot be replaced"
+                "id": "1-icon-of-despair",
+                "label": "1 icon of despair"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "plague-marine-boltgun",
+            "poolLimit": "modelCount",
+            "eligibilityText": "equipped with boltgun"
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -11326,8 +11561,8 @@
           {
             "id": "1-plaguebearer-that-is-not-equipped-with-a-daemonic-icon-can-be-equipped-with-1-instrument-of-chaos-1",
             "label": "1 Plaguebearer that is not equipped with a daemonic icon can be equipped with 1 instrument of Chaos.",
-            "target": "1 Plaguebearer that is not equipped with a daemonic icon",
-            "actor": null,
+            "target": "Plaguebearer that is not",
+            "actor": "Plaguebearer that is not",
             "action": "equip",
             "selectionMode": "single",
             "choices": [
@@ -11336,13 +11571,16 @@
                 "label": "1 instrument of Chaos"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "plaguebearer-that-is-not-daemonic-icon",
+            "poolLimit": "modelCount",
+            "eligibilityText": "equipped with daemonic icon"
           },
           {
             "id": "1-plaguebearer-that-is-not-equipped-with-an-instrument-of-chaos-can-be-equipped-with-1-daemonic-icon-2",
             "label": "1 Plaguebearer that is not equipped with an instrument of Chaos can be equipped with 1 daemonic icon.",
-            "target": "1 Plaguebearer that is not equipped with an instrument of Chaos",
-            "actor": null,
+            "target": "Plaguebearer that is not",
+            "actor": "Plaguebearer that is not",
             "action": "equip",
             "selectionMode": "single",
             "choices": [
@@ -11351,7 +11589,10 @@
                 "label": "1 daemonic icon"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "plaguebearer-that-is-not-instrument-of-chaos",
+            "poolLimit": "modelCount",
+            "eligibilityText": "equipped with instrument of Chaos"
           }
         ],
         "manualNotes": [],
@@ -11553,7 +11794,7 @@
             "id": "this-model-s-2-entropy-cannons-can-be-replaced-with-2-plaguespitters-1",
             "label": "This model\u2019s 2 entropy cannons can be replaced with 2 plaguespitters.",
             "target": "2 entropy cannons",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -11562,13 +11803,15 @@
                 "label": "2 plaguespitters"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-entropy-cannons",
+            "poolLimit": null
           },
           {
             "id": "this-model-s-heavy-slugger-can-be-replaced-with-1-rothail-volley-gun-2",
             "label": "This model\u2019s heavy slugger can be replaced with 1 rothail volley gun.",
             "target": "heavy slugger",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -11577,7 +11820,9 @@
                 "label": "1 rothail volley gun"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-heavy-slugger",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
@@ -11894,7 +12139,7 @@
             "id": "this-model-s-quad-heavy-bolter-can-be-replaced-with-one-of-the-following-1",
             "label": "This model\u2019s quad heavy bolter can be replaced with one of the following",
             "target": "quad heavy bolter",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -11911,7 +12156,9 @@
                 "label": "1 quad launcher"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-quad-heavy-bolter",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
@@ -12255,8 +12502,8 @@
           {
             "id": "each-of-this-model-s-heavy-plasma-cannons-can-be-replaced-with-one-of-the-following-1",
             "label": "Each of this model\u2019s heavy plasma cannons can be replaced with one of the following:",
-            "target": "Each of this model\u2019s heavy plasma cannons",
-            "actor": null,
+            "target": "heavy plasma cannons",
+            "actor": "Each of this model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -12297,13 +12544,15 @@
                 "label": "1 Dreadnought combat weapon and 1 combi-bolter"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "each-of-this-model-heavy-plasma-cannons",
+            "poolLimit": "modelCount"
           },
           {
             "id": "each-of-this-model-s-combi-bolters-can-be-replaced-with-one-of-the-following-2",
             "label": "Each of this model\u2019s combi-bolters can be replaced with one of the following:",
-            "target": "Each of this model\u2019s combi-bolters",
-            "actor": null,
+            "target": "combi-bolters",
+            "actor": "Each of this model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -12320,7 +12569,9 @@
                 "label": "1 plasma blaster"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "each-of-this-model-combi-bolters",
+            "poolLimit": "modelCount"
           },
           {
             "id": "this-model-can-be-equipped-with-1-cyclone-missile-launcher-3",
@@ -12335,7 +12586,8 @@
                 "label": "1 cyclone missile launcher"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           }
         ],
         "manualNotes": [],
@@ -12681,7 +12933,9 @@
                 "label": "2 lascannons"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount",
+            "eligibilityText": "equipped with of the following:"
           },
           {
             "id": "this-model-can-be-equipped-with-1-hunter-killer-missile-2",
@@ -12696,7 +12950,8 @@
                 "label": "1 hunter-killer missile"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           },
           {
             "id": "this-model-can-be-equipped-with-1-storm-bolter-3",
@@ -12711,7 +12966,8 @@
                 "label": "1 storm bolter"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           }
         ],
         "manualNotes": [],
@@ -12909,7 +13165,9 @@
                 "label": "2 lascannons"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount",
+            "eligibilityText": "equipped with of the following:"
           },
           {
             "id": "this-model-can-be-equipped-with-1-hunter-killer-missile-2",
@@ -12924,7 +13182,8 @@
                 "label": "1 hunter-killer missile"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           },
           {
             "id": "this-model-can-be-equipped-with-1-storm-bolter-3",
@@ -12939,7 +13198,8 @@
                 "label": "1 storm bolter"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           }
         ],
         "manualNotes": [],
@@ -13137,7 +13397,9 @@
                 "label": "2 lascannons"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount",
+            "eligibilityText": "equipped with of the following:"
           },
           {
             "id": "this-model-can-be-equipped-with-1-hunter-killer-missile-2",
@@ -13152,7 +13414,8 @@
                 "label": "1 hunter-killer missile"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           },
           {
             "id": "this-model-can-be-equipped-with-1-storm-bolter-3",
@@ -13167,7 +13430,8 @@
                 "label": "1 storm bolter"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           }
         ],
         "manualNotes": [],
@@ -13611,7 +13875,7 @@
             "id": "this-model-s-bolt-pistol-can-be-replaced-with-one-of-the-following-1",
             "label": "This model\u2019s bolt pistol can be replaced with one of the following:",
             "target": "bolt pistol",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -13640,7 +13904,9 @@
                 "label": "1 power fist"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-bolt-pistol",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
@@ -13875,7 +14141,7 @@
             "id": "this-model-s-2-quad-lascannons-can-be-replaced-with-2-laser-destroyers-1",
             "label": "This model\u2019s 2 quad lascannons can be replaced with 2 laser destroyers.",
             "target": "2 quad lascannons",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -13884,13 +14150,15 @@
                 "label": "2 laser destroyers"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-quad-lascannons",
+            "poolLimit": null
           },
           {
             "id": "this-model-s-twin-heavy-bolter-can-be-replaced-with-1-twin-heavy-flamer-2",
             "label": "This model\u2019s twin heavy bolter can be replaced with 1 twin heavy flamer",
             "target": "twin heavy bolter",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -13899,7 +14167,9 @@
                 "label": "1 twin heavy flamer"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-twin-heavy-bolter",
+            "poolLimit": null
           },
           {
             "id": "this-model-can-be-equipped-with-one-of-the-following-3",
@@ -13926,7 +14196,9 @@
                 "label": "1 storm bolter"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount",
+            "eligibilityText": "equipped with of the following:"
           }
         ],
         "manualNotes": [],
@@ -14153,7 +14425,7 @@
             "id": "this-model-s-twin-heavy-bolter-can-be-replaced-with-one-of-the-following-1",
             "label": "This model\u2019s twin heavy bolter can be replaced with one of the following:",
             "target": "twin heavy bolter",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -14166,13 +14438,15 @@
                 "label": "1 typhoon missile launcher"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-twin-heavy-bolter",
+            "poolLimit": null
           },
           {
             "id": "this-model-s-2-twin-hellstrike-missile-launchers-can-be-replaced-with-2-twin-lascannons-2",
             "label": "This model\u2019s 2 twin hellstrike missile launchers can be replaced with 2 twin lascannons",
             "target": "2 twin hellstrike missile launchers",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -14181,7 +14455,9 @@
                 "label": "2 twin lascannons"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-twin-hellstrike-missile-launchers",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
@@ -14524,7 +14800,7 @@
             "id": "this-model-s-2-combi-bolters-can-be-replaced-with-one-of-the-following-1",
             "label": "This model\u2019s 2 combi-bolters can be replaced with one of the following",
             "target": "2 combi-bolters",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -14537,7 +14813,9 @@
                 "label": "2 twin volkite chargers"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-combi-bolters",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
@@ -14762,7 +15040,9 @@
                 "label": "2 lascannons"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount",
+            "eligibilityText": "equipped with of the following:"
           },
           {
             "id": "this-model-can-be-equipped-with-one-of-the-following-2",
@@ -14789,7 +15069,9 @@
                 "label": "1 storm bolter"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount",
+            "eligibilityText": "equipped with of the following:"
           }
         ],
         "manualNotes": [],
@@ -15103,7 +15385,8 @@
                 "label": "1 hunter-killer missile"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           },
           {
             "id": "this-model-can-be-equipped-with-1-storm-bolter-2",
@@ -15118,7 +15401,8 @@
                 "label": "1 storm bolter"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           }
         ],
         "manualNotes": [],

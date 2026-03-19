@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generatedAt": "2026-03-18T21:01:18+00:00",
+  "generatedAt": "2026-03-19T16:10:45+00:00",
   "faction": {
     "slug": "adeptus-custodes",
     "name": "Adeptus Custodes",
@@ -150,8 +150,8 @@
           {
             "id": "any-number-of-models-can-each-have-their-lastrum-bolt-cannon-replaced-with-one-of-the-following-1",
             "label": "Any number of models can each have their lastrum bolt cannon replaced with one of the following:",
-            "target": "models",
-            "actor": "models",
+            "target": "lastrum bolt cannon",
+            "actor": "Any number of models",
             "action": "replace",
             "selectionMode": "allocation",
             "choices": [
@@ -166,7 +166,9 @@
             ],
             "allocationLimit": {
               "kind": "modelCount"
-            }
+            },
+            "poolKey": "model-lastrum-bolt-cannon",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
@@ -513,8 +515,8 @@
           {
             "id": "any-number-of-models-can-each-have-their-guardian-spear-replaced-with-1-castellan-axe-1",
             "label": "Any number of models can each have their guardian spear replaced with 1 castellan axe.",
-            "target": "models",
-            "actor": "models",
+            "target": "guardian spear",
+            "actor": "Any number of models",
             "action": "replace",
             "selectionMode": "allocation",
             "choices": [
@@ -525,13 +527,15 @@
             ],
             "allocationLimit": {
               "kind": "modelCount"
-            }
+            },
+            "poolKey": "model-guardian-spear",
+            "poolLimit": null
           },
           {
             "id": "1-model-s-guardian-spear-can-be-replaced-with-1-vexilla-and-1-misericordia-2",
             "label": "1 model\u2019s guardian spear can be replaced with 1 vexilla and 1 misericordia.",
-            "target": "1 model\u2019s guardian spear",
-            "actor": null,
+            "target": "guardian spear",
+            "actor": "model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -540,7 +544,9 @@
                 "label": "1 vexilla and 1 misericordia"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "model-guardian-spear",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
@@ -700,7 +706,8 @@
                 "label": "1 hunter-killer missile"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           }
         ],
         "manualNotes": [],
@@ -888,8 +895,8 @@
           {
             "id": "any-number-of-models-can-each-have-their-lastrum-storm-bolter-replaced-with-one-of-the-following-1",
             "label": "Any number of models can each have their lastrum storm bolter replaced with one of the following:",
-            "target": "models",
-            "actor": "models",
+            "target": "lastrum storm bolter",
+            "actor": "Any number of models",
             "action": "replace",
             "selectionMode": "allocation",
             "choices": [
@@ -904,13 +911,15 @@
             ],
             "allocationLimit": {
               "kind": "modelCount"
-            }
+            },
+            "poolKey": "model-lastrum-storm-bolter",
+            "poolLimit": null
           },
           {
             "id": "any-number-of-models-can-each-have-their-solerite-power-gauntlet-replaced-with-1-solerite-power-talon-2",
             "label": "Any number of models can each have their solerite power gauntlet replaced with 1 solerite power talon.",
-            "target": "models",
-            "actor": "models",
+            "target": "solerite power gauntlet",
+            "actor": "Any number of models",
             "action": "replace",
             "selectionMode": "allocation",
             "choices": [
@@ -921,7 +930,9 @@
             ],
             "allocationLimit": {
               "kind": "modelCount"
-            }
+            },
+            "poolKey": "model-solerite-power-gauntlet",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
@@ -1374,7 +1385,7 @@
             "id": "this-model-s-twin-iliastus-accelerator-cannon-can-be-replaced-with-1-twin-arachnus-heavy-blaze-cannon-1",
             "label": "This model\u2019s twin iliastus accelerator cannon can be replaced with 1 twin arachnus heavy blaze cannon.",
             "target": "twin iliastus accelerator cannon",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -1383,7 +1394,9 @@
                 "label": "1 twin arachnus heavy blaze cannon"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-twin-iliastus-accelerator-cannon",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
@@ -1559,7 +1572,7 @@
             "id": "this-model-s-2-lastrum-storm-bolters-can-be-replaced-with-one-of-the-following-1",
             "label": "This model\u2019s 2 lastrum storm bolters can be replaced with one of the following:",
             "target": "2 lastrum storm bolters",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -1584,7 +1597,9 @@
                 "label": "1 infernus incinerator and 1 twin adrathic destructor"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-lastrum-storm-bolters",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
@@ -2041,8 +2056,8 @@
           {
             "id": "any-number-of-models-can-each-have-their-guardian-spear-replaced-with-1-sentinel-blade-and-1-praesidium-shield-1",
             "label": "Any number of models can each have their guardian spear replaced with 1 sentinel blade and 1 praesidium shield.",
-            "target": "models",
-            "actor": "models",
+            "target": "guardian spear",
+            "actor": "Any number of models",
             "action": "replace",
             "selectionMode": "allocation",
             "choices": [
@@ -2053,13 +2068,15 @@
             ],
             "allocationLimit": {
               "kind": "modelCount"
-            }
+            },
+            "poolKey": "model-guardian-spear",
+            "poolLimit": null
           },
           {
             "id": "1-model-s-guardian-spear-can-be-replaced-with-one-of-the-following-2",
             "label": "1 model\u2019s guardian spear can be replaced with one of the following:",
-            "target": "1 model\u2019s guardian spear",
-            "actor": null,
+            "target": "guardian spear",
+            "actor": "model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -2072,7 +2089,9 @@
                 "label": "1 vexilla, 1 misericordia and 1 praesidium shield"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "model-guardian-spear",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
@@ -2240,8 +2259,8 @@
           {
             "id": "any-number-of-models-can-each-have-their-adrasite-spear-replaced-with-1-pyrithite-spear-1",
             "label": "Any number of models can each have their adrasite spear replaced with 1 pyrithite spear.",
-            "target": "models",
-            "actor": "models",
+            "target": "adrasite spear",
+            "actor": "Any number of models",
             "action": "replace",
             "selectionMode": "allocation",
             "choices": [
@@ -2252,7 +2271,9 @@
             ],
             "allocationLimit": {
               "kind": "modelCount"
-            }
+            },
+            "poolKey": "model-adrasite-spear",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
@@ -2428,8 +2449,8 @@
           {
             "id": "any-number-of-models-can-each-have-their-guardian-spear-replaced-with-1-castellan-axe-1",
             "label": "Any number of models can each have their guardian spear replaced with 1 castellan axe.",
-            "target": "models",
-            "actor": "models",
+            "target": "guardian spear",
+            "actor": "Any number of models",
             "action": "replace",
             "selectionMode": "allocation",
             "choices": [
@@ -2440,7 +2461,9 @@
             ],
             "allocationLimit": {
               "kind": "modelCount"
-            }
+            },
+            "poolKey": "model-guardian-spear",
+            "poolLimit": null
           },
           {
             "id": "1-model-can-be-equipped-with-1-vexilla-2",
@@ -2455,7 +2478,8 @@
                 "label": "1 vexilla"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           }
         ],
         "manualNotes": [],
@@ -2627,7 +2651,7 @@
             "id": "this-model-s-executioner-greatblade-can-be-replaced-with-one-of-the-following-1",
             "label": "This model\u2019s executioner greatblade can be replaced with one of the following:",
             "target": "executioner greatblade",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -2640,7 +2664,9 @@
                 "label": "1 Witchseeker flamer and 1 close combat weapon"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-executioner-greatblade",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
@@ -3428,7 +3454,7 @@
             "id": "this-model-s-guardian-spear-can-be-replaced-with-one-of-the-following-1",
             "label": "This model\u2019s guardian spear can be replaced with one of the following:",
             "target": "guardian spear",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -3449,7 +3475,9 @@
                 "label": "1 pyrithite spear and 1 praesidium shield"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-guardian-spear",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
@@ -3641,7 +3669,7 @@
             "id": "this-model-s-guardian-spear-can-be-replaced-with-1-castellan-axe-1",
             "label": "This model\u2019s guardian spear can be replaced with 1 castellan axe.",
             "target": "guardian spear",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -3650,7 +3678,9 @@
                 "label": "1 castellan axe"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-guardian-spear",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
@@ -3810,7 +3840,7 @@
             "id": "this-model-s-salvo-launcher-can-be-replaced-with-1-vertus-hurricane-bolter-1",
             "label": "This model\u2019s salvo launcher can be replaced with 1 Vertus hurricane bolter.",
             "target": "salvo launcher",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -3819,7 +3849,9 @@
                 "label": "1 Vertus hurricane bolter"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-salvo-launcher",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
@@ -4013,7 +4045,7 @@
             "id": "this-model-s-2-iliastus-accelerator-culverins-can-be-replaced-with-one-of-the-following-1",
             "label": "This model\u2019s 2 iliastus accelerator culverins can be replaced with one of the following:",
             "target": "2 iliastus accelerator culverins",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -4038,7 +4070,9 @@
                 "label": "1 arachnus storm cannon, 1 Telemon caestus and 1 twin plasma projector"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-iliastus-accelerator-culverins",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
@@ -4513,8 +4547,8 @@
           {
             "id": "any-number-of-models-can-each-have-their-venatari-lance-replaced-with-1-kinetic-destroyer-and-1-tarsus-buckler-1",
             "label": "Any number of models can each have their Venatari lance replaced with 1 kinetic destroyer and 1 tarsus buckler.",
-            "target": "models",
-            "actor": "models",
+            "target": "Venatari lance",
+            "actor": "Any number of models",
             "action": "replace",
             "selectionMode": "allocation",
             "choices": [
@@ -4525,7 +4559,9 @@
             ],
             "allocationLimit": {
               "kind": "modelCount"
-            }
+            },
+            "poolKey": "model-venatari-lance",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
@@ -4699,7 +4735,7 @@
             "id": "this-model-s-multi-melta-can-be-replaced-with-1-kheres-pattern-assault-cannon-1",
             "label": "This model\u2019s multi-melta can be replaced with 1 Kheres-pattern assault cannon.",
             "target": "multi-melta",
-            "actor": null,
+            "actor": "This model",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -4708,7 +4744,9 @@
                 "label": "1 Kheres-pattern assault cannon"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolKey": "this-model-multi-melta",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
@@ -4878,7 +4916,8 @@
                 "label": "1 hunter-killer missile"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           },
           {
             "id": "this-model-can-be-equipped-with-1-storm-bolter-2",
@@ -4893,7 +4932,8 @@
                 "label": "1 storm bolter"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           }
         ],
         "manualNotes": [],
@@ -5065,8 +5105,8 @@
           {
             "id": "any-number-of-models-can-each-have-their-salvo-launcher-replaced-with-1-vertus-hurricane-bolter-1",
             "label": "Any number of models can each have their salvo launcher replaced with 1 Vertus hurricane bolter.",
-            "target": "models",
-            "actor": "models",
+            "target": "salvo launcher",
+            "actor": "Any number of models",
             "action": "replace",
             "selectionMode": "allocation",
             "choices": [
@@ -5077,7 +5117,9 @@
             ],
             "allocationLimit": {
               "kind": "modelCount"
-            }
+            },
+            "poolKey": "model-salvo-launcher",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
