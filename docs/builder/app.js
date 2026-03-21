@@ -760,6 +760,7 @@
         buildMissingSourceCardLookup,
         chooseRestorableRoster,
         createInteractionController,
+        escapeHtml,
         eventElementTarget,
         printPreviewCards,
         renderPreviewEntries,
