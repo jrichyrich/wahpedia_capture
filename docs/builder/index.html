@@ -418,6 +418,7 @@
             border: 1.5px solid var(--ink);
             box-shadow: var(--shadow);
             overflow: hidden;
+            break-inside: avoid-page;
         }
 
         .source-card-header {
@@ -675,7 +676,8 @@
             .sidebar,
             .roster-card,
             .preview-header .btn,
-            .preview-toggle-btn {
+            .preview-toggle-btn,
+            .source-card-actions {
                 display: none !important;
             }
 
@@ -830,9 +832,9 @@
 
     <input id="import-roster-file" type="file" accept=".json,application/json" hidden>
 
-    <script src="./card_renderer.js?v=20260321-source-print-preview"></script>
-    <script src="./roster_store.js?v=20260321-source-print-preview"></script>
-    <script src="./app.js?v=20260321-source-print-preview"></script>
+    <script src="./card_renderer.js?v=20260321-source-print-ready"></script>
+    <script src="./roster_store.js?v=20260321-source-print-ready"></script>
+    <script src="./app.js?v=20260321-source-print-ready"></script>
     <script>
         const Store = window.WahBuilderRosterStore;
         const BuilderApp = window.WahBuilderApp;
@@ -1824,12 +1826,13 @@
             }
             renderPreviewVisibility();
         });
-        els.printRoster.addEventListener("click", () => {
+        els.printRoster.addEventListener("click", async () => {
             const derived = deriveRoster();
             const renderableEntries = derived.entries.filter((entry) => entry.unit && entry.selectedOption);
-            BuilderApp.printPreviewCards({
+            await BuilderApp.printPreviewCards({
                 renderableEntries,
                 previewSourceMode: state.previewSourceMode,
+                previewRoot: els.previewBody,
                 alertFn: (message) => alert(message),
                 printFn: () => window.print(),
             });

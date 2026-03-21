@@ -540,6 +540,7 @@ test("renderPreviewEntries renders Wahapedia image cards when a source PNG is av
     assert.match(html, /data-source-card-mode="image"/);
     assert.match(html, /source-card-image/);
     assert.match(html, /Open source image/);
+    assert.match(html, /loading="eager"/);
     assert.match(html, /data-source-card-meta-fallback hidden/);
 });
 
@@ -574,13 +575,65 @@ test("renderPreviewEntries falls back to configured HTML cards when the source P
     assert.doesNotMatch(html, /source-card-image/);
 });
 
-test("printPreviewCards prints the current preview mode without forcing configured mode", () => {
+test("waitForPreviewImages resolves when source preview images finish loading", async () => {
+    let loadHandler = null;
+    let errorHandler = null;
+    let removedLoadHandler = null;
+    let removedErrorHandler = null;
+    const image = {
+        complete: false,
+        loading: "lazy",
+        addEventListener(type, handler) {
+            if (type === "load") {
+                loadHandler = handler;
+            }
+            if (type === "error") {
+                errorHandler = handler;
+            }
+        },
+        removeEventListener(type, handler) {
+            if (type === "load") {
+                removedLoadHandler = handler;
+            }
+            if (type === "error") {
+                removedErrorHandler = handler;
+            }
+        },
+    };
+    const previewRoot = {
+        querySelectorAll(selector) {
+            assert.equal(selector, ".source-card-image");
+            return [image];
+        },
+    };
+
+    const waiting = App.waitForPreviewImages(previewRoot, 50);
+
+    assert.equal(image.loading, "eager");
+    assert.equal(typeof loadHandler, "function");
+    assert.equal(typeof errorHandler, "function");
+
+    loadHandler();
+    await waiting;
+
+    assert.equal(removedLoadHandler, loadHandler);
+    assert.equal(removedErrorHandler, errorHandler);
+});
+
+test("printPreviewCards prints the current preview mode without forcing configured mode", async () => {
     const renderableEntries = [samplePreviewEntry()];
     const calls = { print: 0, alert: 0 };
+    const previewRoot = {
+        querySelectorAll(selector) {
+            assert.equal(selector, ".source-card-image");
+            return [{ complete: true, loading: "lazy" }];
+        },
+    };
 
-    const result = App.printPreviewCards({
+    const result = await App.printPreviewCards({
         renderableEntries,
         previewSourceMode: "source-image",
+        previewRoot,
         alertFn: () => { calls.alert += 1; },
         printFn: () => { calls.print += 1; },
     });
@@ -591,10 +644,10 @@ test("printPreviewCards prints the current preview mode without forcing configur
     assert.equal(calls.alert, 0);
 });
 
-test("printPreviewCards alerts when there are no renderable entries", () => {
+test("printPreviewCards alerts when there are no renderable entries", async () => {
     const calls = { print: 0, alert: 0 };
 
-    const result = App.printPreviewCards({
+    const result = await App.printPreviewCards({
         renderableEntries: [],
         previewSourceMode: "configured",
         alertFn: () => { calls.alert += 1; },

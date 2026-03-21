@@ -139,7 +139,8 @@
                         class="source-card-image"
                         src="${url}"
                         alt="Original Wahapedia card for ${safeName}"
-                        loading="lazy"
+                        loading="eager"
+                        decoding="async"
                         onerror="var card=this.closest('.source-card'); if(card){ var imageWrap=card.querySelector('[data-source-card-image-wrap]'); var fallback=card.querySelector('[data-source-card-fallback]'); var defaultMeta=card.querySelector('[data-source-card-meta-default]'); var fallbackMeta=card.querySelector('[data-source-card-meta-fallback]'); var actions=card.querySelector('[data-source-card-actions]'); card.dataset.sourceCardMode='fallback'; if(imageWrap){ imageWrap.hidden=true; } if(fallback){ fallback.hidden=false; } if(defaultMeta){ defaultMeta.hidden=true; } if(fallbackMeta){ fallbackMeta.hidden=false; } if(actions){ actions.hidden=true; } }"
                     >
                 </div>
@@ -162,7 +163,46 @@
         return renderableEntries.map((entry) => renderConfiguredPreviewCard(entry, options)).join("");
     }
 
-    function printPreviewCards(options) {
+    function waitForPreviewImages(previewRoot, timeoutMs) {
+        if (!previewRoot || typeof previewRoot.querySelectorAll !== "function") {
+            return Promise.resolve();
+        }
+        const images = Array.from(previewRoot.querySelectorAll(".source-card-image"));
+        if (!images.length) {
+            return Promise.resolve();
+        }
+
+        const maxWaitMs = Number.isFinite(timeoutMs) && timeoutMs > 0 ? timeoutMs : 4000;
+        return Promise.all(images.map((image) => new Promise((resolve) => {
+            if (!image) {
+                resolve();
+                return;
+            }
+            image.loading = "eager";
+            if (image.complete) {
+                resolve();
+                return;
+            }
+
+            let settled = false;
+            const finish = () => {
+                if (settled) {
+                    return;
+                }
+                settled = true;
+                image.removeEventListener("load", finish);
+                image.removeEventListener("error", finish);
+                clearTimeout(timerId);
+                resolve();
+            };
+
+            const timerId = setTimeout(finish, maxWaitMs);
+            image.addEventListener("load", finish, { once: true });
+            image.addEventListener("error", finish, { once: true });
+        })));
+    }
+
+    async function printPreviewCards(options) {
         const renderableEntries = Array.isArray(options && options.renderableEntries)
             ? options.renderableEntries
             : [];
@@ -172,6 +212,9 @@
                 options.alertFn("Add at least one resolved unit before printing.");
             }
             return { printed: false, previewSourceMode };
+        }
+        if (previewSourceMode === "source-image") {
+            await waitForPreviewImages(options && options.previewRoot, options && options.imageLoadTimeoutMs);
         }
         if (typeof options.printFn === "function") {
             options.printFn();
@@ -688,5 +731,6 @@
         renderPreviewEntries,
         sourceCardLookupKey,
         sourceCardUrl,
+        waitForPreviewImages,
     };
 });
