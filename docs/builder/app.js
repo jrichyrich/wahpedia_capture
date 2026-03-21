@@ -71,6 +71,39 @@
         return lookup;
     }
 
+    function chooseRestorableRoster(savedRosters, activeRosterId, availableFactionSlugs) {
+        const rosters = Array.isArray(savedRosters) ? savedRosters : [];
+        const available = new Set(
+            (Array.isArray(availableFactionSlugs) ? availableFactionSlugs : [])
+                .map((slug) => String(slug || "").trim())
+                .filter(Boolean)
+        );
+        const hasAvailableFaction = (roster) => Boolean(
+            roster && typeof roster.factionSlug === "string" && available.has(roster.factionSlug)
+        );
+        const activeRoster = activeRosterId
+            ? rosters.find((roster) => roster && roster.id === activeRosterId) || null
+            : null;
+
+        if (activeRoster && hasAvailableFaction(activeRoster)) {
+            return { rosterId: activeRoster.id, reason: "active" };
+        }
+
+        const firstAvailableRoster = rosters.find((roster) => hasAvailableFaction(roster)) || null;
+        if (firstAvailableRoster) {
+            return {
+                rosterId: firstAvailableRoster.id,
+                reason: activeRoster ? "fallback-from-unavailable-active" : "first-available",
+            };
+        }
+
+        if (activeRoster) {
+            return { rosterId: activeRoster.id, reason: "active-unavailable" };
+        }
+
+        return { rosterId: null, reason: "none" };
+    }
+
     function buildRendererOptions(entry, previewRenderMode) {
         const unit = entry && entry.unit ? entry.unit : null;
         return {
@@ -725,6 +758,7 @@
 
     return {
         buildMissingSourceCardLookup,
+        chooseRestorableRoster,
         createInteractionController,
         eventElementTarget,
         printPreviewCards,

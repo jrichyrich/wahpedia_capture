@@ -832,9 +832,9 @@
 
     <input id="import-roster-file" type="file" accept=".json,application/json" hidden>
 
-    <script src="./card_renderer.js?v=20260321-source-print-ready"></script>
-    <script src="./roster_store.js?v=20260321-source-print-ready"></script>
-    <script src="./app.js?v=20260321-source-print-ready"></script>
+    <script src="./card_renderer.js?v=20260321-roster-restore-fix"></script>
+    <script src="./roster_store.js?v=20260321-roster-restore-fix"></script>
+    <script src="./app.js?v=20260321-roster-restore-fix"></script>
     <script>
         const Store = window.WahBuilderRosterStore;
         const BuilderApp = window.WahBuilderApp;
@@ -1277,6 +1277,21 @@
 
         async function loadSavedRosterDocument(roster, options = {}) {
             const savedRoster = Store.migrateSavedRosterDocument(roster);
+            const factions = availableFactionSlugs();
+            const isFactionAvailable = factions.includes(savedRoster.factionSlug);
+
+            if (!isFactionAvailable && options.allowUnavailable !== true) {
+                setRosterStatus(
+                    `Saved roster ${savedRoster.name} uses unavailable faction ${savedRoster.factionSlug}. Keeping the current roster.`,
+                    true
+                );
+                refreshSavedRosterList();
+                renderSavedRosterState();
+                renderRoster();
+                renderPreview();
+                return false;
+            }
+
             state.activeRosterId = savedRoster.id;
             state.activeRosterName = savedRoster.name;
             state.rosterNameDraft = savedRoster.name;
@@ -1285,7 +1300,6 @@
             state.roster = Store.createRuntimeEntries(savedRoster.entries);
             state.army = Store.normalizeArmyState(savedRoster.army);
 
-            const factions = availableFactionSlugs();
             const targetFaction = factions.includes(savedRoster.factionSlug) ? savedRoster.factionSlug : (factions[0] || "");
             if (targetFaction) {
                 await setCatalog(targetFaction);
@@ -1303,9 +1317,10 @@
                     `Loaded ${savedRoster.name}, but its faction (${savedRoster.factionSlug}) is not available in the current builder data.`,
                     true
                 );
-                return;
+                return false;
             }
             setRosterStatus(options.message || `Loaded ${savedRoster.name}.`, false);
+            return true;
         }
 
         function persistActiveRoster(options = {}) {
@@ -1641,17 +1656,28 @@
         async function restoreInitialRoster() {
             refreshSavedRosterList();
             const adapter = storageAdapter();
-            const activeRosterId = Store.getActiveRosterId(adapter);
-            if (activeRosterId) {
-                const savedRoster = Store.loadRosterFromStorage(adapter, activeRosterId);
+            const availableFactions = availableFactionSlugs();
+            const restoreChoice = BuilderApp.chooseRestorableRoster(
+                state.savedRosterList,
+                Store.getActiveRosterId(adapter),
+                availableFactions
+            );
+
+            if (restoreChoice.rosterId) {
+                const savedRoster = Store.loadRosterFromStorage(adapter, restoreChoice.rosterId);
                 if (savedRoster) {
-                    await loadSavedRosterDocument(savedRoster, { message: `Restored ${savedRoster.name}.` });
-                    return;
+                    const message = restoreChoice.reason === "fallback-from-unavailable-active"
+                        ? `Restored ${savedRoster.name}. The previous active roster uses a faction that is not available in the current builder data.`
+                        : `Restored ${savedRoster.name}.`;
+                    const loaded = await loadSavedRosterDocument(savedRoster, { message });
+                    if (loaded) {
+                        return;
+                    }
                 }
             }
-            const factions = availableFactionSlugs();
-            if (factions.length) {
-                await createNewRoster(factions[0]);
+
+            if (availableFactions.length) {
+                await createNewRoster(availableFactions[0]);
             }
         }
 

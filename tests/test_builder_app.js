@@ -522,6 +522,32 @@ test("renderPreviewEntries renders configured HTML cards in configured mode", ()
     assert.doesNotMatch(html, /source-card-image/);
 });
 
+test("chooseRestorableRoster prefers the active roster when its faction is available", () => {
+    const choice = App.chooseRestorableRoster(
+        [
+            { id: "roster-1", factionSlug: "aeldari" },
+            { id: "roster-2", factionSlug: "adeptus-custodes" },
+        ],
+        "roster-2",
+        ["adeptus-custodes"]
+    );
+
+    assert.deepEqual(choice, { rosterId: "roster-2", reason: "active" });
+});
+
+test("chooseRestorableRoster falls back when the active roster faction is unavailable", () => {
+    const choice = App.chooseRestorableRoster(
+        [
+            { id: "roster-1", factionSlug: "space-wolves" },
+            { id: "roster-2", factionSlug: "adeptus-custodes" },
+        ],
+        "roster-1",
+        ["adeptus-custodes"]
+    );
+
+    assert.deepEqual(choice, { rosterId: "roster-2", reason: "fallback-from-unavailable-active" });
+});
+
 test("renderPreviewEntries renders Wahapedia image cards when a source PNG is available", () => {
     const entry = samplePreviewEntry();
     const renderer = {
