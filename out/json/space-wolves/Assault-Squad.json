@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Assault-Squad",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Assault-Squad",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Assault-Squad",
     "canonicalSourceId": "wahapedia:9956a02ae4e26e76eace9ffed9bcd70a486aefbd",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "d6f2a5269b237f988000af232bb99a0fbf44f6a7b333bacfcd1d6fd307a18b38"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Assault-Squad",
+    "fetchedAt": "2026-03-21T03:45:51+00:00",
+    "contentHash": "7641d74a008fb6f126ac51c4ed18294eb61aaa8269952e6695c3a82306d3a6fb",
+    "output_slug": "space-wolves"
   },
   "name": "Assault Squad",
   "base_size": "\u230032mm",
@@ -231,12 +233,44 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Oath of Moment Chainsword Doctrines: Each time this unit is selected to fight, select one of the following abilities to apply to all Astartes chainswords equipped by models in this unit until the end of the phase: [SUSTAINED HITS 1] [LETHAL HITS] [LANCE]"
+      "Oath of Moment"
     ],
-    "datasheet": [],
-    "other": []
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this unit is selected to fight, select one of the following abilities to apply to all Astartes chainswords equipped by models in this unit until the end of the phase:",
+        "name": "Chainsword Doctrines"
+      }
+    ],
+    "other": [
+      {
+        "type": "list",
+        "items": [
+          "[SUSTAINED HITS 1]",
+          "[LETHAL HITS]",
+          "[LANCE]"
+        ]
+      }
+    ]
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Assault Sergeant"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "4-9 Assault Marines"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "bolt pistol; Astartes chainsword.",
+      "label": "Every model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -315,7 +349,20 @@
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Oath of Moment Chainsword Doctrines: Each time this unit is selected to fight, select one of the following abilities to apply to all Astartes chainswords equipped by models in this unit until the end of the phase: [SUSTAINED HITS 1] [LETHAL HITS] [LANCE]"
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this unit is selected to fight, select one of the following abilities to apply to all Astartes chainswords equipped by models in this unit until the end of the phase:",
+          "name": "Chainsword Doctrines"
+        },
+        {
+          "type": "list",
+          "items": [
+            "[SUSTAINED HITS 1]",
+            "[LETHAL HITS]",
+            "[LANCE]"
           ]
         }
       ]
@@ -324,14 +371,32 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "text",
-          "text": "Astartes Shield: The bearer has a 4+ invulnerable save ."
+          "type": "statement",
+          "text": "The bearer has a 4+ invulnerable save .",
+          "label": "Astartes Shield"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Assault Sergeant"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "4-9 Assault Marines"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "bolt pistol; Astartes chainsword.",
+          "label": "Every model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -357,10 +422,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION",
@@ -374,6 +438,7 @@
       "ATTACHED UNITS"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

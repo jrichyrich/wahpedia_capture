@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Hunter",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Hunter",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Hunter",
     "canonicalSourceId": "wahapedia:01a5715778a4ad3a4aca887c912f4886a0ef4f30",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "edcc83f96edf32523c761e7b8d29152a9d8332dbcdf640b7dfa46eef3c639e09"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Hunter",
+    "fetchedAt": "2026-03-21T03:46:09+00:00",
+    "contentHash": "aa7eebb772c6f1b68099b2a0b795da2f82cbe2f6ddf96c18f05be8abbb824976",
+    "output_slug": "space-wolves"
   },
   "name": "Hunter",
   "base_size": "\u2300Use model",
@@ -73,13 +75,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D3 FACTION: Oath of Moment Hunter Missile Targeting: Each time this model makes an attack with its skyspear missile launcher that targets a MONSTER or VEHICLE unit, that attack scores a hit on an unmodified Hit roll of 2+."
+      "Deadly Demise D3"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this model makes an attack with its skyspear missile launcher that targets a MONSTER or VEHICLE unit, that attack scores a hit on an unmodified Hit roll of 2+.",
+        "name": "Hunter Missile Targeting"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Hunter"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "skyspear missile launcher; armoured tracks.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -122,14 +143,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D3 FACTION: Oath of Moment Hunter Missile Targeting: Each time this model makes an attack with its skyspear missile launcher that targets a MONSTER or VEHICLE unit, that attack scores a hit on an unmodified Hit roll of 2+."
+            "Deadly Demise D3"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model makes an attack with its skyspear missile launcher that targets a MONSTER or VEHICLE unit, that attack scores a hit on an unmodified Hit roll of 2+.",
+          "name": "Hunter Missile Targeting"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Hunter"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "skyspear missile launcher; armoured tracks.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -151,10 +195,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "DAMAGED: 1-4 WOUNDS REMAINING"
@@ -166,6 +209,7 @@
       "DAMAGED: 1-4 WOUNDS REMAINING"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

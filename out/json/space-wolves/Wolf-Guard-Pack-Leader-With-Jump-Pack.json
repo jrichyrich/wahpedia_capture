@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Wolf-Guard-Pack-Leader-With-Jump-Pack",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Wolf-Guard-Pack-Leader-With-Jump-Pack",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Wolf-Guard-Pack-Leader-With-Jump-Pack",
     "canonicalSourceId": "wahapedia:838d36ee856de4012f4a44cbbf25d54a986cce56",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "ac3b4991fecc4a34c26339bd4c825ce336d85341b3ee376be8fbdd24230ecba2"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Wolf-Guard-Pack-Leader-With-Jump-Pack",
+    "fetchedAt": "2026-03-21T03:44:33+00:00",
+    "contentHash": "36d16732ebce5a9dfa22d5d8f426fbf0fbc548985e55f43637429f84dd23d651",
+    "output_slug": "space-wolves"
   },
   "name": "Wolf Guard Pack Leader With Jump Pack",
   "base_size": "\u230032mm",
@@ -201,6 +203,35 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s bolt pistol and Astartes chainsword can be replaced with 1 twin lightning claws.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "This model\u2019s bolt pistol and Astartes chainsword can be replaced with two different weapons from the following list:*",
+          "items": [
+            "1 bolt pistol",
+            "1 combi-weapon",
+            "1 plasma pistol",
+            "1 storm bolter",
+            "1 Astartes chainsword",
+            "1 power fist",
+            "1 power weapon",
+            "1 thunder hammer",
+            "1 storm shield"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "* This model can only be equipped with two ranged weapons if one of them is a Pistol (and it can only have one Pistol)."
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
@@ -268,30 +299,39 @@
       "title": "LEADER",
       "entries": [
         {
+          "type": "text",
+          "text": "This model can be attached to the following unit:"
+        },
+        {
           "type": "list",
           "items": [
             "Skyclaws"
           ]
+        },
+        {
+          "type": "text",
+          "text": "You must attach this model to the above unit, and can do so even if one or more CHARACTER units have already been attached to that unit, but a unit can never include more than one PACK LEADER model. If you do, and that Bodyguard unit is destroyed, the Leader units attached to it become separate units, with their original Starting Strengths . If it is not possible to attach this model to a unit, it does not take part in the battle and counts as having been destroyed."
         }
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION",
       "LEADER"
     ],
     "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION",
       "LEADER"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

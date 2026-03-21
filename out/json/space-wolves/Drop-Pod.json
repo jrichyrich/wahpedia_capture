@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Drop-Pod",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Drop-Pod",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Drop-Pod",
     "canonicalSourceId": "wahapedia:f2c98a25d40613b9c2af6eb268e3f9315d129581",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "3ebb6f04d28034950a863edf4f1be20f523c13db822342adb4d3dede5f5a4f54"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Drop-Pod",
+    "fetchedAt": "2026-03-21T03:44:41+00:00",
+    "contentHash": "2e35d31b689a1324d2b728f484dbe3d2675741936817eccf4afab5fd560eea49",
+    "output_slug": "space-wolves"
   },
   "name": "Drop Pod",
   "base_size": "\u2300Use model",
@@ -22,13 +24,37 @@
   "weapons": {},
   "abilities": {
     "core": [
-      "Deadly Demise 1 , Deep Strike FACTION: Oath of Moment Drop Pod Assault: This model must start the battle in Reserves and can be set up in the Reinforcements step of your first, second or third Movement phase , regardless of any mission rules. Any units embarked within this model must immediately disembark after it has been set up on the battlefield, and they must be set up more than 9\" away from all enemy models. Combat Disembarkation: Each time a unit disembarks from this model after it has been set up on the battlefield, that unit is still eligible to declare a charge this turn. Deployment Complete: Once this unit is set up on the battlefield and all units within it have disembarked, until the end of the battle, units cannot embark within this TRANSPORT ."
+      "Deadly Demise 1 , Deep Strike"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "This model must start the battle in Reserves and can be set up in the Reinforcements step of your first, second or third Movement phase , regardless of any mission rules. Any units embarked within this model must immediately disembark after it has been set up on the battlefield, and they must be set up more than 9\" away from all enemy models.",
+        "name": "Drop Pod Assault"
+      },
+      {
+        "type": "rule",
+        "text": "Each time a unit disembarks from this model after it has been set up on the battlefield, that unit is still eligible to declare a charge this turn.",
+        "name": "Combat Disembarkation"
+      },
+      {
+        "type": "rule",
+        "text": "Once this unit is set up on the battlefield and all units within it have disembarked, until the end of the battle, units cannot embark within this TRANSPORT .",
+        "name": "Deployment Complete"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Drop Pod"
+      ]
+    },
     {
       "type": "points",
       "rows": [
@@ -57,14 +83,42 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise 1 , Deep Strike FACTION: Oath of Moment Drop Pod Assault: This model must start the battle in Reserves and can be set up in the Reinforcements step of your first, second or third Movement phase , regardless of any mission rules. Any units embarked within this model must immediately disembark after it has been set up on the battlefield, and they must be set up more than 9\" away from all enemy models. Combat Disembarkation: Each time a unit disembarks from this model after it has been set up on the battlefield, that unit is still eligible to declare a charge this turn. Deployment Complete: Once this unit is set up on the battlefield and all units within it have disembarked, until the end of the battle, units cannot embark within this TRANSPORT ."
+            "Deadly Demise 1 , Deep Strike"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "This model must start the battle in Reserves and can be set up in the Reinforcements step of your first, second or third Movement phase , regardless of any mission rules. Any units embarked within this model must immediately disembark after it has been set up on the battlefield, and they must be set up more than 9\" away from all enemy models.",
+          "name": "Drop Pod Assault"
+        },
+        {
+          "type": "rule",
+          "text": "Each time a unit disembarks from this model after it has been set up on the battlefield, that unit is still eligible to declare a charge this turn.",
+          "name": "Combat Disembarkation"
+        },
+        {
+          "type": "rule",
+          "text": "Once this unit is set up on the battlefield and all units within it have disembarked, until the end of the battle, units cannot embark within this TRANSPORT .",
+          "name": "Deployment Complete"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Drop Pod"
+          ]
+        },
         {
           "type": "points",
           "rows": [
@@ -86,8 +140,6 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
       "ABILITIES",
@@ -100,6 +152,7 @@
       "TRANSPORT"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

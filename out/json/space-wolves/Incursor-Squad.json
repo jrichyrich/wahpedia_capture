@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Incursor-Squad",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Incursor-Squad",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Incursor-Squad",
     "canonicalSourceId": "wahapedia:0b56f46483f57fa40238532b18942c4f247ed811",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "374da900d79d2d6b7cae986871bbba8e77b27446a58ff66f3092f33cd82ea834"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Incursor-Squad",
+    "fetchedAt": "2026-03-21T03:45:08+00:00",
+    "contentHash": "c0c15640436285c6a674d89d05c1941166f0c0eefa7c5cb3355485548cf37641",
+    "output_slug": "space-wolves"
   },
   "name": "Incursor Squad",
   "base_size": "\u230032mm",
@@ -64,13 +66,38 @@
   },
   "abilities": {
     "core": [
-      "Scouts 6\" FACTION: Oath of Moment Multi-spectrum Array: In your Shooting phase , after this unit has shot, select one enemy unit that was hit by one or more attacks made by this unit this phase. Until the end of the phase, each time a friendly ADEPTUS ASTARTES unit makes an attack that targets that enemy unit, add 1 to the Hit roll ."
+      "Scouts 6\""
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "In your Shooting phase , after this unit has shot, select one enemy unit that was hit by one or more attacks made by this unit this phase. Until the end of the phase, each time a friendly ADEPTUS ASTARTES unit makes an attack that targets that enemy unit, add 1 to the Hit roll .",
+        "name": "Multi-spectrum Array"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Incursor Sergeant"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "4-9 Incursors"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "bolt pistol; occulus bolt carbine; paired combat blades.",
+      "label": "Every model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -114,8 +141,20 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Scouts 6\" FACTION: Oath of Moment Multi-spectrum Array: In your Shooting phase , after this unit has shot, select one enemy unit that was hit by one or more attacks made by this unit this phase. Until the end of the phase, each time a friendly ADEPTUS ASTARTES unit makes an attack that targets that enemy unit, add 1 to the Hit roll ."
+            "Scouts 6\""
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "In your Shooting phase , after this unit has shot, select one enemy unit that was hit by one or more attacks made by this unit this phase. Until the end of the phase, each time a friendly ADEPTUS ASTARTES unit makes an attack that targets that enemy unit, add 1 to the Hit roll .",
+          "name": "Multi-spectrum Array"
         }
       ]
     },
@@ -123,14 +162,32 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "text",
-          "text": "Haywire Mine: Once per battle, at the start of any phase, you can select one enemy unit within 3\" of the bearer and roll one D6: on a 2+, that enemy unit suffers D3 mortal wounds , or 2D3 mortal wounds instead if it is a VEHICLE unit."
+          "type": "statement",
+          "text": "Once per battle, at the start of any phase, you can select one enemy unit within 3\" of the bearer and roll one D6: on a 2+, that enemy unit suffers D3 mortal wounds , or 2D3 mortal wounds instead if it is a VEHICLE unit.",
+          "label": "Haywire Mine"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Incursor Sergeant"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "4-9 Incursors"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "bolt pistol; occulus bolt carbine; paired combat blades.",
+          "label": "Every model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -147,10 +204,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION"
@@ -162,6 +218,7 @@
       "UNIT COMPOSITION"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

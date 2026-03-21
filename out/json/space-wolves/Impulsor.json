@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Impulsor",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Impulsor",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Impulsor",
     "canonicalSourceId": "wahapedia:3b9e694127f40821021b59a2ea20b7fc0e9e7b3d",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "2aeed45d4b0224f2a0cd10b43297711549a5acf465357a10fcdfa2db05e91ba8"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Impulsor",
+    "fetchedAt": "2026-03-21T03:44:43+00:00",
+    "contentHash": "6dd093d147b42a2fe00066a96cd090da5fbdef02c633f49e503c0ba0a753bf73",
+    "output_slug": "space-wolves"
   },
   "name": "Impulsor",
   "base_size": "\u2300100mm",
@@ -120,13 +122,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D3 , Firing Deck 6 FACTION: Oath of Moment Assault Vehicle: Units can disembark from this TRANSPORT after it has Advanced . Units that do so count as having made a Normal move , and cannot declare a charge that turn."
+      "Deadly Demise D3 , Firing Deck 6"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Units can disembark from this TRANSPORT after it has Advanced . Units that do so count as having made a Normal move , and cannot declare a charge that turn.",
+        "name": "Assault Vehicle"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Impulsor"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "2 storm bolters; armoured hull.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -180,8 +201,20 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D3 , Firing Deck 6 FACTION: Oath of Moment Assault Vehicle: Units can disembark from this TRANSPORT after it has Advanced . Units that do so count as having made a Normal move , and cannot declare a charge that turn."
+            "Deadly Demise D3 , Firing Deck 6"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Units can disembark from this TRANSPORT after it has Advanced . Units that do so count as having made a Normal move , and cannot declare a charge that turn.",
+          "name": "Assault Vehicle"
         }
       ]
     },
@@ -189,14 +222,31 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "text",
-          "text": "Orbital Comms Array (Aura): While a friendly ADEPTUS ASTARTES unit is within 6\" of the bearer, each time you target that unit with a Stratagem , roll one D6: on a 5+, you gain 1CP. Shield Dome: The bearer has a 5+ invulnerable save ."
+          "type": "statement",
+          "text": "While a friendly ADEPTUS ASTARTES unit is within 6\" of the bearer, each time you target that unit with a Stratagem , roll one D6: on a 5+, you gain 1CP.",
+          "label": "Orbital Comms Array (Aura)"
+        },
+        {
+          "type": "statement",
+          "text": "The bearer has a 5+ invulnerable save .",
+          "label": "Shield Dome"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Impulsor"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "2 storm bolters; armoured hull.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -218,10 +268,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION",
@@ -235,6 +284,7 @@
       "TRANSPORT"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

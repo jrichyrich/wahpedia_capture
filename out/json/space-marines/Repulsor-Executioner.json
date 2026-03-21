@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Repulsor-Executioner",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Repulsor-Executioner",
     "canonicalSourceId": "wahapedia:f1dbf9e01c66db262367096889d19e4d15c4e7c9",
     "faction_slug": "space-marines",
     "datasheet_slug": "Repulsor-Executioner",
-    "fetchedAt": "2026-03-19T17:29:53+00:00",
-    "contentHash": "9334af22df2421bb84e33f42a9f3f512a57019bab7a07f7b52374e87fb2c6e03",
+    "fetchedAt": "2026-03-21T03:42:10+00:00",
+    "contentHash": "6687d7fc94d2d793bcc588d25ab1f720e03eaafb3e4d8dec57b6048106cab097",
     "output_slug": "space-marines"
   },
   "name": "Repulsor Executioner",
@@ -149,13 +149,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D6 FACTION: Oath of Moment Executioner: Each time this model makes an attack that targets a unit that is Below Half-strength , add 1 to the Hit roll ."
+      "Deadly Demise D6"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this model makes an attack that targets a unit that is Below Half-strength , add 1 to the Hit roll .",
+        "name": "Executioner"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Repulsor Executioner"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "heavy onslaught gatling cannon; macro plasma incinerator; Repulsor Executioner defensive array; twin heavy bolter; twin Icarus ironhail heavy stubber; armoured hull.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -205,14 +224,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D6 FACTION: Oath of Moment Executioner: Each time this model makes an attack that targets a unit that is Below Half-strength , add 1 to the Hit roll ."
+            "Deadly Demise D6"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model makes an attack that targets a unit that is Below Half-strength , add 1 to the Hit roll .",
+          "name": "Executioner"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Repulsor Executioner"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "heavy onslaught gatling cannon; macro plasma incinerator; Repulsor Executioner defensive array; twin heavy bolter; twin Icarus ironhail heavy stubber; armoured hull.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -245,28 +287,11 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "DAMAGED: 1-5 WOUNDS REMAINING",
-      "TRANSPORT",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
+      "TRANSPORT"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -275,60 +300,8 @@
       "DAMAGED: 1-5 WOUNDS REMAINING",
       "TRANSPORT"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

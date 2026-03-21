@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Raven-Strike-Fighter",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Raven-Strike-Fighter",
     "canonicalSourceId": "wahapedia:77bb0183d73844d378fe62834f6025d201360665",
     "faction_slug": "drukhari",
     "datasheet_slug": "Raven-Strike-Fighter",
-    "fetchedAt": "2026-03-19T17:17:25+00:00",
-    "contentHash": "f1fc7efeeff17c3c4fcd523f92d4eb5ad738678493379281e7cb3baefb5cae4d",
+    "fetchedAt": "2026-03-21T03:50:34+00:00",
+    "contentHash": "0f6045054231da4fb94f5e39da39382fc3da728f4c272aff6524e0268ff12b6c",
     "output_slug": "drukhari"
   },
   "name": "Raven Strike Fighter",
@@ -63,13 +63,37 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D3 , Stealth FACTION: Power from Pain Shredding Fire (Pain): In your Shooting phase , when you select this unit to shoot, you can spend 1 Pain token to Empower this unit. While Empowered, the Armour Penetration characteristic of its ranged weapons is increased by 1. Ground-attack Craft: Each time a model in this unit makes a ranged attack that targets an enemy unit (excluding units that can FLY ), add 1 to the Hit roll ."
+      "Deadly Demise D3 , Stealth"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Power from Pain"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "In your Shooting phase , when you select this unit to shoot, you can spend 1 Pain token to Empower this unit. While Empowered, the Armour Penetration characteristic of its ranged weapons is increased by 1.",
+        "name": "Shredding Fire (Pain)"
+      },
+      {
+        "type": "rule",
+        "text": "Each time a model in this unit makes a ranged attack that targets an enemy unit (excluding units that can FLY ), add 1 to the Hit roll .",
+        "name": "Ground-attack Craft"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Raven Strike Fighter"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "2 dark lances; splinterstorm cannon; Bladed wings.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -95,10 +119,8 @@
       "title": "WARGEAR OPTIONS",
       "entries": [
         {
-          "type": "list",
-          "items": [
-            "None"
-          ]
+          "type": "text",
+          "text": "None"
         }
       ]
     },
@@ -109,14 +131,42 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D3 , Stealth FACTION: Power from Pain Shredding Fire (Pain): In your Shooting phase , when you select this unit to shoot, you can spend 1 Pain token to Empower this unit. While Empowered, the Armour Penetration characteristic of its ranged weapons is increased by 1. Ground-attack Craft: Each time a model in this unit makes a ranged attack that targets an enemy unit (excluding units that can FLY ), add 1 to the Hit roll ."
+            "Deadly Demise D3 , Stealth"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Power from Pain"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "In your Shooting phase , when you select this unit to shoot, you can spend 1 Pain token to Empower this unit. While Empowered, the Armour Penetration characteristic of its ranged weapons is increased by 1.",
+          "name": "Shredding Fire (Pain)"
+        },
+        {
+          "type": "rule",
+          "text": "Each time a model in this unit makes a ranged attack that targets an enemy unit (excluding units that can FLY ), add 1 to the Hit roll .",
+          "name": "Ground-attack Craft"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Raven Strike Fighter"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "2 dark lances; splinterstorm cannon; Bladed wings.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -131,82 +181,17 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
-      "UNIT COMPOSITION",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
+      "UNIT COMPOSITION"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

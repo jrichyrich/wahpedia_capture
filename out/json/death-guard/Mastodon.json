@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Mastodon",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Mastodon",
     "canonicalSourceId": "wahapedia:4d2e1a5705a525488c5f4dac4a9d0c3e23df85f4",
     "faction_slug": "death-guard",
     "datasheet_slug": "Mastodon",
-    "fetchedAt": "2026-03-19T17:16:59+00:00",
-    "contentHash": "dc9c0e2a043558bca4c90ecc7ddacb33e70ce6a0d566a3b59033d23f3838dbbc",
+    "fetchedAt": "2026-03-21T03:50:42+00:00",
+    "contentHash": "a39728a05c6681186967392ce3a3359e5a467e54882066fed2803d4302868eb8",
     "output_slug": "death-guard"
   },
   "name": "Mastodon",
@@ -110,13 +110,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise 2D6 FACTION: Nurgle\u2019s Gift (Aura) Inviolable Transport: Once per battle round , when an attack is allocated to this model, you can change the Damage characteristic of that attack to 0."
+      "Deadly Demise 2D6"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Nurgle\u2019s Gift (Aura)"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Once per battle round , when an attack is allocated to this model, you can change the Damage characteristic of that attack to 0.",
+        "name": "Inviolable Transport"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Mastodon"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "2 heavy flamers; 2 lascannons; siege melta array; skyreaper battery; armoured tracks.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -170,14 +189,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise 2D6 FACTION: Nurgle\u2019s Gift (Aura) Inviolable Transport: Once per battle round , when an attack is allocated to this model, you can change the Damage characteristic of that attack to 0."
+            "Deadly Demise 2D6"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Nurgle\u2019s Gift (Aura)"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Once per battle round , when an attack is allocated to this model, you can change the Damage characteristic of that attack to 0.",
+          "name": "Inviolable Transport"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Mastodon"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "2 heavy flamers; 2 lascannons; siege melta array; skyreaper battery; armoured tracks.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -210,27 +252,11 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "DAMAGED: 1-10 WOUNDS REMAINING",
-      "TRANSPORT",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
+      "TRANSPORT"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -239,57 +265,8 @@
       "DAMAGED: 1-10 WOUNDS REMAINING",
       "TRANSPORT"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

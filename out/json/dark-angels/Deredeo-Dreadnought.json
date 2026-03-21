@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Deredeo-Dreadnought",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Deredeo-Dreadnought",
     "canonicalSourceId": "wahapedia:d42235c9821a9f9f3c80ff4fea797cc9f2d675d4",
     "faction_slug": "space-marines",
     "datasheet_slug": "Deredeo-Dreadnought",
-    "fetchedAt": "2026-03-19T17:15:42+00:00",
-    "contentHash": "d0d33da4e5e7b4ec392b8fb2c3c7d9c46955069a1a715c53a935edd24fcfdd58",
+    "fetchedAt": "2026-03-21T03:40:06+00:00",
+    "contentHash": "2a4eb084e9ce5eb2b6bf173a8886dd6c1b12e884fe0e4c8ad51e61b5ba9b6d92",
     "output_slug": "dark-angels"
   },
   "name": "Deredeo Dreadnought",
@@ -147,13 +147,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D3 FACTION: Oath of Moment Deredeo Strike: Each time this model makes a ranged attack that targets a unit that is not Below Half-strength , you can re-roll the Hit roll ."
+      "Deadly Demise D3"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this model makes a ranged attack that targets a unit that is not Below Half-strength , you can re-roll the Hit roll .",
+        "name": "Deredeo Strike"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Deredeo Dreadnought"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "anvilus autocannon battery; twin heavy bolter; armoured feet.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -211,14 +230,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D3 FACTION: Oath of Moment Deredeo Strike: Each time this model makes a ranged attack that targets a unit that is not Below Half-strength , you can re-roll the Hit roll ."
+            "Deadly Demise D3"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model makes a ranged attack that targets a unit that is not Below Half-strength , you can re-roll the Hit roll .",
+          "name": "Deredeo Strike"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Deredeo Dreadnought"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "anvilus autocannon battery; twin heavy bolter; armoured feet.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -242,27 +284,10 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
-      "DAMAGED: 1-4 WOUNDS REMAINING",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
+      "DAMAGED: 1-4 WOUNDS REMAINING"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -270,60 +295,8 @@
       "UNIT COMPOSITION",
       "DAMAGED: 1-4 WOUNDS REMAINING"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Vampire-Raider",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Vampire-Raider",
     "canonicalSourceId": "wahapedia:7e2d60f05c760f5926efaea31c888dc4c03853ab",
     "faction_slug": "aeldari",
     "datasheet_slug": "Vampire-Raider",
-    "fetchedAt": "2026-03-19T17:11:32+00:00",
-    "contentHash": "477c107b5bfe6455a889fb48b90176b4aacb5c0b4a590d368ddf99d3f7f0f65a",
+    "fetchedAt": "2026-03-21T03:36:55+00:00",
+    "contentHash": "6195d189ecdc735e301a2096fd9c2dd33f3fad8bcdcafd8a605746b5b4a354e4",
     "output_slug": "aeldari"
   },
   "name": "Vampire Raider",
@@ -62,13 +62,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D6+2 , Hover FACTION: Battle Focus Into the Foe: If a unit disembarks from this TRANSPORT before it moves, until the end of the turn, that unit is eligible to charge in a turn in which it Advanced ."
+      "Deadly Demise D6+2 , Hover"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Battle Focus"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "If a unit disembarks from this TRANSPORT before it moves, until the end of the turn, that unit is eligible to charge in a turn in which it Advanced .",
+        "name": "Into the Foe"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Vampire Raider"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "scatter laser; 2 twin pulse lasers; wraithbone hull.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -96,10 +115,8 @@
       "title": "WARGEAR OPTIONS",
       "entries": [
         {
-          "type": "list",
-          "items": [
-            "None"
-          ]
+          "type": "text",
+          "text": "None"
         }
       ]
     },
@@ -110,14 +127,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D6+2 , Hover FACTION: Battle Focus Into the Foe: If a unit disembarks from this TRANSPORT before it moves, until the end of the turn, that unit is eligible to charge in a turn in which it Advanced ."
+            "Deadly Demise D6+2 , Hover"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Battle Focus"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "If a unit disembarks from this TRANSPORT before it moves, until the end of the turn, that unit is eligible to charge in a turn in which it Advanced .",
+          "name": "Into the Foe"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Vampire Raider"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "scatter laser; 2 twin pulse lasers; wraithbone hull.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -150,27 +190,11 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "DAMAGED: 1-10 WOUNDS REMAINING",
-      "TRANSPORT",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
+      "TRANSPORT"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -179,57 +203,8 @@
       "DAMAGED: 1-10 WOUNDS REMAINING",
       "TRANSPORT"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

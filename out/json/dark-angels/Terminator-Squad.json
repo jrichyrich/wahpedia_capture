@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Terminator-Squad",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Terminator-Squad",
     "canonicalSourceId": "wahapedia:c6b54e7bff7aff4ea7dd4e0d6d20cbdf729cdc8f",
     "faction_slug": "space-marines",
     "datasheet_slug": "Terminator-Squad",
-    "fetchedAt": "2026-03-19T17:34:44+00:00",
-    "contentHash": "f172475a739e4d66720d9c4ba3a4579c45b34d149082451c2355afb06b89afe3",
+    "fetchedAt": "2026-03-21T03:39:38+00:00",
+    "contentHash": "9a4a1bff0fb91e4451e4723c2e9952ca941bca2c7382ba63046b6bd1ed8bea82",
     "output_slug": "dark-angels"
   },
   "name": "Terminator Squad",
@@ -121,13 +121,43 @@
   },
   "abilities": {
     "core": [
-      "Deep Strike FACTION: Oath of Moment Teleport Homer: At the start of the battle, you can set up one Teleport Homer token for this unit anywhere on the battlefield that is not in your opponent\u2019s deployment zone. If you do, once per battle, you can target this unit with the Rapid Ingress Stratagem for 0CP, but when resolving that Stratagem, you must set this unit up within 3\" of that token and not within 9\" of any enemy models. That token is then removed. Fury of the First: Each time a model in this unit makes an attack that targets your Oath of Moment target , add 1 to the Hit roll ."
+      "Deep Strike"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "At the start of the battle, you can set up one Teleport Homer token for this unit anywhere on the battlefield that is not in your opponent\u2019s deployment zone. If you do, once per battle, you can target this unit with the Rapid Ingress Stratagem for 0CP, but when resolving that Stratagem, you must set this unit up within 3\" of that token and not within 9\" of any enemy models. That token is then removed.",
+        "name": "Teleport Homer"
+      },
+      {
+        "type": "rule",
+        "text": "Each time a model in this unit makes an attack that targets your Oath of Moment target , add 1 to the Hit roll .",
+        "name": "Fury of the First"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Terminator Sergeant"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "4-9 Terminators"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "storm bolter; power fist.",
+      "label": "Every model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -188,14 +218,48 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deep Strike FACTION: Oath of Moment Teleport Homer: At the start of the battle, you can set up one Teleport Homer token for this unit anywhere on the battlefield that is not in your opponent\u2019s deployment zone. If you do, once per battle, you can target this unit with the Rapid Ingress Stratagem for 0CP, but when resolving that Stratagem, you must set this unit up within 3\" of that token and not within 9\" of any enemy models. That token is then removed. Fury of the First: Each time a model in this unit makes an attack that targets your Oath of Moment target , add 1 to the Hit roll ."
+            "Deep Strike"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "At the start of the battle, you can set up one Teleport Homer token for this unit anywhere on the battlefield that is not in your opponent\u2019s deployment zone. If you do, once per battle, you can target this unit with the Rapid Ingress Stratagem for 0CP, but when resolving that Stratagem, you must set this unit up within 3\" of that token and not within 9\" of any enemy models. That token is then removed.",
+          "name": "Teleport Homer"
+        },
+        {
+          "type": "rule",
+          "text": "Each time a model in this unit makes an attack that targets your Oath of Moment target , add 1 to the Hit roll .",
+          "name": "Fury of the First"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Terminator Sergeant"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "4-9 Terminators"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "storm bolter; power fist.",
+          "label": "Every model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -214,90 +278,17 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
-      "UNIT COMPOSITION",
-      "STRATAGEMS",
-      "LED BY",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
+      "UNIT COMPOSITION"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "LED BY",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:LED BY",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:LED BY",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

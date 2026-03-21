@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Invader-ATV",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Invader-ATV",
-    "output_slug": "ultramarines",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Invader-ATV",
     "canonicalSourceId": "wahapedia:ae5d3495c6ef3faf305cb2abc080894395fb9705",
-    "fetchedAt": "2026-03-19T17:35:03+00:00",
-    "contentHash": "6916d309dcdf3f604d527f89370f132c60a661fd374490da6f658e6ee5e46759"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Invader-ATV",
+    "fetchedAt": "2026-03-21T03:48:34+00:00",
+    "contentHash": "07ddeaf61e3feac155b42ccb2b718395830ad201cd72bd09318b9b07a658d19a",
+    "output_slug": "ultramarines"
   },
   "name": "Invader ATV",
   "base_size": "\u2300Use model",
@@ -86,12 +88,29 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Oath of Moment Outrider Escort: Once per turn, in your opponent\u2019s Shooting phase , when another friendly ADEPTUS ASTARTES MOUNTED unit within 6\" of this model is selected as the target of an attack, one model from your army with this ability can use it. If it does, after that enemy unit has finished making its attacks, that model can shoot as if it were your Shooting phase, but when resolving those attacks it can only target that enemy unit (and only if it is an eligible target)."
+      "Oath of Moment"
     ],
-    "datasheet": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Once per turn, in your opponent\u2019s Shooting phase , when another friendly ADEPTUS ASTARTES MOUNTED unit within 6\" of this model is selected as the target of an attack, one model from your army with this ability can use it. If it does, after that enemy unit has finished making its attacks, that model can shoot as if it were your Shooting phase, but when resolving those attacks it can only target that enemy unit (and only if it is an eligible target).",
+        "name": "Outrider Escort"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Invader ATV"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "bolt pistol, twin bolt rifle; onslaught gatling cannon; close combat weapon.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -130,14 +149,30 @@
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Oath of Moment Outrider Escort: Once per turn, in your opponent\u2019s Shooting phase , when another friendly ADEPTUS ASTARTES MOUNTED unit within 6\" of this model is selected as the target of an attack, one model from your army with this ability can use it. If it does, after that enemy unit has finished making its attacks, that model can shoot as if it were your Shooting phase, but when resolving those attacks it can only target that enemy unit (and only if it is an eligible target)."
+            "Oath of Moment"
           ]
+        },
+        {
+          "type": "rule",
+          "text": "Once per turn, in your opponent\u2019s Shooting phase , when another friendly ADEPTUS ASTARTES MOUNTED unit within 6\" of this model is selected as the target of an attack, one model from your army with this ability can use it. If it does, after that enemy unit has finished making its attacks, that model can shoot as if it were your Shooting phase, but when resolving those attacks it can only target that enemy unit (and only if it is an eligible target).",
+          "name": "Outrider Escort"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Invader ATV"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "bolt pistol, twin bolt rifle; onslaught gatling cannon; close combat weapon.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -150,10 +185,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
@@ -163,6 +197,7 @@
       "UNIT COMPOSITION"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

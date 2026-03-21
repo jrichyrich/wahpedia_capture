@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Invader-ATV",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Invader-ATV",
     "canonicalSourceId": "wahapedia:ae5d3495c6ef3faf305cb2abc080894395fb9705",
     "faction_slug": "space-marines",
     "datasheet_slug": "Invader-ATV",
-    "fetchedAt": "2026-03-19T17:29:14+00:00",
-    "contentHash": "86813c4c6be2778db91f5ec0e66fedebbae2e68aa143f1e89fee49ecaabe48b4",
+    "fetchedAt": "2026-03-21T03:42:00+00:00",
+    "contentHash": "2efcc437b4b5278c3795e6b3ac0c3cfa82a56c8c7381522cc6e0c917283ed761",
     "output_slug": "space-marines"
   },
   "name": "Invader ATV",
@@ -88,12 +88,29 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Oath of Moment Outrider Escort: Once per turn, in your opponent\u2019s Shooting phase , when another friendly ADEPTUS ASTARTES MOUNTED unit within 6\" of this model is selected as the target of an attack, one model from your army with this ability can use it. If it does, after that enemy unit has finished making its attacks, that model can shoot as if it were your Shooting phase, but when resolving those attacks it can only target that enemy unit (and only if it is an eligible target)."
+      "Oath of Moment"
     ],
-    "datasheet": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Once per turn, in your opponent\u2019s Shooting phase , when another friendly ADEPTUS ASTARTES MOUNTED unit within 6\" of this model is selected as the target of an attack, one model from your army with this ability can use it. If it does, after that enemy unit has finished making its attacks, that model can shoot as if it were your Shooting phase, but when resolving those attacks it can only target that enemy unit (and only if it is an eligible target).",
+        "name": "Outrider Escort"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Invader ATV"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "bolt pistol, twin bolt rifle; onslaught gatling cannon; close combat weapon.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -132,14 +149,30 @@
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Oath of Moment Outrider Escort: Once per turn, in your opponent\u2019s Shooting phase , when another friendly ADEPTUS ASTARTES MOUNTED unit within 6\" of this model is selected as the target of an attack, one model from your army with this ability can use it. If it does, after that enemy unit has finished making its attacks, that model can shoot as if it were your Shooting phase, but when resolving those attacks it can only target that enemy unit (and only if it is an eligible target)."
+            "Oath of Moment"
           ]
+        },
+        {
+          "type": "rule",
+          "text": "Once per turn, in your opponent\u2019s Shooting phase , when another friendly ADEPTUS ASTARTES MOUNTED unit within 6\" of this model is selected as the target of an attack, one model from your army with this ability can use it. If it does, after that enemy unit has finished making its attacks, that model can shoot as if it were your Shooting phase, but when resolving those attacks it can only target that enemy unit (and only if it is an eligible target).",
+          "name": "Outrider Escort"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Invader ATV"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "bolt pistol, twin bolt rifle; onslaught gatling cannon; close combat weapon.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -154,86 +187,17 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
-      "UNIT COMPOSITION",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
+      "UNIT COMPOSITION"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

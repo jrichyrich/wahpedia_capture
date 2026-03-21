@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Land-Raider-Prometheus",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Land-Raider-Prometheus",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Land-Raider-Prometheus",
     "canonicalSourceId": "wahapedia:d70a4b1ab36888b64c498b610e34baf7127d1e2b",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "2b82e90256a4aebfa4f3a102696a6db5b1c1755f8affeef5e31dd21848991f1e"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Land-Raider-Prometheus",
+    "fetchedAt": "2026-03-21T03:46:16+00:00",
+    "contentHash": "fb0d2feaf2a909aca1281e68b379460757fffa30b1417b7b20cc325505b5cc21",
+    "output_slug": "space-wolves"
   },
   "name": "Land Raider Prometheus",
   "base_size": "\u2300Use model",
@@ -84,13 +86,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D6 FACTION: Oath of Moment Assault Ramp: Each time a unit disembarks from this model after it has made a Normal move , that unit is still eligible to declare a charge this turn."
+      "Deadly Demise D6"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time a unit disembarks from this model after it has made a Normal move , that unit is still eligible to declare a charge this turn.",
+        "name": "Assault Ramp"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Land Raider Prometheus"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "2 quad heavy bolters; armoured tracks.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -139,14 +160,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D6 FACTION: Oath of Moment Assault Ramp: Each time a unit disembarks from this model after it has made a Normal move , that unit is still eligible to declare a charge this turn."
+            "Deadly Demise D6"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time a unit disembarks from this model after it has made a Normal move , that unit is still eligible to declare a charge this turn.",
+          "name": "Assault Ramp"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Land Raider Prometheus"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "2 quad heavy bolters; armoured tracks.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -177,10 +221,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "DAMAGED: 1-5 WOUNDS REMAINING",
@@ -194,6 +237,7 @@
       "TRANSPORT"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

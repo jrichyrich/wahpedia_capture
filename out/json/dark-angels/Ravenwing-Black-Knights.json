@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Ravenwing-Black-Knights",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Ravenwing-Black-Knights",
     "canonicalSourceId": "wahapedia:7b09ffd51d5fc2475993666eff34660cc1a9a95e",
     "faction_slug": "space-marines",
     "datasheet_slug": "Ravenwing-Black-Knights",
-    "fetchedAt": "2026-03-19T17:15:15+00:00",
-    "contentHash": "5b68f644d78817e2b46f203c9df7fc1ad69236c0783bb18c8d8e8f04f541f057",
+    "fetchedAt": "2026-03-21T03:39:48+00:00",
+    "contentHash": "6261baa930d0d68d8bd7c283f115b73e38bb2b3ea58604a9109023c6ab4e206b",
     "output_slug": "dark-angels"
   },
   "name": "Ravenwing Black Knights",
@@ -102,12 +102,35 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Oath of Moment Knights of Caliban: Each time this unit is selected to fight, if it made a Charge move this turn, until the end of the phase, melee weapons equipped by models in this unit have the [ANTI-MONSTER 4+] and [ANTI-VEHICLE 4+] abilities."
+      "Oath of Moment"
     ],
-    "datasheet": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this unit is selected to fight, if it made a Charge move this turn, until the end of the phase, melee weapons equipped by models in this unit have the [ANTI-MONSTER 4+] and [ANTI-VEHICLE 4+] abilities.",
+        "name": "Knights of Caliban"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Ravenwing Huntmaster"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "2-5 Ravenwing Black Knights"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "bolt pistol; plasma talon; Black Knight combat weapon.",
+      "label": "Every model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -151,14 +174,36 @@
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Oath of Moment Knights of Caliban: Each time this unit is selected to fight, if it made a Charge move this turn, until the end of the phase, melee weapons equipped by models in this unit have the [ANTI-MONSTER 4+] and [ANTI-VEHICLE 4+] abilities."
+            "Oath of Moment"
           ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this unit is selected to fight, if it made a Charge move this turn, until the end of the phase, melee weapons equipped by models in this unit have the [ANTI-MONSTER 4+] and [ANTI-VEHICLE 4+] abilities.",
+          "name": "Knights of Caliban"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Ravenwing Huntmaster"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "2-5 Ravenwing Black Knights"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "bolt pistol; plasma talon; Black Knight combat weapon.",
+          "label": "Every model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -186,28 +231,10 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
-      "ATTACHED UNIT",
-      "STRATAGEMS",
-      "LED BY",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
+      "ATTACHED UNIT"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -215,63 +242,8 @@
       "UNIT COMPOSITION",
       "ATTACHED UNIT"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "LED BY",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:LED BY",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:LED BY",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

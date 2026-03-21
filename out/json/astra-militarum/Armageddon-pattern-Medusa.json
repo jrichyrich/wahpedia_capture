@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Armageddon-pattern-Medusa",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Armageddon-pattern-Medusa",
     "canonicalSourceId": "wahapedia:77e86fbe77f70d5219a48e58dc9b675ca543b032",
     "faction_slug": "astra-militarum",
     "datasheet_slug": "Armageddon-pattern-Medusa",
-    "fetchedAt": "2026-03-19T17:12:08+00:00",
-    "contentHash": "e1f3da0d7f4cdfb530fac1b2e3969a2d625ca4692183b79e8fdbc5bf6044970d",
+    "fetchedAt": "2026-03-21T03:37:25+00:00",
+    "contentHash": "a6b865c172db83ad09b90af1e1d05ce74a98a7184ac74ddf5343f50065adddd4",
     "output_slug": "astra-militarum"
   },
   "name": "Armageddon-pattern Medusa",
@@ -111,13 +111,30 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D3 Pinning Bombardment: In your Shooting phase , after this model has shot, if one or more of those attacks made with its Medusa siege cannon scored a hit against an enemy INFANTRY unit, that unit must take a Battle-shock test ."
+      "Deadly Demise D3"
     ],
     "faction": [],
-    "datasheet": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "In your Shooting phase , after this model has shot, if one or more of those attacks made with its Medusa siege cannon scored a hit against an enemy INFANTRY unit, that unit must take a Battle-shock test .",
+        "name": "Pinning Bombardment"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Armageddon-pattern Medusa"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "heavy bolter; Medusa siege cannon; armoured tracks.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -170,14 +187,30 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D3 Pinning Bombardment: In your Shooting phase , after this model has shot, if one or more of those attacks made with its Medusa siege cannon scored a hit against an enemy INFANTRY unit, that unit must take a Battle-shock test ."
+            "Deadly Demise D3"
           ]
+        },
+        {
+          "type": "rule",
+          "text": "In your Shooting phase , after this model has shot, if one or more of those attacks made with its Medusa siege cannon scored a hit against an enemy INFANTRY unit, that unit must take a Battle-shock test .",
+          "name": "Pinning Bombardment"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Armageddon-pattern Medusa"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "heavy bolter; Medusa siege cannon; armoured tracks.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -201,26 +234,10 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
-      "DAMAGED: 1-4 WOUNDS REMAINING",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
+      "DAMAGED: 1-4 WOUNDS REMAINING"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -228,57 +245,8 @@
       "UNIT COMPOSITION",
       "DAMAGED: 1-4 WOUNDS REMAINING"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

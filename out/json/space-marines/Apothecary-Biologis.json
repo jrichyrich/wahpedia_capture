@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Apothecary-Biologis",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Apothecary-Biologis",
     "canonicalSourceId": "wahapedia:e5c0131c253bdf6187b7c94f9ff2f216b2a8f9c5",
     "faction_slug": "space-marines",
     "datasheet_slug": "Apothecary-Biologis",
-    "fetchedAt": "2026-03-19T17:25:45+00:00",
-    "contentHash": "9aea91499224ab99bf89d56715a1d3a722dda1e41480ea571de646d523df5eed",
+    "fetchedAt": "2026-03-21T03:40:50+00:00",
+    "contentHash": "74def7a033c3c4fcf01519b3a28598e3a32e28d4b8eeb9e7dd96f36e26a23089",
     "output_slug": "space-marines"
   },
   "name": "Apothecary Biologis",
@@ -51,13 +51,37 @@
   },
   "abilities": {
     "core": [
-      "Leader FACTION: Oath of Moment Surgical Precision: While this model is leading a unit, weapons equipped by models in that unit have the [LETHAL HITS] ability. Vivispectrum: If this model\u2019s unit destroys an enemy unit as the result of a melee attack, until the end of the battle, this model has an Objective Control characteristic of 9."
+      "Leader"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, weapons equipped by models in that unit have the [LETHAL HITS] ability.",
+        "name": "Surgical Precision"
+      },
+      {
+        "type": "rule",
+        "text": "If this model\u2019s unit destroys an enemy unit as the result of a melee attack, until the end of the battle, this model has an Objective Control characteristic of 9.",
+        "name": "Vivispectrum"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Apothecary Biologis"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "absolvor bolt pistol; close combat weapon.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -87,14 +111,42 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Leader FACTION: Oath of Moment Surgical Precision: While this model is leading a unit, weapons equipped by models in that unit have the [LETHAL HITS] ability. Vivispectrum: If this model\u2019s unit destroys an enemy unit as the result of a melee attack, until the end of the battle, this model has an Objective Control characteristic of 9."
+            "Leader"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, weapons equipped by models in that unit have the [LETHAL HITS] ability.",
+          "name": "Surgical Precision"
+        },
+        {
+          "type": "rule",
+          "text": "If this model\u2019s unit destroys an enemy unit as the result of a melee attack, until the end of the battle, this model has an Objective Control characteristic of 9.",
+          "name": "Vivispectrum"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Apothecary Biologis"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "absolvor bolt pistol; close combat weapon.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -110,6 +162,10 @@
       "title": "LEADER",
       "entries": [
         {
+          "type": "text",
+          "text": "This model can be attached to the following units:"
+        },
+        {
           "type": "list",
           "items": [
             "Aggressor Squad",
@@ -117,92 +173,27 @@
             "Heavy Intercessor Squad",
             "Indomitor Kill Team"
           ]
+        },
+        {
+          "type": "text",
+          "text": "You can attach this model to one of the above units even if one CAPTAIN or CHAPTER MASTER model has already been attached to it. If you do, and that Bodyguard unit is destroyed, the LEADER units attached to it become separate units, with their original Starting Strengths ."
         }
       ]
     }
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "ABILITIES",
       "UNIT COMPOSITION",
-      "LEADER",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
+      "LEADER"
     ],
     "exportedSectionTitles": [
       "ABILITIES",
       "UNIT COMPOSITION",
       "LEADER"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

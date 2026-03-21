@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Brutalis-Dreadnought-UL",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Brutalis-Dreadnought-UL",
     "canonicalSourceId": "wahapedia:fa36307e0e5429917cab4180cebe810b586f1726",
     "faction_slug": "space-marines",
     "datasheet_slug": "Brutalis-Dreadnought-UL",
-    "fetchedAt": "2026-03-19T17:14:14+00:00",
-    "contentHash": "b940161e24bb3f8e1e9092a83ed30d4a92fd7c7965be319a14c373378f23c33a",
+    "fetchedAt": "2026-03-21T03:38:58+00:00",
+    "contentHash": "01d46479b8ec93d0073febb79c19ad0d109f2a5ad3ea1b64dd5fa7bf4d6d2a97",
     "output_slug": "dark-angels"
   },
   "name": "Brutalis Dreadnought",
@@ -117,13 +117,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D3 FACTION: Oath of Moment Brutalis Charge: Each time this model ends a Charge move , select one enemy unit within Engagement Range of it and roll one D6: on a 2-3, that enemy unit suffers D3 mortal wounds ; on a 4-5, that enemy unit suffers 3 mortal wounds; on a 6, that enemy unit suffers D3+3 mortal wounds."
+      "Deadly Demise D3"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this model ends a Charge move , select one enemy unit within Engagement Range of it and roll one D6: on a 2-3, that enemy unit suffers D3 mortal wounds ; on a 4-5, that enemy unit suffers 3 mortal wounds; on a 6, that enemy unit suffers D3+3 mortal wounds.",
+        "name": "Brutalis Charge"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Brutalis Dreadnought"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "twin Icarus ironhail heavy stubber; twin heavy bolter; Brutalis bolt rifles; Brutalis fists.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -168,14 +187,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D3 FACTION: Oath of Moment Brutalis Charge: Each time this model ends a Charge move , select one enemy unit within Engagement Range of it and roll one D6: on a 2-3, that enemy unit suffers D3 mortal wounds ; on a 4-5, that enemy unit suffers 3 mortal wounds; on a 6, that enemy unit suffers D3+3 mortal wounds."
+            "Deadly Demise D3"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model ends a Charge move , select one enemy unit within Engagement Range of it and roll one D6: on a 2-3, that enemy unit suffers D3 mortal wounds ; on a 4-5, that enemy unit suffers 3 mortal wounds; on a 6, that enemy unit suffers D3+3 mortal wounds.",
+          "name": "Brutalis Charge"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Brutalis Dreadnought"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "twin Icarus ironhail heavy stubber; twin heavy bolter; Brutalis bolt rifles; Brutalis fists.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -199,27 +241,10 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
-      "DAMAGED: 1-4 WOUNDS REMAINING",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
+      "DAMAGED: 1-4 WOUNDS REMAINING"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -227,60 +252,8 @@
       "UNIT COMPOSITION",
       "DAMAGED: 1-4 WOUNDS REMAINING"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

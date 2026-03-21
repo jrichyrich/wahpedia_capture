@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Deathwing-Knights",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Deathwing-Knights",
     "canonicalSourceId": "wahapedia:28d21da985815960ea236f0107b8f8da9e336afa",
     "faction_slug": "space-marines",
     "datasheet_slug": "Deathwing-Knights",
-    "fetchedAt": "2026-03-19T17:15:15+00:00",
-    "contentHash": "87d112fd0484223da42068c4114690550979b5feed301b2bb77c720c25b4b2b4",
+    "fetchedAt": "2026-03-21T03:39:43+00:00",
+    "contentHash": "afee5e6aa084c7cacb55162cc0453fb15e38d49078a217d7981f227acb61971b",
     "output_slug": "dark-angels"
   },
   "name": "Deathwing Knights",
@@ -76,13 +76,48 @@
   },
   "abilities": {
     "core": [
-      "Deep Strike FACTION: Oath of Moment Teleport Homer: At the start of the battle, you can set up one Teleport Homer token for this unit anywhere on the battlefield that is not in your opponent\u2019s deployment zone. If you do, once per battle, you can target this unit with the Rapid Ingress Stratagem for 0CP, but when resolving that Stratagem, you must set this unit up within 3\" horizontally of that token and not within 9\" horizontally of any enemy models. That token is then removed. Inner Circle: Each time an attack is allocated to a model in this unit, subtract 1 from the Damage characteristic of that attack."
+      "Deep Strike"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "At the start of the battle, you can set up one Teleport Homer token for this unit anywhere on the battlefield that is not in your opponent\u2019s deployment zone. If you do, once per battle, you can target this unit with the Rapid Ingress Stratagem for 0CP, but when resolving that Stratagem, you must set this unit up within 3\" horizontally of that token and not within 9\" horizontally of any enemy models. That token is then removed.",
+        "name": "Teleport Homer"
+      },
+      {
+        "type": "rule",
+        "text": "Each time an attack is allocated to a model in this unit, subtract 1 from the Damage characteristic of that attack.",
+        "name": "Inner Circle"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Knight Master"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "4 Deathwing Knights"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "great weapon of the Unforgiven.",
+      "label": "The Knight Master is equipped with"
+    },
+    {
+      "type": "statement",
+      "text": "mace of absolution.",
+      "label": "Every Deathwing Knight is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -132,8 +167,25 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deep Strike FACTION: Oath of Moment Teleport Homer: At the start of the battle, you can set up one Teleport Homer token for this unit anywhere on the battlefield that is not in your opponent\u2019s deployment zone. If you do, once per battle, you can target this unit with the Rapid Ingress Stratagem for 0CP, but when resolving that Stratagem, you must set this unit up within 3\" horizontally of that token and not within 9\" horizontally of any enemy models. That token is then removed. Inner Circle: Each time an attack is allocated to a model in this unit, subtract 1 from the Damage characteristic of that attack."
+            "Deep Strike"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "At the start of the battle, you can set up one Teleport Homer token for this unit anywhere on the battlefield that is not in your opponent\u2019s deployment zone. If you do, once per battle, you can target this unit with the Rapid Ingress Stratagem for 0CP, but when resolving that Stratagem, you must set this unit up within 3\" horizontally of that token and not within 9\" horizontally of any enemy models. That token is then removed.",
+          "name": "Teleport Homer"
+        },
+        {
+          "type": "rule",
+          "text": "Each time an attack is allocated to a model in this unit, subtract 1 from the Damage characteristic of that attack.",
+          "name": "Inner Circle"
         }
       ]
     },
@@ -141,14 +193,42 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "text",
-          "text": "Watcher in the Dark: Once per battle, in any phase, just after a mortal wound is allocated to an ADEPTUS ASTARTES model in this unit, this unit can summon a Watcher in the Dark. When it does, until the end of the phase, models in this unit have the Feel No Pain 4+ ability against mortal wounds. Designer\u2019s Note: Place a Watcher in the Dark token next to the unit, removing it when this ability has been used."
+          "type": "statement",
+          "text": "Once per battle, in any phase, just after a mortal wound is allocated to an ADEPTUS ASTARTES model in this unit, this unit can summon a Watcher in the Dark. When it does, until the end of the phase, models in this unit have the Feel No Pain 4+ ability against mortal wounds.",
+          "label": "Watcher in the Dark"
+        },
+        {
+          "type": "statement",
+          "text": "Place a Watcher in the Dark token next to the unit, removing it when this ability has been used.",
+          "label": "Designer\u2019s Note"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Knight Master"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "4 Deathwing Knights"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "great weapon of the Unforgiven.",
+          "label": "The Knight Master is equipped with"
+        },
+        {
+          "type": "statement",
+          "text": "mace of absolution.",
+          "label": "Every Deathwing Knight is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -172,22 +252,11 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION",
-      "ATTACHED UNIT",
-      "STRATAGEMS",
-      "LED BY",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
+      "ATTACHED UNIT"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -196,42 +265,8 @@
       "UNIT COMPOSITION",
       "ATTACHED UNIT"
     ],
-    "missingExpectedSections": [
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "LED BY",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
-    ],
-    "warnings": [
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:LED BY",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:LED BY",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

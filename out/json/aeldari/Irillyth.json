@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Irillyth",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Irillyth",
     "canonicalSourceId": "wahapedia:9c1de3bf96f1bc13389b8056fccab0f8ab191f35",
     "faction_slug": "aeldari",
     "datasheet_slug": "Irillyth",
-    "fetchedAt": "2026-03-19T17:11:10+00:00",
-    "contentHash": "8adfef073663c4caf2eb2d57a5a8944b99182e43731cbf39e00eb385f44bf265",
+    "fetchedAt": "2026-03-21T03:36:33+00:00",
+    "contentHash": "d42218525bfe2a85001f2fdf6716acf73c22795f6bd425c3647e560cf1129387",
     "output_slug": "aeldari"
   },
   "name": "Irillyth",
@@ -50,13 +50,37 @@
   },
   "abilities": {
     "core": [
-      "Deep Strike , Leader , Stealth FACTION: Battle Focus Reaper of Souls: While this model is leading a unit, each time a model in that unit makes an attack, add 1 to the Hit roll . Shadow of Death (Aura): While an enemy unit is within 6\" of this model, each time that unit takes a Battle-shock or Leadership test , subtract 1 from that test."
+      "Deep Strike , Leader , Stealth"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Battle Focus"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, each time a model in that unit makes an attack, add 1 to the Hit roll .",
+        "name": "Reaper of Souls"
+      },
+      {
+        "type": "rule",
+        "text": "While an enemy unit is within 6\" of this model, each time that unit takes a Battle-shock or Leadership test , subtract 1 from that test.",
+        "name": "Shadow of Death (Aura)"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Irillyth \u2013 EPIC HERO"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "Spear of Starlight.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -85,10 +109,8 @@
       "title": "WARGEAR OPTIONS",
       "entries": [
         {
-          "type": "list",
-          "items": [
-            "None"
-          ]
+          "type": "text",
+          "text": "None"
         }
       ]
     },
@@ -99,14 +121,42 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deep Strike , Leader , Stealth FACTION: Battle Focus Reaper of Souls: While this model is leading a unit, each time a model in that unit makes an attack, add 1 to the Hit roll . Shadow of Death (Aura): While an enemy unit is within 6\" of this model, each time that unit takes a Battle-shock or Leadership test , subtract 1 from that test."
+            "Deep Strike , Leader , Stealth"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Battle Focus"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, each time a model in that unit makes an attack, add 1 to the Hit roll .",
+          "name": "Reaper of Souls"
+        },
+        {
+          "type": "rule",
+          "text": "While an enemy unit is within 6\" of this model, each time that unit takes a Battle-shock or Leadership test , subtract 1 from that test.",
+          "name": "Shadow of Death (Aura)"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Irillyth \u2013 EPIC HERO"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "Spear of Starlight.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -122,6 +172,10 @@
       "title": "LEADER",
       "entries": [
         {
+          "type": "text",
+          "text": "This model can be attached to the following unit:"
+        },
+        {
           "type": "list",
           "items": [
             "Shadow Spectres"
@@ -132,26 +186,10 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
-      "LEADER",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
+      "LEADER"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -159,57 +197,8 @@
       "UNIT COMPOSITION",
       "LEADER"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

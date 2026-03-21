@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Land-Speeder-Tornado",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Land-Speeder-Tornado",
-    "output_slug": "ultramarines",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Land-Speeder-Tornado",
     "canonicalSourceId": "wahapedia:79d9e63616f65962841f958f8bab8ed360bd5c5b",
-    "fetchedAt": "2026-03-19T17:35:03+00:00",
-    "contentHash": "bfde6025c8612a2f98828ee4cc092ec2608383de6b2ff015eedd75465fa179ea"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Land-Speeder-Tornado",
+    "fetchedAt": "2026-03-21T03:49:30+00:00",
+    "contentHash": "9d25cc7430b01d238b29e6ed6b0753bb433cacf0fbf6c61f40580efa3ec08cda",
+    "output_slug": "ultramarines"
   },
   "name": "Land Speeder Tornado",
   "base_size": "\u230060mm flying base",
@@ -86,13 +88,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise 1 , Deep Strike FACTION: Oath of Moment Strafing Enfilade: Each time this model ends a Normal move , you can select one enemy unit (excluding MONSTER and VEHICLE units) that it moved over during that move, then roll six D6: for each 4+, that enemy unit suffers 1 mortal wound ."
+      "Deadly Demise 1 , Deep Strike"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this model ends a Normal move , you can select one enemy unit (excluding MONSTER and VEHICLE units) that it moved over during that move, then roll six D6: for each 4+, that enemy unit suffers 1 mortal wound .",
+        "name": "Strafing Enfilade"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Land Speeder Tornado"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "assault cannon; heavy bolter; close combat weapon.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -136,14 +157,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise 1 , Deep Strike FACTION: Oath of Moment Strafing Enfilade: Each time this model ends a Normal move , you can select one enemy unit (excluding MONSTER and VEHICLE units) that it moved over during that move, then roll six D6: for each 4+, that enemy unit suffers 1 mortal wound ."
+            "Deadly Demise 1 , Deep Strike"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model ends a Normal move , you can select one enemy unit (excluding MONSTER and VEHICLE units) that it moved over during that move, then roll six D6: for each 4+, that enemy unit suffers 1 mortal wound .",
+          "name": "Strafing Enfilade"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Land Speeder Tornado"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "assault cannon; heavy bolter; close combat weapon.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -156,10 +200,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
@@ -169,6 +212,7 @@
       "UNIT COMPOSITION"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

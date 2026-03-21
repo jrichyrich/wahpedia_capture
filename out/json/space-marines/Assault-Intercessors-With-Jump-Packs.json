@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Assault-Intercessors-With-Jump-Packs",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Assault-Intercessors-With-Jump-Packs",
     "canonicalSourceId": "wahapedia:f83e749808e0b1a37da7e8aa856ae56db869e95a",
     "faction_slug": "space-marines",
     "datasheet_slug": "Assault-Intercessors-With-Jump-Packs",
-    "fetchedAt": "2026-03-19T17:28:23+00:00",
-    "contentHash": "437298e37837a9e2808ed034a449c8dabc1e8f5d2d340c785a7c86ca098bd036",
+    "fetchedAt": "2026-03-21T03:41:40+00:00",
+    "contentHash": "bb2174b90345dd95c982937a77341be91cd0465800935a25d4f155150e36a6f6",
     "output_slug": "space-marines"
   },
   "name": "Assault Intercessors With Jump Packs",
@@ -110,13 +110,38 @@
   },
   "abilities": {
     "core": [
-      "Deep Strike FACTION: Oath of Moment Hammer of Wrath: Each time this unit ends a Charge move , select one enemy unit within Engagement Range of it, then roll one D6 for each model in this unit that is within Engagement Range of that enemy unit: for each 4+, that enemy unit suffers 1 mortal wound ."
+      "Deep Strike"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this unit ends a Charge move , select one enemy unit within Engagement Range of it, then roll one D6 for each model in this unit that is within Engagement Range of that enemy unit: for each 4+, that enemy unit suffers 1 mortal wound .",
+        "name": "Hammer of Wrath"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Assault Intercessor Sergeant with Jump Pack"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "4-9 Assault Intercessors with Jump Packs"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "heavy bolt pistol; Astartes chainsword.",
+      "label": "Each model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -177,14 +202,43 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deep Strike FACTION: Oath of Moment Hammer of Wrath: Each time this unit ends a Charge move , select one enemy unit within Engagement Range of it, then roll one D6 for each model in this unit that is within Engagement Range of that enemy unit: for each 4+, that enemy unit suffers 1 mortal wound ."
+            "Deep Strike"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this unit ends a Charge move , select one enemy unit within Engagement Range of it, then roll one D6 for each model in this unit that is within Engagement Range of that enemy unit: for each 4+, that enemy unit suffers 1 mortal wound .",
+          "name": "Hammer of Wrath"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Assault Intercessor Sergeant with Jump Pack"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "4-9 Assault Intercessors with Jump Packs"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "heavy bolt pistol; Astartes chainsword.",
+          "label": "Each model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -203,90 +257,17 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
-      "UNIT COMPOSITION",
-      "STRATAGEMS",
-      "LED BY",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
+      "UNIT COMPOSITION"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "LED BY",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:LED BY",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:LED BY",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

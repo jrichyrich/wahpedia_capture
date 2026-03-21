@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/War-Walkers",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/aeldari/War-Walkers",
     "canonicalSourceId": "wahapedia:89df2ccf6f10c34fae42a8cdb1b40645738593f0",
     "faction_slug": "aeldari",
     "datasheet_slug": "War-Walkers",
-    "fetchedAt": "2026-03-19T17:11:22+00:00",
-    "contentHash": "1d3754599cb0cce0fb90d47b086dc659d4d90d92bf00e453f4d0b53cf3db1721",
+    "fetchedAt": "2026-03-21T03:36:46+00:00",
+    "contentHash": "8c5e9104def2cfbe0dae69cf6780b60f6d5ff248b11e7d0c3d0b9cadf33a406f",
     "output_slug": "aeldari"
   },
   "name": "War Walkers",
@@ -106,13 +106,32 @@
   },
   "abilities": {
     "core": [
-      "Scouts 9\" FACTION: Battle Focus Crystalline Targeting: In your Shooting phase , after this unit has shot, select one enemy unit hit by one or more of those attacks. Until the end of the phase, each time a friendly AELDARI unit makes an attack that targets that enemy unit, improve the Armour Penetration characteristic of that attack by 1. Each unit can only be selected for this ability once per turn."
+      "Scouts 9\""
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Battle Focus"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "In your Shooting phase , after this unit has shot, select one enemy unit hit by one or more of those attacks. Until the end of the phase, each time a friendly AELDARI unit makes an attack that targets that enemy unit, improve the Armour Penetration characteristic of that attack by 1. Each unit can only be selected for this ability once per turn.",
+        "name": "Crystalline Targeting"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1-2 War Walkers"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "2 shuriken cannons; War Walker feet.",
+      "label": "Every model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -159,14 +178,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Scouts 9\" FACTION: Battle Focus Crystalline Targeting: In your Shooting phase , after this unit has shot, select one enemy unit hit by one or more of those attacks. Until the end of the phase, each time a friendly AELDARI unit makes an attack that targets that enemy unit, improve the Armour Penetration characteristic of that attack by 1. Each unit can only be selected for this ability once per turn."
+            "Scouts 9\""
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Battle Focus"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "In your Shooting phase , after this unit has shot, select one enemy unit hit by one or more of those attacks. Until the end of the phase, each time a friendly AELDARI unit makes an attack that targets that enemy unit, improve the Armour Penetration characteristic of that attack by 1. Each unit can only be selected for this ability once per turn.",
+          "name": "Crystalline Targeting"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1-2 War Walkers"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "2 shuriken cannons; War Walker feet.",
+          "label": "Every model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -185,82 +227,17 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
-      "UNIT COMPOSITION",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
+      "UNIT COMPOSITION"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

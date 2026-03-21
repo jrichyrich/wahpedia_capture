@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Stormraven-Gunship",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Stormraven-Gunship",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Stormraven-Gunship",
     "canonicalSourceId": "wahapedia:9c8188ee92c74a07fbd08a7421037740885491a3",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "9f684d0933b4fef4e3af81d5a668f7cf4e17ecf31a8ca017c28ffdd83fa8caec"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Stormraven-Gunship",
+    "fetchedAt": "2026-03-21T03:45:29+00:00",
+    "contentHash": "d1994fc9e2cec2f6227dbeb77cf0a1101777fa0e2fd3f64755e6ab01ca5025f3",
+    "output_slug": "space-wolves"
   },
   "name": "Stormraven Gunship",
   "base_size": "\u2300120 x 92mm flying base",
@@ -160,13 +162,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D6 , Hover FACTION: Oath of Moment Armoured Resilience: Each time an attack is allocated to this model, subtract 1 from the Damage characteristic of that attack."
+      "Deadly Demise D6 , Hover"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time an attack is allocated to this model, subtract 1 from the Damage characteristic of that attack.",
+        "name": "Armoured Resilience"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Stormraven Gunship"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "2 stormstrike missile launchers; twin assault cannon; typhoon missile launcher; armoured hull.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -223,14 +244,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D6 , Hover FACTION: Oath of Moment Armoured Resilience: Each time an attack is allocated to this model, subtract 1 from the Damage characteristic of that attack."
+            "Deadly Demise D6 , Hover"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time an attack is allocated to this model, subtract 1 from the Damage characteristic of that attack.",
+          "name": "Armoured Resilience"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Stormraven Gunship"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "2 stormstrike missile launchers; twin assault cannon; typhoon missile launcher; armoured hull.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -261,10 +305,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "DAMAGED: 1-5 WOUNDS REMAINING",
@@ -278,6 +321,7 @@
       "TRANSPORT"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

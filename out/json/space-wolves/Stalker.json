@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Stalker",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Stalker",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Stalker",
     "canonicalSourceId": "wahapedia:6d9a76a9758912e86ad5f2e69f2320d595c2651a",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "b519d56322f0d4193f3e55a2162ed56eda028dee51528dd994361f5f503d09a9"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Stalker",
+    "fetchedAt": "2026-03-21T03:46:40+00:00",
+    "contentHash": "3a908b0c89106544bd9567b64e7604f97d16b1eb8a70f9e4bc14082973331e48",
+    "output_slug": "space-wolves"
   },
   "name": "Stalker",
   "base_size": "\u2300Use model",
@@ -71,13 +73,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D3 FACTION: Oath of Moment Skyfire Protocols: Each time you target this model with the Overwatch Stratagem just after an enemy unit that can Fly starts or ends a Normal , Advance or Fall Back move, when resolving that Stratagem, in addition to shooting that enemy unit, you can select up to three additional enemy units within 24\" of this model that can FLY ; this model can also shoot at each of those units with its Icarus stormcannons (provided each one is an eligible target), but when doing so, an unmodified Hit roll of 6 is required to score a hit."
+      "Deadly Demise D3"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time you target this model with the Overwatch Stratagem just after an enemy unit that can Fly starts or ends a Normal , Advance or Fall Back move, when resolving that Stratagem, in addition to shooting that enemy unit, you can select up to three additional enemy units within 24\" of this model that can FLY ; this model can also shoot at each of those units with its Icarus stormcannons (provided each one is an eligible target), but when doing so, an unmodified Hit roll of 6 is required to score a hit.",
+        "name": "Skyfire Protocols"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Stalker"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "2 Icarus stormcannons; armoured tracks.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -120,14 +141,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D3 FACTION: Oath of Moment Skyfire Protocols: Each time you target this model with the Overwatch Stratagem just after an enemy unit that can Fly starts or ends a Normal , Advance or Fall Back move, when resolving that Stratagem, in addition to shooting that enemy unit, you can select up to three additional enemy units within 24\" of this model that can FLY ; this model can also shoot at each of those units with its Icarus stormcannons (provided each one is an eligible target), but when doing so, an unmodified Hit roll of 6 is required to score a hit."
+            "Deadly Demise D3"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time you target this model with the Overwatch Stratagem just after an enemy unit that can Fly starts or ends a Normal , Advance or Fall Back move, when resolving that Stratagem, in addition to shooting that enemy unit, you can select up to three additional enemy units within 24\" of this model that can FLY ; this model can also shoot at each of those units with its Icarus stormcannons (provided each one is an eligible target), but when doing so, an unmodified Hit roll of 6 is required to score a hit.",
+          "name": "Skyfire Protocols"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Stalker"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "2 Icarus stormcannons; armoured tracks.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -149,10 +193,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "DAMAGED: 1-4 WOUNDS REMAINING"
@@ -164,6 +207,7 @@
       "DAMAGED: 1-4 WOUNDS REMAINING"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

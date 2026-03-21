@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Scout-Bike-Squad",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Scout-Bike-Squad",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Scout-Bike-Squad",
     "canonicalSourceId": "wahapedia:b27c3f0694e5cfc0522673e608ccf33d34e011cd",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "021b21b707580485a3ba386b27a0cb6a73799f150c49fc19e773f16e0cbf3cbe"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Scout-Bike-Squad",
+    "fetchedAt": "2026-03-21T03:46:31+00:00",
+    "contentHash": "1e2e24a5bffe031f6a1f4e7a13dfc4726756383414f65fd4814a17cab88de545",
+    "output_slug": "space-wolves"
   },
   "name": "Scout Bike Squad",
   "base_size": "\u230075 x 25mm",
@@ -238,13 +240,38 @@
   },
   "abilities": {
     "core": [
-      "Scouts 9\" FACTION: Oath of Moment Outflank: When this unit arrives from Strategic Reserves , it can be set up within your opponent\u2019s deployment zone (all other restrictions still apply)."
+      "Scouts 9\""
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "When this unit arrives from Strategic Reserves , it can be set up within your opponent\u2019s deployment zone (all other restrictions still apply).",
+        "name": "Outflank"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Scout Biker Sergeant"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "2-5 Scout Bikers"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "Astartes shotgun; bolt pistol; twin boltgun; combat knife.",
+      "label": "Every model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -305,14 +332,43 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Scouts 9\" FACTION: Oath of Moment Outflank: When this unit arrives from Strategic Reserves , it can be set up within your opponent\u2019s deployment zone (all other restrictions still apply)."
+            "Scouts 9\""
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "When this unit arrives from Strategic Reserves , it can be set up within your opponent\u2019s deployment zone (all other restrictions still apply).",
+          "name": "Outflank"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Scout Biker Sergeant"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "2-5 Scout Bikers"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "Astartes shotgun; bolt pistol; twin boltgun; combat knife.",
+          "label": "Every model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -329,10 +385,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
@@ -342,6 +397,7 @@
       "UNIT COMPOSITION"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

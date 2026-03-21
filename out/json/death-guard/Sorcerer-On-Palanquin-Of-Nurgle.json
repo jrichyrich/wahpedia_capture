@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Sorcerer-On-Palanquin-Of-Nurgle",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Sorcerer-On-Palanquin-Of-Nurgle",
     "canonicalSourceId": "wahapedia:b6e816e95d978a093a3da37346503adcb02cc2d3",
     "faction_slug": "death-guard",
     "datasheet_slug": "Sorcerer-On-Palanquin-Of-Nurgle",
-    "fetchedAt": "2026-03-19T17:17:10+00:00",
-    "contentHash": "f2b989b53fc1d3e9c1c5545231b95bc93bb87321a7b2dab60c7f9208caf40f13",
+    "fetchedAt": "2026-03-21T03:50:49+00:00",
+    "contentHash": "9668a65acc951ab9fba0dd6711bd1859c9e12256d6c7a2557f151bac7129e961",
     "output_slug": "death-guard"
   },
   "name": "Sorcerer On Palanquin Of Nurgle",
@@ -173,13 +173,37 @@
   },
   "abilities": {
     "core": [
-      "Leader FACTION: Nurgle\u2019s Gift (Aura) Gift of Poxes (Psychic): While this model is leading a unit, weapons equipped by models in that unit have the [SUSTAINED HITS 1] ability. Feculent Despair (Aura, Psychic): While an enemy unit is within 6\" of this model, each time that unit takes a Battle-shock test , subtract 1 from that test."
+      "Leader"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Nurgle\u2019s Gift (Aura)"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, weapons equipped by models in that unit have the [SUSTAINED HITS 1] ability.",
+        "name": "Gift of Poxes (Psychic)"
+      },
+      {
+        "type": "rule",
+        "text": "While an enemy unit is within 6\" of this model, each time that unit takes a Battle-shock test , subtract 1 from that test.",
+        "name": "Feculent Despair (Aura, Psychic)"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Sorcerer on Palanquin of Nurgle"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "bolt pistol; Infernal Gaze; force weapon; Nurgling's claws and teeth.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -228,14 +252,42 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Leader FACTION: Nurgle\u2019s Gift (Aura) Gift of Poxes (Psychic): While this model is leading a unit, weapons equipped by models in that unit have the [SUSTAINED HITS 1] ability. Feculent Despair (Aura, Psychic): While an enemy unit is within 6\" of this model, each time that unit takes a Battle-shock test , subtract 1 from that test."
+            "Leader"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Nurgle\u2019s Gift (Aura)"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, weapons equipped by models in that unit have the [SUSTAINED HITS 1] ability.",
+          "name": "Gift of Poxes (Psychic)"
+        },
+        {
+          "type": "rule",
+          "text": "While an enemy unit is within 6\" of this model, each time that unit takes a Battle-shock test , subtract 1 from that test.",
+          "name": "Feculent Despair (Aura, Psychic)"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Sorcerer on Palanquin of Nurgle"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "bolt pistol; Infernal Gaze; force weapon; Nurgling's claws and teeth.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -251,6 +303,10 @@
       "title": "LEADER",
       "entries": [
         {
+          "type": "text",
+          "text": "This model can be attached to the following unit:"
+        },
+        {
           "type": "list",
           "items": [
             "Plague Marines"
@@ -261,27 +317,10 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
-      "LEADER",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
+      "LEADER"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -289,60 +328,8 @@
       "UNIT COMPOSITION",
       "LEADER"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

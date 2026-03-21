@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Crassus",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Crassus",
     "canonicalSourceId": "wahapedia:0d9457760bb01b41de7080628430e1b935c4ba60",
     "faction_slug": "astra-militarum",
     "datasheet_slug": "Crassus",
-    "fetchedAt": "2026-03-19T17:12:10+00:00",
-    "contentHash": "0747453df6a22b1dd3190525a5fab25647f24370cf264fc74bea84fcd9a7f117",
+    "fetchedAt": "2026-03-21T03:37:27+00:00",
+    "contentHash": "c2e3585aea029bade9b79bc5468fc327227e9c06b743e000223158d1675a843c",
     "output_slug": "astra-militarum"
   },
   "name": "Crassus",
@@ -75,13 +75,30 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D6 Fire Support: In your Shooting phase , after this model has shot, select one enemy unit that was hit by one or more of those attacks. Until the end of the phase, each time a friendly model that disembarked from this TRANSPORT this turn makes an attack that targets that enemy unit, you can re-roll the Wound roll ."
+      "Deadly Demise D6"
     ],
     "faction": [],
-    "datasheet": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "In your Shooting phase , after this model has shot, select one enemy unit that was hit by one or more of those attacks. Until the end of the phase, each time a friendly model that disembarked from this TRANSPORT this turn makes an attack that targets that enemy unit, you can re-roll the Wound roll .",
+        "name": "Fire Support"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Crassus"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "4 heavy bolters; armoured tracks.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -124,14 +141,30 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D6 Fire Support: In your Shooting phase , after this model has shot, select one enemy unit that was hit by one or more of those attacks. Until the end of the phase, each time a friendly model that disembarked from this TRANSPORT this turn makes an attack that targets that enemy unit, you can re-roll the Wound roll ."
+            "Deadly Demise D6"
           ]
+        },
+        {
+          "type": "rule",
+          "text": "In your Shooting phase , after this model has shot, select one enemy unit that was hit by one or more of those attacks. Until the end of the phase, each time a friendly model that disembarked from this TRANSPORT this turn makes an attack that targets that enemy unit, you can re-roll the Wound roll .",
+          "name": "Fire Support"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Crassus"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "4 heavy bolters; armoured tracks.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -164,27 +197,11 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "DAMAGED: 1-6 WOUNDS REMAINING",
-      "TRANSPORT",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
+      "TRANSPORT"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -193,57 +210,8 @@
       "DAMAGED: 1-6 WOUNDS REMAINING",
       "TRANSPORT"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

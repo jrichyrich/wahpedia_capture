@@ -192,3 +192,70 @@ test("renderCard shows counted allocation loadout selections", () => {
     assert.match(html, /weapon-choice-badge-selected/);
     assert.match(html, /weapon-choice-badge-replaced/);
 });
+
+test("renderCard renders ordered source sections for abilities and unit composition", () => {
+    const renderer = loadRenderer();
+    const unit = {
+        name: "Avatar of Khaine",
+        stats: { M: '10"', T: "11", Sv: "2+", W: "14", Ld: "6+", OC: "5", invulnerableSave: "4+" },
+        quality: { missingStats: [] },
+        selectionMode: "parsed",
+        pointsOptions: [{ id: "1-model", label: "1 model", points: 280, selectionKind: "models" }],
+        weapons: {
+            ranged: [{ name: "The Wailing Doom", range: '12"', a: "1", skill: "2+", s: "16", ap: "-4", d: "D6+2", abilities: ["Sustained Hits D3"] }],
+            melee: [
+                { name: "The Wailing Doom - strike", range: "Melee", a: "6", skill: "2+", s: "16", ap: "-4", d: "D6+2", abilities: [] },
+                { name: "The Wailing Doom - sweep", range: "Melee", a: "12", skill: "2+", s: "8", ap: "-2", d: "2", abilities: [] },
+            ],
+        },
+        abilities: { core: [], faction: [], datasheet: [], other: [] },
+        composition: {
+            rawLines: ["1 Avatar of Khaine - EPIC HERO"],
+            statements: [{ label: "This model is equipped with", text: "the Wailing Doom" }],
+        },
+        renderSections: [
+            {
+                title: "ABILITIES",
+                displayStyle: "section",
+                entries: [
+                    { type: "tagged_list", label: "CORE", items: ["Deadly Demise D3"] },
+                    { type: "tagged_list", label: "FACTION", items: ["Battle Focus"] },
+                    { type: "rule", name: "Molten Form", text: "Halve the Damage characteristic of each allocated attack." },
+                    { type: "rule", name: "The Bloody-Handed (Aura)", text: "Add 1 to Advance and Charge rolls." },
+                ],
+            },
+            {
+                title: "UNIT COMPOSITION",
+                displayStyle: "section",
+                entries: [
+                    { type: "list", items: ["1 Avatar of Khaine - EPIC HERO"] },
+                    { type: "statement", label: "This model is equipped with", text: "the Wailing Doom" },
+                    { type: "points", rows: [{ label: "1 model", points: "280" }] },
+                ],
+            },
+            {
+                title: "DAMAGED: 1-5 WOUNDS REMAINING",
+                displayStyle: "damaged",
+                entries: [{ type: "text", text: "Subtract 1 from the Hit roll." }],
+            },
+        ],
+        keywords: ["MONSTER", "CHARACTER"],
+        factionKeywords: ["ASURYANI"],
+    };
+
+    const html = renderer.renderCard(unit, {
+        selectedOption: unit.pointsOptions[0],
+        manualWargearGroups: [],
+    });
+
+    assert.match(html, /CORE:/);
+    assert.match(html, /FACTION:/);
+    assert.match(html, /Molten Form/);
+    assert.match(html, /The Bloody-Handed \(Aura\)/);
+    assert.match(html, /1 Avatar of Khaine - EPIC HERO/);
+    assert.match(html, /This model is equipped with/);
+    assert.match(html, /the Wailing Doom/);
+    assert.match(html, /Faction Keywords:/);
+    assert.match(html, /ASURYANI/);
+    assert.doesNotMatch(html, /No composition data/);
+});

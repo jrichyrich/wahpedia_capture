@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Noxious-Blightbringer",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Noxious-Blightbringer",
     "canonicalSourceId": "wahapedia:1301267f212e6e9a99914b95881655d378f74f0e",
     "faction_slug": "death-guard",
     "datasheet_slug": "Noxious-Blightbringer",
-    "fetchedAt": "2026-03-19T17:17:03+00:00",
-    "contentHash": "09811d68de4ee0f47049b8cdcfa1a937397862d18219e9b3e27cd971ed3b3e9b",
+    "fetchedAt": "2026-03-21T03:50:43+00:00",
+    "contentHash": "7b61321e3e38c50ff9b9b687c4bf973c9c140da4e21928dbb71473a6a249df89",
     "output_slug": "death-guard"
   },
   "name": "Noxious Blightbringer",
@@ -67,13 +67,37 @@
   },
   "abilities": {
     "core": [
-      "Leader FACTION: Nurgle\u2019s Gift (Aura) Sickening Vitality: While this model is leading a unit, add 1\" to the Move characteristic of models in that unit and you can re-roll Advance and Charge rolls made for that unit. Tocsin of Misery (Aura): In the Battle-shock step of your opponent\u2019s Command phase , if an enemy unit that is below its Starting Strength is within 9\" of this model, that enemy unit must take a Battle-shock test , subtracting 1 from that test if it is a PSYKER unit."
+      "Leader"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Nurgle\u2019s Gift (Aura)"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, add 1\" to the Move characteristic of models in that unit and you can re-roll Advance and Charge rolls made for that unit.",
+        "name": "Sickening Vitality"
+      },
+      {
+        "type": "rule",
+        "text": "In the Battle-shock step of your opponent\u2019s Command phase , if an enemy unit that is below its Starting Strength is within 9\" of this model, that enemy unit must take a Battle-shock test , subtracting 1 from that test if it is a PSYKER unit.",
+        "name": "Tocsin of Misery (Aura)"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Noxious Blightbringer"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "plasma pistol; cursed plague bell.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -102,14 +126,42 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Leader FACTION: Nurgle\u2019s Gift (Aura) Sickening Vitality: While this model is leading a unit, add 1\" to the Move characteristic of models in that unit and you can re-roll Advance and Charge rolls made for that unit. Tocsin of Misery (Aura): In the Battle-shock step of your opponent\u2019s Command phase , if an enemy unit that is below its Starting Strength is within 9\" of this model, that enemy unit must take a Battle-shock test , subtracting 1 from that test if it is a PSYKER unit."
+            "Leader"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Nurgle\u2019s Gift (Aura)"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, add 1\" to the Move characteristic of models in that unit and you can re-roll Advance and Charge rolls made for that unit.",
+          "name": "Sickening Vitality"
+        },
+        {
+          "type": "rule",
+          "text": "In the Battle-shock step of your opponent\u2019s Command phase , if an enemy unit that is below its Starting Strength is within 9\" of this model, that enemy unit must take a Battle-shock test , subtracting 1 from that test if it is a PSYKER unit.",
+          "name": "Tocsin of Misery (Aura)"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Noxious Blightbringer"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "plasma pistol; cursed plague bell.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -125,97 +177,36 @@
       "title": "LEADER",
       "entries": [
         {
+          "type": "text",
+          "text": "This model can be attached to the following units:"
+        },
+        {
           "type": "list",
           "items": [
             "Plague Marines",
             "Poxwalkers"
           ]
+        },
+        {
+          "type": "text",
+          "text": "You can attach this model to a PLAGUE MARINES or POXWALKERS unit, even if one other Leader unit has already been attached to it (you cannot attach more than one of the same Leader to the same unit). If you do, and that Bodyguard unit is destroyed, the Leader units attached to it become separate units, with their original Starting Strengths ."
         }
       ]
     }
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "ABILITIES",
       "UNIT COMPOSITION",
-      "LEADER",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
+      "LEADER"
     ],
     "exportedSectionTitles": [
       "ABILITIES",
       "UNIT COMPOSITION",
       "LEADER"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

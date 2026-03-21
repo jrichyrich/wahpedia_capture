@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Hell-Blade",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Hell-Blade",
     "canonicalSourceId": "wahapedia:7d197456104cb441cc23f886bbdd466d169dae70",
     "faction_slug": "death-guard",
     "datasheet_slug": "Hell-Blade",
-    "fetchedAt": "2026-03-19T17:16:53+00:00",
-    "contentHash": "b59e518ce6b897ec70ff7cfada50e99be886be0fbfaa9af11bf2743ac2a9f68d",
+    "fetchedAt": "2026-03-21T03:50:37+00:00",
+    "contentHash": "909c68a0ab62f0770a77fbe348a4904fa0cec3a45822720e4c008ddf19173969",
     "output_slug": "death-guard"
   },
   "name": "Hell Blade",
@@ -64,13 +64,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D3 FACTION: Nurgle\u2019s Gift (Aura) Interceptor: Each time this model makes a ranged attack that targets a unit that can FLY , add 1 to the Hit roll ."
+      "Deadly Demise D3"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Nurgle\u2019s Gift (Aura)"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this model makes a ranged attack that targets a unit that can FLY , add 1 to the Hit roll .",
+        "name": "Interceptor"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Hell Blade"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "2 twin autocannons; armoured hull.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -110,14 +129,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D3 FACTION: Nurgle\u2019s Gift (Aura) Interceptor: Each time this model makes a ranged attack that targets a unit that can FLY , add 1 to the Hit roll ."
+            "Deadly Demise D3"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Nurgle\u2019s Gift (Aura)"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model makes a ranged attack that targets a unit that can FLY , add 1 to the Hit roll .",
+          "name": "Interceptor"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Hell Blade"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "2 twin autocannons; armoured hull.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -132,82 +174,17 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
-      "UNIT COMPOSITION",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
+      "UNIT COMPOSITION"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

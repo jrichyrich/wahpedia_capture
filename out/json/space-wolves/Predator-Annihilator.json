@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Predator-Annihilator",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Predator-Annihilator",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Predator-Annihilator",
     "canonicalSourceId": "wahapedia:2efc0d44e8e91cf898c1fd2ca2301148c2f31fc9",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "26210833d1b1f85d3c5e786761e48ca7f3fe8e90cc1488b346e3f1fa334b46a1"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Predator-Annihilator",
+    "fetchedAt": "2026-03-21T03:45:17+00:00",
+    "contentHash": "ee1868a3f8a9d7b7f3b9d1442e4726292294c9a281e7126975916c9e2acba438",
+    "output_slug": "space-wolves"
   },
   "name": "Predator Annihilator",
   "base_size": "\u2300Use model",
@@ -93,13 +95,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D3 FACTION: Oath of Moment Annihilator: Each time a ranged attack made by this model is allocated to a MONSTER or VEHICLE model, you can re-roll the Damage roll."
+      "Deadly Demise D3"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time a ranged attack made by this model is allocated to a MONSTER or VEHICLE model, you can re-roll the Damage roll.",
+        "name": "Annihilator"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Predator Annihilator"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "Predator twin lascannon; armoured tracks.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -150,14 +171,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D3 FACTION: Oath of Moment Annihilator: Each time a ranged attack made by this model is allocated to a MONSTER or VEHICLE model, you can re-roll the Damage roll."
+            "Deadly Demise D3"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time a ranged attack made by this model is allocated to a MONSTER or VEHICLE model, you can re-roll the Damage roll.",
+          "name": "Annihilator"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Predator Annihilator"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "Predator twin lascannon; armoured tracks.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -179,10 +223,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "DAMAGED: 1-4 WOUNDS REMAINING"
@@ -194,6 +237,7 @@
       "DAMAGED: 1-4 WOUNDS REMAINING"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

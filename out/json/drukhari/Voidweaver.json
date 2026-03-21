@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Voidweaver",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Voidweaver",
     "canonicalSourceId": "wahapedia:500b1b050edc8556c00db8008b14adc1f7a5e986",
     "faction_slug": "drukhari",
     "datasheet_slug": "Voidweaver",
-    "fetchedAt": "2026-03-19T17:17:31+00:00",
-    "contentHash": "5d8ea025ec6b0672af5ff2056b6c4448cedaaa644211c85f2ec1fe3ab6443624",
+    "fetchedAt": "2026-03-21T03:50:41+00:00",
+    "contentHash": "e0b9b66f6e4be4d318a9c4d7d1c9bbf1007c130574f2596065269e04c95758d1",
     "output_slug": "drukhari"
   },
   "name": "Voidweaver",
@@ -87,13 +87,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise 1 , Stealth FACTION: Battle Focus , Disparate Paths Polychromatic Camouflage: This unit can only be selected as the target of a ranged attack if the attacking model is within 18\"."
+      "Deadly Demise 1 , Stealth"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Battle Focus , Disparate Paths"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "This unit can only be selected as the target of a ranged attack if the attacking model is within 18\".",
+        "name": "Polychromatic Camouflage"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Voidweaver"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "2 shuriken cannons; Voidweaver haywire cannon; close combat weapon.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -131,14 +150,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise 1 , Stealth FACTION: Battle Focus , Disparate Paths Polychromatic Camouflage: This unit can only be selected as the target of a ranged attack if the attacking model is within 18\"."
+            "Deadly Demise 1 , Stealth"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Battle Focus , Disparate Paths"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "This unit can only be selected as the target of a ranged attack if the attacking model is within 18\".",
+          "name": "Polychromatic Camouflage"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Voidweaver"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "2 shuriken cannons; Voidweaver haywire cannon; close combat weapon.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -153,82 +195,17 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
-      "UNIT COMPOSITION",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
+      "UNIT COMPOSITION"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Foul-Blightspawn",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Foul-Blightspawn",
     "canonicalSourceId": "wahapedia:90a498bd2190c9966dd395a9ced2ed76654a2f9f",
     "faction_slug": "death-guard",
     "datasheet_slug": "Foul-Blightspawn",
-    "fetchedAt": "2026-03-19T17:16:51+00:00",
-    "contentHash": "39273ad8d9777d13979c37225f1014da852dd37c7096df0e47f7b06acd1a09b4",
+    "fetchedAt": "2026-03-21T03:50:35+00:00",
+    "contentHash": "bdc2b3c04e2143c9843d3c2aa11715cac820f2f28d94a641d4c701aaea04a30e",
     "output_slug": "death-guard"
   },
   "name": "Foul Blightspawn",
@@ -53,13 +53,37 @@
   },
   "abilities": {
     "core": [
-      "Leader FACTION: Nurgle\u2019s Gift (Aura) Blinding Spray: In the Fight phase , you can select one model from your army with this ability to use this ability. If you do, until the end of the phase, that model\u2019s unit has the Fights First ability. Each model can only be selected for this ability once per battle. Putrefying Stink: Enemy models cannot start or end an Advance move within 9\" of this model."
+      "Leader"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Nurgle\u2019s Gift (Aura)"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "In the Fight phase , you can select one model from your army with this ability to use this ability. If you do, until the end of the phase, that model\u2019s unit has the Fights First ability. Each model can only be selected for this ability once per battle.",
+        "name": "Blinding Spray"
+      },
+      {
+        "type": "rule",
+        "text": "Enemy models cannot start or end an Advance move within 9\" of this model.",
+        "name": "Putrefying Stink"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Foul Blightspawn"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "plague sprayer; close combat weapon.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -89,14 +113,42 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Leader FACTION: Nurgle\u2019s Gift (Aura) Blinding Spray: In the Fight phase , you can select one model from your army with this ability to use this ability. If you do, until the end of the phase, that model\u2019s unit has the Fights First ability. Each model can only be selected for this ability once per battle. Putrefying Stink: Enemy models cannot start or end an Advance move within 9\" of this model."
+            "Leader"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Nurgle\u2019s Gift (Aura)"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "In the Fight phase , you can select one model from your army with this ability to use this ability. If you do, until the end of the phase, that model\u2019s unit has the Fights First ability. Each model can only be selected for this ability once per battle.",
+          "name": "Blinding Spray"
+        },
+        {
+          "type": "rule",
+          "text": "Enemy models cannot start or end an Advance move within 9\" of this model.",
+          "name": "Putrefying Stink"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Foul Blightspawn"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "plague sprayer; close combat weapon.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -112,96 +164,35 @@
       "title": "LEADER",
       "entries": [
         {
+          "type": "text",
+          "text": "This model can be attached to the following unit:"
+        },
+        {
           "type": "list",
           "items": [
             "Plague Marines"
           ]
+        },
+        {
+          "type": "text",
+          "text": "You can attach this model to a PLAGUE MARINES unit, even if one other Leader unit has already been attached to it (you cannot attach more than one of the same leader to the same unit). If you do, and that Bodyguard unit is destroyed, the Leader units attached to it become separate units, with their original Starting Strengths ."
         }
       ]
     }
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "ABILITIES",
       "UNIT COMPOSITION",
-      "LEADER",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
+      "LEADER"
     ],
     "exportedSectionTitles": [
       "ABILITIES",
       "UNIT COMPOSITION",
       "LEADER"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

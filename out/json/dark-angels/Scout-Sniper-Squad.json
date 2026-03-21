@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Scout-Sniper-Squad",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Scout-Sniper-Squad",
     "canonicalSourceId": "wahapedia:72852652119166fbc0175d4a6d1e965d03d35971",
     "faction_slug": "space-marines",
     "datasheet_slug": "Scout-Sniper-Squad",
-    "fetchedAt": "2026-03-19T17:16:15+00:00",
-    "contentHash": "b2444e687ffc23a6e5211a5c67677a40e4a5897a3236372046586560a28e0c8f",
+    "fetchedAt": "2026-03-21T03:40:28+00:00",
+    "contentHash": "f385d2c5512e273692836678247891c3642ed28ca28d03da6ec3e4b1a7b4d810",
     "output_slug": "dark-angels"
   },
   "name": "Scout Sniper Squad",
@@ -89,13 +89,38 @@
   },
   "abilities": {
     "core": [
-      "Infiltrators , Stealth FACTION: Oath of Moment Concealed Positions: This unit can only be selected as the target of a ranged attack if the attacking model is within 12\"."
+      "Infiltrators , Stealth"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "This unit can only be selected as the target of a ranged attack if the attacking model is within 12\".",
+        "name": "Concealed Positions"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Scout Sniper Sergeant"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "4-9 Scout Snipers"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "bolt pistol; sniper rifle; close combat weapon.",
+      "label": "Every model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -138,14 +163,43 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Infiltrators , Stealth FACTION: Oath of Moment Concealed Positions: This unit can only be selected as the target of a ranged attack if the attacking model is within 12\"."
+            "Infiltrators , Stealth"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "This unit can only be selected as the target of a ranged attack if the attacking model is within 12\".",
+          "name": "Concealed Positions"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Scout Sniper Sergeant"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "4-9 Scout Snipers"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "bolt pistol; sniper rifle; close combat weapon.",
+          "label": "Every model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -164,90 +218,17 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
-      "UNIT COMPOSITION",
-      "STRATAGEMS",
-      "LED BY",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
+      "UNIT COMPOSITION"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "LED BY",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:LED BY",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:LED BY",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

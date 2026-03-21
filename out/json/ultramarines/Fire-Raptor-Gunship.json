@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Fire-Raptor-Gunship",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Fire-Raptor-Gunship",
-    "output_slug": "ultramarines",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Fire-Raptor-Gunship",
     "canonicalSourceId": "wahapedia:47f30dbb810313bcfc0034f0e12fd1306b146fd3",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "3ced88345069a9d28a0f35deeb1988ce5028cdd8edc6046d71c64260df2f4d46"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Fire-Raptor-Gunship",
+    "fetchedAt": "2026-03-21T03:49:19+00:00",
+    "contentHash": "ea2467b259475ef9b6799fb178ca72b3343c07492f3d9ff5221414a89caba6fa",
+    "output_slug": "ultramarines"
   },
   "name": "Fire Raptor Gunship",
   "base_size": "\u2300120 x 92mm flying base",
@@ -99,13 +101,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D6 , Hover FACTION: Oath of Moment Strafing Run: Each time this model makes a ranged attack that targets a unit that cannot Fly , add 1 to the Hit roll ."
+      "Deadly Demise D6 , Hover"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this model makes a ranged attack that targets a unit that cannot Fly , add 1 to the Hit roll .",
+        "name": "Strafing Run"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Fire Raptor Gunship"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "twin avenger bolt cannon; 2 twin autocannons; 2 twin hellstrike launchers; armoured hull",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -150,14 +171,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D6 , Hover FACTION: Oath of Moment Strafing Run: Each time this model makes a ranged attack that targets a unit that cannot Fly , add 1 to the Hit roll ."
+            "Deadly Demise D6 , Hover"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model makes a ranged attack that targets a unit that cannot Fly , add 1 to the Hit roll .",
+          "name": "Strafing Run"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Fire Raptor Gunship"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "twin avenger bolt cannon; 2 twin autocannons; 2 twin hellstrike launchers; armoured hull",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -179,10 +223,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "DAMAGED: 1-6 WOUNDS REMAINING"
@@ -194,6 +237,7 @@
       "DAMAGED: 1-6 WOUNDS REMAINING"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

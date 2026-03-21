@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Typhon",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Typhon",
     "canonicalSourceId": "wahapedia:5326c3b48cb904b175692f09c6671d36dfcff760",
     "faction_slug": "death-guard",
     "datasheet_slug": "Typhon",
-    "fetchedAt": "2026-03-19T17:17:12+00:00",
-    "contentHash": "98b7620bd17cc3bb873b4d362797473863815809a913969fd0acd29c7ed65ca6",
+    "fetchedAt": "2026-03-21T03:50:51+00:00",
+    "contentHash": "7b88389c659feaf9066d374d8dbc8f5464c5d0db5a91b5793b09a6f429fb4e9b",
     "output_slug": "death-guard"
   },
   "name": "Typhon",
@@ -110,13 +110,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D6 FACTION: Nurgle\u2019s Gift (Aura) Sunderer of Fortresses: Each time this model makes an attack that targets a VEHICLE , improve the Strength and Damage characteristic of that attack by 1 (if that attack targets a FORTIFICATION unit, improve the Strength and Damage characteristics of that attack by 2 instead)."
+      "Deadly Demise D6"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Nurgle\u2019s Gift (Aura)"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this model makes an attack that targets a VEHICLE , improve the Strength and Damage characteristic of that attack by 1 (if that attack targets a FORTIFICATION unit, improve the Strength and Damage characteristics of that attack by 2 instead).",
+        "name": "Sunderer of Fortresses"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Typhon"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "dreadhammer siege cannon; armoured tracks.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -168,14 +187,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D6 FACTION: Nurgle\u2019s Gift (Aura) Sunderer of Fortresses: Each time this model makes an attack that targets a VEHICLE , improve the Strength and Damage characteristic of that attack by 1 (if that attack targets a FORTIFICATION unit, improve the Strength and Damage characteristics of that attack by 2 instead)."
+            "Deadly Demise D6"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Nurgle\u2019s Gift (Aura)"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model makes an attack that targets a VEHICLE , improve the Strength and Damage characteristic of that attack by 1 (if that attack targets a FORTIFICATION unit, improve the Strength and Damage characteristics of that attack by 2 instead).",
+          "name": "Sunderer of Fortresses"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Typhon"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "dreadhammer siege cannon; armoured tracks.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -199,26 +241,10 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
-      "DAMAGED: 1-6 WOUNDS REMAINING",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
+      "DAMAGED: 1-6 WOUNDS REMAINING"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -226,57 +252,8 @@
       "UNIT COMPOSITION",
       "DAMAGED: 1-6 WOUNDS REMAINING"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

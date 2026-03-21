@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Whirlwind-Scorpius",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Whirlwind-Scorpius",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Whirlwind-Scorpius",
     "canonicalSourceId": "wahapedia:c3b573fba8a4e8271704e4bafe33aa4ef9e3c621",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "9d1e153111562630724e88780e7dc0d64ce606dd6c5bf8269bd61171a8299b97"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Whirlwind-Scorpius",
+    "fetchedAt": "2026-03-21T03:46:54+00:00",
+    "contentHash": "5678a3e2b96c5a3a683a5b76c6c65cf7845e5a4f2490ccd310b9864d25c2ecfc",
+    "output_slug": "space-wolves"
   },
   "name": "Whirlwind Scorpius",
   "base_size": "\u2300Use model",
@@ -72,13 +74,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D3 FACTION: Oath of Moment Pinning Bombardment: In your Shooting phase , after this model has shot, if one or more of those attacks made with its Scorpius multi-launcher scored a hit against an enemy INFANTRY unit, that unit must take a Battle-shock test ."
+      "Deadly Demise D3"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "In your Shooting phase , after this model has shot, if one or more of those attacks made with its Scorpius multi-launcher scored a hit against an enemy INFANTRY unit, that unit must take a Battle-shock test .",
+        "name": "Pinning Bombardment"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Whirlwind Scorpius"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "Scorpius multi-launcher; armoured tracks.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -121,14 +142,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D3 FACTION: Oath of Moment Pinning Bombardment: In your Shooting phase , after this model has shot, if one or more of those attacks made with its Scorpius multi-launcher scored a hit against an enemy INFANTRY unit, that unit must take a Battle-shock test ."
+            "Deadly Demise D3"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "In your Shooting phase , after this model has shot, if one or more of those attacks made with its Scorpius multi-launcher scored a hit against an enemy INFANTRY unit, that unit must take a Battle-shock test .",
+          "name": "Pinning Bombardment"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Whirlwind Scorpius"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "Scorpius multi-launcher; armoured tracks.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -150,10 +194,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "DAMAGED: 1-4 WOUNDS REMAINING"
@@ -165,6 +208,7 @@
       "DAMAGED: 1-4 WOUNDS REMAINING"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

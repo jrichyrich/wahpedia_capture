@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Hellhammer",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Hellhammer",
     "canonicalSourceId": "wahapedia:ac693d6663a63b21d908e3699cbd932f7f49296d",
     "faction_slug": "astra-militarum",
     "datasheet_slug": "Hellhammer",
-    "fetchedAt": "2026-03-19T17:11:53+00:00",
-    "contentHash": "253c0bec7fb00e25232b6b83d0de2f858985785d5b9dac8dd4ffad2619923dc3",
+    "fetchedAt": "2026-03-21T03:37:15+00:00",
+    "contentHash": "e250255dec9252ef07a0b75383d5fd359851d9d07ce1c106627782fb0bdb21ce",
     "output_slug": "astra-militarum"
   },
   "name": "Hellhammer",
@@ -123,13 +123,30 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D6+2 Close-quarters Warfare: This model does not suffer the penalty to its Hit rolls for making ranged attacks while enemy units are within Engagement Range of it."
+      "Deadly Demise D6+2"
     ],
     "faction": [],
-    "datasheet": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "This model does not suffer the penalty to its Hit rolls for making ranged attacks while enemy units are within Engagement Range of it.",
+        "name": "Close-quarters Warfare"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Hellhammer"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "coaxial autocannon; demolisher cannon; heavy stubber; Hellhammer cannon; 2 lascannons; twin heavy bolter; 2 twin heavy flamers; armoured tracks.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -176,14 +193,30 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D6+2 Close-quarters Warfare: This model does not suffer the penalty to its Hit rolls for making ranged attacks while enemy units are within Engagement Range of it."
+            "Deadly Demise D6+2"
           ]
+        },
+        {
+          "type": "rule",
+          "text": "This model does not suffer the penalty to its Hit rolls for making ranged attacks while enemy units are within Engagement Range of it.",
+          "name": "Close-quarters Warfare"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Hellhammer"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "coaxial autocannon; demolisher cannon; heavy stubber; Hellhammer cannon; 2 lascannons; twin heavy bolter; 2 twin heavy flamers; armoured tracks.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -207,26 +240,10 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
-      "DAMAGED: 1-8 WOUNDS REMAINING",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
+      "DAMAGED: 1-8 WOUNDS REMAINING"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -234,57 +251,8 @@
       "UNIT COMPOSITION",
       "DAMAGED: 1-8 WOUNDS REMAINING"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

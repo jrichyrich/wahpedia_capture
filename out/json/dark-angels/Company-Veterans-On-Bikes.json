@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Company-Veterans-On-Bikes",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Company-Veterans-On-Bikes",
     "canonicalSourceId": "wahapedia:422a903fd840ecb0a75adc93cb6d01a9a8f5c0c8",
     "faction_slug": "space-marines",
     "datasheet_slug": "Company-Veterans-On-Bikes",
-    "fetchedAt": "2026-03-19T17:15:39+00:00",
-    "contentHash": "d77a1455569769b76e70baa59b97019cdba35fd7380c0fceb2be7c748285b6fc",
+    "fetchedAt": "2026-03-21T03:40:02+00:00",
+    "contentHash": "8d7070a9d90ae09c24bb5234e96408e89c9703d3546b8536fd3e039742a9d6a5",
     "output_slug": "dark-angels"
   },
   "name": "Company Veterans On Bikes",
@@ -232,12 +232,35 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Oath of Moment Vanguard Assault: Each time this unit ends a Charge move , until the end of the turn, melee weapons equipped by models in this unit have the [LETHAL HITS] ability."
+      "Oath of Moment"
     ],
-    "datasheet": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this unit ends a Charge move , until the end of the turn, melee weapons equipped by models in this unit have the [LETHAL HITS] ability.",
+        "name": "Vanguard Assault"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Veteran Biker Sergeant"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "1-4 Veteran Bikers"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "bolt pistol; twin boltgun; Astartes chainsword.",
+      "label": "Every model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -323,8 +346,13 @@
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Oath of Moment Vanguard Assault: Each time this unit ends a Charge move , until the end of the turn, melee weapons equipped by models in this unit have the [LETHAL HITS] ability."
+            "Oath of Moment"
           ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this unit ends a Charge move , until the end of the turn, melee weapons equipped by models in this unit have the [LETHAL HITS] ability.",
+          "name": "Vanguard Assault"
         }
       ]
     },
@@ -332,14 +360,32 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "text",
-          "text": "Storm Shield: The bearer has a 4+ invulnerable save ."
+          "type": "statement",
+          "text": "The bearer has a 4+ invulnerable save .",
+          "label": "Storm Shield"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Veteran Biker Sergeant"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "1-4 Veteran Bikers"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "bolt pistol; twin boltgun; Astartes chainsword.",
+          "label": "Every model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -367,29 +413,11 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION",
-      "COMMAND SQUAD BODYGUARD",
-      "STRATAGEMS",
-      "LED BY",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
+      "COMMAND SQUAD BODYGUARD"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -398,63 +426,8 @@
       "UNIT COMPOSITION",
       "COMMAND SQUAD BODYGUARD"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "LED BY",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:LED BY",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:LED BY",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

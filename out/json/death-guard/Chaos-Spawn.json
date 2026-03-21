@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Chaos-Spawn",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Chaos-Spawn",
     "canonicalSourceId": "wahapedia:d2f07c3c3f27638b02939d5438106a8b0476e64e",
     "faction_slug": "death-guard",
     "datasheet_slug": "Chaos-Spawn",
-    "fetchedAt": "2026-03-19T17:16:46+00:00",
-    "contentHash": "3bdc92493b828a3be9e49984c688f4ce6bead77c3a044cd380d097faf571110f",
+    "fetchedAt": "2026-03-21T03:50:29+00:00",
+    "contentHash": "dd6adf90e4853e76d41f545142e17e00d3fefabdb4aa62a7c48f768fe55923f5",
     "output_slug": "death-guard"
   },
   "name": "Chaos Spawn",
@@ -37,13 +37,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise 1 , Feel No Pain 5+ , Scouts 6\" FACTION: Nurgle\u2019s Gift (Aura) Lethal Ichor: Each time a melee attack is allocated to a model in this unit, after the attacking unit has finished making its attacks, roll one D6 (to a maximum of six D6 per attacking unit): for each 4+, the attacking unit suffers 1 mortal wound ."
+      "Deadly Demise 1 , Feel No Pain 5+ , Scouts 6\""
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Nurgle\u2019s Gift (Aura)"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time a melee attack is allocated to a model in this unit, after the attacking unit has finished making its attacks, roll one D6 (to a maximum of six D6 per attacking unit): for each 4+, the attacking unit suffers 1 mortal wound .",
+        "name": "Lethal Ichor"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "2 Chaos Spawn"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "hideous mutations.",
+      "label": "Every model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -71,14 +90,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise 1 , Feel No Pain 5+ , Scouts 6\" FACTION: Nurgle\u2019s Gift (Aura) Lethal Ichor: Each time a melee attack is allocated to a model in this unit, after the attacking unit has finished making its attacks, roll one D6 (to a maximum of six D6 per attacking unit): for each 4+, the attacking unit suffers 1 mortal wound ."
+            "Deadly Demise 1 , Feel No Pain 5+ , Scouts 6\""
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Nurgle\u2019s Gift (Aura)"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time a melee attack is allocated to a model in this unit, after the attacking unit has finished making its attacks, roll one D6 (to a maximum of six D6 per attacking unit): for each 4+, the attacking unit suffers 1 mortal wound .",
+          "name": "Lethal Ichor"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "2 Chaos Spawn"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "hideous mutations.",
+          "label": "Every model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -93,52 +135,15 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "ABILITIES",
-      "UNIT COMPOSITION",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
+      "UNIT COMPOSITION"
     ],
     "exportedSectionTitles": [
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
-    "missingExpectedSections": [
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

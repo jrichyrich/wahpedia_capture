@@ -129,15 +129,95 @@ class ExportDatasheetTests(unittest.TestCase):
         self.assertEqual(sections[1]["entries"][0]["type"], "option_group")
         self.assertEqual(sections[1]["entries"][0]["items"], ["1 flamer"])
         self.assertEqual(sections[1]["entries"][1]["type"], "text")
-        self.assertEqual(sections[2]["entries"][0]["type"], "points")
+        self.assertEqual(sections[2]["entries"][0]["type"], "text")
+        self.assertEqual(sections[2]["entries"][1]["type"], "points")
 
-    def test_section_titles_in_markup_collects_all_headers(self):
+    def test_parse_section_block_preserves_mixed_unit_composition_entries(self):
+        soup = BeautifulSoup(
+            """
+            <div>
+              <div class="dsAbility">
+                <ul class="dsUl"><li><b>1 Avatar of Khaine – EPIC HERO</b></li></ul>
+                <b>This model is equipped with:</b> the Wailing Doom
+              </div>
+              <div class="dsAbility">
+                <table><tr><td>1 model</td><td><div class="PriceTag">280</div></td></tr></table>
+              </div>
+            </div>
+            """,
+            "html.parser",
+        )
+
+        entries = export_datasheet_json.parse_section_block("UNIT COMPOSITION", soup.div)
+        self.assertEqual([entry["type"] for entry in entries], ["list", "statement", "points"])
+        self.assertEqual(entries[0]["items"], ["1 Avatar of Khaine – EPIC HERO"])
+        self.assertEqual(entries[1]["label"], "This model is equipped with")
+        self.assertEqual(entries[1]["text"], "the Wailing Doom")
+        self.assertEqual(entries[2]["rows"][0]["points"], "280")
+
+    def test_parse_section_block_preserves_split_ability_entries(self):
+        soup = BeautifulSoup(
+            """
+            <div>
+              <div class="dsAbility">CORE: <b>Deadly Demise D3</b></div>
+              <div class="dsAbility">FACTION: <b>Battle Focus</b></div>
+              <div class="dsAbility">
+                <b>Molten Form:</b> Halve the Damage characteristic.
+                <div class="dsLineHor"></div>
+                <b>The Bloody-Handed (Aura):</b> Add 1 to Advance and Charge rolls.
+              </div>
+            </div>
+            """,
+            "html.parser",
+        )
+
+        entries = export_datasheet_json.parse_section_block("ABILITIES", soup.div)
+        self.assertEqual(
+            [(entry["type"], entry.get("label") or entry.get("name")) for entry in entries],
+            [
+                ("tagged_list", "CORE"),
+                ("tagged_list", "FACTION"),
+                ("rule", "Molten Form"),
+                ("rule", "The Bloody-Handed (Aura)"),
+            ],
+        )
+
+    def test_parse_keywords_supports_single_column_footer(self):
         soup = BeautifulSoup(
             """
             <div class="dsOuterFrame datasheet">
-              <div class="dsHeader">WARGEAR OPTIONS</div>
-              <div class="dsHeader">ABILITIES</div>
-              <div class="dsHeader">UNIT COMPOSITION</div>
+              <div class="ds2colKW">
+                <div class="dsLeftСolKW_NoFactionKW">KEYWORDS: INFANTRY, CHARACTER</div>
+              </div>
+            </div>
+            """,
+            "html.parser",
+        )
+
+        self.assertEqual(
+            export_datasheet_json.parse_keywords(soup.select_one("div.dsOuterFrame.datasheet")),
+            {
+                "keywords": ["INFANTRY", "CHARACTER"],
+                "faction_keywords": [],
+            },
+        )
+
+    def test_section_titles_in_markup_ignores_empty_headers(self):
+        soup = BeautifulSoup(
+            """
+            <div class="dsOuterFrame datasheet">
+              <div class="ds2col">
+                <div class="dsLeftСol">
+                  <table class="wTable"></table>
+                </div>
+                <div class="dsRightСol">
+                  <div class="dsHeader">WARGEAR OPTIONS</div>
+                  <div class="dsHeader">ABILITIES</div>
+                  <div>Ability text.</div>
+                  <div class="dsHeader">UNIT COMPOSITION</div>
+                  <div><ul><li>1 Model</li></ul></div>
+                </div>
+              </div>
             </div>
             """,
             "html.parser",
@@ -147,7 +227,7 @@ class ExportDatasheetTests(unittest.TestCase):
             export_datasheet_json.section_titles_in_markup(
                 soup.select_one("div.dsOuterFrame.datasheet")
             ),
-            ["WARGEAR OPTIONS", "ABILITIES", "UNIT COMPOSITION"],
+            ["ABILITIES", "UNIT COMPOSITION"],
         )
 
     def test_parse_datasheet_from_soup_adds_export_metadata(self):
@@ -199,7 +279,7 @@ class ExportDatasheetTests(unittest.TestCase):
         )
 
         self.assertEqual(payload["exportSchemaVersion"], 1)
-        self.assertEqual(payload["parserVersion"], "2026-03-19-durable-normalization-v1")
+        self.assertEqual(payload["parserVersion"], "2026-03-20-builder-fidelity-v2")
         self.assertEqual(
             payload["source"]["normalizedUrl"],
             "http://wahapedia.ru/wh40k10ed/factions/space-marines/Terminator-Squad",
@@ -218,7 +298,7 @@ class ExportDatasheetTests(unittest.TestCase):
             faction_dir.mkdir()
             payload = {
                 "exportSchemaVersion": 1,
-                "parserVersion": "2026-03-19-durable-normalization-v1",
+                "parserVersion": "2026-03-20-builder-fidelity-v2",
                 "source": {
                     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Terminator-Squad",
                     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Terminator-Squad",
@@ -252,7 +332,7 @@ class ExportDatasheetTests(unittest.TestCase):
             manifest_path = export_datasheet_json.write_export_manifest(out_root)
             manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
             self.assertEqual(manifest["exportSchemaVersion"], 1)
-            self.assertEqual(manifest["parserVersion"], "2026-03-19-durable-normalization-v1")
+            self.assertEqual(manifest["parserVersion"], "2026-03-20-builder-fidelity-v2")
             self.assertEqual(len(manifest["records"]), 1)
             self.assertEqual(manifest["records"][0]["outputSlug"], "space-marines")
             self.assertEqual(manifest["records"][0]["datasheetSlug"], "Terminator-Squad")
@@ -265,7 +345,7 @@ class ExportDatasheetTests(unittest.TestCase):
             faction_dir.mkdir()
             payload = {
                 "exportSchemaVersion": 1,
-                "parserVersion": "2026-03-19-durable-normalization-v1",
+                "parserVersion": "2026-03-20-builder-fidelity-v2",
                 "source": {
                     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Terminator-Squad",
                     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Terminator-Squad",
@@ -301,6 +381,27 @@ class ExportDatasheetTests(unittest.TestCase):
                 report["records"][0]["warnings"],
             )
 
+    def test_validate_payload_skips_faction_keywords_for_single_column_footer(self):
+        warnings = validate_datasheet_exports.validate_payload(
+            {
+                "exportSchemaVersion": 1,
+                "parserVersion": "2026-03-20-builder-fidelity-v2",
+                "source": {"datasheet_slug": "Death-Guard-Chaos-Lord"},
+                "name": "Death Guard Chaos Lord",
+                "characteristics": {"M": '5"', "T": "5", "Sv": "2+", "W": "5", "Ld": "6+", "OC": "1"},
+                "sections": [
+                    {"title": "ABILITIES", "entries": []},
+                    {"title": "UNIT COMPOSITION", "entries": [{"type": "list", "items": ["1 model"]}]},
+                ],
+                "unit_composition": [{"type": "list", "items": ["1 model"]}],
+                "keywords": ["INFANTRY"],
+                "faction_keywords": [],
+                "abilities": {},
+                "quality": {"keywordColumnCount": 1, "warnings": []},
+            }
+        )
+        self.assertNotIn("faction keywords missing", warnings)
+
     def test_validate_local_exports_flags_duplicate_source_drift(self):
         with tempfile.TemporaryDirectory() as tmpdir:
             out_root = Path(tmpdir)
@@ -309,7 +410,7 @@ class ExportDatasheetTests(unittest.TestCase):
                 faction_dir.mkdir(exist_ok=True)
                 payload = {
                     "exportSchemaVersion": 1,
-                    "parserVersion": "2026-03-19-durable-normalization-v1",
+                    "parserVersion": "2026-03-20-builder-fidelity-v2",
                     "source": {
                         "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Terminator-Squad",
                         "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Terminator-Squad",

@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Storm-Speeder-Hammerstrike",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Storm-Speeder-Hammerstrike",
-    "output_slug": "ultramarines",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Storm-Speeder-Hammerstrike",
     "canonicalSourceId": "wahapedia:c8fa8c2ce3d9268dfdd47089f01bf094431fcd04",
-    "fetchedAt": "2026-03-19T17:35:03+00:00",
-    "contentHash": "6709a2cdd681529389254f622d469ec1ee205ced936ca12bca0f2834ddbc1110"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Storm-Speeder-Hammerstrike",
+    "fetchedAt": "2026-03-21T03:48:48+00:00",
+    "contentHash": "f6580898b0ee2c893f3caf8af3c1c621a0a825b17864a254557453a58f09da72",
+    "output_slug": "ultramarines"
   },
   "name": "Storm Speeder Hammerstrike",
   "base_size": "\u230090mm",
@@ -69,13 +71,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D3 , Deep Strike FACTION: Oath of Moment Hammerstrike: Each time this model has shot, select one enemy unit that was hit by one or more attacks made by this model this phase. Until the end of the phase, that enemy unit cannot have the Benefit of Cover ."
+      "Deadly Demise D3 , Deep Strike"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this model has shot, select one enemy unit that was hit by one or more attacks made by this model this phase. Until the end of the phase, that enemy unit cannot have the Benefit of Cover .",
+        "name": "Hammerstrike"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Storm Speeder Hammerstrike"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "Hammerstrike missile launcher; 2 krakstorm grenade launchers; melta destroyer; close combat weapon.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -104,14 +125,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D3 , Deep Strike FACTION: Oath of Moment Hammerstrike: Each time this model has shot, select one enemy unit that was hit by one or more attacks made by this model this phase. Until the end of the phase, that enemy unit cannot have the Benefit of Cover ."
+            "Deadly Demise D3 , Deep Strike"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model has shot, select one enemy unit that was hit by one or more attacks made by this model this phase. Until the end of the phase, that enemy unit cannot have the Benefit of Cover .",
+          "name": "Hammerstrike"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Storm Speeder Hammerstrike"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "Hammerstrike missile launcher; 2 krakstorm grenade launchers; melta destroyer; close combat weapon.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -124,8 +168,6 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
       "ABILITIES",
@@ -136,6 +178,7 @@
       "UNIT COMPOSITION"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Farseer",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Farseer",
     "canonicalSourceId": "wahapedia:8d171c14aa88876665ff5bd35c617cbbb13f5f0d",
     "faction_slug": "aeldari",
     "datasheet_slug": "Farseer",
-    "fetchedAt": "2026-03-19T17:11:08+00:00",
-    "contentHash": "fed257c3949b7b27fe421e4fc7ad63a19b586939710c7bf9d15ba7b09dee26ca",
+    "fetchedAt": "2026-03-21T03:36:25+00:00",
+    "contentHash": "8845975fb160b5e437e90d9ec98332cca9c922130b9ffc1cc058e9a7e042ac4b",
     "output_slug": "aeldari"
   },
   "name": "Farseer",
@@ -94,13 +94,37 @@
   },
   "abilities": {
     "core": [
-      "Leader FACTION: Battle Focus Branching Fates (Psychic): While this model is leading a unit, once per phase, you can change the result of one Hit roll , one Wound roll or one Damage roll made for a model in that unit (excluding SUPPORT WEAPON models) to an unmodified 6. Guide (Psychic): At the end of your Movement phase , select one enemy unit within 18\" of and visible to this model. Until the start of your next Command phase , each time a friendly AELDARI model makes an attack that targets that enemy unit, add 1 to the Hit roll . Each unit can only be selected for this ability once per turn."
+      "Leader"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Battle Focus"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, once per phase, you can change the result of one Hit roll , one Wound roll or one Damage roll made for a model in that unit (excluding SUPPORT WEAPON models) to an unmodified 6.",
+        "name": "Branching Fates (Psychic)"
+      },
+      {
+        "type": "rule",
+        "text": "At the end of your Movement phase , select one enemy unit within 18\" of and visible to this model. Until the start of your next Command phase , each time a friendly AELDARI model makes an attack that targets that enemy unit, add 1 to the Hit roll . Each unit can only be selected for this ability once per turn.",
+        "name": "Guide (Psychic)"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Farseer"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "Eldritch Storm; shuriken pistol; witchblade.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -139,14 +163,42 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Leader FACTION: Battle Focus Branching Fates (Psychic): While this model is leading a unit, once per phase, you can change the result of one Hit roll , one Wound roll or one Damage roll made for a model in that unit (excluding SUPPORT WEAPON models) to an unmodified 6. Guide (Psychic): At the end of your Movement phase , select one enemy unit within 18\" of and visible to this model. Until the start of your next Command phase , each time a friendly AELDARI model makes an attack that targets that enemy unit, add 1 to the Hit roll . Each unit can only be selected for this ability once per turn."
+            "Leader"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Battle Focus"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, once per phase, you can change the result of one Hit roll , one Wound roll or one Damage roll made for a model in that unit (excluding SUPPORT WEAPON models) to an unmodified 6.",
+          "name": "Branching Fates (Psychic)"
+        },
+        {
+          "type": "rule",
+          "text": "At the end of your Movement phase , select one enemy unit within 18\" of and visible to this model. Until the start of your next Command phase , each time a friendly AELDARI model makes an attack that targets that enemy unit, add 1 to the Hit roll . Each unit can only be selected for this ability once per turn.",
+          "name": "Guide (Psychic)"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Farseer"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "Eldritch Storm; shuriken pistol; witchblade.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -162,6 +214,10 @@
       "title": "LEADER",
       "entries": [
         {
+          "type": "text",
+          "text": "This model can be attached to the following units:"
+        },
+        {
           "type": "list",
           "items": [
             "Guardian Defenders",
@@ -174,27 +230,10 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
-      "LEADER",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
+      "LEADER"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -202,60 +241,8 @@
       "UNIT COMPOSITION",
       "LEADER"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

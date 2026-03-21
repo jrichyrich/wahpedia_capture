@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Scout-Sniper-Squad",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Scout-Sniper-Squad",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Scout-Sniper-Squad",
     "canonicalSourceId": "wahapedia:72852652119166fbc0175d4a6d1e965d03d35971",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "882d26933fab9fd8d3be7fba90bd042590a613605add18a8d654b86b7adaa147"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Scout-Sniper-Squad",
+    "fetchedAt": "2026-03-21T03:46:32+00:00",
+    "contentHash": "1a01817a2a0577387e034d25a13346911fe59353c91ab66ed63d55dcff792684",
+    "output_slug": "space-wolves"
   },
   "name": "Scout Sniper Squad",
   "base_size": "\u230025mm",
@@ -87,13 +89,38 @@
   },
   "abilities": {
     "core": [
-      "Infiltrators , Stealth FACTION: Oath of Moment Concealed Positions: This unit can only be selected as the target of a ranged attack if the attacking model is within 12\"."
+      "Infiltrators , Stealth"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "This unit can only be selected as the target of a ranged attack if the attacking model is within 12\".",
+        "name": "Concealed Positions"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Scout Sniper Sergeant"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "4-9 Scout Snipers"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "bolt pistol; sniper rifle; close combat weapon.",
+      "label": "Every model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -136,14 +163,43 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Infiltrators , Stealth FACTION: Oath of Moment Concealed Positions: This unit can only be selected as the target of a ranged attack if the attacking model is within 12\"."
+            "Infiltrators , Stealth"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "This unit can only be selected as the target of a ranged attack if the attacking model is within 12\".",
+          "name": "Concealed Positions"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Scout Sniper Sergeant"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "4-9 Scout Snipers"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "bolt pistol; sniper rifle; close combat weapon.",
+          "label": "Every model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -160,10 +216,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
@@ -173,6 +228,7 @@
       "UNIT COMPOSITION"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

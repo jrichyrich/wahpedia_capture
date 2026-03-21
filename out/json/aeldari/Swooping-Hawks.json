@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Swooping-Hawks",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Swooping-Hawks",
     "canonicalSourceId": "wahapedia:df6de65fa11eaa893ca0289b0071746934ba2d7f",
     "faction_slug": "aeldari",
     "datasheet_slug": "Swooping-Hawks",
-    "fetchedAt": "2026-03-19T17:11:20+00:00",
-    "contentHash": "b73b7e7a72f4d1d821ff9b23a0268d0f8af89d891c7cc9f8dfdf8d13ee51ffa1",
+    "fetchedAt": "2026-03-21T03:36:44+00:00",
+    "contentHash": "8052a03f369c375be63406e5fb8c7dd70136cfc7e70c45bad4c246b62918f730",
     "output_slug": "aeldari"
   },
   "name": "Swooping Hawks",
@@ -114,13 +114,43 @@
   },
   "abilities": {
     "core": [
-      "Deep Strike FACTION: Battle Focus Grenade Pack Flyover: Once per turn, in your Movement phase , when this unit is set up on the battlefield or ends a Normal , Advance or Fall Back move , it can use this ability. If it does, select one enemy unit within 8\" of and visible to this unit and roll one D6 for each SWOOPING HAWKS model in this unit: for each 4+, that enemy unit suffers 1 mortal wound (to a maximum of 6 mortal wounds). Each time this unit uses this ability, until the end of the turn, you cannot target this unit with the Grenade Stratagem."
+      "Deep Strike"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Battle Focus"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Once per turn, in your Movement phase , when this unit is set up on the battlefield or ends a Normal , Advance or Fall Back move , it can use this ability. If it does, select one enemy unit within 8\" of and visible to this unit and roll one D6 for each SWOOPING HAWKS model in this unit: for each 4+, that enemy unit suffers 1 mortal wound (to a maximum of 6 mortal wounds). Each time this unit uses this ability, until the end of the turn, you cannot target this unit with the Grenade Stratagem.",
+        "name": "Grenade Pack Flyover"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Swooping Hawk Exarch"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "4-9 Swooping Hawks"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "Hawk\u2019s talon; close combat weapon.",
+      "label": "The Swooping Hawk Exarch is equipped with"
+    },
+    {
+      "type": "statement",
+      "text": "lasblaster; close combat weapon.",
+      "label": "Every Swooping Hawk is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -174,8 +204,20 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deep Strike FACTION: Battle Focus Grenade Pack Flyover: Once per turn, in your Movement phase , when this unit is set up on the battlefield or ends a Normal , Advance or Fall Back move , it can use this ability. If it does, select one enemy unit within 8\" of and visible to this unit and roll one D6 for each SWOOPING HAWKS model in this unit: for each 4+, that enemy unit suffers 1 mortal wound (to a maximum of 6 mortal wounds). Each time this unit uses this ability, until the end of the turn, you cannot target this unit with the Grenade Stratagem."
+            "Deep Strike"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Battle Focus"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Once per turn, in your Movement phase , when this unit is set up on the battlefield or ends a Normal , Advance or Fall Back move , it can use this ability. If it does, select one enemy unit within 8\" of and visible to this unit and roll one D6 for each SWOOPING HAWKS model in this unit: for each 4+, that enemy unit suffers 1 mortal wound (to a maximum of 6 mortal wounds). Each time this unit uses this ability, until the end of the turn, you cannot target this unit with the Grenade Stratagem.",
+          "name": "Grenade Pack Flyover"
         }
       ]
     },
@@ -183,14 +225,42 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "text",
-          "text": "Aspect Shrine Token: Once per battle for each Aspect Shrine token this unit has, you can change the result of one Hit roll or one Wound roll made for a model in this unit (excluding CHARACTER models) to an unmodified 6. Designer\u2019s Note: Place an Aspect Shrine token next to the unit for each Aspect Shrine token it has, removing one each time this ability is used."
+          "type": "statement",
+          "text": "Once per battle for each Aspect Shrine token this unit has, you can change the result of one Hit roll or one Wound roll made for a model in this unit (excluding CHARACTER models) to an unmodified 6.",
+          "label": "Aspect Shrine Token"
+        },
+        {
+          "type": "statement",
+          "text": "Place an Aspect Shrine token next to the unit for each Aspect Shrine token it has, removing one each time this ability is used.",
+          "label": "Designer\u2019s Note"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Swooping Hawk Exarch"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "4-9 Swooping Hawks"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "Hawk\u2019s talon; close combat weapon.",
+          "label": "The Swooping Hawk Exarch is equipped with"
+        },
+        {
+          "type": "statement",
+          "text": "lasblaster; close combat weapon.",
+          "label": "Every Swooping Hawk is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -209,27 +279,10 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "WARGEAR ABILITIES",
-      "UNIT COMPOSITION",
-      "STRATAGEMS",
-      "LED BY",
-      "DETACHMENT ABILITY"
+      "UNIT COMPOSITION"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -237,60 +290,8 @@
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "LED BY",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:LED BY",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:LED BY",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

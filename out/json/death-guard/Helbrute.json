@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Helbrute",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Helbrute",
     "canonicalSourceId": "wahapedia:eaa8f4a4f5b1c6e4dafcff6b4ad1b51f68e6c821",
     "faction_slug": "death-guard",
     "datasheet_slug": "Helbrute",
-    "fetchedAt": "2026-03-19T17:16:52+00:00",
-    "contentHash": "40eabfd40465bb2ce50375c6bf4c586a8b3a3b094915b6c8b2ce497b5cff661c",
+    "fetchedAt": "2026-03-21T03:50:37+00:00",
+    "contentHash": "ff9e5d144d93ecb2a5ce3d85b97a42b52b121e739e84eb006c51f7ffce3097bc",
     "output_slug": "death-guard"
   },
   "name": "Helbrute",
@@ -183,13 +183,37 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise 1 FACTION: Nurgle\u2019s Gift (Aura) Diseased Malice: Each time this model makes an attack that targets an Afflicted unit, add 1 to the Wound roll . Froth-spattered Frenzy: If this model is equipped with two melee weapons in addition to its close combat weapon, add 2 to the Attacks characteristic of those two weapons."
+      "Deadly Demise 1"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Nurgle\u2019s Gift (Aura)"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this model makes an attack that targets an Afflicted unit, add 1 to the Wound roll .",
+        "name": "Diseased Malice"
+      },
+      {
+        "type": "rule",
+        "text": "If this model is equipped with two melee weapons in addition to its close combat weapon, add 2 to the Attacks characteristic of those two weapons.",
+        "name": "Froth-spattered Frenzy"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Helbrute"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "multi-melta; Helbrute fist; close combat weapon.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -259,14 +283,42 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise 1 FACTION: Nurgle\u2019s Gift (Aura) Diseased Malice: Each time this model makes an attack that targets an Afflicted unit, add 1 to the Wound roll . Froth-spattered Frenzy: If this model is equipped with two melee weapons in addition to its close combat weapon, add 2 to the Attacks characteristic of those two weapons."
+            "Deadly Demise 1"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Nurgle\u2019s Gift (Aura)"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model makes an attack that targets an Afflicted unit, add 1 to the Wound roll .",
+          "name": "Diseased Malice"
+        },
+        {
+          "type": "rule",
+          "text": "If this model is equipped with two melee weapons in addition to its close combat weapon, add 2 to the Attacks characteristic of those two weapons.",
+          "name": "Froth-spattered Frenzy"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Helbrute"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "multi-melta; Helbrute fist; close combat weapon.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -281,82 +333,17 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
-      "UNIT COMPOSITION",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
+      "UNIT COMPOSITION"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

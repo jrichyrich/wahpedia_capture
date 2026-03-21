@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Chaplain-On-Bike",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Chaplain-On-Bike",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Chaplain-On-Bike",
     "canonicalSourceId": "wahapedia:7b8d3f675082626bf93da8e7ab78c24f587e13e9",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "9a2e5b403924d5e3ded1222d0a1c88597b4908a445de7da212e11b7a9ee2f421"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Chaplain-On-Bike",
+    "fetchedAt": "2026-03-21T03:43:38+00:00",
+    "contentHash": "eb6b970eb91e3d485bd35121e873b438dffaeeb17611b2a068b5b85fe5261af5",
+    "output_slug": "space-wolves"
   },
   "name": "Chaplain On Bike",
   "base_size": "\u230090 x 52mm",
@@ -62,13 +64,37 @@
   },
   "abilities": {
     "core": [
-      "Leader FACTION: Oath of Moment Litany of Hate: While this model is leading a unit, each time a model in that unit makes a melee attack, add 1 to the Wound roll . Catechism of Fire: Each time this model\u2019s unit is selected to shoot, you can select one enemy unit within 12\" of and visible to this model. Until the end of the phase, ranged weapons equipped by models in this model\u2019s unit have the [DEVASTATING WOUNDS] ability when targeting that enemy unit."
+      "Leader"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, each time a model in that unit makes a melee attack, add 1 to the Wound roll .",
+        "name": "Litany of Hate"
+      },
+      {
+        "type": "rule",
+        "text": "Each time this model\u2019s unit is selected to shoot, you can select one enemy unit within 12\" of and visible to this model. Until the end of the phase, ranged weapons equipped by models in this model\u2019s unit have the [DEVASTATING WOUNDS] ability when targeting that enemy unit.",
+        "name": "Catechism of Fire"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Chaplain on Bike"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "absolvor bolt pistol; twin bolt rifle; crozius arcanum.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -98,14 +124,42 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Leader FACTION: Oath of Moment Litany of Hate: While this model is leading a unit, each time a model in that unit makes a melee attack, add 1 to the Wound roll . Catechism of Fire: Each time this model\u2019s unit is selected to shoot, you can select one enemy unit within 12\" of and visible to this model. Until the end of the phase, ranged weapons equipped by models in this model\u2019s unit have the [DEVASTATING WOUNDS] ability when targeting that enemy unit."
+            "Leader"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, each time a model in that unit makes a melee attack, add 1 to the Wound roll .",
+          "name": "Litany of Hate"
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model\u2019s unit is selected to shoot, you can select one enemy unit within 12\" of and visible to this model. Until the end of the phase, ranged weapons equipped by models in this model\u2019s unit have the [DEVASTATING WOUNDS] ability when targeting that enemy unit.",
+          "name": "Catechism of Fire"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Chaplain on Bike"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "absolvor bolt pistol; twin bolt rifle; crozius arcanum.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -121,6 +175,10 @@
       "title": "LEADER",
       "entries": [
         {
+          "type": "text",
+          "text": "This model can be attached to the following units:"
+        },
+        {
           "type": "list",
           "items": [
             "Outrider Squad",
@@ -132,8 +190,6 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
       "ABILITIES",
@@ -146,6 +202,7 @@
       "LEADER"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

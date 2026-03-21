@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Captain-Titus",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Captain-Titus",
-    "output_slug": "ultramarines",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Captain-Titus",
     "canonicalSourceId": "wahapedia:2664a47ad8dfc7a20cdf995ed350a7955784dd02",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "308dd59e218724096090d0243194644663ac62945267fe8f6cef4cadc4c0b008"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Captain-Titus",
+    "fetchedAt": "2026-03-21T03:47:17+00:00",
+    "contentHash": "31a184b292372c3dd889c4702715efe2a51af8b63db650525e2f78fae139a378",
+    "output_slug": "ultramarines"
   },
   "name": "Captain Titus",
   "base_size": "\u230040mm",
@@ -122,6 +124,15 @@
   ],
   "sections": [
     {
+      "title": "DEMETRIAN TITUS",
+      "entries": [
+        {
+          "type": "text",
+          "text": "Your army cannot include more than one TITUS unit."
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
@@ -179,6 +190,10 @@
       "title": "LEADER",
       "entries": [
         {
+          "type": "text",
+          "text": "This model can be attached to the following units:"
+        },
+        {
           "type": "list",
           "items": [
             "Assault Intercessor Squad",
@@ -206,20 +221,21 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "DEMETRIAN TITUS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "LEADER"
     ],
     "exportedSectionTitles": [
+      "DEMETRIAN TITUS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "LEADER"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

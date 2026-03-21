@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Relic-Terminator-Squad",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Relic-Terminator-Squad",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Relic-Terminator-Squad",
     "canonicalSourceId": "wahapedia:57dfa76b97397f2406e0869bfa8400bb27470617",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "96b60c0f43a4ba642cd1c2d57abed65943847166cc5327660599fcbbc6d32110"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Relic-Terminator-Squad",
+    "fetchedAt": "2026-03-21T03:46:29+00:00",
+    "contentHash": "04670cfcb6fd32c56c61c0f09186c7ea78fb41dc3cb4ad3f281c11d145f0fc17",
+    "output_slug": "space-wolves"
   },
   "name": "Relic Terminator Squad",
   "base_size": "\u230040mm",
@@ -144,13 +146,38 @@
   },
   "abilities": {
     "core": [
-      "Deep Strike FACTION: Oath of Moment Fury of the First: Each time a model in this unit makes an attack, you can ignore any or all modifiers to that attack\u2019s Ballistic Skill or Weapon Skill characteristic and/or to the Hit roll . In addition, each time a model in this unit makes an attack that targets the enemy unit you selected for the Oath of Moment ability this turn, add 1 to the Hit roll."
+      "Deep Strike"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time a model in this unit makes an attack, you can ignore any or all modifiers to that attack\u2019s Ballistic Skill or Weapon Skill characteristic and/or to the Hit roll . In addition, each time a model in this unit makes an attack that targets the enemy unit you selected for the Oath of Moment ability this turn, add 1 to the Hit roll.",
+        "name": "Fury of the First"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Relic Terminator Sergeant"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "4-9 Relic Terminators"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "combi-bolter; power fist.",
+      "label": "Every model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -224,8 +251,20 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deep Strike FACTION: Oath of Moment Fury of the First: Each time a model in this unit makes an attack, you can ignore any or all modifiers to that attack\u2019s Ballistic Skill or Weapon Skill characteristic and/or to the Hit roll . In addition, each time a model in this unit makes an attack that targets the enemy unit you selected for the Oath of Moment ability this turn, add 1 to the Hit roll."
+            "Deep Strike"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time a model in this unit makes an attack, you can ignore any or all modifiers to that attack\u2019s Ballistic Skill or Weapon Skill characteristic and/or to the Hit roll . In addition, each time a model in this unit makes an attack that targets the enemy unit you selected for the Oath of Moment ability this turn, add 1 to the Hit roll.",
+          "name": "Fury of the First"
         }
       ]
     },
@@ -233,14 +272,32 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "text",
-          "text": "Grenade Harness: The bearer has the GRENADES keyword."
+          "type": "statement",
+          "text": "The bearer has the GRENADES keyword.",
+          "label": "Grenade Harness"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Relic Terminator Sergeant"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "4-9 Relic Terminators"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "combi-bolter; power fist.",
+          "label": "Every model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -266,10 +323,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION",
@@ -283,6 +339,7 @@
       "ATTACHED UNITS"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

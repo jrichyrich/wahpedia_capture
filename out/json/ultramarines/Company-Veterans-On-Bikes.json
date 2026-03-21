@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Company-Veterans-On-Bikes",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Company-Veterans-On-Bikes",
-    "output_slug": "ultramarines",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Company-Veterans-On-Bikes",
     "canonicalSourceId": "wahapedia:422a903fd840ecb0a75adc93cb6d01a9a8f5c0c8",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "33785583d250e7eb3b4e09f12abf5566e11a2a7799e313f8e0b782dba8e8e6c8"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Company-Veterans-On-Bikes",
+    "fetchedAt": "2026-03-21T03:49:12+00:00",
+    "contentHash": "b7dd63513d69aaad8e60ff9b897d7c41fe405e7bab9e17c06305add30b01cb80",
+    "output_slug": "ultramarines"
   },
   "name": "Company Veterans On Bikes",
   "base_size": "\u230075 x 25mm",
@@ -230,12 +232,35 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Oath of Moment Vanguard Assault: Each time this unit ends a Charge move , until the end of the turn, melee weapons equipped by models in this unit have the [LETHAL HITS] ability."
+      "Oath of Moment"
     ],
-    "datasheet": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this unit ends a Charge move , until the end of the turn, melee weapons equipped by models in this unit have the [LETHAL HITS] ability.",
+        "name": "Vanguard Assault"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Veteran Biker Sergeant"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "1-4 Veteran Bikers"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "bolt pistol; twin boltgun; Astartes chainsword.",
+      "label": "Every model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -321,8 +346,13 @@
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Oath of Moment Vanguard Assault: Each time this unit ends a Charge move , until the end of the turn, melee weapons equipped by models in this unit have the [LETHAL HITS] ability."
+            "Oath of Moment"
           ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this unit ends a Charge move , until the end of the turn, melee weapons equipped by models in this unit have the [LETHAL HITS] ability.",
+          "name": "Vanguard Assault"
         }
       ]
     },
@@ -330,14 +360,32 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "text",
-          "text": "Storm Shield: The bearer has a 4+ invulnerable save ."
+          "type": "statement",
+          "text": "The bearer has a 4+ invulnerable save .",
+          "label": "Storm Shield"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Veteran Biker Sergeant"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "1-4 Veteran Bikers"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "bolt pistol; twin boltgun; Astartes chainsword.",
+          "label": "Every model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -363,10 +411,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION",
@@ -380,6 +427,7 @@
       "COMMAND SQUAD BODYGUARD"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

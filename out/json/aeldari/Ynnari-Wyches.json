@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Ynnari-Wyches",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Ynnari-Wyches",
     "canonicalSourceId": "wahapedia:b9064922f976fab285107a23a52c28e99bb61ab1",
     "faction_slug": "aeldari",
     "datasheet_slug": "Ynnari-Wyches",
-    "fetchedAt": "2026-03-19T17:11:12+00:00",
-    "contentHash": "7aec1799c032523984bce04137c80e58511e084113db5603888910b526dc876b",
+    "fetchedAt": "2026-03-21T03:36:36+00:00",
+    "contentHash": "f4b75f76884025ae30701651120c5384ba1d2f377b3b3df2f7eeeff888d23e27",
     "output_slug": "aeldari"
   },
   "name": "Ynnari Wyches",
@@ -67,12 +67,35 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Battle Focus , Disparate Paths No Escape: Each time an enemy unit (excluding MONSTERS and VEHICLES ) within Engagement Range of one or more units from your army with this ability is selected to Fall Back , all models in that enemy unit must take a Desperate Escape test . When doing so, if that enemy unit is Battle-shocked , subtract 1 from each of those tests."
+      "Battle Focus , Disparate Paths"
     ],
-    "datasheet": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time an enemy unit (excluding MONSTERS and VEHICLES ) within Engagement Range of one or more units from your army with this ability is selected to Fall Back , all models in that enemy unit must take a Desperate Escape test . When doing so, if that enemy unit is Battle-shocked , subtract 1 from each of those tests.",
+        "name": "No Escape"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Hekatrix"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "9 Wyches"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "splinter pistol; Hekatarii blade.",
+      "label": "Every model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -111,14 +134,36 @@
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Battle Focus , Disparate Paths No Escape: Each time an enemy unit (excluding MONSTERS and VEHICLES ) within Engagement Range of one or more units from your army with this ability is selected to Fall Back , all models in that enemy unit must take a Desperate Escape test . When doing so, if that enemy unit is Battle-shocked , subtract 1 from each of those tests."
+            "Battle Focus , Disparate Paths"
           ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time an enemy unit (excluding MONSTERS and VEHICLES ) within Engagement Range of one or more units from your army with this ability is selected to Fall Back , all models in that enemy unit must take a Desperate Escape test . When doing so, if that enemy unit is Battle-shocked , subtract 1 from each of those tests.",
+          "name": "No Escape"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Hekatrix"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "9 Wyches"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "splinter pistol; Hekatarii blade.",
+          "label": "Every model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -133,86 +178,17 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
-      "UNIT COMPOSITION",
-      "STRATAGEMS",
-      "LED BY",
-      "DETACHMENT ABILITY"
+      "UNIT COMPOSITION"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "LED BY",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:LED BY",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:LED BY",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Lelith-Hesperax",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Lelith-Hesperax",
     "canonicalSourceId": "wahapedia:0b62b3294815b94b103b061e11d2bdbf5aeadcec",
     "faction_slug": "drukhari",
     "datasheet_slug": "Lelith-Hesperax",
-    "fetchedAt": "2026-03-19T17:17:24+00:00",
-    "contentHash": "259865425f198d6451a2b01458c069efb5560cd3c2dfa2e3a192e2f5580e7c6b",
+    "fetchedAt": "2026-03-21T03:50:33+00:00",
+    "contentHash": "ef083e2db89a1bad4be64fee47abfd381da4b9211fcdd0850ed5b4da1ef944e5",
     "output_slug": "drukhari"
   },
   "name": "Lelith Hesperax",
@@ -42,13 +42,42 @@
   },
   "abilities": {
     "core": [
-      "Fights First , Leader FACTION: Power from Pain Brides of Death (Pain): In the Fight phase , when you select this model\u2019s unit to fight, you can spend 1 Pain token to Empower that unit. While that unit is Empowered, each time a model in that unit makes a melee attack, improve the Strength and Armour Penetration characteristics of that attack by 1. Blur of Blades: While this model is leading a unit, models in that unit have the Fights First ability. Thrilling Spectacle: Once per battle, at the start of the Fight phase , this model can use this ability. If it does, until the end of the phase, this model has a 3+ invulnerable save and change the Attacks characteristic of melee weapons equipped by this model to 12."
+      "Fights First , Leader"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Power from Pain"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "In the Fight phase , when you select this model\u2019s unit to fight, you can spend 1 Pain token to Empower that unit. While that unit is Empowered, each time a model in that unit makes a melee attack, improve the Strength and Armour Penetration characteristics of that attack by 1.",
+        "name": "Brides of Death (Pain)"
+      },
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, models in that unit have the Fights First ability.",
+        "name": "Blur of Blades"
+      },
+      {
+        "type": "rule",
+        "text": "Once per battle, at the start of the Fight phase , this model can use this ability. If it does, until the end of the phase, this model has a 3+ invulnerable save and change the Attacks characteristic of melee weapons equipped by this model to 12.",
+        "name": "Thrilling Spectacle"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Lelith Hesperax \u2013 EPIC HERO"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "Lelith\u2019s blades.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -79,14 +108,47 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Fights First , Leader FACTION: Power from Pain Brides of Death (Pain): In the Fight phase , when you select this model\u2019s unit to fight, you can spend 1 Pain token to Empower that unit. While that unit is Empowered, each time a model in that unit makes a melee attack, improve the Strength and Armour Penetration characteristics of that attack by 1. Blur of Blades: While this model is leading a unit, models in that unit have the Fights First ability. Thrilling Spectacle: Once per battle, at the start of the Fight phase , this model can use this ability. If it does, until the end of the phase, this model has a 3+ invulnerable save and change the Attacks characteristic of melee weapons equipped by this model to 12."
+            "Fights First , Leader"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Power from Pain"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "In the Fight phase , when you select this model\u2019s unit to fight, you can spend 1 Pain token to Empower that unit. While that unit is Empowered, each time a model in that unit makes a melee attack, improve the Strength and Armour Penetration characteristics of that attack by 1.",
+          "name": "Brides of Death (Pain)"
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, models in that unit have the Fights First ability.",
+          "name": "Blur of Blades"
+        },
+        {
+          "type": "rule",
+          "text": "Once per battle, at the start of the Fight phase , this model can use this ability. If it does, until the end of the phase, this model has a 3+ invulnerable save and change the Attacks characteristic of melee weapons equipped by this model to 12.",
+          "name": "Thrilling Spectacle"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Lelith Hesperax \u2013 EPIC HERO"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "Lelith\u2019s blades.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -102,6 +164,10 @@
       "title": "LEADER",
       "entries": [
         {
+          "type": "text",
+          "text": "This model can be attached to the following unit:"
+        },
+        {
           "type": "list",
           "items": [
             "Wyches"
@@ -112,54 +178,17 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "ABILITIES",
       "UNIT COMPOSITION",
-      "LEADER",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
+      "LEADER"
     ],
     "exportedSectionTitles": [
       "ABILITIES",
       "UNIT COMPOSITION",
       "LEADER"
     ],
-    "missingExpectedSections": [
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

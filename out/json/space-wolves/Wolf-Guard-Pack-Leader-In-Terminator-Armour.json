@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Wolf-Guard-Pack-Leader-In-Terminator-Armour",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Wolf-Guard-Pack-Leader-In-Terminator-Armour",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Wolf-Guard-Pack-Leader-In-Terminator-Armour",
     "canonicalSourceId": "wahapedia:b8f75951fe9182b9133d2c013a63cb61ff1cd813",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "a1810beb1cfabf595996912b3f89ce851ae79e72b405530e33cda4e7b7d67e4a"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Wolf-Guard-Pack-Leader-In-Terminator-Armour",
+    "fetchedAt": "2026-03-21T03:44:30+00:00",
+    "contentHash": "5badc73ae460ff1d9ed18d0f7498b319e4babfeb8edf2527aa9d44faa63d9791",
+    "output_slug": "space-wolves"
   },
   "name": "Wolf Guard Pack Leader In Terminator Armour",
   "base_size": "\u230040mm",
@@ -313,18 +315,24 @@
       "title": "LEADER",
       "entries": [
         {
+          "type": "text",
+          "text": "This model can be attached to the following units:"
+        },
+        {
           "type": "list",
           "items": [
             "Blood Claws",
             "Grey Hunters",
             "Long Fangs"
           ]
+        },
+        {
+          "type": "text",
+          "text": "You must attach this model to one of the above units, and can do so even if one or more CHARACTER units have already been attached to that unit, but a unit can never include more than one PACK LEADER model. If you do, and that Bodyguard unit is destroyed, the Leader units attached to it become separate units, with their original Starting Strengths . If it is not possible to attach this model to a unit, it does not take part in the battle and counts as having been destroyed."
         }
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
       "WARGEAR OPTIONS",
@@ -341,6 +349,7 @@
       "LEADER"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

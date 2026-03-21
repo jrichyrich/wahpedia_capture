@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Firestrike-Servo-turrets",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Firestrike-Servo-turrets",
-    "output_slug": "ultramarines",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Firestrike-Servo-turrets",
     "canonicalSourceId": "wahapedia:0c4823a28cb1abac065aa108634782b8fc3a9654",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "4269e0b91b945eb0709dc8a5d3e4f30455ba2217f4dd1b67b5a78f94bf51e791"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Firestrike-Servo-turrets",
+    "fetchedAt": "2026-03-21T03:48:25+00:00",
+    "contentHash": "8a73cd4a15b64b5a928e8bea9a96f13f7680fa9045659cd8590c14c7d347ef69",
+    "output_slug": "ultramarines"
   },
   "name": "Firestrike Servo-turrets",
   "base_size": "\u230080mm",
@@ -62,12 +64,29 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Oath of Moment Sentinel Protocols: Each time you select this unit for the Fire Overwatch Stratagem, hits are scored on unmodified Hit rolls of 4+ when resolving that Stratagem."
+      "Oath of Moment"
     ],
-    "datasheet": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time you select this unit for the Fire Overwatch Stratagem, hits are scored on unmodified Hit rolls of 4+ when resolving that Stratagem.",
+        "name": "Sentinel Protocols"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1-2 Firestrike Servo-turrets"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "twin Firestrike las-talon; close combat weapon.",
+      "label": "Every model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -109,14 +128,30 @@
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Oath of Moment Sentinel Protocols: Each time you select this unit for the Fire Overwatch Stratagem, hits are scored on unmodified Hit rolls of 4+ when resolving that Stratagem."
+            "Oath of Moment"
           ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time you select this unit for the Fire Overwatch Stratagem, hits are scored on unmodified Hit rolls of 4+ when resolving that Stratagem.",
+          "name": "Sentinel Protocols"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1-2 Firestrike Servo-turrets"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "twin Firestrike las-talon; close combat weapon.",
+          "label": "Every model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -133,10 +168,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
@@ -146,6 +180,7 @@
       "UNIT COMPOSITION"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

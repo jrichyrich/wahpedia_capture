@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Ynnari-Reavers",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Ynnari-Reavers",
     "canonicalSourceId": "wahapedia:e32b885439a86302cbd7e7e319ec216acaa87bb8",
     "faction_slug": "aeldari",
     "datasheet_slug": "Ynnari-Reavers",
-    "fetchedAt": "2026-03-19T17:11:26+00:00",
-    "contentHash": "66aa157a20a32e2791c4f4f04a3c95b293442f47a36c98a66f188ff938a8d3c8",
+    "fetchedAt": "2026-03-21T03:36:49+00:00",
+    "contentHash": "3a3f473628e1fd50b4a26f67447aa16b3a56eddf8fda1eaf4322525a21077dc5",
     "output_slug": "aeldari"
   },
   "name": "Ynnari Reavers",
@@ -105,12 +105,35 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Battle Focus , Disparate Paths Eviscerating Fly-by: Each time this unit ends a Normal move , you can select one enemy unit (excluding MONSTERS and VEHICLES ) that it moved over during that move. If you do, roll one D6 for each model in this unit: for each 4+, that enemy unit suffers 1 mortal wound ."
+      "Battle Focus , Disparate Paths"
     ],
-    "datasheet": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this unit ends a Normal move , you can select one enemy unit (excluding MONSTERS and VEHICLES ) that it moved over during that move. If you do, roll one D6 for each model in this unit: for each 4+, that enemy unit suffers 1 mortal wound .",
+        "name": "Eviscerating Fly-by"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Arena Champion"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "2-5 Reavers"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "splinter pistol; splinter rifle; bladevanes.",
+      "label": "Every model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -168,8 +191,13 @@
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Battle Focus , Disparate Paths Eviscerating Fly-by: Each time this unit ends a Normal move , you can select one enemy unit (excluding MONSTERS and VEHICLES ) that it moved over during that move. If you do, roll one D6 for each model in this unit: for each 4+, that enemy unit suffers 1 mortal wound ."
+            "Battle Focus , Disparate Paths"
           ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this unit ends a Normal move , you can select one enemy unit (excluding MONSTERS and VEHICLES ) that it moved over during that move. If you do, roll one D6 for each model in this unit: for each 4+, that enemy unit suffers 1 mortal wound .",
+          "name": "Eviscerating Fly-by"
         }
       ]
     },
@@ -177,14 +205,37 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "text",
-          "text": "Cluster Caltrops: Each time you roll a D6 for the bearer while resolving this unit\u2019s Eviscerating Fly-by ability, you can re-roll the result. Grav-talon: The bearer\u2019s melee weapons have the [LANCE] ability."
+          "type": "statement",
+          "text": "Each time you roll a D6 for the bearer while resolving this unit\u2019s Eviscerating Fly-by ability, you can re-roll the result.",
+          "label": "Cluster Caltrops"
+        },
+        {
+          "type": "statement",
+          "text": "The bearer\u2019s melee weapons have the [LANCE] ability.",
+          "label": "Grav-talon"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Arena Champion"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "2-5 Reavers"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "splinter pistol; splinter rifle; bladevanes.",
+          "label": "Every model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -203,26 +254,10 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "WARGEAR ABILITIES",
-      "UNIT COMPOSITION",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
+      "UNIT COMPOSITION"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -230,57 +265,8 @@
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

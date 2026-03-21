@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Valkyrie",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Valkyrie",
     "canonicalSourceId": "wahapedia:4a14377a5ac39eccfb10d74b08ee6d113f6b6d7f",
     "faction_slug": "astra-militarum",
     "datasheet_slug": "Valkyrie",
-    "fetchedAt": "2026-03-19T17:12:06+00:00",
-    "contentHash": "745e899828a6626e4d7ab8332f1aba28702e9cac9a2e4121c58c423fca867b73",
+    "fetchedAt": "2026-03-21T03:37:23+00:00",
+    "contentHash": "d78913f63a73c8d5bb483df6d475d5dd8d95b8455169612c963fde8ea0b3a649",
     "output_slug": "astra-militarum"
   },
   "name": "Valkyrie",
@@ -95,13 +95,30 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D6 , Hover Airborne Insertion: At the end of your opponent\u2019s Movement phase , one or more units embarked within this TRANSPORT can disembark from it."
+      "Deadly Demise D6 , Hover"
     ],
     "faction": [],
-    "datasheet": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "At the end of your opponent\u2019s Movement phase , one or more units embarked within this TRANSPORT can disembark from it.",
+        "name": "Airborne Insertion"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Valkyrie"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "hellstrike missiles; multi-laser; armoured hull.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -151,14 +168,30 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D6 , Hover Airborne Insertion: At the end of your opponent\u2019s Movement phase , one or more units embarked within this TRANSPORT can disembark from it."
+            "Deadly Demise D6 , Hover"
           ]
+        },
+        {
+          "type": "rule",
+          "text": "At the end of your opponent\u2019s Movement phase , one or more units embarked within this TRANSPORT can disembark from it.",
+          "name": "Airborne Insertion"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Valkyrie"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "hellstrike missiles; multi-laser; armoured hull.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -191,27 +224,11 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "DAMAGED: 1-5 WOUNDS REMAINING",
-      "TRANSPORT",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
+      "TRANSPORT"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -220,57 +237,8 @@
       "DAMAGED: 1-5 WOUNDS REMAINING",
       "TRANSPORT"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

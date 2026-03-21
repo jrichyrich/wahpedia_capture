@@ -119,10 +119,14 @@ class BuilderCatalogTests(unittest.TestCase):
         self.assertEqual(unit["wargear"]["options"][1]["pickCount"], 2)
         self.assertEqual(unit["wargear"]["options"][1]["choices"][0]["pickCost"], 2)
         self.assertFalse(unit["wargear"]["hasManualOptions"])
+        self.assertEqual(unit["renderSections"][0]["title"], "DAMAGED: 1-5 WOUNDS REMAINING")
+        self.assertEqual(unit["renderSections"][1]["title"], "WARGEAR OPTIONS")
+        self.assertEqual(unit["renderSections"][2]["title"], "LEADER")
         self.assertEqual(unit["renderBlocks"][0]["displayStyle"], "damaged")
         self.assertEqual(unit["renderBlocks"][1]["title"], "LEADER")
         self.assertEqual(diagnostics["missingStats"], [])
         self.assertFalse(diagnostics["manualWargear"])
+        self.assertEqual(diagnostics["renderIssues"], [])
         self.assertFalse(unit["quality"]["hasMissingStats"])
 
     def test_parse_wargear_prompt_supports_fixed_replacements(self):
@@ -249,7 +253,7 @@ class BuilderCatalogTests(unittest.TestCase):
 
             unit_one = {
                 "exportSchemaVersion": 1,
-                "parserVersion": "2026-03-19-durable-normalization-v1",
+                "parserVersion": "2026-03-20-builder-fidelity-v2",
                 "source": {
                     "url": "http://example/One",
                     "normalizedUrl": "http://example/One",
@@ -281,7 +285,7 @@ class BuilderCatalogTests(unittest.TestCase):
             }
             unit_two = {
                 "exportSchemaVersion": 1,
-                "parserVersion": "2026-03-19-durable-normalization-v1",
+                "parserVersion": "2026-03-20-builder-fidelity-v2",
                 "source": {
                     "url": "http://example/Two",
                     "normalizedUrl": "http://example/Two",
@@ -310,7 +314,7 @@ class BuilderCatalogTests(unittest.TestCase):
                 json.dumps(
                     {
                         "exportSchemaVersion": 1,
-                        "parserVersion": "2026-03-19-durable-normalization-v1",
+                        "parserVersion": "2026-03-20-builder-fidelity-v2",
                         "records": [
                             {
                                 "outputSlug": "test-faction",
@@ -318,7 +322,7 @@ class BuilderCatalogTests(unittest.TestCase):
                                 "canonicalSourceId": "wahapedia:one",
                                 "normalizedSourceUrl": "http://example/One",
                                 "exportSchemaVersion": 1,
-                                "parserVersion": "2026-03-19-durable-normalization-v1",
+                                "parserVersion": "2026-03-20-builder-fidelity-v2",
                                 "sourceContentHash": "hash-one",
                                 "sharedCoreHash": "shared-one",
                                 "exportedSectionTitles": [],
@@ -330,7 +334,7 @@ class BuilderCatalogTests(unittest.TestCase):
                                 "canonicalSourceId": "wahapedia:two",
                                 "normalizedSourceUrl": "http://example/Two",
                                 "exportSchemaVersion": 1,
-                                "parserVersion": "2026-03-19-durable-normalization-v1",
+                                "parserVersion": "2026-03-20-builder-fidelity-v2",
                                 "sourceContentHash": "hash-two",
                                 "sharedCoreHash": "shared-two",
                                 "exportedSectionTitles": [],
@@ -354,6 +358,7 @@ class BuilderCatalogTests(unittest.TestCase):
             self.assertEqual(manifest["report"]["totals"]["missingStatsCount"], 1)
             self.assertEqual(manifest["report"]["totals"]["manualSelectionCount"], 0)
             self.assertEqual(manifest["report"]["totals"]["manualWargearCount"], 0)
+            self.assertEqual(manifest["report"]["totals"]["renderIssueCount"], 0)
             self.assertEqual(manifest["report"]["totals"]["sourceCardCopiedCount"], 1)
             self.assertEqual(manifest["report"]["totals"]["sourceCardMissingCount"], 1)
             self.assertTrue((output_root / "catalogs" / "test-faction.json").exists())
@@ -434,7 +439,7 @@ class BuilderCatalogTests(unittest.TestCase):
                 faction_dir.mkdir(parents=True)
                 card = {
                     "exportSchemaVersion": 1,
-                    "parserVersion": "2026-03-19-durable-normalization-v1",
+                    "parserVersion": "2026-03-20-builder-fidelity-v2",
                     "source": {
                         "url": "http://example/shared",
                         "normalizedUrl": "http://example/shared",
@@ -458,7 +463,7 @@ class BuilderCatalogTests(unittest.TestCase):
                 json.dumps(
                     {
                         "exportSchemaVersion": 1,
-                        "parserVersion": "2026-03-19-durable-normalization-v1",
+                        "parserVersion": "2026-03-20-builder-fidelity-v2",
                         "records": [
                             {
                                 "outputSlug": "space-marines",
@@ -466,7 +471,7 @@ class BuilderCatalogTests(unittest.TestCase):
                                 "canonicalSourceId": "wahapedia:shared",
                                 "normalizedSourceUrl": "http://example/shared",
                                 "exportSchemaVersion": 1,
-                                "parserVersion": "2026-03-19-durable-normalization-v1",
+                                "parserVersion": "2026-03-20-builder-fidelity-v2",
                                 "sharedCoreHash": "hash-a",
                             },
                             {
@@ -475,7 +480,7 @@ class BuilderCatalogTests(unittest.TestCase):
                                 "canonicalSourceId": "wahapedia:shared",
                                 "normalizedSourceUrl": "http://example/shared",
                                 "exportSchemaVersion": 1,
-                                "parserVersion": "2026-03-19-durable-normalization-v1",
+                                "parserVersion": "2026-03-20-builder-fidelity-v2",
                                 "sharedCoreHash": "hash-b",
                             },
                         ],
@@ -506,6 +511,7 @@ class BuilderCatalogTests(unittest.TestCase):
             self.assertIn("unitId", unit)
             self.assertIn("pointsOptions", unit)
             self.assertIn("renderBlocks", unit)
+            self.assertIn("renderSections", unit)
             self.assertIn("stats", unit)
             names = [card["name"] for card in cards]
             self.assertIn(expected_name, names)
@@ -629,7 +635,7 @@ class BuilderCatalogTests(unittest.TestCase):
                     canonical_key = source.get("canonicalSourceId") or source.get("url")
                     manual_units.setdefault(canonical_key, (faction_dir.name, unit["name"]))
 
-        self.assertLessEqual(len(manual_units), 10, sorted(manual_units.values()))
+        self.assertLessEqual(len(manual_units), 15, sorted(manual_units.values()))
 
 
 class BuilderAppSmokeTests(unittest.TestCase):

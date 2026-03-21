@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Librarian",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Librarian",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Librarian",
     "canonicalSourceId": "wahapedia:29b28ae131aef16fe18efe4915344ae793797cdf",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "06e108d82cba36ee7784159b43a063a0036dfe6d35f96fa8abe5953efade527f"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Librarian",
+    "fetchedAt": "2026-03-21T03:43:46+00:00",
+    "contentHash": "c12c449a109ac0cc36329c00bb5e0adf92b78c2813c9bf1d830db2e3d654e280",
+    "output_slug": "space-wolves"
   },
   "name": "Librarian",
   "base_size": "\u230040mm",
@@ -77,13 +79,37 @@
   },
   "abilities": {
     "core": [
-      "Leader FACTION: Oath of Moment Psychic Hood: While this model is leading a unit, models in that unit have the Feel No Pain 4+ ability against Psychic Attacks . Mental Fortress (Psychic): While this model is leading a unit, models in that unit have a 4+ invulnerable save ."
+      "Leader"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, models in that unit have the Feel No Pain 4+ ability against Psychic Attacks .",
+        "name": "Psychic Hood"
+      },
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, models in that unit have a 4+ invulnerable save .",
+        "name": "Mental Fortress (Psychic)"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Librarian"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "bolt pistol; Smite; force weapon.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -114,14 +140,42 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Leader FACTION: Oath of Moment Psychic Hood: While this model is leading a unit, models in that unit have the Feel No Pain 4+ ability against Psychic Attacks . Mental Fortress (Psychic): While this model is leading a unit, models in that unit have a 4+ invulnerable save ."
+            "Leader"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, models in that unit have the Feel No Pain 4+ ability against Psychic Attacks .",
+          "name": "Psychic Hood"
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, models in that unit have a 4+ invulnerable save .",
+          "name": "Mental Fortress (Psychic)"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Librarian"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "bolt pistol; Smite; force weapon.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -136,6 +190,10 @@
     {
       "title": "LEADER",
       "entries": [
+        {
+          "type": "text",
+          "text": "This model can be attached to the following units:"
+        },
         {
           "type": "list",
           "items": [
@@ -164,8 +222,6 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
       "ABILITIES",
@@ -178,6 +234,7 @@
       "LEADER"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Wolf-Scouts-1",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Wolf-Scouts-1",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Wolf-Scouts-1",
     "canonicalSourceId": "wahapedia:e587a9d6c4657a229944883f76ae7228431a012b",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "377dbcaefc519c540e9672cd6692e967274bd7762bcd8b7da4873a4c793ce6b6"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Wolf-Scouts-1",
+    "fetchedAt": "2026-03-21T03:45:44+00:00",
+    "contentHash": "e7f25f02bb5f140e214ee563c91ec620e852caad0e8f04e068fed8b7cedc8e89",
+    "output_slug": "space-wolves"
   },
   "name": "Wolf Scouts",
   "base_size": "",
@@ -179,18 +181,42 @@
     {
       "type": "list",
       "items": [
-        "1 Wolf Scout Pack Leader",
-        "4 Wolf Scouts",
-        "1 Hunting Wolf",
-        "1 Wolf Scout Pack Leader",
-        "9 Wolf Scouts",
-        "2 Hunting Wolves"
+        "1 Wolf Scout Pack Leader"
       ]
     },
     {
-      "type": "statement",
-      "text": "1 Wolf Scout Pack Leader 9 Wolf Scouts 2 Hunting Wolves",
-      "label": "OR"
+      "type": "list",
+      "items": [
+        "4 Wolf Scouts"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "1 Hunting Wolf"
+      ]
+    },
+    {
+      "type": "text",
+      "text": "OR"
+    },
+    {
+      "type": "list",
+      "items": [
+        "1 Wolf Scout Pack Leader"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "9 Wolf Scouts"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "2 Hunting Wolves"
+      ]
     },
     {
       "type": "statement",
@@ -234,6 +260,31 @@
     "SPACE WOLVES"
   ],
   "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "1 Wolf Scout\u2019s plasma pistol can be replaced with 1 plasma gun.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "1 Wolf Scout equipped with a plasma pistol can be equipped with 1 haywire mine (That model\u2019s plasma pistol cannot be replaced).",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "1 Wolf Scout\u2019s plasma pistol and combat blade can be replaced with 1 bolt pistol, 1 Thunderclap and 1 runic stave.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "If this unit contains 12 models, 1 Wolf Scout\u2019s plasma pistol can be replaced with 1 instigator bolt carbine.",
+          "items": []
+        }
+      ]
+    },
     {
       "title": "ABILITIES",
       "entries": [
@@ -279,18 +330,42 @@
         {
           "type": "list",
           "items": [
-            "1 Wolf Scout Pack Leader",
-            "4 Wolf Scouts",
-            "1 Hunting Wolf",
-            "1 Wolf Scout Pack Leader",
-            "9 Wolf Scouts",
-            "2 Hunting Wolves"
+            "1 Wolf Scout Pack Leader"
           ]
         },
         {
-          "type": "statement",
-          "text": "1 Wolf Scout Pack Leader 9 Wolf Scouts 2 Hunting Wolves",
-          "label": "OR"
+          "type": "list",
+          "items": [
+            "4 Wolf Scouts"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "1 Hunting Wolf"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "OR"
+        },
+        {
+          "type": "list",
+          "items": [
+            "1 Wolf Scout Pack Leader"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "9 Wolf Scouts"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "2 Hunting Wolves"
+          ]
         },
         {
           "type": "statement",
@@ -323,20 +398,21 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION"
     ],
     "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

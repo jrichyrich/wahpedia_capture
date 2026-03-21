@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Icon-Bearer",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Icon-Bearer",
     "canonicalSourceId": "wahapedia:a29ee022fc72c52d6975307f16e59f25ebe946e9",
     "faction_slug": "death-guard",
     "datasheet_slug": "Icon-Bearer",
-    "fetchedAt": "2026-03-19T17:16:56+00:00",
-    "contentHash": "8b935809287d972bea31ffd6e797ccea7d93fde16a283125ad394a8f22e4eee7",
+    "fetchedAt": "2026-03-21T03:50:38+00:00",
+    "contentHash": "3ae8c856a129ecf71119571191ddc949b17155863dfc67d9d4162df1a9efc560",
     "output_slug": "death-guard"
   },
   "name": "Icon Bearer",
@@ -53,13 +53,37 @@
   },
   "abilities": {
     "core": [
-      "Leader FACTION: Nurgle\u2019s Gift (Aura) Unclean Icon: While this model is leading a unit, add 1 to the Objective Control characteristic of models in that unit. Blessed Icon of Disease: Once per battle, at the start of any phase, you can select one friendly DEATH GUARD unit that is Battle-shocked and within 12\" of this model. That unit is no longer Battle-shocked."
+      "Leader"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Nurgle\u2019s Gift (Aura)"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, add 1 to the Objective Control characteristic of models in that unit.",
+        "name": "Unclean Icon"
+      },
+      {
+        "type": "rule",
+        "text": "Once per battle, at the start of any phase, you can select one friendly DEATH GUARD unit that is Battle-shocked and within 12\" of this model. That unit is no longer Battle-shocked.",
+        "name": "Blessed Icon of Disease"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Icon Bearer"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "boltgun; plague knife.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -89,14 +113,42 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Leader FACTION: Nurgle\u2019s Gift (Aura) Unclean Icon: While this model is leading a unit, add 1 to the Objective Control characteristic of models in that unit. Blessed Icon of Disease: Once per battle, at the start of any phase, you can select one friendly DEATH GUARD unit that is Battle-shocked and within 12\" of this model. That unit is no longer Battle-shocked."
+            "Leader"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Nurgle\u2019s Gift (Aura)"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, add 1 to the Objective Control characteristic of models in that unit.",
+          "name": "Unclean Icon"
+        },
+        {
+          "type": "rule",
+          "text": "Once per battle, at the start of any phase, you can select one friendly DEATH GUARD unit that is Battle-shocked and within 12\" of this model. That unit is no longer Battle-shocked.",
+          "name": "Blessed Icon of Disease"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Icon Bearer"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "boltgun; plague knife.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -112,96 +164,35 @@
       "title": "LEADER",
       "entries": [
         {
+          "type": "text",
+          "text": "This model can be attached to the following unit:"
+        },
+        {
           "type": "list",
           "items": [
             "Plague Marines"
           ]
+        },
+        {
+          "type": "text",
+          "text": "You can attach this model to a PLAGUE MARINES unit, even if one other Leader unit has already been attached to it (you cannot attach more than one of the same Leader to the same unit). If you do, and that Bodyguard unit is destroyed, the Leader units attached to it become separate units, with their original Starting Strengths ."
         }
       ]
     }
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "ABILITIES",
       "UNIT COMPOSITION",
-      "LEADER",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
+      "LEADER"
     ],
     "exportedSectionTitles": [
       "ABILITIES",
       "UNIT COMPOSITION",
       "LEADER"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

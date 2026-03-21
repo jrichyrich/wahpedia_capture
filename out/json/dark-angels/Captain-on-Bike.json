@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Captain-on-Bike",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Captain-on-Bike",
     "canonicalSourceId": "wahapedia:812b54f8a21e9b0e6bfbf0924f57c48b0ec57678",
     "faction_slug": "space-marines",
     "datasheet_slug": "Captain-on-Bike",
-    "fetchedAt": "2026-03-19T17:23:51+00:00",
-    "contentHash": "38afc6016bccc7df34a87b15f994fa8b58c30175a1c1a493f8c15d6efe37d1c7",
+    "fetchedAt": "2026-03-21T03:38:29+00:00",
+    "contentHash": "4773eba4a8c4795233c736a6824fb68acd405629b247a1a546d97c16f9cffe31",
     "output_slug": "dark-angels"
   },
   "name": "Captain On Bike",
@@ -219,13 +219,37 @@
   },
   "abilities": {
     "core": [
-      "Leader FACTION: Oath of Moment Swift Assault: While this model is leading a unit, ranged weapons equipped by models in that unit have the [ASSAULT] ability. Rites of Battle: Once per battle round , one unit from your army with this ability can use it when its unit is targeted with a Stratagem . If it does, reduce the CP cost of that use of that Stratagem by 1CP."
+      "Leader"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, ranged weapons equipped by models in that unit have the [ASSAULT] ability.",
+        "name": "Swift Assault"
+      },
+      {
+        "type": "rule",
+        "text": "Once per battle round , one unit from your army with this ability can use it when its unit is targeted with a Stratagem . If it does, reduce the CP cost of that use of that Stratagem by 1CP.",
+        "name": "Rites of Battle"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Captain on Bike"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "bolt pistol; twin boltgun; Astartes chainsword.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -294,8 +318,25 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Leader FACTION: Oath of Moment Swift Assault: While this model is leading a unit, ranged weapons equipped by models in that unit have the [ASSAULT] ability. Rites of Battle: Once per battle round , one unit from your army with this ability can use it when its unit is targeted with a Stratagem . If it does, reduce the CP cost of that use of that Stratagem by 1CP."
+            "Leader"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, ranged weapons equipped by models in that unit have the [ASSAULT] ability.",
+          "name": "Swift Assault"
+        },
+        {
+          "type": "rule",
+          "text": "Once per battle round , one unit from your army with this ability can use it when its unit is targeted with a Stratagem . If it does, reduce the CP cost of that use of that Stratagem by 1CP.",
+          "name": "Rites of Battle"
         }
       ]
     },
@@ -303,14 +344,26 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "text",
-          "text": "Relic Shield: The bearer has a Wounds characteristic of 7."
+          "type": "statement",
+          "text": "The bearer has a Wounds characteristic of 7.",
+          "label": "Relic Shield"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Captain on Bike"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "bolt pistol; twin boltgun; Astartes chainsword.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -326,6 +379,10 @@
       "title": "LEADER",
       "entries": [
         {
+          "type": "text",
+          "text": "This model can be attached to the following units:"
+        },
+        {
           "type": "list",
           "items": [
             "Outrider Squad",
@@ -339,28 +396,11 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION",
-      "LEADER",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
+      "LEADER"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -369,60 +409,8 @@
       "UNIT COMPOSITION",
       "LEADER"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

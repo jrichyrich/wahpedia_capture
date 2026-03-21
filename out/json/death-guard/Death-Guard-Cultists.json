@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Death-Guard-Cultists",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Death-Guard-Cultists",
     "canonicalSourceId": "wahapedia:f125833a0c1201e607e953130e2e2a56a2358cba",
     "faction_slug": "death-guard",
     "datasheet_slug": "Death-Guard-Cultists",
-    "fetchedAt": "2026-03-19T17:16:46+00:00",
-    "contentHash": "11a8ca8a9ff5cbb4c5f6c5e98d9e59c33dc954d5f822a73f2245c15401d7fe77",
+    "fetchedAt": "2026-03-21T03:50:30+00:00",
+    "contentHash": "77ec287813cfffa489b2d316610c192c1c6cfe67167312ab4176092c98b4d1a3",
     "output_slug": "death-guard"
   },
   "name": "Death Guard Cultists",
@@ -96,13 +96,32 @@
   },
   "abilities": {
     "core": [
-      "Scouts 6\" FACTION: Nurgle\u2019s Gift (Aura)"
+      "Scouts 6\""
     ],
-    "faction": [],
+    "faction": [
+      "Nurgle\u2019s Gift (Aura)"
+    ],
     "datasheet": [],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Death Guard Cultist Champion"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "9-19 Death Guard Cultists"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "Cultist firearm; brutal assault weapon.",
+      "label": "Every model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -117,7 +136,12 @@
       ]
     }
   ],
-  "keywords": [],
+  "keywords": [
+    "INFANTRY",
+    "CHAOS",
+    "NURGLE",
+    "CULTISTS"
+  ],
   "faction_keywords": [],
   "sections": [
     {
@@ -147,7 +171,14 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Scouts 6\" FACTION: Nurgle\u2019s Gift (Aura)"
+            "Scouts 6\""
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Nurgle\u2019s Gift (Aura)"
           ]
         }
       ]
@@ -155,6 +186,23 @@
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Death Guard Cultist Champion"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "9-19 Death Guard Cultists"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "Cultist firearm; brutal assault weapon.",
+          "label": "Every model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -173,78 +221,17 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
-      "UNIT COMPOSITION",
-      "STRATAGEMS"
+      "UNIT COMPOSITION"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 1
   }
 }

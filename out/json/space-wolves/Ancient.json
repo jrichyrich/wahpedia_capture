@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Ancient",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Ancient",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Ancient",
     "canonicalSourceId": "wahapedia:7a7c54f45ab91cbd595457105556318c9f2842bf",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "5b7cc18b76cbf60330017e8985693fccca1c886f4e10c50f41eb29a4e2bec970"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Ancient",
+    "fetchedAt": "2026-03-21T03:43:24+00:00",
+    "contentHash": "e780ffec15d8d63cbb13b11a8101e45c32f0c1c98ccd5c29b0f6576e30491626",
+    "output_slug": "space-wolves"
   },
   "name": "Ancient",
   "base_size": "\u230040mm",
@@ -72,13 +74,37 @@
   },
   "abilities": {
     "core": [
-      "Leader FACTION: Oath of Moment Astartes Banner: While this model is leading a unit, add 1 to the Objective Control characteristic of models in that unit. Unbreakable Duty: While this model is within range of an objective marker and/or within 6\" of the centre of the battlefield, this model has the Feel No Pain 4+ ability."
+      "Leader"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, add 1 to the Objective Control characteristic of models in that unit.",
+        "name": "Astartes Banner"
+      },
+      {
+        "type": "rule",
+        "text": "While this model is within range of an objective marker and/or within 6\" of the centre of the battlefield, this model has the Feel No Pain 4+ ability.",
+        "name": "Unbreakable Duty"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Ancient"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "bolt pistol; bolt rifle; close combat weapon.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -118,14 +144,42 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Leader FACTION: Oath of Moment Astartes Banner: While this model is leading a unit, add 1 to the Objective Control characteristic of models in that unit. Unbreakable Duty: While this model is within range of an objective marker and/or within 6\" of the centre of the battlefield, this model has the Feel No Pain 4+ ability."
+            "Leader"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, add 1 to the Objective Control characteristic of models in that unit.",
+          "name": "Astartes Banner"
+        },
+        {
+          "type": "rule",
+          "text": "While this model is within range of an objective marker and/or within 6\" of the centre of the battlefield, this model has the Feel No Pain 4+ ability.",
+          "name": "Unbreakable Duty"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Ancient"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "bolt pistol; bolt rifle; close combat weapon.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -140,6 +194,10 @@
     {
       "title": "LEADER",
       "entries": [
+        {
+          "type": "text",
+          "text": "This model can be attached to the following units:"
+        },
         {
           "type": "list",
           "items": [
@@ -164,14 +222,17 @@
             "Vanguard Veteran Squad",
             "Wolf Guard"
           ]
+        },
+        {
+          "type": "text",
+          "text": "You can attach this model to one of the above units even if one CAPTAIN , CHAPTER MASTER or LIEUTENANT model has already been attached to it. If you do, and that Bodyguard unit is destroyed, the Leader units attached to it become separate units, with their original Starting Strengths ."
         }
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "LEADER"
@@ -183,6 +244,7 @@
       "LEADER"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

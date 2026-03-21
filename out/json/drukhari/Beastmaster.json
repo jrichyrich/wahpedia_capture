@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Beastmaster",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Beastmaster",
     "canonicalSourceId": "wahapedia:d2934cb518fd7361c46b0f853ddb7d6a777b0d99",
     "faction_slug": "drukhari",
     "datasheet_slug": "Beastmaster",
-    "fetchedAt": "2026-03-19T17:17:17+00:00",
-    "contentHash": "76b7e466032952195bdfbf1148c044a01974bf0e6fa8bfede6943384abfa2e3e",
+    "fetchedAt": "2026-03-21T03:50:25+00:00",
+    "contentHash": "911db68ae3fc3c19210077c8daecbb0be7ccf023408df3676f3f6831486e0954",
     "output_slug": "drukhari"
   },
   "name": "Beastmaster",
@@ -92,13 +92,70 @@
   },
   "abilities": {
     "core": [
-      "Scouts 9\" FACTION: Power from Pain Goaded Savagery (Pain): In the Fight phase , when you select this unit to fight, you can spend 1 of your Pain tokens to Empower this unit. While this unit is Empowered, if it contains a BEASTMASTER model, each time a BEAST model in this unit makes a melee attack, you can re-roll the Hit roll and you can re-roll the Wound roll . Beastmaster: While this unit contains a BEASTMASTER model, you can re-roll Charge rolls made for this unit."
+      "Scouts 9\""
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Power from Pain"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "In the Fight phase , when you select this unit to fight, you can spend 1 of your Pain tokens to Empower this unit. While this unit is Empowered, if it contains a BEASTMASTER model, each time a BEAST model in this unit makes a melee attack, you can re-roll the Hit roll and you can re-roll the Wound roll .",
+        "name": "Goaded Savagery (Pain)"
+      },
+      {
+        "type": "rule",
+        "text": "While this unit contains a BEASTMASTER model, you can re-roll Charge rolls made for this unit.",
+        "name": "Beastmaster"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Beastmaster"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "1 Clawed Fiends"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "2 Khymerae"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "3 Razorwing Flocks"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "splinter pods; agoniser.",
+      "label": "The Beastmaster is equipped with"
+    },
+    {
+      "type": "statement",
+      "text": ": Clawed Fiend fists.",
+      "label": "Every Clawed Fiend is equipped with"
+    },
+    {
+      "type": "statement",
+      "text": "Khymerae talons.",
+      "label": "Every Khymerae is equipped with"
+    },
+    {
+      "type": "statement",
+      "text": "Razorwing feathers.",
+      "label": "Every Razorwing Flock is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -124,10 +181,8 @@
       "title": "WARGEAR OPTIONS",
       "entries": [
         {
-          "type": "list",
-          "items": [
-            "None"
-          ]
+          "type": "text",
+          "text": "None"
         }
       ]
     },
@@ -138,14 +193,75 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Scouts 9\" FACTION: Power from Pain Goaded Savagery (Pain): In the Fight phase , when you select this unit to fight, you can spend 1 of your Pain tokens to Empower this unit. While this unit is Empowered, if it contains a BEASTMASTER model, each time a BEAST model in this unit makes a melee attack, you can re-roll the Hit roll and you can re-roll the Wound roll . Beastmaster: While this unit contains a BEASTMASTER model, you can re-roll Charge rolls made for this unit."
+            "Scouts 9\""
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Power from Pain"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "In the Fight phase , when you select this unit to fight, you can spend 1 of your Pain tokens to Empower this unit. While this unit is Empowered, if it contains a BEASTMASTER model, each time a BEAST model in this unit makes a melee attack, you can re-roll the Hit roll and you can re-roll the Wound roll .",
+          "name": "Goaded Savagery (Pain)"
+        },
+        {
+          "type": "rule",
+          "text": "While this unit contains a BEASTMASTER model, you can re-roll Charge rolls made for this unit.",
+          "name": "Beastmaster"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Beastmaster"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "1 Clawed Fiends"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "2 Khymerae"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "3 Razorwing Flocks"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "splinter pods; agoniser.",
+          "label": "The Beastmaster is equipped with"
+        },
+        {
+          "type": "statement",
+          "text": ": Clawed Fiend fists.",
+          "label": "Every Clawed Fiend is equipped with"
+        },
+        {
+          "type": "statement",
+          "text": "Khymerae talons.",
+          "label": "Every Khymerae is equipped with"
+        },
+        {
+          "type": "statement",
+          "text": "Razorwing feathers.",
+          "label": "Every Razorwing Flock is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -160,86 +276,17 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
-      "UNIT COMPOSITION",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
+      "UNIT COMPOSITION"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Foetid-Bloat-drone-with-Heavy-Blight-Launcher",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Foetid-Bloat-drone-with-Heavy-Blight-Launcher",
     "canonicalSourceId": "wahapedia:0ba990098a4d17cf4178889894e6540bd75a6910",
     "faction_slug": "death-guard",
     "datasheet_slug": "Foetid-Bloat-drone-with-Heavy-Blight-Launcher",
-    "fetchedAt": "2026-03-19T17:16:49+00:00",
-    "contentHash": "116d4b2214e00a4f715d79aa15b73517a8437d0f775afa26ac768b40fe27a8c3",
+    "fetchedAt": "2026-03-21T03:50:34+00:00",
+    "contentHash": "96adccc129d70120d341d183c9af0ca94b8bc44d254aeb24645626853f47ad25",
     "output_slug": "death-guard"
   },
   "name": "Foetid Bloat-drone with Heavy Blight Launcher",
@@ -55,13 +55,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D3 FACTION: Nurgle\u2019s Gift (Aura) Explosive Blight: In your Shooting phase , each time this model makes an attack that destroys an enemy unit, before removing the last model in that unit from play, roll a D6, adding 1 to the result if that unit is Afflicted : on a 5+, each enemy unit within 6\" of that model is Afflicted until the start of your next turn."
+      "Deadly Demise D3"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Nurgle\u2019s Gift (Aura)"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "In your Shooting phase , each time this model makes an attack that destroys an enemy unit, before removing the last model in that unit from play, roll a D6, adding 1 to the result if that unit is Afflicted : on a 5+, each enemy unit within 6\" of that model is Afflicted until the start of your next turn.",
+        "name": "Explosive Blight"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Foetid Bloat-drone"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "heavy blight launcher; plague probe.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -91,14 +110,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D3 FACTION: Nurgle\u2019s Gift (Aura) Explosive Blight: In your Shooting phase , each time this model makes an attack that destroys an enemy unit, before removing the last model in that unit from play, roll a D6, adding 1 to the result if that unit is Afflicted : on a 5+, each enemy unit within 6\" of that model is Afflicted until the start of your next turn."
+            "Deadly Demise D3"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Nurgle\u2019s Gift (Aura)"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "In your Shooting phase , each time this model makes an attack that destroys an enemy unit, before removing the last model in that unit from play, roll a D6, adding 1 to the result if that unit is Afflicted : on a 5+, each enemy unit within 6\" of that model is Afflicted until the start of your next turn.",
+          "name": "Explosive Blight"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Foetid Bloat-drone"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "heavy blight launcher; plague probe.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -113,80 +155,15 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "ABILITIES",
-      "UNIT COMPOSITION",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
+      "UNIT COMPOSITION"
     ],
     "exportedSectionTitles": [
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

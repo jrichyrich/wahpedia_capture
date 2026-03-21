@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Cerberus",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Cerberus",
     "canonicalSourceId": "wahapedia:38081c44eed633b5cc898c1c14f89b1a743e7f8e",
     "faction_slug": "space-marines",
     "datasheet_slug": "Cerberus",
-    "fetchedAt": "2026-03-19T17:15:32+00:00",
-    "contentHash": "2ac88c4077effb3f2ee1f982ace7d975f5979f725a30926ef3813a0f6abd978e",
+    "fetchedAt": "2026-03-21T03:39:58+00:00",
+    "contentHash": "c20b24f6699f35fdd0f6c238397ad412a1a52d15aa929749527d468279e17a58",
     "output_slug": "dark-angels"
   },
   "name": "Cerberus",
@@ -110,13 +110,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D6 FACTION: Oath of Moment Atomantic Arc-reactor: Each time this unit shoots its Cerberus neutron pulse array in your Shooting phase , provided it Remained Stationary this turn, that weapon has the [LETHAL HITS] ability."
+      "Deadly Demise D6"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this unit shoots its Cerberus neutron pulse array in your Shooting phase , provided it Remained Stationary this turn, that weapon has the [LETHAL HITS] ability.",
+        "name": "Atomantic Arc-reactor"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Cerberus"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "Cerberus neutron pulse array; armoured tracks.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -167,14 +186,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D6 FACTION: Oath of Moment Atomantic Arc-reactor: Each time this unit shoots its Cerberus neutron pulse array in your Shooting phase , provided it Remained Stationary this turn, that weapon has the [LETHAL HITS] ability."
+            "Deadly Demise D6"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this unit shoots its Cerberus neutron pulse array in your Shooting phase , provided it Remained Stationary this turn, that weapon has the [LETHAL HITS] ability.",
+          "name": "Atomantic Arc-reactor"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Cerberus"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "Cerberus neutron pulse array; armoured tracks.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -198,27 +240,10 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
-      "DAMAGED: 1-6 WOUNDS REMAINING",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
+      "DAMAGED: 1-6 WOUNDS REMAINING"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -226,60 +251,8 @@
       "UNIT COMPOSITION",
       "DAMAGED: 1-6 WOUNDS REMAINING"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

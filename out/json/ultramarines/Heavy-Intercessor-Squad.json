@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Heavy-Intercessor-Squad",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Heavy-Intercessor-Squad",
-    "output_slug": "ultramarines",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Heavy-Intercessor-Squad",
     "canonicalSourceId": "wahapedia:9fc32c019c4aa77c9c024ad0fe4861835101162b",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "6b3f2aaf80b554913913b85800d9ab594094159da7d037cfe26ae9009ae8868c"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Heavy-Intercessor-Squad",
+    "fetchedAt": "2026-03-21T03:48:03+00:00",
+    "contentHash": "3e0d565c53eee8bc4426990437eae45e94eb8dcf5408c5b6ad1e53e5b79ba7d5",
+    "output_slug": "ultramarines"
   },
   "name": "Heavy Intercessor Squad",
   "base_size": "\u230040mm",
@@ -77,12 +79,35 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Oath of Moment Unyielding in the Face of the Foe: While this unit is within range of an objective marker you control, each time an attack with a Damage characteristic of 1 is allocated to a model in this unit, add 1 to any armour saving throw made against that attack."
+      "Oath of Moment"
     ],
-    "datasheet": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this unit is within range of an objective marker you control, each time an attack with a Damage characteristic of 1 is allocated to a model in this unit, add 1 to any armour saving throw made against that attack.",
+        "name": "Unyielding in the Face of the Foe"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Heavy Intercessor Sergeant"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "4-9 Heavy Intercessors"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "bolt pistol; heavy bolt rifle; close combat weapon.",
+      "label": "Every model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -126,14 +151,36 @@
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Oath of Moment Unyielding in the Face of the Foe: While this unit is within range of an objective marker you control, each time an attack with a Damage characteristic of 1 is allocated to a model in this unit, add 1 to any armour saving throw made against that attack."
+            "Oath of Moment"
           ]
+        },
+        {
+          "type": "rule",
+          "text": "While this unit is within range of an objective marker you control, each time an attack with a Damage characteristic of 1 is allocated to a model in this unit, add 1 to any armour saving throw made against that attack.",
+          "name": "Unyielding in the Face of the Foe"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Heavy Intercessor Sergeant"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "4-9 Heavy Intercessors"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "bolt pistol; heavy bolt rifle; close combat weapon.",
+          "label": "Every model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -150,10 +197,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
@@ -163,6 +209,7 @@
       "UNIT COMPOSITION"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

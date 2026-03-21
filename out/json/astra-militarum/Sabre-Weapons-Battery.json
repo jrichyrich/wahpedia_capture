@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Sabre-Weapons-Battery",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Sabre-Weapons-Battery",
     "canonicalSourceId": "wahapedia:a0d524474f3d90ff1585e4873aae69fb9f39dc36",
     "faction_slug": "astra-militarum",
     "datasheet_slug": "Sabre-Weapons-Battery",
-    "fetchedAt": "2026-03-19T17:11:46+00:00",
-    "contentHash": "c8e4a9a3cf06d242bd14a03f3e415a18d89e1db538b0cbfdfd038a8a900bf58d",
+    "fetchedAt": "2026-03-21T03:37:11+00:00",
+    "contentHash": "477709a396d10853dd7adfb25b3f06a4a8d846a15728b6c5bd2a9222254e41c3",
     "output_slug": "astra-militarum"
   },
   "name": "Sabre Weapons Battery",
@@ -90,15 +90,27 @@
   "abilities": {
     "core": [],
     "faction": [],
-    "datasheet": [],
-    "other": [
+    "datasheet": [
       {
-        "type": "text",
-        "text": "Sentinel Directives: Each time you target this unit with the Fire Overwatch Stratagem, hits are scored on unmodified Hit rolls of 5+ when resolving that Stratagem."
+        "type": "rule",
+        "text": "Each time you target this unit with the Fire Overwatch Stratagem, hits are scored on unmodified Hit rolls of 5+ when resolving that Stratagem.",
+        "name": "Sentinel Directives"
       }
-    ]
+    ],
+    "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1-2 Sabre Gun Platforms"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "twin heavy bolter; close combat weapon.",
+      "label": "Every model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -142,6 +154,10 @@
       "title": "FORTIFICATION",
       "entries": [
         {
+          "type": "text",
+          "text": "While an enemy unit is only within Engagement Range of one or more FORTIFICATIONS from your army:"
+        },
+        {
           "type": "list",
           "items": [
             "That unit can still be selected as the target of ranged attacks, but each time such an attack is made, unless it is made with a Pistol , subtract 1 from the Hit roll .",
@@ -154,8 +170,9 @@
       "title": "ABILITIES",
       "entries": [
         {
-          "type": "text",
-          "text": "Sentinel Directives: Each time you target this unit with the Fire Overwatch Stratagem, hits are scored on unmodified Hit rolls of 5+ when resolving that Stratagem."
+          "type": "rule",
+          "text": "Each time you target this unit with the Fire Overwatch Stratagem, hits are scored on unmodified Hit rolls of 5+ when resolving that Stratagem.",
+          "name": "Sentinel Directives"
         }
       ]
     },
@@ -163,14 +180,26 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "text",
-          "text": "Defence Searchlight: At the start of your Shooting phase , you can select one enemy unit within 24\" and visible to the bearer. Until the end of the phase, that unit cannot have the Benefit of Cover ."
+          "type": "statement",
+          "text": "At the start of your Shooting phase , you can select one enemy unit within 24\" and visible to the bearer. Until the end of the phase, that unit cannot have the Benefit of Cover .",
+          "label": "Defence Searchlight"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1-2 Sabre Gun Platforms"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "twin heavy bolter; close combat weapon.",
+          "label": "Every model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -189,27 +218,11 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "FORTIFICATION",
       "ABILITIES",
       "WARGEAR ABILITIES",
-      "UNIT COMPOSITION",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
+      "UNIT COMPOSITION"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -218,57 +231,8 @@
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

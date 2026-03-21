@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Bladeguard-Veteran-Squad",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Bladeguard-Veteran-Squad",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Bladeguard-Veteran-Squad",
     "canonicalSourceId": "wahapedia:091239fd70d4a2d6be9d3b480d4c7392db00e410",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "faac22c46dca86a348a79ab4ed593d8531b1f9ef1209d6d65cd8f5fcce2c794a"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Bladeguard-Veteran-Squad",
+    "fetchedAt": "2026-03-21T03:44:52+00:00",
+    "contentHash": "615f353a81d365fbc74a19fdd54ad0e9594e24fdaca04737dedab0f7e86b2c3d",
+    "output_slug": "space-wolves"
   },
   "name": "Bladeguard Veteran Squad",
   "base_size": "\u230040mm",
@@ -89,12 +91,43 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Oath of Moment Bladeguard: At the start of the Fight phase , you can select one of the following abilities to apply to models in this unit until the end of the phase: Swords of the Chapter: Each time a model in this unit makes a melee attack, re-roll a Hit roll of 1. Shields of the Chapter: Each time an invulnerable saving throw is made for a model in this unit, re-roll a saving throw of 1."
+      "Oath of Moment"
     ],
-    "datasheet": [],
-    "other": []
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "At the start of the Fight phase , you can select one of the following abilities to apply to models in this unit until the end of the phase:",
+        "name": "Bladeguard"
+      }
+    ],
+    "other": [
+      {
+        "type": "list",
+        "items": [
+          "Swords of the Chapter: Each time a model in this unit makes a melee attack, re-roll a Hit roll of 1.",
+          "Shields of the Chapter: Each time an invulnerable saving throw is made for a model in this unit, re-roll a saving throw of 1."
+        ]
+      }
+    ]
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Bladeguard Veteran Sergeant"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "2-5 Bladeguard Veterans"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "heavy bolt pistol; master-crafted power weapon.",
+      "label": "Every model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -141,7 +174,19 @@
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Oath of Moment Bladeguard: At the start of the Fight phase , you can select one of the following abilities to apply to models in this unit until the end of the phase: Swords of the Chapter: Each time a model in this unit makes a melee attack, re-roll a Hit roll of 1. Shields of the Chapter: Each time an invulnerable saving throw is made for a model in this unit, re-roll a saving throw of 1."
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "At the start of the Fight phase , you can select one of the following abilities to apply to models in this unit until the end of the phase:",
+          "name": "Bladeguard"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Swords of the Chapter: Each time a model in this unit makes a melee attack, re-roll a Hit roll of 1.",
+            "Shields of the Chapter: Each time an invulnerable saving throw is made for a model in this unit, re-roll a saving throw of 1."
           ]
         }
       ]
@@ -149,6 +194,23 @@
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Bladeguard Veteran Sergeant"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "2-5 Bladeguard Veterans"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "heavy bolt pistol; master-crafted power weapon.",
+          "label": "Every model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -165,10 +227,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
@@ -178,6 +239,7 @@
       "UNIT COMPOSITION"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

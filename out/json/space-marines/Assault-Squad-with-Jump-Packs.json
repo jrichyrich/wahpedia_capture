@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Assault-Squad-with-Jump-Packs",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Assault-Squad-with-Jump-Packs",
     "canonicalSourceId": "wahapedia:236e7c8071b120f6b7bef32b57b30fe8ac25d2f2",
     "faction_slug": "space-marines",
     "datasheet_slug": "Assault-Squad-with-Jump-Packs",
-    "fetchedAt": "2026-03-19T17:30:47+00:00",
-    "contentHash": "2dd57acf14af920db9caeafaa180778000d62505025774b9c86617812570489f",
+    "fetchedAt": "2026-03-21T03:42:27+00:00",
+    "contentHash": "bb3054567bd41cc7f665d5989f67575cb179df9955e0e124340a06df257d4c68",
     "output_slug": "space-marines"
   },
   "name": "Assault Squad With Jump Packs",
@@ -232,13 +232,38 @@
   },
   "abilities": {
     "core": [
-      "Deep Strike FACTION: Oath of Moment Hammer of Wrath: Each time this unit ends a Charge move , select one enemy unit within Engagement Range of it and roll one D6 for each model in this unit: for each 4+, that enemy unit suffers 1 mortal wound ."
+      "Deep Strike"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this unit ends a Charge move , select one enemy unit within Engagement Range of it and roll one D6 for each model in this unit: for each 4+, that enemy unit suffers 1 mortal wound .",
+        "name": "Hammer of Wrath"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Assault Sergeant with Jump Pack"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "4-9 Assault Marines with Jump Packs"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "bolt pistol; Astartes chainsword.",
+      "label": "Every model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -319,8 +344,20 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deep Strike FACTION: Oath of Moment Hammer of Wrath: Each time this unit ends a Charge move , select one enemy unit within Engagement Range of it and roll one D6 for each model in this unit: for each 4+, that enemy unit suffers 1 mortal wound ."
+            "Deep Strike"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this unit ends a Charge move , select one enemy unit within Engagement Range of it and roll one D6 for each model in this unit: for each 4+, that enemy unit suffers 1 mortal wound .",
+          "name": "Hammer of Wrath"
         }
       ]
     },
@@ -328,14 +365,32 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "text",
-          "text": "Astartes Shield: The bearer has a 4+ invulnerable save ."
+          "type": "statement",
+          "text": "The bearer has a 4+ invulnerable save .",
+          "label": "Astartes Shield"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Assault Sergeant with Jump Pack"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "4-9 Assault Marines with Jump Packs"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "bolt pistol; Astartes chainsword.",
+          "label": "Every model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -363,29 +418,11 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION",
-      "ATTACHED UNITS",
-      "STRATAGEMS",
-      "LED BY",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
+      "ATTACHED UNITS"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -394,63 +431,8 @@
       "UNIT COMPOSITION",
       "ATTACHED UNITS"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "LED BY",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:LED BY",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:LED BY",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

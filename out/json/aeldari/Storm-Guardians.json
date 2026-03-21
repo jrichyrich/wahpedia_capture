@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Storm-Guardians",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Storm-Guardians",
     "canonicalSourceId": "wahapedia:b4dd894dc0e24fada6f9d51689bf0749c10c1f27",
     "faction_slug": "aeldari",
     "datasheet_slug": "Storm-Guardians",
-    "fetchedAt": "2026-03-19T17:11:12+00:00",
-    "contentHash": "3dc69dbd5f94e9ba5d9ac80ec34ef7c6fae52b6723bb1e502da2c2a8a0249c8f",
+    "fetchedAt": "2026-03-21T03:36:35+00:00",
+    "contentHash": "e8672512b0d84d3b16db843a1ed1b56a8c5f1429b0498a70266c1c15ea897229",
     "output_slug": "aeldari"
   },
   "name": "Storm Guardians",
@@ -90,12 +90,45 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Battle Focus Stormblades: At the end of your Command phase , if this unit is within range of an objective marker you control, that objective marker remains under your control until your opponent\u2019s Level of Control over that objective marker is greater than yours at the end of a phase. Crewed Platform: When the last Storm Guardian model in this unit is destroyed, any remaining Serpent\u2019s Scale Platform models in this unit are also destroyed."
+      "Battle Focus"
     ],
-    "datasheet": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "At the end of your Command phase , if this unit is within range of an objective marker you control, that objective marker remains under your control until your opponent\u2019s Level of Control over that objective marker is greater than yours at the end of a phase.",
+        "name": "Stormblades"
+      },
+      {
+        "type": "rule",
+        "text": "When the last Storm Guardian model in this unit is destroyed, any remaining Serpent\u2019s Scale Platform models in this unit are also destroyed.",
+        "name": "Crewed Platform"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "10 Storm Guardians"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "1 Serpent\u2019s Scale Platform"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "shuriken pistol; close combat weapon.",
+      "label": "Every Storm Guardian is equipped with"
+    },
+    {
+      "type": "statement",
+      "text": "close combat weapon; Serpent shield.",
+      "label": "The Serpent\u2019s Scale Platform is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -145,8 +178,18 @@
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Battle Focus Stormblades: At the end of your Command phase , if this unit is within range of an objective marker you control, that objective marker remains under your control until your opponent\u2019s Level of Control over that objective marker is greater than yours at the end of a phase. Crewed Platform: When the last Storm Guardian model in this unit is destroyed, any remaining Serpent\u2019s Scale Platform models in this unit are also destroyed."
+            "Battle Focus"
           ]
+        },
+        {
+          "type": "rule",
+          "text": "At the end of your Command phase , if this unit is within range of an objective marker you control, that objective marker remains under your control until your opponent\u2019s Level of Control over that objective marker is greater than yours at the end of a phase.",
+          "name": "Stormblades"
+        },
+        {
+          "type": "rule",
+          "text": "When the last Storm Guardian model in this unit is destroyed, any remaining Serpent\u2019s Scale Platform models in this unit are also destroyed.",
+          "name": "Crewed Platform"
         }
       ]
     },
@@ -154,14 +197,37 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "text",
-          "text": "Serpent Shield: Models in the bearer\u2019s unit have a 5+ invulnerable save ."
+          "type": "statement",
+          "text": "Models in the bearer\u2019s unit have a 5+ invulnerable save .",
+          "label": "Serpent Shield"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "10 Storm Guardians"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "1 Serpent\u2019s Scale Platform"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "shuriken pistol; close combat weapon.",
+          "label": "Every Storm Guardian is equipped with"
+        },
+        {
+          "type": "statement",
+          "text": "close combat weapon; Serpent shield.",
+          "label": "The Serpent\u2019s Scale Platform is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -176,27 +242,10 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "WARGEAR ABILITIES",
-      "UNIT COMPOSITION",
-      "STRATAGEMS",
-      "LED BY",
-      "DETACHMENT ABILITY"
+      "UNIT COMPOSITION"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -204,60 +253,8 @@
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "LED BY",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:LED BY",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:LED BY",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

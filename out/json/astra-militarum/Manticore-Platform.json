@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Manticore-Platform",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Manticore-Platform",
     "canonicalSourceId": "wahapedia:aadfe2e306065644bfbb486639e8d4000a0877f5",
     "faction_slug": "astra-militarum",
     "datasheet_slug": "Manticore-Platform",
-    "fetchedAt": "2026-03-19T17:11:46+00:00",
-    "contentHash": "6e46bcc8aa0ae6e7c1a056ea5d282922a8c8e23f842a3adbe2489a2f0826950e",
+    "fetchedAt": "2026-03-21T03:37:10+00:00",
+    "contentHash": "5a5246d0bdc5954b3583da461576d5b314195b3b64cba459290addf0f6a3ba7b",
     "output_slug": "astra-militarum"
   },
   "name": "Manticore Platform",
@@ -52,13 +52,35 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise 1 Furious Barrage: Each time this model makes an attack with its storm eagle rockets that targets an enemy unit that contains five or more models, you can re-roll the Hit roll . Reinforced Cover: Each time a ranged attack is allocated to a model, if that model is not fully visible to every model in the attacking unit because of this Fortification, that model has the Benefit of Cover against that attack."
+      "Deadly Demise 1"
     ],
     "faction": [],
-    "datasheet": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this model makes an attack with its storm eagle rockets that targets an enemy unit that contains five or more models, you can re-roll the Hit roll .",
+        "name": "Furious Barrage"
+      },
+      {
+        "type": "rule",
+        "text": "Each time a ranged attack is allocated to a model, if that model is not fully visible to every model in the attacking unit because of this Fortification, that model has the Benefit of Cover against that attack.",
+        "name": "Reinforced Cover"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Manticore Platform"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "storm eagle rockets; close combat weapons.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -83,16 +105,18 @@
       "title": "WARGEAR OPTIONS",
       "entries": [
         {
-          "type": "list",
-          "items": [
-            "None"
-          ]
+          "type": "text",
+          "text": "None"
         }
       ]
     },
     {
       "title": "FORTIFICATION",
       "entries": [
+        {
+          "type": "text",
+          "text": "While an enemy unit is only within Engagement Range of one or more FORTIFICATIONS from your army:"
+        },
         {
           "type": "list",
           "items": [
@@ -109,14 +133,35 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise 1 Furious Barrage: Each time this model makes an attack with its storm eagle rockets that targets an enemy unit that contains five or more models, you can re-roll the Hit roll . Reinforced Cover: Each time a ranged attack is allocated to a model, if that model is not fully visible to every model in the attacking unit because of this Fortification, that model has the Benefit of Cover against that attack."
+            "Deadly Demise 1"
           ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model makes an attack with its storm eagle rockets that targets an enemy unit that contains five or more models, you can re-roll the Hit roll .",
+          "name": "Furious Barrage"
+        },
+        {
+          "type": "rule",
+          "text": "Each time a ranged attack is allocated to a model, if that model is not fully visible to every model in the attacking unit because of this Fortification, that model has the Benefit of Cover against that attack.",
+          "name": "Reinforced Cover"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Manticore Platform"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "storm eagle rockets; close combat weapons.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -131,26 +176,10 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "FORTIFICATION",
       "ABILITIES",
-      "UNIT COMPOSITION",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
+      "UNIT COMPOSITION"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -158,57 +187,8 @@
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

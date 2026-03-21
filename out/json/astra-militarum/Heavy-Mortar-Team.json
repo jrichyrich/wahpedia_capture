@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Heavy-Mortar-Team",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Heavy-Mortar-Team",
     "canonicalSourceId": "wahapedia:b0f6d2723ace43bbe0ef965e5be888d4ec6f1bab",
     "faction_slug": "astra-militarum",
     "datasheet_slug": "Heavy-Mortar-Team",
-    "fetchedAt": "2026-03-19T17:12:15+00:00",
-    "contentHash": "888a60e20b6d70031aa95b861a05939b001ab0550ae67f93e1ac3bce5739c704",
+    "fetchedAt": "2026-03-21T03:37:30+00:00",
+    "contentHash": "1901e801d06b0903fddac9f1838df18eaaafdcc1d2b7098c7e4bf5243900a45f",
     "output_slug": "astra-militarum"
   },
   "name": "Heavy Mortar Team",
@@ -54,15 +54,27 @@
   "abilities": {
     "core": [],
     "faction": [],
-    "datasheet": [],
-    "other": [
+    "datasheet": [
       {
-        "type": "text",
-        "text": "Rearm, Reload, Fire: While this model is being affected by an Order , provided it Remained Stationary this turn, ranged weapons equipped by this model have the [SUSTAINED HITS 1] ability."
+        "type": "rule",
+        "text": "While this model is being affected by an Order , provided it Remained Stationary this turn, ranged weapons equipped by this model have the [SUSTAINED HITS 1] ability.",
+        "name": "Rearm, Reload, Fire"
       }
-    ]
+    ],
+    "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Heavy Mortar Team"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "heavy mortar; close combat weapons.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -89,10 +101,8 @@
       "title": "WARGEAR OPTIONS",
       "entries": [
         {
-          "type": "list",
-          "items": [
-            "None"
-          ]
+          "type": "text",
+          "text": "None"
         }
       ]
     },
@@ -100,14 +110,26 @@
       "title": "ABILITIES",
       "entries": [
         {
-          "type": "text",
-          "text": "Rearm, Reload, Fire: While this model is being affected by an Order , provided it Remained Stationary this turn, ranged weapons equipped by this model have the [SUSTAINED HITS 1] ability."
+          "type": "rule",
+          "text": "While this model is being affected by an Order , provided it Remained Stationary this turn, ranged weapons equipped by this model have the [SUSTAINED HITS 1] ability.",
+          "name": "Rearm, Reload, Fire"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Heavy Mortar Team"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "heavy mortar; close combat weapons.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -123,34 +145,19 @@
       "title": "ARTILLERY TEAM",
       "entries": [
         {
-          "type": "text",
-          "text": "Designer\u2019s Note: Place three Crew tokens next to this model when it is first set up, removing one each time this model loses a wound (the Heavy Mortar Team model itself is considered to represent its final wound)."
+          "type": "statement",
+          "text": "Place three Crew tokens next to this model when it is first set up, removing one each time this model loses a wound (the Heavy Mortar Team model itself is considered to represent its final wound).",
+          "label": "Designer\u2019s Note"
         }
       ]
     }
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
-      "ARTILLERY TEAM",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
+      "ARTILLERY TEAM"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -158,57 +165,8 @@
       "UNIT COMPOSITION",
       "ARTILLERY TEAM"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

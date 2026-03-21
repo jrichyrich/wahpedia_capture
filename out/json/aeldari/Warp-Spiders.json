@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Warp-Spiders",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Warp-Spiders",
     "canonicalSourceId": "wahapedia:6fd7085e9c12c7407e61c19c544c8cd448502f1e",
     "faction_slug": "aeldari",
     "datasheet_slug": "Warp-Spiders",
-    "fetchedAt": "2026-03-19T17:11:23+00:00",
-    "contentHash": "450c4ce1945e8f4f0b1321b85da2330b1f71d77f878104c231e4f3d53560db9f",
+    "fetchedAt": "2026-03-21T03:36:47+00:00",
+    "contentHash": "f7548d159f2eeaa8126c4b3ff3bc11d763ccea0795c0567887c3c4725092d89b",
     "output_slug": "aeldari"
   },
   "name": "Warp Spiders",
@@ -119,13 +119,43 @@
   },
   "abilities": {
     "core": [
-      "Deep Strike FACTION: Battle Focus Flickerjump: In your Movement phase , each time this unit is selected to make a Normal move , it can use this ability. If it does, until the end of the turn, this unit is not eligible to declare a charge and models in it have a Move characteristic of 24\". Each time this unit uses this ability, at the end of the phase, roll one D6 for each model in this unit: for each 1, this unit suffers 1 mortal wound ."
+      "Deep Strike"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Battle Focus"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "In your Movement phase , each time this unit is selected to make a Normal move , it can use this ability. If it does, until the end of the turn, this unit is not eligible to declare a charge and models in it have a Move characteristic of 24\". Each time this unit uses this ability, at the end of the phase, roll one D6 for each model in this unit: for each 1, this unit suffers 1 mortal wound .",
+        "name": "Flickerjump"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Warp Spider Exarch"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "4-9 Warp Spiders"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "Exarch\u2019s death spinner; close combat weapon.",
+      "label": "The Warp Spider Exarch is equipped with"
+    },
+    {
+      "type": "statement",
+      "text": "death spinner; close combat weapon.",
+      "label": "Every Warp Spider is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -178,8 +208,20 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deep Strike FACTION: Battle Focus Flickerjump: In your Movement phase , each time this unit is selected to make a Normal move , it can use this ability. If it does, until the end of the turn, this unit is not eligible to declare a charge and models in it have a Move characteristic of 24\". Each time this unit uses this ability, at the end of the phase, roll one D6 for each model in this unit: for each 1, this unit suffers 1 mortal wound ."
+            "Deep Strike"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Battle Focus"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "In your Movement phase , each time this unit is selected to make a Normal move , it can use this ability. If it does, until the end of the turn, this unit is not eligible to declare a charge and models in it have a Move characteristic of 24\". Each time this unit uses this ability, at the end of the phase, roll one D6 for each model in this unit: for each 1, this unit suffers 1 mortal wound .",
+          "name": "Flickerjump"
         }
       ]
     },
@@ -187,14 +229,42 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "text",
-          "text": "Aspect Shrine Token: Once per battle for each Aspect Shrine token this unit has, you can change the result of one Hit roll or one Wound roll made for a model in this unit (excluding CHARACTER models) to an unmodified 6. Designer\u2019s Note: Place an Aspect Shrine token next to the unit for each Aspect Shrine token it has, removing one each time this ability is used."
+          "type": "statement",
+          "text": "Once per battle for each Aspect Shrine token this unit has, you can change the result of one Hit roll or one Wound roll made for a model in this unit (excluding CHARACTER models) to an unmodified 6.",
+          "label": "Aspect Shrine Token"
+        },
+        {
+          "type": "statement",
+          "text": "Place an Aspect Shrine token next to the unit for each Aspect Shrine token it has, removing one each time this ability is used.",
+          "label": "Designer\u2019s Note"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Warp Spider Exarch"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "4-9 Warp Spiders"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "Exarch\u2019s death spinner; close combat weapon.",
+          "label": "The Warp Spider Exarch is equipped with"
+        },
+        {
+          "type": "statement",
+          "text": "death spinner; close combat weapon.",
+          "label": "Every Warp Spider is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -213,27 +283,10 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "WARGEAR ABILITIES",
-      "UNIT COMPOSITION",
-      "STRATAGEMS",
-      "LED BY",
-      "DETACHMENT ABILITY"
+      "UNIT COMPOSITION"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -241,60 +294,8 @@
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "LED BY",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:LED BY",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:LED BY",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

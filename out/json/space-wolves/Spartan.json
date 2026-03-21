@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Spartan",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Spartan",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Spartan",
     "canonicalSourceId": "wahapedia:e65767c763af5b4acc0974c1f4d98ffb50f4422d",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "89f583d8a0840097b4af8cfe4373eb734b00e726be30950cb6f07c12aa4296e3"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Spartan",
+    "fetchedAt": "2026-03-21T03:46:40+00:00",
+    "contentHash": "72fbc2d245ad97cd7fe6a0333b47f08ea93b78e604842dfa075f9be2dc64a0c5",
+    "output_slug": "space-wolves"
   },
   "name": "Spartan",
   "base_size": "\u2300Use model",
@@ -135,13 +137,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D6 FACTION: Oath of Moment Assault Ramp: Each time a unit disembarks from this model after it has made a Normal move , that unit is still eligible to declare a charge this turn."
+      "Deadly Demise D6"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time a unit disembarks from this model after it has made a Normal move , that unit is still eligible to declare a charge this turn.",
+        "name": "Assault Ramp"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Spartan"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "2 quad lascannons; twin heavy bolter; armoured tracks.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -195,14 +216,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D6 FACTION: Oath of Moment Assault Ramp: Each time a unit disembarks from this model after it has made a Normal move , that unit is still eligible to declare a charge this turn."
+            "Deadly Demise D6"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time a unit disembarks from this model after it has made a Normal move , that unit is still eligible to declare a charge this turn.",
+          "name": "Assault Ramp"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Spartan"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "2 quad lascannons; twin heavy bolter; armoured tracks.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -233,10 +277,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "DAMAGED: 1-6 WOUNDS REMAINING",
@@ -250,6 +293,7 @@
       "TRANSPORT"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

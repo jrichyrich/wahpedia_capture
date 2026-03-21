@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Assault-Intercessor-Squad",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Assault-Intercessor-Squad",
-    "output_slug": "ultramarines",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Assault-Intercessor-Squad",
     "canonicalSourceId": "wahapedia:8fadec15a42a28dc44e57ab8c8502b3b65475c8d",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "92c3add23574e826b8c4dacc5bb55e5a208f51b35b5e3774efd14aeac6b044ac"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Assault-Intercessor-Squad",
+    "fetchedAt": "2026-03-21T03:48:01+00:00",
+    "contentHash": "c3594ff290a308894deedcfc3cd747281b32eef2c61254dbc604543056f94d20",
+    "output_slug": "ultramarines"
   },
   "name": "Assault Intercessor Squad",
   "base_size": "\u230032mm",
@@ -121,12 +123,35 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Oath of Moment Shock Assault: Each time a model in this unit targets an enemy unit with a melee attack, re-roll a Wound roll of 1. If that enemy unit is within range of an objective marker , you can re-roll the Wound roll instead."
+      "Oath of Moment"
     ],
-    "datasheet": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time a model in this unit targets an enemy unit with a melee attack, re-roll a Wound roll of 1. If that enemy unit is within range of an objective marker , you can re-roll the Wound roll instead.",
+        "name": "Shock Assault"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Assault Intercessor Sergeant"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "4-9 Assault Intercessors"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "heavy bolt pistol; Astartes chainsword.",
+      "label": "Every model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -182,14 +207,36 @@
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Oath of Moment Shock Assault: Each time a model in this unit targets an enemy unit with a melee attack, re-roll a Wound roll of 1. If that enemy unit is within range of an objective marker , you can re-roll the Wound roll instead."
+            "Oath of Moment"
           ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time a model in this unit targets an enemy unit with a melee attack, re-roll a Wound roll of 1. If that enemy unit is within range of an objective marker , you can re-roll the Wound roll instead.",
+          "name": "Shock Assault"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Assault Intercessor Sergeant"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "4-9 Assault Intercessors"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "heavy bolt pistol; Astartes chainsword.",
+          "label": "Every model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -206,10 +253,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
@@ -219,6 +265,7 @@
       "UNIT COMPOSITION"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

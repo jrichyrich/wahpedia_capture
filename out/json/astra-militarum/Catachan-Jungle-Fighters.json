@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Catachan-Jungle-Fighters",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Catachan-Jungle-Fighters",
     "canonicalSourceId": "wahapedia:824b3c3645b61238b9be64dee56cba6ce6d5d3be",
     "faction_slug": "astra-militarum",
     "datasheet_slug": "Catachan-Jungle-Fighters",
-    "fetchedAt": "2026-03-19T17:11:44+00:00",
-    "contentHash": "f7d0650d31cc88467d4a11f282dae455ff3b48e16ae1a04578986de62941f830",
+    "fetchedAt": "2026-03-21T03:37:07+00:00",
+    "contentHash": "3a8fdb17e2f8db02f7446f8791e563fd11ca55e001ef323b8d45b59986db3667",
     "output_slug": "astra-militarum"
   },
   "name": "Catachan Jungle Fighters",
@@ -76,13 +76,45 @@
   },
   "abilities": {
     "core": [
-      "Scouts 6\" Jungle Fighters: Each time a model in this unit makes a melee attack, if this unit made a Charge move or was charged this turn, add 1 to the Wound roll ."
+      "Scouts 6\""
     ],
     "faction": [],
-    "datasheet": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time a model in this unit makes a melee attack, if this unit made a Charge move or was charged this turn, add 1 to the Wound roll .",
+        "name": "Jungle Fighters"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Jungle Fighter Sergeant and 9 Jungle Fighters"
+      ]
+    },
+    {
+      "type": "text",
+      "text": "OR"
+    },
+    {
+      "type": "list",
+      "items": [
+        "2 Jungle Fighter Sergeants and 18 Jungle Fighters"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "laspistol; close combat weapon.",
+      "label": "Every Jungle Fighter Sergeant is equipped with"
+    },
+    {
+      "type": "statement",
+      "text": "lasgun; close combat weapon. This unit can have up to two Leader units attached to it, provided no more than one of those units is a COMMAND SQUAD unit. If it does, and this Bodyguard unit is destroyed, the Leader units attached to it become separate units, with their original Starting Strengths .",
+      "label": "Every Jungle Fighter is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -132,8 +164,13 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Scouts 6\" Jungle Fighters: Each time a model in this unit makes a melee attack, if this unit made a Charge move or was charged this turn, add 1 to the Wound roll ."
+            "Scouts 6\""
           ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time a model in this unit makes a melee attack, if this unit made a Charge move or was charged this turn, add 1 to the Wound roll .",
+          "name": "Jungle Fighters"
         }
       ]
     },
@@ -141,14 +178,41 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "text",
-          "text": "Vox-caster: Each time you target the bearer\u2019s unit with a Stratagem , roll one D6, adding 1 to the result if there are one or more friendly OFFICER models within 6\": on a 5+, you gain 1CP."
+          "type": "statement",
+          "text": "Each time you target the bearer\u2019s unit with a Stratagem , roll one D6, adding 1 to the result if there are one or more friendly OFFICER models within 6\": on a 5+, you gain 1CP.",
+          "label": "Vox-caster"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Jungle Fighter Sergeant and 9 Jungle Fighters"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "OR"
+        },
+        {
+          "type": "list",
+          "items": [
+            "2 Jungle Fighter Sergeants and 18 Jungle Fighters"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "laspistol; close combat weapon.",
+          "label": "Every Jungle Fighter Sergeant is equipped with"
+        },
+        {
+          "type": "statement",
+          "text": "lasgun; close combat weapon. This unit can have up to two Leader units attached to it, provided no more than one of those units is a COMMAND SQUAD unit. If it does, and this Bodyguard unit is destroyed, the Leader units attached to it become separate units, with their original Starting Strengths .",
+          "label": "Every Jungle Fighter is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -167,27 +231,10 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "WARGEAR ABILITIES",
-      "UNIT COMPOSITION",
-      "STRATAGEMS",
-      "LED BY",
-      "DETACHMENT ABILITY"
+      "UNIT COMPOSITION"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -195,60 +242,8 @@
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "LED BY",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:LED BY",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:LED BY",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

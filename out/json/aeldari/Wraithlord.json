@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Wraithlord",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Wraithlord",
     "canonicalSourceId": "wahapedia:64cfe07ca3e3a2044ed27c3a6dd359780c13c90c",
     "faction_slug": "aeldari",
     "datasheet_slug": "Wraithlord",
-    "fetchedAt": "2026-03-19T17:11:25+00:00",
-    "contentHash": "0a570f17d9885d73248bef7678f7b88b8f73c73e2abe1399e5b1adc7b1307192",
+    "fetchedAt": "2026-03-21T03:36:49+00:00",
+    "contentHash": "1c043d47a4de9f1f71c09e780422904b4cb95073034d0fbf0c411a069ed6a0a2",
     "output_slug": "aeldari"
   },
   "name": "Wraithlord",
@@ -151,13 +151,35 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise 1 Fated Hero: At the start of the battle, select one of the following keywords: INFANTRY ; MONSTER ; MOUNTED ; VEHICLE . Each time this model makes an attack that targets a unit with the selected keyword, re-roll a Hit roll of 1 and re-roll a Wound roll of 1. Psychic Guidance: While this model is within 12\" of one or more friendly AELDARI PSYKER models, improve the Ballistic Skill and Weapon Skill characteristics of weapons equipped by this model by 1 and it has a Leadership characteristic of 6+."
+      "Deadly Demise 1"
     ],
     "faction": [],
-    "datasheet": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "At the start of the battle, select one of the following keywords: INFANTRY ; MONSTER ; MOUNTED ; VEHICLE . Each time this model makes an attack that targets a unit with the selected keyword, re-roll a Hit roll of 1 and re-roll a Wound roll of 1.",
+        "name": "Fated Hero"
+      },
+      {
+        "type": "rule",
+        "text": "While this model is within 12\" of one or more friendly AELDARI PSYKER models, improve the Ballistic Skill and Weapon Skill characteristics of weapons equipped by this model by 1 and it has a Leadership characteristic of 6+.",
+        "name": "Psychic Guidance"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Wraithlord"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "2 shuriken catapults; wraithbone fists.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -212,14 +234,35 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise 1 Fated Hero: At the start of the battle, select one of the following keywords: INFANTRY ; MONSTER ; MOUNTED ; VEHICLE . Each time this model makes an attack that targets a unit with the selected keyword, re-roll a Hit roll of 1 and re-roll a Wound roll of 1. Psychic Guidance: While this model is within 12\" of one or more friendly AELDARI PSYKER models, improve the Ballistic Skill and Weapon Skill characteristics of weapons equipped by this model by 1 and it has a Leadership characteristic of 6+."
+            "Deadly Demise 1"
           ]
+        },
+        {
+          "type": "rule",
+          "text": "At the start of the battle, select one of the following keywords: INFANTRY ; MONSTER ; MOUNTED ; VEHICLE . Each time this model makes an attack that targets a unit with the selected keyword, re-roll a Hit roll of 1 and re-roll a Wound roll of 1.",
+          "name": "Fated Hero"
+        },
+        {
+          "type": "rule",
+          "text": "While this model is within 12\" of one or more friendly AELDARI PSYKER models, improve the Ballistic Skill and Weapon Skill characteristics of weapons equipped by this model by 1 and it has a Leadership characteristic of 6+.",
+          "name": "Psychic Guidance"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Wraithlord"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "2 shuriken catapults; wraithbone fists.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -234,86 +277,17 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
-      "UNIT COMPOSITION",
-      "STRATAGEMS",
-      "LED BY",
-      "DETACHMENT ABILITY"
+      "UNIT COMPOSITION"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "LED BY",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:LED BY",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:LED BY",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Centurion-Devastator-Squad",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Centurion-Devastator-Squad",
     "canonicalSourceId": "wahapedia:7522e012ffe9263da41e9b0ddca5841b4cca4415",
     "faction_slug": "space-marines",
     "datasheet_slug": "Centurion-Devastator-Squad",
-    "fetchedAt": "2026-03-19T17:14:13+00:00",
-    "contentHash": "30011f571d5c8da60e685b7991fd8a00882b176137d3125d577651538c1b9d15",
+    "fetchedAt": "2026-03-21T03:39:00+00:00",
+    "contentHash": "caaf4b0fe053a45e05ffc5fc9f9123ee33e32f3319ecf37540d0b78857a80180",
     "output_slug": "dark-angels"
   },
   "name": "Centurion Devastator Squad",
@@ -102,12 +102,35 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Oath of Moment Decimator Protocols: Each time a model in this unit makes a ranged attack, re-roll a Hit roll of 1. If the target of that attack is an enemy unit within range of an objective marker , you can re-roll the Hit roll instead."
+      "Oath of Moment"
     ],
-    "datasheet": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time a model in this unit makes a ranged attack, re-roll a Hit roll of 1. If the target of that attack is an enemy unit within range of an objective marker , you can re-roll the Hit roll instead.",
+        "name": "Decimator Protocols"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Devastator Centurion Sergeant"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "2-5 Devastator Centurions"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "grav-cannon; Centurion bolters; Centurion fists.",
+      "label": "Every model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -157,14 +180,36 @@
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Oath of Moment Decimator Protocols: Each time a model in this unit makes a ranged attack, re-roll a Hit roll of 1. If the target of that attack is an enemy unit within range of an objective marker , you can re-roll the Hit roll instead."
+            "Oath of Moment"
           ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time a model in this unit makes a ranged attack, re-roll a Hit roll of 1. If the target of that attack is an enemy unit within range of an objective marker , you can re-roll the Hit roll instead.",
+          "name": "Decimator Protocols"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Devastator Centurion Sergeant"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "2-5 Devastator Centurions"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "grav-cannon; Centurion bolters; Centurion fists.",
+          "label": "Every model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -183,86 +228,17 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
-      "UNIT COMPOSITION",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
+      "UNIT COMPOSITION"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

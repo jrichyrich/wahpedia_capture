@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Inceptor-Squad",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Inceptor-Squad",
-    "output_slug": "ultramarines",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Inceptor-Squad",
     "canonicalSourceId": "wahapedia:6b08b2905c063bbb38a851a9378922ae0916d2e2",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "dac167c9f0081bb4aece9a0a9b51d08d9d1ede27f309fc394e8b70a0d1624d23"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Inceptor-Squad",
+    "fetchedAt": "2026-03-21T03:48:30+00:00",
+    "contentHash": "971d05c611003d88cac9095f694370d014fe253a337047a2677fe6345fd04518",
+    "output_slug": "ultramarines"
   },
   "name": "Inceptor Squad",
   "base_size": "\u230040mm",
@@ -81,13 +83,38 @@
   },
   "abilities": {
     "core": [
-      "Deep Strike FACTION: Oath of Moment Meteoric Descent: In your Movement phase , when this unit is set up on the battlefield using the Deep Strike ability, it can perform a meteoric descent. If it does, this unit can be set up anywhere on the battlefield that is more than 6\" horizontally away from all enemy units, but until the end of the turn, it is not eligible to declare a charge ."
+      "Deep Strike"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "In your Movement phase , when this unit is set up on the battlefield using the Deep Strike ability, it can perform a meteoric descent. If it does, this unit can be set up anywhere on the battlefield that is more than 6\" horizontally away from all enemy units, but until the end of the turn, it is not eligible to declare a charge .",
+        "name": "Meteoric Descent"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Inceptor Sergeant"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "2-5 Inceptors"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "assault bolters; close combat weapon.",
+      "label": "Every model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -131,14 +158,43 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deep Strike FACTION: Oath of Moment Meteoric Descent: In your Movement phase , when this unit is set up on the battlefield using the Deep Strike ability, it can perform a meteoric descent. If it does, this unit can be set up anywhere on the battlefield that is more than 6\" horizontally away from all enemy units, but until the end of the turn, it is not eligible to declare a charge ."
+            "Deep Strike"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "In your Movement phase , when this unit is set up on the battlefield using the Deep Strike ability, it can perform a meteoric descent. If it does, this unit can be set up anywhere on the battlefield that is more than 6\" horizontally away from all enemy units, but until the end of the turn, it is not eligible to declare a charge .",
+          "name": "Meteoric Descent"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Inceptor Sergeant"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "2-5 Inceptors"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "assault bolters; close combat weapon.",
+          "label": "Every model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -155,10 +211,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
@@ -168,6 +223,7 @@
       "UNIT COMPOSITION"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

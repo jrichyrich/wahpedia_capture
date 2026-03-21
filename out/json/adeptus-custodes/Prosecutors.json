@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Prosecutors",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Prosecutors",
     "canonicalSourceId": "wahapedia:f674eaba703256fa0609d65bb9299f45c6fd6814",
     "faction_slug": "adeptus-custodes",
     "datasheet_slug": "Prosecutors",
-    "fetchedAt": "2026-03-19T17:10:53+00:00",
-    "contentHash": "54e8bacbdf65267c61af739fdb14e5d990f6242bdd034e9b0781232a2a4728e2",
+    "fetchedAt": "2026-03-21T03:36:16+00:00",
+    "contentHash": "d75d8fbbc882f18b605f43c48113ac831a70528836e885c24d70285e0c37b399",
     "output_slug": "adeptus-custodes"
   },
   "name": "Prosecutors",
@@ -52,15 +52,38 @@
   "abilities": {
     "core": [],
     "faction": [],
-    "datasheet": [],
-    "other": [
+    "datasheet": [
       {
-        "type": "text",
-        "text": "Daughters of the Abyss: Models in this unit have the Feel No Pain 3+ ability against Psychic Attacks and mortal wounds . Purity of Execution: Each time a model in this unit makes a ranged attack that targets a PSYKER unit, that attack has the [PRECISION] and [DEVASTATING WOUNDS] abilities."
+        "type": "rule",
+        "text": "Models in this unit have the Feel No Pain 3+ ability against Psychic Attacks and mortal wounds .",
+        "name": "Daughters of the Abyss"
+      },
+      {
+        "type": "rule",
+        "text": "Each time a model in this unit makes a ranged attack that targets a PSYKER unit, that attack has the [PRECISION] and [DEVASTATING WOUNDS] abilities.",
+        "name": "Purity of Execution"
       }
-    ]
+    ],
+    "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Prosecutor Sister Superior"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "3-9 Prosecutors"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "boltgun; close combat weapon.",
+      "label": "Every model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -97,14 +120,37 @@
       "title": "ABILITIES",
       "entries": [
         {
-          "type": "text",
-          "text": "Daughters of the Abyss: Models in this unit have the Feel No Pain 3+ ability against Psychic Attacks and mortal wounds . Purity of Execution: Each time a model in this unit makes a ranged attack that targets a PSYKER unit, that attack has the [PRECISION] and [DEVASTATING WOUNDS] abilities."
+          "type": "rule",
+          "text": "Models in this unit have the Feel No Pain 3+ ability against Psychic Attacks and mortal wounds .",
+          "name": "Daughters of the Abyss"
+        },
+        {
+          "type": "rule",
+          "text": "Each time a model in this unit makes a ranged attack that targets a PSYKER unit, that attack has the [PRECISION] and [DEVASTATING WOUNDS] abilities.",
+          "name": "Purity of Execution"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Prosecutor Sister Superior"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "3-9 Prosecutors"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "boltgun; close combat weapon.",
+          "label": "Every model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -131,88 +177,15 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "ABILITIES",
-      "UNIT COMPOSITION",
-      "STRATAGEMS",
-      "LED BY",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
+      "UNIT COMPOSITION"
     ],
     "exportedSectionTitles": [
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "LED BY",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:LED BY",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:LED BY",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

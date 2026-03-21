@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Aggressor-Squad",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Aggressor-Squad",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Aggressor-Squad",
     "canonicalSourceId": "wahapedia:efb0efe711b0c715742300a6e5dd395752ae1710",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "8baf5b4679a721a8b9ec7dc4a6943b02433ef68b7765c83a826dbd1de36fda6c"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Aggressor-Squad",
+    "fetchedAt": "2026-03-21T03:44:50+00:00",
+    "contentHash": "54de267712b2e24dfea47029f04d5fa300690076458e585f37140232c1c5cf53",
+    "output_slug": "space-wolves"
   },
   "name": "Aggressor Squad",
   "base_size": "\u230040mm",
@@ -78,12 +80,35 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Oath of Moment Close-quarters Firepower: Each time a model in this unit makes a ranged attack that targets the closest eligible target, improve the Armour Penetration characteristic of that attack by 1."
+      "Oath of Moment"
     ],
-    "datasheet": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time a model in this unit makes a ranged attack that targets the closest eligible target, improve the Armour Penetration characteristic of that attack by 1.",
+        "name": "Close-quarters Firepower"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Aggressor Sergeant"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "2-5 Aggressors"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "flamestorm gauntlets; twin power fist.",
+      "label": "Every model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -125,14 +150,36 @@
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Oath of Moment Close-quarters Firepower: Each time a model in this unit makes a ranged attack that targets the closest eligible target, improve the Armour Penetration characteristic of that attack by 1."
+            "Oath of Moment"
           ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time a model in this unit makes a ranged attack that targets the closest eligible target, improve the Armour Penetration characteristic of that attack by 1.",
+          "name": "Close-quarters Firepower"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Aggressor Sergeant"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "2-5 Aggressors"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "flamestorm gauntlets; twin power fist.",
+          "label": "Every model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -149,10 +196,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
@@ -162,6 +208,7 @@
       "UNIT COMPOSITION"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

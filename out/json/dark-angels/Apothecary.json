@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Apothecary",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Apothecary",
     "canonicalSourceId": "wahapedia:d91f12c38fec2fd4a9489e319e564cf034c8a06b",
     "faction_slug": "space-marines",
     "datasheet_slug": "Apothecary",
-    "fetchedAt": "2026-03-19T17:21:59+00:00",
-    "contentHash": "e64c8116ef651b22dcba03540e336f212cac6535e3992d79bb4214501ecfe908",
+    "fetchedAt": "2026-03-21T03:37:47+00:00",
+    "contentHash": "16565b62dab54c486d8820e670b5a9b953dcb34a1a18a7c3e8680bdd47077f42",
     "output_slug": "dark-angels"
   },
   "name": "Apothecary",
@@ -63,13 +63,37 @@
   },
   "abilities": {
     "core": [
-      "Leader FACTION: Oath of Moment Narthecium: While this model is leading a unit, in your Command phase , you can return 1 destroyed model (excluding CHARACTER models) to that unit. Gene-seed Recovery: When this model\u2019s Bodyguard unit is destroyed, roll one D6: on a 2+, you gain 1CP"
+      "Leader"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, in your Command phase , you can return 1 destroyed model (excluding CHARACTER models) to that unit.",
+        "name": "Narthecium"
+      },
+      {
+        "type": "rule",
+        "text": "When this model\u2019s Bodyguard unit is destroyed, roll one D6: on a 2+, you gain 1CP",
+        "name": "Gene-seed Recovery"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Apothecary"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "absolvor bolt pistol; reductor pistol; close combat weapon.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -99,14 +123,42 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Leader FACTION: Oath of Moment Narthecium: While this model is leading a unit, in your Command phase , you can return 1 destroyed model (excluding CHARACTER models) to that unit. Gene-seed Recovery: When this model\u2019s Bodyguard unit is destroyed, roll one D6: on a 2+, you gain 1CP"
+            "Leader"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, in your Command phase , you can return 1 destroyed model (excluding CHARACTER models) to that unit.",
+          "name": "Narthecium"
+        },
+        {
+          "type": "rule",
+          "text": "When this model\u2019s Bodyguard unit is destroyed, roll one D6: on a 2+, you gain 1CP",
+          "name": "Gene-seed Recovery"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Apothecary"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "absolvor bolt pistol; reductor pistol; close combat weapon.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -121,6 +173,10 @@
     {
       "title": "LEADER",
       "entries": [
+        {
+          "type": "text",
+          "text": "This model can be attached to the following units:"
+        },
         {
           "type": "list",
           "items": [
@@ -145,92 +201,27 @@
             "Vanguard Veteran Squad",
             "Wolf Guard"
           ]
+        },
+        {
+          "type": "text",
+          "text": "You can attach this model to one of the above units even if one CAPTAIN , CHAPTER MASTER or LIEUTENANT model has already been attached to it. If you do, and that Bodyguard unit is destroyed, the Leader units attached to it become separate units, with their original Starting Strengths ."
         }
       ]
     }
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "ABILITIES",
       "UNIT COMPOSITION",
-      "LEADER",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
+      "LEADER"
     ],
     "exportedSectionTitles": [
       "ABILITIES",
       "UNIT COMPOSITION",
       "LEADER"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

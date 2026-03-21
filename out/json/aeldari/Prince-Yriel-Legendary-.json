@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Prince-Yriel-Legendary-",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Prince-Yriel-Legendary-",
     "canonicalSourceId": "wahapedia:d252fc234f997492ce6d648b828af459126962db",
     "faction_slug": "aeldari",
     "datasheet_slug": "Prince-Yriel-Legendary-",
-    "fetchedAt": "2026-03-19T17:11:11+00:00",
-    "contentHash": "ba30a117bf5accff36f1175f31c683ec7d2719128524001445d408cc92b9b959",
+    "fetchedAt": "2026-03-21T03:36:34+00:00",
+    "contentHash": "169de1f4c2041d62c16f164ae04b4a53acf2c507e7eed05c25cfa65b80fcf04e",
     "output_slug": "aeldari"
   },
   "name": "Prince Yriel",
@@ -52,13 +52,37 @@
   },
   "abilities": {
     "core": [
-      "Leader FACTION: Battle Focus Hero of Iyanden: While this model is leading a unit, add 1 to the Objective Control characteristic of models in that unit. Prince of Corsairs: If your army includes this model, after both players have deployed their armies, select up to three AELDARI units from your army and redeploy them. When doing so, you can set those units up in Strategic Reserves if you wish, regardless of how many units are already in Strategic Reserves."
+      "Leader"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Battle Focus"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, add 1 to the Objective Control characteristic of models in that unit.",
+        "name": "Hero of Iyanden"
+      },
+      {
+        "type": "rule",
+        "text": "If your army includes this model, after both players have deployed their armies, select up to three AELDARI units from your army and redeploy them. When doing so, you can set those units up in Strategic Reserves if you wish, regardless of how many units are already in Strategic Reserves.",
+        "name": "Prince of Corsairs"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Prince Yriel \u2013 EPIC HERO"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "the Eye of Wrath; the Spear of Twilight.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -84,10 +108,8 @@
       "title": "WARGEAR OPTIONS",
       "entries": [
         {
-          "type": "list",
-          "items": [
-            "None"
-          ]
+          "type": "text",
+          "text": "None"
         }
       ]
     },
@@ -98,14 +120,42 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Leader FACTION: Battle Focus Hero of Iyanden: While this model is leading a unit, add 1 to the Objective Control characteristic of models in that unit. Prince of Corsairs: If your army includes this model, after both players have deployed their armies, select up to three AELDARI units from your army and redeploy them. When doing so, you can set those units up in Strategic Reserves if you wish, regardless of how many units are already in Strategic Reserves."
+            "Leader"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Battle Focus"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, add 1 to the Objective Control characteristic of models in that unit.",
+          "name": "Hero of Iyanden"
+        },
+        {
+          "type": "rule",
+          "text": "If your army includes this model, after both players have deployed their armies, select up to three AELDARI units from your army and redeploy them. When doing so, you can set those units up in Strategic Reserves if you wish, regardless of how many units are already in Strategic Reserves.",
+          "name": "Prince of Corsairs"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Prince Yriel \u2013 EPIC HERO"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "the Eye of Wrath; the Spear of Twilight.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -121,6 +171,10 @@
       "title": "LEADER",
       "entries": [
         {
+          "type": "text",
+          "text": "This model can be attached to the following units:"
+        },
+        {
           "type": "list",
           "items": [
             "Corsair Voidreavers",
@@ -134,27 +188,10 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
-      "LEADER",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
+      "LEADER"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -162,60 +199,8 @@
       "UNIT COMPOSITION",
       "LEADER"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

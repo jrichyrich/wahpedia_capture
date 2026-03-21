@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Krieg-Combat-Engineers",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Krieg-Combat-Engineers",
     "canonicalSourceId": "wahapedia:885796926f70c5313b8815df524d1cefedbe8c11",
     "faction_slug": "astra-militarum",
     "datasheet_slug": "Krieg-Combat-Engineers",
-    "fetchedAt": "2026-03-19T17:11:56+00:00",
-    "contentHash": "d1039037557387679068f220047a53607fa1e41c700e01c34d7cfe28317a8cd5",
+    "fetchedAt": "2026-03-21T03:37:16+00:00",
+    "contentHash": "498ece0b3d94527e92f23ae26a42d16d4069f5f11cf45a5a591b292dcf531b7f",
     "output_slug": "astra-militarum"
   },
   "name": "Krieg Combat Engineers",
@@ -157,13 +157,36 @@
   },
   "abilities": {
     "core": [
-      "Scouts 6\" Grenadiers: Once per turn, you can target this unit with the Grenade Stratagem for 0CP."
+      "Scouts 6\""
     ],
     "faction": [],
-    "datasheet": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Once per turn, you can target this unit with the Grenade Stratagem for 0CP.",
+        "name": "Grenadiers"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Krieg Engineer Watchmaster"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "4-9 Krieg Combat Engineers"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "autopistol; trench club.",
+      "label": "Every model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -234,8 +257,13 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Scouts 6\" Grenadiers: Once per turn, you can target this unit with the Grenade Stratagem for 0CP."
+            "Scouts 6\""
           ]
+        },
+        {
+          "type": "rule",
+          "text": "Once per turn, you can target this unit with the Grenade Stratagem for 0CP.",
+          "name": "Grenadiers"
         }
       ]
     },
@@ -243,14 +271,37 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "text",
-          "text": "Remote Mine: Once per battle, at the start of your Shooting phase , you can select one enemy unit within 9\" of and visible to the bearer and roll one D6: on a 3+, that enemy unit suffers D3 mortal wounds , or 2D3 mortal wounds instead if it is a VEHICLE or FORTIFICATIONS unit. Designer\u2019s Note: Place a Remote Mine token next to the unit, removing it once this ability has been used."
+          "type": "statement",
+          "text": "Once per battle, at the start of your Shooting phase , you can select one enemy unit within 9\" of and visible to the bearer and roll one D6: on a 3+, that enemy unit suffers D3 mortal wounds , or 2D3 mortal wounds instead if it is a VEHICLE or FORTIFICATIONS unit.",
+          "label": "Remote Mine"
+        },
+        {
+          "type": "statement",
+          "text": "Place a Remote Mine token next to the unit, removing it once this ability has been used.",
+          "label": "Designer\u2019s Note"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Krieg Engineer Watchmaster"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "4-9 Krieg Combat Engineers"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "autopistol; trench club.",
+          "label": "Every model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -269,27 +320,10 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "WARGEAR ABILITIES",
-      "UNIT COMPOSITION",
-      "STRATAGEMS",
-      "LED BY",
-      "DETACHMENT ABILITY"
+      "UNIT COMPOSITION"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -297,60 +331,8 @@
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "LED BY",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:LED BY",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:LED BY",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

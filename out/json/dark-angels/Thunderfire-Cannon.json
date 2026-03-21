@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Thunderfire-Cannon",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Thunderfire-Cannon",
     "canonicalSourceId": "wahapedia:506db2fce944caa82fa1aac2cd0d49f3a56d0471",
     "faction_slug": "space-marines",
     "datasheet_slug": "Thunderfire-Cannon",
-    "fetchedAt": "2026-03-19T17:16:33+00:00",
-    "contentHash": "a911a696477675b42fadbe041cad8430fea7c1b899542f7f5efeab3dc53ebbe0",
+    "fetchedAt": "2026-03-21T03:40:39+00:00",
+    "contentHash": "c55eff5132b81800d3072d70ab750fce2b51e41deb30677af7389e984e5260fb",
     "output_slug": "dark-angels"
   },
   "name": "Thunderfire Cannon",
@@ -102,12 +102,45 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Oath of Moment Tremor Shells: In your Shooting phase , after this unit has shot, if an enemy INFANTRY unit was hit by one or more attacks made by this unit\u2019s thunderfire cannon this phase, until the end of your opponent\u2019s next turn, that enemy unit is shaken. While a unit is shaken, subtract 2 from that unit\u2019s Move characteristic, and subtract 2 from Advance and Charge rolls made for that unit. Crewed Artillery: If one model in this unit is destroyed, the remaining model in this unit is also destroyed."
+      "Oath of Moment"
     ],
-    "datasheet": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "In your Shooting phase , after this unit has shot, if an enemy INFANTRY unit was hit by one or more attacks made by this unit\u2019s thunderfire cannon this phase, until the end of your opponent\u2019s next turn, that enemy unit is shaken. While a unit is shaken, subtract 2 from that unit\u2019s Move characteristic, and subtract 2 from Advance and Charge rolls made for that unit.",
+        "name": "Tremor Shells"
+      },
+      {
+        "type": "rule",
+        "text": "If one model in this unit is destroyed, the remaining model in this unit is also destroyed.",
+        "name": "Crewed Artillery"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Techmarine Gunner"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "1 Thunderfire Cannon"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "bolt pistol; flamer; plasma cutter; Gunner\u2019s servo-arms; close combat weapon.",
+      "label": "The Techmarine Gunner is equipped with"
+    },
+    {
+      "type": "statement",
+      "text": "thunderfire cannon; close combat weapon.",
+      "label": "The Thunderfire Cannon is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -132,10 +165,8 @@
       "title": "WARGEAR OPTIONS",
       "entries": [
         {
-          "type": "list",
-          "items": [
-            "None"
-          ]
+          "type": "text",
+          "text": "None"
         }
       ]
     },
@@ -146,14 +177,46 @@
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Oath of Moment Tremor Shells: In your Shooting phase , after this unit has shot, if an enemy INFANTRY unit was hit by one or more attacks made by this unit\u2019s thunderfire cannon this phase, until the end of your opponent\u2019s next turn, that enemy unit is shaken. While a unit is shaken, subtract 2 from that unit\u2019s Move characteristic, and subtract 2 from Advance and Charge rolls made for that unit. Crewed Artillery: If one model in this unit is destroyed, the remaining model in this unit is also destroyed."
+            "Oath of Moment"
           ]
+        },
+        {
+          "type": "rule",
+          "text": "In your Shooting phase , after this unit has shot, if an enemy INFANTRY unit was hit by one or more attacks made by this unit\u2019s thunderfire cannon this phase, until the end of your opponent\u2019s next turn, that enemy unit is shaken. While a unit is shaken, subtract 2 from that unit\u2019s Move characteristic, and subtract 2 from Advance and Charge rolls made for that unit.",
+          "name": "Tremor Shells"
+        },
+        {
+          "type": "rule",
+          "text": "If one model in this unit is destroyed, the remaining model in this unit is also destroyed.",
+          "name": "Crewed Artillery"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Techmarine Gunner"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "1 Thunderfire Cannon"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "bolt pistol; flamer; plasma cutter; Gunner\u2019s servo-arms; close combat weapon.",
+          "label": "The Techmarine Gunner is equipped with"
+        },
+        {
+          "type": "statement",
+          "text": "thunderfire cannon; close combat weapon.",
+          "label": "The Thunderfire Cannon is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -168,86 +231,17 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
-      "UNIT COMPOSITION",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
+      "UNIT COMPOSITION"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Ironclad-Dreadnought",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Ironclad-Dreadnought",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Ironclad-Dreadnought",
     "canonicalSourceId": "wahapedia:69d58b41229544a56ed19dcf9b0cc3f1a057e44b",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "24aefde8d325d6014b9cbcf831b04e9041e86f9751f9513e69cb604822339740"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Ironclad-Dreadnought",
+    "fetchedAt": "2026-03-21T03:46:10+00:00",
+    "contentHash": "ce88ab571dccdff17ac0452be4642cc290a546707759e94389e24cab9874e720",
+    "output_slug": "space-wolves"
   },
   "name": "Ironclad Dreadnought",
   "base_size": "\u230060mm",
@@ -119,13 +121,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise 1 FACTION: Oath of Moment Siege-breaker Protocols: Each time this model makes a melee attack that targets a VEHICLE or FORTIFICATION unit, add 1 to the Hit roll and add 1 to the Wound roll ."
+      "Deadly Demise 1"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this model makes a melee attack that targets a VEHICLE or FORTIFICATION unit, add 1 to the Hit roll and add 1 to the Wound roll .",
+        "name": "Siege-breaker Protocols"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Ironclad Dreadnought"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "meltagun; storm bolter; Dreadnought combat weapon; seismic hammer.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -191,8 +212,20 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise 1 FACTION: Oath of Moment Siege-breaker Protocols: Each time this model makes a melee attack that targets a VEHICLE or FORTIFICATION unit, add 1 to the Hit roll and add 1 to the Wound roll ."
+            "Deadly Demise 1"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model makes a melee attack that targets a VEHICLE or FORTIFICATION unit, add 1 to the Hit roll and add 1 to the Wound roll .",
+          "name": "Siege-breaker Protocols"
         }
       ]
     },
@@ -200,14 +233,26 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "text",
-          "text": "Ironclad Assault Launchers: The bearer has the GRENADES keyword."
+          "type": "statement",
+          "text": "The bearer has the GRENADES keyword.",
+          "label": "Ironclad Assault Launchers"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Ironclad Dreadnought"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "meltagun; storm bolter; Dreadnought combat weapon; seismic hammer.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -220,10 +265,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION"
@@ -235,6 +279,7 @@
       "UNIT COMPOSITION"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

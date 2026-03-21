@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Reavers",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Reavers",
     "canonicalSourceId": "wahapedia:31622649d514c612e6cf8047141342d247fd129b",
     "faction_slug": "drukhari",
     "datasheet_slug": "Reavers",
-    "fetchedAt": "2026-03-19T17:17:26+00:00",
-    "contentHash": "e220c3ad70756d79c023c104b807c834a3c9a63c5ced71ff6897ded62d485a91",
+    "fetchedAt": "2026-03-21T03:50:36+00:00",
+    "contentHash": "2a7532b641ca08588800b625f1f640938dc45141e9c74b1cf4fa025213246ad0",
     "output_slug": "drukhari"
   },
   "name": "Reavers",
@@ -95,12 +95,40 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Power from Pain Matchless Swiftness (Pain): In your Movement phase , when you select this unit to Advance , you can spend 1 Pain token to Empower this unit. While Empowered, each time this unit Advances, do not make an Advance roll . Instead, until the end of the phase, add 8\" to the Move characteristic of models in this unit. Eviscerating Fly-by: Each time this unit ends a Normal or Advance move , you can select one enemy unit (excluding MONSTERS and VEHICLES ) that it moved over during that move, then roll one D6 for each model in this unit: for each 4+, that enemy unit suffers 1 mortal wound ."
+      "Power from Pain"
     ],
-    "datasheet": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "In your Movement phase , when you select this unit to Advance , you can spend 1 Pain token to Empower this unit. While Empowered, each time this unit Advances, do not make an Advance roll . Instead, until the end of the phase, add 8\" to the Move characteristic of models in this unit.",
+        "name": "Matchless Swiftness (Pain)"
+      },
+      {
+        "type": "rule",
+        "text": "Each time this unit ends a Normal or Advance move , you can select one enemy unit (excluding MONSTERS and VEHICLES ) that it moved over during that move, then roll one D6 for each model in this unit: for each 4+, that enemy unit suffers 1 mortal wound .",
+        "name": "Eviscerating Fly-by"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Arena Champion"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "2-5 Reavers"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "splinter pistol; splinter rifle; bladevanes.",
+      "label": "Every model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -154,8 +182,18 @@
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Power from Pain Matchless Swiftness (Pain): In your Movement phase , when you select this unit to Advance , you can spend 1 Pain token to Empower this unit. While Empowered, each time this unit Advances, do not make an Advance roll . Instead, until the end of the phase, add 8\" to the Move characteristic of models in this unit. Eviscerating Fly-by: Each time this unit ends a Normal or Advance move , you can select one enemy unit (excluding MONSTERS and VEHICLES ) that it moved over during that move, then roll one D6 for each model in this unit: for each 4+, that enemy unit suffers 1 mortal wound ."
+            "Power from Pain"
           ]
+        },
+        {
+          "type": "rule",
+          "text": "In your Movement phase , when you select this unit to Advance , you can spend 1 Pain token to Empower this unit. While Empowered, each time this unit Advances, do not make an Advance roll . Instead, until the end of the phase, add 8\" to the Move characteristic of models in this unit.",
+          "name": "Matchless Swiftness (Pain)"
+        },
+        {
+          "type": "rule",
+          "text": "Each time this unit ends a Normal or Advance move , you can select one enemy unit (excluding MONSTERS and VEHICLES ) that it moved over during that move, then roll one D6 for each model in this unit: for each 4+, that enemy unit suffers 1 mortal wound .",
+          "name": "Eviscerating Fly-by"
         }
       ]
     },
@@ -163,14 +201,37 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "text",
-          "text": "Cluster Caltrops: Each time you roll to inflict wounds using this unit\u2019s Eviscerating Fly-by ability, you can re-roll one D6 for each model in this unit equipped with cluster caltrops. Grav-talon: The bearer\u2019s melee weapons have an Armour Penetration characteristic of -2 and the [LETHAL HITS] ability."
+          "type": "statement",
+          "text": "Each time you roll to inflict wounds using this unit\u2019s Eviscerating Fly-by ability, you can re-roll one D6 for each model in this unit equipped with cluster caltrops.",
+          "label": "Cluster Caltrops"
+        },
+        {
+          "type": "statement",
+          "text": "The bearer\u2019s melee weapons have an Armour Penetration characteristic of -2 and the [LETHAL HITS] ability.",
+          "label": "Grav-talon"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Arena Champion"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "2-5 Reavers"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "splinter pistol; splinter rifle; bladevanes.",
+          "label": "Every model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -189,26 +250,10 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "WARGEAR ABILITIES",
-      "UNIT COMPOSITION",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
+      "UNIT COMPOSITION"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -216,57 +261,8 @@
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

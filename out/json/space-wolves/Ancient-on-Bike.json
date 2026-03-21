@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Ancient-on-Bike",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Ancient-on-Bike",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Ancient-on-Bike",
     "canonicalSourceId": "wahapedia:2d726002d6bb74e803ef4cf139015cbb351c3c40",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "146f36e34a0821627bbb716ee9a174c56ad1be3c96df30cf9c5fdf656fc8e1ac"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Ancient-on-Bike",
+    "fetchedAt": "2026-03-21T03:44:07+00:00",
+    "contentHash": "256566bfc64fa1f87a1fda0188ec168b1d32215e20b2bddb6e0e467369dd9593",
+    "output_slug": "space-wolves"
   },
   "name": "Ancient On Bike",
   "base_size": "\u230075 x 25mm",
@@ -167,13 +169,37 @@
   },
   "abilities": {
     "core": [
-      "Leader FACTION: Oath of Moment Astartes Banner: While this model is leading a unit, add 1 to the Objective Control characteristic of models in that unit. Unbreakable Duty: While this model is within range of an objective marker and/or within 6\" of the centre of the battlefield, this model has the Feel No Pain 4+ ability"
+      "Leader"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, add 1 to the Objective Control characteristic of models in that unit.",
+        "name": "Astartes Banner"
+      },
+      {
+        "type": "rule",
+        "text": "While this model is within range of an objective marker and/or within 6\" of the centre of the battlefield, this model has the Feel No Pain 4+ ability",
+        "name": "Unbreakable Duty"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Ancient on Bike"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "bolt pistol; twin boltgun; Astartes chainsword.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -222,14 +248,42 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Leader FACTION: Oath of Moment Astartes Banner: While this model is leading a unit, add 1 to the Objective Control characteristic of models in that unit. Unbreakable Duty: While this model is within range of an objective marker and/or within 6\" of the centre of the battlefield, this model has the Feel No Pain 4+ ability"
+            "Leader"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, add 1 to the Objective Control characteristic of models in that unit.",
+          "name": "Astartes Banner"
+        },
+        {
+          "type": "rule",
+          "text": "While this model is within range of an objective marker and/or within 6\" of the centre of the battlefield, this model has the Feel No Pain 4+ ability",
+          "name": "Unbreakable Duty"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Ancient on Bike"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "bolt pistol; twin boltgun; Astartes chainsword.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -245,6 +299,10 @@
       "title": "LEADER",
       "entries": [
         {
+          "type": "text",
+          "text": "This model can be attached to the following units:"
+        },
+        {
           "type": "list",
           "items": [
             "Outrider Squad",
@@ -256,10 +314,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "LEADER"
@@ -271,6 +328,7 @@
       "LEADER"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

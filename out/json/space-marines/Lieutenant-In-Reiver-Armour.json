@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Lieutenant-In-Reiver-Armour",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Lieutenant-In-Reiver-Armour",
     "canonicalSourceId": "wahapedia:bc93bbbb51e774662c3383613ad2e3d28a306011",
     "faction_slug": "space-marines",
     "datasheet_slug": "Lieutenant-In-Reiver-Armour",
-    "fetchedAt": "2026-03-19T17:26:53+00:00",
-    "contentHash": "f481be3a4dfb21da4124ed2e16c2d2c604c06580618b0e9e5f82ab60bacc42bc",
+    "fetchedAt": "2026-03-21T03:41:14+00:00",
+    "contentHash": "c9cb4e23a3058f002ef0ff4719c9b45f5e6d02f7cdc6a869c457e7c7d32231dd",
     "output_slug": "space-marines"
   },
   "name": "Lieutenant In Reiver Armour",
@@ -54,13 +54,37 @@
   },
   "abilities": {
     "core": [
-      "Leader , Scouts 6\" FACTION: Oath of Moment Tactical Precision: While this model is leading a unit, weapons equipped by models in that unit have the [LETHAL HITS] ability. Deadly Terror: While this model is leading a unit, increase the range of that unit\u2019s Terror Troops ability by 3\"."
+      "Leader , Scouts 6\""
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, weapons equipped by models in that unit have the [LETHAL HITS] ability.",
+        "name": "Tactical Precision"
+      },
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, increase the range of that unit\u2019s Terror Troops ability by 3\".",
+        "name": "Deadly Terror"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Lieutenant in Reiver Armour"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "master-crafted special issue bolt pistol; combat knife.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -92,14 +116,42 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Leader , Scouts 6\" FACTION: Oath of Moment Tactical Precision: While this model is leading a unit, weapons equipped by models in that unit have the [LETHAL HITS] ability. Deadly Terror: While this model is leading a unit, increase the range of that unit\u2019s Terror Troops ability by 3\"."
+            "Leader , Scouts 6\""
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, weapons equipped by models in that unit have the [LETHAL HITS] ability.",
+          "name": "Tactical Precision"
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, increase the range of that unit\u2019s Terror Troops ability by 3\".",
+          "name": "Deadly Terror"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Lieutenant in Reiver Armour"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "master-crafted special issue bolt pistol; combat knife.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -115,97 +167,36 @@
       "title": "LEADER",
       "entries": [
         {
+          "type": "text",
+          "text": "This model can be attached to the following units:"
+        },
+        {
           "type": "list",
           "items": [
             "Reiver Squad",
             "Hounds Of Morkai"
           ]
+        },
+        {
+          "type": "text",
+          "text": "You can attach this model to a unit it can lead even if one CAPTAIN or CHAPTER MASTER model has already been attached to it. If you do, and that Bodyguard unit is destroyed, the Leader units attached to it become separate units, with their original Starting Strengths ."
         }
       ]
     }
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "ABILITIES",
       "UNIT COMPOSITION",
-      "LEADER",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
+      "LEADER"
     ],
     "exportedSectionTitles": [
       "ABILITIES",
       "UNIT COMPOSITION",
       "LEADER"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Rapier-Carrier",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Rapier-Carrier",
     "canonicalSourceId": "wahapedia:0ff37bb4c44fd9ac31e4917872e906c53155cdd9",
     "faction_slug": "death-guard",
     "datasheet_slug": "Rapier-Carrier",
-    "fetchedAt": "2026-03-19T17:17:07+00:00",
-    "contentHash": "6f09917c53c07d4e1c5aa4b358dfbe7c7f79d559520ff504630b0d0fc715d65c",
+    "fetchedAt": "2026-03-21T03:50:46+00:00",
+    "contentHash": "d06f0767bb7e599e5288aa6ac97cc645348c30c03be71368be03d0e1ed703cde",
     "output_slug": "death-guard"
   },
   "name": "Rapier Carrier",
@@ -116,12 +116,29 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Nurgle\u2019s Gift (Aura) Powerful Volley: Each time this model shoots in your Shooting phase , provided it Remained Stationary this turn, all [HEAVY] weapons equipped by models in this unit have the [LETHAL HITS] ability."
+      "Nurgle\u2019s Gift (Aura)"
     ],
-    "datasheet": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this model shoots in your Shooting phase , provided it Remained Stationary this turn, all [HEAVY] weapons equipped by models in this unit have the [LETHAL HITS] ability.",
+        "name": "Powerful Volley"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Rapier Carrier"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "boltgun; quad heavy bolter; close combat weapon.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -164,14 +181,30 @@
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Nurgle\u2019s Gift (Aura) Powerful Volley: Each time this model shoots in your Shooting phase , provided it Remained Stationary this turn, all [HEAVY] weapons equipped by models in this unit have the [LETHAL HITS] ability."
+            "Nurgle\u2019s Gift (Aura)"
           ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model shoots in your Shooting phase , provided it Remained Stationary this turn, all [HEAVY] weapons equipped by models in this unit have the [LETHAL HITS] ability.",
+          "name": "Powerful Volley"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Rapier Carrier"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "boltgun; quad heavy bolter; close combat weapon.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -186,82 +219,17 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
-      "UNIT COMPOSITION",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
+      "UNIT COMPOSITION"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Land-Speeder-Tempest",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Land-Speeder-Tempest",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Land-Speeder-Tempest",
     "canonicalSourceId": "wahapedia:fb152abfc6ed07291afeb10a018783a2db84e31c",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "e0f0d843ec3b4115319a7c0cac45ec7ff72efa836f1d5dadfad3ef7af9aa2131"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Land-Speeder-Tempest",
+    "fetchedAt": "2026-03-21T03:46:19+00:00",
+    "contentHash": "567b19a7fea6ae8c391bb0102a0eb25fd2f1d5854c1494a65b3c4817169b9070",
+    "output_slug": "space-wolves"
   },
   "name": "Land Speeder Tempest",
   "base_size": "\u230060mm flying base",
@@ -71,13 +73,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise 1 , Deep Strike FACTION: Oath of Moment Isolate and Destroy: Each time this model makes an attack that targets an enemy unit, if there are no other units from your opponent\u2019s army within 6\" of that target, add 1 to the Wound roll ."
+      "Deadly Demise 1 , Deep Strike"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this model makes an attack that targets an enemy unit, if there are no other units from your opponent\u2019s army within 6\" of that target, add 1 to the Wound roll .",
+        "name": "Isolate and Destroy"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Land Speeder Tempest"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "assault cannon; Tempest salvo launcher; armoured hull.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -103,10 +124,8 @@
       "title": "WARGEAR OPTIONS",
       "entries": [
         {
-          "type": "list",
-          "items": [
-            "None"
-          ]
+          "type": "text",
+          "text": "None"
         }
       ]
     },
@@ -117,14 +136,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise 1 , Deep Strike FACTION: Oath of Moment Isolate and Destroy: Each time this model makes an attack that targets an enemy unit, if there are no other units from your opponent\u2019s army within 6\" of that target, add 1 to the Wound roll ."
+            "Deadly Demise 1 , Deep Strike"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model makes an attack that targets an enemy unit, if there are no other units from your opponent\u2019s army within 6\" of that target, add 1 to the Wound roll .",
+          "name": "Isolate and Destroy"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Land Speeder Tempest"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "assault cannon; Tempest salvo launcher; armoured hull.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -137,10 +179,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
@@ -150,6 +191,7 @@
       "UNIT COMPOSITION"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

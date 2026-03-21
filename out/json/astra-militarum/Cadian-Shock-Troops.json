@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Cadian-Shock-Troops",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Cadian-Shock-Troops",
     "canonicalSourceId": "wahapedia:4d6e402cf8d2028eb8945c588fc6b7ce9e628c1c",
     "faction_slug": "astra-militarum",
     "datasheet_slug": "Cadian-Shock-Troops",
-    "fetchedAt": "2026-03-19T17:11:44+00:00",
-    "contentHash": "796e8de05712efa210071c37f9153e9c3bbd0913795ff429cfa5e805f97bafbd",
+    "fetchedAt": "2026-03-21T03:37:07+00:00",
+    "contentHash": "e8932ba175a6cb0586ee25c485a8218e4e94d7fc31ad46f35ddf4605a570e5eb",
     "output_slug": "astra-militarum"
   },
   "name": "Cadian Shock Troops",
@@ -168,15 +168,42 @@
   "abilities": {
     "core": [],
     "faction": [],
-    "datasheet": [],
-    "other": [
+    "datasheet": [
       {
-        "type": "text",
-        "text": "Shock Troops: At the end of your Command phase , if this unit is within range of an objective marker you control, that objective marker remains under your control, even if you have no models within range of it, until your opponent controls it at the start or end of any turn."
+        "type": "rule",
+        "text": "At the end of your Command phase , if this unit is within range of an objective marker you control, that objective marker remains under your control, even if you have no models within range of it, until your opponent controls it at the start or end of any turn.",
+        "name": "Shock Troops"
       }
-    ]
+    ],
+    "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Shock Trooper Sergeant and 9 Shock Troopers"
+      ]
+    },
+    {
+      "type": "text",
+      "text": "OR"
+    },
+    {
+      "type": "list",
+      "items": [
+        "2 Shock Trooper Sergeants and 18 Shock Troopers"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "laspistol; chainsword.",
+      "label": "Every Shock Trooper Sergeant is equipped with"
+    },
+    {
+      "type": "statement",
+      "text": "lasgun; close combat weapon. This unit can have up to two Leader units attached to it, provided no more than one of those units is a COMMAND SQUAD unit. If it does, and this Bodyguard unit is destroyed, the Leader units attached to it become separate units, with their original Starting Strengths .",
+      "label": "Every Shock Trooper is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -243,8 +270,9 @@
       "title": "ABILITIES",
       "entries": [
         {
-          "type": "text",
-          "text": "Shock Troops: At the end of your Command phase , if this unit is within range of an objective marker you control, that objective marker remains under your control, even if you have no models within range of it, until your opponent controls it at the start or end of any turn."
+          "type": "rule",
+          "text": "At the end of your Command phase , if this unit is within range of an objective marker you control, that objective marker remains under your control, even if you have no models within range of it, until your opponent controls it at the start or end of any turn.",
+          "name": "Shock Troops"
         }
       ]
     },
@@ -252,14 +280,41 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "text",
-          "text": "Vox-caster: Each time you target the bearer\u2019s unit with a Stratagem , roll one D6, adding 1 to the result if there are one or more friendly OFFICER models within 6\": on a 5+, you gain 1CP."
+          "type": "statement",
+          "text": "Each time you target the bearer\u2019s unit with a Stratagem , roll one D6, adding 1 to the result if there are one or more friendly OFFICER models within 6\": on a 5+, you gain 1CP.",
+          "label": "Vox-caster"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Shock Trooper Sergeant and 9 Shock Troopers"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "OR"
+        },
+        {
+          "type": "list",
+          "items": [
+            "2 Shock Trooper Sergeants and 18 Shock Troopers"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "laspistol; chainsword.",
+          "label": "Every Shock Trooper Sergeant is equipped with"
+        },
+        {
+          "type": "statement",
+          "text": "lasgun; close combat weapon. This unit can have up to two Leader units attached to it, provided no more than one of those units is a COMMAND SQUAD unit. If it does, and this Bodyguard unit is destroyed, the Leader units attached to it become separate units, with their original Starting Strengths .",
+          "label": "Every Shock Trooper is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -278,27 +333,10 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "WARGEAR ABILITIES",
-      "UNIT COMPOSITION",
-      "STRATAGEMS",
-      "LED BY",
-      "DETACHMENT ABILITY"
+      "UNIT COMPOSITION"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -306,60 +344,8 @@
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "LED BY",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:LED BY",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:LED BY",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

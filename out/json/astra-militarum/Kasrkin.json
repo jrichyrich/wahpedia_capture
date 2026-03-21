@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Kasrkin",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Kasrkin",
     "canonicalSourceId": "wahapedia:c730bf9684c5d20463bdce4ca0927e3c66d02712",
     "faction_slug": "astra-militarum",
     "datasheet_slug": "Kasrkin",
-    "fetchedAt": "2026-03-19T17:11:57+00:00",
-    "contentHash": "5be1af7a528c17c7001079544c345cbf5e455bb7323bc77698bb41f38cd75fb8",
+    "fetchedAt": "2026-03-21T03:37:16+00:00",
+    "contentHash": "f39c6f10fd5ef5170c971ded30a531bb69f058aa5e5d7ca7b7a66c06f0c1723d",
     "output_slug": "astra-militarum"
   },
   "name": "Kasrkin",
@@ -217,13 +217,41 @@
   },
   "abilities": {
     "core": [
-      "Scouts 6\" Warrior Elite: Once per battle round , at the start of any phase, you can select one Order to affect this unit until the start of your next Command phase , in addition to any other Orders issued to this unit by an OFFICER model this battle round."
+      "Scouts 6\""
     ],
     "faction": [],
-    "datasheet": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Once per battle round , at the start of any phase, you can select one Order to affect this unit until the start of your next Command phase , in addition to any other Orders issued to this unit by an OFFICER model this battle round.",
+        "name": "Warrior Elite"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Kasrkin Sergeant"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "9 Kasrkin Troopers"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "hot-shot laspistol; chainsword.",
+      "label": "The Kasrkin Sergeant is equipped with"
+    },
+    {
+      "type": "statement",
+      "text": "hot-shot lasgun; close combat weapon.",
+      "label": "Every Kasrkin Trooper is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -300,8 +328,13 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Scouts 6\" Warrior Elite: Once per battle round , at the start of any phase, you can select one Order to affect this unit until the start of your next Command phase , in addition to any other Orders issued to this unit by an OFFICER model this battle round."
+            "Scouts 6\""
           ]
+        },
+        {
+          "type": "rule",
+          "text": "Once per battle round , at the start of any phase, you can select one Order to affect this unit until the start of your next Command phase , in addition to any other Orders issued to this unit by an OFFICER model this battle round.",
+          "name": "Warrior Elite"
         }
       ]
     },
@@ -309,14 +342,42 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "text",
-          "text": "Vox-caster: Each time you target the bearer\u2019s unit with a Stratagem , roll one D6, adding 1 to the result if there are one or more friendly OFFICER models within 6\": on a 5+, you gain 1CP. Melta Mine: Once per battle, at the start of any phase, you can select one enemy unit within 3\" of the bearer and roll one D6: on a 2+, that enemy unit suffers D3 mortal wounds , or 2D3 mortal wounds instead if it is a VEHICLE unit."
+          "type": "statement",
+          "text": "Each time you target the bearer\u2019s unit with a Stratagem , roll one D6, adding 1 to the result if there are one or more friendly OFFICER models within 6\": on a 5+, you gain 1CP.",
+          "label": "Vox-caster"
+        },
+        {
+          "type": "statement",
+          "text": "Once per battle, at the start of any phase, you can select one enemy unit within 3\" of the bearer and roll one D6: on a 2+, that enemy unit suffers D3 mortal wounds , or 2D3 mortal wounds instead if it is a VEHICLE unit.",
+          "label": "Melta Mine"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Kasrkin Sergeant"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "9 Kasrkin Troopers"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "hot-shot laspistol; chainsword.",
+          "label": "The Kasrkin Sergeant is equipped with"
+        },
+        {
+          "type": "statement",
+          "text": "hot-shot lasgun; close combat weapon.",
+          "label": "Every Kasrkin Trooper is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -331,27 +392,10 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "WARGEAR ABILITIES",
-      "UNIT COMPOSITION",
-      "STRATAGEMS",
-      "LED BY",
-      "DETACHMENT ABILITY"
+      "UNIT COMPOSITION"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -359,60 +403,8 @@
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "LED BY",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:LED BY",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:LED BY",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

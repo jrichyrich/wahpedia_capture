@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Malcador-Infernus",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Malcador-Infernus",
     "canonicalSourceId": "wahapedia:3a3ed6708507af0c479ee4dbed52b678e6fbba32",
     "faction_slug": "astra-militarum",
     "datasheet_slug": "Malcador-Infernus",
-    "fetchedAt": "2026-03-19T17:12:18+00:00",
-    "contentHash": "6f9cbb1a156a29058188bb717d6e6b82d4c4f7be72842935ac51f144a51cf368",
+    "fetchedAt": "2026-03-21T03:37:34+00:00",
+    "contentHash": "4b6b60c43c3682b5c458091e19df83c5667202cd7578e1bff0763844e582e425",
     "output_slug": "astra-militarum"
   },
   "name": "Malcador Infernus",
@@ -131,13 +131,30 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D6 Explosive Death: When this model is destroyed, roll one D6: on a 3+, do not remove it from play \u2013 it can, after the attacking model\u2019s unit has finished making its attacks, shoot with its inferno gun as if it were your Shooting phase and as if it had its full wounds remaining. This model is then removed from play."
+      "Deadly Demise D6"
     ],
     "faction": [],
-    "datasheet": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "When this model is destroyed, roll one D6: on a 3+, do not remove it from play \u2013 it can, after the attacking model\u2019s unit has finished making its attacks, shoot with its inferno gun as if it were your Shooting phase and as if it had its full wounds remaining. This model is then removed from play.",
+        "name": "Explosive Death"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Malcador Infernus"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "2 heavy stubbers; inferno gun; armoured tracks.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -194,14 +211,30 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D6 Explosive Death: When this model is destroyed, roll one D6: on a 3+, do not remove it from play \u2013 it can, after the attacking model\u2019s unit has finished making its attacks, shoot with its inferno gun as if it were your Shooting phase and as if it had its full wounds remaining. This model is then removed from play."
+            "Deadly Demise D6"
           ]
+        },
+        {
+          "type": "rule",
+          "text": "When this model is destroyed, roll one D6: on a 3+, do not remove it from play \u2013 it can, after the attacking model\u2019s unit has finished making its attacks, shoot with its inferno gun as if it were your Shooting phase and as if it had its full wounds remaining. This model is then removed from play.",
+          "name": "Explosive Death"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Malcador Infernus"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "2 heavy stubbers; inferno gun; armoured tracks.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -225,26 +258,10 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
-      "DAMAGED: 1-6 WOUNDS REMAINING",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
+      "DAMAGED: 1-6 WOUNDS REMAINING"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -252,57 +269,8 @@
       "UNIT COMPOSITION",
       "DAMAGED: 1-6 WOUNDS REMAINING"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

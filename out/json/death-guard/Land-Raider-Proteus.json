@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Land-Raider-Proteus",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Land-Raider-Proteus",
     "canonicalSourceId": "wahapedia:84b140f0406d12036a0f098b6a441643471e371c",
     "faction_slug": "death-guard",
     "datasheet_slug": "Land-Raider-Proteus",
-    "fetchedAt": "2026-03-19T17:16:55+00:00",
-    "contentHash": "40b98818eba1cd45a414fc248a795eb0ee8dba3d848ab42603b587e451a9b642",
+    "fetchedAt": "2026-03-21T03:50:39+00:00",
+    "contentHash": "d1b7e5bf89a36d5d0ceda5ece3421ac7db5ba5d7941d225e41d3bd8a7e33d40c",
     "output_slug": "death-guard"
   },
   "name": "Land Raider Proteus",
@@ -124,13 +124,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D6 FACTION: Nurgle\u2019s Gift (Aura) Assault Ramp: Each time a unit disembarks from this model after it has made a Normal move , that unit is still eligible to declare a charge this turn."
+      "Deadly Demise D6"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Nurgle\u2019s Gift (Aura)"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time a unit disembarks from this model after it has made a Normal move , that unit is still eligible to declare a charge this turn.",
+        "name": "Assault Ramp"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Land Raider Proteus"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "2 twin lascannons; armoured tracks.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -190,8 +209,20 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D6 FACTION: Nurgle\u2019s Gift (Aura) Assault Ramp: Each time a unit disembarks from this model after it has made a Normal move , that unit is still eligible to declare a charge this turn."
+            "Deadly Demise D6"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Nurgle\u2019s Gift (Aura)"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time a unit disembarks from this model after it has made a Normal move , that unit is still eligible to declare a charge this turn.",
+          "name": "Assault Ramp"
         }
       ]
     },
@@ -199,14 +230,26 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "text",
-          "text": "Explorator Augury Web: Enemy units that are set up on the battlefield as Reinforcements cannot be set up within 12\" of this bearer, but the bearer must halve its Transport Capacity ."
+          "type": "statement",
+          "text": "Enemy units that are set up on the battlefield as Reinforcements cannot be set up within 12\" of this bearer, but the bearer must halve its Transport Capacity .",
+          "label": "Explorator Augury Web"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Land Raider Proteus"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "2 twin lascannons; armoured tracks.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -239,28 +282,12 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION",
       "DAMAGED: 1-5 WOUNDS REMAINING",
-      "TRANSPORT",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
+      "TRANSPORT"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -270,57 +297,8 @@
       "DAMAGED: 1-5 WOUNDS REMAINING",
       "TRANSPORT"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

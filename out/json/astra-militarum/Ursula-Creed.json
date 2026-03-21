@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Ursula-Creed",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Ursula-Creed",
     "canonicalSourceId": "wahapedia:fc0eed79a23999ce585a2bcb5857de5f458d794b",
     "faction_slug": "astra-militarum",
     "datasheet_slug": "Ursula-Creed",
-    "fetchedAt": "2026-03-19T17:11:41+00:00",
-    "contentHash": "c0ddc435dddc5c296eea3c6c67649ad1f3b4085113e3a5cba2a917abdcd583f2",
+    "fetchedAt": "2026-03-21T03:37:04+00:00",
+    "contentHash": "475bee923d39891d2e416cb5b84648c7d193806916a0a2acaf7f84629a02119b",
     "output_slug": "astra-militarum"
   },
   "name": "Ursula Creed",
@@ -52,13 +52,37 @@
   },
   "abilities": {
     "core": [
-      "Leader FACTION: Voice of Command Lord Castellan: While this model is leading a unit, that unit can be affected by up to two different Orders at the same time. Tactical Genius: Once per battle round , one friendly REGIMENT unit within 12\" of this model can be targeted with a Stratagem . If it does, reduce the CP cost of that use of that Stratagem by 1CP."
+      "Leader"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Voice of Command"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, that unit can be affected by up to two different Orders at the same time.",
+        "name": "Lord Castellan"
+      },
+      {
+        "type": "rule",
+        "text": "Once per battle round , one friendly REGIMENT unit within 12\" of this model can be targeted with a Stratagem . If it does, reduce the CP cost of that use of that Stratagem by 1CP.",
+        "name": "Tactical Genius"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Ursula Creed \u2013 EPIC HERO"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "Duty and Vengeance; power weapon.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -88,14 +112,42 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Leader FACTION: Voice of Command Lord Castellan: While this model is leading a unit, that unit can be affected by up to two different Orders at the same time. Tactical Genius: Once per battle round , one friendly REGIMENT unit within 12\" of this model can be targeted with a Stratagem . If it does, reduce the CP cost of that use of that Stratagem by 1CP."
+            "Leader"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Voice of Command"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, that unit can be affected by up to two different Orders at the same time.",
+          "name": "Lord Castellan"
+        },
+        {
+          "type": "rule",
+          "text": "Once per battle round , one friendly REGIMENT unit within 12\" of this model can be targeted with a Stratagem . If it does, reduce the CP cost of that use of that Stratagem by 1CP.",
+          "name": "Tactical Genius"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Ursula Creed \u2013 EPIC HERO"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "Duty and Vengeance; power weapon.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -110,6 +162,10 @@
     {
       "title": "LEADER",
       "entries": [
+        {
+          "type": "text",
+          "text": "This model can be attached to the following units:"
+        },
         {
           "type": "list",
           "items": [
@@ -131,26 +187,10 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "ABILITIES",
       "UNIT COMPOSITION",
       "LEADER",
-      "ORDERS",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
+      "ORDERS"
     ],
     "exportedSectionTitles": [
       "ABILITIES",
@@ -158,57 +198,8 @@
       "LEADER",
       "ORDERS"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Librarian-In-Terminator-Armour",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Librarian-In-Terminator-Armour",
-    "output_slug": "ultramarines",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Librarian-In-Terminator-Armour",
     "canonicalSourceId": "wahapedia:18c5407154c8ae381cf617e61a7ba588b9a9df39",
-    "fetchedAt": "2026-03-19T17:35:03+00:00",
-    "contentHash": "cdca0d4f3da1a5b8da494548740b6e507beab87cf37eaff55c2eda65173f05fa"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Librarian-In-Terminator-Armour",
+    "fetchedAt": "2026-03-21T03:47:31+00:00",
+    "contentHash": "23cc6a7b97b446c9044abd6f6476d498c76098ac461ba29d916d7ff1eb7830e2",
+    "output_slug": "ultramarines"
   },
   "name": "Librarian In Terminator Armour",
   "base_size": "\u230040mm",
@@ -92,13 +94,37 @@
   },
   "abilities": {
     "core": [
-      "Deep Strike , Leader FACTION: Oath of Moment Psychic Hood: While this model is leading a unit, models in that unit have the Feel No Pain 4+ ability against Psychic Attacks . Veil of Time (Psychic): While this model is leading a unit, weapons equipped by models in that unit have the [SUSTAINED HITS 1] ability."
+      "Deep Strike , Leader"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, models in that unit have the Feel No Pain 4+ ability against Psychic Attacks .",
+        "name": "Psychic Hood"
+      },
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, weapons equipped by models in that unit have the [SUSTAINED HITS 1] ability.",
+        "name": "Veil of Time (Psychic)"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Librarian in Terminator Armour"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "Smite; force weapon.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -142,14 +168,42 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deep Strike , Leader FACTION: Oath of Moment Psychic Hood: While this model is leading a unit, models in that unit have the Feel No Pain 4+ ability against Psychic Attacks . Veil of Time (Psychic): While this model is leading a unit, weapons equipped by models in that unit have the [SUSTAINED HITS 1] ability."
+            "Deep Strike , Leader"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, models in that unit have the Feel No Pain 4+ ability against Psychic Attacks .",
+          "name": "Psychic Hood"
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, weapons equipped by models in that unit have the [SUSTAINED HITS 1] ability.",
+          "name": "Veil of Time (Psychic)"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Librarian in Terminator Armour"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "Smite; force weapon.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -164,6 +218,10 @@
     {
       "title": "LEADER",
       "entries": [
+        {
+          "type": "text",
+          "text": "This model can be attached to the following units:"
+        },
         {
           "type": "list",
           "items": [
@@ -180,10 +238,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "LEADER"
@@ -195,6 +252,7 @@
       "LEADER"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

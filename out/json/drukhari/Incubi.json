@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Incubi",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Incubi",
     "canonicalSourceId": "wahapedia:cd30096b9a46c36a0c57f9f0dc961a5946cb3cf3",
     "faction_slug": "drukhari",
     "datasheet_slug": "Incubi",
-    "fetchedAt": "2026-03-19T17:17:23+00:00",
-    "contentHash": "978a8601afd110a5ee52cf95d90a03813c5e9b1ef84aee222fa37ff86f9d5c1b",
+    "fetchedAt": "2026-03-21T03:50:31+00:00",
+    "contentHash": "19f2fd7bd5f236151fff60f8070040761fdc975f7f8bf9099497845a2581bf1f",
     "output_slug": "drukhari"
   },
   "name": "Incubi",
@@ -61,12 +61,40 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Power from Pain Decapitating Strikes (Pain): In the Fight phase , when you select this unit to fight, you can spend 1 Pain token to Empower this unit. While Empowered, each time a model in this unit makes a melee attack that targets an INFANTRY unit, that attack has the [DEVASTATING WOUNDS] ability. Tormentors: At the start of the Fight phase , each enemy unit within Engagement Range of one or more units with this ability must take a Battle-shock test . Each time a model in this unit makes a melee attack that targets a Battle-shocked unit, add 1 to the Hit roll ."
+      "Power from Pain"
     ],
-    "datasheet": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "In the Fight phase , when you select this unit to fight, you can spend 1 Pain token to Empower this unit. While Empowered, each time a model in this unit makes a melee attack that targets an INFANTRY unit, that attack has the [DEVASTATING WOUNDS] ability.",
+        "name": "Decapitating Strikes (Pain)"
+      },
+      {
+        "type": "rule",
+        "text": "At the start of the Fight phase , each enemy unit within Engagement Range of one or more units with this ability must take a Battle-shock test . Each time a model in this unit makes a melee attack that targets a Battle-shocked unit, add 1 to the Hit roll .",
+        "name": "Tormentors"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Klaivex"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "4-9 Incubi"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "klaive.",
+      "label": "Every model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -113,8 +141,18 @@
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Power from Pain Decapitating Strikes (Pain): In the Fight phase , when you select this unit to fight, you can spend 1 Pain token to Empower this unit. While Empowered, each time a model in this unit makes a melee attack that targets an INFANTRY unit, that attack has the [DEVASTATING WOUNDS] ability. Tormentors: At the start of the Fight phase , each enemy unit within Engagement Range of one or more units with this ability must take a Battle-shock test . Each time a model in this unit makes a melee attack that targets a Battle-shocked unit, add 1 to the Hit roll ."
+            "Power from Pain"
           ]
+        },
+        {
+          "type": "rule",
+          "text": "In the Fight phase , when you select this unit to fight, you can spend 1 Pain token to Empower this unit. While Empowered, each time a model in this unit makes a melee attack that targets an INFANTRY unit, that attack has the [DEVASTATING WOUNDS] ability.",
+          "name": "Decapitating Strikes (Pain)"
+        },
+        {
+          "type": "rule",
+          "text": "At the start of the Fight phase , each enemy unit within Engagement Range of one or more units with this ability must take a Battle-shock test . Each time a model in this unit makes a melee attack that targets a Battle-shocked unit, add 1 to the Hit roll .",
+          "name": "Tormentors"
         }
       ]
     },
@@ -122,14 +160,37 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "text",
-          "text": "Incubi Shrine Token: Once per battle for each Incubi Shrine token this unit has, you can change the result of one Hit roll or one Wound roll made for a Klaivex or Incubi model in this unit to an unmodified 6. Designer's Note: Place an Incubi Shrine token next to the unit for each Incubi Shrine token it has, removing one each time this ability is used."
+          "type": "statement",
+          "text": "Once per battle for each Incubi Shrine token this unit has, you can change the result of one Hit roll or one Wound roll made for a Klaivex or Incubi model in this unit to an unmodified 6.",
+          "label": "Incubi Shrine Token"
+        },
+        {
+          "type": "statement",
+          "text": "Place an Incubi Shrine token next to the unit for each Incubi Shrine token it has, removing one each time this ability is used.",
+          "label": "Designer's Note"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Klaivex"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "4-9 Incubi"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "klaive.",
+          "label": "Every model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -148,20 +209,10 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "WARGEAR ABILITIES",
-      "UNIT COMPOSITION",
-      "STRATAGEMS",
-      "LED BY",
-      "DETACHMENT ABILITY"
+      "UNIT COMPOSITION"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -169,39 +220,8 @@
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION"
     ],
-    "missingExpectedSections": [
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "LED BY",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:LED BY",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:LED BY",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

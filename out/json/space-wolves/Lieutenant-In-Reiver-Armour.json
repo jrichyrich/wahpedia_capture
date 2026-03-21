@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Lieutenant-In-Reiver-Armour",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Lieutenant-In-Reiver-Armour",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Lieutenant-In-Reiver-Armour",
     "canonicalSourceId": "wahapedia:bc93bbbb51e774662c3383613ad2e3d28a306011",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "0fae852e1d2f58a4567f45c163356eb1cebe8b83202828260b5cd3baacacbe15"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Lieutenant-In-Reiver-Armour",
+    "fetchedAt": "2026-03-21T03:43:51+00:00",
+    "contentHash": "97cc32cfa32d024f59013dcc17899dcfc370783e5f14a5096ef1f68f6021a8a2",
+    "output_slug": "space-wolves"
   },
   "name": "Lieutenant In Reiver Armour",
   "base_size": "\u230040mm",
@@ -52,13 +54,37 @@
   },
   "abilities": {
     "core": [
-      "Leader , Scouts 6\" FACTION: Oath of Moment Tactical Precision: While this model is leading a unit, weapons equipped by models in that unit have the [LETHAL HITS] ability. Deadly Terror: While this model is leading a unit, increase the range of that unit\u2019s Terror Troops ability by 3\"."
+      "Leader , Scouts 6\""
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, weapons equipped by models in that unit have the [LETHAL HITS] ability.",
+        "name": "Tactical Precision"
+      },
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, increase the range of that unit\u2019s Terror Troops ability by 3\".",
+        "name": "Deadly Terror"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Lieutenant in Reiver Armour"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "master-crafted special issue bolt pistol; combat knife.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -90,14 +116,42 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Leader , Scouts 6\" FACTION: Oath of Moment Tactical Precision: While this model is leading a unit, weapons equipped by models in that unit have the [LETHAL HITS] ability. Deadly Terror: While this model is leading a unit, increase the range of that unit\u2019s Terror Troops ability by 3\"."
+            "Leader , Scouts 6\""
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, weapons equipped by models in that unit have the [LETHAL HITS] ability.",
+          "name": "Tactical Precision"
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, increase the range of that unit\u2019s Terror Troops ability by 3\".",
+          "name": "Deadly Terror"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Lieutenant in Reiver Armour"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "master-crafted special issue bolt pistol; combat knife.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -113,17 +167,23 @@
       "title": "LEADER",
       "entries": [
         {
+          "type": "text",
+          "text": "This model can be attached to the following units:"
+        },
+        {
           "type": "list",
           "items": [
             "Reiver Squad",
             "Hounds Of Morkai"
           ]
+        },
+        {
+          "type": "text",
+          "text": "You can attach this model to a unit it can lead even if one CAPTAIN or CHAPTER MASTER model has already been attached to it. If you do, and that Bodyguard unit is destroyed, the Leader units attached to it become separate units, with their original Starting Strengths ."
         }
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
       "ABILITIES",
@@ -136,6 +196,7 @@
       "LEADER"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Captain-on-Bike",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Captain-on-Bike",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Captain-on-Bike",
     "canonicalSourceId": "wahapedia:812b54f8a21e9b0e6bfbf0924f57c48b0ec57678",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "e761c1cb104fc45a2945ea62ab0427ab2cb522d97625a9a6a910ed2c1c99a961"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Captain-on-Bike",
+    "fetchedAt": "2026-03-21T03:44:10+00:00",
+    "contentHash": "a6b42b762f6dd546a7b337ea7b9715b9911934c3448b95e8e2da72d150b06daa",
+    "output_slug": "space-wolves"
   },
   "name": "Captain On Bike",
   "base_size": "\u230075 x 25mm",
@@ -217,13 +219,37 @@
   },
   "abilities": {
     "core": [
-      "Leader FACTION: Oath of Moment Swift Assault: While this model is leading a unit, ranged weapons equipped by models in that unit have the [ASSAULT] ability. Rites of Battle: Once per battle round , one unit from your army with this ability can use it when its unit is targeted with a Stratagem . If it does, reduce the CP cost of that use of that Stratagem by 1CP."
+      "Leader"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, ranged weapons equipped by models in that unit have the [ASSAULT] ability.",
+        "name": "Swift Assault"
+      },
+      {
+        "type": "rule",
+        "text": "Once per battle round , one unit from your army with this ability can use it when its unit is targeted with a Stratagem . If it does, reduce the CP cost of that use of that Stratagem by 1CP.",
+        "name": "Rites of Battle"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Captain on Bike"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "bolt pistol; twin boltgun; Astartes chainsword.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -292,8 +318,25 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Leader FACTION: Oath of Moment Swift Assault: While this model is leading a unit, ranged weapons equipped by models in that unit have the [ASSAULT] ability. Rites of Battle: Once per battle round , one unit from your army with this ability can use it when its unit is targeted with a Stratagem . If it does, reduce the CP cost of that use of that Stratagem by 1CP."
+            "Leader"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, ranged weapons equipped by models in that unit have the [ASSAULT] ability.",
+          "name": "Swift Assault"
+        },
+        {
+          "type": "rule",
+          "text": "Once per battle round , one unit from your army with this ability can use it when its unit is targeted with a Stratagem . If it does, reduce the CP cost of that use of that Stratagem by 1CP.",
+          "name": "Rites of Battle"
         }
       ]
     },
@@ -301,14 +344,26 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "text",
-          "text": "Relic Shield: The bearer has a Wounds characteristic of 7."
+          "type": "statement",
+          "text": "The bearer has a Wounds characteristic of 7.",
+          "label": "Relic Shield"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Captain on Bike"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "bolt pistol; twin boltgun; Astartes chainsword.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -324,6 +379,10 @@
       "title": "LEADER",
       "entries": [
         {
+          "type": "text",
+          "text": "This model can be attached to the following units:"
+        },
+        {
           "type": "list",
           "items": [
             "Outrider Squad",
@@ -335,10 +394,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION",
@@ -352,6 +410,7 @@
       "LEADER"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

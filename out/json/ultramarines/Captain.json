@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Captain",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Captain",
-    "output_slug": "ultramarines",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Captain",
     "canonicalSourceId": "wahapedia:77bfb06573babae22bec12186075a122da403291",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "46558eb5297fa9b2372ca7ab52d13a6722769f8e25616a369dd5ff48b3f568da"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Captain",
+    "fetchedAt": "2026-03-21T03:47:13+00:00",
+    "contentHash": "783a2add410d597111e82f548932135d106f38c0e96158a246c2eb730fdde9b8",
+    "output_slug": "ultramarines"
   },
   "name": "Captain",
   "base_size": "\u230040mm",
@@ -130,13 +132,37 @@
   },
   "abilities": {
     "core": [
-      "Leader FACTION: Oath of Moment Rites of Battle: Once per battle round , one unit from your army with this ability can use it when its unit is targeted with a Stratagem . If it does, reduce the CP cost of that use of that Stratagem by 1CP. Finest Hour: Once per battle, at the start of the Fight phase , this model can use this ability. If it does, until the end of the phase, add 3 to the Attacks characteristic of melee weapons equipped by this model and those weapons have the [DEVASTATING WOUNDS] ability."
+      "Leader"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Once per battle round , one unit from your army with this ability can use it when its unit is targeted with a Stratagem . If it does, reduce the CP cost of that use of that Stratagem by 1CP.",
+        "name": "Rites of Battle"
+      },
+      {
+        "type": "rule",
+        "text": "Once per battle, at the start of the Fight phase , this model can use this ability. If it does, until the end of the phase, add 3 to the Attacks characteristic of melee weapons equipped by this model and those weapons have the [DEVASTATING WOUNDS] ability.",
+        "name": "Finest Hour"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Captain"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "bolt pistol; master-crafted bolter; close combat weapon.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -192,8 +218,25 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Leader FACTION: Oath of Moment Rites of Battle: Once per battle round , one unit from your army with this ability can use it when its unit is targeted with a Stratagem . If it does, reduce the CP cost of that use of that Stratagem by 1CP. Finest Hour: Once per battle, at the start of the Fight phase , this model can use this ability. If it does, until the end of the phase, add 3 to the Attacks characteristic of melee weapons equipped by this model and those weapons have the [DEVASTATING WOUNDS] ability."
+            "Leader"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Once per battle round , one unit from your army with this ability can use it when its unit is targeted with a Stratagem . If it does, reduce the CP cost of that use of that Stratagem by 1CP.",
+          "name": "Rites of Battle"
+        },
+        {
+          "type": "rule",
+          "text": "Once per battle, at the start of the Fight phase , this model can use this ability. If it does, until the end of the phase, add 3 to the Attacks characteristic of melee weapons equipped by this model and those weapons have the [DEVASTATING WOUNDS] ability.",
+          "name": "Finest Hour"
         }
       ]
     },
@@ -201,14 +244,26 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "text",
-          "text": "Relic Shield: The bearer has a Wounds characteristic of 6."
+          "type": "statement",
+          "text": "The bearer has a Wounds characteristic of 6.",
+          "label": "Relic Shield"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Captain"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "bolt pistol; master-crafted bolter; close combat weapon.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -223,6 +278,10 @@
     {
       "title": "LEADER",
       "entries": [
+        {
+          "type": "text",
+          "text": "This model can be attached to the following units:"
+        },
         {
           "type": "list",
           "items": [
@@ -248,12 +307,14 @@
             "Vanguard Veteran Squad",
             "Wolf Guard"
           ]
+        },
+        {
+          "type": "text",
+          "text": "* This model cannot be attached to a BLADEGUARD VETERAN SQUAD unless this model is equipped with a relic shield, and cannot be attached to a HELLBLASTER SQUAD unless this model is equipped with a plasma pistol."
         }
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
       "WARGEAR OPTIONS",
@@ -270,6 +331,7 @@
       "LEADER"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

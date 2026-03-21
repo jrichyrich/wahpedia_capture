@@ -1189,6 +1189,39 @@ def unit_id_from_card(card: dict[str, object]) -> str:
     return slugify(name)
 
 
+def validate_render_section_coverage(
+    card: dict[str, object],
+    normalized: dict[str, object],
+) -> list[str]:
+    issues: list[str] = []
+    source_sections = [
+        str(section.get("title", "")).strip()
+        for section in card.get("sections", [])
+        if str(section.get("title", "")).strip()
+    ]
+    render_sections = [
+        str(section.get("title", "")).strip()
+        for section in normalized.get("renderSections", [])
+        if str(section.get("title", "")).strip()
+    ]
+    if source_sections != render_sections:
+        issues.append("render section order does not match exported sections")
+
+    composition_entries = list(card.get("unit_composition", []))
+    has_composition_lines = any(
+        entry.get("type") in {"list", "statement", "text"} for entry in composition_entries
+    )
+    if has_composition_lines and not normalized.get("composition", {}).get("rawLines"):
+        issues.append("unit composition lost non-points content")
+
+    if list(card.get("keywords", [])) and not list(normalized.get("keywords", [])):
+        issues.append("keywords lost during builder normalization")
+    if list(card.get("faction_keywords", [])) and not list(normalized.get("factionKeywords", [])):
+        issues.append("faction keywords lost during builder normalization")
+
+    return issues
+
+
 def normalize_card(faction_slug: str, card: dict[str, object]) -> tuple[dict[str, object], dict[str, object]]:
     characteristics = card.get("characteristics", {})
     abilities = card.get("abilities", {})
@@ -1252,6 +1285,10 @@ def normalize_card(faction_slug: str, card: dict[str, object]) -> tuple[dict[str
         },
         "keywords": list(card.get("keywords", [])),
         "factionKeywords": list(card.get("faction_keywords", [])),
+        "renderSections": [
+            normalize_render_block(section)
+            for section in card.get("sections", [])
+        ],
         "renderBlocks": [
             normalize_render_block(section)
             for section in card.get("sections", [])
@@ -1263,6 +1300,7 @@ def normalize_card(faction_slug: str, card: dict[str, object]) -> tuple[dict[str
         stat for stat in STATS_ORDER if not normalized["stats"].get(stat)
     ]
     normalized["quality"]["hasMissingStats"] = bool(normalized["quality"]["missingStats"])
+    render_issues = validate_render_section_coverage(card, normalized)
 
     diagnostics = {
         "unitId": normalized["unitId"],
@@ -1270,6 +1308,7 @@ def normalize_card(faction_slug: str, card: dict[str, object]) -> tuple[dict[str
         "missingStats": list(normalized["quality"]["missingStats"]),
         "manualSelection": normalized["selectionMode"] == "manual",
         "manualWargear": wargear["hasManualOptions"],
+        "renderIssues": render_issues,
     }
     return normalized, diagnostics
 
@@ -1279,6 +1318,7 @@ def build_faction_catalog(faction_slug: str, cards: list[dict[str, object]], out
     missing_stats: list[dict[str, object]] = []
     manual_units: list[dict[str, object]] = []
     manual_wargear_units: list[dict[str, object]] = []
+    render_issue_units: list[dict[str, object]] = []
 
     for card in cards:
         unit, diagnostics = normalize_card(faction_slug, card)
@@ -1305,6 +1345,14 @@ def build_faction_catalog(faction_slug: str, cards: list[dict[str, object]], out
                     "name": diagnostics["name"],
                 }
             )
+        if diagnostics["renderIssues"]:
+            render_issue_units.append(
+                {
+                    "unitId": diagnostics["unitId"],
+                    "name": diagnostics["name"],
+                    "issues": diagnostics["renderIssues"],
+                }
+            )
 
     units.sort(key=lambda unit: str(unit.get("name", "")))
     catalog = {
@@ -1321,6 +1369,7 @@ def build_faction_catalog(faction_slug: str, cards: list[dict[str, object]], out
             "missingStats": missing_stats,
             "manualSelectionUnits": manual_units,
             "manualWargearUnits": manual_wargear_units,
+            "renderIssueUnits": render_issue_units,
         },
         "units": units,
     }
@@ -1346,6 +1395,7 @@ def write_report(output_root: Path, manifest: dict[str, object]) -> None:
         f"- Units with missing stats: {manifest['report']['totals']['missingStatsCount']}",
         f"- Manual selection units: {manifest['report']['totals']['manualSelectionCount']}",
         f"- Units with manual wargear: {manifest['report']['totals']['manualWargearCount']}",
+        f"- Units with render issues: {manifest['report']['totals']['renderIssueCount']}",
         f"- Source cards copied: {manifest['report']['totals']['sourceCardCopiedCount']}",
         f"- Source cards missing: {manifest['report']['totals']['sourceCardMissingCount']}",
         "",
@@ -1363,6 +1413,7 @@ def write_report(output_root: Path, manifest: dict[str, object]) -> None:
                 f"- Missing stats: {faction['missingStatsCount']}",
                 f"- Manual selection units: {faction['manualSelectionCount']}",
                 f"- Manual wargear units: {faction['manualWargearCount']}",
+                f"- Render issue units: {faction['renderIssueCount']}",
                 f"- Source cards copied: {faction['sourceCardCopiedCount']}",
                 f"- Source cards missing: {faction['sourceCardMissingCount']}",
                 "",
@@ -1496,6 +1547,7 @@ def build_all(
     total_missing_stats = 0
     total_manual_selection = 0
     total_manual_wargear = 0
+    total_render_issues = 0
 
     for faction_slug in target_factions:
         index_path = source_root / faction_slug / "index.json"
@@ -1518,6 +1570,7 @@ def build_all(
                 "missingStatsCount": len(build_info["missingStats"]),
                 "manualSelectionCount": len(build_info["manualSelectionUnits"]),
                 "manualWargearCount": len(build_info["manualWargearUnits"]),
+                "renderIssueCount": len(build_info["renderIssueUnits"]),
             }
         )
         report_factions.append(
@@ -1528,12 +1581,14 @@ def build_all(
                 "missingStats": build_info["missingStats"],
                 "manualSelectionUnits": build_info["manualSelectionUnits"],
                 "manualWargearUnits": build_info["manualWargearUnits"],
+                "renderIssueUnits": build_info["renderIssueUnits"],
             }
         )
         total_units += catalog["faction"]["unitCount"]
         total_missing_stats += len(build_info["missingStats"])
         total_manual_selection += len(build_info["manualSelectionUnits"])
         total_manual_wargear += len(build_info["manualWargearUnits"])
+        total_render_issues += len(build_info["renderIssueUnits"])
 
     source_card_report = collect_source_card_report(source_cards_root, built_catalogs)
 
@@ -1564,6 +1619,7 @@ def build_all(
                 "missingStatsCount": total_missing_stats,
                 "manualSelectionCount": total_manual_selection,
                 "manualWargearCount": total_manual_wargear,
+                "renderIssueCount": total_render_issues,
                 "sourceCardCopiedCount": source_card_report["copiedCount"],
                 "sourceCardMissingCount": source_card_report["missingCount"],
             },
@@ -1573,6 +1629,21 @@ def build_all(
 
     (output_root / "manifest.json").write_text(json.dumps(manifest, indent=2), encoding="utf-8")
     write_report(output_root, manifest)
+    if total_render_issues:
+        first_issue = next(
+            (
+                unit
+                for faction in report_factions
+                for unit in faction.get("renderIssueUnits", [])
+            ),
+            None,
+        )
+        detail = ""
+        if first_issue:
+            detail = f" First issue: {first_issue['name']} ({'; '.join(first_issue['issues'])})."
+        raise ValueError(
+            f"Builder render completeness validation failed for {total_render_issues} units.{detail}"
+        )
     return manifest
 
 

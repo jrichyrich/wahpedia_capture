@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Tallyman",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Tallyman",
     "canonicalSourceId": "wahapedia:528621db1cbc9f570fae7fb672018f73bc70d9d9",
     "faction_slug": "death-guard",
     "datasheet_slug": "Tallyman",
-    "fetchedAt": "2026-03-19T17:17:11+00:00",
-    "contentHash": "ba8a77bdbc24d75817d9b48a43f497adc69b2c089a25ccdebb55bf376f96b54f",
+    "fetchedAt": "2026-03-21T03:50:50+00:00",
+    "contentHash": "b36f88d686ebb6d244f105c36230fbee1b6f1ffc088e194cfe6c142d4ec752b9",
     "output_slug": "death-guard"
   },
   "name": "Tallyman",
@@ -64,13 +64,37 @@
   },
   "abilities": {
     "core": [
-      "Leader FACTION: Nurgle\u2019s Gift (Aura) Malicious Calculations: While this model is leading a unit, each time a model in that unit makes an attack, you can ignore any or all modifiers to that attack\u2019s Ballistic Skill or Weapon Skill characteristics and/or any or all modifiers to the Hit roll . Sevenfold Chant: In your Command phase , if this model is on the battlefield, roll 2D6: on a 7+, you gain 1CP."
+      "Leader"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Nurgle\u2019s Gift (Aura)"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, each time a model in that unit makes an attack, you can ignore any or all modifiers to that attack\u2019s Ballistic Skill or Weapon Skill characteristics and/or any or all modifiers to the Hit roll .",
+        "name": "Malicious Calculations"
+      },
+      {
+        "type": "rule",
+        "text": "In your Command phase , if this model is on the battlefield, roll 2D6: on a 7+, you gain 1CP.",
+        "name": "Sevenfold Chant"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Tallyman"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "plasma pistol; close combat weapon.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -99,14 +123,42 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Leader FACTION: Nurgle\u2019s Gift (Aura) Malicious Calculations: While this model is leading a unit, each time a model in that unit makes an attack, you can ignore any or all modifiers to that attack\u2019s Ballistic Skill or Weapon Skill characteristics and/or any or all modifiers to the Hit roll . Sevenfold Chant: In your Command phase , if this model is on the battlefield, roll 2D6: on a 7+, you gain 1CP."
+            "Leader"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Nurgle\u2019s Gift (Aura)"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, each time a model in that unit makes an attack, you can ignore any or all modifiers to that attack\u2019s Ballistic Skill or Weapon Skill characteristics and/or any or all modifiers to the Hit roll .",
+          "name": "Malicious Calculations"
+        },
+        {
+          "type": "rule",
+          "text": "In your Command phase , if this model is on the battlefield, roll 2D6: on a 7+, you gain 1CP.",
+          "name": "Sevenfold Chant"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Tallyman"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "plasma pistol; close combat weapon.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -122,96 +174,35 @@
       "title": "LEADER",
       "entries": [
         {
+          "type": "text",
+          "text": "This model can be attached to the following unit:"
+        },
+        {
           "type": "list",
           "items": [
             "Plague Marines"
           ]
+        },
+        {
+          "type": "text",
+          "text": "You can attach this model to a PLAGUE MARINES unit, even if one other Leader unit has already been attached to it (you cannot attach more than one of the same leader to the same unit). If you do, and that Bodyguard unit is destroyed, the Leader units attached to it become separate units, with their original Starting Strengths ."
         }
       ]
     }
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "ABILITIES",
       "UNIT COMPOSITION",
-      "LEADER",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
+      "LEADER"
     ],
     "exportedSectionTitles": [
       "ABILITIES",
       "UNIT COMPOSITION",
       "LEADER"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

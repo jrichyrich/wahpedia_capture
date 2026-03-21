@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Gladiator-Valiant",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Gladiator-Valiant",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Gladiator-Valiant",
     "canonicalSourceId": "wahapedia:236e00ff0dc5abe9ebc4a23740f6a5d944752332",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "069d02f76c8d2e174ef6c67dcf93ee1053eddbe397a702a4c6a8d79f979fb409"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Gladiator-Valiant",
+    "fetchedAt": "2026-03-21T03:45:05+00:00",
+    "contentHash": "b48c5a0e8896ec6567215edce203695b0f0632741637d49b78ea02f72a85df4f",
+    "output_slug": "space-wolves"
   },
   "name": "Gladiator Valiant",
   "base_size": "\u2300100mm",
@@ -85,13 +87,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D3 FACTION: Oath of Moment Ferocious Assault: Each time this model makes an attack with its twin las-talon that targets the closest eligible MONSTER or VEHICLE unit, add 1 to the Hit roll ."
+      "Deadly Demise D3"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this model makes an attack with its twin las-talon that targets the closest eligible MONSTER or VEHICLE unit, add 1 to the Hit roll .",
+        "name": "Ferocious Assault"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Gladiator Valiant"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "2 multi-meltas; twin las-talon; armoured hull.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -134,14 +155,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D3 FACTION: Oath of Moment Ferocious Assault: Each time this model makes an attack with its twin las-talon that targets the closest eligible MONSTER or VEHICLE unit, add 1 to the Hit roll ."
+            "Deadly Demise D3"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model makes an attack with its twin las-talon that targets the closest eligible MONSTER or VEHICLE unit, add 1 to the Hit roll .",
+          "name": "Ferocious Assault"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Gladiator Valiant"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "2 multi-meltas; twin las-talon; armoured hull.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -163,10 +207,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "DAMAGED: 1-4 WOUNDS REMAINING"
@@ -178,6 +221,7 @@
       "DAMAGED: 1-4 WOUNDS REMAINING"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

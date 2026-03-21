@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Wolf-Guard-Terminators",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Wolf-Guard-Terminators",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Wolf-Guard-Terminators",
     "canonicalSourceId": "wahapedia:c2e5d260d7a6433de43767c1b6a506b37b08b83c",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "3fe66e81ac9212a5ebac1fb0ca3a59e63b8c7d447ec71e651060b8cb11fb359f"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Wolf-Guard-Terminators",
+    "fetchedAt": "2026-03-21T03:45:43+00:00",
+    "contentHash": "0ee172190d55def219942dbcd33cffbd99c76d37c49199f3f914021f1903ce2d",
+    "output_slug": "space-wolves"
   },
   "name": "Wolf Guard Terminators",
   "base_size": "\u230040mm",
@@ -114,7 +116,12 @@
     {
       "type": "list",
       "items": [
-        "1 Wolf Guard Terminator Pack Leader",
+        "1 Wolf Guard Terminator Pack Leader"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
         "4-9 Wolf Guard Terminators"
       ]
     },
@@ -155,6 +162,29 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "Any number of models can each have their storm bolter replaced with 1 storm shield.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "For every 5 models in this unit, 1 Wolf Guard Terminator can replace its storm bolter and master-crafted power weapon with 1 assault cannon and 1 powerfist.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "The Wolf Guard Terminator Pack Leader\u2019s storm bolter and master-crafted power weapon can be replaced with 1 of the following:",
+          "items": [
+            "1 relic greataxe",
+            "1 twin lightning claws"
+          ]
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
@@ -194,7 +224,12 @@
         {
           "type": "list",
           "items": [
-            "1 Wolf Guard Terminator Pack Leader",
+            "1 Wolf Guard Terminator Pack Leader"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
             "4-9 Wolf Guard Terminators"
           ]
         },
@@ -224,20 +259,21 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION"
     ],
     "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

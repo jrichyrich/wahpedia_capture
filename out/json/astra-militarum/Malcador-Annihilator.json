@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Malcador-Annihilator",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Malcador-Annihilator",
     "canonicalSourceId": "wahapedia:4b780df3369eb1b29b1a4a3d019ccf2781166acb",
     "faction_slug": "astra-militarum",
     "datasheet_slug": "Malcador-Annihilator",
-    "fetchedAt": "2026-03-19T17:12:18+00:00",
-    "contentHash": "12d093a36c226257d3333a671c5aaf65ac7b1526f30eb82bf6ae28a087775c26",
+    "fetchedAt": "2026-03-21T03:37:33+00:00",
+    "contentHash": "2e207c6aee63cfd51ab9d2d06fece47fdd53d9b2e1665bd99ec2132c0b03ebaa",
     "output_slug": "astra-militarum"
   },
   "name": "Malcador Annihilator",
@@ -129,13 +129,30 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D6 Battlefield Dominance: Ranged weapons equipped by this model have the [IGNORES COVER] ability while targeting an enemy unit within half range."
+      "Deadly Demise D6"
     ],
     "faction": [],
-    "datasheet": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Ranged weapons equipped by this model have the [IGNORES COVER] ability while targeting an enemy unit within half range.",
+        "name": "Battlefield Dominance"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Malcador Annihilator"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "demolisher cannon; 2 heavy bolters; Malcador twin lascannon; armoured tracks.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -190,14 +207,30 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D6 Battlefield Dominance: Ranged weapons equipped by this model have the [IGNORES COVER] ability while targeting an enemy unit within half range."
+            "Deadly Demise D6"
           ]
+        },
+        {
+          "type": "rule",
+          "text": "Ranged weapons equipped by this model have the [IGNORES COVER] ability while targeting an enemy unit within half range.",
+          "name": "Battlefield Dominance"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Malcador Annihilator"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "demolisher cannon; 2 heavy bolters; Malcador twin lascannon; armoured tracks.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -221,26 +254,10 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
-      "DAMAGED: 1-6 WOUNDS REMAINING",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
+      "DAMAGED: 1-6 WOUNDS REMAINING"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -248,57 +265,8 @@
       "UNIT COMPOSITION",
       "DAMAGED: 1-6 WOUNDS REMAINING"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

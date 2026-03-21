@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Relic-Contemptor-Dreadnought",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Relic-Contemptor-Dreadnought",
-    "output_slug": "ultramarines",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Relic-Contemptor-Dreadnought",
     "canonicalSourceId": "wahapedia:787c1fe3b8c99e19ef721da079d221a2aeb88081",
-    "fetchedAt": "2026-03-19T17:35:03+00:00",
-    "contentHash": "67d90d92c2c8d9e8d2481e8c4461430a5929a4a7c40ae8b47f2885776784a963"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Relic-Contemptor-Dreadnought",
+    "fetchedAt": "2026-03-21T03:49:38+00:00",
+    "contentHash": "4ece08a6e39875ffe9c39fa8525d4f54fede0d02bc4627a4d6ed2c5eb4f46b86",
+    "output_slug": "ultramarines"
   },
   "name": "Relic Contemptor Dreadnought",
   "base_size": "\u230060mm",
@@ -252,13 +254,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise 1 FACTION: Oath of Moment Even In Death I Serve: The first time this model is destroyed, remove it from play without resolving its Deadly Demise ability. Then, at the end of the phase, roll one D6: on a 2+, set this model back up on the battlefield as close as possible to where it was destroyed and not within Engagement Range of any enemy units, with D6 wounds remaining."
+      "Deadly Demise 1"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "The first time this model is destroyed, remove it from play without resolving its Deadly Demise ability. Then, at the end of the phase, roll one D6: on a 2+, set this model back up on the battlefield as close as possible to where it was destroyed and not within Engagement Range of any enemy units, with D6 wounds remaining.",
+        "name": "Even In Death I Serve"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Relic Contemptor Dreadnought"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "2 heavy plasma cannons; armoured feet.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -322,14 +343,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise 1 FACTION: Oath of Moment Even In Death I Serve: The first time this model is destroyed, remove it from play without resolving its Deadly Demise ability. Then, at the end of the phase, roll one D6: on a 2+, set this model back up on the battlefield as close as possible to where it was destroyed and not within Engagement Range of any enemy units, with D6 wounds remaining."
+            "Deadly Demise 1"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "The first time this model is destroyed, remove it from play without resolving its Deadly Demise ability. Then, at the end of the phase, roll one D6: on a 2+, set this model back up on the battlefield as close as possible to where it was destroyed and not within Engagement Range of any enemy units, with D6 wounds remaining.",
+          "name": "Even In Death I Serve"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Relic Contemptor Dreadnought"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "2 heavy plasma cannons; armoured feet.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -342,10 +386,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
@@ -355,6 +398,7 @@
       "UNIT COMPOSITION"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

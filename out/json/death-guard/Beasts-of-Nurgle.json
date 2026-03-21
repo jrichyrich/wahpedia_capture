@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Beasts-of-Nurgle",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Beasts-of-Nurgle",
     "canonicalSourceId": "wahapedia:d4c4369b51f419698fcd52c461c1552e2475a033",
     "faction_slug": "death-guard",
     "datasheet_slug": "Beasts-of-Nurgle",
-    "fetchedAt": "2026-03-19T17:16:43+00:00",
-    "contentHash": "f59f287f851428f5a3cd1bc40bb7e6d59bea61fe8cb4cab88ee2e259a770bada",
+    "fetchedAt": "2026-03-21T03:50:25+00:00",
+    "contentHash": "3982fcd080f75f1a34679996b5873bf46fedb2a1330bea372867057626bfcded",
     "output_slug": "death-guard"
   },
   "name": "Beasts of Nurgle",
@@ -40,13 +40,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise 1 , Deep Strike , Scouts 6\" FACTION: Pact of Decay Grotesque Regeneration: At the end of each phase, if a Beasts of Nurgle model in this unit has lost any wounds but is not destroyed, that model regains all of its lost wounds."
+      "Deadly Demise 1 , Deep Strike , Scouts 6\""
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Pact of Decay"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "At the end of each phase, if a Beasts of Nurgle model in this unit has lost any wounds but is not destroyed, that model regains all of its lost wounds.",
+        "name": "Grotesque Regeneration"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1-2 Beasts of Nurgle"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "putrid appendages.",
+      "label": "Every model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -80,14 +99,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise 1 , Deep Strike , Scouts 6\" FACTION: Pact of Decay Grotesque Regeneration: At the end of each phase, if a Beasts of Nurgle model in this unit has lost any wounds but is not destroyed, that model regains all of its lost wounds."
+            "Deadly Demise 1 , Deep Strike , Scouts 6\""
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Pact of Decay"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "At the end of each phase, if a Beasts of Nurgle model in this unit has lost any wounds but is not destroyed, that model regains all of its lost wounds.",
+          "name": "Grotesque Regeneration"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1-2 Beasts of Nurgle"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "putrid appendages.",
+          "label": "Every model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -106,52 +148,15 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "ABILITIES",
-      "UNIT COMPOSITION",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
+      "UNIT COMPOSITION"
     ],
     "exportedSectionTitles": [
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
-    "missingExpectedSections": [
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

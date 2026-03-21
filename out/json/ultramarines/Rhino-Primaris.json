@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Rhino-Primaris",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Rhino-Primaris",
-    "output_slug": "ultramarines",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Rhino-Primaris",
     "canonicalSourceId": "wahapedia:e92cb7915795213ef78a9161bf5fff36b49f0bdc",
-    "fetchedAt": "2026-03-19T17:35:03+00:00",
-    "contentHash": "e08f1a819abd0d1ebe0736d9281cba89b570495963073ec4ffbe5b5beaaca66a"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Rhino-Primaris",
+    "fetchedAt": "2026-03-21T03:49:39+00:00",
+    "contentHash": "e8d4a586f57719ea12632ca84d2dc296056995fb03b0c3936f769df9881f6393",
+    "output_slug": "ultramarines"
   },
   "name": "Rhino Primaris",
   "base_size": "\u2300Use model",
@@ -74,13 +76,37 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D3 FACTION: Oath of Moment Self Repair: At the end of your Command phase , this model regains 1 lost wound. Orbital Comms Array (Aura): While a friendly ADEPTUS ASTARTES unit is within 6\" of the bearer, each time you target that unit with a Stratagem, roll one D6: on a 5+, you gain 1CP."
+      "Deadly Demise D3"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "At the end of your Command phase , this model regains 1 lost wound.",
+        "name": "Self Repair"
+      },
+      {
+        "type": "rule",
+        "text": "While a friendly ADEPTUS ASTARTES unit is within 6\" of the bearer, each time you target that unit with a Stratagem, roll one D6: on a 5+, you gain 1CP.",
+        "name": "Orbital Comms Array (Aura)"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Rhino Primaris"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "twin plasma gun; armoured tracks.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -119,14 +145,42 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D3 FACTION: Oath of Moment Self Repair: At the end of your Command phase , this model regains 1 lost wound. Orbital Comms Array (Aura): While a friendly ADEPTUS ASTARTES unit is within 6\" of the bearer, each time you target that unit with a Stratagem, roll one D6: on a 5+, you gain 1CP."
+            "Deadly Demise D3"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "At the end of your Command phase , this model regains 1 lost wound.",
+          "name": "Self Repair"
+        },
+        {
+          "type": "rule",
+          "text": "While a friendly ADEPTUS ASTARTES unit is within 6\" of the bearer, each time you target that unit with a Stratagem, roll one D6: on a 5+, you gain 1CP.",
+          "name": "Orbital Comms Array (Aura)"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Rhino Primaris"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "twin plasma gun; armoured tracks.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -148,10 +202,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "TRANSPORT"
@@ -163,6 +216,7 @@
       "TRANSPORT"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

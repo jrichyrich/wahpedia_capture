@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Logan-Grimnar",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Logan-Grimnar",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Logan-Grimnar",
     "canonicalSourceId": "wahapedia:b36c70fdcac4269f8661639b7927afcf49f6b2da",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "6aefba4ace88300bb93c81f89bc007de36bcc65d0ab3c85d9bcef73cee3d2188"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Logan-Grimnar",
+    "fetchedAt": "2026-03-21T03:43:59+00:00",
+    "contentHash": "20b7af58bb5eda604996f2206a820cb2f6034ebef19ae3d7fbb0eb45140a58c0",
+    "output_slug": "space-wolves"
   },
   "name": "Logan Grimnar",
   "base_size": "\u230080mm",
@@ -128,6 +130,15 @@
   ],
   "sections": [
     {
+      "title": "EMBARKING WITHIN TRANSPORTS",
+      "entries": [
+        {
+          "type": "text",
+          "text": "This model can embark within friendly ADEPTUS ASTARTES TRANSPORT models that can transport TERMINATOR models. When doing so, it takes up the space of 4 INFANTRY models."
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
@@ -185,6 +196,10 @@
       "title": "LEADER",
       "entries": [
         {
+          "type": "text",
+          "text": "This model can be attached to the following unit:"
+        },
+        {
           "type": "list",
           "items": [
             "Wolf Guard Terminators"
@@ -193,20 +208,21 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "EMBARKING WITHIN TRANSPORTS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "LEADER"
     ],
     "exportedSectionTitles": [
+      "EMBARKING WITHIN TRANSPORTS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "LEADER"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

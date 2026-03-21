@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Avatar-of-Khaine",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Avatar-of-Khaine",
     "canonicalSourceId": "wahapedia:26481d15f984d48dc2766c2c861ed9cefb618343",
     "faction_slug": "aeldari",
     "datasheet_slug": "Avatar-of-Khaine",
-    "fetchedAt": "2026-03-19T17:11:01+00:00",
-    "contentHash": "f3292b3d9b984fbbdfa72f8e83913b1799e421faf1545ec4cc47f2628141faab",
+    "fetchedAt": "2026-03-21T03:36:23+00:00",
+    "contentHash": "bcda8f08f99d18f5797059e44a4048c0786ae7693814fbdb4d9cc7f268ea5def",
     "output_slug": "aeldari"
   },
   "name": "Avatar of Khaine",
@@ -62,13 +62,37 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D3 FACTION: Battle Focus Molten Form: Each time an attack is allocated to this model, halve the Damage characteristic of that attack. The Bloody-Handed (Aura): While a friendly AELDARI unit is within 6\" of this model, add 1 to Advance and Charge rolls made for that unit."
+      "Deadly Demise D3"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Battle Focus"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time an attack is allocated to this model, halve the Damage characteristic of that attack.",
+        "name": "Molten Form"
+      },
+      {
+        "type": "rule",
+        "text": "While a friendly AELDARI unit is within 6\" of this model, add 1 to Advance and Charge rolls made for that unit.",
+        "name": "The Bloody-Handed (Aura)"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Avatar of Khaine \u2013 EPIC HERO"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "the Wailing Doom",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -98,14 +122,42 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D3 FACTION: Battle Focus Molten Form: Each time an attack is allocated to this model, halve the Damage characteristic of that attack. The Bloody-Handed (Aura): While a friendly AELDARI unit is within 6\" of this model, add 1 to Advance and Charge rolls made for that unit."
+            "Deadly Demise D3"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Battle Focus"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time an attack is allocated to this model, halve the Damage characteristic of that attack.",
+          "name": "Molten Form"
+        },
+        {
+          "type": "rule",
+          "text": "While a friendly AELDARI unit is within 6\" of this model, add 1 to Advance and Charge rolls made for that unit.",
+          "name": "The Bloody-Handed (Aura)"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Avatar of Khaine \u2013 EPIC HERO"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "the Wailing Doom",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -129,82 +181,17 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "ABILITIES",
       "UNIT COMPOSITION",
-      "DAMAGED: 1-5 WOUNDS REMAINING",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
+      "DAMAGED: 1-5 WOUNDS REMAINING"
     ],
     "exportedSectionTitles": [
       "ABILITIES",
       "UNIT COMPOSITION",
       "DAMAGED: 1-5 WOUNDS REMAINING"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

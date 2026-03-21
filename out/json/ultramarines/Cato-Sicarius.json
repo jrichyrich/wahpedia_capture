@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Cato-Sicarius",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Cato-Sicarius",
-    "output_slug": "ultramarines",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Cato-Sicarius",
     "canonicalSourceId": "wahapedia:c27b9b7ff331d079867f7a1929458a111d67aa9a",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "27bb4fc6d27a1bbe5ce0e3f861f94e83ed7053c16ea0dff3835f1666f0de503c"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Cato-Sicarius",
+    "fetchedAt": "2026-03-21T03:47:19+00:00",
+    "contentHash": "b76f3bb96cd55f37cdbbfc99199987a60e558316831c5e7332ac2086ccfcbd9e",
+    "output_slug": "ultramarines"
   },
   "name": "Cato Sicarius",
   "base_size": "\u230040mm",
@@ -133,6 +135,15 @@
   ],
   "sections": [
     {
+      "title": "CAPTAIN OF THE HONOUR GUARD",
+      "entries": [
+        {
+          "type": "text",
+          "text": "Your army cannot include more than one CAPTAIN SICARIUS unit."
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
@@ -190,28 +201,37 @@
       "title": "LEADER",
       "entries": [
         {
+          "type": "text",
+          "text": "This model can be attached to the following unit:"
+        },
+        {
           "type": "list",
           "items": [
             "Victrix Honour Guard"
           ]
+        },
+        {
+          "type": "text",
+          "text": "You can attach this model to the above unit even if a MARNEUS CALGAR unit has already been attached to it. If you do, and that Bodyguard unit is destroyed, the Leader units attached to it become separate units, with their original Starting Strengths ."
         }
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "CAPTAIN OF THE HONOUR GUARD",
       "ABILITIES",
       "UNIT COMPOSITION",
       "LEADER"
     ],
     "exportedSectionTitles": [
+      "CAPTAIN OF THE HONOUR GUARD",
       "ABILITIES",
       "UNIT COMPOSITION",
       "LEADER"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

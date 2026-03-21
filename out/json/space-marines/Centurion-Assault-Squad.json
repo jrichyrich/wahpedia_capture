@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Centurion-Assault-Squad",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Centurion-Assault-Squad",
     "canonicalSourceId": "wahapedia:7906ba31d5d76baeeb5a45078e5c529df0366484",
     "faction_slug": "space-marines",
     "datasheet_slug": "Centurion-Assault-Squad",
-    "fetchedAt": "2026-03-19T17:28:26+00:00",
-    "contentHash": "c73f1e81bf03c92a8daaa2ac68807e209e11faa633b81bc397db9b7eaf63b7bc",
+    "fetchedAt": "2026-03-21T03:41:44+00:00",
+    "contentHash": "9aef6c2c136270d624493cae07e2fb2ff949beba4365363a727469a14e71491f",
     "output_slug": "space-marines"
   },
   "name": "Centurion Assault Squad",
@@ -82,12 +82,35 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Oath of Moment Annihilator Protocols: Melee weapons equipped by models in this unit have the [SUSTAINED HITS 2] ability when targeting MONSTER , VEHICLE or FORTIFICATION units."
+      "Oath of Moment"
     ],
-    "datasheet": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Melee weapons equipped by models in this unit have the [SUSTAINED HITS 2] ability when targeting MONSTER , VEHICLE or FORTIFICATION units.",
+        "name": "Annihilator Protocols"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Assault Centurion Sergeant"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "2-5 Assault Centurions"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "twin flamer; siege drills; Centurion bolters.",
+      "label": "Every model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -134,8 +157,13 @@
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Oath of Moment Annihilator Protocols: Melee weapons equipped by models in this unit have the [SUSTAINED HITS 2] ability when targeting MONSTER , VEHICLE or FORTIFICATION units."
+            "Oath of Moment"
           ]
+        },
+        {
+          "type": "rule",
+          "text": "Melee weapons equipped by models in this unit have the [SUSTAINED HITS 2] ability when targeting MONSTER , VEHICLE or FORTIFICATION units.",
+          "name": "Annihilator Protocols"
         }
       ]
     },
@@ -143,14 +171,32 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "text",
-          "text": "Centurion Assault Launcher: The bearer has the Grenades keyword."
+          "type": "statement",
+          "text": "The bearer has the Grenades keyword.",
+          "label": "Centurion Assault Launcher"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Assault Centurion Sergeant"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "2-5 Assault Centurions"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "twin flamer; siege drills; Centurion bolters.",
+          "label": "Every model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -169,27 +215,10 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "WARGEAR ABILITIES",
-      "UNIT COMPOSITION",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
+      "UNIT COMPOSITION"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -197,60 +226,8 @@
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

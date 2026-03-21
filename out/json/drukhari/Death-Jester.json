@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Death-Jester",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Death-Jester",
     "canonicalSourceId": "wahapedia:4e98152b931c804c553548bc1127cedf3efa34f2",
     "faction_slug": "drukhari",
     "datasheet_slug": "Death-Jester",
-    "fetchedAt": "2026-03-19T17:17:20+00:00",
-    "contentHash": "b35c9dee9ea01a8c584e898414858a0b7070223e8890ccc75ebb23e6942d8f10",
+    "fetchedAt": "2026-03-21T03:50:29+00:00",
+    "contentHash": "08e621adc11e3e468c30e66a2f7f49b3e26c909f871337ae24bd66b27f887e97",
     "output_slug": "drukhari"
   },
   "name": "Death Jester",
@@ -50,13 +50,46 @@
   },
   "abilities": {
     "core": [
-      "Lone Operative FACTION: Battle Focus , Disparate Paths Death is Not Enough: In your Shooting phase , after this model has shot, select one enemy unit (excluding MONSTERS and VEHICLES ) hit by one or more of those attacks. That enemy unit must take a Battle-shock test . If one or more of those attacks destroyed a model in that enemy unit, subtract 1 from that test. Cruel Amusement: In your Shooting phase , each time this model is selected to shoot, select one of the abilities below. Until the end of the phase, this model\u2019s shrieker cannon has that ability. [IGNORES COVER] [PRECISION] [SUSTAINED HITS 3]"
+      "Lone Operative"
     ],
-    "faction": [],
-    "datasheet": [],
-    "other": []
+    "faction": [
+      "Battle Focus , Disparate Paths"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "In your Shooting phase , after this model has shot, select one enemy unit (excluding MONSTERS and VEHICLES ) hit by one or more of those attacks. That enemy unit must take a Battle-shock test . If one or more of those attacks destroyed a model in that enemy unit, subtract 1 from that test.",
+        "name": "Death is Not Enough"
+      },
+      {
+        "type": "rule",
+        "text": "In your Shooting phase , each time this model is selected to shoot, select one of the abilities below. Until the end of the phase, this model\u2019s shrieker cannon has that ability.",
+        "name": "Cruel Amusement"
+      }
+    ],
+    "other": [
+      {
+        "type": "list",
+        "items": [
+          "[IGNORES COVER]",
+          "[PRECISION]",
+          "[SUSTAINED HITS 3]"
+        ]
+      }
+    ]
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Death Jester"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "shrieker cannon; Jester\u2019s blade; flip belt.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -93,7 +126,32 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Lone Operative FACTION: Battle Focus , Disparate Paths Death is Not Enough: In your Shooting phase , after this model has shot, select one enemy unit (excluding MONSTERS and VEHICLES ) hit by one or more of those attacks. That enemy unit must take a Battle-shock test . If one or more of those attacks destroyed a model in that enemy unit, subtract 1 from that test. Cruel Amusement: In your Shooting phase , each time this model is selected to shoot, select one of the abilities below. Until the end of the phase, this model\u2019s shrieker cannon has that ability. [IGNORES COVER] [PRECISION] [SUSTAINED HITS 3]"
+            "Lone Operative"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Battle Focus , Disparate Paths"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "In your Shooting phase , after this model has shot, select one enemy unit (excluding MONSTERS and VEHICLES ) hit by one or more of those attacks. That enemy unit must take a Battle-shock test . If one or more of those attacks destroyed a model in that enemy unit, subtract 1 from that test.",
+          "name": "Death is Not Enough"
+        },
+        {
+          "type": "rule",
+          "text": "In your Shooting phase , each time this model is selected to shoot, select one of the abilities below. Until the end of the phase, this model\u2019s shrieker cannon has that ability.",
+          "name": "Cruel Amusement"
+        },
+        {
+          "type": "list",
+          "items": [
+            "[IGNORES COVER]",
+            "[PRECISION]",
+            "[SUSTAINED HITS 3]"
           ]
         }
       ]
@@ -102,14 +160,26 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "text",
-          "text": "Flip Belt: Each time the bearer\u2019s unit makes a Normal , Advance , Fall Back or Charge move , ignore any vertical distance when determining the total distance the bearer can be moved during that move."
+          "type": "statement",
+          "text": "Each time the bearer\u2019s unit makes a Normal , Advance , Fall Back or Charge move , ignore any vertical distance when determining the total distance the bearer can be moved during that move.",
+          "label": "Flip Belt"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Death Jester"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "shrieker cannon; Jester\u2019s blade; flip belt.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -124,27 +194,10 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "TRAVELLING PLAYERS",
       "ABILITIES",
       "WARGEAR ABILITIES",
-      "UNIT COMPOSITION",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
+      "UNIT COMPOSITION"
     ],
     "exportedSectionTitles": [
       "TRAVELLING PLAYERS",
@@ -152,60 +205,8 @@
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Storm-Eagle-Gunship",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Storm-Eagle-Gunship",
-    "output_slug": "ultramarines",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Storm-Eagle-Gunship",
     "canonicalSourceId": "wahapedia:ba82c49b9bc156e0bd7bdcc88033c92aa786538a",
-    "fetchedAt": "2026-03-19T17:35:03+00:00",
-    "contentHash": "8c782fa5bae011e5f220b0bc39fe5b044472430afac0ac53fd27298094c9382d"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Storm-Eagle-Gunship",
+    "fetchedAt": "2026-03-21T03:49:51+00:00",
+    "contentHash": "0527ac0e52fb335f49c612fe6d3f99bc1c76eb946ca6b853a4329c180e8daf2e",
+    "output_slug": "ultramarines"
   },
   "name": "Storm Eagle Gunship",
   "base_size": "\u2300120 x 92mm flying base",
@@ -122,13 +124,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D6 , Hover FACTION: Oath of Moment Armoured Resilience: Each time an attack is allocated to this model, subtract 1 from the Damage characteristic of that attack."
+      "Deadly Demise D6 , Hover"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time an attack is allocated to this model, subtract 1 from the Damage characteristic of that attack.",
+        "name": "Armoured Resilience"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Storm Eagle Gunship"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "twin heavy bolter; 2 twin hellstrike launchers; vengeance launcher; armoured hull.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -177,14 +198,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D6 , Hover FACTION: Oath of Moment Armoured Resilience: Each time an attack is allocated to this model, subtract 1 from the Damage characteristic of that attack."
+            "Deadly Demise D6 , Hover"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time an attack is allocated to this model, subtract 1 from the Damage characteristic of that attack.",
+          "name": "Armoured Resilience"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Storm Eagle Gunship"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "twin heavy bolter; 2 twin hellstrike launchers; vengeance launcher; armoured hull.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -215,10 +259,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "DAMAGED: 1-6 WOUNDS REMAINING",
@@ -232,6 +275,7 @@
       "TRANSPORT"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

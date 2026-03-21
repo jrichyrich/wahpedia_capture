@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Scout-Bike-Squad",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Scout-Bike-Squad",
     "canonicalSourceId": "wahapedia:b27c3f0694e5cfc0522673e608ccf33d34e011cd",
     "faction_slug": "space-marines",
     "datasheet_slug": "Scout-Bike-Squad",
-    "fetchedAt": "2026-03-19T17:32:20+00:00",
-    "contentHash": "4f07207577fc9466572bd566b616297c0e4c4f742052f796a0d0c4151ab500a3",
+    "fetchedAt": "2026-03-21T03:43:00+00:00",
+    "contentHash": "2a3df9014e97ac8170a108a3dc0c613991a08b7392e1e64bd7b6228eebfea4f5",
     "output_slug": "space-marines"
   },
   "name": "Scout Bike Squad",
@@ -240,13 +240,38 @@
   },
   "abilities": {
     "core": [
-      "Scouts 9\" FACTION: Oath of Moment Outflank: When this unit arrives from Strategic Reserves , it can be set up within your opponent\u2019s deployment zone (all other restrictions still apply)."
+      "Scouts 9\""
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "When this unit arrives from Strategic Reserves , it can be set up within your opponent\u2019s deployment zone (all other restrictions still apply).",
+        "name": "Outflank"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Scout Biker Sergeant"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "2-5 Scout Bikers"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "Astartes shotgun; bolt pistol; twin boltgun; combat knife.",
+      "label": "Every model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -307,14 +332,43 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Scouts 9\" FACTION: Oath of Moment Outflank: When this unit arrives from Strategic Reserves , it can be set up within your opponent\u2019s deployment zone (all other restrictions still apply)."
+            "Scouts 9\""
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "When this unit arrives from Strategic Reserves , it can be set up within your opponent\u2019s deployment zone (all other restrictions still apply).",
+          "name": "Outflank"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Scout Biker Sergeant"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "2-5 Scout Bikers"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "Astartes shotgun; bolt pistol; twin boltgun; combat knife.",
+          "label": "Every model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -333,86 +387,17 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
-      "UNIT COMPOSITION",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
+      "UNIT COMPOSITION"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

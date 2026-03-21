@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Cyberwolf",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Cyberwolf",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Cyberwolf",
     "canonicalSourceId": "wahapedia:fd484f2e1ad3863bb849887c6525cd164b9507d7",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "3b3332075a1b056991808b5b9343db7cc565c581303db9cf4061966ce1ef2de7"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Cyberwolf",
+    "fetchedAt": "2026-03-21T03:44:13+00:00",
+    "contentHash": "633b112b0ee0f9f2001b1d1826ecc81387dc407790536a6fd8995588968f44ff",
+    "output_slug": "space-wolves"
   },
   "name": "Cyberwolf",
   "base_size": "\u230040mm",
@@ -89,6 +91,15 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "text",
+          "text": "None"
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
@@ -146,10 +157,18 @@
       "title": "LEADER",
       "entries": [
         {
+          "type": "text",
+          "text": "This model can be attached to the following unit:"
+        },
+        {
           "type": "list",
           "items": [
             "Fenrisian Wolves"
           ]
+        },
+        {
+          "type": "text",
+          "text": "You must attach this model to the above unit, even if CANIS WOLFBORN has been attached to it. If you do, and that Bodyguard unit is destroyed, the Leader units attached to it become separate units, with their original Starting Strengths . If it is not possible to attach this model to a unit, it does not take part in the battle and counts as having been destroyed."
         }
       ]
     },
@@ -163,22 +182,23 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "LEADER",
       "WOLFKIN"
     ],
     "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "LEADER",
       "WOLFKIN"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

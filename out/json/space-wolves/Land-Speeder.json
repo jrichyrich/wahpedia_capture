@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Land-Speeder",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Land-Speeder",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Land-Speeder",
     "canonicalSourceId": "wahapedia:ebd1cec6cfa5f5651147ea4ff7d52a9290ab819d",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "daaf6dac22c52902af3984a71ec8ea57324ddee09ccdc623b9928dee315061a1"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Land-Speeder",
+    "fetchedAt": "2026-03-21T03:46:18+00:00",
+    "contentHash": "c9f0227477ac70430cf57e55160efaf3835ccad3ff8458cde4637bbbd3445b95",
+    "output_slug": "space-wolves"
   },
   "name": "Land Speeder",
   "base_size": "\u230060mm flying base",
@@ -61,13 +63,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise 1 , Deep Strike FACTION: Oath of Moment Target Sighted: At the start of your Shooting phase , select one enemy unit that is visible to this model. Until the end of the phase, each time a friendly Adeptus Astartes model makes an attack with a Blast weapon that targets that enemy unit, add 1 to the Hit roll and that attack has the [IGNORES COVER] ability."
+      "Deadly Demise 1 , Deep Strike"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "At the start of your Shooting phase , select one enemy unit that is visible to this model. Until the end of the phase, each time a friendly Adeptus Astartes model makes an attack with a Blast weapon that targets that enemy unit, add 1 to the Hit roll and that attack has the [IGNORES COVER] ability.",
+        "name": "Target Sighted"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Land Speeder"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "heavy bolter; close combat weapon.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -106,14 +127,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise 1 , Deep Strike FACTION: Oath of Moment Target Sighted: At the start of your Shooting phase , select one enemy unit that is visible to this model. Until the end of the phase, each time a friendly Adeptus Astartes model makes an attack with a Blast weapon that targets that enemy unit, add 1 to the Hit roll and that attack has the [IGNORES COVER] ability."
+            "Deadly Demise 1 , Deep Strike"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "At the start of your Shooting phase , select one enemy unit that is visible to this model. Until the end of the phase, each time a friendly Adeptus Astartes model makes an attack with a Blast weapon that targets that enemy unit, add 1 to the Hit roll and that attack has the [IGNORES COVER] ability.",
+          "name": "Target Sighted"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Land Speeder"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "heavy bolter; close combat weapon.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -126,10 +170,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
@@ -139,6 +182,7 @@
       "UNIT COMPOSITION"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

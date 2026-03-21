@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Wraithknight",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Wraithknight",
     "canonicalSourceId": "wahapedia:0d8ae07ae779f985f17efc4325e49db68d45ff0b",
     "faction_slug": "aeldari",
     "datasheet_slug": "Wraithknight",
-    "fetchedAt": "2026-03-19T17:11:24+00:00",
-    "contentHash": "ded852e9e912d381220f2b292f59efdd93ba67382be457cbd449632c07035194",
+    "fetchedAt": "2026-03-21T03:36:48+00:00",
+    "contentHash": "f9fc4495017161ac2289701210dfe6a2daa0ece2c27b8be69e28d858030e52c2",
     "output_slug": "aeldari"
   },
   "name": "Wraithknight",
@@ -97,13 +97,45 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D6 FACTION: Battle Focus Titanic Strides: Each time this model makes a Normal , Advance or Fall Back move , it can move through models (excluding TITANIC models) and sections of terrain features that are 4\" or less in height. When doing so: It can move within Engagement Range of enemy models, but cannot end that move within Engagement Range of them. It can also move through sections of terrain features that are more than 4\" in height, but if it does, after it has moved, roll one D6: on a 1, this model is Battle-shocked . Point-blank Devastation: Each time this model\u2019s heavy wraithcannon or suncannon targets a unit within half range, you can re-roll the dice to determine the number of attacks made."
+      "Deadly Demise D6"
     ],
-    "faction": [],
-    "datasheet": [],
-    "other": []
+    "faction": [
+      "Battle Focus"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this model makes a Normal , Advance or Fall Back move , it can move through models (excluding TITANIC models) and sections of terrain features that are 4\" or less in height. When doing so:",
+        "name": "Titanic Strides"
+      },
+      {
+        "type": "rule",
+        "text": "Each time this model\u2019s heavy wraithcannon or suncannon targets a unit within half range, you can re-roll the dice to determine the number of attacks made.",
+        "name": "Point-blank Devastation"
+      }
+    ],
+    "other": [
+      {
+        "type": "list",
+        "items": [
+          "It can move within Engagement Range of enemy models, but cannot end that move within Engagement Range of them.",
+          "It can also move through sections of terrain features that are more than 4\" in height, but if it does, after it has moved, roll one D6: on a 1, this model is Battle-shocked ."
+        ]
+      }
+    ]
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Wraithknight"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "suncannon; titanic feet; scattershield.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -158,8 +190,32 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D6 FACTION: Battle Focus Titanic Strides: Each time this model makes a Normal , Advance or Fall Back move , it can move through models (excluding TITANIC models) and sections of terrain features that are 4\" or less in height. When doing so: It can move within Engagement Range of enemy models, but cannot end that move within Engagement Range of them. It can also move through sections of terrain features that are more than 4\" in height, but if it does, after it has moved, roll one D6: on a 1, this model is Battle-shocked . Point-blank Devastation: Each time this model\u2019s heavy wraithcannon or suncannon targets a unit within half range, you can re-roll the dice to determine the number of attacks made."
+            "Deadly Demise D6"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Battle Focus"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model makes a Normal , Advance or Fall Back move , it can move through models (excluding TITANIC models) and sections of terrain features that are 4\" or less in height. When doing so:",
+          "name": "Titanic Strides"
+        },
+        {
+          "type": "list",
+          "items": [
+            "It can move within Engagement Range of enemy models, but cannot end that move within Engagement Range of them.",
+            "It can also move through sections of terrain features that are more than 4\" in height, but if it does, after it has moved, roll one D6: on a 1, this model is Battle-shocked ."
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model\u2019s heavy wraithcannon or suncannon targets a unit within half range, you can re-roll the dice to determine the number of attacks made.",
+          "name": "Point-blank Devastation"
         }
       ]
     },
@@ -167,14 +223,26 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "text",
-          "text": "Scattershield: The bearer has a 4+ invulnerable save and each time an attack is allocated to the bearer, subtract 1 from the Damage characteristic of that attack."
+          "type": "statement",
+          "text": "The bearer has a 4+ invulnerable save and each time an attack is allocated to the bearer, subtract 1 from the Damage characteristic of that attack.",
+          "label": "Scattershield"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Wraithknight"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "suncannon; titanic feet; scattershield.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -198,27 +266,11 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION",
-      "DAMAGED: 1-6 WOUNDS REMAINING",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
+      "DAMAGED: 1-6 WOUNDS REMAINING"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -227,57 +279,8 @@
       "UNIT COMPOSITION",
       "DAMAGED: 1-6 WOUNDS REMAINING"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

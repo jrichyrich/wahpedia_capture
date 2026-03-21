@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Raider",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Raider",
     "canonicalSourceId": "wahapedia:3f8e68c9d4cd48b6249d8638da70e8324e8118aa",
     "faction_slug": "drukhari",
     "datasheet_slug": "Raider",
-    "fetchedAt": "2026-03-19T17:17:23+00:00",
-    "contentHash": "bcda6e482846ba8ddcced732dfab2217f6121af06c33f6cb72c879d082f7117d",
+    "fetchedAt": "2026-03-21T03:50:33+00:00",
+    "contentHash": "bb0d33793d120e1d7274c5a96fa0a2c71b2b23f7836374c4757f4a25b4ee8e73",
     "output_slug": "drukhari"
   },
   "name": "Raider",
@@ -60,13 +60,37 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D3 , Deep Strike , Firing Deck 11 FACTION: Power from Pain Splinter Racks (Pain): In your Shooting phase , when you select this model to shoot, you can spend 1 Pain token to Empower this model. While Empowered, if one or more units are embarked within this model, each time this model makes an attack with a ranged weapon that has the [ANTI] ability, you can re-roll the Hit roll . Vanguard of the Dark City: At the start of your Command phase , select one of the abilities in the Vanguard of the Dark City section (see above) for this model. Until the start of your next Command phase, this model has that ability."
+      "Deadly Demise D3 , Deep Strike , Firing Deck 11"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Power from Pain"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "In your Shooting phase , when you select this model to shoot, you can spend 1 Pain token to Empower this model. While Empowered, if one or more units are embarked within this model, each time this model makes an attack with a ranged weapon that has the [ANTI] ability, you can re-roll the Hit roll .",
+        "name": "Splinter Racks (Pain)"
+      },
+      {
+        "type": "rule",
+        "text": "At the start of your Command phase , select one of the abilities in the Vanguard of the Dark City section (see above) for this model. Until the start of your next Command phase, this model has that ability.",
+        "name": "Vanguard of the Dark City"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Raider"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "dark lance; bladevanes and chainsnares.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -103,8 +127,24 @@
       "title": "VANGUARD OF THE DARK CITY",
       "entries": [
         {
-          "type": "text",
-          "text": "Masters of the Shadowed Sky: At the end of your Command phase , if this model is within range of an objective marker you control, and if one or more KABALITE WARRIORS units are embarked within it, that objective marker remains under your control until your opponent\u2019s Level of Control over that objective marker is greater than yours at the end of a phase. Speed of the Kill: Each time a WYCHES unit disembarks from this model (excluding Emergency Disembarkations ), models in that WYCHES unit must be set up wholly within 6\" of this model. Visions of Butchery: While one or more WRACKS units are embarked within this model, for each WRACKS model embarked within this model, add 1 to the Attacks characteristic of this model\u2019s bladevanes and chainsnares. Aethersails: While one or more DRUKHARI units are embarked within this model, you can re-roll Advance and Charge rolls made for this model."
+          "type": "statement",
+          "text": "At the end of your Command phase , if this model is within range of an objective marker you control, and if one or more KABALITE WARRIORS units are embarked within it, that objective marker remains under your control until your opponent\u2019s Level of Control over that objective marker is greater than yours at the end of a phase.",
+          "label": "Masters of the Shadowed Sky"
+        },
+        {
+          "type": "statement",
+          "text": "Each time a WYCHES unit disembarks from this model (excluding Emergency Disembarkations ), models in that WYCHES unit must be set up wholly within 6\" of this model.",
+          "label": "Speed of the Kill"
+        },
+        {
+          "type": "statement",
+          "text": "While one or more WRACKS units are embarked within this model, for each WRACKS model embarked within this model, add 1 to the Attacks characteristic of this model\u2019s bladevanes and chainsnares.",
+          "label": "Visions of Butchery"
+        },
+        {
+          "type": "statement",
+          "text": "While one or more DRUKHARI units are embarked within this model, you can re-roll Advance and Charge rolls made for this model.",
+          "label": "Aethersails"
         }
       ]
     },
@@ -115,14 +155,42 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D3 , Deep Strike , Firing Deck 11 FACTION: Power from Pain Splinter Racks (Pain): In your Shooting phase , when you select this model to shoot, you can spend 1 Pain token to Empower this model. While Empowered, if one or more units are embarked within this model, each time this model makes an attack with a ranged weapon that has the [ANTI] ability, you can re-roll the Hit roll . Vanguard of the Dark City: At the start of your Command phase , select one of the abilities in the Vanguard of the Dark City section (see above) for this model. Until the start of your next Command phase, this model has that ability."
+            "Deadly Demise D3 , Deep Strike , Firing Deck 11"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Power from Pain"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "In your Shooting phase , when you select this model to shoot, you can spend 1 Pain token to Empower this model. While Empowered, if one or more units are embarked within this model, each time this model makes an attack with a ranged weapon that has the [ANTI] ability, you can re-roll the Hit roll .",
+          "name": "Splinter Racks (Pain)"
+        },
+        {
+          "type": "rule",
+          "text": "At the start of your Command phase , select one of the abilities in the Vanguard of the Dark City section (see above) for this model. Until the start of your next Command phase, this model has that ability.",
+          "name": "Vanguard of the Dark City"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Raider"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "dark lance; bladevanes and chainsnares.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -146,27 +214,11 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "VANGUARD OF THE DARK CITY",
       "ABILITIES",
       "UNIT COMPOSITION",
-      "TRANSPORT",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
+      "TRANSPORT"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -175,57 +227,8 @@
       "UNIT COMPOSITION",
       "TRANSPORT"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

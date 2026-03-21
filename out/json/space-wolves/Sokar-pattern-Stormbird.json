@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Sokar-pattern-Stormbird",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Sokar-pattern-Stormbird",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Sokar-pattern-Stormbird",
     "canonicalSourceId": "wahapedia:a96b76d5ca919ef450d3862a2ecaad8ea1e1a402",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "b92d35be8125bc23b042466afc1774327ebb53afc00f63f590e1d9088d77bf81"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Sokar-pattern-Stormbird",
+    "fetchedAt": "2026-03-21T03:46:39+00:00",
+    "contentHash": "77f8c0aeee5079fbe363d2f43e07109a675250057c2f6e1bc273f7326b23298a",
+    "output_slug": "space-wolves"
   },
   "name": "Sokar-pattern Stormbird",
   "base_size": "\u2300Use model",
@@ -75,13 +77,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise 2D6 , Hover FACTION: Oath of Moment Aerial Assault: Each time a unit with the Deep Strike ability disembarks from this model after it has made a Normal move , that unit is still eligible to declare a charge this turn."
+      "Deadly Demise 2D6 , Hover"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time a unit with the Deep Strike ability disembarks from this model after it has made a Normal move , that unit is still eligible to declare a charge this turn.",
+        "name": "Aerial Assault"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Sokar-pattern Stormbird"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "hellstrike missile battery; 3 twin heavy bolters; 4 twin lascannons; armoured hull.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -110,10 +131,8 @@
       "title": "WARGEAR OPTIONS",
       "entries": [
         {
-          "type": "list",
-          "items": [
-            "None"
-          ]
+          "type": "text",
+          "text": "None"
         }
       ]
     },
@@ -124,14 +143,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise 2D6 , Hover FACTION: Oath of Moment Aerial Assault: Each time a unit with the Deep Strike ability disembarks from this model after it has made a Normal move , that unit is still eligible to declare a charge this turn."
+            "Deadly Demise 2D6 , Hover"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time a unit with the Deep Strike ability disembarks from this model after it has made a Normal move , that unit is still eligible to declare a charge this turn.",
+          "name": "Aerial Assault"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Sokar-pattern Stormbird"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "hellstrike missile battery; 3 twin heavy bolters; 4 twin lascannons; armoured hull.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -162,10 +204,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "DAMAGED: 1-13 WOUNDS REMAINING",
@@ -179,6 +220,7 @@
       "TRANSPORT"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

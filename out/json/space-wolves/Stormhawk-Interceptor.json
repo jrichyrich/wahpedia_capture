@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Stormhawk-Interceptor",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Stormhawk-Interceptor",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Stormhawk-Interceptor",
     "canonicalSourceId": "wahapedia:8d3445663eb5abbda3fb961664e8f8615b2ca78b",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "e5479c2b7f883f5b795203bad92a71dbc947118d8210593ce533d0a94f2982b5"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Stormhawk-Interceptor",
+    "fetchedAt": "2026-03-21T03:45:30+00:00",
+    "contentHash": "1a91050789ab70e8003befe8a5fb9bddd788ba908fcc0ca22b48ef0299aaaadd",
+    "output_slug": "space-wolves"
   },
   "name": "Stormhawk Interceptor",
   "base_size": "\u2300120 x 92mm flying base",
@@ -119,13 +121,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D3 FACTION: Oath of Moment Interceptor: Each time this model makes a ranged attack that targets a unit that can Fly , add 1 to the Hit roll ."
+      "Deadly Demise D3"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this model makes a ranged attack that targets a unit that can Fly , add 1 to the Hit roll .",
+        "name": "Interceptor"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Stormhawk Interceptor"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "twin assault cannon; skyhammer missile launcher; las-talon; armoured hull.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -174,14 +195,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D3 FACTION: Oath of Moment Interceptor: Each time this model makes a ranged attack that targets a unit that can Fly , add 1 to the Hit roll ."
+            "Deadly Demise D3"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model makes a ranged attack that targets a unit that can Fly , add 1 to the Hit roll .",
+          "name": "Interceptor"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Stormhawk Interceptor"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "twin assault cannon; skyhammer missile launcher; las-talon; armoured hull.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -194,10 +238,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
@@ -207,6 +250,7 @@
       "UNIT COMPOSITION"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Sergeant-Telion",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Sergeant-Telion",
-    "output_slug": "ultramarines",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Sergeant-Telion",
     "canonicalSourceId": "wahapedia:d77f858eb74fca8ef02306512bae6c555d6c2a6b",
-    "fetchedAt": "2026-03-19T17:35:03+00:00",
-    "contentHash": "b26b785251b8e0ff1bece6d8d16765a63485a8469d9514080dbd3028d62b3c98"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Sergeant-Telion",
+    "fetchedAt": "2026-03-21T03:47:57+00:00",
+    "contentHash": "f90e9e2832a843ec7920f404d24359d542253f10454fd4bd8e29329a28c52f9c",
+    "output_slug": "ultramarines"
   },
   "name": "Sergeant Telion",
   "base_size": "\u230025mm",
@@ -74,7 +76,7 @@
       },
       {
         "type": "rule",
-        "text": "While this model is leading a unit, each time that unit is selected to shoot or fight, select one of the following abilities to apply to weapons equipped by models in that unit until the end of the phase: [LETHAL HITS] [PRECISION] [SUSTAINED HITS 1]",
+        "text": "While this model is leading a unit, each time that unit is selected to shoot or fight, select one of the following abilities to apply to weapons equipped by models in that unit until the end of the phase:",
         "name": "Guiding Hand"
       }
     ],
@@ -124,6 +126,15 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "text",
+          "text": "None"
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
@@ -141,22 +152,22 @@
           ]
         },
         {
-          "type": "list",
-          "items": [
-            "[LETHAL HITS]",
-            "[PRECISION]",
-            "[SUSTAINED HITS 1]"
-          ]
-        },
-        {
           "type": "rule",
           "text": "While this model is leading a unit, improve the Objective Control characteristic of models in that unit by 1 and each time a model in that unit makes an attack, add 1 to the Hit roll .",
           "name": "Voice of Experience"
         },
         {
           "type": "rule",
-          "text": "While this model is leading a unit, each time that unit is selected to shoot or fight, select one of the following abilities to apply to weapons equipped by models in that unit until the end of the phase: [LETHAL HITS] [PRECISION] [SUSTAINED HITS 1]",
+          "text": "While this model is leading a unit, each time that unit is selected to shoot or fight, select one of the following abilities to apply to weapons equipped by models in that unit until the end of the phase:",
           "name": "Guiding Hand"
+        },
+        {
+          "type": "list",
+          "items": [
+            "[LETHAL HITS]",
+            "[PRECISION]",
+            "[SUSTAINED HITS 1]"
+          ]
         }
       ]
     },
@@ -189,6 +200,10 @@
       "title": "LEADER",
       "entries": [
         {
+          "type": "text",
+          "text": "This model can be attached to the following units:"
+        },
+        {
           "type": "list",
           "items": [
             "Scout Squad",
@@ -199,20 +214,21 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "LEADER"
     ],
     "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "LEADER"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

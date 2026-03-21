@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Storm-Speeder-Thunderstrike",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Storm-Speeder-Thunderstrike",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Storm-Speeder-Thunderstrike",
     "canonicalSourceId": "wahapedia:2e2780a036888b5f3cb33c29e155101598d07b04",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "f5acad71befc26b35713f212246477d76cdf4c8468c51fc561f50054d59dc80a"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Storm-Speeder-Thunderstrike",
+    "fetchedAt": "2026-03-21T03:45:28+00:00",
+    "contentHash": "1c6457dd8aafd5d1cb922d5f5d2db7e0e0dfebb7fbd5f42b4ba4a7b9eab7365c",
+    "output_slug": "space-wolves"
   },
   "name": "Storm Speeder Thunderstrike",
   "base_size": "\u230090mm",
@@ -70,13 +72,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D3 , Deep Strike FACTION: Oath of Moment Thunderstrike: Each time this model has shot, select one enemy MONSTER or VEHICLE unit that was hit by one or more attacks made by this model this phase. Until the end of the phase, each time a friendly ADEPTUS ASTARTES unit makes a ranged attack that targets that enemy unit, add 1 to the Wound roll ."
+      "Deadly Demise D3 , Deep Strike"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this model has shot, select one enemy MONSTER or VEHICLE unit that was hit by one or more attacks made by this model this phase. Until the end of the phase, each time a friendly ADEPTUS ASTARTES unit makes a ranged attack that targets that enemy unit, add 1 to the Wound roll .",
+        "name": "Thunderstrike"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Storm Speeder Thunderstrike"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "stormfury missiles; Thunderstrike las-talon; twin Icarus rocket pod; close combat weapon.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -105,14 +126,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D3 , Deep Strike FACTION: Oath of Moment Thunderstrike: Each time this model has shot, select one enemy MONSTER or VEHICLE unit that was hit by one or more attacks made by this model this phase. Until the end of the phase, each time a friendly ADEPTUS ASTARTES unit makes a ranged attack that targets that enemy unit, add 1 to the Wound roll ."
+            "Deadly Demise D3 , Deep Strike"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model has shot, select one enemy MONSTER or VEHICLE unit that was hit by one or more attacks made by this model this phase. Until the end of the phase, each time a friendly ADEPTUS ASTARTES unit makes a ranged attack that targets that enemy unit, add 1 to the Wound roll .",
+          "name": "Thunderstrike"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Storm Speeder Thunderstrike"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "stormfury missiles; Thunderstrike las-talon; twin Icarus rocket pod; close combat weapon.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -125,8 +169,6 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
       "ABILITIES",
@@ -137,6 +179,7 @@
       "UNIT COMPOSITION"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

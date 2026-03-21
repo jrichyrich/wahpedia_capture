@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Autarch",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Autarch",
     "canonicalSourceId": "wahapedia:70844799f7f706b7e639201588a502a7d4ba696a",
     "faction_slug": "aeldari",
     "datasheet_slug": "Autarch",
-    "fetchedAt": "2026-03-19T17:11:01+00:00",
-    "contentHash": "8084bca978670bd5dd8edbcd879fbb2276fe1081d2dbed844828ab057dbdaa96",
+    "fetchedAt": "2026-03-21T03:36:23+00:00",
+    "contentHash": "1179ba36fee49a2b414ae258acf0f032e12aa7464f6e510f0f4307a9ff0f2b26",
     "output_slug": "aeldari"
   },
   "name": "Autarch",
@@ -143,13 +143,37 @@
   },
   "abilities": {
     "core": [
-      "Leader FACTION: Battle Focus Superlative Strategist: While this model is leading a unit, you can re-roll Advance rolls made for that unit, and you can re-roll any rolls made for that unit while it is performing an Agile Manoeuvre . Path of Command: Once per battle round , one model from your army with this ability can use it when its unit is targeted with a Stratagem . If it does, reduce the CP cost of that usage of that Stratagem by 1CP."
+      "Leader"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Battle Focus"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, you can re-roll Advance rolls made for that unit, and you can re-roll any rolls made for that unit while it is performing an Agile Manoeuvre .",
+        "name": "Superlative Strategist"
+      },
+      {
+        "type": "rule",
+        "text": "Once per battle round , one model from your army with this ability can use it when its unit is targeted with a Stratagem . If it does, reduce the CP cost of that usage of that Stratagem by 1CP.",
+        "name": "Path of Command"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Autarch"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "shuriken pistol; star glaive.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -213,14 +237,42 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Leader FACTION: Battle Focus Superlative Strategist: While this model is leading a unit, you can re-roll Advance rolls made for that unit, and you can re-roll any rolls made for that unit while it is performing an Agile Manoeuvre . Path of Command: Once per battle round , one model from your army with this ability can use it when its unit is targeted with a Stratagem . If it does, reduce the CP cost of that usage of that Stratagem by 1CP."
+            "Leader"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Battle Focus"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, you can re-roll Advance rolls made for that unit, and you can re-roll any rolls made for that unit while it is performing an Agile Manoeuvre .",
+          "name": "Superlative Strategist"
+        },
+        {
+          "type": "rule",
+          "text": "Once per battle round , one model from your army with this ability can use it when its unit is targeted with a Stratagem . If it does, reduce the CP cost of that usage of that Stratagem by 1CP.",
+          "name": "Path of Command"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Autarch"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "shuriken pistol; star glaive.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -235,6 +287,10 @@
     {
       "title": "LEADER",
       "entries": [
+        {
+          "type": "text",
+          "text": "This model can be attached to the following units:"
+        },
         {
           "type": "list",
           "items": [
@@ -252,28 +308,11 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ASPECT TRAINING",
       "ABILITIES",
       "UNIT COMPOSITION",
-      "LEADER",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
+      "LEADER"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -282,60 +321,8 @@
       "UNIT COMPOSITION",
       "LEADER"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

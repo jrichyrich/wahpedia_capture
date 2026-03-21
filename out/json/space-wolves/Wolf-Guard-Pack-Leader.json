@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Wolf-Guard-Pack-Leader",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Wolf-Guard-Pack-Leader",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Wolf-Guard-Pack-Leader",
     "canonicalSourceId": "wahapedia:93402f9bcce8b74f0f11c6279199f8277b00ef93",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "9c094f60ef4ebcfa7ed045f7bf5723519c6ca2914bb4b8f59e93c79c77f51ecb"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Wolf-Guard-Pack-Leader",
+    "fetchedAt": "2026-03-21T03:44:30+00:00",
+    "contentHash": "7a2dab811b0739ae181f2267428f105e4213a574a8f8f31e07543a2f3edc7473",
+    "output_slug": "space-wolves"
   },
   "name": "Wolf Guard Pack Leader",
   "base_size": "\u230032mm",
@@ -219,6 +221,36 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s bolt pistol and boltgun can be replaced with 1 twin lightning claws.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "This model\u2019s bolt pistol and boltgun can be replaced with two different weapons from the following list:*",
+          "items": [
+            "1 bolt pistol",
+            "1 boltgun",
+            "1 combi-weapon",
+            "1 plasma pistol",
+            "1 storm bolter",
+            "1 Astartes chainsword",
+            "1 power fist",
+            "1 power weapon",
+            "1 thunder hammer",
+            "1 storm shield"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "* This model can only be equipped with two ranged weapons if one of them is a Pistol (and it can only have one Pistol)."
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
@@ -286,32 +318,41 @@
       "title": "LEADER",
       "entries": [
         {
+          "type": "text",
+          "text": "This model can be attached to the following units:"
+        },
+        {
           "type": "list",
           "items": [
             "Blood Claws",
             "Grey Hunters",
             "Long Fangs"
           ]
+        },
+        {
+          "type": "text",
+          "text": "You must attach this model to one of the above units, and can do so even if one or more CHARACTER units have already been attached to that unit, but a unit can never include more than one PACK LEADER model. If you do, and that Bodyguard unit is destroyed , the Leader units attached to it become separate units, with their original Starting Strengths . If it is not possible to attach this model to a unit, it does not take part in the battle and counts as having been destroyed."
         }
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION",
       "LEADER"
     ],
     "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION",
       "LEADER"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

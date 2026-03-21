@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Hellions",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Hellions",
     "canonicalSourceId": "wahapedia:81e88189fbeec8249fa5fb9901f5b51d7b383bd5",
     "faction_slug": "drukhari",
     "datasheet_slug": "Hellions",
-    "fetchedAt": "2026-03-19T17:17:20+00:00",
-    "contentHash": "e8db4b937273452e299480793e3673f0138ecf8923c379d38a4ef363ed0d9c0c",
+    "fetchedAt": "2026-03-21T03:50:30+00:00",
+    "contentHash": "d7d3eb3a552a04e1decb8889d37c125383d995fd26c899025ae44870bdabda11",
     "output_slug": "drukhari"
   },
   "name": "Hellions",
@@ -99,13 +99,43 @@
   },
   "abilities": {
     "core": [
-      "Deep Strike FACTION: Power from Pain Battlefield Butchery (Pain): In the Fight phase , when you select this unit to fight, you can spend 1 Pain token to Empower this unit. While Empowered, add 1 to the Attacks and Strength characteristics of this unit\u2019s melee weapons. Skyboard Evasion: Once per turn, when an enemy unit ends a Normal , Advance or Fall Back move within 9\" of this unit, this unit can make a Normal move of up to D6\"."
+      "Deep Strike"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Power from Pain"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "In the Fight phase , when you select this unit to fight, you can spend 1 Pain token to Empower this unit. While Empowered, add 1 to the Attacks and Strength characteristics of this unit\u2019s melee weapons.",
+        "name": "Battlefield Butchery (Pain)"
+      },
+      {
+        "type": "rule",
+        "text": "Once per turn, when an enemy unit ends a Normal , Advance or Fall Back move within 9\" of this unit, this unit can make a Normal move of up to D6\".",
+        "name": "Skyboard Evasion"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Helliarch"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "4-9 Hellions"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "splinter pods; hellglaive.",
+      "label": "Every model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -161,8 +191,25 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deep Strike FACTION: Power from Pain Battlefield Butchery (Pain): In the Fight phase , when you select this unit to fight, you can spend 1 Pain token to Empower this unit. While Empowered, add 1 to the Attacks and Strength characteristics of this unit\u2019s melee weapons. Skyboard Evasion: Once per turn, when an enemy unit ends a Normal , Advance or Fall Back move within 9\" of this unit, this unit can make a Normal move of up to D6\"."
+            "Deep Strike"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Power from Pain"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "In the Fight phase , when you select this unit to fight, you can spend 1 Pain token to Empower this unit. While Empowered, add 1 to the Attacks and Strength characteristics of this unit\u2019s melee weapons.",
+          "name": "Battlefield Butchery (Pain)"
+        },
+        {
+          "type": "rule",
+          "text": "Once per turn, when an enemy unit ends a Normal , Advance or Fall Back move within 9\" of this unit, this unit can make a Normal move of up to D6\".",
+          "name": "Skyboard Evasion"
         }
       ]
     },
@@ -170,14 +217,32 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "text",
-          "text": "Phantasm Grenade Launcher: The bearer\u2019s unit has the SMOKE and GRENADES keywords."
+          "type": "statement",
+          "text": "The bearer\u2019s unit has the SMOKE and GRENADES keywords.",
+          "label": "Phantasm Grenade Launcher"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Helliarch"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "4-9 Hellions"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "splinter pods; hellglaive.",
+          "label": "Every model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -196,26 +261,10 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "WARGEAR ABILITIES",
-      "UNIT COMPOSITION",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
+      "UNIT COMPOSITION"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -223,57 +272,8 @@
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

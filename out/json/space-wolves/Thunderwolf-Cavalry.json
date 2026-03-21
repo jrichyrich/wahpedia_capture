@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Thunderwolf-Cavalry",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Thunderwolf-Cavalry",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Thunderwolf-Cavalry",
     "canonicalSourceId": "wahapedia:58e4b15dd1dbaf36696a1ceadeb82be5805bc039",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "380a925c1e4a387dd6aaf40a266e742b6a36697f63b5ca9ce867d24bc201963d"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Thunderwolf-Cavalry",
+    "fetchedAt": "2026-03-21T03:45:40+00:00",
+    "contentHash": "a267e0c0e7a68db0af3b7ccf570a8211a44955e5e862f8ee597e87dc227bb1f4",
+    "output_slug": "space-wolves"
   },
   "name": "Thunderwolf Cavalry",
   "base_size": "\u230060mm",
@@ -112,7 +114,12 @@
     {
       "type": "list",
       "items": [
-        "1 Thunderwolf Cavalry Pack Leader",
+        "1 Thunderwolf Cavalry Pack Leader"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
         "2-5 Thunderwolf Cavalry"
       ]
     },
@@ -147,6 +154,24 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "Any number of models can each have their bolt pistol replaced with one of the following:",
+          "items": [
+            "1 boltgun",
+            "1 storm shield"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "For every 3 models in this unit, one model\u2019s bolt pistol can be replaced with 1 plasma pistol.",
+          "items": []
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
@@ -179,7 +204,12 @@
         {
           "type": "list",
           "items": [
-            "1 Thunderwolf Cavalry Pack Leader",
+            "1 Thunderwolf Cavalry Pack Leader"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
             "2-5 Thunderwolf Cavalry"
           ]
         },
@@ -204,20 +234,21 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION"
     ],
     "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

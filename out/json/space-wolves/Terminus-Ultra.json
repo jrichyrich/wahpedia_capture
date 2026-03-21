@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Terminus-Ultra",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Terminus-Ultra",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Terminus-Ultra",
     "canonicalSourceId": "wahapedia:b3d68dbc5bc44067343aac016af956c8479e60c6",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "cb57c4926c10d4397afea34c223f61c824a5186546cb20889fdd2768f3977cd4"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Terminus-Ultra",
+    "fetchedAt": "2026-03-21T03:46:48+00:00",
+    "contentHash": "9a1d2446a5b130f88073ba08e3a539a4c33c54cd77473574853d3fb01880a6cb",
+    "output_slug": "space-wolves"
   },
   "name": "Terminus Ultra",
   "base_size": "\u2300Use model",
@@ -106,13 +108,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D6 FACTION: Oath of Moment Assault Ramp: Each time a unit disembarks from this model after it has made a Normal move , that unit is still eligible to declare a charge this turn."
+      "Deadly Demise D6"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time a unit disembarks from this model after it has made a Normal move , that unit is still eligible to declare a charge this turn.",
+        "name": "Assault Ramp"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Terminus Ultra"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "3 Terminus lascannons; 2 lascannons; armoured tracks.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -161,14 +182,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D6 FACTION: Oath of Moment Assault Ramp: Each time a unit disembarks from this model after it has made a Normal move , that unit is still eligible to declare a charge this turn."
+            "Deadly Demise D6"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time a unit disembarks from this model after it has made a Normal move , that unit is still eligible to declare a charge this turn.",
+          "name": "Assault Ramp"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Terminus Ultra"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "3 Terminus lascannons; 2 lascannons; armoured tracks.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -190,10 +234,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "DAMAGED: 1-5 WOUNDS REMAINING"
@@ -205,6 +248,7 @@
       "DAMAGED: 1-5 WOUNDS REMAINING"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

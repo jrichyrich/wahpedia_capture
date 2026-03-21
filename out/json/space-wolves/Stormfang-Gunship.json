@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Stormfang-Gunship",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Stormfang-Gunship",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Stormfang-Gunship",
     "canonicalSourceId": "wahapedia:1d4b2d003e1b9dc808e84e382c869b5b3fdd3336",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "b31f0691f60479dd4523fbb98826506b56c377f00c9388b005052e33370aa417"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Stormfang-Gunship",
+    "fetchedAt": "2026-03-21T03:46:43+00:00",
+    "contentHash": "b7631cb006c8c5937ad7c1c9fee77799e6d0cf27b3092b0d6693f8cf2908d407",
+    "output_slug": "space-wolves"
   },
   "name": "Stormfang Gunship",
   "base_size": "\u2300120 x 92mm flying base",
@@ -173,6 +175,24 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s 2 skyhammer missile launchers can be replaced with one of the following:",
+          "items": [
+            "2 twin multi-meltas",
+            "2 twin heavy bolters"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "This model\u2019s twin stormstrike missile launcher can be replaced with 1 twin lascannon.",
+          "items": []
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
@@ -240,22 +260,23 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "DAMAGED: 1-5 WOUNDS REMAINING",
       "TRANSPORT"
     ],
     "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "DAMAGED: 1-5 WOUNDS REMAINING",
       "TRANSPORT"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

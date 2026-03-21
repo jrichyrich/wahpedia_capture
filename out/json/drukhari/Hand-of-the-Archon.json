@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Hand-of-the-Archon",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Hand-of-the-Archon",
     "canonicalSourceId": "wahapedia:5928c997fe942e61ac168584b163e44235aa5b25",
     "faction_slug": "drukhari",
     "datasheet_slug": "Hand-of-the-Archon",
-    "fetchedAt": "2026-03-19T17:17:21+00:00",
-    "contentHash": "411014e569a9b1f2c06d5822cab0047060a88d3f767745a280f88b35098858ab",
+    "fetchedAt": "2026-03-21T03:50:30+00:00",
+    "contentHash": "387369813833407334d08dc794057ab8ff43152c96ea8f9cc5f4074a61315264",
     "output_slug": "drukhari"
   },
   "name": "Hand of the Archon",
@@ -191,13 +191,43 @@
   },
   "abilities": {
     "core": [
-      "Scouts 7\" FACTION: Power from Pain Assassins\u2019 Poisons (Pain): In your Shooting phase or the Fight phase , when you select this unit to shoot or fight, you can spend 1 Pain token to Empower this unit. While Empowered, weapons equipped by models in this unit (excluding blast pistols, blasters and dark lances) have the [LETHAL HITS] and [PRECISION] abilities. Archon\u2019s Will: At the start of the first battle round , select one objective marker on the battlefield. Until the end of the battle, while this unit is within range of that objective marker, unless this unit is Battle-shocked , models in this unit have a 5+ invulnerable save and an Objective Control characteristic of 3."
+      "Scouts 7\""
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Power from Pain"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "In your Shooting phase or the Fight phase , when you select this unit to shoot or fight, you can spend 1 Pain token to Empower this unit. While Empowered, weapons equipped by models in this unit (excluding blast pistols, blasters and dark lances) have the [LETHAL HITS] and [PRECISION] abilities.",
+        "name": "Assassins\u2019 Poisons (Pain)"
+      },
+      {
+        "type": "rule",
+        "text": "At the start of the first battle round , select one objective marker on the battlefield. Until the end of the battle, while this unit is within range of that objective marker, unless this unit is Battle-shocked , models in this unit have a 5+ invulnerable save and an Objective Control characteristic of 3.",
+        "name": "Archon\u2019s Will"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Kabalite Archsybarite"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "9 Kabalite Agents"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "splinter rifle; close combat weapon.",
+      "label": "Every model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -293,8 +323,25 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Scouts 7\" FACTION: Power from Pain Assassins\u2019 Poisons (Pain): In your Shooting phase or the Fight phase , when you select this unit to shoot or fight, you can spend 1 Pain token to Empower this unit. While Empowered, weapons equipped by models in this unit (excluding blast pistols, blasters and dark lances) have the [LETHAL HITS] and [PRECISION] abilities. Archon\u2019s Will: At the start of the first battle round , select one objective marker on the battlefield. Until the end of the battle, while this unit is within range of that objective marker, unless this unit is Battle-shocked , models in this unit have a 5+ invulnerable save and an Objective Control characteristic of 3."
+            "Scouts 7\""
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Power from Pain"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "In your Shooting phase or the Fight phase , when you select this unit to shoot or fight, you can spend 1 Pain token to Empower this unit. While Empowered, weapons equipped by models in this unit (excluding blast pistols, blasters and dark lances) have the [LETHAL HITS] and [PRECISION] abilities.",
+          "name": "Assassins\u2019 Poisons (Pain)"
+        },
+        {
+          "type": "rule",
+          "text": "At the start of the first battle round , select one objective marker on the battlefield. Until the end of the battle, while this unit is within range of that objective marker, unless this unit is Battle-shocked , models in this unit have a 5+ invulnerable save and an Objective Control characteristic of 3.",
+          "name": "Archon\u2019s Will"
         }
       ]
     },
@@ -302,14 +349,42 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "text",
-          "text": "Kabalite Icon: While the bearer\u2019s unit is not Battle-shocked , add 1 to the bearer\u2019s Objective Control characteristic. Phantasm Grenade Launcher: The bearer\u2019s unit has the SMOKE keyword. Stimm-needler: Once per turn, the first time a saving throw is failed for a model in the bearer\u2019s unit, change the Damage characteristic of that attack to 0."
+          "type": "statement",
+          "text": "While the bearer\u2019s unit is not Battle-shocked , add 1 to the bearer\u2019s Objective Control characteristic.",
+          "label": "Kabalite Icon"
+        },
+        {
+          "type": "statement",
+          "text": "The bearer\u2019s unit has the SMOKE keyword.",
+          "label": "Phantasm Grenade Launcher"
+        },
+        {
+          "type": "statement",
+          "text": "Once per turn, the first time a saving throw is failed for a model in the bearer\u2019s unit, change the Damage characteristic of that attack to 0.",
+          "label": "Stimm-needler"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Kabalite Archsybarite"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "9 Kabalite Agents"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "splinter rifle; close combat weapon.",
+          "label": "Every model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -333,28 +408,11 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION",
-      "ARCHON\u2019S RETINUE",
-      "STRATAGEMS",
-      "LED BY",
-      "DETACHMENT ABILITY"
+      "ARCHON\u2019S RETINUE"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -363,60 +421,8 @@
       "UNIT COMPOSITION",
       "ARCHON\u2019S RETINUE"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "LED BY",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:LED BY",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:LED BY",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

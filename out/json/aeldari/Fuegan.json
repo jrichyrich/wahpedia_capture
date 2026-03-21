@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Fuegan",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Fuegan",
     "canonicalSourceId": "wahapedia:02e6adc7f572914e6288b2c74b2438148b2c46a1",
     "faction_slug": "aeldari",
     "datasheet_slug": "Fuegan",
-    "fetchedAt": "2026-03-19T17:11:04+00:00",
-    "contentHash": "5779adc766730326ab77a334bc92305945249d94df4b1517aab69e834a8b6399",
+    "fetchedAt": "2026-03-21T03:36:27+00:00",
+    "contentHash": "90f76f51dd5b15bde25aea4d5a032b71ef58313477065bb496016deb583d17ee",
     "output_slug": "aeldari"
   },
   "name": "Fuegan",
@@ -67,13 +67,37 @@
   },
   "abilities": {
     "core": [
-      "Leader FACTION: Battle Focus Burning Lance: While this model is leading a unit, add 6\" to the Range characteristic of Melta weapons equipped by models in that unit. Unquenchable Resolve: The first time this model is destroyed, at the end of the phase, roll one D6: on a 2+, set this model back up on the battlefield as close as possible to where it was destroyed and not within Engagement Range of one or more enemy units, with its full wounds remaining."
+      "Leader"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Battle Focus"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, add 6\" to the Range characteristic of Melta weapons equipped by models in that unit.",
+        "name": "Burning Lance"
+      },
+      {
+        "type": "rule",
+        "text": "The first time this model is destroyed, at the end of the phase, roll one D6: on a 2+, set this model back up on the battlefield as close as possible to where it was destroyed and not within Engagement Range of one or more enemy units, with its full wounds remaining.",
+        "name": "Unquenchable Resolve"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Fuegan \u2013 EPIC HERO"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "Searsong; Fire Axe.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -105,14 +129,42 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Leader FACTION: Battle Focus Burning Lance: While this model is leading a unit, add 6\" to the Range characteristic of Melta weapons equipped by models in that unit. Unquenchable Resolve: The first time this model is destroyed, at the end of the phase, roll one D6: on a 2+, set this model back up on the battlefield as close as possible to where it was destroyed and not within Engagement Range of one or more enemy units, with its full wounds remaining."
+            "Leader"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Battle Focus"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, add 6\" to the Range characteristic of Melta weapons equipped by models in that unit.",
+          "name": "Burning Lance"
+        },
+        {
+          "type": "rule",
+          "text": "The first time this model is destroyed, at the end of the phase, roll one D6: on a 2+, set this model back up on the battlefield as close as possible to where it was destroyed and not within Engagement Range of one or more enemy units, with its full wounds remaining.",
+          "name": "Unquenchable Resolve"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Fuegan \u2013 EPIC HERO"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "Searsong; Fire Axe.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -128,6 +180,10 @@
       "title": "LEADER",
       "entries": [
         {
+          "type": "text",
+          "text": "This model can be attached to the following unit:"
+        },
+        {
           "type": "list",
           "items": [
             "Fire Dragons"
@@ -138,82 +194,17 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "ABILITIES",
       "UNIT COMPOSITION",
-      "LEADER",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
+      "LEADER"
     ],
     "exportedSectionTitles": [
       "ABILITIES",
       "UNIT COMPOSITION",
       "LEADER"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

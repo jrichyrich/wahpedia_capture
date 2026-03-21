@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Land-Raider-Proteus",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Land-Raider-Proteus",
-    "output_slug": "ultramarines",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Land-Raider-Proteus",
     "canonicalSourceId": "wahapedia:ce63f5abeed7efe3e9e2ab9eb9e541a1aca7a1dd",
-    "fetchedAt": "2026-03-19T17:35:03+00:00",
-    "contentHash": "623b3d7baeb1409e9f7adc007396f59f522ad6e1ed98cb52be409e958ee1d6fa"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Land-Raider-Proteus",
+    "fetchedAt": "2026-03-21T03:49:27+00:00",
+    "contentHash": "6cda24809cc746d55522e60c17a6cdc1f045eea261dc94ea98ce54a14c0767ca",
+    "output_slug": "ultramarines"
   },
   "name": "Land Raider Proteus",
   "base_size": "\u2300Use model",
@@ -122,13 +124,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D6 FACTION: Oath of Moment Assault Ramp: Each time a unit disembarks from this model after it has made a Normal move , that unit is still eligible to declare a charge this turn."
+      "Deadly Demise D6"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time a unit disembarks from this model after it has made a Normal move , that unit is still eligible to declare a charge this turn.",
+        "name": "Assault Ramp"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Land Raider Proteus"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "2 twin lascannons; armoured tracks.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -187,8 +208,20 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D6 FACTION: Oath of Moment Assault Ramp: Each time a unit disembarks from this model after it has made a Normal move , that unit is still eligible to declare a charge this turn."
+            "Deadly Demise D6"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time a unit disembarks from this model after it has made a Normal move , that unit is still eligible to declare a charge this turn.",
+          "name": "Assault Ramp"
         }
       ]
     },
@@ -196,14 +229,26 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "text",
-          "text": "Explorator Augury Web: Enemy units that are set up on the battlefield as Reinforcements cannot be set up within 12\" of this bearer, but the bearer must halve its Transport Capacity ."
+          "type": "statement",
+          "text": "Enemy units that are set up on the battlefield as Reinforcements cannot be set up within 12\" of this bearer, but the bearer must halve its Transport Capacity .",
+          "label": "Explorator Augury Web"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Land Raider Proteus"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "2 twin lascannons; armoured tracks.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -234,10 +279,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION",
@@ -253,6 +297,7 @@
       "TRANSPORT"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

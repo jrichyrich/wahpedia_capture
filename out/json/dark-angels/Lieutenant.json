@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Lieutenant",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Lieutenant",
     "canonicalSourceId": "wahapedia:5814ce192ee7a7be5fb5bf69b4798b74245df93f",
     "faction_slug": "space-marines",
     "datasheet_slug": "Lieutenant",
-    "fetchedAt": "2026-03-19T17:23:07+00:00",
-    "contentHash": "517c4d80e2baca76de495c9811a35f3e092194fd9b871ed5316d1cebb92c09b5",
+    "fetchedAt": "2026-03-21T03:38:11+00:00",
+    "contentHash": "5a796d5885dd4aacfdd2ac017244c2792508b3023090ab1cfd60fe6ba5929f12",
     "output_slug": "dark-angels"
   },
   "name": "Lieutenant",
@@ -131,13 +131,37 @@
   },
   "abilities": {
     "core": [
-      "Leader FACTION: Oath of Moment Tactical Precision: While this model is leading a unit, weapons equipped by models in that unit have the [LETHAL HITS] ability. Target Priority: This model\u2019s unit is eligible to shoot and declare a charge in a turn in which it Fell Back ."
+      "Leader"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, weapons equipped by models in that unit have the [LETHAL HITS] ability.",
+        "name": "Tactical Precision"
+      },
+      {
+        "type": "rule",
+        "text": "This model\u2019s unit is eligible to shoot and declare a charge in a turn in which it Fell Back .",
+        "name": "Target Priority"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Lieutenant"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "bolt pistol; master-crafted bolter; close combat weapon.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -199,8 +223,25 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Leader FACTION: Oath of Moment Tactical Precision: While this model is leading a unit, weapons equipped by models in that unit have the [LETHAL HITS] ability. Target Priority: This model\u2019s unit is eligible to shoot and declare a charge in a turn in which it Fell Back ."
+            "Leader"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, weapons equipped by models in that unit have the [LETHAL HITS] ability.",
+          "name": "Tactical Precision"
+        },
+        {
+          "type": "rule",
+          "text": "This model\u2019s unit is eligible to shoot and declare a charge in a turn in which it Fell Back .",
+          "name": "Target Priority"
         }
       ]
     },
@@ -208,14 +249,26 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "text",
-          "text": "Storm Shield: The bearer has a 4+ invulnerable save ."
+          "type": "statement",
+          "text": "The bearer has a 4+ invulnerable save .",
+          "label": "Storm Shield"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Lieutenant"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "bolt pistol; master-crafted bolter; close combat weapon.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -230,6 +283,10 @@
     {
       "title": "LEADER",
       "entries": [
+        {
+          "type": "text",
+          "text": "This model can be attached to the following units:"
+        },
         {
           "type": "list",
           "items": [
@@ -254,34 +311,21 @@
             "Vanguard Veteran Squad",
             "Wolf Guard"
           ]
+        },
+        {
+          "type": "text",
+          "text": "You can attach this model to a unit it can lead even if one CAPTAIN or CHAPTER MASTER model has already been attached to it. If you do, and that Bodyguard unit is destroyed, the Leader units attached to it become separate units, with their original Starting Strengths ."
         }
       ]
     }
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION",
-      "LEADER",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
+      "LEADER"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -290,60 +334,8 @@
       "UNIT COMPOSITION",
       "LEADER"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

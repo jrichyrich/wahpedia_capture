@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Bullgryn-Squad",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Bullgryn-Squad",
     "canonicalSourceId": "wahapedia:3ceee318312818e9e4fb46c10f3fbf38041c2e00",
     "faction_slug": "astra-militarum",
     "datasheet_slug": "Bullgryn-Squad",
-    "fetchedAt": "2026-03-19T17:11:51+00:00",
-    "contentHash": "3df8a5dd0e442fe1f5b0865ea5e5e4427af69224bd97d28a86a8f9fe51397d86",
+    "fetchedAt": "2026-03-21T03:37:13+00:00",
+    "contentHash": "835ecc08e77b355ffbf566b2160b4540a50a7deff8d328c536c6cb1509062dbe",
     "output_slug": "astra-militarum"
   },
   "name": "Bullgryn Squad",
@@ -61,13 +61,36 @@
   },
   "abilities": {
     "core": [
-      "Feel No Pain 6+ Wall of Muscle: Each time an attack is allocated to a model in this unit, subtract 1 from the Damage characteristic of that attack."
+      "Feel No Pain 6+"
     ],
     "faction": [],
-    "datasheet": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time an attack is allocated to a model in this unit, subtract 1 from the Damage characteristic of that attack.",
+        "name": "Wall of Muscle"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Bullgryn Bone \u2018ead"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "2-5 Bullgryns"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "grenadier gauntlet; close combat weapon; slabshield.",
+      "label": "Every model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -115,8 +138,13 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Feel No Pain 6+ Wall of Muscle: Each time an attack is allocated to a model in this unit, subtract 1 from the Damage characteristic of that attack."
+            "Feel No Pain 6+"
           ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time an attack is allocated to a model in this unit, subtract 1 from the Damage characteristic of that attack.",
+          "name": "Wall of Muscle"
         }
       ]
     },
@@ -124,14 +152,37 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "text",
-          "text": "Brute Shield: The bearer has a 4+ invulnerable save . Slabshield: The bearer has a Wounds characteristic of 4."
+          "type": "statement",
+          "text": "The bearer has a 4+ invulnerable save .",
+          "label": "Brute Shield"
+        },
+        {
+          "type": "statement",
+          "text": "The bearer has a Wounds characteristic of 4.",
+          "label": "Slabshield"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Bullgryn Bone \u2018ead"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "2-5 Bullgryns"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "grenadier gauntlet; close combat weapon; slabshield.",
+          "label": "Every model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -150,26 +201,10 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "WARGEAR ABILITIES",
-      "UNIT COMPOSITION",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
+      "UNIT COMPOSITION"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -177,57 +212,8 @@
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

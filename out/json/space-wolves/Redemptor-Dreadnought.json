@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Redemptor-Dreadnought",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Redemptor-Dreadnought",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Redemptor-Dreadnought",
     "canonicalSourceId": "wahapedia:2c0cbf190dc554835b7beb7ca5039b0e7bb0a1b2",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "0b1312e7c112ee61c366c23e535d2f1050bb3b4f59b34856f33c5b3581a6a486"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Redemptor-Dreadnought",
+    "fetchedAt": "2026-03-21T03:45:19+00:00",
+    "contentHash": "884dc7f191144aae53b8539115cfc14d0f7f89962bb87677995ec169750c4669",
+    "output_slug": "space-wolves"
   },
   "name": "Redemptor Dreadnought",
   "base_size": "\u230090mm",
@@ -137,13 +139,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D3 FACTION: Oath of Moment Duty Eternal: Each time an attack is allocated to this model, subtract 1 from the Damage characteristic of that attack."
+      "Deadly Demise D3"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time an attack is allocated to this model, subtract 1 from the Damage characteristic of that attack.",
+        "name": "Duty Eternal"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Redemptor Dreadnought"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "Twin fragstorm grenade launcher; heavy flamer; heavy onslaught gatling cannon; Redemptor fist.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -198,14 +219,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D3 FACTION: Oath of Moment Duty Eternal: Each time an attack is allocated to this model, subtract 1 from the Damage characteristic of that attack."
+            "Deadly Demise D3"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time an attack is allocated to this model, subtract 1 from the Damage characteristic of that attack.",
+          "name": "Duty Eternal"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Redemptor Dreadnought"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "Twin fragstorm grenade launcher; heavy flamer; heavy onslaught gatling cannon; Redemptor fist.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -227,10 +271,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "DAMAGED: 1-4 WOUNDS REMAINING"
@@ -242,6 +285,7 @@
       "DAMAGED: 1-4 WOUNDS REMAINING"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

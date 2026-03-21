@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Sicaran-Battle-Tank",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Sicaran-Battle-Tank",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Sicaran-Battle-Tank",
     "canonicalSourceId": "wahapedia:6251b633fe084f2a3b009b96530272be229ec693",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "ae2d6128aa7f0b2090e7c7d7eb3fcaecd5fd780b0a7cc54f8a504affe56c8506"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Sicaran-Battle-Tank",
+    "fetchedAt": "2026-03-21T03:46:34+00:00",
+    "contentHash": "1eeba3f9f6d8f8378fda1c785334793b858666afbd127a71b728b9d5808e6813",
+    "output_slug": "space-wolves"
   },
   "name": "Sicaran Battle Tank",
   "base_size": "\u2300Use model",
@@ -93,13 +95,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D3 FACTION: Oath of Moment Armoured Spearhead: Each time this model makes an attack that targets an enemy unit, re-roll a Hit roll of 1 and, if that unit is within range of an objective marker you do not control, you can re-roll the Hit roll instead."
+      "Deadly Demise D3"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this model makes an attack that targets an enemy unit, re-roll a Hit roll of 1 and, if that unit is within range of an objective marker you do not control, you can re-roll the Hit roll instead.",
+        "name": "Armoured Spearhead"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Sicaran Battle Tank"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "heavy bolter; Herakles-pattern autocannon; armoured tracks.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -150,14 +171,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D3 FACTION: Oath of Moment Armoured Spearhead: Each time this model makes an attack that targets an enemy unit, re-roll a Hit roll of 1 and, if that unit is within range of an objective marker you do not control, you can re-roll the Hit roll instead."
+            "Deadly Demise D3"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model makes an attack that targets an enemy unit, re-roll a Hit roll of 1 and, if that unit is within range of an objective marker you do not control, you can re-roll the Hit roll instead.",
+          "name": "Armoured Spearhead"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Sicaran Battle Tank"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "heavy bolter; Herakles-pattern autocannon; armoured tracks.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -179,10 +223,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "DAMAGED: 1-5 WOUNDS REMAINING"
@@ -194,6 +237,7 @@
       "DAMAGED: 1-5 WOUNDS REMAINING"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Iron-Priest-On-Thunderwolf",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Iron-Priest-On-Thunderwolf",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Iron-Priest-On-Thunderwolf",
     "canonicalSourceId": "wahapedia:3be82c6396179a560d576a792920c2c8a68cd397",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "0b49f86e3b21fc99201d082924b22286472a9136615466e1d50fbd863b87321c"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Iron-Priest-On-Thunderwolf",
+    "fetchedAt": "2026-03-21T03:44:18+00:00",
+    "contentHash": "4349212dd5eaa41a174968bdb5d21e8eb9e34da5002999c9cc70194f46891f1c",
+    "output_slug": "space-wolves"
   },
   "name": "Iron Priest On Thunderwolf",
   "base_size": "\u230060mm",
@@ -167,6 +169,19 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s boltgun can be replaced with one of the following:",
+          "items": [
+            "1 bolt pistol",
+            "1 helfrost pistol"
+          ]
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
@@ -229,6 +244,10 @@
       "title": "LEADER",
       "entries": [
         {
+          "type": "text",
+          "text": "This model can be attached to the following unit:"
+        },
+        {
           "type": "list",
           "items": [
             "Thunderwolf Cavalry"
@@ -237,20 +256,21 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "LEADER"
     ],
     "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "LEADER"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Ravenwing-Command-Squad",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Ravenwing-Command-Squad",
     "canonicalSourceId": "wahapedia:ab7f9500190b05f3897973e8aad428dc51dc89c8",
     "faction_slug": "space-marines",
     "datasheet_slug": "Ravenwing-Command-Squad",
-    "fetchedAt": "2026-03-19T17:23:30+00:00",
-    "contentHash": "7f7ca8c6ea6f6a058eea8f76b5f0ceae4428c784119aa1eb743860f3e7dec43c",
+    "fetchedAt": "2026-03-21T03:38:23+00:00",
+    "contentHash": "c7509aae0426152485b2a7f97220927076371832a56068706aa17d90f6433d0b",
     "output_slug": "dark-angels"
   },
   "name": "Ravenwing Command Squad",
@@ -111,13 +111,59 @@
   },
   "abilities": {
     "core": [
-      "Leader FACTION: Oath of Moment Narthecium: While this unit contains a Ravenwing Apothecary, in your Command phase , you can return 1 destroyed model (excluding CHARACTER and INVADER ATV models) to this unit. Astartes Banner: While this unit contains an Ravenwing Ancient, add 1 to the Objective Control characteristic of models in this unit. Honour or Death: While this unit contains a Ravenwing Champion, add 1 to Advance and Charge rolls made for this unit and you can target this unit with the Heroic Intervention Stratagem for 0CP."
+      "Leader"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this unit contains a Ravenwing Apothecary, in your Command phase , you can return 1 destroyed model (excluding CHARACTER and INVADER ATV models) to this unit.",
+        "name": "Narthecium"
+      },
+      {
+        "type": "rule",
+        "text": "While this unit contains an Ravenwing Ancient, add 1 to the Objective Control characteristic of models in this unit.",
+        "name": "Astartes Banner"
+      },
+      {
+        "type": "rule",
+        "text": "While this unit contains a Ravenwing Champion, add 1 to Advance and Charge rolls made for this unit and you can target this unit with the Heroic Intervention Stratagem for 0CP.",
+        "name": "Honour or Death"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Ravenwing Champion"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "1 Ravenwing Apothecary"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "1 Ravenwing Ancient"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "bolt pistol; plasma talon; master-crafted power weapon.",
+      "label": "The Ravenwing Champion is equipped with"
+    },
+    {
+      "type": "statement",
+      "text": "bolt pistol; plasma talon; Black Knight combat weapon.",
+      "label": "Every other model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -157,14 +203,64 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Leader FACTION: Oath of Moment Narthecium: While this unit contains a Ravenwing Apothecary, in your Command phase , you can return 1 destroyed model (excluding CHARACTER and INVADER ATV models) to this unit. Astartes Banner: While this unit contains an Ravenwing Ancient, add 1 to the Objective Control characteristic of models in this unit. Honour or Death: While this unit contains a Ravenwing Champion, add 1 to Advance and Charge rolls made for this unit and you can target this unit with the Heroic Intervention Stratagem for 0CP."
+            "Leader"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this unit contains a Ravenwing Apothecary, in your Command phase , you can return 1 destroyed model (excluding CHARACTER and INVADER ATV models) to this unit.",
+          "name": "Narthecium"
+        },
+        {
+          "type": "rule",
+          "text": "While this unit contains an Ravenwing Ancient, add 1 to the Objective Control characteristic of models in this unit.",
+          "name": "Astartes Banner"
+        },
+        {
+          "type": "rule",
+          "text": "While this unit contains a Ravenwing Champion, add 1 to Advance and Charge rolls made for this unit and you can target this unit with the Heroic Intervention Stratagem for 0CP.",
+          "name": "Honour or Death"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Ravenwing Champion"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "1 Ravenwing Apothecary"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "1 Ravenwing Ancient"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "bolt pistol; plasma talon; master-crafted power weapon.",
+          "label": "The Ravenwing Champion is equipped with"
+        },
+        {
+          "type": "statement",
+          "text": "bolt pistol; plasma talon; Black Knight combat weapon.",
+          "label": "Every other model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -180,6 +276,10 @@
       "title": "LEADER",
       "entries": [
         {
+          "type": "text",
+          "text": "This model can be attached to the following units:"
+        },
+        {
           "type": "list",
           "items": [
             "Outrider Squad",
@@ -193,27 +293,10 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
-      "LEADER",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
+      "LEADER"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -221,60 +304,8 @@
       "UNIT COMPOSITION",
       "LEADER"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Telemon-Heavy-Dreadnought",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Telemon-Heavy-Dreadnought",
     "canonicalSourceId": "wahapedia:436aed0e1ae850504ad0afa96dc8766af87b85eb",
     "faction_slug": "adeptus-custodes",
     "datasheet_slug": "Telemon-Heavy-Dreadnought",
-    "fetchedAt": "2026-03-19T17:10:57+00:00",
-    "contentHash": "fb3fb5932df60b2a1884a47802e52b5677d6dfa1578fc6573bb3e8ab1c8358db",
+    "fetchedAt": "2026-03-21T03:36:21+00:00",
+    "contentHash": "31f3ba7163229e90ca17fed54fee670a1a5ef550b51c670c6958fd667f02ce71",
     "output_slug": "adeptus-custodes"
   },
   "name": "Telemon Heavy Dreadnought",
@@ -97,13 +97,37 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D3 FACTION: Martial Ka\u2019tah Guardian Eternal: Each time an attack is allocated to this model, subtract 1 from the Damage characteristic of that attack. Devoted to Destruction: If this model is equipped with 2 Telemon caestus weapons in addition to its armoured feet weapon, add 2 to the Attacks characteristic of those Telemon caestus weapons."
+      "Deadly Demise D3"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Martial Ka\u2019tah"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time an attack is allocated to this model, subtract 1 from the Damage characteristic of that attack.",
+        "name": "Guardian Eternal"
+      },
+      {
+        "type": "rule",
+        "text": "If this model is equipped with 2 Telemon caestus weapons in addition to its armoured feet weapon, add 2 to the Attacks characteristic of those Telemon caestus weapons.",
+        "name": "Devoted to Destruction"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Telemon Heavy Dreadnought"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "2 iliastus accelerator culverins; spiculus bolt launcher; armoured feet.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -147,14 +171,42 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D3 FACTION: Martial Ka\u2019tah Guardian Eternal: Each time an attack is allocated to this model, subtract 1 from the Damage characteristic of that attack. Devoted to Destruction: If this model is equipped with 2 Telemon caestus weapons in addition to its armoured feet weapon, add 2 to the Attacks characteristic of those Telemon caestus weapons."
+            "Deadly Demise D3"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Martial Ka\u2019tah"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time an attack is allocated to this model, subtract 1 from the Damage characteristic of that attack.",
+          "name": "Guardian Eternal"
+        },
+        {
+          "type": "rule",
+          "text": "If this model is equipped with 2 Telemon caestus weapons in addition to its armoured feet weapon, add 2 to the Attacks characteristic of those Telemon caestus weapons.",
+          "name": "Devoted to Destruction"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Telemon Heavy Dreadnought"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "2 iliastus accelerator culverins; spiculus bolt launcher; armoured feet.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -178,27 +230,10 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
-      "DAMAGED: 1-4 WOUNDS REMAINING",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
+      "DAMAGED: 1-4 WOUNDS REMAINING"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -206,60 +241,8 @@
       "UNIT COMPOSITION",
       "DAMAGED: 1-4 WOUNDS REMAINING"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

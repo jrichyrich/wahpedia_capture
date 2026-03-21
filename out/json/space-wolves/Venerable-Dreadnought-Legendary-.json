@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Venerable-Dreadnought-Legendary-",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Venerable-Dreadnought-Legendary-",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Venerable-Dreadnought-Legendary-",
     "canonicalSourceId": "wahapedia:4b00fce90bcda81e878a9297f982e13e964e1acf",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "7f14543698d96201dcf0dc28fbe63404132d4587158afdf34ff7ea28c1095a3b"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Venerable-Dreadnought-Legendary-",
+    "fetchedAt": "2026-03-21T03:46:53+00:00",
+    "contentHash": "4fc9c0f99a72f2bd5d30fb9ba0ac0a659ddc0c3f45963bd1e1d25b6651f3dd2c",
+    "output_slug": "space-wolves"
   },
   "name": "Venerable Dreadnought",
   "base_size": "Legendary) (\u230060mm",
@@ -207,13 +209,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise 1 FACTION: Oath of Moment Wisdom of the Ancients (Aura): While a friendly ADEPTUS ASTARTES INFANTRY unit is within 6\" of this model, each time a model in that unit makes an attack, re-roll a Hit roll of 1."
+      "Deadly Demise 1"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While a friendly ADEPTUS ASTARTES INFANTRY unit is within 6\" of this model, each time a model in that unit makes an attack, re-roll a Hit roll of 1.",
+        "name": "Wisdom of the Ancients (Aura)"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Venerable Dreadnought"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "assault cannon; storm bolter; armoured feet; Dreadnought combat weapon.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -271,14 +292,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise 1 FACTION: Oath of Moment Wisdom of the Ancients (Aura): While a friendly ADEPTUS ASTARTES INFANTRY unit is within 6\" of this model, each time a model in that unit makes an attack, re-roll a Hit roll of 1."
+            "Deadly Demise 1"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While a friendly ADEPTUS ASTARTES INFANTRY unit is within 6\" of this model, each time a model in that unit makes an attack, re-roll a Hit roll of 1.",
+          "name": "Wisdom of the Ancients (Aura)"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Venerable Dreadnought"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "assault cannon; storm bolter; armoured feet; Dreadnought combat weapon.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -291,10 +335,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
@@ -304,6 +347,7 @@
       "UNIT COMPOSITION"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

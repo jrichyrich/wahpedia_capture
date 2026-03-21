@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Mastodon",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Mastodon",
     "canonicalSourceId": "wahapedia:aaed0b509864ae747b17fe1c9a5ab22cf52898ab",
     "faction_slug": "space-marines",
     "datasheet_slug": "Mastodon",
-    "fetchedAt": "2026-03-19T17:32:03+00:00",
-    "contentHash": "62f844ad9e7335bdb04c6282b4acf9b83ec09597505ac2f409962bd1461b64a5",
+    "fetchedAt": "2026-03-21T03:42:55+00:00",
+    "contentHash": "a351d407fdbc0bab142114c29d9d739dcda8c3f442e5f96ed51b40948bb1be3a",
     "output_slug": "space-marines"
   },
   "name": "Mastodon",
@@ -110,13 +110,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise 2D6 FACTION: Oath of Moment Inviolable Transport: Once per battle round , when an attack is allocated to this model, you can change the Damage characteristic of that attack to 0."
+      "Deadly Demise 2D6"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Once per battle round , when an attack is allocated to this model, you can change the Damage characteristic of that attack to 0.",
+        "name": "Inviolable Transport"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Mastodon"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "2 heavy flamers; 2 lascannons; siege melta array; skyreaper battery; armoured tracks.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -169,14 +188,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise 2D6 FACTION: Oath of Moment Inviolable Transport: Once per battle round , when an attack is allocated to this model, you can change the Damage characteristic of that attack to 0."
+            "Deadly Demise 2D6"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Once per battle round , when an attack is allocated to this model, you can change the Damage characteristic of that attack to 0.",
+          "name": "Inviolable Transport"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Mastodon"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "2 heavy flamers; 2 lascannons; siege melta array; skyreaper battery; armoured tracks.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -209,28 +251,11 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "DAMAGED: 1-10 WOUNDS REMAINING",
-      "TRANSPORT",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
+      "TRANSPORT"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -239,60 +264,8 @@
       "DAMAGED: 1-10 WOUNDS REMAINING",
       "TRANSPORT"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

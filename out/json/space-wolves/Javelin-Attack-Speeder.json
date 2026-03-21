@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Javelin-Attack-Speeder",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Javelin-Attack-Speeder",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Javelin-Attack-Speeder",
     "canonicalSourceId": "wahapedia:9f6d23e2491f48a498a8797a101bac03e4b6f2a8",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "1ea4c8af0bd4381397b053f228a74c5c6e9f503becba2b5d405f6d13cd0515e6"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Javelin-Attack-Speeder",
+    "fetchedAt": "2026-03-21T03:46:11+00:00",
+    "contentHash": "36e96b9df857e683793aa2f51e3b6a18c5dd2f5edc72ff99e8a00974df2b0d02",
+    "output_slug": "space-wolves"
   },
   "name": "Javelin Attack Speeder",
   "base_size": "\u230060mm flying base",
@@ -103,13 +105,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise 1 , Deep Strike FACTION: Oath of Moment Fire and Redeploy: In your Shooting phase , each time this model has shot, if it is not within Engagement Range of any enemy units, it can make a Normal move of up to D6\". If it does, until the end of the turn, this model is not eligible to declare a charge ."
+      "Deadly Demise 1 , Deep Strike"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "In your Shooting phase , each time this model has shot, if it is not within Engagement Range of any enemy units, it can make a Normal move of up to D6\". If it does, until the end of the turn, this model is not eligible to declare a charge .",
+        "name": "Fire and Redeploy"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Javelin Attack Speeder"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "heavy bolter; Javelin missile launcher; close combat weapon.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -158,14 +179,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise 1 , Deep Strike FACTION: Oath of Moment Fire and Redeploy: In your Shooting phase , each time this model has shot, if it is not within Engagement Range of any enemy units, it can make a Normal move of up to D6\". If it does, until the end of the turn, this model is not eligible to declare a charge ."
+            "Deadly Demise 1 , Deep Strike"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "In your Shooting phase , each time this model has shot, if it is not within Engagement Range of any enemy units, it can make a Normal move of up to D6\". If it does, until the end of the turn, this model is not eligible to declare a charge .",
+          "name": "Fire and Redeploy"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Javelin Attack Speeder"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "heavy bolter; Javelin missile launcher; close combat weapon.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -178,10 +222,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
@@ -191,6 +234,7 @@
       "UNIT COMPOSITION"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

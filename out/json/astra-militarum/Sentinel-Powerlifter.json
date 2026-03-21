@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Sentinel-Powerlifter",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Sentinel-Powerlifter",
     "canonicalSourceId": "wahapedia:922377ae09ee76d377b889fff3aab08de7bdd1bd",
     "faction_slug": "astra-militarum",
     "datasheet_slug": "Sentinel-Powerlifter",
-    "fetchedAt": "2026-03-19T17:12:22+00:00",
-    "contentHash": "14c430b72cf3a23b87e22c6f7f15590d4bae7f7d77e996fbe10d8c284cc7e2fd",
+    "fetchedAt": "2026-03-21T03:37:38+00:00",
+    "contentHash": "1bf4610085c0a3c703336552393774a866449246b8b103570f2fc1c5b4fa9722",
     "output_slug": "astra-militarum"
   },
   "name": "Sentinel Powerlifter",
@@ -37,13 +37,30 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise 1 Powerlifter Charge: Each time this model ends a Charge move , select one enemy unit within Engagement Range of it and roll one D6: on a 2-5, that enemy unit suffers D3 mortal wounds ; on a 6, that enemy unit suffers 3 mortal wounds."
+      "Deadly Demise 1"
     ],
     "faction": [],
-    "datasheet": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this model ends a Charge move , select one enemy unit within Engagement Range of it and roll one D6: on a 2-5, that enemy unit suffers D3 mortal wounds ; on a 6, that enemy unit suffers 3 mortal wounds.",
+        "name": "Powerlifter Charge"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Sentinel Powerlifter"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "powerlifter.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -71,10 +88,8 @@
       "title": "WARGEAR OPTIONS",
       "entries": [
         {
-          "type": "list",
-          "items": [
-            "None"
-          ]
+          "type": "text",
+          "text": "None"
         }
       ]
     },
@@ -85,14 +100,30 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise 1 Powerlifter Charge: Each time this model ends a Charge move , select one enemy unit within Engagement Range of it and roll one D6: on a 2-5, that enemy unit suffers D3 mortal wounds ; on a 6, that enemy unit suffers 3 mortal wounds."
+            "Deadly Demise 1"
           ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model ends a Charge move , select one enemy unit within Engagement Range of it and roll one D6: on a 2-5, that enemy unit suffers D3 mortal wounds ; on a 6, that enemy unit suffers 3 mortal wounds.",
+          "name": "Powerlifter Charge"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Sentinel Powerlifter"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "powerlifter.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -107,54 +138,17 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
-      "UNIT COMPOSITION",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
+      "UNIT COMPOSITION"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
-    "missingExpectedSections": [
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

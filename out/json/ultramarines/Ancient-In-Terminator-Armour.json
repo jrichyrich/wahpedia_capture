@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Ancient-In-Terminator-Armour",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Ancient-In-Terminator-Armour",
-    "output_slug": "ultramarines",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Ancient-In-Terminator-Armour",
     "canonicalSourceId": "wahapedia:ab2d122112b91ec5ba8dc6b5f72eee899635b133",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "1669226c4ad13b29d03d0cb9d8d31614a132dfc0aef2008bce14d9d9249629a9"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Ancient-In-Terminator-Armour",
+    "fetchedAt": "2026-03-21T03:47:06+00:00",
+    "contentHash": "23d152b02338e7a0ff2f57c4443bc1a8bfd21e2e7552d8d0b1a9805764a3ff99",
+    "output_slug": "ultramarines"
   },
   "name": "Ancient In Terminator Armour",
   "base_size": "\u230040mm",
@@ -106,13 +108,37 @@
   },
   "abilities": {
     "core": [
-      "Deep Strike , Leader FACTION: Oath of Moment Astartes Banner: While this model is leading a unit, add 1 to the Objective Control characteristic of models in that unit. Keep the Banner High: While this model is leading a unit, each time a model in that unit makes an attack, add 1 to the Hit roll if that unit is below its Starting Strength , and add 1 to the Wound roll as well if that unit is Below Half-strength ."
+      "Deep Strike , Leader"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, add 1 to the Objective Control characteristic of models in that unit.",
+        "name": "Astartes Banner"
+      },
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, each time a model in that unit makes an attack, add 1 to the Hit roll if that unit is below its Starting Strength , and add 1 to the Wound roll as well if that unit is Below Half-strength .",
+        "name": "Keep the Banner High"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Ancient in Terminator Armour"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "storm bolter; power fist.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -165,8 +191,25 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deep Strike , Leader FACTION: Oath of Moment Astartes Banner: While this model is leading a unit, add 1 to the Objective Control characteristic of models in that unit. Keep the Banner High: While this model is leading a unit, each time a model in that unit makes an attack, add 1 to the Hit roll if that unit is below its Starting Strength , and add 1 to the Wound roll as well if that unit is Below Half-strength ."
+            "Deep Strike , Leader"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, add 1 to the Objective Control characteristic of models in that unit.",
+          "name": "Astartes Banner"
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, each time a model in that unit makes an attack, add 1 to the Hit roll if that unit is below its Starting Strength , and add 1 to the Wound roll as well if that unit is Below Half-strength .",
+          "name": "Keep the Banner High"
         }
       ]
     },
@@ -174,14 +217,26 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "text",
-          "text": "Terminator Storm Shield: The bearer has a Wounds characteristic of 6."
+          "type": "statement",
+          "text": "The bearer has a Wounds characteristic of 6.",
+          "label": "Terminator Storm Shield"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Ancient in Terminator Armour"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "storm bolter; power fist.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -197,6 +252,10 @@
       "title": "LEADER",
       "entries": [
         {
+          "type": "text",
+          "text": "This model can be attached to the following units:"
+        },
+        {
           "type": "list",
           "items": [
             "Terminator Assault Squad",
@@ -208,14 +267,17 @@
             "Deathwing Command Squad",
             "Relic Terminator Squad"
           ]
+        },
+        {
+          "type": "text",
+          "text": "You can attach this model to one of the above units even if one CAPTAIN , CHAPTER MASTER or LIEUTENANT model has already been attached to it. If you do, and that Bodyguard unit is destroyed, the LEADER units attached to it become separate units, with their original Starting Strengths ."
         }
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION",
@@ -229,6 +291,7 @@
       "LEADER"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

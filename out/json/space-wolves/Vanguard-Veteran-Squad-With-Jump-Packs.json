@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Vanguard-Veteran-Squad-With-Jump-Packs",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Vanguard-Veteran-Squad-With-Jump-Packs",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Vanguard-Veteran-Squad-With-Jump-Packs",
     "canonicalSourceId": "wahapedia:e3557b8f91f623767f284560f9bf1ea17190c155",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "722ba9b86e5334cf04e84aab6920677db1e397663792272be5acd9002a5fb77f"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Vanguard-Veteran-Squad-With-Jump-Packs",
+    "fetchedAt": "2026-03-21T03:45:35+00:00",
+    "contentHash": "af877077ca2e0f221b874c301b743a183b2d9dbaba6a85148183c6e11c9214cc",
+    "output_slug": "space-wolves"
   },
   "name": "Vanguard Veteran Squad With Jump Packs",
   "base_size": "\u230032mm",
@@ -114,13 +116,38 @@
   },
   "abilities": {
     "core": [
-      "Deep Strike FACTION: Oath of Moment Vanguard Assault: Each time this unit ends a Charge move , until the end of the turn, melee weapons equipped by models in this unit have the [LETHAL HITS] ability."
+      "Deep Strike"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this unit ends a Charge move , until the end of the turn, melee weapons equipped by models in this unit have the [LETHAL HITS] ability.",
+        "name": "Vanguard Assault"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Vanguard Veteran Sergeant with Jump Pack"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "4-9 Vanguard Veterans with Jump Packs"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "bolt pistol; Vanguard Veteran weapon.",
+      "label": "Every model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -172,8 +199,20 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deep Strike FACTION: Oath of Moment Vanguard Assault: Each time this unit ends a Charge move , until the end of the turn, melee weapons equipped by models in this unit have the [LETHAL HITS] ability."
+            "Deep Strike"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this unit ends a Charge move , until the end of the turn, melee weapons equipped by models in this unit have the [LETHAL HITS] ability.",
+          "name": "Vanguard Assault"
         }
       ]
     },
@@ -181,14 +220,32 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "text",
-          "text": "Storm Shield: The bearer has a 4+ invulnerable save ."
+          "type": "statement",
+          "text": "The bearer has a 4+ invulnerable save .",
+          "label": "Storm Shield"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Vanguard Veteran Sergeant with Jump Pack"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "4-9 Vanguard Veterans with Jump Packs"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "bolt pistol; Vanguard Veteran weapon.",
+          "label": "Every model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -205,10 +262,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION"
@@ -220,6 +276,7 @@
       "UNIT COMPOSITION"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

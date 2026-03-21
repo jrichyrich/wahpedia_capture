@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Desolation-Squad",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Desolation-Squad",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Desolation-Squad",
     "canonicalSourceId": "wahapedia:bb9cc09f59d4858793cb0710534a453a217db95e",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "a6c0d32b8d7be05426f5518f40070aae665fd86c707270918c8f4b38b1d9ea5c"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Desolation-Squad",
+    "fetchedAt": "2026-03-21T03:44:57+00:00",
+    "contentHash": "1df6399d1e438427144b9b097603f38f5273b782885da5a77be91392243443bd",
+    "output_slug": "space-wolves"
   },
   "name": "Desolation Squad",
   "base_size": "\u230032mm",
@@ -101,12 +103,35 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Oath of Moment Targeter Optics: Each time this unit Remains Stationary , until the start of your next Movement phase , ranged weapons equipped by models in this unit have the [IGNORES COVER] ability."
+      "Oath of Moment"
     ],
-    "datasheet": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this unit Remains Stationary , until the start of your next Movement phase , ranged weapons equipped by models in this unit have the [IGNORES COVER] ability.",
+        "name": "Targeter Optics"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Desolation Sergeant"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "4 Desolation Marines"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "bolt pistol; castellan launcher; superfrag rocket launcher; close combat weapon.",
+      "label": "Every model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -150,14 +175,36 @@
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Oath of Moment Targeter Optics: Each time this unit Remains Stationary , until the start of your next Movement phase , ranged weapons equipped by models in this unit have the [IGNORES COVER] ability."
+            "Oath of Moment"
           ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this unit Remains Stationary , until the start of your next Movement phase , ranged weapons equipped by models in this unit have the [IGNORES COVER] ability.",
+          "name": "Targeter Optics"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Desolation Sergeant"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "4 Desolation Marines"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "bolt pistol; castellan launcher; superfrag rocket launcher; close combat weapon.",
+          "label": "Every model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -170,10 +217,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
@@ -183,6 +229,7 @@
       "UNIT COMPOSITION"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

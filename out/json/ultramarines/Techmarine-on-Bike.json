@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Techmarine-on-Bike",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Techmarine-on-Bike",
-    "output_slug": "ultramarines",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Techmarine-on-Bike",
     "canonicalSourceId": "wahapedia:fdeca157aaa93143082552e14ce5be612cdfa098",
-    "fetchedAt": "2026-03-19T17:35:03+00:00",
-    "contentHash": "bbfe742878d13635dc8db61c8f8adf46d7ba2f6b2a761a82f4b8cead6933a6bc"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Techmarine-on-Bike",
+    "fetchedAt": "2026-03-21T03:47:59+00:00",
+    "contentHash": "6ba23a7f221a4e08184d2bed1b034daa55effc44323f849fafb86511b88280a7",
+    "output_slug": "ultramarines"
   },
   "name": "Techmarine On Bike",
   "base_size": "\u230075 x 25mm",
@@ -216,13 +218,42 @@
   },
   "abilities": {
     "core": [
-      "Leader FACTION: Oath of Moment Techmarine: While this model is within 3\" of one or more friendly ADEPTUS ASTARTES VEHICLE units, this model has the Lone Operative ability. Blessing of the Omnissiah: In your Command phase , you can select one friendly ADEPTUS ASTARTES VEHICLE model within 3\" of this model. That model regains up to D3 lost wounds and, until the start of your next Command phase, each time that VEHICLE model makes an attack, add 1 to the Hit roll . Each model can only be selected for this ability once per turn. Vengeance of the Omnissiah: If a friendly ADEPTUS ASTARTES VEHICLE model is destroyed within 12\" of this model, until the end of the battle, this model\u2019s Omnissian power axe has an Attacks characteristic of 7."
+      "Leader"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this model is within 3\" of one or more friendly ADEPTUS ASTARTES VEHICLE units, this model has the Lone Operative ability.",
+        "name": "Techmarine"
+      },
+      {
+        "type": "rule",
+        "text": "In your Command phase , you can select one friendly ADEPTUS ASTARTES VEHICLE model within 3\" of this model. That model regains up to D3 lost wounds and, until the start of your next Command phase, each time that VEHICLE model makes an attack, add 1 to the Hit roll . Each model can only be selected for this ability once per turn.",
+        "name": "Blessing of the Omnissiah"
+      },
+      {
+        "type": "rule",
+        "text": "If a friendly ADEPTUS ASTARTES VEHICLE model is destroyed within 12\" of this model, until the end of the battle, this model\u2019s Omnissian power axe has an Attacks characteristic of 7.",
+        "name": "Vengeance of the Omnissiah"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Techmarine on Bike"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "bolt pistol; twin boltgun; Omnissian power axe.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -286,14 +317,47 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Leader FACTION: Oath of Moment Techmarine: While this model is within 3\" of one or more friendly ADEPTUS ASTARTES VEHICLE units, this model has the Lone Operative ability. Blessing of the Omnissiah: In your Command phase , you can select one friendly ADEPTUS ASTARTES VEHICLE model within 3\" of this model. That model regains up to D3 lost wounds and, until the start of your next Command phase, each time that VEHICLE model makes an attack, add 1 to the Hit roll . Each model can only be selected for this ability once per turn. Vengeance of the Omnissiah: If a friendly ADEPTUS ASTARTES VEHICLE model is destroyed within 12\" of this model, until the end of the battle, this model\u2019s Omnissian power axe has an Attacks characteristic of 7."
+            "Leader"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is within 3\" of one or more friendly ADEPTUS ASTARTES VEHICLE units, this model has the Lone Operative ability.",
+          "name": "Techmarine"
+        },
+        {
+          "type": "rule",
+          "text": "In your Command phase , you can select one friendly ADEPTUS ASTARTES VEHICLE model within 3\" of this model. That model regains up to D3 lost wounds and, until the start of your next Command phase, each time that VEHICLE model makes an attack, add 1 to the Hit roll . Each model can only be selected for this ability once per turn.",
+          "name": "Blessing of the Omnissiah"
+        },
+        {
+          "type": "rule",
+          "text": "If a friendly ADEPTUS ASTARTES VEHICLE model is destroyed within 12\" of this model, until the end of the battle, this model\u2019s Omnissian power axe has an Attacks characteristic of 7.",
+          "name": "Vengeance of the Omnissiah"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Techmarine on Bike"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "bolt pistol; twin boltgun; Omnissian power axe.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -309,6 +373,10 @@
       "title": "LEADER",
       "entries": [
         {
+          "type": "text",
+          "text": "This model can be attached to the following units:"
+        },
+        {
           "type": "list",
           "items": [
             "Outrider Squad",
@@ -320,10 +388,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "LEADER"
@@ -335,6 +402,7 @@
       "LEADER"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

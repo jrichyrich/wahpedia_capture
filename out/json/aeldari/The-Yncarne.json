@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/The-Yncarne",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/aeldari/The-Yncarne",
     "canonicalSourceId": "wahapedia:69b84c380838f42179abeeb1225b3c0bd0ab177e",
     "faction_slug": "aeldari",
     "datasheet_slug": "The-Yncarne",
-    "fetchedAt": "2026-03-19T17:11:06+00:00",
-    "contentHash": "bf14e8d6f0d91b3a6d30284825c5c112cda53ff9742496800e287e8f74a92da0",
+    "fetchedAt": "2026-03-21T03:36:30+00:00",
+    "contentHash": "703732fefdaa6c83314c3c44eb5fa4223d928113d573a827110ebc909829e497",
     "output_slug": "aeldari"
   },
   "name": "The Yncarne",
@@ -64,13 +64,37 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D3 , Deep Strike FACTION: Battle Focus , Disparate Paths Inevitable Death: Once in each of your opponent\u2019s turns, if this model is on the battlefield when another friendly AELDARI unit is destroyed, just after removing the last model in that unit, you can remove this model from the battlefield and set it up as close as possible to where that destroyed model was destroyed and not within Engagement Range of one or more enemy units. Ethereal Form: Each time this model destroys an enemy unit, it regains up to D3 lost wounds."
+      "Deadly Demise D3 , Deep Strike"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Battle Focus , Disparate Paths"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Once in each of your opponent\u2019s turns, if this model is on the battlefield when another friendly AELDARI unit is destroyed, just after removing the last model in that unit, you can remove this model from the battlefield and set it up as close as possible to where that destroyed model was destroyed and not within Engagement Range of one or more enemy units.",
+        "name": "Inevitable Death"
+      },
+      {
+        "type": "rule",
+        "text": "Each time this model destroys an enemy unit, it regains up to D3 lost wounds.",
+        "name": "Ethereal Form"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Yncarne \u2013 EPIC HERO"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "swirling soul energy; Vilith-zhar.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -111,14 +135,42 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D3 , Deep Strike FACTION: Battle Focus , Disparate Paths Inevitable Death: Once in each of your opponent\u2019s turns, if this model is on the battlefield when another friendly AELDARI unit is destroyed, just after removing the last model in that unit, you can remove this model from the battlefield and set it up as close as possible to where that destroyed model was destroyed and not within Engagement Range of one or more enemy units. Ethereal Form: Each time this model destroys an enemy unit, it regains up to D3 lost wounds."
+            "Deadly Demise D3 , Deep Strike"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Battle Focus , Disparate Paths"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Once in each of your opponent\u2019s turns, if this model is on the battlefield when another friendly AELDARI unit is destroyed, just after removing the last model in that unit, you can remove this model from the battlefield and set it up as close as possible to where that destroyed model was destroyed and not within Engagement Range of one or more enemy units.",
+          "name": "Inevitable Death"
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model destroys an enemy unit, it regains up to D3 lost wounds.",
+          "name": "Ethereal Form"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Yncarne \u2013 EPIC HERO"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "swirling soul energy; Vilith-zhar.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -133,82 +185,17 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "AVATAR OF THE WHISPERING GOD",
       "ABILITIES",
-      "UNIT COMPOSITION",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
+      "UNIT COMPOSITION"
     ],
     "exportedSectionTitles": [
       "AVATAR OF THE WHISPERING GOD",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

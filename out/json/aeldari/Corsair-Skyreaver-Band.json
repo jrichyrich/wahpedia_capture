@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Corsair-Skyreaver-Band",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Corsair-Skyreaver-Band",
     "canonicalSourceId": "wahapedia:c151ae47d8cd3ebbe627e377480c2f8fd41838c5",
     "faction_slug": "aeldari",
     "datasheet_slug": "Corsair-Skyreaver-Band",
-    "fetchedAt": "2026-03-19T17:11:28+00:00",
-    "contentHash": "a414791332fa48b385dd71944c70882336de13981f87adb5ca3cb209ec1b1171",
+    "fetchedAt": "2026-03-21T03:36:52+00:00",
+    "contentHash": "3bac17dcd1694d2b277abe3cd5a7c65c5b2bc2d14e4e4d1a170f1a928dc69cb6",
     "output_slug": "aeldari"
   },
   "name": "Corsair Skyreaver Band",
@@ -235,13 +235,36 @@
   },
   "abilities": {
     "core": [
-      "Deep Strike Skyleap: At the end of your opponent\u2019s turn, if this unit is not within Engagement Range of one or more enemy units, you can remove this unit from the battlefield and place it into Strategic Reserves ."
+      "Deep Strike"
     ],
     "faction": [],
-    "datasheet": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "At the end of your opponent\u2019s turn, if this unit is not within Engagement Range of one or more enemy units, you can remove this unit from the battlefield and place it into Strategic Reserves .",
+        "name": "Skyleap"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "0-1 Corsair Skyreaver Felarch"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "5-10 Corsair Skyreavers"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "brace of pistols; Corsair firearm; close combat weapon.",
+      "label": "Every model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -320,14 +343,36 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deep Strike Skyleap: At the end of your opponent\u2019s turn, if this unit is not within Engagement Range of one or more enemy units, you can remove this unit from the battlefield and place it into Strategic Reserves ."
+            "Deep Strike"
           ]
+        },
+        {
+          "type": "rule",
+          "text": "At the end of your opponent\u2019s turn, if this unit is not within Engagement Range of one or more enemy units, you can remove this unit from the battlefield and place it into Strategic Reserves .",
+          "name": "Skyleap"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "0-1 Corsair Skyreaver Felarch"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "5-10 Corsair Skyreavers"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "brace of pistols; Corsair firearm; close combat weapon.",
+          "label": "Every model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -354,86 +399,17 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
-      "UNIT COMPOSITION",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
+      "UNIT COMPOSITION"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

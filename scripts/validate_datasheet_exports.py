@@ -114,6 +114,8 @@ def validate_payload(
     raw_section_titles: list[str] | None = None,
 ) -> list[str]:
     warnings = []
+    quality = payload.get("quality", {}) if isinstance(payload.get("quality"), dict) else {}
+    quality_warnings = set(quality.get("warnings", [])) if isinstance(quality.get("warnings"), list) else set()
     if payload.get("exportSchemaVersion") != EXPORT_SCHEMA_VERSION:
         warnings.append(
             f"export schema version mismatch: expected {EXPORT_SCHEMA_VERSION}, got {payload.get('exportSchemaVersion')}"
@@ -141,13 +143,34 @@ def validate_payload(
             warnings.append("ABILITIES section missing")
         if "UNIT COMPOSITION" not in section_titles:
             warnings.append("UNIT COMPOSITION section missing")
-        if raw_section_titles and "WARGEAR OPTIONS" in raw_section_titles and "WARGEAR OPTIONS" not in section_titles:
+        if (
+            raw_section_titles
+            and "WARGEAR OPTIONS" in raw_section_titles
+            and "WARGEAR OPTIONS" not in section_titles
+        ):
             warnings.append("WARGEAR OPTIONS header present in markup but missing from exported sections")
+
+    unit_composition = payload.get("unit_composition", [])
+    if (
+        isinstance(unit_composition, list)
+        and not any(
+            isinstance(entry, dict) and entry.get("type") in {"list", "statement", "text"}
+            for entry in unit_composition
+        )
+        and "UNIT COMPOSITION" in (raw_section_titles or [])
+    ):
+        warnings.append("UNIT COMPOSITION exported without non-points content")
 
     if not payload.get("keywords"):
         warnings.append("keywords missing")
-    if not payload.get("faction_keywords"):
+    if quality.get("keywordColumnCount") not in {0, 1} and not payload.get("faction_keywords"):
         warnings.append("faction keywords missing")
+    if "unit-composition-non-points-missing" in quality_warnings:
+        warnings.append("UNIT COMPOSITION markup included non-points content that was not exported")
+    if "keywords-single-column-missing" in quality_warnings:
+        warnings.append("keywords missing from single-column footer")
+    if quality.get("keywordColumnCount") == 1 and not payload.get("keywords"):
+        warnings.append("single-column keyword footer parsed without keywords")
 
     abilities = payload.get("abilities", {})
     if not isinstance(abilities, dict):

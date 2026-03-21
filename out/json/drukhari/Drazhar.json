@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Drazhar",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Drazhar",
     "canonicalSourceId": "wahapedia:4aef88df896679fee8c346c0f92e55fee095a6a3",
     "faction_slug": "drukhari",
     "datasheet_slug": "Drazhar",
-    "fetchedAt": "2026-03-19T17:17:20+00:00",
-    "contentHash": "61bcebb8ccda3e2ca6bac649e27f010ba9a832211b5428398caa06edaf1737c5",
+    "fetchedAt": "2026-03-21T03:50:29+00:00",
+    "contentHash": "2831c1d7f81ab95810680ad5b1b802f15839fd2d7796601dcfd11b6f581cdc80",
     "output_slug": "drukhari"
   },
   "name": "Drazhar",
@@ -52,13 +52,42 @@
   },
   "abilities": {
     "core": [
-      "Leader FACTION: Power from Pain Master of Blades (Pain): In the Fight phase , when you select this model\u2019s unit to fight, you can spend 1 Pain token to Empower that unit. While that unit is Empowered, each time a model in that unit makes a melee attack, add 1 to the Wound roll . Onslaught: While this model is leading a unit, each time a model in that unit makes a Pile-in or Consolidation move , it can move up to 6\" instead of up to 3\". Silent Executioner: Each time this model makes an attack that targets a unit that is below its Starting Strength , you can re-roll the Hit roll . If that target is Below Half-strength , you can re-roll the Wound roll as well."
+      "Leader"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Power from Pain"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "In the Fight phase , when you select this model\u2019s unit to fight, you can spend 1 Pain token to Empower that unit. While that unit is Empowered, each time a model in that unit makes a melee attack, add 1 to the Wound roll .",
+        "name": "Master of Blades (Pain)"
+      },
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, each time a model in that unit makes a Pile-in or Consolidation move , it can move up to 6\" instead of up to 3\".",
+        "name": "Onslaught"
+      },
+      {
+        "type": "rule",
+        "text": "Each time this model makes an attack that targets a unit that is below its Starting Strength , you can re-roll the Hit roll . If that target is Below Half-strength , you can re-roll the Wound roll as well.",
+        "name": "Silent Executioner"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Drazhar \u2013 EPIC HERO"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "Executioner\u2019s demiklaives.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -88,14 +117,47 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Leader FACTION: Power from Pain Master of Blades (Pain): In the Fight phase , when you select this model\u2019s unit to fight, you can spend 1 Pain token to Empower that unit. While that unit is Empowered, each time a model in that unit makes a melee attack, add 1 to the Wound roll . Onslaught: While this model is leading a unit, each time a model in that unit makes a Pile-in or Consolidation move , it can move up to 6\" instead of up to 3\". Silent Executioner: Each time this model makes an attack that targets a unit that is below its Starting Strength , you can re-roll the Hit roll . If that target is Below Half-strength , you can re-roll the Wound roll as well."
+            "Leader"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Power from Pain"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "In the Fight phase , when you select this model\u2019s unit to fight, you can spend 1 Pain token to Empower that unit. While that unit is Empowered, each time a model in that unit makes a melee attack, add 1 to the Wound roll .",
+          "name": "Master of Blades (Pain)"
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, each time a model in that unit makes a Pile-in or Consolidation move , it can move up to 6\" instead of up to 3\".",
+          "name": "Onslaught"
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model makes an attack that targets a unit that is below its Starting Strength , you can re-roll the Hit roll . If that target is Below Half-strength , you can re-roll the Wound roll as well.",
+          "name": "Silent Executioner"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Drazhar \u2013 EPIC HERO"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "Executioner\u2019s demiklaives.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -111,6 +173,10 @@
       "title": "LEADER",
       "entries": [
         {
+          "type": "text",
+          "text": "This model can be attached to the following unit:"
+        },
+        {
           "type": "list",
           "items": [
             "Incubi"
@@ -121,54 +187,17 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "ABILITIES",
       "UNIT COMPOSITION",
-      "LEADER",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
+      "LEADER"
     ],
     "exportedSectionTitles": [
       "ABILITIES",
       "UNIT COMPOSITION",
       "LEADER"
     ],
-    "missingExpectedSections": [
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

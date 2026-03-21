@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Cerberus",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Cerberus",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Cerberus",
     "canonicalSourceId": "wahapedia:38081c44eed633b5cc898c1c14f89b1a743e7f8e",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "0d3590afbc9f02b4354da52fb7eaa83f75cdfbef12670842145f9602545bfce9"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Cerberus",
+    "fetchedAt": "2026-03-21T03:45:57+00:00",
+    "contentHash": "3b399275e378438c225f2f26828faa8d40dbffae7399673c5cd94879e709f96f",
+    "output_slug": "space-wolves"
   },
   "name": "Cerberus",
   "base_size": "\u2300Use model",
@@ -108,13 +110,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D6 FACTION: Oath of Moment Atomantic Arc-reactor: Each time this unit shoots its Cerberus neutron pulse array in your Shooting phase , provided it Remained Stationary this turn, that weapon has the [LETHAL HITS] ability."
+      "Deadly Demise D6"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this unit shoots its Cerberus neutron pulse array in your Shooting phase , provided it Remained Stationary this turn, that weapon has the [LETHAL HITS] ability.",
+        "name": "Atomantic Arc-reactor"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Cerberus"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "Cerberus neutron pulse array; armoured tracks.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -165,14 +186,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D6 FACTION: Oath of Moment Atomantic Arc-reactor: Each time this unit shoots its Cerberus neutron pulse array in your Shooting phase , provided it Remained Stationary this turn, that weapon has the [LETHAL HITS] ability."
+            "Deadly Demise D6"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this unit shoots its Cerberus neutron pulse array in your Shooting phase , provided it Remained Stationary this turn, that weapon has the [LETHAL HITS] ability.",
+          "name": "Atomantic Arc-reactor"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Cerberus"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "Cerberus neutron pulse array; armoured tracks.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -194,10 +238,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "DAMAGED: 1-6 WOUNDS REMAINING"
@@ -209,6 +252,7 @@
       "DAMAGED: 1-6 WOUNDS REMAINING"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

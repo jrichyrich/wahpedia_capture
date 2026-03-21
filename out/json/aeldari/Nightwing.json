@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Nightwing",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Nightwing",
     "canonicalSourceId": "wahapedia:74afaee9bb15906ba60c87c4302246e05cb99dc1",
     "faction_slug": "aeldari",
     "datasheet_slug": "Nightwing",
-    "fetchedAt": "2026-03-19T17:11:30+00:00",
-    "contentHash": "cedf108ee24f65781e8a61923f8faf2636fd5982d49bf3362f888193b376a921",
+    "fetchedAt": "2026-03-21T03:36:53+00:00",
+    "contentHash": "aeb659a6d92ae4d54490d377b9b6c9bee21e8b5a26701ac42ac9d0ee18e517ae",
     "output_slug": "aeldari"
   },
   "name": "Nightwing",
@@ -65,13 +65,32 @@
   },
   "abilities": {
     "core": [
-      "Hover FACTION: Battle Focus Interceptor: Each time this model makes a ranged attack that targets a unit that can FLY , add 1 to the Hit roll ."
+      "Hover"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Battle Focus"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this model makes a ranged attack that targets a unit that can FLY , add 1 to the Hit roll .",
+        "name": "Interceptor"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Nightwing"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "twin bright lance; twin shuriken cannon; wraithbone hull.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -97,10 +116,8 @@
       "title": "WARGEAR OPTIONS",
       "entries": [
         {
-          "type": "list",
-          "items": [
-            "None"
-          ]
+          "type": "text",
+          "text": "None"
         }
       ]
     },
@@ -111,14 +128,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Hover FACTION: Battle Focus Interceptor: Each time this model makes a ranged attack that targets a unit that can FLY , add 1 to the Hit roll ."
+            "Hover"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Battle Focus"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model makes a ranged attack that targets a unit that can FLY , add 1 to the Hit roll .",
+          "name": "Interceptor"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Nightwing"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "twin bright lance; twin shuriken cannon; wraithbone hull.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -142,26 +182,10 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
-      "DAMAGED: 1-4 WOUNDS REMAINING",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
+      "DAMAGED: 1-4 WOUNDS REMAINING"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -169,57 +193,8 @@
       "UNIT COMPOSITION",
       "DAMAGED: 1-4 WOUNDS REMAINING"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

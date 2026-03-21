@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Rhino",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Rhino",
     "canonicalSourceId": "wahapedia:57376ab376d708811efcbd0bec7603e2a83d1b19",
     "faction_slug": "space-marines",
     "datasheet_slug": "Rhino",
-    "fetchedAt": "2026-03-19T17:24:44+00:00",
-    "contentHash": "726c2d1df3903a2db9a8e37477fab062fdca754fb34175dd47ea4ef8902f59ae",
+    "fetchedAt": "2026-03-21T03:38:49+00:00",
+    "contentHash": "c20c312d80d6488cd8e41a4edb0535bfcfc05c9f11e299562bdaec862c7824e8",
     "output_slug": "dark-angels"
   },
   "name": "Rhino",
@@ -61,13 +61,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D3 , Firing Deck 2 FACTION: Oath of Moment Self Repair: At the end of your Command phase , this model regains 1 lost wound."
+      "Deadly Demise D3 , Firing Deck 2"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "At the end of your Command phase , this model regains 1 lost wound.",
+        "name": "Self Repair"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Rhino"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "storm bolter; armoured tracks.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -107,14 +126,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D3 , Firing Deck 2 FACTION: Oath of Moment Self Repair: At the end of your Command phase , this model regains 1 lost wound."
+            "Deadly Demise D3 , Firing Deck 2"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "At the end of your Command phase , this model regains 1 lost wound.",
+          "name": "Self Repair"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Rhino"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "storm bolter; armoured tracks.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -138,27 +180,10 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
-      "TRANSPORT",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
+      "TRANSPORT"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -166,60 +191,8 @@
       "UNIT COMPOSITION",
       "TRANSPORT"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

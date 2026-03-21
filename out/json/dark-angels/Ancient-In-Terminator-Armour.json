@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Ancient-In-Terminator-Armour",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Ancient-In-Terminator-Armour",
     "canonicalSourceId": "wahapedia:ab2d122112b91ec5ba8dc6b5f72eee899635b133",
     "faction_slug": "space-marines",
     "datasheet_slug": "Ancient-In-Terminator-Armour",
-    "fetchedAt": "2026-03-19T17:21:56+00:00",
-    "contentHash": "34f555978325bb68720e6b5ee176eebc19e7ac4633f303f3199a3cc1aa2da7c4",
+    "fetchedAt": "2026-03-21T03:37:50+00:00",
+    "contentHash": "b6437f176223d32b3f43845056ce74ee452b411ddc36d9fa574d5795bd240d32",
     "output_slug": "dark-angels"
   },
   "name": "Ancient In Terminator Armour",
@@ -108,13 +108,37 @@
   },
   "abilities": {
     "core": [
-      "Deep Strike , Leader FACTION: Oath of Moment Astartes Banner: While this model is leading a unit, add 1 to the Objective Control characteristic of models in that unit. Keep the Banner High: While this model is leading a unit, each time a model in that unit makes an attack, add 1 to the Hit roll if that unit is below its Starting Strength , and add 1 to the Wound roll as well if that unit is Below Half-strength ."
+      "Deep Strike , Leader"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, add 1 to the Objective Control characteristic of models in that unit.",
+        "name": "Astartes Banner"
+      },
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, each time a model in that unit makes an attack, add 1 to the Hit roll if that unit is below its Starting Strength , and add 1 to the Wound roll as well if that unit is Below Half-strength .",
+        "name": "Keep the Banner High"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Ancient in Terminator Armour"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "storm bolter; power fist.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -167,8 +191,25 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deep Strike , Leader FACTION: Oath of Moment Astartes Banner: While this model is leading a unit, add 1 to the Objective Control characteristic of models in that unit. Keep the Banner High: While this model is leading a unit, each time a model in that unit makes an attack, add 1 to the Hit roll if that unit is below its Starting Strength , and add 1 to the Wound roll as well if that unit is Below Half-strength ."
+            "Deep Strike , Leader"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, add 1 to the Objective Control characteristic of models in that unit.",
+          "name": "Astartes Banner"
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, each time a model in that unit makes an attack, add 1 to the Hit roll if that unit is below its Starting Strength , and add 1 to the Wound roll as well if that unit is Below Half-strength .",
+          "name": "Keep the Banner High"
         }
       ]
     },
@@ -176,14 +217,26 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "text",
-          "text": "Terminator Storm Shield: The bearer has a Wounds characteristic of 6."
+          "type": "statement",
+          "text": "The bearer has a Wounds characteristic of 6.",
+          "label": "Terminator Storm Shield"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Ancient in Terminator Armour"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "storm bolter; power fist.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -199,6 +252,10 @@
       "title": "LEADER",
       "entries": [
         {
+          "type": "text",
+          "text": "This model can be attached to the following units:"
+        },
+        {
           "type": "list",
           "items": [
             "Terminator Assault Squad",
@@ -210,34 +267,21 @@
             "Deathwing Command Squad",
             "Relic Terminator Squad"
           ]
+        },
+        {
+          "type": "text",
+          "text": "You can attach this model to one of the above units even if one CAPTAIN , CHAPTER MASTER or LIEUTENANT model has already been attached to it. If you do, and that Bodyguard unit is destroyed, the LEADER units attached to it become separate units, with their original Starting Strengths ."
         }
       ]
     }
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION",
-      "LEADER",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
+      "LEADER"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -246,60 +290,8 @@
       "UNIT COMPOSITION",
       "LEADER"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Sternguard-Veteran-Squad",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Sternguard-Veteran-Squad",
-    "output_slug": "ultramarines",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Sternguard-Veteran-Squad",
     "canonicalSourceId": "wahapedia:84d67d90674cf5c1424719fbc304891935702052",
-    "fetchedAt": "2026-03-19T17:35:03+00:00",
-    "contentHash": "d413fdea7852c2647c430666a7c58d5046c82f1e6689fa5345d5ed0634d756b8"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Sternguard-Veteran-Squad",
+    "fetchedAt": "2026-03-21T03:48:48+00:00",
+    "contentHash": "ac7a11aec5f4a6efc8dc8765122b0b4a69bf650d2e955cefa85bbf1c0b13f481",
+    "output_slug": "ultramarines"
   },
   "name": "Sternguard Veteran Squad",
   "base_size": "\u230032mm",
@@ -137,12 +139,35 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Oath of Moment Sternguard Focus: Each time a model in this unit makes an attack that targets your Oath of Moment target , you can re-roll the Wound roll ."
+      "Oath of Moment"
     ],
-    "datasheet": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time a model in this unit makes an attack that targets your Oath of Moment target , you can re-roll the Wound roll .",
+        "name": "Sternguard Focus"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Sternguard Veteran Sergeant"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "4-9 Sternguard Veterans"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "Sternguard bolt pistol; Sternguard bolt rifle; close combat weapon.",
+      "label": "Every model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -211,14 +236,36 @@
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Oath of Moment Sternguard Focus: Each time a model in this unit makes an attack that targets your Oath of Moment target , you can re-roll the Wound roll ."
+            "Oath of Moment"
           ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time a model in this unit makes an attack that targets your Oath of Moment target , you can re-roll the Wound roll .",
+          "name": "Sternguard Focus"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Sternguard Veteran Sergeant"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "4-9 Sternguard Veterans"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "Sternguard bolt pistol; Sternguard bolt rifle; close combat weapon.",
+          "label": "Every model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -235,10 +282,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
@@ -248,6 +294,7 @@
       "UNIT COMPOSITION"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

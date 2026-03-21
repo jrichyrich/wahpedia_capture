@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Thunderhawk-Gunship",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Thunderhawk-Gunship",
-    "output_slug": "ultramarines",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Thunderhawk-Gunship",
     "canonicalSourceId": "wahapedia:f2cfabb3db20006717a4bec16ea92b1fb9b9b141",
-    "fetchedAt": "2026-03-19T17:35:03+00:00",
-    "contentHash": "9bad10250a434c9a1b7b797e53d38c888b0e1420ecf3d68e2c34ca6ad8455d31"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Thunderhawk-Gunship",
+    "fetchedAt": "2026-03-21T03:49:02+00:00",
+    "contentHash": "1199ae883788e1697308ca233113c9e59106fab8b7e634745606c8ce9079d015",
+    "output_slug": "ultramarines"
   },
   "name": "Thunderhawk Gunship",
   "base_size": "\u2300120 x 92mm flying base",
@@ -96,13 +98,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D6+2 , Hover FACTION: Oath of Moment Aerial Assault: Each time a unit with the Deep Strike ability disembarks from this model after it has made a Normal move , that unit is still eligible to declare a charge this turn."
+      "Deadly Demise D6+2 , Hover"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time a unit with the Deep Strike ability disembarks from this model after it has made a Normal move , that unit is still eligible to declare a charge this turn.",
+        "name": "Aerial Assault"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Thunderhawk Gunship"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "2 lascannons; Thunderhawk heavy cannon; 4 twin heavy bolters; armoured hull; Thunderhawk cluster bombs.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -149,8 +170,20 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D6+2 , Hover FACTION: Oath of Moment Aerial Assault: Each time a unit with the Deep Strike ability disembarks from this model after it has made a Normal move , that unit is still eligible to declare a charge this turn."
+            "Deadly Demise D6+2 , Hover"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time a unit with the Deep Strike ability disembarks from this model after it has made a Normal move , that unit is still eligible to declare a charge this turn.",
+          "name": "Aerial Assault"
         }
       ]
     },
@@ -158,14 +191,26 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "text",
-          "text": "Thunderhawk Cluster Bombs: Each time the bearer ends a Normal move , you can select one enemy unit it moved over during that move and roll six D6: for each 3+, that unit suffers 1 mortal wound ."
+          "type": "statement",
+          "text": "Each time the bearer ends a Normal move , you can select one enemy unit it moved over during that move and roll six D6: for each 3+, that unit suffers 1 mortal wound .",
+          "label": "Thunderhawk Cluster Bombs"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Thunderhawk Gunship"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "2 lascannons; Thunderhawk heavy cannon; 4 twin heavy bolters; armoured hull; Thunderhawk cluster bombs.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -196,10 +241,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION",
@@ -215,6 +259,7 @@
       "TRANSPORT"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

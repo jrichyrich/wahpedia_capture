@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Repulsor-Executioner",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Repulsor-Executioner",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Repulsor-Executioner",
     "canonicalSourceId": "wahapedia:f1dbf9e01c66db262367096889d19e4d15c4e7c9",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "d504174292d4fd3b5ba4ffe8799912db8fc84755c8e4b6065247bf2318c5edec"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Repulsor-Executioner",
+    "fetchedAt": "2026-03-21T03:45:22+00:00",
+    "contentHash": "bb9842dad1535fe3947e6a08da36098fd052a28ec8d17193bee20ad6598d6358",
+    "output_slug": "space-wolves"
   },
   "name": "Repulsor Executioner",
   "base_size": "\u2300100mm",
@@ -147,13 +149,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D6 FACTION: Oath of Moment Executioner: Each time this model makes an attack that targets a unit that is Below Half-strength , add 1 to the Hit roll ."
+      "Deadly Demise D6"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this model makes an attack that targets a unit that is Below Half-strength , add 1 to the Hit roll .",
+        "name": "Executioner"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Repulsor Executioner"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "heavy onslaught gatling cannon; macro plasma incinerator; Repulsor Executioner defensive array; twin heavy bolter; twin Icarus ironhail heavy stubber; armoured hull.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -203,14 +224,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D6 FACTION: Oath of Moment Executioner: Each time this model makes an attack that targets a unit that is Below Half-strength , add 1 to the Hit roll ."
+            "Deadly Demise D6"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model makes an attack that targets a unit that is Below Half-strength , add 1 to the Hit roll .",
+          "name": "Executioner"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Repulsor Executioner"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "heavy onslaught gatling cannon; macro plasma incinerator; Repulsor Executioner defensive array; twin heavy bolter; twin Icarus ironhail heavy stubber; armoured hull.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -241,10 +285,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "DAMAGED: 1-5 WOUNDS REMAINING",
@@ -258,6 +301,7 @@
       "TRANSPORT"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

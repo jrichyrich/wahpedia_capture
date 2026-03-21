@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Scout-Squad",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Scout-Squad",
-    "output_slug": "ultramarines",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Scout-Squad",
     "canonicalSourceId": "wahapedia:239865599f00be14a41233de4945d40621a0eee0",
-    "fetchedAt": "2026-03-19T17:35:03+00:00",
-    "contentHash": "25c36731323c8ac1de9b9958485e82ccb240c2c0c7e6ece5ddef883e6110ab5e"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Scout-Squad",
+    "fetchedAt": "2026-03-21T03:48:46+00:00",
+    "contentHash": "1a480cd35c4b63a6611fbec83bd611a583edf8519d43e08e6f774b02fbbd8be0",
+    "output_slug": "ultramarines"
   },
   "name": "Scout Squad",
   "base_size": "\u230028.5mm",
@@ -142,13 +144,38 @@
   },
   "abilities": {
     "core": [
-      "Infiltrators , Scouts 6\" FACTION: Oath of Moment Guerrilla Tactics: At the end of your opponent\u2019s turn, if this unit is more than 6\" away from all enemy models, you can remove this unit from the battlefield and place it into Strategic Reserves ."
+      "Infiltrators , Scouts 6\""
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "At the end of your opponent\u2019s turn, if this unit is more than 6\" away from all enemy models, you can remove this unit from the battlefield and place it into Strategic Reserves .",
+        "name": "Guerrilla Tactics"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Scout Sergeant"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "4-9 Scouts"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "bolt pistol; boltgun; close combat weapon.",
+      "label": "Every model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -212,14 +239,43 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Infiltrators , Scouts 6\" FACTION: Oath of Moment Guerrilla Tactics: At the end of your opponent\u2019s turn, if this unit is more than 6\" away from all enemy models, you can remove this unit from the battlefield and place it into Strategic Reserves ."
+            "Infiltrators , Scouts 6\""
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "At the end of your opponent\u2019s turn, if this unit is more than 6\" away from all enemy models, you can remove this unit from the battlefield and place it into Strategic Reserves .",
+          "name": "Guerrilla Tactics"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Scout Sergeant"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "4-9 Scouts"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "bolt pistol; boltgun; close combat weapon.",
+          "label": "Every model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -236,10 +292,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
@@ -249,6 +304,7 @@
       "UNIT COMPOSITION"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

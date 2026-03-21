@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Centurion-Devastator-Squad",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Centurion-Devastator-Squad",
-    "output_slug": "ultramarines",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Centurion-Devastator-Squad",
     "canonicalSourceId": "wahapedia:7522e012ffe9263da41e9b0ddca5841b4cca4415",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "db8a6015a3324dddcf9fc7c278a77e0f620da00bd7d9862a6c2547bcb543a2bf"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Centurion-Devastator-Squad",
+    "fetchedAt": "2026-03-21T03:48:19+00:00",
+    "contentHash": "42a9a5aebf862b5ad24c9863425cb6e767050803df7eae646cd7a51a84302f56",
+    "output_slug": "ultramarines"
   },
   "name": "Centurion Devastator Squad",
   "base_size": "\u230050mm",
@@ -100,12 +102,35 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Oath of Moment Decimator Protocols: Each time a model in this unit makes a ranged attack, re-roll a Hit roll of 1. If the target of that attack is an enemy unit within range of an objective marker , you can re-roll the Hit roll instead."
+      "Oath of Moment"
     ],
-    "datasheet": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time a model in this unit makes a ranged attack, re-roll a Hit roll of 1. If the target of that attack is an enemy unit within range of an objective marker , you can re-roll the Hit roll instead.",
+        "name": "Decimator Protocols"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Devastator Centurion Sergeant"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "2-5 Devastator Centurions"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "grav-cannon; Centurion bolters; Centurion fists.",
+      "label": "Every model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -155,14 +180,36 @@
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Oath of Moment Decimator Protocols: Each time a model in this unit makes a ranged attack, re-roll a Hit roll of 1. If the target of that attack is an enemy unit within range of an objective marker , you can re-roll the Hit roll instead."
+            "Oath of Moment"
           ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time a model in this unit makes a ranged attack, re-roll a Hit roll of 1. If the target of that attack is an enemy unit within range of an objective marker , you can re-roll the Hit roll instead.",
+          "name": "Decimator Protocols"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Devastator Centurion Sergeant"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "2-5 Devastator Centurions"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "grav-cannon; Centurion bolters; Centurion fists.",
+          "label": "Every model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -179,10 +226,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
@@ -192,6 +238,7 @@
       "UNIT COMPOSITION"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

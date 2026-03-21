@@ -230,38 +230,6 @@
         return "";
     }
 
-    function renderAbilities(unit) {
-        const groups = [];
-        if (unit.abilities && unit.abilities.core && unit.abilities.core.length) {
-            groups.push(`
-                <div class="ability-group">
-                    <span class="ability-heading">Core:</span>
-                    <span>${escapeHtml(unit.abilities.core.join(", "))}</span>
-                </div>
-            `);
-        }
-        if (unit.abilities && unit.abilities.faction && unit.abilities.faction.length) {
-            groups.push(`
-                <div class="ability-group">
-                    <span class="ability-heading">Faction:</span>
-                    <span>${escapeHtml(unit.abilities.faction.join(", "))}</span>
-                </div>
-            `);
-        }
-        (unit.abilities && unit.abilities.datasheet ? unit.abilities.datasheet : []).forEach((rule) => {
-            groups.push(`
-                <div class="ability-group">
-                    <span class="ability-heading">${escapeHtml(rule.name)}:</span>
-                    <span>${escapeHtml(rule.text)}</span>
-                </div>
-            `);
-        });
-        (unit.abilities && unit.abilities.other ? unit.abilities.other : []).forEach((entry) => {
-            groups.push(renderEntry(entry));
-        });
-        return groups.join("");
-    }
-
     function renderWeaponTable(title, skillLabel, weapons, loadoutState, options) {
         if (!Array.isArray(weapons) || weapons.length === 0) {
             return "";
@@ -320,31 +288,7 @@
         `;
     }
 
-    function renderRenderBlock(block) {
-        if (!block) {
-            return "";
-        }
-        const body = (block.entries || []).map(renderEntry).join("");
-        if (block.displayStyle === "damaged") {
-            return `
-                <div class="damaged-block">
-                    <div class="damaged-title">${escapeHtml(block.title)}</div>
-                    <div class="damaged-text">${body}</div>
-                </div>
-            `;
-        }
-        return `
-            <section>
-                <div class="datasheet-section-title">${escapeHtml(block.title)}</div>
-                <div class="datasheet-section-content">${body}</div>
-            </section>
-        `;
-    }
-
-    function renderComposition(unit, options) {
-        const lines = (unit.composition && unit.composition.rawLines ? unit.composition.rawLines : [])
-            .map((line) => `<li>${escapeHtml(line)}</li>`)
-            .join("");
+    function renderCompositionExtras(unit, options) {
         const selectedOption = options.selectedOption || defaultPointsOption(unit);
         const selectedUpgrades = Array.isArray(options.selectedUpgrades) ? options.selectedUpgrades : [];
         const quantity = options.quantity || 1;
@@ -373,13 +317,113 @@
             chips.push(`<span class="selection-chip selection-chip-warning">Missing stats: ${escapeHtml(unitMissingStats.join(", "))}</span>`);
         }
 
+        return {
+            chips,
+            selectedPoints,
+        };
+    }
+
+    function legacyRenderSections(unit) {
+        const sections = [];
+        const abilityEntries = [];
+
+        if (unit.abilities && unit.abilities.core && unit.abilities.core.length) {
+            abilityEntries.push({
+                type: "tagged_list",
+                label: "CORE",
+                items: unit.abilities.core,
+            });
+        }
+        if (unit.abilities && unit.abilities.faction && unit.abilities.faction.length) {
+            abilityEntries.push({
+                type: "tagged_list",
+                label: "FACTION",
+                items: unit.abilities.faction,
+            });
+        }
+        (unit.abilities && unit.abilities.datasheet ? unit.abilities.datasheet : []).forEach((rule) => {
+            abilityEntries.push(rule);
+        });
+        (unit.abilities && unit.abilities.other ? unit.abilities.other : []).forEach((entry) => {
+            abilityEntries.push(entry);
+        });
+        if (abilityEntries.length) {
+            sections.push({
+                title: "ABILITIES",
+                displayStyle: "section",
+                entries: abilityEntries,
+            });
+        }
+
+        (unit.renderBlocks || []).forEach((block) => sections.push(block));
+
+        const compositionEntries = [];
+        if (unit.composition && Array.isArray(unit.composition.rawLines) && unit.composition.rawLines.length) {
+            compositionEntries.push({
+                type: "list",
+                items: unit.composition.rawLines,
+            });
+        }
+        (unit.composition && Array.isArray(unit.composition.statements) ? unit.composition.statements : []).forEach((statement) => {
+            compositionEntries.push({
+                type: "statement",
+                label: statement.label,
+                text: statement.text,
+            });
+        });
+        if (Array.isArray(unit.pointsOptions) && unit.pointsOptions.length) {
+            compositionEntries.push({
+                type: "points",
+                rows: unit.pointsOptions.map((option) => ({
+                    label: option.label,
+                    points: option.points,
+                })),
+            });
+        }
+        if (compositionEntries.length) {
+            sections.push({
+                title: "UNIT COMPOSITION",
+                displayStyle: "section",
+                entries: compositionEntries,
+            });
+        }
+
+        return sections;
+    }
+
+    function renderSection(section, unit, options) {
+        if (!section) {
+            return "";
+        }
+        const body = (section.entries || []).map(renderEntry).join("");
+        if (section.displayStyle === "damaged") {
+            return `
+                <div class="damaged-block">
+                    <div class="damaged-title">${escapeHtml(section.title)}</div>
+                    <div class="damaged-text">${body}</div>
+                </div>
+            `;
+        }
+
+        if (String(section.title || "").toUpperCase() === "UNIT COMPOSITION") {
+            const compositionExtras = renderCompositionExtras(unit, options);
+            return `
+                <section>
+                    <div class="datasheet-section-title">${escapeHtml(section.title)}</div>
+                    <div class="datasheet-section-content composition-box">
+                        ${body}
+                        ${compositionExtras.chips.length ? `<div class="selection-summary">${compositionExtras.chips.join("")}</div>` : ""}
+                        ${compositionExtras.selectedPoints != null ? `<div class="points-badge">${escapeHtml(compositionExtras.selectedPoints)} pts</div>` : ""}
+                    </div>
+                </section>
+            `;
+        }
+
         return `
             <section>
-                <div class="datasheet-section-title">Unit Composition</div>
-                <div class="datasheet-section-content composition-box">
-                    ${lines ? `<ul class="datasheet-lines">${lines}</ul>` : `<div>No composition data.</div>`}
-                    ${chips.length ? `<div class="selection-summary">${chips.join("")}</div>` : ""}
-                    ${selectedPoints != null ? `<div class="points-badge">${escapeHtml(selectedPoints)} pts</div>` : ""}
+                <div class="datasheet-section-title">${escapeHtml(section.title)}</div>
+                <div class="datasheet-section-content">
+                    ${body}
                 </div>
             </section>
         `;
@@ -461,6 +505,9 @@
             meta.push(`Qty ${quantity}`);
         }
         const unitMissingStats = missingStats(unit);
+        const renderSections = Array.isArray(unit.renderSections) && unit.renderSections.length
+            ? unit.renderSections
+            : legacyRenderSections(unit);
 
         return `
             <article class="datasheet-card">
@@ -495,18 +542,13 @@
                         ${renderWeaponTable("Melee Weapons", "WS", unit.weapons ? unit.weapons.melee || [] : [], loadoutState, { renderMode })}
                     </div>
                     <div class="datasheet-right">
-                        <section>
-                            <div class="datasheet-section-title">Abilities</div>
-                            <div class="datasheet-section-content">${renderAbilities(unit)}</div>
-                        </section>
+                        ${renderSections.map((section) => renderSection(section, unit, opts)).join("")}
                         ${renderCurrentLoadout(loadoutState)}
-                        ${(unit.renderBlocks || []).map(renderRenderBlock).join("")}
-                        ${renderComposition(unit, opts)}
                     </div>
                 </div>
                 <footer class="datasheet-footer">
                     <div><span class="datasheet-footer-label">Keywords:</span>${escapeHtml(formatKeywords(unit.keywords))}</div>
-                    <div><span class="datasheet-footer-label">Faction:</span>${escapeHtml(formatKeywords(unit.factionKeywords))}</div>
+                    <div><span class="datasheet-footer-label">Faction Keywords:</span>${escapeHtml(formatKeywords(unit.factionKeywords))}</div>
                 </footer>
             </article>
         `;

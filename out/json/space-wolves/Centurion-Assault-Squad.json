@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Centurion-Assault-Squad",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Centurion-Assault-Squad",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Centurion-Assault-Squad",
     "canonicalSourceId": "wahapedia:7906ba31d5d76baeeb5a45078e5c529df0366484",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "55ef6a904f5b4fd2db7e764d2f3bed81f1c1aaeb126ba4bc522f1f12aa7f6e9a"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Centurion-Assault-Squad",
+    "fetchedAt": "2026-03-21T03:44:56+00:00",
+    "contentHash": "83b6f1acff01e13b4185eb8b0b97c0c8bc0fe9249f9b150febafb1cacf2b142a",
+    "output_slug": "space-wolves"
   },
   "name": "Centurion Assault Squad",
   "base_size": "\u230050mm",
@@ -80,12 +82,35 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Oath of Moment Annihilator Protocols: Melee weapons equipped by models in this unit have the [SUSTAINED HITS 2] ability when targeting MONSTER , VEHICLE or FORTIFICATION units."
+      "Oath of Moment"
     ],
-    "datasheet": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Melee weapons equipped by models in this unit have the [SUSTAINED HITS 2] ability when targeting MONSTER , VEHICLE or FORTIFICATION units.",
+        "name": "Annihilator Protocols"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Assault Centurion Sergeant"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "2-5 Assault Centurions"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "twin flamer; siege drills; Centurion bolters.",
+      "label": "Every model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -132,8 +157,13 @@
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Oath of Moment Annihilator Protocols: Melee weapons equipped by models in this unit have the [SUSTAINED HITS 2] ability when targeting MONSTER , VEHICLE or FORTIFICATION units."
+            "Oath of Moment"
           ]
+        },
+        {
+          "type": "rule",
+          "text": "Melee weapons equipped by models in this unit have the [SUSTAINED HITS 2] ability when targeting MONSTER , VEHICLE or FORTIFICATION units.",
+          "name": "Annihilator Protocols"
         }
       ]
     },
@@ -141,14 +171,32 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "text",
-          "text": "Centurion Assault Launcher: The bearer has the Grenades keyword."
+          "type": "statement",
+          "text": "The bearer has the Grenades keyword.",
+          "label": "Centurion Assault Launcher"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Assault Centurion Sergeant"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "2-5 Assault Centurions"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "twin flamer; siege drills; Centurion bolters.",
+          "label": "Every model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -165,10 +213,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION"
@@ -180,6 +227,7 @@
       "UNIT COMPOSITION"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

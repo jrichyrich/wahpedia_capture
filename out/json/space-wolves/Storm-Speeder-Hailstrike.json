@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Storm-Speeder-Hailstrike",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Storm-Speeder-Hailstrike",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Storm-Speeder-Hailstrike",
     "canonicalSourceId": "wahapedia:a09219d9eecbe6a04f86e1186b947500249107f1",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "0aaa31bfda4c4b3494fcd3e384902ef42d0e34e997ff98c6c9d2cb86aa3842da"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Storm-Speeder-Hailstrike",
+    "fetchedAt": "2026-03-21T03:45:25+00:00",
+    "contentHash": "7e50db8326d997638743b3c79302c762dd322b48d08614f2a05dedb90b4eea77",
+    "output_slug": "space-wolves"
   },
   "name": "Storm Speeder Hailstrike",
   "base_size": "\u230090mm",
@@ -74,13 +76,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D3 , Deep Strike FACTION: Oath of Moment Hailstrike: Each time this model has shot, select one enemy unit (excluding MONSTERS and VEHICLES ) hit by one or more of those attacks. Until the end of the phase, each time a friendly ADEPTUS ASTARTES unit makes a ranged attack that targets that enemy unit, improve the Armour Penetration characteristic of that attack by 1. The same enemy unit can only be affected by this ability once per phase."
+      "Deadly Demise D3 , Deep Strike"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this model has shot, select one enemy unit (excluding MONSTERS and VEHICLES ) hit by one or more of those attacks. Until the end of the phase, each time a friendly ADEPTUS ASTARTES unit makes a ranged attack that targets that enemy unit, improve the Armour Penetration characteristic of that attack by 1. The same enemy unit can only be affected by this ability once per phase.",
+        "name": "Hailstrike"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Storm Speeder Hailstrike"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "2 fragstorm grenade launchers; onslaught gatling cannon; twin ironhail heavy stubber; close combat weapon.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -109,14 +130,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D3 , Deep Strike FACTION: Oath of Moment Hailstrike: Each time this model has shot, select one enemy unit (excluding MONSTERS and VEHICLES ) hit by one or more of those attacks. Until the end of the phase, each time a friendly ADEPTUS ASTARTES unit makes a ranged attack that targets that enemy unit, improve the Armour Penetration characteristic of that attack by 1. The same enemy unit can only be affected by this ability once per phase."
+            "Deadly Demise D3 , Deep Strike"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model has shot, select one enemy unit (excluding MONSTERS and VEHICLES ) hit by one or more of those attacks. Until the end of the phase, each time a friendly ADEPTUS ASTARTES unit makes a ranged attack that targets that enemy unit, improve the Armour Penetration characteristic of that attack by 1. The same enemy unit can only be affected by this ability once per phase.",
+          "name": "Hailstrike"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Storm Speeder Hailstrike"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "2 fragstorm grenade launchers; onslaught gatling cannon; twin ironhail heavy stubber; close combat weapon.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -129,8 +173,6 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
       "ABILITIES",
@@ -141,6 +183,7 @@
       "UNIT COMPOSITION"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

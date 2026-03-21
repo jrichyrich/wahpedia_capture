@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Astartes-Servitors",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Astartes-Servitors",
-    "output_slug": "ultramarines",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Astartes-Servitors",
     "canonicalSourceId": "wahapedia:a2bcdca1698f9d383105fecdce3bde883b89e24d",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "fe214941a18781ef48b5da53479b5175daec3a20cc584fffcc133abb59a97976"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Astartes-Servitors",
+    "fetchedAt": "2026-03-21T03:49:05+00:00",
+    "contentHash": "db8d98bb4d12b7cd807af3eee1638c356ebbba6b77a084f9a34a79561d5bab8d",
+    "output_slug": "ultramarines"
   },
   "name": "Astartes Servitors",
   "base_size": "\u230025mm",
@@ -102,15 +104,27 @@
   "abilities": {
     "core": [],
     "faction": [],
-    "datasheet": [],
-    "other": [
+    "datasheet": [
       {
-        "type": "text",
-        "text": "Mindlock: While a TECHMARINE model is leading this unit, improve the Ballistic Skill and Weapon Skill characteristics of ranged and melee weapons equipped by ASTARTES SERVITOR models in this unit by 1."
+        "type": "rule",
+        "text": "While a TECHMARINE model is leading this unit, improve the Ballistic Skill and Weapon Skill characteristics of ranged and melee weapons equipped by ASTARTES SERVITOR models in this unit by 1.",
+        "name": "Mindlock"
       }
-    ]
+    ],
+    "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "4 Astartes Servitors"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "Servitor servo-arm.",
+      "label": "Every model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -148,14 +162,26 @@
       "title": "ABILITIES",
       "entries": [
         {
-          "type": "text",
-          "text": "Mindlock: While a TECHMARINE model is leading this unit, improve the Ballistic Skill and Weapon Skill characteristics of ranged and melee weapons equipped by ASTARTES SERVITOR models in this unit by 1."
+          "type": "rule",
+          "text": "While a TECHMARINE model is leading this unit, improve the Ballistic Skill and Weapon Skill characteristics of ranged and melee weapons equipped by ASTARTES SERVITOR models in this unit by 1.",
+          "name": "Mindlock"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "4 Astartes Servitors"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "Servitor servo-arm.",
+          "label": "Every model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -177,10 +203,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "SERVITOR RETINUE"
@@ -192,6 +217,7 @@
       "SERVITOR RETINUE"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

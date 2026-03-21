@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Ballistus-Dreadnought",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Ballistus-Dreadnought",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Ballistus-Dreadnought",
     "canonicalSourceId": "wahapedia:28afe981b3fc05819e7a581a0010975189842237",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "c47fe1324675df620e0e6c2fd67419991237ccdfcdb397a6d646b7d237b166a3"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Ballistus-Dreadnought",
+    "fetchedAt": "2026-03-21T03:44:51+00:00",
+    "contentHash": "44b5e6e9771430fa7cd1aee457419b9fca1a0f981b9f0beb77bd95381f744806",
+    "output_slug": "space-wolves"
   },
   "name": "Ballistus Dreadnought",
   "base_size": "\u230090mm",
@@ -82,13 +84,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D3 FACTION: Oath of Moment Ballistus Strike: Each time this model makes a ranged attack that targets a unit that is not Below Half-strength , you can re-roll the Hit roll ."
+      "Deadly Demise D3"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this model makes a ranged attack that targets a unit that is not Below Half-strength , you can re-roll the Hit roll .",
+        "name": "Ballistus Strike"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Ballistus Dreadnought"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "Ballistus missile launcher; Ballistus lascannon; twin storm bolter; armoured feet.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -118,14 +139,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D3 FACTION: Oath of Moment Ballistus Strike: Each time this model makes a ranged attack that targets a unit that is not Below Half-strength , you can re-roll the Hit roll ."
+            "Deadly Demise D3"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model makes a ranged attack that targets a unit that is not Below Half-strength , you can re-roll the Hit roll .",
+          "name": "Ballistus Strike"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Ballistus Dreadnought"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "Ballistus missile launcher; Ballistus lascannon; twin storm bolter; armoured feet.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -147,8 +191,6 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
       "ABILITIES",
@@ -161,6 +203,7 @@
       "DAMAGED: 1-4 WOUNDS REMAINING"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

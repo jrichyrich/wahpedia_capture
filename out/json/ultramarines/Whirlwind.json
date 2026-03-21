@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Whirlwind",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Whirlwind",
-    "output_slug": "ultramarines",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Whirlwind",
     "canonicalSourceId": "wahapedia:1bf45cad00497937bcfb7893e5da4eefd3da5442",
-    "fetchedAt": "2026-03-19T17:35:03+00:00",
-    "contentHash": "c65f5d8e488b3abbbe619f6c9b8ad65388d3b10b0dc40574c3a203c5693e4d4b"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Whirlwind",
+    "fetchedAt": "2026-03-21T03:49:00+00:00",
+    "contentHash": "4990c1e33eb7322e4d1ccb67866f9a223073f9196164522f8648de2af06b8e3a",
+    "output_slug": "ultramarines"
   },
   "name": "Whirlwind",
   "base_size": "\u2300Use model",
@@ -72,13 +74,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D3 FACTION: Oath of Moment Pinning Bombardment: In your Shooting phase , after this model has shot, if one or more of those attacks made with its Whirlwind vengeance launcher scored a hit against an enemy INFANTRY unit, that unit must take a Battle-shock test ."
+      "Deadly Demise D3"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "In your Shooting phase , after this model has shot, if one or more of those attacks made with its Whirlwind vengeance launcher scored a hit against an enemy INFANTRY unit, that unit must take a Battle-shock test .",
+        "name": "Pinning Bombardment"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Whirlwind"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "Whirlwind vengeance launcher; armoured tracks.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -121,14 +142,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D3 FACTION: Oath of Moment Pinning Bombardment: In your Shooting phase , after this model has shot, if one or more of those attacks made with its Whirlwind vengeance launcher scored a hit against an enemy INFANTRY unit, that unit must take a Battle-shock test ."
+            "Deadly Demise D3"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "In your Shooting phase , after this model has shot, if one or more of those attacks made with its Whirlwind vengeance launcher scored a hit against an enemy INFANTRY unit, that unit must take a Battle-shock test .",
+          "name": "Pinning Bombardment"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Whirlwind"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "Whirlwind vengeance launcher; armoured tracks.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -150,10 +194,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "DAMAGED: 1-4 WOUNDS REMAINING"
@@ -165,6 +208,7 @@
       "DAMAGED: 1-4 WOUNDS REMAINING"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

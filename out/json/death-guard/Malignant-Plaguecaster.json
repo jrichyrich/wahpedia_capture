@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Malignant-Plaguecaster",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Malignant-Plaguecaster",
     "canonicalSourceId": "wahapedia:fb5e6d3bd311cb7ea2ac2a288368a61777a1e6c7",
     "faction_slug": "death-guard",
     "datasheet_slug": "Malignant-Plaguecaster",
-    "fetchedAt": "2026-03-19T17:17:00+00:00",
-    "contentHash": "d9ded150f25d289135d3acfbd98f74fd1740a64c0f665c328b00d87976508498",
+    "fetchedAt": "2026-03-21T03:50:41+00:00",
+    "contentHash": "4eb2962907a7beeb1fce54eef4c6340041a3f07e6168b4e122ee382f20d6f865",
     "output_slug": "death-guard"
   },
   "name": "Malignant Plaguecaster",
@@ -82,13 +82,37 @@
   },
   "abilities": {
     "core": [
-      "Leader FACTION: Nurgle\u2019s Gift (Aura) Gift of Contagion (Psychic): While this model is leading a unit, each time a model in that unit makes an attack that targets a unit that is Afflicted , that attack has the [SUSTAINED HITS 1] ability. Pestilent Fallout (Psychic): In your Shooting phase , after this model has shot, select one enemy INFANTRY unit hit by one or more of those attacks made with its Plague Wind. Until the end of your opponent\u2019s next turn, that unit is enfeebled. While a unit is enfeebled, subtract 2\" from the Move characteristic of models in that unit."
+      "Leader"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Nurgle\u2019s Gift (Aura)"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, each time a model in that unit makes an attack that targets a unit that is Afflicted , that attack has the [SUSTAINED HITS 1] ability.",
+        "name": "Gift of Contagion (Psychic)"
+      },
+      {
+        "type": "rule",
+        "text": "In your Shooting phase , after this model has shot, select one enemy INFANTRY unit hit by one or more of those attacks made with its Plague Wind. Until the end of your opponent\u2019s next turn, that unit is enfeebled. While a unit is enfeebled, subtract 2\" from the Move characteristic of models in that unit.",
+        "name": "Pestilent Fallout (Psychic)"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Malignant Plaguecaster"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "bolt pistol; Plague Wind; corrupted staff.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -118,14 +142,42 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Leader FACTION: Nurgle\u2019s Gift (Aura) Gift of Contagion (Psychic): While this model is leading a unit, each time a model in that unit makes an attack that targets a unit that is Afflicted , that attack has the [SUSTAINED HITS 1] ability. Pestilent Fallout (Psychic): In your Shooting phase , after this model has shot, select one enemy INFANTRY unit hit by one or more of those attacks made with its Plague Wind. Until the end of your opponent\u2019s next turn, that unit is enfeebled. While a unit is enfeebled, subtract 2\" from the Move characteristic of models in that unit."
+            "Leader"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Nurgle\u2019s Gift (Aura)"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, each time a model in that unit makes an attack that targets a unit that is Afflicted , that attack has the [SUSTAINED HITS 1] ability.",
+          "name": "Gift of Contagion (Psychic)"
+        },
+        {
+          "type": "rule",
+          "text": "In your Shooting phase , after this model has shot, select one enemy INFANTRY unit hit by one or more of those attacks made with its Plague Wind. Until the end of your opponent\u2019s next turn, that unit is enfeebled. While a unit is enfeebled, subtract 2\" from the Move characteristic of models in that unit.",
+          "name": "Pestilent Fallout (Psychic)"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Malignant Plaguecaster"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "bolt pistol; Plague Wind; corrupted staff.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -141,6 +193,10 @@
       "title": "LEADER",
       "entries": [
         {
+          "type": "text",
+          "text": "This model can be attached to the following units:"
+        },
+        {
           "type": "list",
           "items": [
             "Plague Marines",
@@ -152,86 +208,17 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "ABILITIES",
       "UNIT COMPOSITION",
-      "LEADER",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
+      "LEADER"
     ],
     "exportedSectionTitles": [
       "ABILITIES",
       "UNIT COMPOSITION",
       "LEADER"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

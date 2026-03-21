@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Land-Speeder-Typhoon",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Land-Speeder-Typhoon",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Land-Speeder-Typhoon",
     "canonicalSourceId": "wahapedia:a35c874c146f48186126b42583d170989970b43d",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "6f3a475062ffa8b5de3e7d901c32237ca9ddfe817f969fa978759bfa881de242"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Land-Speeder-Typhoon",
+    "fetchedAt": "2026-03-21T03:46:22+00:00",
+    "contentHash": "b37efc3d6965b19b532a06773a7501cef9eac6ae16ac5800e3e225b71893bb68",
+    "output_slug": "space-wolves"
   },
   "name": "Land Speeder Typhoon",
   "base_size": "\u230060mm flying base",
@@ -83,13 +85,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise 1 , Deep Strike FACTION: Oath of Moment Fire and Redeploy: In your Shooting phase , each time this model has shot, if it is not within Engagement Range of any enemy units, it can make a Normal move of up to D6\". If it does, until the end of the turn, this model is not eligible to declare a charge ."
+      "Deadly Demise 1 , Deep Strike"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "In your Shooting phase , each time this model has shot, if it is not within Engagement Range of any enemy units, it can make a Normal move of up to D6\". If it does, until the end of the turn, this model is not eligible to declare a charge .",
+        "name": "Fire and Redeploy"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Land Speeder Typhoon"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "heavy bolter; Typhoon missile launcher; close combat weapon.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -128,14 +149,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise 1 , Deep Strike FACTION: Oath of Moment Fire and Redeploy: In your Shooting phase , each time this model has shot, if it is not within Engagement Range of any enemy units, it can make a Normal move of up to D6\". If it does, until the end of the turn, this model is not eligible to declare a charge ."
+            "Deadly Demise 1 , Deep Strike"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "In your Shooting phase , each time this model has shot, if it is not within Engagement Range of any enemy units, it can make a Normal move of up to D6\". If it does, until the end of the turn, this model is not eligible to declare a charge .",
+          "name": "Fire and Redeploy"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Land Speeder Typhoon"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "heavy bolter; Typhoon missile launcher; close combat weapon.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -148,10 +192,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
@@ -161,6 +204,7 @@
       "UNIT COMPOSITION"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

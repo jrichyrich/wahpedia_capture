@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Assault-Intercessors-With-Jump-Packs",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Assault-Intercessors-With-Jump-Packs",
-    "output_slug": "ultramarines",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Assault-Intercessors-With-Jump-Packs",
     "canonicalSourceId": "wahapedia:f83e749808e0b1a37da7e8aa856ae56db869e95a",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "04452dbdf453dddf05aeb1074bba54c420a0a70a7fb670f15b8420049922d81b"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Assault-Intercessors-With-Jump-Packs",
+    "fetchedAt": "2026-03-21T03:48:14+00:00",
+    "contentHash": "e2291c2f520361e1aefa9c446ca8346230e42f97ff717e3937100148846a996e",
+    "output_slug": "ultramarines"
   },
   "name": "Assault Intercessors With Jump Packs",
   "base_size": "\u230032mm",
@@ -108,13 +110,38 @@
   },
   "abilities": {
     "core": [
-      "Deep Strike FACTION: Oath of Moment Hammer of Wrath: Each time this unit ends a Charge move , select one enemy unit within Engagement Range of it, then roll one D6 for each model in this unit that is within Engagement Range of that enemy unit: for each 4+, that enemy unit suffers 1 mortal wound ."
+      "Deep Strike"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this unit ends a Charge move , select one enemy unit within Engagement Range of it, then roll one D6 for each model in this unit that is within Engagement Range of that enemy unit: for each 4+, that enemy unit suffers 1 mortal wound .",
+        "name": "Hammer of Wrath"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Assault Intercessor Sergeant with Jump Pack"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "4-9 Assault Intercessors with Jump Packs"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "heavy bolt pistol; Astartes chainsword.",
+      "label": "Each model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -175,14 +202,43 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deep Strike FACTION: Oath of Moment Hammer of Wrath: Each time this unit ends a Charge move , select one enemy unit within Engagement Range of it, then roll one D6 for each model in this unit that is within Engagement Range of that enemy unit: for each 4+, that enemy unit suffers 1 mortal wound ."
+            "Deep Strike"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this unit ends a Charge move , select one enemy unit within Engagement Range of it, then roll one D6 for each model in this unit that is within Engagement Range of that enemy unit: for each 4+, that enemy unit suffers 1 mortal wound .",
+          "name": "Hammer of Wrath"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Assault Intercessor Sergeant with Jump Pack"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "4-9 Assault Intercessors with Jump Packs"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "heavy bolt pistol; Astartes chainsword.",
+          "label": "Each model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -199,10 +255,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
@@ -212,6 +267,7 @@
       "UNIT COMPOSITION"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

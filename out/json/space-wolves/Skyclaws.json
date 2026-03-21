@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Skyclaws",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Skyclaws",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Skyclaws",
     "canonicalSourceId": "wahapedia:4fcedf071b7d9c1e1bde3fee534c54e2ed18ccff",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "166d2fd6423a33560a53a78c42a946ffbad35c1b855c038afe606018bb87bca3"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Skyclaws",
+    "fetchedAt": "2026-03-21T03:46:39+00:00",
+    "contentHash": "221e1ab57b187671bd11ce73646b2aadf096ccc9c563f3b2c35e2a021c800cf5",
+    "output_slug": "space-wolves"
   },
   "name": "Skyclaws",
   "base_size": "\u230032mm",
@@ -184,7 +186,12 @@
     {
       "type": "list",
       "items": [
-        "1 Skyclaw Pack Leader",
+        "1 Skyclaw Pack Leader"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
         "4-14 Skyclaws"
       ]
     },
@@ -225,6 +232,35 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "The Skyclaw Pack Leader\u2019s Astartes chainsword can be replaced with one of the following:",
+          "items": [
+            "1 power fist",
+            "1 power weapon"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "The Skyclaw Pack Leader\u2019s bolt pistol can be replaced with 1 plasma pistol.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "Up to 2 Skyclaws can each have their bolt pistol and Astartes chainsword replaced with one of the following:",
+          "items": [
+            "1 plasma pistol and 1 Astartes chainsword",
+            "1 flamer and 1 close combat weapon",
+            "1 grav-gun and 1 close combat weapon",
+            "1 meltagun and 1 close combat weapon",
+            "1 plasma gun and 1 close combat weapon"
+          ]
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
@@ -254,7 +290,12 @@
         {
           "type": "list",
           "items": [
-            "1 Skyclaw Pack Leader",
+            "1 Skyclaw Pack Leader"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
             "4-14 Skyclaws"
           ]
         },
@@ -292,20 +333,21 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "ATTACHED UNIT"
     ],
     "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "ATTACHED UNIT"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

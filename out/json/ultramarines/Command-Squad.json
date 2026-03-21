@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Command-Squad",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Command-Squad",
-    "output_slug": "ultramarines",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Command-Squad",
     "canonicalSourceId": "wahapedia:8bcb52b865a895858442d54f6bfb2ce213f14bb1",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "56c1957bdf0583c07c1ce43dd252a68d3f1bf87d443c1b16a0858dcbe786b57d"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Command-Squad",
+    "fetchedAt": "2026-03-21T03:49:12+00:00",
+    "contentHash": "8087d3ed54506f1ab36435baf29d43dd2a40b242f90f686a3a2f0ef988049c92",
+    "output_slug": "ultramarines"
   },
   "name": "Command Squad",
   "base_size": "\u230032mm",
@@ -394,12 +396,72 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Oath of Moment Narthecium: While this unit contains an APOTHECARY , in your Command phase , you can return 1 destroyed model (excluding CHARACTER models) to this unit. Astartes Banner: While this unit contains a Company Ancient, add 1 to the Objective Control characteristic of models in this unit. Honour or Death: While this unit contains a Company Champion, add 1 to Advance and Charge rolls made for this unit and you can target this unit with the Heroic Intervention Stratagem for 0CP, even if you have already used that Stratagem on a different unit this phase."
+      "Oath of Moment"
     ],
-    "datasheet": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this unit contains an APOTHECARY , in your Command phase , you can return 1 destroyed model (excluding CHARACTER models) to this unit.",
+        "name": "Narthecium"
+      },
+      {
+        "type": "rule",
+        "text": "While this unit contains a Company Ancient, add 1 to the Objective Control characteristic of models in this unit.",
+        "name": "Astartes Banner"
+      },
+      {
+        "type": "rule",
+        "text": "While this unit contains a Company Champion, add 1 to Advance and Charge rolls made for this unit and you can target this unit with the Heroic Intervention Stratagem for 0CP, even if you have already used that Stratagem on a different unit this phase.",
+        "name": "Honour or Death"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Apothecary"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "1 Company Ancient"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "1 Company Champion"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "2 Company Veterans"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "bolt pistol; Astartes chainsword.",
+      "label": "The Apothecary is equipped with"
+    },
+    {
+      "type": "statement",
+      "text": "bolt pistol; close combat weapon.",
+      "label": "The Company Ancient is equipped with"
+    },
+    {
+      "type": "statement",
+      "text": "bolt pistol; Champion\u2019s blade; Astartes shield.",
+      "label": "The Company Champion is equipped with"
+    },
+    {
+      "type": "statement",
+      "text": "bolt pistol; boltgun, close combat weapon.",
+      "label": "Each Company Veteran is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -484,8 +546,23 @@
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Oath of Moment Narthecium: While this unit contains an APOTHECARY , in your Command phase , you can return 1 destroyed model (excluding CHARACTER models) to this unit. Astartes Banner: While this unit contains a Company Ancient, add 1 to the Objective Control characteristic of models in this unit. Honour or Death: While this unit contains a Company Champion, add 1 to Advance and Charge rolls made for this unit and you can target this unit with the Heroic Intervention Stratagem for 0CP, even if you have already used that Stratagem on a different unit this phase."
+            "Oath of Moment"
           ]
+        },
+        {
+          "type": "rule",
+          "text": "While this unit contains an APOTHECARY , in your Command phase , you can return 1 destroyed model (excluding CHARACTER models) to this unit.",
+          "name": "Narthecium"
+        },
+        {
+          "type": "rule",
+          "text": "While this unit contains a Company Ancient, add 1 to the Objective Control characteristic of models in this unit.",
+          "name": "Astartes Banner"
+        },
+        {
+          "type": "rule",
+          "text": "While this unit contains a Company Champion, add 1 to Advance and Charge rolls made for this unit and you can target this unit with the Heroic Intervention Stratagem for 0CP, even if you have already used that Stratagem on a different unit this phase.",
+          "name": "Honour or Death"
         }
       ]
     },
@@ -493,14 +570,59 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "text",
-          "text": "Astartes Shield: The bearer has a 4+ invulnerable save ."
+          "type": "statement",
+          "text": "The bearer has a 4+ invulnerable save .",
+          "label": "Astartes Shield"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Apothecary"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "1 Company Ancient"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "1 Company Champion"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "2 Company Veterans"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "bolt pistol; Astartes chainsword.",
+          "label": "The Apothecary is equipped with"
+        },
+        {
+          "type": "statement",
+          "text": "bolt pistol; close combat weapon.",
+          "label": "The Company Ancient is equipped with"
+        },
+        {
+          "type": "statement",
+          "text": "bolt pistol; Champion\u2019s blade; Astartes shield.",
+          "label": "The Company Champion is equipped with"
+        },
+        {
+          "type": "statement",
+          "text": "bolt pistol; boltgun, close combat weapon.",
+          "label": "Each Company Veteran is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -522,10 +644,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION",
@@ -539,6 +660,7 @@
       "ATTACHED UNITS"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

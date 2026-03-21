@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Thunderhawk-Transporter",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Thunderhawk-Transporter",
     "canonicalSourceId": "wahapedia:ead7c1947f60d0ceb693607bccd8d1e30a0080e9",
     "faction_slug": "space-marines",
     "datasheet_slug": "Thunderhawk-Transporter",
-    "fetchedAt": "2026-03-19T17:33:00+00:00",
-    "contentHash": "8f712c912d9e275ed660c6ce264c116eb9c5b6f7f23add2683818849cf360946",
+    "fetchedAt": "2026-03-21T03:43:14+00:00",
+    "contentHash": "a21661d74d3af85b335308d100e76e173639ce465696f645a60c4896de3c6272",
     "output_slug": "space-marines"
   },
   "name": "Thunderhawk Transporter",
@@ -64,13 +64,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D6+2 , Hover FACTION: Oath of Moment Aerial Deployment: If this model starts the game in Hover mode and in Strategic Reserves , it can be set up in the Reinforcements step of your first, second or third Movement phase , regardless of any mission rules."
+      "Deadly Demise D6+2 , Hover"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "If this model starts the game in Hover mode and in Strategic Reserves , it can be set up in the Reinforcements step of your first, second or third Movement phase , regardless of any mission rules.",
+        "name": "Aerial Deployment"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Thunderhawk Transporter"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "hellstrike missile battery; 4 twin heavy bolters; armoured hull.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -99,10 +118,8 @@
       "title": "WARGEAR OPTIONS",
       "entries": [
         {
-          "type": "list",
-          "items": [
-            "None"
-          ]
+          "type": "text",
+          "text": "None"
         }
       ]
     },
@@ -113,14 +130,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D6+2 , Hover FACTION: Oath of Moment Aerial Deployment: If this model starts the game in Hover mode and in Strategic Reserves , it can be set up in the Reinforcements step of your first, second or third Movement phase , regardless of any mission rules."
+            "Deadly Demise D6+2 , Hover"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "If this model starts the game in Hover mode and in Strategic Reserves , it can be set up in the Reinforcements step of your first, second or third Movement phase , regardless of any mission rules.",
+          "name": "Aerial Deployment"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Thunderhawk Transporter"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "hellstrike missile battery; 4 twin heavy bolters; armoured hull.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -153,28 +193,11 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "DAMAGED: 1-10 WOUNDS REMAINING",
-      "TRANSPORT",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
+      "TRANSPORT"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -183,60 +206,8 @@
       "DAMAGED: 1-10 WOUNDS REMAINING",
       "TRANSPORT"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

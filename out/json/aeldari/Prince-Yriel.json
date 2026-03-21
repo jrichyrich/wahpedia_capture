@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Prince-Yriel",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Prince-Yriel",
     "canonicalSourceId": "wahapedia:46ab01008163a69e7ef253b2410b2b7ad6053654",
     "faction_slug": "aeldari",
     "datasheet_slug": "Prince-Yriel",
-    "fetchedAt": "2026-03-19T17:11:04+00:00",
-    "contentHash": "0d60642e049b74c92ef70484b37dbc30acecc629dd40fe2a01ed7131f9fab585",
+    "fetchedAt": "2026-03-21T03:36:28+00:00",
+    "contentHash": "c7633ccad0fb0f3a1d922e8a5479b2a1e58ac82cde6a455868c69ab4b9f0d9f0",
     "output_slug": "aeldari"
   },
   "name": "Prince Yriel",
@@ -68,13 +68,37 @@
   },
   "abilities": {
     "core": [
-      "Leader , Scouts 7\" FACTION: Battle Focus Piratical Hero: While this model is leading a unit, each time a model in that unit makes an attack, that attack has the [SUSTAINED HITS 1] ability and add 1 to the Hit roll . Prince of Corsairs: After both players have deployed their armies, if this unit is on the battlefield (or any TRANSPORT it is embarked within is on the battlefield), select up to three AELDARI units from your army and redeploy them. When doing so, you can set those units up in Strategic Reserves , regardless of how many units are already in Strategic Reserves."
+      "Leader , Scouts 7\""
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Battle Focus"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, each time a model in that unit makes an attack, that attack has the [SUSTAINED HITS 1] ability and add 1 to the Hit roll .",
+        "name": "Piratical Hero"
+      },
+      {
+        "type": "rule",
+        "text": "After both players have deployed their armies, if this unit is on the battlefield (or any TRANSPORT it is embarked within is on the battlefield), select up to three AELDARI units from your army and redeploy them. When doing so, you can set those units up in Strategic Reserves , regardless of how many units are already in Strategic Reserves.",
+        "name": "Prince of Corsairs"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Prince Yriel \u2013 EPIC HERO"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "Eye of Wrath; shuriken pistol; Spear of Twilight.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -101,10 +125,8 @@
       "title": "WARGEAR OPTIONS",
       "entries": [
         {
-          "type": "list",
-          "items": [
-            "None"
-          ]
+          "type": "text",
+          "text": "None"
         }
       ]
     },
@@ -115,14 +137,42 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Leader , Scouts 7\" FACTION: Battle Focus Piratical Hero: While this model is leading a unit, each time a model in that unit makes an attack, that attack has the [SUSTAINED HITS 1] ability and add 1 to the Hit roll . Prince of Corsairs: After both players have deployed their armies, if this unit is on the battlefield (or any TRANSPORT it is embarked within is on the battlefield), select up to three AELDARI units from your army and redeploy them. When doing so, you can set those units up in Strategic Reserves , regardless of how many units are already in Strategic Reserves."
+            "Leader , Scouts 7\""
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Battle Focus"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, each time a model in that unit makes an attack, that attack has the [SUSTAINED HITS 1] ability and add 1 to the Hit roll .",
+          "name": "Piratical Hero"
+        },
+        {
+          "type": "rule",
+          "text": "After both players have deployed their armies, if this unit is on the battlefield (or any TRANSPORT it is embarked within is on the battlefield), select up to three AELDARI units from your army and redeploy them. When doing so, you can set those units up in Strategic Reserves , regardless of how many units are already in Strategic Reserves.",
+          "name": "Prince of Corsairs"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Prince Yriel \u2013 EPIC HERO"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "Eye of Wrath; shuriken pistol; Spear of Twilight.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -138,6 +188,10 @@
       "title": "LEADER",
       "entries": [
         {
+          "type": "text",
+          "text": "This model can be attached to the following units:"
+        },
+        {
           "type": "list",
           "items": [
             "Corsair Voidreavers",
@@ -149,27 +203,10 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
-      "LEADER",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
+      "LEADER"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -177,60 +214,8 @@
       "UNIT COMPOSITION",
       "LEADER"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

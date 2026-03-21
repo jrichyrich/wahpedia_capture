@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Predator-Destructor",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Predator-Destructor",
-    "output_slug": "ultramarines",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Predator-Destructor",
     "canonicalSourceId": "wahapedia:4d599e45410dafa684e0bd3ec95dafa8daa8a6c5",
-    "fetchedAt": "2026-03-19T17:35:03+00:00",
-    "contentHash": "7dcab26d4bd19715aad3d67fbec8b4a85fa14bee74fb762f28ad0b99d2ffb267"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Predator-Destructor",
+    "fetchedAt": "2026-03-21T03:48:40+00:00",
+    "contentHash": "2377ca3a7e8e4156639e5054a799d4dafe312b223e037bef5027c696cbdf7edd",
+    "output_slug": "ultramarines"
   },
   "name": "Predator Destructor",
   "base_size": "\u2300Use model",
@@ -93,13 +95,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D3 FACTION: Oath of Moment Destructor: Each time this model makes a ranged attack that targets an INFANTRY unit, improve the Armour Penetration characteristic of that attack by 1."
+      "Deadly Demise D3"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this model makes a ranged attack that targets an INFANTRY unit, improve the Armour Penetration characteristic of that attack by 1.",
+        "name": "Destructor"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Predator Destructor"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "Predator autocannon; armoured tracks.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -150,14 +171,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D3 FACTION: Oath of Moment Destructor: Each time this model makes a ranged attack that targets an INFANTRY unit, improve the Armour Penetration characteristic of that attack by 1."
+            "Deadly Demise D3"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model makes a ranged attack that targets an INFANTRY unit, improve the Armour Penetration characteristic of that attack by 1.",
+          "name": "Destructor"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Predator Destructor"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "Predator autocannon; armoured tracks.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -179,10 +223,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "DAMAGED: 1-4 WOUNDS REMAINING"
@@ -194,6 +237,7 @@
       "DAMAGED: 1-4 WOUNDS REMAINING"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

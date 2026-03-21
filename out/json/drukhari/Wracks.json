@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Wracks",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Wracks",
     "canonicalSourceId": "wahapedia:fffb42b5824d0ac319a49817d340327c611e0f00",
     "faction_slug": "drukhari",
     "datasheet_slug": "Wracks",
-    "fetchedAt": "2026-03-19T17:17:31+00:00",
-    "contentHash": "77080dd6bf6b493cadae62678701038f2dedcfdba4d08cdbdbf66d948b53278c",
+    "fetchedAt": "2026-03-21T03:50:42+00:00",
+    "contentHash": "49ba94ac00807330b92a93f2f9bf38021565ed548e3cd34c04566bd88a19eb77",
     "output_slug": "drukhari"
   },
   "name": "Wracks",
@@ -120,12 +120,48 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Power from Pain Experimental Enhancements (Pain): In the Fight phase , when you select this unit to fight, you can spend 1 Pain token to Empower this unit. Each time you do, select one of the following to apply to this unit until the end of the phase: Melee weapons equipped by non- CHARACTER models in this unit have an Attacks characteristic of 3. Melee weapons equipped by non- CHARACTER models in this unit have an Attacks characteristic of 4 and the [HAZARDOUS] ability. Torturer\u2019s Craft: In your Shooting phase and the Fight phase , after this unit has shot or fought, select one enemy unit (excluding VEHICLES ) hit by one or more of those attacks. That unit must take a Battle-shock test ."
+      "Power from Pain"
     ],
-    "datasheet": [],
-    "other": []
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "In the Fight phase , when you select this unit to fight, you can spend 1 Pain token to Empower this unit. Each time you do, select one of the following to apply to this unit until the end of the phase:",
+        "name": "Experimental Enhancements (Pain)"
+      },
+      {
+        "type": "rule",
+        "text": "In your Shooting phase and the Fight phase , after this unit has shot or fought, select one enemy unit (excluding VEHICLES ) hit by one or more of those attacks. That unit must take a Battle-shock test .",
+        "name": "Torturer\u2019s Craft"
+      }
+    ],
+    "other": [
+      {
+        "type": "list",
+        "items": [
+          "Melee weapons equipped by non- CHARACTER models in this unit have an Attacks characteristic of 3.",
+          "Melee weapons equipped by non- CHARACTER models in this unit have an Attacks characteristic of 4 and the [HAZARDOUS] ability."
+        ]
+      }
+    ]
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Acothyst"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "4-9 Wracks"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "twin torturer\u2019s tools.",
+      "label": "Every model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -187,14 +223,48 @@
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Power from Pain Experimental Enhancements (Pain): In the Fight phase , when you select this unit to fight, you can spend 1 Pain token to Empower this unit. Each time you do, select one of the following to apply to this unit until the end of the phase: Melee weapons equipped by non- CHARACTER models in this unit have an Attacks characteristic of 3. Melee weapons equipped by non- CHARACTER models in this unit have an Attacks characteristic of 4 and the [HAZARDOUS] ability. Torturer\u2019s Craft: In your Shooting phase and the Fight phase , after this unit has shot or fought, select one enemy unit (excluding VEHICLES ) hit by one or more of those attacks. That unit must take a Battle-shock test ."
+            "Power from Pain"
           ]
+        },
+        {
+          "type": "rule",
+          "text": "In the Fight phase , when you select this unit to fight, you can spend 1 Pain token to Empower this unit. Each time you do, select one of the following to apply to this unit until the end of the phase:",
+          "name": "Experimental Enhancements (Pain)"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Melee weapons equipped by non- CHARACTER models in this unit have an Attacks characteristic of 3.",
+            "Melee weapons equipped by non- CHARACTER models in this unit have an Attacks characteristic of 4 and the [HAZARDOUS] ability."
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "In your Shooting phase and the Fight phase , after this unit has shot or fought, select one enemy unit (excluding VEHICLES ) hit by one or more of those attacks. That unit must take a Battle-shock test .",
+          "name": "Torturer\u2019s Craft"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Acothyst"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "4-9 Wracks"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "twin torturer\u2019s tools.",
+          "label": "Every model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -217,86 +287,17 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
-      "UNIT COMPOSITION",
-      "STRATAGEMS",
-      "LED BY",
-      "DETACHMENT ABILITY"
+      "UNIT COMPOSITION"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "LED BY",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:LED BY",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:LED BY",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

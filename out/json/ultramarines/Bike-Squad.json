@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Bike-Squad",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Bike-Squad",
-    "output_slug": "ultramarines",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Bike-Squad",
     "canonicalSourceId": "wahapedia:4db862303d7d56ece646613e133c2608903268e3",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "0a75a5ae3ba6be4afcb36e6ddc48b39003888eb1151040027536b39842fb63d0"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Bike-Squad",
+    "fetchedAt": "2026-03-21T03:49:08+00:00",
+    "contentHash": "4086b782eb4ad02e1a73f746cf4d0dee94edf79a86df27a606904e345e892c16",
+    "output_slug": "ultramarines"
   },
   "name": "Bike Squad",
   "base_size": "",
@@ -291,12 +293,46 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Oath of Moment Turbo-boost: Each time this unit Advances, do not make an Advance roll for it. Instead, until the end of the phase, add 6\" to the Move characteristic of models in this unit."
+      "Oath of Moment"
     ],
-    "datasheet": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this unit Advances, do not make an Advance roll for it. Instead, until the end of the phase, add 6\" to the Move characteristic of models in this unit.",
+        "name": "Turbo-boost"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Biker Sergeant"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "2-5 Space Marine Bikers"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "0-1 Attack Bike"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "bolt pistol; twin boltgun; close combat weapon.",
+      "label": "The Biker Sergeant and every Space Marine Biker is equipped with"
+    },
+    {
+      "type": "statement",
+      "text": "bolt pistol; heavy bolter; twin boltgun; close combat weapon.",
+      "label": "An Attack Bike is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -376,14 +412,47 @@
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Oath of Moment Turbo-boost: Each time this unit Advances, do not make an Advance roll for it. Instead, until the end of the phase, add 6\" to the Move characteristic of models in this unit."
+            "Oath of Moment"
           ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this unit Advances, do not make an Advance roll for it. Instead, until the end of the phase, add 6\" to the Move characteristic of models in this unit.",
+          "name": "Turbo-boost"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Biker Sergeant"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "2-5 Space Marine Bikers"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "0-1 Attack Bike"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "bolt pistol; twin boltgun; close combat weapon.",
+          "label": "The Biker Sergeant and every Space Marine Biker is equipped with"
+        },
+        {
+          "type": "statement",
+          "text": "bolt pistol; heavy bolter; twin boltgun; close combat weapon.",
+          "label": "An Attack Bike is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -413,10 +482,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "ATTACHED UNITS"
@@ -428,6 +496,7 @@
       "ATTACHED UNITS"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

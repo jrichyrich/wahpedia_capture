@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Wraithknight-with-Ghostglaive",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Wraithknight-with-Ghostglaive",
     "canonicalSourceId": "wahapedia:67afda07c921e98824d0f5d3d2ad963d66a69351",
     "faction_slug": "aeldari",
     "datasheet_slug": "Wraithknight-with-Ghostglaive",
-    "fetchedAt": "2026-03-19T17:11:25+00:00",
-    "contentHash": "82993dc6f9c5990fffd9985d7bb67ce6af20a4c346eab229b34fa063441b93fd",
+    "fetchedAt": "2026-03-21T03:36:49+00:00",
+    "contentHash": "24a4432baa48ce562242fd7b44a042a9352d86184e44e10e5c12c16c9093e65b",
     "output_slug": "aeldari"
   },
   "name": "Wraithknight with Ghostglaive",
@@ -95,13 +95,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D6 FACTION: Battle Focus Titanic Agility: Each time this model makes a Normal , Advance or Fall Back move , it can move through models and terrain features . When doing so, it can move within Engagement Range of enemy models, but cannot end that move within Engagement Range of them."
+      "Deadly Demise D6"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Battle Focus"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this model makes a Normal , Advance or Fall Back move , it can move through models and terrain features . When doing so, it can move within Engagement Range of enemy models, but cannot end that move within Engagement Range of them.",
+        "name": "Titanic Agility"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Wraithknight with Ghostglaive"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "titanic ghostglaive; scattershield.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -151,8 +170,20 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D6 FACTION: Battle Focus Titanic Agility: Each time this model makes a Normal , Advance or Fall Back move , it can move through models and terrain features . When doing so, it can move within Engagement Range of enemy models, but cannot end that move within Engagement Range of them."
+            "Deadly Demise D6"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Battle Focus"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model makes a Normal , Advance or Fall Back move , it can move through models and terrain features . When doing so, it can move within Engagement Range of enemy models, but cannot end that move within Engagement Range of them.",
+          "name": "Titanic Agility"
         }
       ]
     },
@@ -160,14 +191,26 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "text",
-          "text": "Scattershield: The bearer has a 4+ invulnerable save and each time an attack is allocated to the bearer, subtract 1 from the Damage characteristic of that attack."
+          "type": "statement",
+          "text": "The bearer has a 4+ invulnerable save and each time an attack is allocated to the bearer, subtract 1 from the Damage characteristic of that attack.",
+          "label": "Scattershield"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Wraithknight with Ghostglaive"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "titanic ghostglaive; scattershield.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -191,27 +234,11 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION",
-      "DAMAGED: 1-6 WOUNDS REMAINING",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
+      "DAMAGED: 1-6 WOUNDS REMAINING"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -220,57 +247,8 @@
       "UNIT COMPOSITION",
       "DAMAGED: 1-6 WOUNDS REMAINING"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Assault-Squad",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Assault-Squad",
     "canonicalSourceId": "wahapedia:9956a02ae4e26e76eace9ffed9bcd70a486aefbd",
     "faction_slug": "space-marines",
     "datasheet_slug": "Assault-Squad",
-    "fetchedAt": "2026-03-19T17:15:24+00:00",
-    "contentHash": "14eee744deec8a0ae51c63ef2aee481b2bb8f1336c9da1e83100824cd8a07452",
+    "fetchedAt": "2026-03-21T03:39:53+00:00",
+    "contentHash": "5030b0e776a955fe782e512729cb54be947afa41455c0afaa322d053c3dae394",
     "output_slug": "dark-angels"
   },
   "name": "Assault Squad",
@@ -233,12 +233,44 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Oath of Moment Chainsword Doctrines: Each time this unit is selected to fight, select one of the following abilities to apply to all Astartes chainswords equipped by models in this unit until the end of the phase: [SUSTAINED HITS 1] [LETHAL HITS] [LANCE]"
+      "Oath of Moment"
     ],
-    "datasheet": [],
-    "other": []
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this unit is selected to fight, select one of the following abilities to apply to all Astartes chainswords equipped by models in this unit until the end of the phase:",
+        "name": "Chainsword Doctrines"
+      }
+    ],
+    "other": [
+      {
+        "type": "list",
+        "items": [
+          "[SUSTAINED HITS 1]",
+          "[LETHAL HITS]",
+          "[LANCE]"
+        ]
+      }
+    ]
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Assault Sergeant"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "4-9 Assault Marines"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "bolt pistol; Astartes chainsword.",
+      "label": "Every model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -317,7 +349,20 @@
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Oath of Moment Chainsword Doctrines: Each time this unit is selected to fight, select one of the following abilities to apply to all Astartes chainswords equipped by models in this unit until the end of the phase: [SUSTAINED HITS 1] [LETHAL HITS] [LANCE]"
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this unit is selected to fight, select one of the following abilities to apply to all Astartes chainswords equipped by models in this unit until the end of the phase:",
+          "name": "Chainsword Doctrines"
+        },
+        {
+          "type": "list",
+          "items": [
+            "[SUSTAINED HITS 1]",
+            "[LETHAL HITS]",
+            "[LANCE]"
           ]
         }
       ]
@@ -326,14 +371,32 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "text",
-          "text": "Astartes Shield: The bearer has a 4+ invulnerable save ."
+          "type": "statement",
+          "text": "The bearer has a 4+ invulnerable save .",
+          "label": "Astartes Shield"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Assault Sergeant"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "4-9 Assault Marines"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "bolt pistol; Astartes chainsword.",
+          "label": "Every model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -361,29 +424,11 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION",
-      "ATTACHED UNITS",
-      "STRATAGEMS",
-      "LED BY",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
+      "ATTACHED UNITS"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -392,63 +437,8 @@
       "UNIT COMPOSITION",
       "ATTACHED UNITS"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "LED BY",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:LED BY",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:LED BY",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

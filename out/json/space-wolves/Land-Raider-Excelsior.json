@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Land-Raider-Excelsior",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Land-Raider-Excelsior",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Land-Raider-Excelsior",
     "canonicalSourceId": "wahapedia:a3877e2461f236d6283ab6b0a87c0ac50e96a4ff",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "73256b79975bcc0dc21abd13d5b018e9843e4c393fa111c3d2b059bf18770c91"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Land-Raider-Excelsior",
+    "fetchedAt": "2026-03-21T03:46:14+00:00",
+    "contentHash": "c39bf88abaf7069a950a0d381176768a6a4c205d6b69d1bc16ccaa34b713194a",
+    "output_slug": "space-wolves"
   },
   "name": "Land Raider Excelsior",
   "base_size": "\u2300Use model",
@@ -108,13 +110,37 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D6 FACTION: Oath of Moment Rites of Battle: Once per battle round , one unit from your army with this ability can use it when its unit is targeted with a Stratagem . If it does, reduce the CP cost of that use of that Stratagem by 1CP. Assault Ramp: Each time a unit disembarks from this model after it has made a Normal move , that unit is still eligible to declare a charge this turn."
+      "Deadly Demise D6"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Once per battle round , one unit from your army with this ability can use it when its unit is targeted with a Stratagem . If it does, reduce the CP cost of that use of that Stratagem by 1CP.",
+        "name": "Rites of Battle"
+      },
+      {
+        "type": "rule",
+        "text": "Each time a unit disembarks from this model after it has made a Normal move , that unit is still eligible to declare a charge this turn.",
+        "name": "Assault Ramp"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Land Raider Excelsior"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "grav-cannon; 2 Godhammer lascannon; armoured tracks.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -168,14 +194,42 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D6 FACTION: Oath of Moment Rites of Battle: Once per battle round , one unit from your army with this ability can use it when its unit is targeted with a Stratagem . If it does, reduce the CP cost of that use of that Stratagem by 1CP. Assault Ramp: Each time a unit disembarks from this model after it has made a Normal move , that unit is still eligible to declare a charge this turn."
+            "Deadly Demise D6"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Once per battle round , one unit from your army with this ability can use it when its unit is targeted with a Stratagem . If it does, reduce the CP cost of that use of that Stratagem by 1CP.",
+          "name": "Rites of Battle"
+        },
+        {
+          "type": "rule",
+          "text": "Each time a unit disembarks from this model after it has made a Normal move , that unit is still eligible to declare a charge this turn.",
+          "name": "Assault Ramp"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Land Raider Excelsior"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "grav-cannon; 2 Godhammer lascannon; armoured tracks.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -206,10 +260,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "DAMAGED: 1-5 WOUNDS REMAINING",
@@ -223,6 +276,7 @@
       "TRANSPORT"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

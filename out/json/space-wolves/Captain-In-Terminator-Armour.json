@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Captain-In-Terminator-Armour",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Captain-In-Terminator-Armour",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Captain-In-Terminator-Armour",
     "canonicalSourceId": "wahapedia:0119c2d676d18c4a77f29738478ed040bc251529",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "7a4a16031d019b397fa7d95ca05610e5bf7c48eb936d2d3e20c5a804693884f4"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Captain-In-Terminator-Armour",
+    "fetchedAt": "2026-03-21T03:43:33+00:00",
+    "contentHash": "998ecd1b39c9130b3cb4cafb82217123baef0b063642a931ae767640bf959c04",
+    "output_slug": "space-wolves"
   },
   "name": "Captain In Terminator Armour",
   "base_size": "\u230050mm",
@@ -74,13 +76,37 @@
   },
   "abilities": {
     "core": [
-      "Deep Strike , Leader FACTION: Oath of Moment Rites of Battle: Once per battle round , one unit from your army with this ability can use it when its unit is targeted with a Stratagem . If it does, reduce the CP cost of that use of that Stratagem by 1CP. The Imperium\u2019s Sword: You can re-roll Charge rolls made for this model\u2019s unit."
+      "Deep Strike , Leader"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Once per battle round , one unit from your army with this ability can use it when its unit is targeted with a Stratagem . If it does, reduce the CP cost of that use of that Stratagem by 1CP.",
+        "name": "Rites of Battle"
+      },
+      {
+        "type": "rule",
+        "text": "You can re-roll Charge rolls made for this model\u2019s unit.",
+        "name": "The Imperium\u2019s Sword"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Captain in Terminator Armour"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "storm bolter; relic weapon.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -125,14 +151,42 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deep Strike , Leader FACTION: Oath of Moment Rites of Battle: Once per battle round , one unit from your army with this ability can use it when its unit is targeted with a Stratagem . If it does, reduce the CP cost of that use of that Stratagem by 1CP. The Imperium\u2019s Sword: You can re-roll Charge rolls made for this model\u2019s unit."
+            "Deep Strike , Leader"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Once per battle round , one unit from your army with this ability can use it when its unit is targeted with a Stratagem . If it does, reduce the CP cost of that use of that Stratagem by 1CP.",
+          "name": "Rites of Battle"
+        },
+        {
+          "type": "rule",
+          "text": "You can re-roll Charge rolls made for this model\u2019s unit.",
+          "name": "The Imperium\u2019s Sword"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Captain in Terminator Armour"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "storm bolter; relic weapon.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -147,6 +201,10 @@
     {
       "title": "LEADER",
       "entries": [
+        {
+          "type": "text",
+          "text": "This model can be attached to the following units:"
+        },
         {
           "type": "list",
           "items": [
@@ -163,10 +221,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "LEADER"
@@ -178,6 +235,7 @@
       "LEADER"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

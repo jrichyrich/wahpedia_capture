@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Wolf-Guard-Battle-Leader-On-Thunderwolf",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Wolf-Guard-Battle-Leader-On-Thunderwolf",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Wolf-Guard-Battle-Leader-On-Thunderwolf",
     "canonicalSourceId": "wahapedia:07db4716f6e486d3e83a172ea3b124169e219bbd",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "cd0bab16b702b5d54500418d87aaadee29342e000a42324b6a43d00a81bb0a46"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Wolf-Guard-Battle-Leader-On-Thunderwolf",
+    "fetchedAt": "2026-03-21T03:44:29+00:00",
+    "contentHash": "60044c016a1fcda82e6da3004c2e3c408e951eb3c3a043dd619c5cc511ca7205",
+    "output_slug": "space-wolves"
   },
   "name": "Wolf Guard Battle Leader On Thunderwolf",
   "base_size": "\u230060mm",
@@ -220,6 +222,39 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s bolt pistol and relic weapon can be replaced with 1 twin lightning claws.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "This model\u2019s bolt pistol can be replaced with one of the following:",
+          "items": [
+            "1 combi-weapon",
+            "1 master-crafted boltgun",
+            "1 plasma pistol",
+            "1 storm bolter",
+            "1 power fist",
+            "1 relic weapon",
+            "1 thunder hammer"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "This model\u2019s relic weapon can be replaced with one of the following:",
+          "items": [
+            "1 plasma pistol",
+            "1 power fist",
+            "1 thunder hammer",
+            "1 storm shield and 1 close combat weapon"
+          ]
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
@@ -287,30 +322,39 @@
       "title": "LEADER",
       "entries": [
         {
+          "type": "text",
+          "text": "This model can be attached to the following unit:"
+        },
+        {
           "type": "list",
           "items": [
             "Thunderwolf Cavalry"
           ]
+        },
+        {
+          "type": "text",
+          "text": "You can attach this model to the above unit even if one CAPTAIN or CHAPTER MASTER model has already been attached to it. If you do, and that Bodyguard unit is destroyed, the Leader units attached to it become separate units, with their original Starting Strengths ."
         }
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION",
       "LEADER"
     ],
     "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION",
       "LEADER"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

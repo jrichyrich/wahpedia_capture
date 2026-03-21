@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Vigilators",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Vigilators",
     "canonicalSourceId": "wahapedia:11a0b2c7fc6b5f07a2c72addd42f756a6f6c30ce",
     "faction_slug": "adeptus-custodes",
     "datasheet_slug": "Vigilators",
-    "fetchedAt": "2026-03-19T17:10:55+00:00",
-    "contentHash": "cbbe76feec1f01bedf546fd8359f2768ba9c51a857c30ff5240002e4f6bf7d7a",
+    "fetchedAt": "2026-03-21T03:36:17+00:00",
+    "contentHash": "2b62aea19d28e78459ca45f69cfba351f8590a8066913fd7d9d3e1d56399071c",
     "output_slug": "adeptus-custodes"
   },
   "name": "Vigilators",
@@ -41,15 +41,38 @@
   "abilities": {
     "core": [],
     "faction": [],
-    "datasheet": [],
-    "other": [
+    "datasheet": [
       {
-        "type": "text",
-        "text": "Daughters of the Abyss: Models in this unit have the Feel No Pain 3+ ability against Psychic Attacks and mortal wounds . Deft Parry: Each time a melee attack targets this unit, subtract 1 from the Hit roll ."
+        "type": "rule",
+        "text": "Models in this unit have the Feel No Pain 3+ ability against Psychic Attacks and mortal wounds .",
+        "name": "Daughters of the Abyss"
+      },
+      {
+        "type": "rule",
+        "text": "Each time a melee attack targets this unit, subtract 1 from the Hit roll .",
+        "name": "Deft Parry"
       }
-    ]
+    ],
+    "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Vigilator Sister Superior"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "3-9 Vigilators"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "executioner greatblade.",
+      "label": "Every model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -86,14 +109,37 @@
       "title": "ABILITIES",
       "entries": [
         {
-          "type": "text",
-          "text": "Daughters of the Abyss: Models in this unit have the Feel No Pain 3+ ability against Psychic Attacks and mortal wounds . Deft Parry: Each time a melee attack targets this unit, subtract 1 from the Hit roll ."
+          "type": "rule",
+          "text": "Models in this unit have the Feel No Pain 3+ ability against Psychic Attacks and mortal wounds .",
+          "name": "Daughters of the Abyss"
+        },
+        {
+          "type": "rule",
+          "text": "Each time a melee attack targets this unit, subtract 1 from the Hit roll .",
+          "name": "Deft Parry"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Vigilator Sister Superior"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "3-9 Vigilators"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "executioner greatblade.",
+          "label": "Every model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -120,60 +166,15 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "ABILITIES",
-      "UNIT COMPOSITION",
-      "STRATAGEMS",
-      "LED BY",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
+      "UNIT COMPOSITION"
     ],
     "exportedSectionTitles": [
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
-    "missingExpectedSections": [
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "LED BY",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
-    ],
-    "warnings": [
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:LED BY",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:LED BY",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Infernus-Squad",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Infernus-Squad",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Infernus-Squad",
     "canonicalSourceId": "wahapedia:f16bfc8b0058e0cc2133367a787a958745a5dd4d",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "054ee15514e09cdc10d6489cddc667e31458b537157d67fec15ff1319cb3e9bc"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Infernus-Squad",
+    "fetchedAt": "2026-03-21T03:45:10+00:00",
+    "contentHash": "eeb49c7cfeda23f970b5779fa3bb9756b9075a5da8f1b24bbe5790398be5b424",
+    "output_slug": "space-wolves"
   },
   "name": "Infernus Squad",
   "base_size": "\u230032mm",
@@ -63,12 +65,35 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Oath of Moment Incendiary Terror: In your Shooting phase , after this unit has shot, you can select one enemy INFANTRY unit hit by one or more of those attacks made with a pyreblaster. That enemy unit must take a Battle-shock test , subtracting 1 from that test."
+      "Oath of Moment"
     ],
-    "datasheet": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "In your Shooting phase , after this unit has shot, you can select one enemy INFANTRY unit hit by one or more of those attacks made with a pyreblaster. That enemy unit must take a Battle-shock test , subtracting 1 from that test.",
+        "name": "Incendiary Terror"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Infernus Sergeant"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "4-9 Infernus Marines"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "bolt pistol; pyreblaster; close combat weapon.",
+      "label": "Every model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -101,14 +126,36 @@
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Oath of Moment Incendiary Terror: In your Shooting phase , after this unit has shot, you can select one enemy INFANTRY unit hit by one or more of those attacks made with a pyreblaster. That enemy unit must take a Battle-shock test , subtracting 1 from that test."
+            "Oath of Moment"
           ]
+        },
+        {
+          "type": "rule",
+          "text": "In your Shooting phase , after this unit has shot, you can select one enemy INFANTRY unit hit by one or more of those attacks made with a pyreblaster. That enemy unit must take a Battle-shock test , subtracting 1 from that test.",
+          "name": "Incendiary Terror"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Infernus Sergeant"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "4-9 Infernus Marines"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "bolt pistol; pyreblaster; close combat weapon.",
+          "label": "Every model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -125,8 +172,6 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
       "ABILITIES",
@@ -137,6 +182,7 @@
       "UNIT COMPOSITION"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

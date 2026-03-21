@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Ynnari-Venom",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Ynnari-Venom",
     "canonicalSourceId": "wahapedia:1a9a462253dce93b1c7f000d912575f204f11668",
     "faction_slug": "aeldari",
     "datasheet_slug": "Ynnari-Venom",
-    "fetchedAt": "2026-03-19T17:11:13+00:00",
-    "contentHash": "1eb76faa908a583d71dc8a9d9877e084d3111aa59a0cc5b8f825c0de4c83a559",
+    "fetchedAt": "2026-03-21T03:36:37+00:00",
+    "contentHash": "fd485a23d0a9c998771b20b18e20a186709b82a1eaa80a50999b6f3fed07942d",
     "output_slug": "aeldari"
   },
   "name": "Ynnari Venom",
@@ -68,13 +68,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise 1 , Deep Strike , Firing Deck 6 , Stealth FACTION: Battle Focus , Disparate Paths Lithe Embarkation: At the end of the Fight phase , if there are no models currently embarked within this TRANSPORT , you can select one friendly YNNARI INFANTRY unit that only includes models from the units listed in this unit\u2019s Transport section, that has 6 or fewer models and that is wholly within 6\" of this TRANSPORT . Unless that unit is within Engagement Range of one or more enemy units, it can embark within this TRANSPORT ."
+      "Deadly Demise 1 , Deep Strike , Firing Deck 6 , Stealth"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Battle Focus , Disparate Paths"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "At the end of the Fight phase , if there are no models currently embarked within this TRANSPORT , you can select one friendly YNNARI INFANTRY unit that only includes models from the units listed in this unit\u2019s Transport section, that has 6 or fewer models and that is wholly within 6\" of this TRANSPORT . Unless that unit is within Engagement Range of one or more enemy units, it can embark within this TRANSPORT .",
+        "name": "Lithe Embarkation"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Venom"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "splinter cannon; twin splinter rifle; bladevanes.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -114,14 +133,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise 1 , Deep Strike , Firing Deck 6 , Stealth FACTION: Battle Focus , Disparate Paths Lithe Embarkation: At the end of the Fight phase , if there are no models currently embarked within this TRANSPORT , you can select one friendly YNNARI INFANTRY unit that only includes models from the units listed in this unit\u2019s Transport section, that has 6 or fewer models and that is wholly within 6\" of this TRANSPORT . Unless that unit is within Engagement Range of one or more enemy units, it can embark within this TRANSPORT ."
+            "Deadly Demise 1 , Deep Strike , Firing Deck 6 , Stealth"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Battle Focus , Disparate Paths"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "At the end of the Fight phase , if there are no models currently embarked within this TRANSPORT , you can select one friendly YNNARI INFANTRY unit that only includes models from the units listed in this unit\u2019s Transport section, that has 6 or fewer models and that is wholly within 6\" of this TRANSPORT . Unless that unit is within Engagement Range of one or more enemy units, it can embark within this TRANSPORT .",
+          "name": "Lithe Embarkation"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Venom"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "splinter cannon; twin splinter rifle; bladevanes.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -145,26 +187,10 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
-      "TRANSPORT",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
+      "TRANSPORT"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -172,57 +198,8 @@
       "UNIT COMPOSITION",
       "TRANSPORT"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

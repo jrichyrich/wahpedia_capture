@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Miasmic-Malignifier",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Miasmic-Malignifier",
     "canonicalSourceId": "wahapedia:af3b2a91cb04739d092f24594d6b762bd59d7cf6",
     "faction_slug": "death-guard",
     "datasheet_slug": "Miasmic-Malignifier",
-    "fetchedAt": "2026-03-19T17:16:59+00:00",
-    "contentHash": "9b5e23df0ce0c0a55df0fc7da35daff0745a4e4e4adf0eacabe1593aa3d24566",
+    "fetchedAt": "2026-03-21T03:50:41+00:00",
+    "contentHash": "64aa73511b22c6f1f9e41cd28dbe8bab4fb43e956af6952cfc763e95ce1fefa1",
     "output_slug": "death-guard"
   },
   "name": "Miasmic Malignifier",
@@ -40,13 +40,50 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D3 FACTION: Nurgle\u2019s Gift (Aura) Putrescent Fog (Aura): Enemy units that are set up on the battlefield as Reinforcements cannot be set up within 12\" of this model. Diseased Cover: Each time a ranged attack is allocated to a model, if that model is not fully visible to the attacking unit because of this Fortification, that model has the Benefit of Cover against that attack. Fortification: While an enemy unit is only within Engagement Range of one or more FORTIFICATIONS from your army: That unit can still be selected as the target of ranged attacks, but each time such an attack is made, unless it is made with a Pistol , subtract 1 from the Hit roll . Models in that unit do not need to take Desperate Escape tests due to Falling Back while Battle-shocked , except for those that will move over enemy models when doing so."
+      "Deadly Demise D3"
     ],
-    "faction": [],
-    "datasheet": [],
-    "other": []
+    "faction": [
+      "Nurgle\u2019s Gift (Aura)"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Enemy units that are set up on the battlefield as Reinforcements cannot be set up within 12\" of this model.",
+        "name": "Putrescent Fog (Aura)"
+      },
+      {
+        "type": "rule",
+        "text": "Each time a ranged attack is allocated to a model, if that model is not fully visible to the attacking unit because of this Fortification, that model has the Benefit of Cover against that attack.",
+        "name": "Diseased Cover"
+      },
+      {
+        "type": "rule",
+        "text": "While an enemy unit is only within Engagement Range of one or more FORTIFICATIONS from your army:",
+        "name": "Fortification"
+      }
+    ],
+    "other": [
+      {
+        "type": "list",
+        "items": [
+          "That unit can still be selected as the target of ranged attacks, but each time such an attack is made, unless it is made with a Pistol , subtract 1 from the Hit roll .",
+          "Models in that unit do not need to take Desperate Escape tests due to Falling Back while Battle-shocked , except for those that will move over enemy models when doing so."
+        ]
+      }
+    ]
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Miasmic Malignifier"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "miasmic gouts.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -83,7 +120,36 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D3 FACTION: Nurgle\u2019s Gift (Aura) Putrescent Fog (Aura): Enemy units that are set up on the battlefield as Reinforcements cannot be set up within 12\" of this model. Diseased Cover: Each time a ranged attack is allocated to a model, if that model is not fully visible to the attacking unit because of this Fortification, that model has the Benefit of Cover against that attack. Fortification: While an enemy unit is only within Engagement Range of one or more FORTIFICATIONS from your army: That unit can still be selected as the target of ranged attacks, but each time such an attack is made, unless it is made with a Pistol , subtract 1 from the Hit roll . Models in that unit do not need to take Desperate Escape tests due to Falling Back while Battle-shocked , except for those that will move over enemy models when doing so."
+            "Deadly Demise D3"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Nurgle\u2019s Gift (Aura)"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Enemy units that are set up on the battlefield as Reinforcements cannot be set up within 12\" of this model.",
+          "name": "Putrescent Fog (Aura)"
+        },
+        {
+          "type": "rule",
+          "text": "Each time a ranged attack is allocated to a model, if that model is not fully visible to the attacking unit because of this Fortification, that model has the Benefit of Cover against that attack.",
+          "name": "Diseased Cover"
+        },
+        {
+          "type": "rule",
+          "text": "While an enemy unit is only within Engagement Range of one or more FORTIFICATIONS from your army:",
+          "name": "Fortification"
+        },
+        {
+          "type": "list",
+          "items": [
+            "That unit can still be selected as the target of ranged attacks, but each time such an attack is made, unless it is made with a Pistol , subtract 1 from the Hit roll .",
+            "Models in that unit do not need to take Desperate Escape tests due to Falling Back while Battle-shocked , except for those that will move over enemy models when doing so."
           ]
         }
       ]
@@ -91,6 +157,17 @@
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Miasmic Malignifier"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "miasmic gouts.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -105,54 +182,17 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
       "DEPLOYMENT",
       "ABILITIES",
-      "UNIT COMPOSITION",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
+      "UNIT COMPOSITION"
     ],
     "exportedSectionTitles": [
       "DEPLOYMENT",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

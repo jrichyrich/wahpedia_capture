@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Howling-Banshees",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Howling-Banshees",
     "canonicalSourceId": "wahapedia:af68ece765a952776e14394cfebfed3124aa99ee",
     "faction_slug": "aeldari",
     "datasheet_slug": "Howling-Banshees",
-    "fetchedAt": "2026-03-19T17:11:17+00:00",
-    "contentHash": "24ea56c7226f8e0fab4dae40ea4c1be957d8bd51aa256424a1aa4b811959b9fb",
+    "fetchedAt": "2026-03-21T03:36:41+00:00",
+    "contentHash": "fe72df120f74d2e03a0619ad7d271a3b8560e3984129313c6624053b6c0b6ccd",
     "output_slug": "aeldari"
   },
   "name": "Howling Banshees",
@@ -104,13 +104,38 @@
   },
   "abilities": {
     "core": [
-      "Fights First FACTION: Battle Focus Acrobatic: This unit is eligible to declare a charge in a turn in which it Advanced or Fell Back ."
+      "Fights First"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Battle Focus"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "This unit is eligible to declare a charge in a turn in which it Advanced or Fell Back .",
+        "name": "Acrobatic"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Howling Banshee Exarch"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "4-9 Howling Banshees"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "shuriken pistol; Banshee blade.",
+      "label": "Every model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -165,8 +190,20 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Fights First FACTION: Battle Focus Acrobatic: This unit is eligible to declare a charge in a turn in which it Advanced or Fell Back ."
+            "Fights First"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Battle Focus"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "This unit is eligible to declare a charge in a turn in which it Advanced or Fell Back .",
+          "name": "Acrobatic"
         }
       ]
     },
@@ -174,14 +211,37 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "text",
-          "text": "Aspect Shrine Token: Once per battle for each Aspect Shrine token this unit has, you can change the result of one Hit roll or one Wound roll made for a model in this unit (excluding CHARACTER models) to an unmodified 6. Designer\u2019s Note: Place an Aspect Shrine token next to the unit for each Aspect Shrine token it has, removing one each time this ability is used."
+          "type": "statement",
+          "text": "Once per battle for each Aspect Shrine token this unit has, you can change the result of one Hit roll or one Wound roll made for a model in this unit (excluding CHARACTER models) to an unmodified 6.",
+          "label": "Aspect Shrine Token"
+        },
+        {
+          "type": "statement",
+          "text": "Place an Aspect Shrine token next to the unit for each Aspect Shrine token it has, removing one each time this ability is used.",
+          "label": "Designer\u2019s Note"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Howling Banshee Exarch"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "4-9 Howling Banshees"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "shuriken pistol; Banshee blade.",
+          "label": "Every model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -200,27 +260,10 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "WARGEAR ABILITIES",
-      "UNIT COMPOSITION",
-      "STRATAGEMS",
-      "LED BY",
-      "DETACHMENT ABILITY"
+      "UNIT COMPOSITION"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -228,60 +271,8 @@
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "LED BY",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:LED BY",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:LED BY",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

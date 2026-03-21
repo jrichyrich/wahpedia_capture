@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Impulsor",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Impulsor",
     "canonicalSourceId": "wahapedia:3b9e694127f40821021b59a2ea20b7fc0e9e7b3d",
     "faction_slug": "space-marines",
     "datasheet_slug": "Impulsor",
-    "fetchedAt": "2026-03-19T17:24:36+00:00",
-    "contentHash": "18c9a60a85de8908411167db2711e3369d06f7ac20a804f639718e7da49dfa19",
+    "fetchedAt": "2026-03-21T03:38:48+00:00",
+    "contentHash": "a26c50382d44e21c9968fe809c077cc0e3539374be23202f4075845775b0d880",
     "output_slug": "dark-angels"
   },
   "name": "Impulsor",
@@ -122,13 +122,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D3 , Firing Deck 6 FACTION: Oath of Moment Assault Vehicle: Units can disembark from this TRANSPORT after it has Advanced . Units that do so count as having made a Normal move , and cannot declare a charge that turn."
+      "Deadly Demise D3 , Firing Deck 6"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Units can disembark from this TRANSPORT after it has Advanced . Units that do so count as having made a Normal move , and cannot declare a charge that turn.",
+        "name": "Assault Vehicle"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Impulsor"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "2 storm bolters; armoured hull.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -182,8 +201,20 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D3 , Firing Deck 6 FACTION: Oath of Moment Assault Vehicle: Units can disembark from this TRANSPORT after it has Advanced . Units that do so count as having made a Normal move , and cannot declare a charge that turn."
+            "Deadly Demise D3 , Firing Deck 6"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Units can disembark from this TRANSPORT after it has Advanced . Units that do so count as having made a Normal move , and cannot declare a charge that turn.",
+          "name": "Assault Vehicle"
         }
       ]
     },
@@ -191,14 +222,31 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "text",
-          "text": "Orbital Comms Array (Aura): While a friendly ADEPTUS ASTARTES unit is within 6\" of the bearer, each time you target that unit with a Stratagem , roll one D6: on a 5+, you gain 1CP. Shield Dome: The bearer has a 5+ invulnerable save ."
+          "type": "statement",
+          "text": "While a friendly ADEPTUS ASTARTES unit is within 6\" of the bearer, each time you target that unit with a Stratagem , roll one D6: on a 5+, you gain 1CP.",
+          "label": "Orbital Comms Array (Aura)"
+        },
+        {
+          "type": "statement",
+          "text": "The bearer has a 5+ invulnerable save .",
+          "label": "Shield Dome"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Impulsor"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "2 storm bolters; armoured hull.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -222,28 +270,11 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION",
-      "TRANSPORT",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
+      "TRANSPORT"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -252,60 +283,8 @@
       "UNIT COMPOSITION",
       "TRANSPORT"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

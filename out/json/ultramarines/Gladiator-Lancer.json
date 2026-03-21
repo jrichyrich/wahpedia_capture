@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Gladiator-Lancer",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Gladiator-Lancer",
-    "output_slug": "ultramarines",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Gladiator-Lancer",
     "canonicalSourceId": "wahapedia:668f96d4ff9430143f4a89a8996b36841dfe84fe",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "4acb97e97a0fdbc71ae7ad5b9c0ee1efa64d6a1883730d58f2ecc88a6d8e23e6"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Gladiator-Lancer",
+    "fetchedAt": "2026-03-21T03:48:27+00:00",
+    "contentHash": "5cfbca90f044bb5706f566c8973195c8961967ab891187abc78d5d1b96b68f04",
+    "output_slug": "ultramarines"
   },
   "name": "Gladiator Lancer",
   "base_size": "\u2300100mm",
@@ -97,13 +99,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D3 FACTION: Oath of Moment Aquilon Optics: Each time this model is selected to shoot, you can re-roll one Hit roll , you can re-roll one Wound roll and you can re-roll one Damage roll when resolving those attacks."
+      "Deadly Demise D3"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this model is selected to shoot, you can re-roll one Hit roll , you can re-roll one Wound roll and you can re-roll one Damage roll when resolving those attacks.",
+        "name": "Aquilon Optics"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Gladiator Lancer"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "Lancer laser destroyer; 2 storm bolters; armoured hull.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -151,14 +172,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D3 FACTION: Oath of Moment Aquilon Optics: Each time this model is selected to shoot, you can re-roll one Hit roll , you can re-roll one Wound roll and you can re-roll one Damage roll when resolving those attacks."
+            "Deadly Demise D3"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model is selected to shoot, you can re-roll one Hit roll , you can re-roll one Wound roll and you can re-roll one Damage roll when resolving those attacks.",
+          "name": "Aquilon Optics"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Gladiator Lancer"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "Lancer laser destroyer; 2 storm bolters; armoured hull.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -180,10 +224,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "DAMAGED: 1-4 WOUNDS REMAINING"
@@ -195,6 +238,7 @@
       "DAMAGED: 1-4 WOUNDS REMAINING"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

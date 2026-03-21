@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Tarantula-Sentry-Battery",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Tarantula-Sentry-Battery",
-    "output_slug": "ultramarines",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Tarantula-Sentry-Battery",
     "canonicalSourceId": "wahapedia:cf503c6627b64e6171cf94e4c1ea327a29f49c2a",
-    "fetchedAt": "2026-03-19T17:35:03+00:00",
-    "contentHash": "b84862c722e49355f2a7135f2f7577d64bdba7a4f93f9b80e1a55fb2f2da95ce"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Tarantula-Sentry-Battery",
+    "fetchedAt": "2026-03-21T03:49:54+00:00",
+    "contentHash": "2d7e0b8165cdc901b01ba7ee6716baac3989c7e5438e3a48df74ad90709d3798",
+    "output_slug": "ultramarines"
   },
   "name": "Tarantula Sentry Battery",
   "base_size": "\u2300Use model",
@@ -62,12 +64,29 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Oath of Moment Sentinel Protocols: Each time you select this unit for the Fire Overwatch Stratagem, hits are scored on unmodified Hit rolls of 4+ when resolving that Stratagem."
+      "Oath of Moment"
     ],
-    "datasheet": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time you select this unit for the Fire Overwatch Stratagem, hits are scored on unmodified Hit rolls of 4+ when resolving that Stratagem.",
+        "name": "Sentinel Protocols"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Tarantula Sentry Battery"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "twin heavy bolter; armoured hull.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -113,14 +132,30 @@
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Oath of Moment Sentinel Protocols: Each time you select this unit for the Fire Overwatch Stratagem, hits are scored on unmodified Hit rolls of 4+ when resolving that Stratagem."
+            "Oath of Moment"
           ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time you select this unit for the Fire Overwatch Stratagem, hits are scored on unmodified Hit rolls of 4+ when resolving that Stratagem.",
+          "name": "Sentinel Protocols"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Tarantula Sentry Battery"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "twin heavy bolter; armoured hull.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -141,10 +176,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
@@ -154,6 +188,7 @@
       "UNIT COMPOSITION"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

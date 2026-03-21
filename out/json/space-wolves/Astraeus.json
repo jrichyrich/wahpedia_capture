@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Astraeus",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Astraeus",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Astraeus",
     "canonicalSourceId": "wahapedia:99c9bb527eb84f563d24987a40ec78167bf16f1f",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "0e2c91a146b31d96b9fda9ed20a85d1bad108747acbe84730dbb0e857d088b27"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Astraeus",
+    "fetchedAt": "2026-03-21T03:45:48+00:00",
+    "contentHash": "072c73682a600c99448dfffad0ded64e658aec4bbe4b78ff10b19732e3d37723",
+    "output_slug": "space-wolves"
   },
   "name": "Astraeus",
   "base_size": "\u2300160mm",
@@ -135,13 +137,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D6+2 FACTION: Oath of Moment Suppression Fire: In your Shooting phase , after this model has shot, select one enemy unit hit by one or more attacks made with its twin macro-accelerator cannon this phase. Until the start of your next turn, while this model is on the battlefield, that enemy unit is suppressed. While a unit is suppressed, each time a model in that unit makes an attack, subtract 1 from the Hit roll ."
+      "Deadly Demise D6+2"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "In your Shooting phase , after this model has shot, select one enemy unit hit by one or more attacks made with its twin macro-accelerator cannon this phase. Until the start of your next turn, while this model is on the battlefield, that enemy unit is suppressed. While a unit is suppressed, each time a model in that unit makes an attack, subtract 1 from the Hit roll .",
+        "name": "Suppression Fire"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Astraeus"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "2 Astraeus las-rippers; ironhail heavy stubber; storm bolter; twin heavy bolter; twin macro-accelerator cannon; armoured hull.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -189,14 +210,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D6+2 FACTION: Oath of Moment Suppression Fire: In your Shooting phase , after this model has shot, select one enemy unit hit by one or more attacks made with its twin macro-accelerator cannon this phase. Until the start of your next turn, while this model is on the battlefield, that enemy unit is suppressed. While a unit is suppressed, each time a model in that unit makes an attack, subtract 1 from the Hit roll ."
+            "Deadly Demise D6+2"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "In your Shooting phase , after this model has shot, select one enemy unit hit by one or more attacks made with its twin macro-accelerator cannon this phase. Until the start of your next turn, while this model is on the battlefield, that enemy unit is suppressed. While a unit is suppressed, each time a model in that unit makes an attack, subtract 1 from the Hit roll .",
+          "name": "Suppression Fire"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Astraeus"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "2 Astraeus las-rippers; ironhail heavy stubber; storm bolter; twin heavy bolter; twin macro-accelerator cannon; armoured hull.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -218,10 +262,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "DAMAGED: 1-8 WOUNDS REMAINING"
@@ -233,6 +276,7 @@
       "DAMAGED: 1-8 WOUNDS REMAINING"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

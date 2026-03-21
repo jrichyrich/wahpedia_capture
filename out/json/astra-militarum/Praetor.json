@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Praetor",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Praetor",
     "canonicalSourceId": "wahapedia:7caeaaeae90334a3e9f02f5decec390bcc631525",
     "faction_slug": "astra-militarum",
     "datasheet_slug": "Praetor",
-    "fetchedAt": "2026-03-19T17:12:21+00:00",
-    "contentHash": "29e3169f92bfaf34e7c30a16429fc81ec0d629f8d109431613805e6e6b952235",
+    "fetchedAt": "2026-03-21T03:37:36+00:00",
+    "contentHash": "0ef22f551303aedc3119a3860173b92c32ae8e67db7ff0149c7356121823fa77",
     "output_slug": "astra-militarum"
   },
   "name": "Praetor",
@@ -106,13 +106,30 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D6 Targeting Coordinates: While this model is being affected by an Order , each time it makes an attack with its Praetor launcher, it does not suffer the penalty to the Hit roll for attacking a unit that is not visible to it."
+      "Deadly Demise D6"
     ],
     "faction": [],
-    "datasheet": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this model is being affected by an Order , each time it makes an attack with its Praetor launcher, it does not suffer the penalty to the Hit roll for attacking a unit that is not visible to it.",
+        "name": "Targeting Coordinates"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Praetor"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "2 heavy bolters; Praetor launcher; armoured tracks",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -154,14 +171,30 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D6 Targeting Coordinates: While this model is being affected by an Order , each time it makes an attack with its Praetor launcher, it does not suffer the penalty to the Hit roll for attacking a unit that is not visible to it."
+            "Deadly Demise D6"
           ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is being affected by an Order , each time it makes an attack with its Praetor launcher, it does not suffer the penalty to the Hit roll for attacking a unit that is not visible to it.",
+          "name": "Targeting Coordinates"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Praetor"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "2 heavy bolters; Praetor launcher; armoured tracks",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -185,26 +218,10 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
-      "DAMAGED: 1-6 WOUNDS REMAINING",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
+      "DAMAGED: 1-6 WOUNDS REMAINING"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -212,57 +229,8 @@
       "UNIT COMPOSITION",
       "DAMAGED: 1-6 WOUNDS REMAINING"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

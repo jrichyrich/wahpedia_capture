@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Cadian-Command-Squad",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Cadian-Command-Squad",
     "canonicalSourceId": "wahapedia:65be8e964a4363114c49fe1ee709612b6036bf50",
     "faction_slug": "astra-militarum",
     "datasheet_slug": "Cadian-Command-Squad",
-    "fetchedAt": "2026-03-19T17:11:36+00:00",
-    "contentHash": "88bb8057feb2eb6b844370606e3e4f02dd9b199f095ea549ed13056139877a17",
+    "fetchedAt": "2026-03-21T03:36:58+00:00",
+    "contentHash": "a9c437bcac5ed09332575dae610d69f125539751f3ffc2e0c14d75d071ae8555",
     "output_slug": "astra-militarum"
   },
   "name": "Cadian Command Squad",
@@ -202,13 +202,58 @@
   },
   "abilities": {
     "core": [
-      "Leader FACTION: Voice of Command Cadia Stands!: While this unit contains an OFFICER , each time a ranged attack targets this unit, if this unit is within range of an objective marker you control, models in this unit have the Benefit of Cover against that attack."
+      "Leader"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Voice of Command"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this unit contains an OFFICER , each time a ranged attack targets this unit, if this unit is within range of an objective marker you control, models in this unit have the Benefit of Cover against that attack.",
+        "name": "Cadia Stands!"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Cadian Commander"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "4 Cadian Veteran Guardsmen"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "laspistol; chainsword.",
+      "label": "The Cadian Commander is equipped with"
+    },
+    {
+      "type": "statement",
+      "text": "las pistol; chainsword.",
+      "label": "1 Cadian Veteran Guardsman is equipped with"
+    },
+    {
+      "type": "statement",
+      "text": "lasgun; master vox; close combat weapon.",
+      "label": "1 other Cadian Veteran Guardsman is equipped with"
+    },
+    {
+      "type": "statement",
+      "text": "lasgun; medi-pack; close combat weapon.",
+      "label": "1 other Cadian Veteran Guardsman is equipped with"
+    },
+    {
+      "type": "statement",
+      "text": "lasgun; regimental standard; close combat weapon.",
+      "label": "1 other Cadian Veteran Guardsman is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -290,8 +335,20 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Leader FACTION: Voice of Command Cadia Stands!: While this unit contains an OFFICER , each time a ranged attack targets this unit, if this unit is within range of an objective marker you control, models in this unit have the Benefit of Cover against that attack."
+            "Leader"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Voice of Command"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this unit contains an OFFICER , each time a ranged attack targets this unit, if this unit is within range of an objective marker you control, models in this unit have the Benefit of Cover against that attack.",
+          "name": "Cadia Stands!"
         }
       ]
     },
@@ -299,14 +356,62 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "text",
-          "text": "Master Vox: Each time the OFFICER in the bearer\u2019s unit issues an Order , it can issue it to an eligible unit up to 24\" away. Medi-pack: At the start of your Command phase , if the bearer\u2019s unit is below its Starting Strength , you can return up to D3 destroyed PLATOON models (excluding CHARACTERS ) to this unit. Regimental Standard: Add 1 to the Objective Control characteristic of models in the bearer\u2019s unit."
+          "type": "statement",
+          "text": "Each time the OFFICER in the bearer\u2019s unit issues an Order , it can issue it to an eligible unit up to 24\" away.",
+          "label": "Master Vox"
+        },
+        {
+          "type": "statement",
+          "text": "At the start of your Command phase , if the bearer\u2019s unit is below its Starting Strength , you can return up to D3 destroyed PLATOON models (excluding CHARACTERS ) to this unit.",
+          "label": "Medi-pack"
+        },
+        {
+          "type": "statement",
+          "text": "Add 1 to the Objective Control characteristic of models in the bearer\u2019s unit.",
+          "label": "Regimental Standard"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Cadian Commander"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "4 Cadian Veteran Guardsmen"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "laspistol; chainsword.",
+          "label": "The Cadian Commander is equipped with"
+        },
+        {
+          "type": "statement",
+          "text": "las pistol; chainsword.",
+          "label": "1 Cadian Veteran Guardsman is equipped with"
+        },
+        {
+          "type": "statement",
+          "text": "lasgun; master vox; close combat weapon.",
+          "label": "1 other Cadian Veteran Guardsman is equipped with"
+        },
+        {
+          "type": "statement",
+          "text": "lasgun; medi-pack; close combat weapon.",
+          "label": "1 other Cadian Veteran Guardsman is equipped with"
+        },
+        {
+          "type": "statement",
+          "text": "lasgun; regimental standard; close combat weapon.",
+          "label": "1 other Cadian Veteran Guardsman is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -321,6 +426,10 @@
     {
       "title": "LEADER",
       "entries": [
+        {
+          "type": "text",
+          "text": "This model can be attached to the following unit:"
+        },
         {
           "type": "list",
           "items": [
@@ -341,29 +450,12 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION",
       "LEADER",
-      "ORDERS",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
+      "ORDERS"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -373,60 +465,8 @@
       "LEADER",
       "ORDERS"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

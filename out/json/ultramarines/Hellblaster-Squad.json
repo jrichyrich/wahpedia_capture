@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Hellblaster-Squad",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Hellblaster-Squad",
-    "output_slug": "ultramarines",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Hellblaster-Squad",
     "canonicalSourceId": "wahapedia:a73696f5bdcecb838b5de79c969fbe8ee5148fa3",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "5fc7430da674c31c497e646c26e829c880cc9d57d784f96c8722fef606fb283f"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Hellblaster-Squad",
+    "fetchedAt": "2026-03-21T03:48:29+00:00",
+    "contentHash": "0a6ac08674a82fbb137727b2ccb578d56a6b6b9c213f2e2de9c546c252cd5033",
+    "output_slug": "ultramarines"
   },
   "name": "Hellblaster Squad",
   "base_size": "\u230032mm",
@@ -102,12 +104,40 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Oath of Moment For the Chapter!: Each time a model in this unit is destroyed, roll one D6: on a 3+, do not remove it from play. The destroyed model can shoot after the attacking model\u2019s unit has finished making its attacks, and is then removed from play. When resolving these attacks, any Hazardous tests taken for that attack are automatically passed. Designer\u2019s Note: This ability is triggered even when a model in this unit is destroyed as the result of failing a Hazardous test, meaning such a model may be able to shoot twice in the same phase"
+      "Oath of Moment"
     ],
-    "datasheet": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time a model in this unit is destroyed, roll one D6: on a 3+, do not remove it from play. The destroyed model can shoot after the attacking model\u2019s unit has finished making its attacks, and is then removed from play. When resolving these attacks, any Hazardous tests taken for that attack are automatically passed.",
+        "name": "For the Chapter!"
+      },
+      {
+        "type": "rule",
+        "text": "This ability is triggered even when a model in this unit is destroyed as the result of failing a Hazardous test, meaning such a model may be able to shoot twice in the same phase",
+        "name": "Designer\u2019s Note"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Hellblaster Sergeant"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "4-9 Hellblasters"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "bolt pistol; plasma incinerator; close combat weapon.",
+      "label": "Every model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -150,14 +180,41 @@
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Oath of Moment For the Chapter!: Each time a model in this unit is destroyed, roll one D6: on a 3+, do not remove it from play. The destroyed model can shoot after the attacking model\u2019s unit has finished making its attacks, and is then removed from play. When resolving these attacks, any Hazardous tests taken for that attack are automatically passed. Designer\u2019s Note: This ability is triggered even when a model in this unit is destroyed as the result of failing a Hazardous test, meaning such a model may be able to shoot twice in the same phase"
+            "Oath of Moment"
           ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time a model in this unit is destroyed, roll one D6: on a 3+, do not remove it from play. The destroyed model can shoot after the attacking model\u2019s unit has finished making its attacks, and is then removed from play. When resolving these attacks, any Hazardous tests taken for that attack are automatically passed.",
+          "name": "For the Chapter!"
+        },
+        {
+          "type": "rule",
+          "text": "This ability is triggered even when a model in this unit is destroyed as the result of failing a Hazardous test, meaning such a model may be able to shoot twice in the same phase",
+          "name": "Designer\u2019s Note"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Hellblaster Sergeant"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "4-9 Hellblasters"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "bolt pistol; plasma incinerator; close combat weapon.",
+          "label": "Every model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -174,10 +231,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
@@ -187,6 +243,7 @@
       "UNIT COMPOSITION"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

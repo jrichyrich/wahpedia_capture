@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Wolf-Lord-on-Thunderwolf",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Wolf-Lord-on-Thunderwolf",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Wolf-Lord-on-Thunderwolf",
     "canonicalSourceId": "wahapedia:f62079d0578e62d8cde0ce669cd5dcc32d4d9518",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "7e0c4e8e4d783263a39e5e84463f224de6de1f4f66c9026d3ed1dcd65a480dba"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Wolf-Lord-on-Thunderwolf",
+    "fetchedAt": "2026-03-21T03:44:35+00:00",
+    "contentHash": "e7a78ebe46e6b113c13b93eef00a99e22da277470e8a7afa75c2142363ced473",
+    "output_slug": "space-wolves"
   },
   "name": "Wolf Lord on Thunderwolf",
   "base_size": "\u230060mm",
@@ -222,6 +224,39 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s bolt pistol can be replaced with one of the following:",
+          "items": [
+            "1 combi-weapon",
+            "1 master-crafted boltgun",
+            "1 plasma pistol",
+            "1 storm bolter",
+            "1 power fist",
+            "1 relic weapon",
+            "1 thunder hammer"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "This model\u2019s relic weapon can be replaced with one of the following:",
+          "items": [
+            "1 plasma pistol",
+            "1 power fist",
+            "1 thunder hammer",
+            "1 relic shield and 1 close combat weapon"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "This model\u2019s bolt pistol and relic weapon can be replaced with 1 twin lightning claws.",
+          "items": []
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
@@ -289,6 +324,10 @@
       "title": "LEADER",
       "entries": [
         {
+          "type": "text",
+          "text": "This model can be attached to the following unit:"
+        },
+        {
           "type": "list",
           "items": [
             "Thunderwolf Cavalry"
@@ -297,22 +336,23 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION",
       "LEADER"
     ],
     "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION",
       "LEADER"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Deathstorm-Drop-Pod",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Deathstorm-Drop-Pod",
     "canonicalSourceId": "wahapedia:126610c85bbadef05cd09105e7f0f9b94d54a89a",
     "faction_slug": "space-marines",
     "datasheet_slug": "Deathstorm-Drop-Pod",
-    "fetchedAt": "2026-03-19T17:15:30+00:00",
-    "contentHash": "a62469b044ebaf74132ed0cfeb5168819e2136881dad9a1fdc16dae35b9076ae",
+    "fetchedAt": "2026-03-21T03:40:02+00:00",
+    "contentHash": "0d53ed2907ba4a367c04a857abb1181158a17d2ad9c8802eed80ad3b1403fb57",
     "output_slug": "dark-angels"
   },
   "name": "Deathstorm Drop Pod",
@@ -51,13 +51,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise 1 , Deep Strike FACTION: Oath of Moment Deathstorm Assault: This model must start the battle in Reserves , but it is not counted towards any limits placed on the maximum number of Reserves units you can start the battle with. This model can be set up in the Reinforcements step of your first, second or third Movement phase , regardless of any mission rules."
+      "Deadly Demise 1 , Deep Strike"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "This model must start the battle in Reserves , but it is not counted towards any limits placed on the maximum number of Reserves units you can start the battle with. This model can be set up in the Reinforcements step of your first, second or third Movement phase , regardless of any mission rules.",
+        "name": "Deathstorm Assault"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Deathstorm Drop Pod"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "deathstorm cannon array.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -94,14 +113,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise 1 , Deep Strike FACTION: Oath of Moment Deathstorm Assault: This model must start the battle in Reserves , but it is not counted towards any limits placed on the maximum number of Reserves units you can start the battle with. This model can be set up in the Reinforcements step of your first, second or third Movement phase , regardless of any mission rules."
+            "Deadly Demise 1 , Deep Strike"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "This model must start the battle in Reserves , but it is not counted towards any limits placed on the maximum number of Reserves units you can start the battle with. This model can be set up in the Reinforcements step of your first, second or third Movement phase , regardless of any mission rules.",
+          "name": "Deathstorm Assault"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Deathstorm Drop Pod"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "deathstorm cannon array.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -116,58 +158,17 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
-      "UNIT COMPOSITION",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
+      "UNIT COMPOSITION"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

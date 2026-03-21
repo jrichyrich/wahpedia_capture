@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Nephilim-Jetfighter",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Nephilim-Jetfighter",
     "canonicalSourceId": "wahapedia:f8a9976b81c75dd703a9cc7de229a18dbc308cf1",
     "faction_slug": "space-marines",
     "datasheet_slug": "Nephilim-Jetfighter",
-    "fetchedAt": "2026-03-19T17:15:11+00:00",
-    "contentHash": "c070b3ab048ab483caa1efa3ae6185befd0b9916a84e9a5a424aac9d66e13e1f",
+    "fetchedAt": "2026-03-21T03:39:47+00:00",
+    "contentHash": "030d67443ea8628924fab60b8cb85575ed0ed84609d119af8b60c68c44e8bdcc",
     "output_slug": "dark-angels"
   },
   "name": "Nephilim Jetfighter",
@@ -87,13 +87,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D3 , Hover FACTION: Oath of Moment Lightning-fast Manoeuvres: Each time a ranged attack targets this model, subtract 1 from the Hit roll . If that attack was made by a model that can Fly , subtract 1 from the Wound roll as well."
+      "Deadly Demise D3 , Hover"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time a ranged attack targets this model, subtract 1 from the Hit roll . If that attack was made by a model that can Fly , subtract 1 from the Wound roll as well.",
+        "name": "Lightning-fast Manoeuvres"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Nephilim Jetfighter"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "avenger mega bolter; blacksword missiles; twin heavy bolter; armoured hull.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -134,14 +153,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D3 , Hover FACTION: Oath of Moment Lightning-fast Manoeuvres: Each time a ranged attack targets this model, subtract 1 from the Hit roll . If that attack was made by a model that can Fly , subtract 1 from the Wound roll as well."
+            "Deadly Demise D3 , Hover"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time a ranged attack targets this model, subtract 1 from the Hit roll . If that attack was made by a model that can Fly , subtract 1 from the Wound roll as well.",
+          "name": "Lightning-fast Manoeuvres"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Nephilim Jetfighter"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "avenger mega bolter; blacksword missiles; twin heavy bolter; armoured hull.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -165,27 +207,10 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
-      "DAMAGED: 1-3 WOUNDS REMAINING",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
+      "DAMAGED: 1-3 WOUNDS REMAINING"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -193,60 +218,8 @@
       "UNIT COMPOSITION",
       "DAMAGED: 1-3 WOUNDS REMAINING"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

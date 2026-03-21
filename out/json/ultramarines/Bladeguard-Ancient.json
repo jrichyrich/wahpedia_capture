@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Bladeguard-Ancient",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Bladeguard-Ancient",
-    "output_slug": "ultramarines",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Bladeguard-Ancient",
     "canonicalSourceId": "wahapedia:b1adc153509b6722f05dd8f8fdb41b7c2e66f338",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "76aeb9c7bfb5d4cf879119acbd37b370b567acdcbfa9f472ef0d6d64e192ac9f"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Bladeguard-Ancient",
+    "fetchedAt": "2026-03-21T03:47:09+00:00",
+    "contentHash": "d4f82eababe48cba75fb624e585e1578b8ef06fa1b7f7f969f57e45c34f6e8ba",
+    "output_slug": "ultramarines"
   },
   "name": "Bladeguard Ancient",
   "base_size": "\u230040mm",
@@ -50,13 +52,37 @@
   },
   "abilities": {
     "core": [
-      "Leader FACTION: Oath of Moment Astartes Banner: While this model is leading a unit, add 1 to the Objective Control characteristic of models in that unit. Deeds of Heroism: Once per battle, when this model is selected to fight, it can use this ability. If it does, until the end of the phase, add 1 to the Attacks characteristic of melee weapons equipped by models in this model\u2019s unit."
+      "Leader"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, add 1 to the Objective Control characteristic of models in that unit.",
+        "name": "Astartes Banner"
+      },
+      {
+        "type": "rule",
+        "text": "Once per battle, when this model is selected to fight, it can use this ability. If it does, until the end of the phase, add 1 to the Attacks characteristic of melee weapons equipped by models in this model\u2019s unit.",
+        "name": "Deeds of Heroism"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Bladeguard Ancient"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "heavy bolt pistol; close combat weapon.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -88,14 +114,42 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Leader FACTION: Oath of Moment Astartes Banner: While this model is leading a unit, add 1 to the Objective Control characteristic of models in that unit. Deeds of Heroism: Once per battle, when this model is selected to fight, it can use this ability. If it does, until the end of the phase, add 1 to the Attacks characteristic of melee weapons equipped by models in this model\u2019s unit."
+            "Leader"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, add 1 to the Objective Control characteristic of models in that unit.",
+          "name": "Astartes Banner"
+        },
+        {
+          "type": "rule",
+          "text": "Once per battle, when this model is selected to fight, it can use this ability. If it does, until the end of the phase, add 1 to the Attacks characteristic of melee weapons equipped by models in this model\u2019s unit.",
+          "name": "Deeds of Heroism"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Bladeguard Ancient"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "heavy bolt pistol; close combat weapon.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -111,16 +165,22 @@
       "title": "LEADER",
       "entries": [
         {
+          "type": "text",
+          "text": "This model can be attached to the following unit:"
+        },
+        {
           "type": "list",
           "items": [
             "Bladeguard Veteran Squad"
           ]
+        },
+        {
+          "type": "text",
+          "text": "You can attach this model to the above unit even if one CAPTAIN , CHAPTER MASTER or LIEUTENANT model has already been attached to it. If you do, and that Bodyguard unit is destroyed, the LEADER units attached to it become separate units, with their original Starting Strengths ."
         }
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
       "ABILITIES",
@@ -133,6 +193,7 @@
       "LEADER"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

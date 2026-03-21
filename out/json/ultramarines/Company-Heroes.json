@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Company-Heroes",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Company-Heroes",
-    "output_slug": "ultramarines",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Company-Heroes",
     "canonicalSourceId": "wahapedia:54c5af985db32130c57bf17cc1e811ae8ba05d23",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "55045ec90eb3f48ac996e15c42bce2f161cc6a07e9e1b23b740b36d7fe3ab252"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Company-Heroes",
+    "fetchedAt": "2026-03-21T03:48:20+00:00",
+    "contentHash": "06636abe73906098177bd6733f3bdeb48bcab87643c0d359270e89a7d4ba58ba",
+    "output_slug": "ultramarines"
   },
   "name": "Company Heroes",
   "base_size": "\u230040mm",
@@ -98,12 +100,61 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Oath of Moment Astartes Banner: While this unit contains an Ancient, add 1 to the Objective Control characteristic of models in this unit. Command Squad: While a CHARACTER model is leading this unit, each time an attack targets this unit, subtract 1 from the Wound roll ."
+      "Oath of Moment"
     ],
-    "datasheet": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this unit contains an Ancient, add 1 to the Objective Control characteristic of models in this unit.",
+        "name": "Astartes Banner"
+      },
+      {
+        "type": "rule",
+        "text": "While a CHARACTER model is leading this unit, each time an attack targets this unit, subtract 1 from the Wound roll .",
+        "name": "Command Squad"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Ancient"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "1 Company Champion"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "2 Company Veterans"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "bolt pistol; bolt rifle; close combat weapon.",
+      "label": "The Ancient is equipped with"
+    },
+    {
+      "type": "statement",
+      "text": "bolt pistol; master-crafted power weapon.",
+      "label": "The Company Champion is equipped with"
+    },
+    {
+      "type": "statement",
+      "text": "bolt pistol; master-crafted heavy bolter; close combat weapon.",
+      "label": "One Company Veteran is equipped with"
+    },
+    {
+      "type": "statement",
+      "text": "bolt pistol; master-crafted bolt rifle; close combat weapon.",
+      "label": "One Company Veteran is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -132,14 +183,62 @@
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Oath of Moment Astartes Banner: While this unit contains an Ancient, add 1 to the Objective Control characteristic of models in this unit. Command Squad: While a CHARACTER model is leading this unit, each time an attack targets this unit, subtract 1 from the Wound roll ."
+            "Oath of Moment"
           ]
+        },
+        {
+          "type": "rule",
+          "text": "While this unit contains an Ancient, add 1 to the Objective Control characteristic of models in this unit.",
+          "name": "Astartes Banner"
+        },
+        {
+          "type": "rule",
+          "text": "While a CHARACTER model is leading this unit, each time an attack targets this unit, subtract 1 from the Wound roll .",
+          "name": "Command Squad"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Ancient"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "1 Company Champion"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "2 Company Veterans"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "bolt pistol; bolt rifle; close combat weapon.",
+          "label": "The Ancient is equipped with"
+        },
+        {
+          "type": "statement",
+          "text": "bolt pistol; master-crafted power weapon.",
+          "label": "The Company Champion is equipped with"
+        },
+        {
+          "type": "statement",
+          "text": "bolt pistol; master-crafted heavy bolter; close combat weapon.",
+          "label": "One Company Veteran is equipped with"
+        },
+        {
+          "type": "statement",
+          "text": "bolt pistol; master-crafted bolt rifle; close combat weapon.",
+          "label": "One Company Veteran is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -161,8 +260,6 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
       "ABILITIES",
@@ -175,6 +272,7 @@
       "COMPANY HEROES"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

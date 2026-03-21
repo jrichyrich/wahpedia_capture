@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Grey-Hunters",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Grey-Hunters",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Grey-Hunters",
     "canonicalSourceId": "wahapedia:a475982beeb0e6f7a99b35bed531bca775e2939c",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "b78a1a387019881c4039e98e6c799bf1739467c3d932537794b853857bb3de67"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Grey-Hunters",
+    "fetchedAt": "2026-03-21T03:44:40+00:00",
+    "contentHash": "3915db5401aa57d632096c51c592656056398218226fcd6c543a4e6d696086c6",
+    "output_slug": "space-wolves"
   },
   "name": "Grey Hunters",
   "base_size": "\u230032mm",
@@ -122,7 +124,12 @@
     {
       "type": "list",
       "items": [
-        "1 Grey Hunter Pack Leader",
+        "1 Grey Hunter Pack Leader"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
         "9 Grey Hunters"
       ]
     },
@@ -155,6 +162,24 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "The Grey Hunter Pack Leader\u2019s bolt carbine can be replaced with 1 plasma pistol.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "The Grey Hunter Pack Leader\u2019s Astartes chainsword can be replaced with one of the following",
+          "items": [
+            "1 power fist",
+            "1 power weapon"
+          ]
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
@@ -177,7 +202,12 @@
         {
           "type": "list",
           "items": [
-            "1 Grey Hunter Pack Leader",
+            "1 Grey Hunter Pack Leader"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
             "9 Grey Hunters"
           ]
         },
@@ -198,18 +228,19 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
     "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

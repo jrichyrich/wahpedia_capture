@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Tarantula-Air-Defence-Battery",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Tarantula-Air-Defence-Battery",
-    "output_slug": "ultramarines",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Tarantula-Air-Defence-Battery",
     "canonicalSourceId": "wahapedia:5bb90058e204ce1cbc5deb9cf9b9a312d194e87a",
-    "fetchedAt": "2026-03-19T17:35:03+00:00",
-    "contentHash": "644060c12b14b56f1bc7dfe45a6e872aec74db06eedd4af4c367111dd37aab75"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Tarantula-Air-Defence-Battery",
+    "fetchedAt": "2026-03-21T03:49:53+00:00",
+    "contentHash": "1dec47dc8ddfc1ac23a08dcd54d1d97527a9f493adf391d12b077485d254bed2",
+    "output_slug": "ultramarines"
   },
   "name": "Tarantula Air Defence Battery",
   "base_size": "\u2300Use model",
@@ -50,13 +52,30 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise 1 Sentry Programming: You can target this model with the Fire Overwatch Stratagem for 0CP, and can do so even if you have already targeted a different unit with that Stratagem this turn. This model can only be targeted with that Stratagem once per turn."
+      "Deadly Demise 1"
     ],
     "faction": [],
-    "datasheet": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "You can target this model with the Fire Overwatch Stratagem for 0CP, and can do so even if you have already targeted a different unit with that Stratagem this turn. This model can only be targeted with that Stratagem once per turn.",
+        "name": "Sentry Programming"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Tarantula Air Defence Battery"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "Tarantula air defence missiles; armoured hull.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -80,10 +99,8 @@
       "title": "WARGEAR OPTIONS",
       "entries": [
         {
-          "type": "list",
-          "items": [
-            "None"
-          ]
+          "type": "text",
+          "text": "None"
         }
       ]
     },
@@ -94,14 +111,30 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise 1 Sentry Programming: You can target this model with the Fire Overwatch Stratagem for 0CP, and can do so even if you have already targeted a different unit with that Stratagem this turn. This model can only be targeted with that Stratagem once per turn."
+            "Deadly Demise 1"
           ]
+        },
+        {
+          "type": "rule",
+          "text": "You can target this model with the Fire Overwatch Stratagem for 0CP, and can do so even if you have already targeted a different unit with that Stratagem this turn. This model can only be targeted with that Stratagem once per turn.",
+          "name": "Sentry Programming"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Tarantula Air Defence Battery"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "Tarantula air defence missiles; armoured hull.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -114,10 +147,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
@@ -127,6 +159,7 @@
       "UNIT COMPOSITION"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

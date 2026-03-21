@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Librarian-In-Phobos-Armour",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Librarian-In-Phobos-Armour",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Librarian-In-Phobos-Armour",
     "canonicalSourceId": "wahapedia:720ecc432b724f395c91b3c8e379bb16e725bca0",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "f7f43f92adc51114b761c472d5e6b31ae6a69b98c59ebb8af7c338756f994e2c"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Librarian-In-Phobos-Armour",
+    "fetchedAt": "2026-03-21T03:43:44+00:00",
+    "contentHash": "7984cbdf7ed1e39a1d72547ef94deff4c7ca7262c588c0a792e49bf42f76ef06",
+    "output_slug": "space-wolves"
   },
   "name": "Librarian In Phobos Armour",
   "base_size": "\u230040mm",
@@ -77,13 +79,37 @@
   },
   "abilities": {
     "core": [
-      "Infiltrators , Leader FACTION: Oath of Moment Psychic Hood: While this model is leading a unit, models in that unit have the Feel No Pain 4+ ability against Psychic Attacks . Shrouding (Psychic): While this model is leading a unit, models in that unit have the Stealth ability and that unit cannot be targeted by ranged attacks unless the attacking model is within 12\"."
+      "Infiltrators , Leader"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, models in that unit have the Feel No Pain 4+ ability against Psychic Attacks .",
+        "name": "Psychic Hood"
+      },
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, models in that unit have the Stealth ability and that unit cannot be targeted by ranged attacks unless the attacking model is within 12\".",
+        "name": "Shrouding (Psychic)"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Librarian in Phobos Armour"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "bolt pistol; Smite; force weapon.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -114,14 +140,42 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Infiltrators , Leader FACTION: Oath of Moment Psychic Hood: While this model is leading a unit, models in that unit have the Feel No Pain 4+ ability against Psychic Attacks . Shrouding (Psychic): While this model is leading a unit, models in that unit have the Stealth ability and that unit cannot be targeted by ranged attacks unless the attacking model is within 12\"."
+            "Infiltrators , Leader"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, models in that unit have the Feel No Pain 4+ ability against Psychic Attacks .",
+          "name": "Psychic Hood"
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, models in that unit have the Stealth ability and that unit cannot be targeted by ranged attacks unless the attacking model is within 12\".",
+          "name": "Shrouding (Psychic)"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Librarian in Phobos Armour"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "bolt pistol; Smite; force weapon.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -137,6 +191,10 @@
       "title": "LEADER",
       "entries": [
         {
+          "type": "text",
+          "text": "This model can be attached to the following units:"
+        },
+        {
           "type": "list",
           "items": [
             "Eliminator Squad",
@@ -150,8 +208,6 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
       "ABILITIES",
@@ -164,6 +220,7 @@
       "LEADER"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

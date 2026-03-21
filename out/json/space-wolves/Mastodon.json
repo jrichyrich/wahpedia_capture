@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Mastodon",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Mastodon",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Mastodon",
     "canonicalSourceId": "wahapedia:aaed0b509864ae747b17fe1c9a5ab22cf52898ab",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "f76f3d25e5575ef4261f300f112fd4bb2f498b98c1eb342c0fc038791a156c6d"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Mastodon",
+    "fetchedAt": "2026-03-21T03:46:25+00:00",
+    "contentHash": "40b1faccee9a2b15f08f7ebd3ac4e6f5cde90c4e216179c936772413fa85645b",
+    "output_slug": "space-wolves"
   },
   "name": "Mastodon",
   "base_size": "\u2300Use model",
@@ -108,13 +110,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise 2D6 FACTION: Oath of Moment Inviolable Transport: Once per battle round , when an attack is allocated to this model, you can change the Damage characteristic of that attack to 0."
+      "Deadly Demise 2D6"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Once per battle round , when an attack is allocated to this model, you can change the Damage characteristic of that attack to 0.",
+        "name": "Inviolable Transport"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Mastodon"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "2 heavy flamers; 2 lascannons; siege melta array; skyreaper battery; armoured tracks.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -167,14 +188,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise 2D6 FACTION: Oath of Moment Inviolable Transport: Once per battle round , when an attack is allocated to this model, you can change the Damage characteristic of that attack to 0."
+            "Deadly Demise 2D6"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Once per battle round , when an attack is allocated to this model, you can change the Damage characteristic of that attack to 0.",
+          "name": "Inviolable Transport"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Mastodon"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "2 heavy flamers; 2 lascannons; siege melta array; skyreaper battery; armoured tracks.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -205,10 +249,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "DAMAGED: 1-10 WOUNDS REMAINING",
@@ -222,6 +265,7 @@
       "TRANSPORT"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

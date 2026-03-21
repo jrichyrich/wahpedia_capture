@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Land-Speeder-Storm",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Land-Speeder-Storm",
-    "output_slug": "ultramarines",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Land-Speeder-Storm",
     "canonicalSourceId": "wahapedia:401c36f3b5c17ef253ea154071979b9c1b2b1380",
-    "fetchedAt": "2026-03-19T17:35:03+00:00",
-    "contentHash": "e89039cc3e111f2133d4feb7f0852a13ae7ffdbaf18a6a6f78f347445fe0a43c"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Land-Speeder-Storm",
+    "fetchedAt": "2026-03-21T03:48:08+00:00",
+    "contentHash": "cf5fba47215c9c4a2b2a6acae1c384a467f2598752450e0999fbbf4d4e4c6641",
+    "output_slug": "ultramarines"
   },
   "name": "Land Speeder Storm",
   "base_size": "\u230060mm flying base",
@@ -61,13 +63,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise 1 , Firing Deck 6 FACTION: Oath of Moment Storm Assault: Each time a unit disembarks from this model after it has made a Normal move , that unit is still eligible to declare a charge this turn."
+      "Deadly Demise 1 , Firing Deck 6"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time a unit disembarks from this model after it has made a Normal move , that unit is still eligible to declare a charge this turn.",
+        "name": "Storm Assault"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Land Speeder Storm"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "Cerberus launcher; heavy bolter; close combat weapon.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -95,10 +116,8 @@
       "title": "WARGEAR OPTIONS",
       "entries": [
         {
-          "type": "list",
-          "items": [
-            "None"
-          ]
+          "type": "text",
+          "text": "None"
         }
       ]
     },
@@ -109,14 +128,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise 1 , Firing Deck 6 FACTION: Oath of Moment Storm Assault: Each time a unit disembarks from this model after it has made a Normal move , that unit is still eligible to declare a charge this turn."
+            "Deadly Demise 1 , Firing Deck 6"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time a unit disembarks from this model after it has made a Normal move , that unit is still eligible to declare a charge this turn.",
+          "name": "Storm Assault"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Land Speeder Storm"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "Cerberus launcher; heavy bolter; close combat weapon.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -138,10 +180,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "TRANSPORT"
@@ -153,6 +194,7 @@
       "TRANSPORT"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Death-Guard-Possessed",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Death-Guard-Possessed",
     "canonicalSourceId": "wahapedia:b376356eca06650f6dc118a627cc714e9e45711e",
     "faction_slug": "death-guard",
     "datasheet_slug": "Death-Guard-Possessed",
-    "fetchedAt": "2026-03-19T17:16:47+00:00",
-    "contentHash": "c09090cff5360b2638db3c91c2f102b02e313e0fb757443c346d15ceea956422",
+    "fetchedAt": "2026-03-21T03:50:31+00:00",
+    "contentHash": "3e5d4baec8e72c6b933b077d77469cd28936f3d86ae9d09356ba13e9870abdc1",
     "output_slug": "death-guard"
   },
   "name": "Death Guard Possessed",
@@ -39,12 +39,34 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Nurgle\u2019s Gift (Aura) Infectious Bloodshed: Each time this unit makes a Charge move , until the end of the turn, weapons equipped by models in this unit have the [SUSTAINED HITS 1] ability."
+      "Nurgle\u2019s Gift (Aura)"
     ],
-    "datasheet": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this unit makes a Charge move , until the end of the turn, weapons equipped by models in this unit have the [SUSTAINED HITS 1] ability.",
+        "name": "Infectious Bloodshed"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Possessed Champion"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "4-9 Possessed"
+      ]
+    },
+    {
+      "type": "text",
+      "text": "Each model is equipped with: hideous mutations."
+    },
     {
       "type": "points",
       "rows": [
@@ -86,8 +108,13 @@
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Nurgle\u2019s Gift (Aura) Infectious Bloodshed: Each time this unit makes a Charge move , until the end of the turn, weapons equipped by models in this unit have the [SUSTAINED HITS 1] ability."
+            "Nurgle\u2019s Gift (Aura)"
           ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this unit makes a Charge move , until the end of the turn, weapons equipped by models in this unit have the [SUSTAINED HITS 1] ability.",
+          "name": "Infectious Bloodshed"
         }
       ]
     },
@@ -95,14 +122,31 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "text",
-          "text": "Diseased Icon: Melee weapons in the bearer\u2019s unit have the [LETHAL HITS] ability."
+          "type": "statement",
+          "text": "Melee weapons in the bearer\u2019s unit have the [LETHAL HITS] ability.",
+          "label": "Diseased Icon"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Possessed Champion"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "4-9 Possessed"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Each model is equipped with: hideous mutations."
+        },
         {
           "type": "points",
           "rows": [
@@ -130,21 +174,11 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION",
-      "POSSESSED",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
+      "POSSESSED"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -153,39 +187,8 @@
       "UNIT COMPOSITION",
       "POSSESSED"
     ],
-    "missingExpectedSections": [
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
-    ],
-    "warnings": [
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Death-Guard-Chaos-Lord-In-Terminator-Armour",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Death-Guard-Chaos-Lord-In-Terminator-Armour",
     "canonicalSourceId": "wahapedia:486623c6790a1ecb45d820194c0068484841bbdf",
     "faction_slug": "death-guard",
     "datasheet_slug": "Death-Guard-Chaos-Lord-In-Terminator-Armour",
-    "fetchedAt": "2026-03-19T17:16:46+00:00",
-    "contentHash": "8803515297a7f4ef900039126202fe2dd44d85007ac467c2b818bca15e6b9497",
+    "fetchedAt": "2026-03-21T03:50:30+00:00",
+    "contentHash": "15b62d87d3be6ec5702a37e472ba1241d75564e3b8d8bfa3121f45d82b5c6fd1",
     "output_slug": "death-guard"
   },
   "name": "Death Guard Chaos Lord In Terminator Armour",
@@ -105,13 +105,37 @@
   },
   "abilities": {
     "core": [
-      "Deep Strike , Leader FACTION: Nurgle\u2019s Gift (Aura) Chaos Lord: While this model is leading a unit, each time a model in that unit makes an attack, re-roll a Hit roll of 1. Desiccation Conduit (Aura): While an enemy unit is within Contagion Range of this model, at the end of the turn, roll one D6: on a 4+, that enemy unit suffers D3 mortal wounds ."
+      "Deep Strike , Leader"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Nurgle\u2019s Gift (Aura)"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, each time a model in that unit makes an attack, re-roll a Hit roll of 1.",
+        "name": "Chaos Lord"
+      },
+      {
+        "type": "rule",
+        "text": "While an enemy unit is within Contagion Range of this model, at the end of the turn, roll one D6: on a 4+, that enemy unit suffers D3 mortal wounds .",
+        "name": "Desiccation Conduit (Aura)"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Death Guard Chaos Lord in Terminator Armour"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "plague combi-bolter; plague-encrusted exalted weapon.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -122,7 +146,14 @@
       ]
     }
   ],
-  "keywords": [],
+  "keywords": [
+    "INFANTRY",
+    "CHARACTER",
+    "CHAOS",
+    "NURGLE",
+    "TERMINATOR",
+    "CHAOS LORD"
+  ],
   "faction_keywords": [],
   "sections": [
     {
@@ -158,14 +189,42 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deep Strike , Leader FACTION: Nurgle\u2019s Gift (Aura) Chaos Lord: While this model is leading a unit, each time a model in that unit makes an attack, re-roll a Hit roll of 1. Desiccation Conduit (Aura): While an enemy unit is within Contagion Range of this model, at the end of the turn, roll one D6: on a 4+, that enemy unit suffers D3 mortal wounds ."
+            "Deep Strike , Leader"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Nurgle\u2019s Gift (Aura)"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, each time a model in that unit makes an attack, re-roll a Hit roll of 1.",
+          "name": "Chaos Lord"
+        },
+        {
+          "type": "rule",
+          "text": "While an enemy unit is within Contagion Range of this model, at the end of the turn, roll one D6: on a 4+, that enemy unit suffers D3 mortal wounds .",
+          "name": "Desiccation Conduit (Aura)"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Death Guard Chaos Lord in Terminator Armour"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "plague combi-bolter; plague-encrusted exalted weapon.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -181,6 +240,10 @@
       "title": "LEADER",
       "entries": [
         {
+          "type": "text",
+          "text": "This model can be attached to the following units:"
+        },
+        {
           "type": "list",
           "items": [
             "Blightlord Terminators",
@@ -192,26 +255,10 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
-      "LEADER",
-      "STRATAGEMS",
-      "ENHANCEMENTS"
+      "LEADER"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -219,57 +266,8 @@
       "UNIT COMPOSITION",
       "LEADER"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "ENHANCEMENTS"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:ENHANCEMENTS",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:ENHANCEMENTS"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 1
   }
 }

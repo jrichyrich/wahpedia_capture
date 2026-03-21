@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Starweaver",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Starweaver",
     "canonicalSourceId": "wahapedia:cf0e6a804b10da9da7ef5503cbc50d8e3f9613da",
     "faction_slug": "drukhari",
     "datasheet_slug": "Starweaver",
-    "fetchedAt": "2026-03-19T17:17:28+00:00",
-    "contentHash": "e59cf472a010936a40039c54718f559c1fc4378a7ebb67796ce80201e904d153",
+    "fetchedAt": "2026-03-21T03:50:37+00:00",
+    "contentHash": "60823b06380fe3c49f78353b9315ee3269365f15c2144089bf56b569634b9368",
     "output_slug": "drukhari"
   },
   "name": "Starweaver",
@@ -52,13 +52,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise 1 , Firing Deck 6 FACTION: Battle Focus , Disparate Paths Rapid Embarkation: At the end of the Fight phase , if there are no models currently embarked within this TRANSPORT , you can select one friendly HARLEQUINS INFANTRY unit that has 6 or fewer models that is wholly within 6\" of this TRANSPORT . Unless that unit is within Engagement Range of one or more enemy units, it can embark within this TRANSPORT ."
+      "Deadly Demise 1 , Firing Deck 6"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Battle Focus , Disparate Paths"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "At the end of the Fight phase , if there are no models currently embarked within this TRANSPORT , you can select one friendly HARLEQUINS INFANTRY unit that has 6 or fewer models that is wholly within 6\" of this TRANSPORT . Unless that unit is within Engagement Range of one or more enemy units, it can embark within this TRANSPORT .",
+        "name": "Rapid Embarkation"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Starweaver"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "2 shuriken cannons; close combat weapon.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -89,14 +108,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise 1 , Firing Deck 6 FACTION: Battle Focus , Disparate Paths Rapid Embarkation: At the end of the Fight phase , if there are no models currently embarked within this TRANSPORT , you can select one friendly HARLEQUINS INFANTRY unit that has 6 or fewer models that is wholly within 6\" of this TRANSPORT . Unless that unit is within Engagement Range of one or more enemy units, it can embark within this TRANSPORT ."
+            "Deadly Demise 1 , Firing Deck 6"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Battle Focus , Disparate Paths"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "At the end of the Fight phase , if there are no models currently embarked within this TRANSPORT , you can select one friendly HARLEQUINS INFANTRY unit that has 6 or fewer models that is wholly within 6\" of this TRANSPORT . Unless that unit is within Engagement Range of one or more enemy units, it can embark within this TRANSPORT .",
+          "name": "Rapid Embarkation"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Starweaver"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "2 shuriken cannons; close combat weapon.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -120,82 +162,17 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "ABILITIES",
       "UNIT COMPOSITION",
-      "TRANSPORT",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
+      "TRANSPORT"
     ],
     "exportedSectionTitles": [
       "ABILITIES",
       "UNIT COMPOSITION",
       "TRANSPORT"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

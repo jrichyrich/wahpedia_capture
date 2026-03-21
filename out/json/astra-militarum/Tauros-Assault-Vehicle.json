@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Tauros-Assault-Vehicle",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Tauros-Assault-Vehicle",
     "canonicalSourceId": "wahapedia:47dac69c11a974d974e32a83b7a65fa98dea509b",
     "faction_slug": "astra-militarum",
     "datasheet_slug": "Tauros-Assault-Vehicle",
-    "fetchedAt": "2026-03-19T17:12:24+00:00",
-    "contentHash": "53d4447d82cc8f9c93057688d535e688a97c3ece506e17359416654141a4b5b8",
+    "fetchedAt": "2026-03-21T03:37:40+00:00",
+    "contentHash": "4762e80a131f6c7a7e23b3ae76180ac1bcb8914f42ca65a7e6662d442f8dcb3e",
     "output_slug": "astra-militarum"
   },
   "name": "Tauros Assault Vehicle",
@@ -84,13 +84,30 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise 1 , Scouts 9\" Turbo-boost: Each time this model Advances, do not make an Advance roll for it. Instead, until the end of the phase, add 6\" to the Move characteristic of this model."
+      "Deadly Demise 1 , Scouts 9\""
     ],
     "faction": [],
-    "datasheet": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this model Advances, do not make an Advance roll for it. Instead, until the end of the phase, add 6\" to the Move characteristic of this model.",
+        "name": "Turbo-boost"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Tauros Assault Vehicle"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "heavy flamer; armoured frame.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -134,14 +151,30 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise 1 , Scouts 9\" Turbo-boost: Each time this model Advances, do not make an Advance roll for it. Instead, until the end of the phase, add 6\" to the Move characteristic of this model."
+            "Deadly Demise 1 , Scouts 9\""
           ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model Advances, do not make an Advance roll for it. Instead, until the end of the phase, add 6\" to the Move characteristic of this model.",
+          "name": "Turbo-boost"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Tauros Assault Vehicle"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "heavy flamer; armoured frame.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -156,82 +189,17 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
-      "UNIT COMPOSITION",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
+      "UNIT COMPOSITION"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

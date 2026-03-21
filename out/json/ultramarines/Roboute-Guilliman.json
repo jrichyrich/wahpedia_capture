@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Roboute-Guilliman",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Roboute-Guilliman",
-    "output_slug": "ultramarines",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Roboute-Guilliman",
     "canonicalSourceId": "wahapedia:ea49cb5ee5b82fdc2a8e7c63670310ec41796ff4",
-    "fetchedAt": "2026-03-19T17:35:03+00:00",
-    "contentHash": "f73da59ebb1432e4d691943afbb3e21a42ab4897756be0fe03908dc1b27fd720"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Roboute-Guilliman",
+    "fetchedAt": "2026-03-21T03:47:40+00:00",
+    "contentHash": "0a795a9db8616679e17c3c7f380a4d58b186a1c0869a6f24307391b9b9237d8e",
+    "output_slug": "ultramarines"
   },
   "name": "Roboute Guilliman",
   "base_size": "\u230060mm",
@@ -122,6 +124,26 @@
   ],
   "sections": [
     {
+      "title": "AUTHOR OF THE CODEX",
+      "entries": [
+        {
+          "type": "statement",
+          "text": "While a friendly ADEPTUS ASTARTES unit is within 6\" of this model, add 1 to the Objective Control characteristic of models in that unit and you can re-roll Battle-shock and Leadership tests taken for that unit.",
+          "label": "Primarch of the XIII (Aura)"
+        },
+        {
+          "type": "statement",
+          "text": "At the start of your Command phase , after you have selected your Oath of Moment target, select a second enemy unit. Until the start of your next Command phase, if your Oath of Moment target is destroyed , that second enemy unit becomes your Oath of Moment target until you select a new one.",
+          "label": "Master of Battle"
+        },
+        {
+          "type": "statement",
+          "text": "Once per battle round , one unit from your army with this ability can use it when a friendly ADEPTUS ASTARTES unit within 12\" of that model is targeted with a Stratagem . If it does, reduce the CP cost of that usage of that Stratagem by 1CP.",
+          "label": "Supreme Strategist"
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
@@ -183,20 +205,21 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "AUTHOR OF THE CODEX",
       "ABILITIES",
       "UNIT COMPOSITION",
       "SUPREME COMMANDER"
     ],
     "exportedSectionTitles": [
+      "AUTHOR OF THE CODEX",
       "ABILITIES",
       "UNIT COMPOSITION",
       "SUPREME COMMANDER"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Yvraine",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Yvraine",
     "canonicalSourceId": "wahapedia:513fdca591c099b15b43927d5380339a4af53458",
     "faction_slug": "aeldari",
     "datasheet_slug": "Yvraine",
-    "fetchedAt": "2026-03-19T17:11:09+00:00",
-    "contentHash": "e424b840bc352100bf7db7e0e51356967f3574b1120388448f8715f4512962e2",
+    "fetchedAt": "2026-03-21T03:36:32+00:00",
+    "contentHash": "3b5b810be16e683c4a481738eb41b1be55ad46c1dbfabae2614d7fdbf53cca5e",
     "output_slug": "aeldari"
   },
   "name": "Yvraine",
@@ -56,13 +56,37 @@
   },
   "abilities": {
     "core": [
-      "Leader FACTION: Battle Focus , Disparate Paths Word of the Phoenix (Psychic): While this model is leading a unit, in your Command phase , roll one D6: on a 2+, D3+1 destroyed Bodyguard models (excluding SUPPORT WEAPON models) are returned to that unit with their full wounds remaining. Herald of Ynnead: At the start of the Fight phase , select one enemy unit within Engagement Range of this model. Until the end of the phase, each time a friendly AELDARI model makes an attack that targets that unit, you can re-roll a Wound roll of 1."
+      "Leader"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Battle Focus , Disparate Paths"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, in your Command phase , roll one D6: on a 2+, D3+1 destroyed Bodyguard models (excluding SUPPORT WEAPON models) are returned to that unit with their full wounds remaining.",
+        "name": "Word of the Phoenix (Psychic)"
+      },
+      {
+        "type": "rule",
+        "text": "At the start of the Fight phase , select one enemy unit within Engagement Range of this model. Until the end of the phase, each time a friendly AELDARI model makes an attack that targets that unit, you can re-roll a Wound roll of 1.",
+        "name": "Herald of Ynnead"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Yvraine \u2013 EPIC HERO"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "Storm of Whispers; Kha-vir.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -101,14 +125,42 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Leader FACTION: Battle Focus , Disparate Paths Word of the Phoenix (Psychic): While this model is leading a unit, in your Command phase , roll one D6: on a 2+, D3+1 destroyed Bodyguard models (excluding SUPPORT WEAPON models) are returned to that unit with their full wounds remaining. Herald of Ynnead: At the start of the Fight phase , select one enemy unit within Engagement Range of this model. Until the end of the phase, each time a friendly AELDARI model makes an attack that targets that unit, you can re-roll a Wound roll of 1."
+            "Leader"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Battle Focus , Disparate Paths"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, in your Command phase , roll one D6: on a 2+, D3+1 destroyed Bodyguard models (excluding SUPPORT WEAPON models) are returned to that unit with their full wounds remaining.",
+          "name": "Word of the Phoenix (Psychic)"
+        },
+        {
+          "type": "rule",
+          "text": "At the start of the Fight phase , select one enemy unit within Engagement Range of this model. Until the end of the phase, each time a friendly AELDARI model makes an attack that targets that unit, you can re-roll a Wound roll of 1.",
+          "name": "Herald of Ynnead"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Yvraine \u2013 EPIC HERO"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "Storm of Whispers; Kha-vir.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -123,6 +175,10 @@
     {
       "title": "LEADER",
       "entries": [
+        {
+          "type": "text",
+          "text": "This model can be attached to the following units:"
+        },
         {
           "type": "list",
           "items": [
@@ -140,26 +196,10 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "SERVANT OF THE WHISPERING GOD",
       "ABILITIES",
       "UNIT COMPOSITION",
-      "LEADER",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
+      "LEADER"
     ],
     "exportedSectionTitles": [
       "SERVANT OF THE WHISPERING GOD",
@@ -167,57 +207,8 @@
       "UNIT COMPOSITION",
       "LEADER"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

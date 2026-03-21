@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Mortis-Dreadnought",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Mortis-Dreadnought",
-    "output_slug": "ultramarines",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Mortis-Dreadnought",
     "canonicalSourceId": "wahapedia:ec865ef32aa418edd43be04e69ee6ce9273d64ec",
-    "fetchedAt": "2026-03-19T17:35:03+00:00",
-    "contentHash": "e7e5c6b83c172085818da0eec2697be58f0c3af6a421efbb3bd73e4edfd1dfc1"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Mortis-Dreadnought",
+    "fetchedAt": "2026-03-21T03:49:35+00:00",
+    "contentHash": "92e8c1d455012bc6c328e1c95c94a99301676d747a8aaa704926d748d57f79fc",
+    "output_slug": "ultramarines"
   },
   "name": "Mortis Dreadnought",
   "base_size": "\u230060mm",
@@ -158,13 +160,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise 1 FACTION: Oath of Moment Mortis Strike: Each time this model makes a ranged attack that targets a unit that is not Below Half-strength , you can re-roll the Hit roll ."
+      "Deadly Demise 1"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this model makes a ranged attack that targets a unit that is not Below Half-strength , you can re-roll the Hit roll .",
+        "name": "Mortis Strike"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Mortis Dreadnought"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "2 twin heavy bolters; armoured feet.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -212,14 +233,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise 1 FACTION: Oath of Moment Mortis Strike: Each time this model makes a ranged attack that targets a unit that is not Below Half-strength , you can re-roll the Hit roll ."
+            "Deadly Demise 1"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model makes a ranged attack that targets a unit that is not Below Half-strength , you can re-roll the Hit roll .",
+          "name": "Mortis Strike"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Mortis Dreadnought"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "2 twin heavy bolters; armoured feet.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -232,10 +276,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
@@ -245,6 +288,7 @@
       "UNIT COMPOSITION"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

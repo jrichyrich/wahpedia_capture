@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Dreadnought-Drop-Pod",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Dreadnought-Drop-Pod",
     "canonicalSourceId": "wahapedia:e85ccd9b762b90e8b8c086592416fbb1db6658a6",
     "faction_slug": "space-marines",
     "datasheet_slug": "Dreadnought-Drop-Pod",
-    "fetchedAt": "2026-03-19T17:31:18+00:00",
-    "contentHash": "4225d02cc18793bf9b86e267ee88bc5753ba3724fcfbb2e6e3bfc03983d89f86",
+    "fetchedAt": "2026-03-21T03:42:39+00:00",
+    "contentHash": "69e5f019b947111d6153bc12645374570f63cdfe0037f9ab69b36bb5c12a97fe",
     "output_slug": "space-marines"
   },
   "name": "Dreadnought Drop Pod",
@@ -24,13 +24,32 @@
   "weapons": {},
   "abilities": {
     "core": [
-      "Deadly Demise 1 , Deep Strike FACTION: Oath of Moment Drop Pod Assault: This model must start the battle in Reserves , but neither it nor any units embarked within it are counted towards any limits placed on the maximum number of Reserves units you can start the battle with. This model can be set up in the Reinforcements step of your first, second or third Movement phase , regardless of any mission rules. Any units embarked within this model must immediately disembark after it has been set up on the battlefield, and they must be set up more than 9\" away from all enemy models. After this model has been set up on the battlefield, no units can embark within it."
+      "Deadly Demise 1 , Deep Strike"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "This model must start the battle in Reserves , but neither it nor any units embarked within it are counted towards any limits placed on the maximum number of Reserves units you can start the battle with. This model can be set up in the Reinforcements step of your first, second or third Movement phase , regardless of any mission rules. Any units embarked within this model must immediately disembark after it has been set up on the battlefield, and they must be set up more than 9\" away from all enemy models. After this model has been set up on the battlefield, no units can embark within it.",
+        "name": "Drop Pod Assault"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Dreadnought Drop Pod"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "nothing.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -58,14 +77,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise 1 , Deep Strike FACTION: Oath of Moment Drop Pod Assault: This model must start the battle in Reserves , but neither it nor any units embarked within it are counted towards any limits placed on the maximum number of Reserves units you can start the battle with. This model can be set up in the Reinforcements step of your first, second or third Movement phase , regardless of any mission rules. Any units embarked within this model must immediately disembark after it has been set up on the battlefield, and they must be set up more than 9\" away from all enemy models. After this model has been set up on the battlefield, no units can embark within it."
+            "Deadly Demise 1 , Deep Strike"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "This model must start the battle in Reserves , but neither it nor any units embarked within it are counted towards any limits placed on the maximum number of Reserves units you can start the battle with. This model can be set up in the Reinforcements step of your first, second or third Movement phase , regardless of any mission rules. Any units embarked within this model must immediately disembark after it has been set up on the battlefield, and they must be set up more than 9\" away from all enemy models. After this model has been set up on the battlefield, no units can embark within it.",
+          "name": "Drop Pod Assault"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Dreadnought Drop Pod"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "nothing.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -89,34 +131,17 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
-      "TRANSPORT",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
+      "TRANSPORT"
     ],
     "exportedSectionTitles": [
       "ABILITIES",
       "UNIT COMPOSITION",
       "TRANSPORT"
     ],
-    "missingExpectedSections": [
-      "WARGEAR OPTIONS",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
-    ],
-    "warnings": [
-      "section-missing:WARGEAR OPTIONS",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS",
-      "section-missing:WARGEAR OPTIONS",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Thunderhawk-Transporter",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Thunderhawk-Transporter",
-    "output_slug": "ultramarines",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Thunderhawk-Transporter",
     "canonicalSourceId": "wahapedia:ead7c1947f60d0ceb693607bccd8d1e30a0080e9",
-    "fetchedAt": "2026-03-19T17:35:03+00:00",
-    "contentHash": "f5adf323167a39129d7594690389ae555572961c9b180d4181bb3a81ffbfce4d"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Thunderhawk-Transporter",
+    "fetchedAt": "2026-03-21T03:49:58+00:00",
+    "contentHash": "9bce4c6902957297e43fed56098f3da5ba07b2e2380f2e6cb544702fd1c00a52",
+    "output_slug": "ultramarines"
   },
   "name": "Thunderhawk Transporter",
   "base_size": "\u2300120 x 92mm",
@@ -62,13 +64,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D6+2 , Hover FACTION: Oath of Moment Aerial Deployment: If this model starts the game in Hover mode and in Strategic Reserves , it can be set up in the Reinforcements step of your first, second or third Movement phase , regardless of any mission rules."
+      "Deadly Demise D6+2 , Hover"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "If this model starts the game in Hover mode and in Strategic Reserves , it can be set up in the Reinforcements step of your first, second or third Movement phase , regardless of any mission rules.",
+        "name": "Aerial Deployment"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Thunderhawk Transporter"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "hellstrike missile battery; 4 twin heavy bolters; armoured hull.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -97,10 +118,8 @@
       "title": "WARGEAR OPTIONS",
       "entries": [
         {
-          "type": "list",
-          "items": [
-            "None"
-          ]
+          "type": "text",
+          "text": "None"
         }
       ]
     },
@@ -111,14 +130,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D6+2 , Hover FACTION: Oath of Moment Aerial Deployment: If this model starts the game in Hover mode and in Strategic Reserves , it can be set up in the Reinforcements step of your first, second or third Movement phase , regardless of any mission rules."
+            "Deadly Demise D6+2 , Hover"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "If this model starts the game in Hover mode and in Strategic Reserves , it can be set up in the Reinforcements step of your first, second or third Movement phase , regardless of any mission rules.",
+          "name": "Aerial Deployment"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Thunderhawk Transporter"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "hellstrike missile battery; 4 twin heavy bolters; armoured hull.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -149,10 +191,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "DAMAGED: 1-10 WOUNDS REMAINING",
@@ -166,6 +207,7 @@
       "TRANSPORT"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

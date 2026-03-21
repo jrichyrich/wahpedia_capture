@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Long-Fangs",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Long-Fangs",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Long-Fangs",
     "canonicalSourceId": "wahapedia:61a1df50eaf7bb64cdf52ab9d9f4bcd8b2847463",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "c140bca475c3ecbed02f3269df39da61417b2b8634cfd8913be9c0ffc401eca4"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Long-Fangs",
+    "fetchedAt": "2026-03-21T03:46:24+00:00",
+    "contentHash": "34d50c6d26c2d90c8e44054429e666017269282158c44306cb36635f9a5e5e4c",
+    "output_slug": "space-wolves"
   },
   "name": "Long Fangs",
   "base_size": "\u230032mm",
@@ -318,7 +320,12 @@
     {
       "type": "list",
       "items": [
-        "1 Long Fang Pack Leader",
+        "1 Long Fang Pack Leader"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
         "4-5 Long Fangs"
       ]
     },
@@ -353,6 +360,44 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "Any number of Long Fangs can each have their boltgun replaced with one of the following:",
+          "items": [
+            "1 grav-cannon",
+            "1 heavy bolter",
+            "1 heavy flamer",
+            "1 lascannon",
+            "1 missile launcher",
+            "1 multi-melta",
+            "1 plasma cannon"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "The Long Fang Pack Leader\u2019s boltgun can be replace with one of the following",
+          "items": [
+            "1 flamer",
+            "1 grav-gun",
+            "1 meltagun",
+            "1 plasma gun",
+            "1 plasma pistol"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "The Long Fang Pack Leader\u2019s close combat weapon can be replaced with one of the following:",
+          "items": [
+            "1 Astartes chainsword",
+            "1 power fist",
+            "1 power weapon"
+          ]
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
@@ -385,7 +430,12 @@
         {
           "type": "list",
           "items": [
-            "1 Long Fang Pack Leader",
+            "1 Long Fang Pack Leader"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
             "4-5 Long Fangs"
           ]
         },
@@ -419,20 +469,21 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "ATTACHED UNIT"
     ],
     "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "ATTACHED UNIT"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

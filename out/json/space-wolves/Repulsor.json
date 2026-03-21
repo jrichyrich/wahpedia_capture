@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Repulsor",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Repulsor",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Repulsor",
     "canonicalSourceId": "wahapedia:fde54aa65c699365b7d9be9a96e896aa5a128292",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "d5dc95d6e2f6ae964a11c548871160c77bb2f27164e4fa7b0691649f05735548"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Repulsor",
+    "fetchedAt": "2026-03-21T03:45:21+00:00",
+    "contentHash": "014ef7b8e35b8e0b8e66e461a350d2dc64fd506bb871cecd48452cebfa25340b",
+    "output_slug": "space-wolves"
   },
   "name": "Repulsor",
   "base_size": "\u2300100mm",
@@ -106,13 +108,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D6 FACTION: Oath of Moment Emergency Combat Embarkation: Once per turn, in your opponent\u2019s Charge phase , after an enemy unit has selected targets for its charge but before it makes a Charge move, you can select one ADEPTUS ASTARTES unit from your army that was selected as a target of that charge. Provided that unit is not within Engagement Range of one or more enemy units and every model in that unit is within 3\" of this TRANSPORT , it can embark within this TRANSPORT . The charging unit can then select new targets for its charge."
+      "Deadly Demise D6"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Once per turn, in your opponent\u2019s Charge phase , after an enemy unit has selected targets for its charge but before it makes a Charge move, you can select one ADEPTUS ASTARTES unit from your army that was selected as a target of that charge. Provided that unit is not within Engagement Range of one or more enemy units and every model in that unit is within 3\" of this TRANSPORT , it can embark within this TRANSPORT . The charging unit can then select new targets for its charge.",
+        "name": "Emergency Combat Embarkation"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Repulsor"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "heavy onslaught gatling cannon; hunter-slayer missile; Repulsor defensive array; twin heavy bolter; armoured hull.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -157,14 +178,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D6 FACTION: Oath of Moment Emergency Combat Embarkation: Once per turn, in your opponent\u2019s Charge phase , after an enemy unit has selected targets for its charge but before it makes a Charge move, you can select one ADEPTUS ASTARTES unit from your army that was selected as a target of that charge. Provided that unit is not within Engagement Range of one or more enemy units and every model in that unit is within 3\" of this TRANSPORT , it can embark within this TRANSPORT . The charging unit can then select new targets for its charge."
+            "Deadly Demise D6"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Once per turn, in your opponent\u2019s Charge phase , after an enemy unit has selected targets for its charge but before it makes a Charge move, you can select one ADEPTUS ASTARTES unit from your army that was selected as a target of that charge. Provided that unit is not within Engagement Range of one or more enemy units and every model in that unit is within 3\" of this TRANSPORT , it can embark within this TRANSPORT . The charging unit can then select new targets for its charge.",
+          "name": "Emergency Combat Embarkation"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Repulsor"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "heavy onslaught gatling cannon; hunter-slayer missile; Repulsor defensive array; twin heavy bolter; armoured hull.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -195,10 +239,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "DAMAGED: 1-5 WOUNDS REMAINING",
@@ -212,6 +255,7 @@
       "TRANSPORT"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

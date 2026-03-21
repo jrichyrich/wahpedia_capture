@@ -4,7 +4,7 @@ from urllib.parse import urlsplit, urlunsplit
 
 
 EXPORT_SCHEMA_VERSION = 1
-PARSER_VERSION = "2026-03-19-durable-normalization-v1"
+PARSER_VERSION = "2026-03-20-builder-fidelity-v2"
 
 
 def normalize_source_url(url: str) -> str:
@@ -54,13 +54,22 @@ def default_quality(
     exported_titles_list: list[str],
     warnings: list[str] | None = None,
 ) -> dict[str, object]:
-    warning_list = list(warnings or [])
-    missing = missing_expected_sections(raw_titles, exported_titles_list)
+    normalized_raw_titles = list(dict.fromkeys(title for title in raw_titles if str(title).strip()))
+    normalized_exported_titles = list(
+        dict.fromkeys(title for title in exported_titles_list if str(title).strip())
+    )
+    warning_list: list[str] = []
+    for warning in warnings or []:
+        if warning not in warning_list:
+            warning_list.append(warning)
+    missing = missing_expected_sections(normalized_raw_titles, normalized_exported_titles)
     for title in missing:
-        warning_list.append(f"section-missing:{title}")
+        warning = f"section-missing:{title}"
+        if warning not in warning_list:
+            warning_list.append(warning)
     return {
-        "rawSectionTitles": raw_titles,
-        "exportedSectionTitles": exported_titles_list,
+        "rawSectionTitles": normalized_raw_titles,
+        "exportedSectionTitles": normalized_exported_titles,
         "missingExpectedSections": missing,
         "warnings": warning_list,
     }

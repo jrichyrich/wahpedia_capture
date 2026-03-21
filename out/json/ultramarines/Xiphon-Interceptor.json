@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Xiphon-Interceptor",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Xiphon-Interceptor",
-    "output_slug": "ultramarines",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Xiphon-Interceptor",
     "canonicalSourceId": "wahapedia:e996925bc5bc3900baee8e388dda49fceb01fb6f",
-    "fetchedAt": "2026-03-19T17:35:03+00:00",
-    "contentHash": "9a96e5152974b58698ac41ae310b318b6b3c467da7e9566a482e25aa0b98c85a"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Xiphon-Interceptor",
+    "fetchedAt": "2026-03-21T03:50:07+00:00",
+    "contentHash": "afcbac035ea0fc1033bfc43d0db13ad0b62ec610689637cfedab1c3741a981ab",
+    "output_slug": "ultramarines"
   },
   "name": "Xiphon Interceptor",
   "base_size": "\u2300120 x 92mm flying base",
@@ -61,13 +63,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D3 FACTION: Oath of Moment Interceptor: Each time this model makes a ranged attack that targets a unit that can Fly , add 1 to the Hit roll ."
+      "Deadly Demise D3"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this model makes a ranged attack that targets a unit that can Fly , add 1 to the Hit roll .",
+        "name": "Interceptor"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Xiphon Interceptor"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "2 twin lascannons; Xiphon missile battery; armoured hull.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -94,10 +115,8 @@
       "title": "WARGEAR OPTIONS",
       "entries": [
         {
-          "type": "list",
-          "items": [
-            "None"
-          ]
+          "type": "text",
+          "text": "None"
         }
       ]
     },
@@ -108,14 +127,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D3 FACTION: Oath of Moment Interceptor: Each time this model makes a ranged attack that targets a unit that can Fly , add 1 to the Hit roll ."
+            "Deadly Demise D3"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model makes a ranged attack that targets a unit that can Fly , add 1 to the Hit roll .",
+          "name": "Interceptor"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Xiphon Interceptor"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "2 twin lascannons; Xiphon missile battery; armoured hull.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -137,10 +179,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "DAMAGED: 1-4 WOUNDS REMAINING"
@@ -152,6 +193,7 @@
       "DAMAGED: 1-4 WOUNDS REMAINING"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

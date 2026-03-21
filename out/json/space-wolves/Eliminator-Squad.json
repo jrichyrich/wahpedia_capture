@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Eliminator-Squad",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Eliminator-Squad",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Eliminator-Squad",
     "canonicalSourceId": "wahapedia:cfbe92380f6ad8d127bbcd81365078a33709d0d1",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "c3d25247d9361a20bc4d5450369df62a7b251c9057a55f7a3c083607d60fbc61"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Eliminator-Squad",
+    "fetchedAt": "2026-03-21T03:45:00+00:00",
+    "contentHash": "fa5fcf37a144eb47a1509f46278192d983890510ae76348c2fa61b378613ebef",
+    "output_slug": "space-wolves"
   },
   "name": "Eliminator Squad",
   "base_size": "\u230040mm",
@@ -86,13 +88,43 @@
   },
   "abilities": {
     "core": [
-      "Infiltrators , Stealth FACTION: Oath of Moment Reposition Under Covering Fire: In your Shooting phase , after this unit has shot, if it contains an Eliminator Sergeant equipped with an instigator bolt carbine, this unit can make a Normal move . If it does so, until the end of the turn, this unit is not eligible to declare a charge . Mark the Target: Each time this unit Remains Stationary , until the start of your next Movement phase , ranged weapons equipped by models in this unit have the [DEVASTATING WOUNDS] ability."
+      "Infiltrators , Stealth"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "In your Shooting phase , after this unit has shot, if it contains an Eliminator Sergeant equipped with an instigator bolt carbine, this unit can make a Normal move . If it does so, until the end of the turn, this unit is not eligible to declare a charge .",
+        "name": "Reposition Under Covering Fire"
+      },
+      {
+        "type": "rule",
+        "text": "Each time this unit Remains Stationary , until the start of your next Movement phase , ranged weapons equipped by models in this unit have the [DEVASTATING WOUNDS] ability.",
+        "name": "Mark the Target"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Eliminator Sergeant"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "2 Eliminators"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "bolt pistol; bolt sniper rifle; close combat weapon.",
+      "label": "Every model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -139,14 +171,48 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Infiltrators , Stealth FACTION: Oath of Moment Reposition Under Covering Fire: In your Shooting phase , after this unit has shot, if it contains an Eliminator Sergeant equipped with an instigator bolt carbine, this unit can make a Normal move . If it does so, until the end of the turn, this unit is not eligible to declare a charge . Mark the Target: Each time this unit Remains Stationary , until the start of your next Movement phase , ranged weapons equipped by models in this unit have the [DEVASTATING WOUNDS] ability."
+            "Infiltrators , Stealth"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "In your Shooting phase , after this unit has shot, if it contains an Eliminator Sergeant equipped with an instigator bolt carbine, this unit can make a Normal move . If it does so, until the end of the turn, this unit is not eligible to declare a charge .",
+          "name": "Reposition Under Covering Fire"
+        },
+        {
+          "type": "rule",
+          "text": "Each time this unit Remains Stationary , until the start of your next Movement phase , ranged weapons equipped by models in this unit have the [DEVASTATING WOUNDS] ability.",
+          "name": "Mark the Target"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Eliminator Sergeant"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "2 Eliminators"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "bolt pistol; bolt sniper rifle; close combat weapon.",
+          "label": "Every model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -159,10 +225,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
@@ -172,6 +237,7 @@
       "UNIT COMPOSITION"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

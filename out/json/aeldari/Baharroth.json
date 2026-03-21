@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Baharroth",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Baharroth",
     "canonicalSourceId": "wahapedia:a8fab5e12d6a88c46cddd9a8352f5e15ef2cb286",
     "faction_slug": "aeldari",
     "datasheet_slug": "Baharroth",
-    "fetchedAt": "2026-03-19T17:11:02+00:00",
-    "contentHash": "1b6ad6ac0c1cb9a9b917fb9c29d1ed213e852f2d3f9966d196c0c8189d26027d",
+    "fetchedAt": "2026-03-21T03:36:25+00:00",
+    "contentHash": "cdbf7eb2b15cdeef9affd6cff7fdcd2a0ce50dab28997904504a58738b69ba18",
     "output_slug": "aeldari"
   },
   "name": "Baharroth",
@@ -55,13 +55,37 @@
   },
   "abilities": {
     "core": [
-      "Deep Strike , Leader FACTION: Battle Focus Cloudstrider: While this model is leading a unit, at the end of your opponent\u2019s turn, if that unit is not within Engagement Range of one or more enemy units, you can remove it from the battlefield and place it into Strategic Reserves . In addition, while this model is leading a unit, when that unit is set up on the battlefield using the Deep Strike ability, in your movement phase , it can use this ability. If it does, that unit can be set up anywhere on the battlefield that is more than 6\" horizontally away from all enemy models, but until the end of the turn, it is not eligible to declare a charge .\u2019 Cry of the Wind: Each time this model is set up on the battlefield, until the end of the turn, each time this model makes a ranged attack, a successful unmodified Hit roll scores a Critical Hit ."
+      "Deep Strike , Leader"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Battle Focus"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, at the end of your opponent\u2019s turn, if that unit is not within Engagement Range of one or more enemy units, you can remove it from the battlefield and place it into Strategic Reserves . In addition, while this model is leading a unit, when that unit is set up on the battlefield using the Deep Strike ability, in your movement phase , it can use this ability. If it does, that unit can be set up anywhere on the battlefield that is more than 6\" horizontally away from all enemy models, but until the end of the turn, it is not eligible to declare a charge .\u2019",
+        "name": "Cloudstrider"
+      },
+      {
+        "type": "rule",
+        "text": "Each time this model is set up on the battlefield, until the end of the turn, each time this model makes a ranged attack, a successful unmodified Hit roll scores a Critical Hit .",
+        "name": "Cry of the Wind"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Baharroth \u2013 EPIC HERO"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "Fury of the Tempest; Shining Blade.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -95,14 +119,42 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deep Strike , Leader FACTION: Battle Focus Cloudstrider: While this model is leading a unit, at the end of your opponent\u2019s turn, if that unit is not within Engagement Range of one or more enemy units, you can remove it from the battlefield and place it into Strategic Reserves . In addition, while this model is leading a unit, when that unit is set up on the battlefield using the Deep Strike ability, in your movement phase , it can use this ability. If it does, that unit can be set up anywhere on the battlefield that is more than 6\" horizontally away from all enemy models, but until the end of the turn, it is not eligible to declare a charge .\u2019 Cry of the Wind: Each time this model is set up on the battlefield, until the end of the turn, each time this model makes a ranged attack, a successful unmodified Hit roll scores a Critical Hit ."
+            "Deep Strike , Leader"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Battle Focus"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, at the end of your opponent\u2019s turn, if that unit is not within Engagement Range of one or more enemy units, you can remove it from the battlefield and place it into Strategic Reserves . In addition, while this model is leading a unit, when that unit is set up on the battlefield using the Deep Strike ability, in your movement phase , it can use this ability. If it does, that unit can be set up anywhere on the battlefield that is more than 6\" horizontally away from all enemy models, but until the end of the turn, it is not eligible to declare a charge .\u2019",
+          "name": "Cloudstrider"
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model is set up on the battlefield, until the end of the turn, each time this model makes a ranged attack, a successful unmodified Hit roll scores a Critical Hit .",
+          "name": "Cry of the Wind"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Baharroth \u2013 EPIC HERO"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "Fury of the Tempest; Shining Blade.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -118,6 +170,10 @@
       "title": "LEADER",
       "entries": [
         {
+          "type": "text",
+          "text": "This model can be attached to the following unit:"
+        },
+        {
           "type": "list",
           "items": [
             "Swooping Hawks"
@@ -128,82 +184,17 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "ABILITIES",
       "UNIT COMPOSITION",
-      "LEADER",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
+      "LEADER"
     ],
     "exportedSectionTitles": [
       "ABILITIES",
       "UNIT COMPOSITION",
       "LEADER"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

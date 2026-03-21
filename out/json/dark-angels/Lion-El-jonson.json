@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Lion-El-jonson",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Lion-El-jonson",
     "canonicalSourceId": "wahapedia:f6913f519403b5b486ce2fcc32b59ab7d03735b6",
     "faction_slug": "space-marines",
     "datasheet_slug": "Lion-El-jonson",
-    "fetchedAt": "2026-03-19T17:23:18+00:00",
-    "contentHash": "e70cdfe3aed2893837baa5da52359cbb4d81520b28a8d47dd6c786cc93da8df2",
+    "fetchedAt": "2026-03-21T03:38:21+00:00",
+    "contentHash": "169250e9f0fca9c5381929622cf179ca88703c2fd523aa3fdcfffc4b913ca24e",
     "output_slug": "dark-angels"
   },
   "name": "Lion El\u2019jonson",
@@ -78,13 +78,42 @@
   },
   "abilities": {
     "core": [
-      "Deep Strike , Fights First FACTION: Oath of Moment Primarch of the First Legion: At the start of your Command phase , select two Primarch of the First Legion abilities. Until the start of your next Command phase, this model has those abilities. The Emperor\u2019s Shield: Each time an attack is allocated to this model, if the Strength characteristic of that attack is greater than the Toughness characteristic of this model, subtract 1 from the Wound roll . Dark Angels Bodyguard: While this model is within 3\" of one or more friendly ADEPTUS ASTARTES INFANTRY units, this model has the Lone Operative ability."
+      "Deep Strike , Fights First"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "At the start of your Command phase , select two Primarch of the First Legion abilities. Until the start of your next Command phase, this model has those abilities.",
+        "name": "Primarch of the First Legion"
+      },
+      {
+        "type": "rule",
+        "text": "Each time an attack is allocated to this model, if the Strength characteristic of that attack is greater than the Toughness characteristic of this model, subtract 1 from the Wound roll .",
+        "name": "The Emperor\u2019s Shield"
+      },
+      {
+        "type": "rule",
+        "text": "While this model is within 3\" of one or more friendly ADEPTUS ASTARTES INFANTRY units, this model has the Lone Operative ability.",
+        "name": "Dark Angels Bodyguard"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Lion El\u2019Jonson \u2013 EPIC HERO"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "Arma Luminis; Fealty.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -112,10 +141,8 @@
       "title": "WARGEAR OPTIONS",
       "entries": [
         {
-          "type": "list",
-          "items": [
-            "None"
-          ]
+          "type": "text",
+          "text": "None"
         }
       ]
     },
@@ -123,8 +150,19 @@
       "title": "PRIMARCH OF THE FIRST LEGION",
       "entries": [
         {
-          "type": "text",
-          "text": "Mist-wreathed Shadow Realms: In your Command phase , if this unit is not within Engagement Range of one or more enemy units, you can remove it from the battlefield and place it into Strategic Reserves . Martial Exemplar (Aura): While a friendly ADEPTUS ASTARTES unit is within 6\" of this model, each time a model in that unit makes a melee attack, re-roll a Hit roll of 1 and re-roll a Wound roll of 1. No Hiding From the Watchers (Aura): While a friendly ADEPTUS ASTARTES unit is within 6\" of this model, models in that unit have the Feel No Pain 4+ ability against mortal wounds ."
+          "type": "statement",
+          "text": "In your Command phase , if this unit is not within Engagement Range of one or more enemy units, you can remove it from the battlefield and place it into Strategic Reserves .",
+          "label": "Mist-wreathed Shadow Realms"
+        },
+        {
+          "type": "statement",
+          "text": "While a friendly ADEPTUS ASTARTES unit is within 6\" of this model, each time a model in that unit makes a melee attack, re-roll a Hit roll of 1 and re-roll a Wound roll of 1.",
+          "label": "Martial Exemplar (Aura)"
+        },
+        {
+          "type": "statement",
+          "text": "While a friendly ADEPTUS ASTARTES unit is within 6\" of this model, models in that unit have the Feel No Pain 4+ ability against mortal wounds .",
+          "label": "No Hiding From the Watchers (Aura)"
         }
       ]
     },
@@ -135,14 +173,47 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deep Strike , Fights First FACTION: Oath of Moment Primarch of the First Legion: At the start of your Command phase , select two Primarch of the First Legion abilities. Until the start of your next Command phase, this model has those abilities. The Emperor\u2019s Shield: Each time an attack is allocated to this model, if the Strength characteristic of that attack is greater than the Toughness characteristic of this model, subtract 1 from the Wound roll . Dark Angels Bodyguard: While this model is within 3\" of one or more friendly ADEPTUS ASTARTES INFANTRY units, this model has the Lone Operative ability."
+            "Deep Strike , Fights First"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "At the start of your Command phase , select two Primarch of the First Legion abilities. Until the start of your next Command phase, this model has those abilities.",
+          "name": "Primarch of the First Legion"
+        },
+        {
+          "type": "rule",
+          "text": "Each time an attack is allocated to this model, if the Strength characteristic of that attack is greater than the Toughness characteristic of this model, subtract 1 from the Wound roll .",
+          "name": "The Emperor\u2019s Shield"
+        },
+        {
+          "type": "rule",
+          "text": "While this model is within 3\" of one or more friendly ADEPTUS ASTARTES INFANTRY units, this model has the Lone Operative ability.",
+          "name": "Dark Angels Bodyguard"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Lion El\u2019Jonson \u2013 EPIC HERO"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "Arma Luminis; Fealty.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -166,27 +237,11 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "PRIMARCH OF THE FIRST LEGION",
       "ABILITIES",
       "UNIT COMPOSITION",
-      "SUPREME COMMANDER",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
+      "SUPREME COMMANDER"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -195,57 +250,8 @@
       "UNIT COMPOSITION",
       "SUPREME COMMANDER"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

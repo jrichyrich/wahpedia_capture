@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Corsair-Cloud-Dancer-Band",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Corsair-Cloud-Dancer-Band",
     "canonicalSourceId": "wahapedia:eef671a7f926122cbb75ec5dc0fd6760716c2739",
     "faction_slug": "drukhari",
     "datasheet_slug": "Corsair-Cloud-Dancer-Band",
-    "fetchedAt": "2026-03-19T17:17:17+00:00",
-    "contentHash": "a29bda0910f26949ec7ed1c0128892dd5a845534954d50967b2e2449b5e68ebf",
+    "fetchedAt": "2026-03-21T03:50:25+00:00",
+    "contentHash": "73e9ae11e2091467d3ee359e94ebd2b7daa8318c69f57a09792cdd7cc6232dd7",
     "output_slug": "drukhari"
   },
   "name": "Corsair Cloud Dancer Band",
@@ -145,13 +145,36 @@
   },
   "abilities": {
     "core": [
-      "Scouts 7\" Reckless Abandon: You can target this unit with the Heroic Intervention Stratagem for 0CP, and can do so even if you have already used that Stratagem on a different unit this phase."
+      "Scouts 7\""
     ],
     "faction": [],
-    "datasheet": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "You can target this unit with the Heroic Intervention Stratagem for 0CP, and can do so even if you have already used that Stratagem on a different unit this phase.",
+        "name": "Reckless Abandon"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "0-1 Cloud Dancer Felarch"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "3-6 Corsair Cloud Dancers"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "brace of pistols; twin shuriken catapult; close combat weapon.",
+      "label": "Every model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -216,14 +239,36 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Scouts 7\" Reckless Abandon: You can target this unit with the Heroic Intervention Stratagem for 0CP, and can do so even if you have already used that Stratagem on a different unit this phase."
+            "Scouts 7\""
           ]
+        },
+        {
+          "type": "rule",
+          "text": "You can target this unit with the Heroic Intervention Stratagem for 0CP, and can do so even if you have already used that Stratagem on a different unit this phase.",
+          "name": "Reckless Abandon"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "0-1 Cloud Dancer Felarch"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "3-6 Corsair Cloud Dancers"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "brace of pistols; twin shuriken catapult; close combat weapon.",
+          "label": "Every model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -250,82 +295,17 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
-      "UNIT COMPOSITION",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
+      "UNIT COMPOSITION"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

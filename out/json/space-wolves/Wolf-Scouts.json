@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Wolf-Scouts",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Wolf-Scouts",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Wolf-Scouts",
     "canonicalSourceId": "wahapedia:ef448fdc07a2c28172b116b0bd04af2dc6e4dfe9",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "3d2ff37797fd1980570215462bd0958f0f0e11568094b4bd475511c3183fce53"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Wolf-Scouts",
+    "fetchedAt": "2026-03-21T03:46:58+00:00",
+    "contentHash": "03bb9dc640af9e2b9865c47d31b0ae3cdd8ecb29486e9e9ee2089717c40419bd",
+    "output_slug": "space-wolves"
   },
   "name": "Wolf Scouts",
   "base_size": "\u230028.5mm",
@@ -344,7 +346,12 @@
     {
       "type": "list",
       "items": [
-        "1 Wolf Scout Pack Leader",
+        "1 Wolf Scout Pack Leader"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
         "4-9 Wolf Scouts"
       ]
     },
@@ -381,6 +388,61 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "1 Wolf Scout\u2019s boltgun and bolt pistol can be replaced with one of the following:",
+          "items": [
+            "1 bolt pistol and 1 power weapon",
+            "1 plasma pistol and 1 boltgun"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "1 Wolf Scout\u2019s boltgun can be replaced with one of the following:",
+          "items": [
+            "1 flamer",
+            "1 grav-gun",
+            "1 heavy bolter",
+            "1 meltagun",
+            "1 missile launcher",
+            "1 plasma gun"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "Any number of models can each have their boltgun replaced with one of the following:",
+          "items": [
+            "1 Astartes shotgun",
+            "1 combat knife"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "The Wolf Scout Pack Leader\u2019s bolt pistol and boltgun can be replaced with with 1 twin lightning claws, or two different weapons from the following list:*",
+          "items": [
+            "1 bolt pistol",
+            "1 boltgun",
+            "1 combi-weapon",
+            "1 grav-pistol",
+            "1 hand flamer",
+            "1 inferno pistol",
+            "1 plasma pistol",
+            "1 storm bolter",
+            "1 Astartes chainsword",
+            "1 power fist",
+            "1 power weapon",
+            "1 thunder hammer."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "* This model can only be equipped with two ranged weapons if one of them is a Pistol (and it can only have one Pistol)"
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
@@ -410,7 +472,12 @@
         {
           "type": "list",
           "items": [
-            "1 Wolf Scout Pack Leader",
+            "1 Wolf Scout Pack Leader"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
             "4-9 Wolf Scouts"
           ]
         },
@@ -435,18 +502,19 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
     "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

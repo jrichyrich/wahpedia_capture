@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Arvus-Lighter",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Arvus-Lighter",
     "canonicalSourceId": "wahapedia:1a411982a9557c2dce418cd1ba99454989a3da77",
     "faction_slug": "astra-militarum",
     "datasheet_slug": "Arvus-Lighter",
-    "fetchedAt": "2026-03-19T17:12:08+00:00",
-    "contentHash": "0cc3f8221aa6cbb9721d22948747eed84dc8fdd74694a8b61c2335e8a5920e6f",
+    "fetchedAt": "2026-03-21T03:37:25+00:00",
+    "contentHash": "f97eb8a5c41aa741d487213f1f1832f2cdbcc8bacde1b1f3ea38169f159e5a33",
     "output_slug": "astra-militarum"
   },
   "name": "Arvus Lighter",
@@ -37,13 +37,30 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise 1 , Hover Aerial Deployment: If this model starts the game in Hover mode and in Strategic Reserves , it can be set up in the Reinforcements step of your first, second or third Movement phase , regardless of any mission rules."
+      "Deadly Demise 1 , Hover"
     ],
     "faction": [],
-    "datasheet": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "If this model starts the game in Hover mode and in Strategic Reserves , it can be set up in the Reinforcements step of your first, second or third Movement phase , regardless of any mission rules.",
+        "name": "Aerial Deployment"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Arvus Lighter"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "armoured hull.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -70,10 +87,8 @@
       "title": "WARGEAR OPTIONS",
       "entries": [
         {
-          "type": "list",
-          "items": [
-            "None"
-          ]
+          "type": "text",
+          "text": "None"
         }
       ]
     },
@@ -84,14 +99,30 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise 1 , Hover Aerial Deployment: If this model starts the game in Hover mode and in Strategic Reserves , it can be set up in the Reinforcements step of your first, second or third Movement phase , regardless of any mission rules."
+            "Deadly Demise 1 , Hover"
           ]
+        },
+        {
+          "type": "rule",
+          "text": "If this model starts the game in Hover mode and in Strategic Reserves , it can be set up in the Reinforcements step of your first, second or third Movement phase , regardless of any mission rules.",
+          "name": "Aerial Deployment"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Arvus Lighter"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "armoured hull.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -115,19 +146,10 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
-      "TRANSPORT",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
+      "TRANSPORT"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -135,36 +157,8 @@
       "UNIT COMPOSITION",
       "TRANSPORT"
     ],
-    "missingExpectedSections": [
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

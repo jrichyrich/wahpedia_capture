@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Fellblade",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Fellblade",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Fellblade",
     "canonicalSourceId": "wahapedia:88dd4e4c15a96a5ce2615e773644fc16251102ca",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "3be021a6a6d6b0a605bcd5e8a711106109aa7eba8a36dc63db7023fb3a6daf2b"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Fellblade",
+    "fetchedAt": "2026-03-21T03:46:05+00:00",
+    "contentHash": "47fe466ab14cf8c811cedb445774776887beb3a930781cc083282c3644429461",
+    "output_slug": "space-wolves"
   },
   "name": "Fellblade",
   "base_size": "\u2300Use model",
@@ -208,13 +210,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D6+2 FACTION: Oath of Moment Rolling Fortress: Each time a ranged attack is allocated to a model from your army, if that model is not fully visible to every model in the attacking unit because of this Fellblade model, that model has the Benefit of Cover against that attack."
+      "Deadly Demise D6+2"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time a ranged attack is allocated to a model from your army, if that model is not fully visible to every model in the attacking unit because of this Fellblade model, that model has the Benefit of Cover against that attack.",
+        "name": "Rolling Fortress"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Fellblade"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "demolisher cannon; Fellblade accelerator cannon; 2 quad lascannons; twin heavy bolter; armoured tracks.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -277,14 +298,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D6+2 FACTION: Oath of Moment Rolling Fortress: Each time a ranged attack is allocated to a model from your army, if that model is not fully visible to every model in the attacking unit because of this Fellblade model, that model has the Benefit of Cover against that attack."
+            "Deadly Demise D6+2"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time a ranged attack is allocated to a model from your army, if that model is not fully visible to every model in the attacking unit because of this Fellblade model, that model has the Benefit of Cover against that attack.",
+          "name": "Rolling Fortress"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Fellblade"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "demolisher cannon; Fellblade accelerator cannon; 2 quad lascannons; twin heavy bolter; armoured tracks.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -306,10 +350,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "DAMAGED: 1-8 WOUNDS REMAINING"
@@ -321,6 +364,7 @@
       "DAMAGED: 1-8 WOUNDS REMAINING"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

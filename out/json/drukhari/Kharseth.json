@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Kharseth",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Kharseth",
     "canonicalSourceId": "wahapedia:5234e41064befb1cc840e3f2cb46300c750b74f1",
     "faction_slug": "drukhari",
     "datasheet_slug": "Kharseth",
-    "fetchedAt": "2026-03-19T17:17:24+00:00",
-    "contentHash": "833ebc06e7f5f4dc7ed0f32a5c4de7f17eefe60ef2c3a80ae80a57f5ee21afe0",
+    "fetchedAt": "2026-03-21T03:50:32+00:00",
+    "contentHash": "b15ce624b79206e92508e7bece46ab5c7d59c1879f616970d858eec9be7ca19a",
     "output_slug": "drukhari"
   },
   "name": "Kharseth",
@@ -59,13 +59,37 @@
   },
   "abilities": {
     "core": [
-      "Leader , Scouts 7\" FACTION: Battle Focus Aethersense (Psychic): Enemy units that are set up on the battlefield from Reserves cannot be set up within 12\" of this model. Fury of the Void (Psychic): In your Shooting phase , after this model\u2019s unit has shot, select one enemy unit hit by one or more attacks made with this model\u2019s Dread of the Deep Void. Until the end of the turn, that unit is riven. Each time an AELDARI model from your army makes an attack that targets a riven unit, add 1 to the Strength characteristic of that attack."
+      "Leader , Scouts 7\""
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Battle Focus"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Enemy units that are set up on the battlefield from Reserves cannot be set up within 12\" of this model.",
+        "name": "Aethersense (Psychic)"
+      },
+      {
+        "type": "rule",
+        "text": "In your Shooting phase , after this model\u2019s unit has shot, select one enemy unit hit by one or more attacks made with this model\u2019s Dread of the Deep Void. Until the end of the turn, that unit is riven. Each time an AELDARI model from your army makes an attack that targets a riven unit, add 1 to the Strength characteristic of that attack.",
+        "name": "Fury of the Void (Psychic)"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Kharseth \u2013 EPIC HERO"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "Dread of the Deep Void; Waystave.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -94,10 +118,8 @@
       "title": "WARGEAR OPTIONS",
       "entries": [
         {
-          "type": "list",
-          "items": [
-            "None"
-          ]
+          "type": "text",
+          "text": "None"
         }
       ]
     },
@@ -108,14 +130,42 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Leader , Scouts 7\" FACTION: Battle Focus Aethersense (Psychic): Enemy units that are set up on the battlefield from Reserves cannot be set up within 12\" of this model. Fury of the Void (Psychic): In your Shooting phase , after this model\u2019s unit has shot, select one enemy unit hit by one or more attacks made with this model\u2019s Dread of the Deep Void. Until the end of the turn, that unit is riven. Each time an AELDARI model from your army makes an attack that targets a riven unit, add 1 to the Strength characteristic of that attack."
+            "Leader , Scouts 7\""
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Battle Focus"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Enemy units that are set up on the battlefield from Reserves cannot be set up within 12\" of this model.",
+          "name": "Aethersense (Psychic)"
+        },
+        {
+          "type": "rule",
+          "text": "In your Shooting phase , after this model\u2019s unit has shot, select one enemy unit hit by one or more attacks made with this model\u2019s Dread of the Deep Void. Until the end of the turn, that unit is riven. Each time an AELDARI model from your army makes an attack that targets a riven unit, add 1 to the Strength characteristic of that attack.",
+          "name": "Fury of the Void (Psychic)"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Kharseth \u2013 EPIC HERO"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "Dread of the Deep Void; Waystave.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -131,6 +181,10 @@
       "title": "LEADER",
       "entries": [
         {
+          "type": "text",
+          "text": "This model can be attached to the following units:"
+        },
+        {
           "type": "list",
           "items": [
             "Corsair Voidreavers",
@@ -142,26 +196,10 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
-      "LEADER",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
+      "LEADER"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -169,57 +207,8 @@
       "UNIT COMPOSITION",
       "LEADER"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

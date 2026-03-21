@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Tantalus",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Tantalus",
     "canonicalSourceId": "wahapedia:f46967dfc5e020a6284c219d2931a3bcab56b5e8",
     "faction_slug": "drukhari",
     "datasheet_slug": "Tantalus",
-    "fetchedAt": "2026-03-19T17:17:29+00:00",
-    "contentHash": "1a229a38226629684b0a9f40aa311193cf41e1ee5c2faa98d9b7d1ebd080fd32",
+    "fetchedAt": "2026-03-21T03:50:39+00:00",
+    "contentHash": "bd43d8f7d21bc8748ef4e2f8ecd5a6e6688557f697bc04113e2d66a6a2486ef9",
     "output_slug": "drukhari"
   },
   "name": "Tantalus",
@@ -54,13 +54,37 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D6 , Deep Strike , Firing Deck 16 FACTION: Power from Pain Engine of Destruction (Pain): In your Shooting phase , when you select this model to shoot, you can spend 1 Pain token to Empower this model. While Empowered, this model\u2019s pulse disintegrators have the [RAPID FIRE 8] ability. Scything Charge: Each time this model ends a Charge move , select one enemy unit within Engagement Range of it and roll one D6: on a 2-3, that enemy unit suffers D3 mortal wounds ; on a 4-5, that enemy unit suffers 3 mortal wounds; on a 6, that enemy unit suffers D3+3 mortal wounds."
+      "Deadly Demise D6 , Deep Strike , Firing Deck 16"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Power from Pain"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "In your Shooting phase , when you select this model to shoot, you can spend 1 Pain token to Empower this model. While Empowered, this model\u2019s pulse disintegrators have the [RAPID FIRE 8] ability.",
+        "name": "Engine of Destruction (Pain)"
+      },
+      {
+        "type": "rule",
+        "text": "Each time this model ends a Charge move , select one enemy unit within Engagement Range of it and roll one D6: on a 2-3, that enemy unit suffers D3 mortal wounds ; on a 4-5, that enemy unit suffers 3 mortal wounds; on a 6, that enemy unit suffers D3+3 mortal wounds.",
+        "name": "Scything Charge"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Tantalus"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "pulse disintegrators; dire scythe blades.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -86,10 +110,8 @@
       "title": "WARGEAR OPTIONS",
       "entries": [
         {
-          "type": "list",
-          "items": [
-            "None"
-          ]
+          "type": "text",
+          "text": "None"
         }
       ]
     },
@@ -100,14 +122,42 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D6 , Deep Strike , Firing Deck 16 FACTION: Power from Pain Engine of Destruction (Pain): In your Shooting phase , when you select this model to shoot, you can spend 1 Pain token to Empower this model. While Empowered, this model\u2019s pulse disintegrators have the [RAPID FIRE 8] ability. Scything Charge: Each time this model ends a Charge move , select one enemy unit within Engagement Range of it and roll one D6: on a 2-3, that enemy unit suffers D3 mortal wounds ; on a 4-5, that enemy unit suffers 3 mortal wounds; on a 6, that enemy unit suffers D3+3 mortal wounds."
+            "Deadly Demise D6 , Deep Strike , Firing Deck 16"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Power from Pain"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "In your Shooting phase , when you select this model to shoot, you can spend 1 Pain token to Empower this model. While Empowered, this model\u2019s pulse disintegrators have the [RAPID FIRE 8] ability.",
+          "name": "Engine of Destruction (Pain)"
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model ends a Charge move , select one enemy unit within Engagement Range of it and roll one D6: on a 2-3, that enemy unit suffers D3 mortal wounds ; on a 4-5, that enemy unit suffers 3 mortal wounds; on a 6, that enemy unit suffers D3+3 mortal wounds.",
+          "name": "Scything Charge"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Tantalus"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "pulse disintegrators; dire scythe blades.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -140,27 +190,11 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "DAMAGED: 1-6 WOUNDS REMAINING",
-      "TRANSPORT",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
+      "TRANSPORT"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -169,57 +203,8 @@
       "DAMAGED: 1-6 WOUNDS REMAINING",
       "TRANSPORT"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

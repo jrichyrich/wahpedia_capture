@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/D-cannon-Platform",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/aeldari/D-cannon-Platform",
     "canonicalSourceId": "wahapedia:1d99af6e77d5588e4d195fbc178c9607efc71d2b",
     "faction_slug": "aeldari",
     "datasheet_slug": "D-cannon-Platform",
-    "fetchedAt": "2026-03-19T17:11:15+00:00",
-    "contentHash": "772227092035c5616d86744dd2a7ae64fe2c5ccdeb7303cc43080324cc2c4b01",
+    "fetchedAt": "2026-03-21T03:36:38+00:00",
+    "contentHash": "c45184ee71d1def659035906c273783dfbf31ca41ffccb29ba8207c96edddc76",
     "output_slug": "aeldari"
   },
   "name": "D-cannon Platform",
@@ -66,15 +66,32 @@
   "abilities": {
     "core": [],
     "faction": [],
-    "datasheet": [],
-    "other": [
+    "datasheet": [
       {
-        "type": "text",
-        "text": "Support Weapon: Each time an attack targets this model\u2019s unit, if that unit contains one or more other models, until that attack is resolved, this model has a Toughness characteristic of 3. Structural Collapse: Each time this model makes an attack with its D-cannon, re-roll a Damage roll of 1. If that attack targets a TITANIC unit, you can re-roll the Damage roll instead."
+        "type": "rule",
+        "text": "Each time an attack targets this model\u2019s unit, if that unit contains one or more other models, until that attack is resolved, this model has a Toughness characteristic of 3.",
+        "name": "Support Weapon"
+      },
+      {
+        "type": "rule",
+        "text": "Each time this model makes an attack with its D-cannon, re-roll a Damage roll of 1. If that attack targets a TITANIC unit, you can re-roll the Damage roll instead.",
+        "name": "Structural Collapse"
       }
-    ]
+    ],
+    "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 D-cannon Platform"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "D-cannon; shuriken catapult; close combat weapon.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -108,14 +125,31 @@
       "title": "ABILITIES",
       "entries": [
         {
-          "type": "text",
-          "text": "Support Weapon: Each time an attack targets this model\u2019s unit, if that unit contains one or more other models, until that attack is resolved, this model has a Toughness characteristic of 3. Structural Collapse: Each time this model makes an attack with its D-cannon, re-roll a Damage roll of 1. If that attack targets a TITANIC unit, you can re-roll the Damage roll instead."
+          "type": "rule",
+          "text": "Each time an attack targets this model\u2019s unit, if that unit contains one or more other models, until that attack is resolved, this model has a Toughness characteristic of 3.",
+          "name": "Support Weapon"
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model makes an attack with its D-cannon, re-roll a Damage roll of 1. If that attack targets a TITANIC unit, you can re-roll the Damage roll instead.",
+          "name": "Structural Collapse"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 D-cannon Platform"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "D-cannon; shuriken catapult; close combat weapon.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -130,82 +164,17 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "SUPPORT ARTILLERY",
       "ABILITIES",
-      "UNIT COMPOSITION",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
+      "UNIT COMPOSITION"
     ],
     "exportedSectionTitles": [
       "SUPPORT ARTILLERY",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

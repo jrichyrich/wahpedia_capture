@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Griffon-Mortar-Carrier",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Griffon-Mortar-Carrier",
     "canonicalSourceId": "wahapedia:63131da3ae90086360a8a0597364a7238ae2a625",
     "faction_slug": "astra-militarum",
     "datasheet_slug": "Griffon-Mortar-Carrier",
-    "fetchedAt": "2026-03-19T17:12:13+00:00",
-    "contentHash": "c5ccf4274f7218fc62f8c5997fbc4d8ccf9fa72f7b1de67febfdcc0310fd63b1",
+    "fetchedAt": "2026-03-21T03:37:29+00:00",
+    "contentHash": "1e14b117bad91800f7340980f0b324da9ad913da1ad556377afeba9c5be74b7f",
     "output_slug": "astra-militarum"
   },
   "name": "Griffon Mortar Carrier",
@@ -101,13 +101,30 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D3 Suppression Bombardment: In your Shooting phase , after this model has shot, select one enemy unit (excluding MONSTER and VEHICLE units) hit by one or more of those attacks made with this model\u2019s Griffon heavy mortar. Until the start of your next turn, that enemy unit is suppressed. While a unit is suppressed, each time a model in that unit makes an attack, subtract 1 from the Hit roll ."
+      "Deadly Demise D3"
     ],
     "faction": [],
-    "datasheet": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "In your Shooting phase , after this model has shot, select one enemy unit (excluding MONSTER and VEHICLE units) hit by one or more of those attacks made with this model\u2019s Griffon heavy mortar. Until the start of your next turn, that enemy unit is suppressed. While a unit is suppressed, each time a model in that unit makes an attack, subtract 1 from the Hit roll .",
+        "name": "Suppression Bombardment"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Griffon Mortar Carrier"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "heavy bolter; Griffon heavy mortar; armoured tracks.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -155,14 +172,30 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D3 Suppression Bombardment: In your Shooting phase , after this model has shot, select one enemy unit (excluding MONSTER and VEHICLE units) hit by one or more of those attacks made with this model\u2019s Griffon heavy mortar. Until the start of your next turn, that enemy unit is suppressed. While a unit is suppressed, each time a model in that unit makes an attack, subtract 1 from the Hit roll ."
+            "Deadly Demise D3"
           ]
+        },
+        {
+          "type": "rule",
+          "text": "In your Shooting phase , after this model has shot, select one enemy unit (excluding MONSTER and VEHICLE units) hit by one or more of those attacks made with this model\u2019s Griffon heavy mortar. Until the start of your next turn, that enemy unit is suppressed. While a unit is suppressed, each time a model in that unit makes an attack, subtract 1 from the Hit roll .",
+          "name": "Suppression Bombardment"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Griffon Mortar Carrier"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "heavy bolter; Griffon heavy mortar; armoured tracks.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -177,82 +210,17 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
-      "UNIT COMPOSITION",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
+      "UNIT COMPOSITION"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Sicaran-Venator",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Sicaran-Venator",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Sicaran-Venator",
     "canonicalSourceId": "wahapedia:57ad441f6eceb771224332a2101bacce4fef13c7",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "dd57b3911a927041cab67aa5e26385f9c7d5d74d0c603d5181b366c5676916ab"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Sicaran-Venator",
+    "fetchedAt": "2026-03-21T03:46:37+00:00",
+    "contentHash": "aa35c6a490547f67504cd3e30b4f208f7c395affcba46d12eb7cc85fd24fc24f",
+    "output_slug": "space-wolves"
   },
   "name": "Sicaran Venator",
   "base_size": "\u2300Use model",
@@ -93,13 +95,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D3 FACTION: Oath of Moment Ferocious Assault: Each time this model makes a ranged attack that targets the closest eligible MONSTER or VEHICLE unit, add 1 to the Hit roll ."
+      "Deadly Demise D3"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this model makes a ranged attack that targets the closest eligible MONSTER or VEHICLE unit, add 1 to the Hit roll .",
+        "name": "Ferocious Assault"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Sicaran Venator"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "heavy bolter; Venator neutron laser; armoured tracks.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -150,14 +171,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D3 FACTION: Oath of Moment Ferocious Assault: Each time this model makes a ranged attack that targets the closest eligible MONSTER or VEHICLE unit, add 1 to the Hit roll ."
+            "Deadly Demise D3"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model makes a ranged attack that targets the closest eligible MONSTER or VEHICLE unit, add 1 to the Hit roll .",
+          "name": "Ferocious Assault"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Sicaran Venator"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "heavy bolter; Venator neutron laser; armoured tracks.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -179,10 +223,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "DAMAGED: 1-5 WOUNDS REMAINING"
@@ -194,6 +237,7 @@
       "DAMAGED: 1-5 WOUNDS REMAINING"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

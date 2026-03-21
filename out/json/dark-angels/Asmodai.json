@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Asmodai",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Asmodai",
     "canonicalSourceId": "wahapedia:4f89bc8786ac9c070f6d4fbc0db83a1ba0ec1ff8",
     "faction_slug": "space-marines",
     "datasheet_slug": "Asmodai",
-    "fetchedAt": "2026-03-19T17:23:08+00:00",
-    "contentHash": "4b230b8336d2474240e60f2f91a78b1acd2cca05df2a6419efba3307ded5e11f",
+    "fetchedAt": "2026-03-21T03:38:16+00:00",
+    "contentHash": "2f8d87b39e0dea47b0daa8e631146579a6d00509070783f964885f82703811f6",
     "output_slug": "dark-angels"
   },
   "name": "Asmodai",
@@ -62,13 +62,37 @@
   },
   "abilities": {
     "core": [
-      "Leader FACTION: Oath of Moment Exemplar of Hate: While this model is leading a unit, each time a model in that unit makes a melee attack, you can re-roll the Hit roll . Feared Interrogator: At the start of the Fight phase , each enemy CHARACTER unit within 6\" of this model must take a Battle-shock test , subtracting 1 from that test when they do. In addition, each time this model destroys an enemy CHARACTER model with a melee attack, you gain 1CP."
+      "Leader"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, each time a model in that unit makes a melee attack, you can re-roll the Hit roll .",
+        "name": "Exemplar of Hate"
+      },
+      {
+        "type": "rule",
+        "text": "At the start of the Fight phase , each enemy CHARACTER unit within 6\" of this model must take a Battle-shock test , subtracting 1 from that test when they do. In addition, each time this model destroys an enemy CHARACTER model with a melee attack, you gain 1CP.",
+        "name": "Feared Interrogator"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Asmodai \u2013 EPIC HERO"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "heavy bolt pistol; crozius arcanum and power weapon.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -102,14 +126,42 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Leader FACTION: Oath of Moment Exemplar of Hate: While this model is leading a unit, each time a model in that unit makes a melee attack, you can re-roll the Hit roll . Feared Interrogator: At the start of the Fight phase , each enemy CHARACTER unit within 6\" of this model must take a Battle-shock test , subtracting 1 from that test when they do. In addition, each time this model destroys an enemy CHARACTER model with a melee attack, you gain 1CP."
+            "Leader"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, each time a model in that unit makes a melee attack, you can re-roll the Hit roll .",
+          "name": "Exemplar of Hate"
+        },
+        {
+          "type": "rule",
+          "text": "At the start of the Fight phase , each enemy CHARACTER unit within 6\" of this model must take a Battle-shock test , subtracting 1 from that test when they do. In addition, each time this model destroys an enemy CHARACTER model with a melee attack, you gain 1CP.",
+          "name": "Feared Interrogator"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Asmodai \u2013 EPIC HERO"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "heavy bolt pistol; crozius arcanum and power weapon.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -124,6 +176,10 @@
     {
       "title": "LEADER",
       "entries": [
+        {
+          "type": "text",
+          "text": "This model can be attached to the following units:"
+        },
         {
           "type": "list",
           "items": [
@@ -155,82 +211,17 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "ABILITIES",
       "UNIT COMPOSITION",
-      "LEADER",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
+      "LEADER"
     ],
     "exportedSectionTitles": [
       "ABILITIES",
       "UNIT COMPOSITION",
       "LEADER"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Attack-Bike-Squad",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Attack-Bike-Squad",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Attack-Bike-Squad",
     "canonicalSourceId": "wahapedia:c6495de6917534daa420ab5121079af319090230",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "a1c30088158596bc1af01a22e31667ce4f20daff8930686a585b219040207837"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Attack-Bike-Squad",
+    "fetchedAt": "2026-03-21T03:45:53+00:00",
+    "contentHash": "e1cf618c580bea835b5313972da117aa8c01a36c947c59e696c8f333791e67e2",
+    "output_slug": "space-wolves"
   },
   "name": "Attack Bike Squad",
   "base_size": "\u2300Use model",
@@ -86,12 +88,29 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Oath of Moment Outrider Escort: Once per turn, in your opponent\u2019s Shooting phase , when a friendly ADEPTUS ASTARTES MOUNTED unit within 6\" of this unit is selected as the target of an attack, this unit can use this ability. If it does, after that enemy unit has finished making its attacks, this unit can shoot as if it were your Shooting phase, but when resolving those attacks it can only target that enemy unit (and only if it is an eligible target)."
+      "Oath of Moment"
     ],
-    "datasheet": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Once per turn, in your opponent\u2019s Shooting phase , when a friendly ADEPTUS ASTARTES MOUNTED unit within 6\" of this unit is selected as the target of an attack, this unit can use this ability. If it does, after that enemy unit has finished making its attacks, this unit can shoot as if it were your Shooting phase, but when resolving those attacks it can only target that enemy unit (and only if it is an eligible target).",
+        "name": "Outrider Escort"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1-3 Attack Bikes"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "bolt pistol; heavy bolter; twin boltgun; close combat weapon.",
+      "label": "Every model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -138,14 +157,30 @@
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Oath of Moment Outrider Escort: Once per turn, in your opponent\u2019s Shooting phase , when a friendly ADEPTUS ASTARTES MOUNTED unit within 6\" of this unit is selected as the target of an attack, this unit can use this ability. If it does, after that enemy unit has finished making its attacks, this unit can shoot as if it were your Shooting phase, but when resolving those attacks it can only target that enemy unit (and only if it is an eligible target)."
+            "Oath of Moment"
           ]
+        },
+        {
+          "type": "rule",
+          "text": "Once per turn, in your opponent\u2019s Shooting phase , when a friendly ADEPTUS ASTARTES MOUNTED unit within 6\" of this unit is selected as the target of an attack, this unit can use this ability. If it does, after that enemy unit has finished making its attacks, this unit can shoot as if it were your Shooting phase, but when resolving those attacks it can only target that enemy unit (and only if it is an eligible target).",
+          "name": "Outrider Escort"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1-3 Attack Bikes"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "bolt pistol; heavy bolter; twin boltgun; close combat weapon.",
+          "label": "Every model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -166,10 +201,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
@@ -179,6 +213,7 @@
       "UNIT COMPOSITION"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

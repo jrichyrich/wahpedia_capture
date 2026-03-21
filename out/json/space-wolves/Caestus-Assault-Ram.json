@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Caestus-Assault-Ram",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Caestus-Assault-Ram",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Caestus-Assault-Ram",
     "canonicalSourceId": "wahapedia:d148a578f201f187c561e3726a22cbcfca84f3a8",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "673e1b5df3805376732d624dda98629f47ae07e2db4b417b225132d5d9691191"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Caestus-Assault-Ram",
+    "fetchedAt": "2026-03-21T03:45:56+00:00",
+    "contentHash": "6927d2347226939609202dbbb4c4e0079f811cc65f45a22162b9da54c4704673",
+    "output_slug": "space-wolves"
   },
   "name": "Caestus Assault Ram",
   "base_size": "\u2300120 x 92mm flying base",
@@ -65,13 +67,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D6 , Hover FACTION: Oath of Moment Into the Foe: If a unit disembarks from this TRANSPORT before it moves, until the end of the turn, that unit is eligible to charge in a turn in which it Advanced ."
+      "Deadly Demise D6 , Hover"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "If a unit disembarks from this TRANSPORT before it moves, until the end of the turn, that unit is eligible to charge in a turn in which it Advanced .",
+        "name": "Into the Foe"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Caestus Assault Ram"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "firefury missile batteries; twin magna-melta; armoured hull.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -99,10 +120,8 @@
       "title": "WARGEAR OPTIONS",
       "entries": [
         {
-          "type": "list",
-          "items": [
-            "None"
-          ]
+          "type": "text",
+          "text": "None"
         }
       ]
     },
@@ -113,14 +132,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D6 , Hover FACTION: Oath of Moment Into the Foe: If a unit disembarks from this TRANSPORT before it moves, until the end of the turn, that unit is eligible to charge in a turn in which it Advanced ."
+            "Deadly Demise D6 , Hover"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "If a unit disembarks from this TRANSPORT before it moves, until the end of the turn, that unit is eligible to charge in a turn in which it Advanced .",
+          "name": "Into the Foe"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Caestus Assault Ram"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "firefury missile batteries; twin magna-melta; armoured hull.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -151,10 +193,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
       "DAMAGED: 1-6 WOUNDS REMAINING",
@@ -168,6 +209,7 @@
       "TRANSPORT"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

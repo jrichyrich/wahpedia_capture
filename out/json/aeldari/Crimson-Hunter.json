@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Crimson-Hunter",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/aeldari/Crimson-Hunter",
     "canonicalSourceId": "wahapedia:055abfaa55d8e2ecae4ce4ff4e488fc52a59bff2",
     "faction_slug": "aeldari",
     "datasheet_slug": "Crimson-Hunter",
-    "fetchedAt": "2026-03-19T17:11:15+00:00",
-    "contentHash": "ba1088631c9cd7b541aa656a2dce2f3311f3545c0b6c8186abb0dde37aa2c752",
+    "fetchedAt": "2026-03-21T03:36:38+00:00",
+    "contentHash": "3bea7b3e7b8dda8f3431db7ebb3c72c1b9ae60b5f1c44f34c1a160b22da2a65f",
     "output_slug": "aeldari"
   },
   "name": "Crimson Hunter",
@@ -71,15 +71,27 @@
   "abilities": {
     "core": [],
     "faction": [],
-    "datasheet": [],
-    "other": [
+    "datasheet": [
       {
-        "type": "text",
-        "text": "Skyhunter: Each time this model makes a ranged attack that targets a unit that can FLY , add 1 to the Hit roll and add 1 to the Wound roll ."
+        "type": "rule",
+        "text": "Each time this model makes a ranged attack that targets a unit that can FLY , add 1 to the Hit roll and add 1 to the Wound roll .",
+        "name": "Skyhunter"
       }
-    ]
+    ],
+    "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Crimson Hunter"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "2 starcannons; pulse laser; wraithbone hull.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -116,14 +128,26 @@
       "title": "ABILITIES",
       "entries": [
         {
-          "type": "text",
-          "text": "Skyhunter: Each time this model makes a ranged attack that targets a unit that can FLY , add 1 to the Hit roll and add 1 to the Wound roll ."
+          "type": "rule",
+          "text": "Each time this model makes a ranged attack that targets a unit that can FLY , add 1 to the Hit roll and add 1 to the Wound roll .",
+          "name": "Skyhunter"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Crimson Hunter"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "2 starcannons; pulse laser; wraithbone hull.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -147,26 +171,10 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
-      "DAMAGED: 1-4 WOUNDS REMAINING",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
+      "DAMAGED: 1-4 WOUNDS REMAINING"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -174,57 +182,8 @@
       "UNIT COMPOSITION",
       "DAMAGED: 1-4 WOUNDS REMAINING"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Ferren-Areios",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Ferren-Areios",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Ferren-Areios",
     "canonicalSourceId": "wahapedia:4e21d6754ab480cd7e11ab53279cd96229fcbcbc",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "61680b48e637d81ee70e77d6341f8550dfd1a89cca4a92c965180af0fa3cab58"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Ferren-Areios",
+    "fetchedAt": "2026-03-21T03:44:14+00:00",
+    "contentHash": "d2356137739022de49dadd56518e79cb4526ccf279d92b48df97149c9a0d0aa3",
+    "output_slug": "space-wolves"
   },
   "name": "Ferren Areios",
   "base_size": "\u230040mm",
@@ -52,13 +54,46 @@
   },
   "abilities": {
     "core": [
-      "Leader FACTION: Oath of Moment Master of Rites: In your Command phase , select one of the following to apply to this model\u2019s unit until the end of the turn: This model\u2019s unit is eligible to shoot in a turn in which it Advanced . This model\u2019s unit is eligible to declare a charge in a turn in it which it Advanced. This model\u2019s unit is eligible to shoot and declare a charge in a turn in which it Fell Back . Unrelenting and Uncompromising: While this model is leading a unit, each time a model in that unit makes an attack, you can ignore any or all modifiers to that attack\u2019s Ballistic Skill or Weapon Skill characteristics and/or all modifiers to the Hit roll ."
+      "Leader"
     ],
-    "faction": [],
-    "datasheet": [],
-    "other": []
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "In your Command phase , select one of the following to apply to this model\u2019s unit until the end of the turn:",
+        "name": "Master of Rites"
+      },
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, each time a model in that unit makes an attack, you can ignore any or all modifiers to that attack\u2019s Ballistic Skill or Weapon Skill characteristics and/or all modifiers to the Hit roll .",
+        "name": "Unrelenting and Uncompromising"
+      }
+    ],
+    "other": [
+      {
+        "type": "list",
+        "items": [
+          "This model\u2019s unit is eligible to shoot in a turn in which it Advanced .",
+          "This model\u2019s unit is eligible to declare a charge in a turn in it which it Advanced.",
+          "This model\u2019s unit is eligible to shoot and declare a charge in a turn in which it Fell Back ."
+        ]
+      }
+    ]
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Ferren Areios \u2013 EPIC HERO"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "heavy bolt pistol; relic thunder hammer.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -90,14 +125,50 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Leader FACTION: Oath of Moment Master of Rites: In your Command phase , select one of the following to apply to this model\u2019s unit until the end of the turn: This model\u2019s unit is eligible to shoot in a turn in which it Advanced . This model\u2019s unit is eligible to declare a charge in a turn in it which it Advanced. This model\u2019s unit is eligible to shoot and declare a charge in a turn in which it Fell Back . Unrelenting and Uncompromising: While this model is leading a unit, each time a model in that unit makes an attack, you can ignore any or all modifiers to that attack\u2019s Ballistic Skill or Weapon Skill characteristics and/or all modifiers to the Hit roll ."
+            "Leader"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "In your Command phase , select one of the following to apply to this model\u2019s unit until the end of the turn:",
+          "name": "Master of Rites"
+        },
+        {
+          "type": "list",
+          "items": [
+            "This model\u2019s unit is eligible to shoot in a turn in which it Advanced .",
+            "This model\u2019s unit is eligible to declare a charge in a turn in it which it Advanced.",
+            "This model\u2019s unit is eligible to shoot and declare a charge in a turn in which it Fell Back ."
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, each time a model in that unit makes an attack, you can ignore any or all modifiers to that attack\u2019s Ballistic Skill or Weapon Skill characteristics and/or all modifiers to the Hit roll .",
+          "name": "Unrelenting and Uncompromising"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Ferren Areios \u2013 EPIC HERO"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "heavy bolt pistol; relic thunder hammer.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -112,6 +183,10 @@
     {
       "title": "LEADER",
       "entries": [
+        {
+          "type": "text",
+          "text": "This model can be attached to the following units:"
+        },
         {
           "type": "list",
           "items": [
@@ -141,8 +216,6 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
       "ABILITIES",
@@ -155,6 +228,7 @@
       "LEADER"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

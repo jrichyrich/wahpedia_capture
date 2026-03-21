@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Tactical-Squad",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Tactical-Squad",
     "canonicalSourceId": "wahapedia:56d68fc9530e5c1120a22c798b5a92cb81f70cf2",
     "faction_slug": "space-marines",
     "datasheet_slug": "Tactical-Squad",
-    "fetchedAt": "2026-03-19T17:34:16+00:00",
-    "contentHash": "cc20329a7e7c53a7bb74cce75a120d1a0dc001ce9d8f4ad8506fd2d6baaa3d84",
+    "fetchedAt": "2026-03-21T03:41:32+00:00",
+    "contentHash": "85a4eb62f989bd5481cec1d8977ee572d37e433c9418f1b12ebd451aad29a62a",
     "output_slug": "space-marines"
   },
   "name": "Tactical Squad",
@@ -345,12 +345,35 @@
   "abilities": {
     "core": [],
     "faction": [
-      "Oath of Moment Combat Squads: At the start of the Declare Battle Formations step, before any units have been set up, this unit can be split into two units, each containing five models."
+      "Oath of Moment"
     ],
-    "datasheet": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "At the start of the Declare Battle Formations step, before any units have been set up, this unit can be split into two units, each containing five models.",
+        "name": "Combat Squads"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Tactical Sergeant"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "9 Tactical Marines"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "bolt pistol; boltgun; close combat weapon.",
+      "label": "Every model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -430,14 +453,36 @@
           "type": "tagged_list",
           "label": "FACTION",
           "items": [
-            "Oath of Moment Combat Squads: At the start of the Declare Battle Formations step, before any units have been set up, this unit can be split into two units, each containing five models."
+            "Oath of Moment"
           ]
+        },
+        {
+          "type": "rule",
+          "text": "At the start of the Declare Battle Formations step, before any units have been set up, this unit can be split into two units, each containing five models.",
+          "name": "Combat Squads"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Tactical Sergeant"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "9 Tactical Marines"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "bolt pistol; boltgun; close combat weapon.",
+          "label": "Every model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -452,90 +497,17 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
-      "UNIT COMPOSITION",
-      "STRATAGEMS",
-      "LED BY",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
+      "UNIT COMPOSITION"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "LED BY",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:LED BY",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:LED BY",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

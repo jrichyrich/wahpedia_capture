@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Infiltrator-Squad",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Infiltrator-Squad",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Infiltrator-Squad",
     "canonicalSourceId": "wahapedia:0079faf95e59788b254885b548cc417a8ca75690",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "e9fb5abeb71d71c2fa24c1f1b9e4c942599314434ca46931d53b76211044eb73"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Infiltrator-Squad",
+    "fetchedAt": "2026-03-21T03:45:10+00:00",
+    "contentHash": "0d431cd266906f9480b574cd4e19fdd88c780faa63039ce6b8553d2e1450b7fd",
+    "output_slug": "space-wolves"
   },
   "name": "Infiltrator Squad",
   "base_size": "\u230032mm",
@@ -61,13 +63,38 @@
   },
   "abilities": {
     "core": [
-      "Infiltrators FACTION: Oath of Moment Omni-scramblers: Enemy units that are set up on the battlefield from Reserves cannot be set up within 12\" of this unit."
+      "Infiltrators"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Enemy units that are set up on the battlefield from Reserves cannot be set up within 12\" of this unit.",
+        "name": "Omni-scramblers"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Infiltrator Sergeant"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "4-9 Infiltrators"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "bolt pistol; marksman bolt carbine; close combat weapon.",
+      "label": "Every model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -120,8 +147,20 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Infiltrators FACTION: Oath of Moment Omni-scramblers: Enemy units that are set up on the battlefield from Reserves cannot be set up within 12\" of this unit."
+            "Infiltrators"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Enemy units that are set up on the battlefield from Reserves cannot be set up within 12\" of this unit.",
+          "name": "Omni-scramblers"
         }
       ]
     },
@@ -129,14 +168,37 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "text",
-          "text": "Helix Gauntlet: Models in the bearer\u2019s unit have the Feel No Pain 6+ ability. Infiltrator Comms Array: Each time you target the bearer\u2019s unit with a Stratagem, roll one D6: on a 5+, you gain 1CP."
+          "type": "statement",
+          "text": "Models in the bearer\u2019s unit have the Feel No Pain 6+ ability.",
+          "label": "Helix Gauntlet"
+        },
+        {
+          "type": "statement",
+          "text": "Each time you target the bearer\u2019s unit with a Stratagem, roll one D6: on a 5+, you gain 1CP.",
+          "label": "Infiltrator Comms Array"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Infiltrator Sergeant"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "4-9 Infiltrators"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "bolt pistol; marksman bolt carbine; close combat weapon.",
+          "label": "Every model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -153,10 +215,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION"
@@ -168,6 +229,7 @@
       "UNIT COMPOSITION"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

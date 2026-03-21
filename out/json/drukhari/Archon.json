@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Archon",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Archon",
     "canonicalSourceId": "wahapedia:d9bbe59ca1181e2667b80310ce82bfe3ace5a31c",
     "faction_slug": "drukhari",
     "datasheet_slug": "Archon",
-    "fetchedAt": "2026-03-19T17:17:18+00:00",
-    "contentHash": "3397368eddcf4c6c4afac32b7fc720a2c468fff7e5a6b24d37a505a7184d46aa",
+    "fetchedAt": "2026-03-21T03:50:26+00:00",
+    "contentHash": "72558e67d981ca22f9132bf7c5a26d5eb79ec8153f403740ae6b6fde87dd8245",
     "output_slug": "drukhari"
   },
   "name": "Archon",
@@ -90,13 +90,42 @@
   },
   "abilities": {
     "core": [
-      "Leader FACTION: Power from Pain Hatred Eternal (Pain): In your Shooting phase or the Fight phase , when you select this model\u2019s unit to shoot or fight, you can spend 1 Pain token to Empower that unit. While that unit is Empowered , each time a model in that unit makes an attack, you can re-roll the Hit roll . Overlord: Once per battle, at the start of any phase, you can select one friendly DRUKHARI unit that is Battle-shocked and within 12\" of this model. That unit is no longer Battle-shocked. Devious Mastermind: Once per battle round , one model from your army with this ability can use it when its unit is targeted with a Stratagem. If it does, reduce the CP cost of that use of that Stratagem by 1CP."
+      "Leader"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Power from Pain"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "In your Shooting phase or the Fight phase , when you select this model\u2019s unit to shoot or fight, you can spend 1 Pain token to Empower that unit. While that unit is Empowered , each time a model in that unit makes an attack, you can re-roll the Hit roll .",
+        "name": "Hatred Eternal (Pain)"
+      },
+      {
+        "type": "rule",
+        "text": "Once per battle, at the start of any phase, you can select one friendly DRUKHARI unit that is Battle-shocked and within 12\" of this model. That unit is no longer Battle-shocked.",
+        "name": "Overlord"
+      },
+      {
+        "type": "rule",
+        "text": "Once per battle round , one model from your army with this ability can use it when its unit is targeted with a Stratagem. If it does, reduce the CP cost of that use of that Stratagem by 1CP.",
+        "name": "Devious Mastermind"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Archon"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "splinter pistol; huskblade; shadowfield.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -146,8 +175,30 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Leader FACTION: Power from Pain Hatred Eternal (Pain): In your Shooting phase or the Fight phase , when you select this model\u2019s unit to shoot or fight, you can spend 1 Pain token to Empower that unit. While that unit is Empowered , each time a model in that unit makes an attack, you can re-roll the Hit roll . Overlord: Once per battle, at the start of any phase, you can select one friendly DRUKHARI unit that is Battle-shocked and within 12\" of this model. That unit is no longer Battle-shocked. Devious Mastermind: Once per battle round , one model from your army with this ability can use it when its unit is targeted with a Stratagem. If it does, reduce the CP cost of that use of that Stratagem by 1CP."
+            "Leader"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Power from Pain"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "In your Shooting phase or the Fight phase , when you select this model\u2019s unit to shoot or fight, you can spend 1 Pain token to Empower that unit. While that unit is Empowered , each time a model in that unit makes an attack, you can re-roll the Hit roll .",
+          "name": "Hatred Eternal (Pain)"
+        },
+        {
+          "type": "rule",
+          "text": "Once per battle, at the start of any phase, you can select one friendly DRUKHARI unit that is Battle-shocked and within 12\" of this model. That unit is no longer Battle-shocked.",
+          "name": "Overlord"
+        },
+        {
+          "type": "rule",
+          "text": "Once per battle round , one model from your army with this ability can use it when its unit is targeted with a Stratagem. If it does, reduce the CP cost of that use of that Stratagem by 1CP.",
+          "name": "Devious Mastermind"
         }
       ]
     },
@@ -155,14 +206,31 @@
       "title": "WARGEAR ABILITIES",
       "entries": [
         {
-          "type": "text",
-          "text": "Shadowfield: You cannot re-roll invulnerable saving throws made for the bearer. The first time an invulnerable saving throw made for the bearer is failed, until the end of the battle, the bearer has no invulnerable save. Soul Trap: Add 1 to the Attacks and Strength characteristics of the bearer\u2019s melee weapons. The first time the bearer makes a melee attack that destroys an enemy model, after all the bearer\u2019s attacks have been resolved, until the end of the battle, add an additional 1 to the Attacks and Strength characteristics of the bearer\u2019s melee weapons."
+          "type": "statement",
+          "text": "You cannot re-roll invulnerable saving throws made for the bearer. The first time an invulnerable saving throw made for the bearer is failed, until the end of the battle, the bearer has no invulnerable save.",
+          "label": "Shadowfield"
+        },
+        {
+          "type": "statement",
+          "text": "Add 1 to the Attacks and Strength characteristics of the bearer\u2019s melee weapons. The first time the bearer makes a melee attack that destroys an enemy model, after all the bearer\u2019s attacks have been resolved, until the end of the battle, add an additional 1 to the Attacks and Strength characteristics of the bearer\u2019s melee weapons.",
+          "label": "Soul Trap"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Archon"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "splinter pistol; huskblade; shadowfield.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -178,6 +246,10 @@
       "title": "LEADER",
       "entries": [
         {
+          "type": "text",
+          "text": "This model can be attached to the following units:"
+        },
+        {
           "type": "list",
           "items": [
             "Hand of the Archon",
@@ -190,28 +262,11 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION",
-      "LEADER",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
+      "LEADER"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -220,60 +275,8 @@
       "UNIT COMPOSITION",
       "LEADER"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

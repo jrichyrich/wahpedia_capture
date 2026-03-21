@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Stormtalon-Gunship",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Stormtalon-Gunship",
-    "output_slug": "ultramarines",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Stormtalon-Gunship",
     "canonicalSourceId": "wahapedia:ce52bc6abe52c0d1851875886b283f7850150481",
-    "fetchedAt": "2026-03-19T17:35:03+00:00",
-    "contentHash": "457f2a86ede365a9030854ebf506148d68b80a82858b0657b449bc8647be6d4d"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Stormtalon-Gunship",
+    "fetchedAt": "2026-03-21T03:48:52+00:00",
+    "contentHash": "135fc4e1d157857370ed048d2d44fba4a4ad4b9aaeb0d70457f15d6940e8d2ad",
+    "output_slug": "ultramarines"
   },
   "name": "Stormtalon Gunship",
   "base_size": "\u2300120 x 92mm flying base",
@@ -110,13 +112,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D3 , Hover FACTION: Oath of Moment Strafing Run: Each time this model makes a ranged attack that targets a unit that cannot Fly , add 1 to the Hit roll ."
+      "Deadly Demise D3 , Hover"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this model makes a ranged attack that targets a unit that cannot Fly , add 1 to the Hit roll .",
+        "name": "Strafing Run"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Stormtalon Gunship"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "skyhammer missile launcher; twin assault cannon; armoured hull.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -160,14 +181,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D3 , Hover FACTION: Oath of Moment Strafing Run: Each time this model makes a ranged attack that targets a unit that cannot Fly , add 1 to the Hit roll ."
+            "Deadly Demise D3 , Hover"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model makes a ranged attack that targets a unit that cannot Fly , add 1 to the Hit roll .",
+          "name": "Strafing Run"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Stormtalon Gunship"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "skyhammer missile launcher; twin assault cannon; armoured hull.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -180,10 +224,9 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
@@ -193,6 +236,7 @@
       "UNIT COMPOSITION"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

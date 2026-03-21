@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Daemon-Prince-of-Nurgle",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/death-guard/Daemon-Prince-of-Nurgle",
     "canonicalSourceId": "wahapedia:32768aa888ef6c45e3478ee9284cf8c64aa6d586",
     "faction_slug": "death-guard",
     "datasheet_slug": "Daemon-Prince-of-Nurgle",
-    "fetchedAt": "2026-03-19T17:16:46+00:00",
-    "contentHash": "b2ef3b14c3bdfa2f731b646f916502199dc9ce766c535937fe277d33843157b4",
+    "fetchedAt": "2026-03-21T03:50:30+00:00",
+    "contentHash": "6522c88473c236ae11dd6f82eb326bfd762a0aa7bb834613b6fe670cd1bfbebd",
     "output_slug": "death-guard"
   },
   "name": "Daemon Prince of Nurgle",
@@ -66,13 +66,42 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D3 FACTION: Nurgle\u2019s Gift (Aura) Death Guard Defenders: While this model is within 3\" of one or more friendly DEATH GUARD INFANTRY units, this model has the Lone Operative ability. Fevered Strategist: Once per battle round , one model from your army with this ability can use it when a friendly DEATH GUARD unit within 12\" of that model is targeted with a Stratagem. If it does, reduce the CP cost of that usage of that Stratagem by 1CP. Miasma of Pestilence (Aura): While a friendly DEATH GUARD unit is within 6\" of this model, each time a ranged attack targets that unit, models in that unit have the Benefit of Cover against that attack."
+      "Deadly Demise D3"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Nurgle\u2019s Gift (Aura)"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this model is within 3\" of one or more friendly DEATH GUARD INFANTRY units, this model has the Lone Operative ability.",
+        "name": "Death Guard Defenders"
+      },
+      {
+        "type": "rule",
+        "text": "Once per battle round , one model from your army with this ability can use it when a friendly DEATH GUARD unit within 12\" of that model is targeted with a Stratagem. If it does, reduce the CP cost of that usage of that Stratagem by 1CP.",
+        "name": "Fevered Strategist"
+      },
+      {
+        "type": "rule",
+        "text": "While a friendly DEATH GUARD unit is within 6\" of this model, each time a ranged attack targets that unit, models in that unit have the Benefit of Cover against that attack.",
+        "name": "Miasma of Pestilence (Aura)"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Daemon Prince of Nurgle"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "infernal cannon; hellforged weapons.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -102,14 +131,47 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D3 FACTION: Nurgle\u2019s Gift (Aura) Death Guard Defenders: While this model is within 3\" of one or more friendly DEATH GUARD INFANTRY units, this model has the Lone Operative ability. Fevered Strategist: Once per battle round , one model from your army with this ability can use it when a friendly DEATH GUARD unit within 12\" of that model is targeted with a Stratagem. If it does, reduce the CP cost of that usage of that Stratagem by 1CP. Miasma of Pestilence (Aura): While a friendly DEATH GUARD unit is within 6\" of this model, each time a ranged attack targets that unit, models in that unit have the Benefit of Cover against that attack."
+            "Deadly Demise D3"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Nurgle\u2019s Gift (Aura)"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is within 3\" of one or more friendly DEATH GUARD INFANTRY units, this model has the Lone Operative ability.",
+          "name": "Death Guard Defenders"
+        },
+        {
+          "type": "rule",
+          "text": "Once per battle round , one model from your army with this ability can use it when a friendly DEATH GUARD unit within 12\" of that model is targeted with a Stratagem. If it does, reduce the CP cost of that usage of that Stratagem by 1CP.",
+          "name": "Fevered Strategist"
+        },
+        {
+          "type": "rule",
+          "text": "While a friendly DEATH GUARD unit is within 6\" of this model, each time a ranged attack targets that unit, models in that unit have the Benefit of Cover against that attack.",
+          "name": "Miasma of Pestilence (Aura)"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Daemon Prince of Nurgle"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "infernal cannon; hellforged weapons.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -124,84 +186,15 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "ABILITIES",
-      "UNIT COMPOSITION",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
+      "UNIT COMPOSITION"
     ],
     "exportedSectionTitles": [
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

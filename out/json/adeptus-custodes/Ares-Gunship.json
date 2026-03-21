@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Ares-Gunship",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/Ares-Gunship",
     "canonicalSourceId": "wahapedia:8139bab655b23ee2484e966d2ac18bee4e683aca",
     "faction_slug": "adeptus-custodes",
     "datasheet_slug": "Ares-Gunship",
-    "fetchedAt": "2026-03-19T17:10:55+00:00",
-    "contentHash": "2a95b90087d31dd542b40379e4b948710cc4707642da0c46a247b98d5bc39a32",
+    "fetchedAt": "2026-03-21T03:36:18+00:00",
+    "contentHash": "15e7ada6759b72d580c5f65fe56ef7f8a9e618651d874708aa63f03061e67fc0",
     "output_slug": "adeptus-custodes"
   },
   "name": "Ares Gunship",
@@ -60,13 +60,32 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise D6 , Hover FACTION: Martial Ka\u2019tah Infernus Firebombs: Each time this model ends a Normal move , you can select one enemy unit it moved over during that move. Until the end of the turn, models in that unit cannot have the Benefit of Cover . In addition, roll one D6 for each model in that unit: for each 6, that unit suffers 1 mortal wound ."
+      "Deadly Demise D6 , Hover"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Martial Ka\u2019tah"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this model ends a Normal move , you can select one enemy unit it moved over during that move. Until the end of the turn, models in that unit cannot have the Benefit of Cover . In addition, roll one D6 for each model in that unit: for each 6, that unit suffers 1 mortal wound .",
+        "name": "Infernus Firebombs"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Ares Gunship"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "2 arachnus heavy blaze cannons; arachnus magna-blaze cannon; armoured hull.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -92,10 +111,8 @@
       "title": "WARGEAR OPTIONS",
       "entries": [
         {
-          "type": "list",
-          "items": [
-            "None"
-          ]
+          "type": "text",
+          "text": "None"
         }
       ]
     },
@@ -106,14 +123,37 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise D6 , Hover FACTION: Martial Ka\u2019tah Infernus Firebombs: Each time this model ends a Normal move , you can select one enemy unit it moved over during that move. Until the end of the turn, models in that unit cannot have the Benefit of Cover . In addition, roll one D6 for each model in that unit: for each 6, that unit suffers 1 mortal wound ."
+            "Deadly Demise D6 , Hover"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Martial Ka\u2019tah"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model ends a Normal move , you can select one enemy unit it moved over during that move. Until the end of the turn, models in that unit cannot have the Benefit of Cover . In addition, roll one D6 for each model in that unit: for each 6, that unit suffers 1 mortal wound .",
+          "name": "Infernus Firebombs"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Ares Gunship"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "2 arachnus heavy blaze cannons; arachnus magna-blaze cannon; armoured hull.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -137,26 +177,10 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION",
-      "DAMAGED: 1-7 WOUNDS REMAINING",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
+      "DAMAGED: 1-7 WOUNDS REMAINING"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
@@ -164,57 +188,8 @@
       "UNIT COMPOSITION",
       "DAMAGED: 1-7 WOUNDS REMAINING"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

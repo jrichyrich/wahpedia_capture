@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Talos",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/drukhari/Talos",
     "canonicalSourceId": "wahapedia:267963259289b57f72c797003c3fd11df1084871",
     "faction_slug": "drukhari",
     "datasheet_slug": "Talos",
-    "fetchedAt": "2026-03-19T17:17:29+00:00",
-    "contentHash": "c5d22195d29f1d3bdf67261f18ecf9c36106d0cec2bc403ca153d93d51876940",
+    "fetchedAt": "2026-03-21T03:50:38+00:00",
+    "contentHash": "b1f88de3807d8c9f565088f7ee281f2448e037617e9d09017898ce992cc4878a",
     "output_slug": "drukhari"
   },
   "name": "Talos",
@@ -138,13 +138,42 @@
   },
   "abilities": {
     "core": [
-      "Deadly Demise 1 , Feel No Pain 5+ FACTION: Power from Pain Mindless Killing Machines (Pain): At the start of the Fight phase , you can spend 1 Pain token to Empower this unit. While Empowered, each time a model in this unit is destroyed by a melee attack, if that model has not fought this phase, roll one D6. On a 2+, do not remove it from play; that destroyed model can fight after the attacking unit has finished making its attacks, and it is then removed from play. Devoted to Pain: If a model in this unit is equipped with 2 macro-scalpels, those weapons have the [TWIN-LINKED] ability. Torture Device: Each time this unit destroys an enemy unit, you gain 1 additional Pain token ."
+      "Deadly Demise 1 , Feel No Pain 5+"
     ],
-    "faction": [],
-    "datasheet": [],
+    "faction": [
+      "Power from Pain"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "At the start of the Fight phase , you can spend 1 Pain token to Empower this unit. While Empowered, each time a model in this unit is destroyed by a melee attack, if that model has not fought this phase, roll one D6. On a 2+, do not remove it from play; that destroyed model can fight after the attacking unit has finished making its attacks, and it is then removed from play.",
+        "name": "Mindless Killing Machines (Pain)"
+      },
+      {
+        "type": "rule",
+        "text": "If a model in this unit is equipped with 2 macro-scalpels, those weapons have the [TWIN-LINKED] ability.",
+        "name": "Devoted to Pain"
+      },
+      {
+        "type": "rule",
+        "text": "Each time this unit destroys an enemy unit, you gain 1 additional Pain token .",
+        "name": "Torture Device"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1-2 Talos"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "twin splinter cannon; 2 macro-scalpels.",
+      "label": "Every model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -207,14 +236,47 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Deadly Demise 1 , Feel No Pain 5+ FACTION: Power from Pain Mindless Killing Machines (Pain): At the start of the Fight phase , you can spend 1 Pain token to Empower this unit. While Empowered, each time a model in this unit is destroyed by a melee attack, if that model has not fought this phase, roll one D6. On a 2+, do not remove it from play; that destroyed model can fight after the attacking unit has finished making its attacks, and it is then removed from play. Devoted to Pain: If a model in this unit is equipped with 2 macro-scalpels, those weapons have the [TWIN-LINKED] ability. Torture Device: Each time this unit destroys an enemy unit, you gain 1 additional Pain token ."
+            "Deadly Demise 1 , Feel No Pain 5+"
           ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Power from Pain"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "At the start of the Fight phase , you can spend 1 Pain token to Empower this unit. While Empowered, each time a model in this unit is destroyed by a melee attack, if that model has not fought this phase, roll one D6. On a 2+, do not remove it from play; that destroyed model can fight after the attacking unit has finished making its attacks, and it is then removed from play.",
+          "name": "Mindless Killing Machines (Pain)"
+        },
+        {
+          "type": "rule",
+          "text": "If a model in this unit is equipped with 2 macro-scalpels, those weapons have the [TWIN-LINKED] ability.",
+          "name": "Devoted to Pain"
+        },
+        {
+          "type": "rule",
+          "text": "Each time this unit destroys an enemy unit, you gain 1 additional Pain token .",
+          "name": "Torture Device"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1-2 Talos"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "twin splinter cannon; 2 macro-scalpels.",
+          "label": "Every model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -233,82 +295,17 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "WARGEAR OPTIONS",
       "ABILITIES",
-      "UNIT COMPOSITION",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
+      "UNIT COMPOSITION"
     ],
     "exportedSectionTitles": [
       "WARGEAR OPTIONS",
       "ABILITIES",
       "UNIT COMPOSITION"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

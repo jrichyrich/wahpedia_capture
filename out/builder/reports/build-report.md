@@ -1,12 +1,13 @@
 # Builder Catalog Build Report
 
-- Generated at: 2026-03-19T17:37:48+00:00
+- Generated at: 2026-03-21T03:51:13+00:00
 - Source root: `/Users/jasricha/Documents/Github_Personal/wahpedia_capture/out/json`
 - Factions imported: 9
 - Total units: 1064
 - Units with missing stats: 0
 - Manual selection units: 0
-- Units with manual wargear: 34
+- Units with manual wargear: 37
+- Units with render issues: 0
 - Source cards copied: 986
 - Source cards missing: 78
 
@@ -19,6 +20,7 @@
 - Missing stats: 0
 - Manual selection units: 0
 - Manual wargear units: 0
+- Render issue units: 0
 - Source cards copied: 31
 - Source cards missing: 0
 
@@ -29,6 +31,7 @@
 - Missing stats: 0
 - Manual selection units: 0
 - Manual wargear units: 1
+- Render issue units: 0
 - Source cards copied: 97
 - Source cards missing: 0
 
@@ -39,6 +42,7 @@
 - Missing stats: 0
 - Manual selection units: 0
 - Manual wargear units: 0
+- Render issue units: 0
 - Source cards copied: 128
 - Source cards missing: 0
 
@@ -49,6 +53,7 @@
 - Missing stats: 0
 - Manual selection units: 0
 - Manual wargear units: 8
+- Render issue units: 0
 - Source cards copied: 174
 - Source cards missing: 0
 
@@ -59,6 +64,7 @@
 - Missing stats: 0
 - Manual selection units: 0
 - Manual wargear units: 0
+- Render issue units: 0
 - Source cards copied: 71
 - Source cards missing: 0
 
@@ -69,6 +75,7 @@
 - Missing stats: 0
 - Manual selection units: 0
 - Manual wargear units: 1
+- Render issue units: 0
 - Source cards copied: 47
 - Source cards missing: 0
 
@@ -79,6 +86,7 @@
 - Missing stats: 0
 - Manual selection units: 0
 - Manual wargear units: 8
+- Render issue units: 0
 - Source cards copied: 155
 - Source cards missing: 0
 
@@ -88,7 +96,8 @@
 - Units: 191
 - Missing stats: 0
 - Manual selection units: 0
-- Manual wargear units: 8
+- Manual wargear units: 11
+- Render issue units: 0
 - Source cards copied: 191
 - Source cards missing: 0
 
@@ -99,5 +108,6 @@
 - Missing stats: 0
 - Manual selection units: 0
 - Manual wargear units: 8
+- Render issue units: 0
 - Source cards copied: 92
 - Source cards missing: 78

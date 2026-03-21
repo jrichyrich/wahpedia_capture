@@ -1,14 +1,14 @@
 {
   "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Primaris-Psyker",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/astra-militarum/Primaris-Psyker",
     "canonicalSourceId": "wahapedia:855c13ec2508cdd6a38c78d37d58d36e985536a7",
     "faction_slug": "astra-militarum",
     "datasheet_slug": "Primaris-Psyker",
-    "fetchedAt": "2026-03-19T17:11:39+00:00",
-    "contentHash": "ae71103b918c0ece8f7e0b8ddae84226d87b37d398060b5319626ea81a736e33",
+    "fetchedAt": "2026-03-21T03:37:02+00:00",
+    "contentHash": "15cf80feeb52d9641ed88e6f78036f8d1ce6cf6036bd890f1eda5fdccc59d7f2",
     "output_slug": "astra-militarum"
   },
   "name": "Primaris Psyker",
@@ -82,13 +82,35 @@
   },
   "abilities": {
     "core": [
-      "Leader Malign Wardings(Psychic): While this model is leading a unit, models in that unit have the Feel No Pain 4+ ability against Psychic Attacks . Psychic Barrier (Psychic): At the start of your opponent\u2019s Shooting phase , you can roll one D6: on a 1, this PSYKER \u2019s unit suffers D3 mortal wounds ; on a 2+, until the end of the phase, models in this PSYKER \u2019s unit have a 4+ invulnerable save ."
+      "Leader"
     ],
     "faction": [],
-    "datasheet": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, models in that unit have the Feel No Pain 4+ ability against Psychic Attacks .",
+        "name": "Malign Wardings(Psychic)"
+      },
+      {
+        "type": "rule",
+        "text": "At the start of your opponent\u2019s Shooting phase , you can roll one D6: on a 1, this PSYKER \u2019s unit suffers D3 mortal wounds ; on a 2+, until the end of the phase, models in this PSYKER \u2019s unit have a 4+ invulnerable save .",
+        "name": "Psychic Barrier (Psychic)"
+      }
+    ],
     "other": []
   },
   "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Primaris Psyker"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "laspistol; Psychic Maelstrom; force weapon.",
+      "label": "This model is equipped with"
+    },
     {
       "type": "points",
       "rows": [
@@ -117,14 +139,35 @@
           "type": "tagged_list",
           "label": "CORE",
           "items": [
-            "Leader Malign Wardings(Psychic): While this model is leading a unit, models in that unit have the Feel No Pain 4+ ability against Psychic Attacks . Psychic Barrier (Psychic): At the start of your opponent\u2019s Shooting phase , you can roll one D6: on a 1, this PSYKER \u2019s unit suffers D3 mortal wounds ; on a 2+, until the end of the phase, models in this PSYKER \u2019s unit have a 4+ invulnerable save ."
+            "Leader"
           ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, models in that unit have the Feel No Pain 4+ ability against Psychic Attacks .",
+          "name": "Malign Wardings(Psychic)"
+        },
+        {
+          "type": "rule",
+          "text": "At the start of your opponent\u2019s Shooting phase , you can roll one D6: on a 1, this PSYKER \u2019s unit suffers D3 mortal wounds ; on a 2+, until the end of the phase, models in this PSYKER \u2019s unit have a 4+ invulnerable save .",
+          "name": "Psychic Barrier (Psychic)"
         }
       ]
     },
     {
       "title": "UNIT COMPOSITION",
       "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Primaris Psyker"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "laspistol; Psychic Maelstrom; force weapon.",
+          "label": "This model is equipped with"
+        },
         {
           "type": "points",
           "rows": [
@@ -139,6 +182,10 @@
     {
       "title": "LEADER",
       "entries": [
+        {
+          "type": "text",
+          "text": "This model can be attached to the following units:"
+        },
         {
           "type": "list",
           "items": [
@@ -155,86 +202,17 @@
   ],
   "quality": {
     "rawSectionTitles": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
       "ABILITIES",
       "UNIT COMPOSITION",
-      "LEADER",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
+      "LEADER"
     ],
     "exportedSectionTitles": [
       "ABILITIES",
       "UNIT COMPOSITION",
       "LEADER"
     ],
-    "missingExpectedSections": [
-      "RANGED WEAPONS",
-      "RANGE",
-      "A",
-      "BS",
-      "S",
-      "AP",
-      "D",
-      "MELEE WEAPONS",
-      "RANGE",
-      "A",
-      "WS",
-      "S",
-      "AP",
-      "D",
-      "STRATAGEMS",
-      "DETACHMENT ABILITY",
-      "ENHANCEMENTS"
-    ],
-    "warnings": [
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS",
-      "section-missing:RANGED WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:BS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:MELEE WEAPONS",
-      "section-missing:RANGE",
-      "section-missing:A",
-      "section-missing:WS",
-      "section-missing:S",
-      "section-missing:AP",
-      "section-missing:D",
-      "section-missing:STRATAGEMS",
-      "section-missing:DETACHMENT ABILITY",
-      "section-missing:ENHANCEMENTS"
-    ]
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }

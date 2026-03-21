@@ -1,13 +1,15 @@
 {
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
   "source": {
     "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Wulfen-Dreadnought-1",
-    "faction_slug": "space-marines",
-    "datasheet_slug": "Wulfen-Dreadnought-1",
-    "output_slug": "space-wolves",
     "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Wulfen-Dreadnought-1",
     "canonicalSourceId": "wahapedia:59b676c899b2d00a8c2641505bb407bba2f8a258",
-    "fetchedAt": "2026-03-19T17:35:02+00:00",
-    "contentHash": "2578e3a5407f95e57a7e5a678fb6d02bb8c248e6282b8117c7518ef4f47f7b1d"
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Wulfen-Dreadnought-1",
+    "fetchedAt": "2026-03-21T03:45:47+00:00",
+    "contentHash": "dbf9dfabe12f3b078185b1b9e7927d167d75f8a6057c6e4c9e0d422ae5b10113",
+    "output_slug": "space-wolves"
   },
   "name": "Wulfen Dreadnought",
   "base_size": "\u230060mm",
@@ -136,6 +138,21 @@
   ],
   "sections": [
     {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s Fenrisian greataxe or great wolf claw and storm bolter can be replaced with 1 blizzard shield and 1 heavy flamer.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "If this model is not equipped with a storm bolter, its heavy flamer can be replaced with 1 storm bolter.",
+          "items": []
+        }
+      ]
+    },
+    {
       "title": "ABILITIES",
       "entries": [
         {
@@ -200,20 +217,21 @@
       ]
     }
   ],
-  "exportSchemaVersion": 1,
-  "parserVersion": "2026-03-19-durable-normalization-v1",
   "quality": {
     "rawSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION"
     ],
     "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
       "ABILITIES",
       "WARGEAR ABILITIES",
       "UNIT COMPOSITION"
     ],
     "missingExpectedSections": [],
-    "warnings": []
+    "warnings": [],
+    "keywordColumnCount": 2
   }
 }
