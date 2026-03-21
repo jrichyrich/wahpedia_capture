@@ -7,6 +7,15 @@
 })(typeof globalThis !== "undefined" ? globalThis : this, function () {
     "use strict";
 
+    function escapeHtml(value) {
+        return String(value ?? "")
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#39;");
+    }
+
     function eventElementTarget(event) {
         if (!event) {
             return null;
@@ -18,6 +27,156 @@
             return event.target.parentElement;
         }
         return event.target || null;
+    }
+
+    function sourceCardLookupKey(unitOrSource) {
+        const source = unitOrSource && unitOrSource.source ? unitOrSource.source : unitOrSource;
+        const outputSlug = String(source && source.outputSlug ? source.outputSlug : "").trim();
+        const datasheetSlug = String(source && source.datasheetSlug ? source.datasheetSlug : "").trim();
+        if (!outputSlug || !datasheetSlug) {
+            return "";
+        }
+        return `${outputSlug}::${datasheetSlug}`;
+    }
+
+    function sourceCardUrl(unit) {
+        const source = unit && unit.source ? unit.source : null;
+        if (!source || !source.outputSlug || !source.datasheetSlug) {
+            return null;
+        }
+        return `./data/source-cards/${encodeURIComponent(source.outputSlug)}/${encodeURIComponent(source.datasheetSlug)}.png`;
+    }
+
+    function buildMissingSourceCardLookup(report) {
+        const lookup = new Set();
+        if (!report || !Array.isArray(report.factions)) {
+            return lookup;
+        }
+
+        report.factions.forEach((faction) => {
+            const missingCards = Array.isArray(faction && faction.missingSourceCards)
+                ? faction.missingSourceCards
+                : [];
+            missingCards.forEach((entry) => {
+                const reason = String(entry && entry.reason ? entry.reason : "");
+                const path = reason.startsWith("missing-file:") ? reason.slice("missing-file:".length) : "";
+                const match = path.match(/\/([^/]+)\/([^/]+)\.png$/i);
+                if (!match) {
+                    return;
+                }
+                lookup.add(`${match[1]}::${match[2]}`);
+            });
+        });
+
+        return lookup;
+    }
+
+    function buildRendererOptions(entry, previewRenderMode) {
+        const unit = entry && entry.unit ? entry.unit : null;
+        return {
+            selectedOption: entry ? entry.selectedOption : null,
+            selectedUpgrades: entry ? entry.selectedUpgrades : [],
+            selectedPoints: entry ? entry.linePoints : null,
+            quantity: entry ? entry.quantity : 1,
+            renderMode: previewRenderMode || "default",
+            selectedWargear: entry ? entry.wargearSelections : [],
+            relationshipNotes: entry && entry.relationship && Array.isArray(entry.relationship.relationshipNotes)
+                ? entry.relationship.relationshipNotes
+                : [],
+            manualWargearGroups: unit && unit.wargear
+                ? unit.wargear.options.filter((group) => group.selectionMode === "manual")
+                : [],
+        };
+    }
+
+    function renderConfiguredPreviewCard(entry, options) {
+        const renderer = options && options.renderer;
+        const unit = entry && entry.unit ? entry.unit : null;
+        if (!renderer || !unit || typeof renderer.renderCard !== "function") {
+            return "";
+        }
+        return renderer.renderCard(unit, buildRendererOptions(entry, options.previewRenderMode));
+    }
+
+    function renderSourcePreviewCard(entry, options) {
+        const unit = entry && entry.unit ? entry.unit : null;
+        const safeName = escapeHtml(entry && entry.displayName ? entry.displayName : (unit && unit.name ? unit.name : "Unknown unit"));
+        const url = sourceCardUrl(unit);
+        const missingLookup = options && options.missingSourceCardLookup instanceof Set
+            ? options.missingSourceCardLookup
+            : null;
+        const isKnownMissing = !url || Boolean(missingLookup && missingLookup.has(sourceCardLookupKey(unit)));
+        const fallbackCard = renderConfiguredPreviewCard(entry, options);
+        const fallbackMarkup = fallbackCard
+            ? `
+                <div class="source-card-fallback" data-source-card-fallback>
+                    ${fallbackCard}
+                </div>
+            `
+            : `<div class="source-card-missing inline-note inline-note-warning">Configured HTML card is not available for this unit.</div>`;
+
+        if (isKnownMissing) {
+            return `
+                <section class="source-card source-card-fallback-card" data-source-card-mode="fallback">
+                    <div class="source-card-header">
+                        <h3 class="source-card-title">${safeName}</h3>
+                        <div class="source-card-meta source-card-meta-warning">Wahapedia image unavailable; using configured card</div>
+                    </div>
+                    ${fallbackMarkup}
+                </section>
+            `;
+        }
+
+        return `
+            <section class="source-card" data-source-card-mode="image">
+                <div class="source-card-header">
+                    <h3 class="source-card-title">${safeName}</h3>
+                    <div class="source-card-meta" data-source-card-meta-default>Original Wahapedia source card</div>
+                    <div class="source-card-meta source-card-meta-warning" data-source-card-meta-fallback hidden>Wahapedia image unavailable; using configured card</div>
+                </div>
+                <div class="source-card-image-wrap" data-source-card-image-wrap>
+                    <img
+                        class="source-card-image"
+                        src="${url}"
+                        alt="Original Wahapedia card for ${safeName}"
+                        loading="lazy"
+                        onerror="var card=this.closest('.source-card'); if(card){ var imageWrap=card.querySelector('[data-source-card-image-wrap]'); var fallback=card.querySelector('[data-source-card-fallback]'); var defaultMeta=card.querySelector('[data-source-card-meta-default]'); var fallbackMeta=card.querySelector('[data-source-card-meta-fallback]'); var actions=card.querySelector('[data-source-card-actions]'); card.dataset.sourceCardMode='fallback'; if(imageWrap){ imageWrap.hidden=true; } if(fallback){ fallback.hidden=false; } if(defaultMeta){ defaultMeta.hidden=true; } if(fallbackMeta){ fallbackMeta.hidden=false; } if(actions){ actions.hidden=true; } }"
+                    >
+                </div>
+                <div class="source-card-actions" data-source-card-actions>
+                    <a class="btn" href="${url}" target="_blank" rel="noopener noreferrer">Open source image</a>
+                </div>
+                <div class="source-card-fallback" data-source-card-fallback hidden>
+                    ${fallbackCard}
+                </div>
+            </section>
+        `;
+    }
+
+    function renderPreviewEntries(entries, options) {
+        const previewSourceMode = options && options.previewSourceMode ? options.previewSourceMode : "configured";
+        const renderableEntries = Array.isArray(entries) ? entries : [];
+        if (previewSourceMode === "source-image") {
+            return renderableEntries.map((entry) => renderSourcePreviewCard(entry, options)).join("");
+        }
+        return renderableEntries.map((entry) => renderConfiguredPreviewCard(entry, options)).join("");
+    }
+
+    function printPreviewCards(options) {
+        const renderableEntries = Array.isArray(options && options.renderableEntries)
+            ? options.renderableEntries
+            : [];
+        const previewSourceMode = options && options.previewSourceMode ? options.previewSourceMode : "configured";
+        if (!renderableEntries.length) {
+            if (typeof options.alertFn === "function") {
+                options.alertFn("Add at least one resolved unit before printing.");
+            }
+            return { printed: false, previewSourceMode };
+        }
+        if (typeof options.printFn === "function") {
+            options.printFn();
+        }
+        return { printed: true, previewSourceMode };
     }
 
     function createInteractionController(deps) {
@@ -522,7 +681,12 @@
     }
 
     return {
+        buildMissingSourceCardLookup,
         createInteractionController,
         eventElementTarget,
+        printPreviewCards,
+        renderPreviewEntries,
+        sourceCardLookupKey,
+        sourceCardUrl,
     };
 });

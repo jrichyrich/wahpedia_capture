@@ -91,6 +91,27 @@ function createDeps() {
     };
 }
 
+function samplePreviewEntry(overrides = {}) {
+    const unit = {
+        ...sampleUnit(),
+        source: {
+            outputSlug: "aeldari",
+            datasheetSlug: "Avatar-of-Khaine",
+        },
+    };
+    return {
+        displayName: unit.name,
+        unit,
+        selectedOption: unit.pointsOptions[0],
+        selectedUpgrades: [],
+        linePoints: unit.pointsOptions[0].points,
+        quantity: 1,
+        wargearSelections: [],
+        relationship: { relationshipNotes: [] },
+        ...overrides,
+    };
+}
+
 function makeEvent(selector, dataset, extras = {}) {
     const element = {
         dataset: dataset || {},
@@ -480,4 +501,107 @@ test("removeFromRoster clears dependent attachment and embark references", () =>
 
     controller.removeFromRoster("entry-transport");
     assert.equal(state.roster.length, 1);
+});
+
+test("renderPreviewEntries renders configured HTML cards in configured mode", () => {
+    const entry = samplePreviewEntry();
+    const renderer = {
+        renderCard(unit) {
+            return `<article class="datasheet-card">${unit.name}</article>`;
+        },
+    };
+
+    const html = App.renderPreviewEntries([entry], {
+        previewSourceMode: "configured",
+        previewRenderMode: "default",
+        renderer,
+        missingSourceCardLookup: new Set(),
+    });
+
+    assert.match(html, /datasheet-card/);
+    assert.doesNotMatch(html, /source-card-image/);
+});
+
+test("renderPreviewEntries renders Wahapedia image cards when a source PNG is available", () => {
+    const entry = samplePreviewEntry();
+    const renderer = {
+        renderCard(unit) {
+            return `<article class="datasheet-card">${unit.name}</article>`;
+        },
+    };
+
+    const html = App.renderPreviewEntries([entry], {
+        previewSourceMode: "source-image",
+        previewRenderMode: "default",
+        renderer,
+        missingSourceCardLookup: new Set(),
+    });
+
+    assert.match(html, /data-source-card-mode="image"/);
+    assert.match(html, /source-card-image/);
+    assert.match(html, /Open source image/);
+    assert.match(html, /data-source-card-meta-fallback hidden/);
+});
+
+test("renderPreviewEntries falls back to configured HTML cards when the source PNG is missing", () => {
+    const entry = samplePreviewEntry({
+        unit: {
+            ...sampleUnit(),
+            name: "Captain Sicarius",
+            source: {
+                outputSlug: "ultramarines",
+                datasheetSlug: "Captain-Sicarius",
+            },
+        },
+        displayName: "Captain Sicarius",
+    });
+    const renderer = {
+        renderCard(unit) {
+            return `<article class="datasheet-card">${unit.name}</article>`;
+        },
+    };
+    const missing = new Set(["ultramarines::Captain-Sicarius"]);
+
+    const html = App.renderPreviewEntries([entry], {
+        previewSourceMode: "source-image",
+        previewRenderMode: "default",
+        renderer,
+        missingSourceCardLookup: missing,
+    });
+
+    assert.match(html, /Wahapedia image unavailable; using configured card/);
+    assert.match(html, /datasheet-card/);
+    assert.doesNotMatch(html, /source-card-image/);
+});
+
+test("printPreviewCards prints the current preview mode without forcing configured mode", () => {
+    const renderableEntries = [samplePreviewEntry()];
+    const calls = { print: 0, alert: 0 };
+
+    const result = App.printPreviewCards({
+        renderableEntries,
+        previewSourceMode: "source-image",
+        alertFn: () => { calls.alert += 1; },
+        printFn: () => { calls.print += 1; },
+    });
+
+    assert.equal(result.printed, true);
+    assert.equal(result.previewSourceMode, "source-image");
+    assert.equal(calls.print, 1);
+    assert.equal(calls.alert, 0);
+});
+
+test("printPreviewCards alerts when there are no renderable entries", () => {
+    const calls = { print: 0, alert: 0 };
+
+    const result = App.printPreviewCards({
+        renderableEntries: [],
+        previewSourceMode: "configured",
+        alertFn: () => { calls.alert += 1; },
+        printFn: () => { calls.print += 1; },
+    });
+
+    assert.equal(result.printed, false);
+    assert.equal(calls.print, 0);
+    assert.equal(calls.alert, 1);
 });

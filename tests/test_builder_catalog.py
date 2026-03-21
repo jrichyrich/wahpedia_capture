@@ -646,8 +646,9 @@ class BuilderAppSmokeTests(unittest.TestCase):
         self.assertIn("./card_renderer.js?v=", html)
         self.assertIn("./roster_store.js?v=", html)
         self.assertIn("./app.js?v=", html)
-        self.assertIn("WahBuilderCardRenderer.renderCard", html)
-        self.assertIn("Print roster cards", html)
+        self.assertIn("BuilderApp.renderPreviewEntries", html)
+        self.assertIn("BuilderApp.printPreviewCards", html)
+        self.assertIn("Print preview cards", html)
         self.assertIn("Import JSON", html)
         self.assertIn("Export JSON", html)
         self.assertIn("Saved rosters", html)
@@ -660,7 +661,8 @@ class BuilderAppSmokeTests(unittest.TestCase):
         self.assertIn("Legal foundation checks passed", html)
         self.assertIn('window.location.protocol === "file:"', html)
         self.assertIn("Original Wahapedia", html)
-        self.assertIn("./data/source-cards/", html)
+        self.assertIn("manifest.reportFile", html)
+        self.assertIn("BuilderApp.buildMissingSourceCardLookup", html)
 
 
 if __name__ == "__main__":

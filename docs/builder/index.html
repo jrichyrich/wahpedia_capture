@@ -443,6 +443,10 @@
             text-transform: uppercase;
         }
 
+        .source-card-meta-warning {
+            color: #8a3b2f;
+        }
+
         .source-card-image-wrap {
             padding: 16px;
             background: #f3efe4;
@@ -464,6 +468,11 @@
 
         .source-card-missing {
             padding: 16px;
+        }
+
+        .source-card-fallback {
+            padding: 16px;
+            background: #f7f3eb;
         }
 
         .inline-note {
@@ -791,7 +800,7 @@
 
                 <div class="roster-actions">
                     <button id="clear-roster" class="btn">Clear roster</button>
-                    <button id="print-roster" class="btn btn-primary">Print roster cards</button>
+                    <button id="print-roster" class="btn btn-primary">Print preview cards</button>
                 </div>
             </section>
 
@@ -821,9 +830,9 @@
 
     <input id="import-roster-file" type="file" accept=".json,application/json" hidden>
 
-    <script src="./card_renderer.js?v=20260319-relationships-preview"></script>
-    <script src="./roster_store.js?v=20260319-relationships-preview"></script>
-    <script src="./app.js?v=20260319-relationships-preview"></script>
+    <script src="./card_renderer.js?v=20260321-source-print-preview"></script>
+    <script src="./roster_store.js?v=20260321-source-print-preview"></script>
+    <script src="./app.js?v=20260321-source-print-preview"></script>
     <script>
         const Store = window.WahBuilderRosterStore;
         const BuilderApp = window.WahBuilderApp;
@@ -843,6 +852,7 @@
             saveTimer: null,
             previewRenderMode: "default",
             previewSourceMode: "configured",
+            missingSourceCardLookup: new Set(),
             mobilePreviewVisible: false,
             wasMobileViewport: false,
         };
@@ -1117,61 +1127,8 @@
             els.previewModeSource.setAttribute("aria-pressed", !isConfigured ? "true" : "false");
             els.printCleanToggle.disabled = !isConfigured;
             els.previewModeNote.textContent = isConfigured
-                ? "Configured cards reflect your roster choices. Switch to Original Wahapedia to inspect the captured source card."
-                : "Original Wahapedia cards are static source captures and may not reflect selected upgrades, wargear, or quantity.";
-        }
-
-        function sourceCardUrl(unit) {
-            const source = unit && unit.source ? unit.source : null;
-            if (!source || !source.outputSlug || !source.datasheetSlug) {
-                return null;
-            }
-            return `./data/source-cards/${encodeURIComponent(source.outputSlug)}/${encodeURIComponent(source.datasheetSlug)}.png`;
-        }
-
-        function escapeHtml(value) {
-            return String(value ?? "")
-                .replace(/&/g, "&amp;")
-                .replace(/</g, "&lt;")
-                .replace(/>/g, "&gt;")
-                .replace(/"/g, "&quot;")
-                .replace(/'/g, "&#39;");
-        }
-
-        function renderSourceCard(entry) {
-            const url = entry && entry.unit ? sourceCardUrl(entry.unit) : null;
-            const safeName = escapeHtml(entry && entry.displayName ? entry.displayName : "Unknown unit");
-            const imageMarkup = url
-                ? `
-                    <div class="source-card-image-wrap">
-                        <img
-                            class="source-card-image"
-                            src="${url}"
-                            alt="Original Wahapedia card for ${safeName}"
-                            loading="lazy"
-                            onerror="this.closest('.source-card').dataset.missing='true'; this.replaceWith(Object.assign(document.createElement('div'), { className: 'source-card-missing inline-note inline-note-warning', textContent: 'Original Wahapedia card is not available for this unit.' }));"
-                        >
-                    </div>
-                `
-                : `<div class="source-card-missing inline-note inline-note-warning">Original Wahapedia card is not available for this unit.</div>`;
-            const actionsMarkup = url
-                ? `
-                    <div class="source-card-actions">
-                        <a class="btn" href="${url}" target="_blank" rel="noopener noreferrer">Open source image</a>
-                    </div>
-                `
-                : "";
-
-            return `
-                <article class="source-card">
-                    <div class="source-card-header">
-                        <h3 class="source-card-title">${safeName}</h3>
-                        <div class="source-card-meta">Original Wahapedia source card</div>
-                    </div>
-                    ${imageMarkup}
-                    ${actionsMarkup}
-                </article>
-            `;
+                ? "Configured cards reflect your roster choices and print exactly as shown."
+                : "Original Wahapedia mode prints source images when available and falls back to configured HTML cards when an image capture is missing.";
         }
 
         function renderFactionOptions() {
@@ -1643,28 +1600,12 @@
                 return;
             }
 
-            if (state.previewSourceMode === "source-image") {
-                els.previewBody.innerHTML = renderableEntries.map((entry) => renderSourceCard(entry)).join("");
-                renderPreviewVisibility();
-                return;
-            }
-
-            els.previewBody.innerHTML = renderableEntries.map((entry) => {
-                return window.WahBuilderCardRenderer.renderCard(entry.unit, {
-                    selectedOption: entry.selectedOption,
-                    selectedUpgrades: entry.selectedUpgrades,
-                    selectedPoints: entry.linePoints,
-                    quantity: entry.quantity,
-                    renderMode: state.previewRenderMode,
-                    selectedWargear: entry.wargearSelections,
-                    relationshipNotes: entry.relationship && Array.isArray(entry.relationship.relationshipNotes)
-                        ? entry.relationship.relationshipNotes
-                        : [],
-                    manualWargearGroups: entry.unit && entry.unit.wargear
-                        ? entry.unit.wargear.options.filter((group) => group.selectionMode === "manual")
-                        : [],
-                });
-            }).join("");
+            els.previewBody.innerHTML = BuilderApp.renderPreviewEntries(renderableEntries, {
+                previewSourceMode: state.previewSourceMode,
+                previewRenderMode: state.previewRenderMode,
+                renderer: window.WahBuilderCardRenderer,
+                missingSourceCardLookup: state.missingSourceCardLookup,
+            });
             renderPreviewVisibility();
         }
 
@@ -1742,6 +1683,13 @@
         async function loadManifest() {
             const manifest = await fetchJson("./data/manifest.json");
             state.manifest = manifest;
+            try {
+                const reportPath = manifest && manifest.reportFile ? `./data/${manifest.reportFile}` : null;
+                const report = reportPath ? await fetchJson(reportPath) : null;
+                state.missingSourceCardLookup = BuilderApp.buildMissingSourceCardLookup(report);
+            } catch (error) {
+                state.missingSourceCardLookup = new Set();
+            }
             renderFactionOptions();
         }
 
@@ -1879,22 +1827,12 @@
         els.printRoster.addEventListener("click", () => {
             const derived = deriveRoster();
             const renderableEntries = derived.entries.filter((entry) => entry.unit && entry.selectedOption);
-            if (!renderableEntries.length) {
-                alert("Add at least one resolved unit before printing.");
-                return;
-            }
-            if (state.previewSourceMode === "configured") {
-                window.print();
-                return;
-            }
-            const previousMode = state.previewSourceMode;
-            state.previewSourceMode = "configured";
-            renderPreview();
-            window.setTimeout(() => {
-                window.print();
-                state.previewSourceMode = previousMode;
-                renderPreview();
-            }, 0);
+            BuilderApp.printPreviewCards({
+                renderableEntries,
+                previewSourceMode: state.previewSourceMode,
+                alertFn: (message) => alert(message),
+                printFn: () => window.print(),
+            });
         });
 
         init();
