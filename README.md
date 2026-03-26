@@ -125,6 +125,14 @@ python scripts/export_datasheet_json.py --output-slug aeldari
 
 That writes per-card JSON files under `out/json/<faction>/` plus an `index.json` bundle for the faction.
 
+For canonical Wahapedia factions, you can refresh the source manifest directly from the live sitemap instead of generating it through Selenium first:
+
+```bash
+python scripts/build_sitemap_manifests.py --output-slug aeldari
+```
+
+That updates `out/source/aeldari-links.json` in the same format the exporter already consumes. This v1 sitemap flow is canonical-only. Filtered subset manifests such as `space-wolves`, `ultramarines`, and `dark-angels` still rely on the browser-based capture flow.
+
 You can also render a simple HTML example from one of those JSON files:
 
 ```bash
@@ -176,6 +184,7 @@ You can optionally refresh one or more factions before building:
 
 ```bash
 python scripts/build_builder_site.py \
+  --refresh-sitemap-manifest aeldari \
   --export-output-slug aeldari \
   --export-output-slug adeptus-custodes \
   --clean

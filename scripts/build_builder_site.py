@@ -76,6 +76,12 @@ def parse_args() -> argparse.Namespace:
         description="Build the builder-ready catalogs and optional example card HTML."
     )
     parser.add_argument(
+        "--refresh-sitemap-manifest",
+        action="append",
+        default=[],
+        help="Optional canonical faction slug to refresh from the Wahapedia sitemap before exporting.",
+    )
+    parser.add_argument(
         "--export-output-slug",
         action="append",
         default=[],
@@ -116,6 +122,12 @@ def render_all_examples() -> None:
 
 def main() -> None:
     args = parse_args()
+
+    if args.refresh_sitemap_manifest:
+        command = [PYTHON, "scripts/build_sitemap_manifests.py"]
+        for slug in args.refresh_sitemap_manifest:
+            command.extend(["--output-slug", slug])
+        run_command(command)
 
     export_slugs = discover_impacted_output_slugs(args.export_output_slug)
     for slug in export_slugs:
