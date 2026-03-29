@@ -1,0 +1,300 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Leviathan-Dreadnought",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Leviathan-Dreadnought",
+    "canonicalSourceId": "wahapedia:3b8b3c38e27845c5c2a94e1434279328e4b5ede7",
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Leviathan-Dreadnought",
+    "fetchedAt": "2026-03-29T18:00:55+00:00",
+    "contentHash": "9d311211beccef7721e2923d339cc6ae08a9bd61eb486bacc6df3a93b2dbdbfc",
+    "output_slug": "blood-angels"
+  },
+  "name": "Leviathan Dreadnought",
+  "base_size": "\u230080mm",
+  "characteristics": {
+    "M": "8\"",
+    "T": "10",
+    "Sv": "2+",
+    "W": "12",
+    "Ld": "6+",
+    "OC": "4",
+    "Invulnerable Save": "5+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Cyclonic melta lance",
+        "abilities": [
+          "melta 2"
+        ],
+        "range": "18\"",
+        "a": "D6",
+        "bs": "3+",
+        "s": "9",
+        "ap": "-4",
+        "d": "D6"
+      },
+      {
+        "name": "Grav-flux bombard",
+        "abilities": [
+          "anti-vehicle 2+",
+          "blast"
+        ],
+        "range": "24\"",
+        "a": "2D3",
+        "bs": "3+",
+        "s": "8",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Heavy flamer",
+        "abilities": [
+          "ignores cover",
+          "torrent"
+        ],
+        "range": "12\"",
+        "a": "D6",
+        "bs": "N/A",
+        "s": "5",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Hunter-killer missile one shot",
+        "abilities": [],
+        "range": "48\"",
+        "a": "1",
+        "bs": "2+",
+        "s": "14",
+        "ap": "-3",
+        "d": "D6"
+      },
+      {
+        "name": "Meltagun",
+        "abilities": [
+          "melta 2"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "9",
+        "ap": "-4",
+        "d": "D6"
+      },
+      {
+        "name": "Storm cannon",
+        "abilities": [
+          "twin-linked"
+        ],
+        "range": "36\"",
+        "a": "4",
+        "bs": "3+",
+        "s": "9",
+        "ap": "-1",
+        "d": "3"
+      },
+      {
+        "name": "Twin volkite caliver",
+        "abilities": [
+          "devastating wounds",
+          "twin-linked"
+        ],
+        "range": "24\"",
+        "a": "2",
+        "bs": "3+",
+        "s": "5",
+        "ap": "0",
+        "d": "2"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Armoured feet",
+        "abilities": [],
+        "range": "Melee",
+        "a": "5",
+        "ws": "3+",
+        "s": "6",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Leviathan siege claw",
+        "abilities": [],
+        "range": "Melee",
+        "a": "5",
+        "ws": "3+",
+        "s": "12",
+        "ap": "-2",
+        "d": "3"
+      },
+      {
+        "name": "Leviathan siege drill",
+        "abilities": [
+          "anti-vehicle 3+"
+        ],
+        "range": "Melee",
+        "a": "4",
+        "ws": "3+",
+        "s": "12",
+        "ap": "-2",
+        "d": "3"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise D3"
+    ],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time an attack is allocated to this model, subtract 1 from the Damage characteristic of that attack.",
+        "name": "Duty Eternal"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Leviathan Dreadnought"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "2 heavy flamers; 2 grav-flux bombards; armoured feet.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "160"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "VEHICLE",
+    "WALKER",
+    "IMPERIUM",
+    "SMOKE",
+    "DREADNOUGHT",
+    "LEVIATHAN DREADNOUGHT",
+    "DEATHWING"
+  ],
+  "faction_keywords": [
+    "ADEPTUS ASTARTES"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "Each of this model\u2019s grav-flux bombards can be replaced with one of the following",
+          "items": [
+            "1 cyclonic melta lance",
+            "1 storm cannon",
+            "1 meltagun and 1 Leviathan siege claw",
+            "1 meltagun and 1 Leviathan siege drill"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "This model\u2019s 2 heavy flamers can be replaced with 2 twin volkite calivers.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "This model can be equipped with 3 hunter-killer missiles.",
+          "items": []
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise D3"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time an attack is allocated to this model, subtract 1 from the Damage characteristic of that attack.",
+          "name": "Duty Eternal"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Leviathan Dreadnought"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "2 heavy flamers; 2 grav-flux bombards; armoured feet.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "160"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DAMAGED: 1-4 WOUNDS REMAINING",
+      "entries": [
+        {
+          "type": "text",
+          "text": "While this model has 1-4 wounds remaining, each time this model makes an attack, subtract 1 from the Hit roll ."
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-4 WOUNDS REMAINING"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-4 WOUNDS REMAINING"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

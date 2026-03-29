@@ -1,0 +1,258 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/orks/Mek-Gunz",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/orks/Mek-Gunz",
+    "canonicalSourceId": "wahapedia:27af9259b33dc66eaca379a686045a7e479d20f7",
+    "faction_slug": "orks",
+    "datasheet_slug": "Mek-Gunz",
+    "fetchedAt": "2026-03-29T17:24:16+00:00",
+    "contentHash": "995756c0e11e041e7d10059d47f011f42d5d4911f396958493e82abb7b4c7248",
+    "output_slug": "orks"
+  },
+  "name": "Mek Gunz",
+  "base_size": "\u2300Use model",
+  "characteristics": {
+    "M": "3\"",
+    "T": "5",
+    "Sv": "5+",
+    "W": "6",
+    "Ld": "8+",
+    "OC": "2",
+    "Invulnerable Save": "6+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Bubblechukka \u2013 big bubble bubblechukka",
+        "abilities": [
+          "blast"
+        ],
+        "range": "48\"",
+        "a": "2D6",
+        "bs": "4+",
+        "s": "6",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Bubblechukka \u2013 wobbly bubble bubblechukka",
+        "abilities": [
+          "blast"
+        ],
+        "range": "48\"",
+        "a": "D6",
+        "bs": "4+",
+        "s": "9",
+        "ap": "-2",
+        "d": "3"
+      },
+      {
+        "name": "Bubblechukka \u2013 dense bubble bubblechukka",
+        "abilities": [
+          "blast"
+        ],
+        "range": "48\"",
+        "a": "D3",
+        "bs": "4+",
+        "s": "12",
+        "ap": "-3",
+        "d": "D6+3"
+      },
+      {
+        "name": "Kustom mega-kannon",
+        "abilities": [
+          "BLAST",
+          "HAZARDOUS"
+        ],
+        "range": "36\"",
+        "a": "D6",
+        "bs": "4+",
+        "s": "12",
+        "ap": "-1",
+        "d": "D6"
+      },
+      {
+        "name": "Smasha gun",
+        "abilities": [
+          "BLAST"
+        ],
+        "range": "48\"",
+        "a": "D3+1",
+        "bs": "4+",
+        "s": "9",
+        "ap": "-3",
+        "d": "3"
+      },
+      {
+        "name": "Traktor kannon",
+        "abilities": [
+          "ANTI-FLY 2+",
+          "DEVASTATING WOUNDS"
+        ],
+        "range": "48\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "10",
+        "ap": "-2",
+        "d": "D6+1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Grot crew",
+        "abilities": [],
+        "range": "Melee",
+        "a": "6",
+        "ws": "5+",
+        "s": "2",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [],
+    "faction": [
+      "Waaagh!"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time a model in this unit makes a ranged attack that targets a unit that is at its Starting Strength (excluding MONSTERS and VEHICLES ), re-roll a Hit roll of 1.",
+        "name": "Splat!"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1-3 Mek Gunz"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "smasha gun; grot crew.",
+      "label": "Every model is equipped with"
+    },
+    {
+      "type": "statement",
+      "text": "Place five Grot Crew tokens next to each Mek Gun model when this unit is first set up, removing one each time its Mek Gun model loses a wound (a Mek Gun model itself is considered to represent its final wound).",
+      "label": "Designer\u2019s Note"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "50"
+        },
+        {
+          "label": "2 models",
+          "points": "100"
+        },
+        {
+          "label": "3 models",
+          "points": "150"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "VEHICLE",
+    "GROTS",
+    "MEK GUNZ"
+  ],
+  "faction_keywords": [
+    "ORKS"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "Each model\u2019s smasha gun can be replaced with one of the following:",
+          "items": [
+            "1 bubblechukka",
+            "1 kustom mega-kannon",
+            "1 traktor kannon"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Waaagh!"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time a model in this unit makes a ranged attack that targets a unit that is at its Starting Strength (excluding MONSTERS and VEHICLES ), re-roll a Hit roll of 1.",
+          "name": "Splat!"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1-3 Mek Gunz"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "smasha gun; grot crew.",
+          "label": "Every model is equipped with"
+        },
+        {
+          "type": "statement",
+          "text": "Place five Grot Crew tokens next to each Mek Gun model when this unit is first set up, removing one each time its Mek Gun model loses a wound (a Mek Gun model itself is considered to represent its final wound).",
+          "label": "Designer\u2019s Note"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "50"
+            },
+            {
+              "label": "2 models",
+              "points": "100"
+            },
+            {
+              "label": "3 models",
+              "points": "150"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

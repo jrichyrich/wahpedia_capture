@@ -1,0 +1,258 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Cerberus",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Cerberus",
+    "canonicalSourceId": "wahapedia:38081c44eed633b5cc898c1c14f89b1a743e7f8e",
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Cerberus",
+    "fetchedAt": "2026-03-29T17:55:15+00:00",
+    "contentHash": "d8af3b3a713793f11e93e0d16cffff904e7d1de08ea924064c921b6252c0c9e0",
+    "output_slug": "blood-angels"
+  },
+  "name": "Cerberus",
+  "base_size": "\u2300Use model",
+  "characteristics": {
+    "M": "10\"",
+    "T": "12",
+    "Sv": "2+",
+    "W": "18",
+    "Ld": "6+",
+    "OC": "6"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Cerberus neutron pulse array",
+        "abilities": [
+          "twin-linked"
+        ],
+        "range": "48\"",
+        "a": "3",
+        "bs": "3+",
+        "s": "16",
+        "ap": "-4",
+        "d": "D6+3"
+      },
+      {
+        "name": "Heavy bolter",
+        "abilities": [
+          "sustained hits 1"
+        ],
+        "range": "36\"",
+        "a": "3",
+        "bs": "3+",
+        "s": "5",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Heavy flamer",
+        "abilities": [
+          "torrent",
+          "ignores cover"
+        ],
+        "range": "12\"",
+        "a": "D6",
+        "bs": "N/A",
+        "s": "5",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Lascannon",
+        "abilities": [],
+        "range": "48\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "12",
+        "ap": "-3",
+        "d": "D6+1"
+      },
+      {
+        "name": "Multi-melta",
+        "abilities": [
+          "melta 2"
+        ],
+        "range": "18\"",
+        "a": "2",
+        "bs": "3+",
+        "s": "9",
+        "ap": "-4",
+        "d": "D6"
+      },
+      {
+        "name": "Storm bolter",
+        "abilities": [
+          "rapid fire 2"
+        ],
+        "range": "24\"",
+        "a": "2",
+        "bs": "3+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Armoured tracks",
+        "abilities": [],
+        "range": "Melee",
+        "a": "6",
+        "ws": "4+",
+        "s": "8",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise D6"
+    ],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this unit shoots its Cerberus neutron pulse array in your Shooting phase , provided it Remained Stationary this turn, that weapon has the [LETHAL HITS] ability.",
+        "name": "Atomantic Arc-reactor"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Cerberus"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "Cerberus neutron pulse array; armoured tracks.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "270"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "VEHICLE",
+    "IMPERIUM",
+    "SMOKE",
+    "CERBERUS"
+  ],
+  "faction_keywords": [
+    "ADEPTUS ASTARTES"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model can be equipped with one of the following:",
+          "items": [
+            "2 heavy bolters",
+            "2 lascannons"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "This model can be equipped with one of the following:",
+          "items": [
+            "1 heavy bolter",
+            "1 heavy flamer",
+            "1 multi-melta",
+            "1 storm bolter"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise D6"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this unit shoots its Cerberus neutron pulse array in your Shooting phase , provided it Remained Stationary this turn, that weapon has the [LETHAL HITS] ability.",
+          "name": "Atomantic Arc-reactor"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Cerberus"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "Cerberus neutron pulse array; armoured tracks.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "270"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DAMAGED: 1-6 WOUNDS REMAINING",
+      "entries": [
+        {
+          "type": "text",
+          "text": "While this model has 1-6 wounds remaining, each time this model makes an attack, subtract 1 from the Hit roll ."
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-6 WOUNDS REMAINING"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-6 WOUNDS REMAINING"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

@@ -1,0 +1,216 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/orks/Burna-bommer",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/orks/Burna-bommer",
+    "canonicalSourceId": "wahapedia:6d9313e9a0f8d165c148ac1ca0ffd52863a933f0",
+    "faction_slug": "orks",
+    "datasheet_slug": "Burna-bommer",
+    "fetchedAt": "2026-03-29T17:24:05+00:00",
+    "contentHash": "9d8054d3909f3482cde7bb6c7ce3a62dd974591ecb91b8c49b3fe5e741ab0343",
+    "output_slug": "orks"
+  },
+  "name": "Burna-bommer",
+  "base_size": "\u2300120 x 92mm flying base",
+  "characteristics": {
+    "M": "20+\"",
+    "T": "9",
+    "Sv": "3+",
+    "W": "12",
+    "Ld": "7+",
+    "OC": "0",
+    "Invulnerable Save": "6+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Twin big shoota",
+        "abilities": [
+          "rapid fire 2",
+          "twin-linked"
+        ],
+        "range": "36\"",
+        "a": "3",
+        "bs": "5+",
+        "s": "5",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Twin supa-shoota",
+        "abilities": [
+          "rapid fire 2",
+          "sustained hits 1",
+          "twin-linked"
+        ],
+        "range": "36\"",
+        "a": "4",
+        "bs": "5+",
+        "s": "6",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Skorcha missile rack",
+        "abilities": [
+          "blast",
+          "ignores cover"
+        ],
+        "range": "36\"",
+        "a": "2D6",
+        "bs": "5+",
+        "s": "5",
+        "ap": "-1",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Armoured hull",
+        "abilities": [],
+        "range": "Melee",
+        "a": "3",
+        "ws": "4+",
+        "s": "6",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise D3"
+    ],
+    "faction": [
+      "Waaagh!"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this model ends a Normal move , you can select one enemy unit it moved over during that move. Until the end of the turn, models in that unit cannot have the Benefit of Cover . In addition, roll one D6 for each model in that unit: for each 6, that unit suffers 1 mortal wound .",
+        "name": "Burna Bomb"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Burna-bommer"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "twin big shoota; twin supa-shoota; armoured hull.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "125"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "VEHICLE",
+    "FLY",
+    "AIRCRAFT",
+    "SPEED FREEKS",
+    "BURNA-BOMMER"
+  ],
+  "faction_keywords": [
+    "ORKS"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model can be equipped with 1 skorcha missile rack.",
+          "items": []
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise D3"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Waaagh!"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model ends a Normal move , you can select one enemy unit it moved over during that move. Until the end of the turn, models in that unit cannot have the Benefit of Cover . In addition, roll one D6 for each model in that unit: for each 6, that unit suffers 1 mortal wound .",
+          "name": "Burna Bomb"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Burna-bommer"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "twin big shoota; twin supa-shoota; armoured hull.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "125"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DAMAGED: 1-4 WOUNDS REMAINING",
+      "entries": [
+        {
+          "type": "text",
+          "text": "While this model has 1-4 wounds remaining, each time this model makes an attack, subtract 1 from the Hit roll ."
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-4 WOUNDS REMAINING"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-4 WOUNDS REMAINING"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

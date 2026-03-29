@@ -1,0 +1,245 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/orks/Gargantuan-Squiggoth",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/orks/Gargantuan-Squiggoth",
+    "canonicalSourceId": "wahapedia:ebb57b3400e23f339109af26c2fa73c703b8ef29",
+    "faction_slug": "orks",
+    "datasheet_slug": "Gargantuan-Squiggoth",
+    "fetchedAt": "2026-03-29T17:24:10+00:00",
+    "contentHash": "08349b6bb77bc499339a9fea6228ce4f575146197089161a35688295759d75e8",
+    "output_slug": "orks"
+  },
+  "name": "Gargantuan Squiggoth",
+  "base_size": "\u2300Use model",
+  "characteristics": {
+    "M": "10\"",
+    "T": "13",
+    "Sv": "3+",
+    "W": "30",
+    "Ld": "7+",
+    "OC": "12"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Kannon \u2013 frag",
+        "abilities": [
+          "blast"
+        ],
+        "range": "36\"",
+        "a": "D6",
+        "bs": "5+",
+        "s": "5",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Kannon \u2013 shell",
+        "abilities": [],
+        "range": "36\"",
+        "a": "1",
+        "bs": "5+",
+        "s": "9",
+        "ap": "-2",
+        "d": "D6"
+      },
+      {
+        "name": "Supa-kannon",
+        "abilities": [
+          "blast"
+        ],
+        "range": "60\"",
+        "a": "2D6",
+        "bs": "5+",
+        "s": "12",
+        "ap": "-2",
+        "d": "3"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Huge tusks \u2013 strike",
+        "abilities": [
+          "lance"
+        ],
+        "range": "Melee",
+        "a": "6",
+        "ws": "3+",
+        "s": "14",
+        "ap": "-3",
+        "d": "12"
+      },
+      {
+        "name": "Huge tusks \u2013 sweep",
+        "abilities": [],
+        "range": "Melee",
+        "a": "18",
+        "ws": "3+",
+        "s": "9",
+        "ap": "-2",
+        "d": "3"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise 2D6 , Firing Deck 20"
+    ],
+    "faction": [
+      "Waaagh!"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this model makes a Normal , Advance or Fall Back move, it can move over models (excluding TITANIC models) and terrain features that are 4\" or less in height as if they were not there.",
+        "name": "Gargantuan"
+      },
+      {
+        "type": "rule",
+        "text": "This model does not suffer the penalty to its Hit rolls for making ranged attacks while enemy units are within Engagement Range of it.",
+        "name": "Walking Bastion"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Gargantuan Squiggoth"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "huge tusks.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "440"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "MONSTER",
+    "TITANIC",
+    "TOWERING",
+    "TRANSPORT",
+    "GARGANTUAN SQUIGGOTH"
+  ],
+  "faction_keywords": [
+    "ORKS"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model can be equipped with one of the following:",
+          "items": [
+            "1 kannon",
+            "1 supa-kannon"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise 2D6 , Firing Deck 20"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Waaagh!"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model makes a Normal , Advance or Fall Back move, it can move over models (excluding TITANIC models) and terrain features that are 4\" or less in height as if they were not there.",
+          "name": "Gargantuan"
+        },
+        {
+          "type": "rule",
+          "text": "This model does not suffer the penalty to its Hit rolls for making ranged attacks while enemy units are within Engagement Range of it.",
+          "name": "Walking Bastion"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Gargantuan Squiggoth"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "huge tusks.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "440"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DAMAGED: 1-10 WOUNDS REMAINING",
+      "entries": [
+        {
+          "type": "text",
+          "text": "While this model has 1-10 wounds remaining, subtract 6 from this model\u2019s Objective Control characteristic and each time this model makes an attack, subtract 1 from the Hit roll ."
+        }
+      ]
+    },
+    {
+      "title": "TRANSPORT",
+      "entries": [
+        {
+          "type": "text",
+          "text": "This model has a transport capacity of 20 ORKS INFANTRY models. Each MEGA ARMOUR or JUMP PACK model takes up the space of 2 models. GHAZGHKULL THRAKA takes up the space of 18 models. If this model is equipped with a supa-kannon, it has a transport capacity of 15 ORKS INFANTRY models."
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-10 WOUNDS REMAINING",
+      "TRANSPORT"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-10 WOUNDS REMAINING",
+      "TRANSPORT"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

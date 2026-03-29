@@ -1,0 +1,323 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Death-Company-Marines-With-Jump-Packs",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Death-Company-Marines-With-Jump-Packs",
+    "canonicalSourceId": "wahapedia:bb329a1eb5b8b2a6d1377245cd7ea3941857ddf0",
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Death-Company-Marines-With-Jump-Packs",
+    "fetchedAt": "2026-03-29T17:53:02+00:00",
+    "contentHash": "c5ad5c1572e2b1c1f662b9ee7ea7f0fcdf3ae5123ce9f08c54c80de9d042aacc",
+    "output_slug": "blood-angels"
+  },
+  "name": "Death Company Marines With Jump Packs",
+  "base_size": "\u230032mm",
+  "characteristics": {
+    "M": "12\"",
+    "T": "4",
+    "Sv": "3+",
+    "W": "2",
+    "Ld": "6+",
+    "OC": "1"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Hand flamer",
+        "abilities": [
+          "ignores cover",
+          "pistol",
+          "torrent"
+        ],
+        "range": "12\"",
+        "a": "D6",
+        "bs": "N/A",
+        "s": "3",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Heavy bolt pistol",
+        "abilities": [
+          "pistol"
+        ],
+        "range": "18\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "4",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Inferno pistol",
+        "abilities": [
+          "pistol",
+          "melta 2"
+        ],
+        "range": "6\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "8",
+        "ap": "-4",
+        "d": "D3"
+      },
+      {
+        "name": "Plasma pistol \u2013 standard",
+        "abilities": [
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "7",
+        "ap": "-2",
+        "d": "1"
+      },
+      {
+        "name": "Plasma pistol \u2013 supercharge",
+        "abilities": [
+          "hazardous",
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "8",
+        "ap": "-3",
+        "d": "2"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Astartes chainsword",
+        "abilities": [],
+        "range": "Melee",
+        "a": "4",
+        "ws": "3+",
+        "s": "4",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Eviscerator",
+        "abilities": [
+          "sustained hits 1"
+        ],
+        "range": "Melee",
+        "a": "3",
+        "ws": "4+",
+        "s": "7",
+        "ap": "-2",
+        "d": "2"
+      },
+      {
+        "name": "Power fist",
+        "abilities": [],
+        "range": "Melee",
+        "a": "3",
+        "ws": "3+",
+        "s": "8",
+        "ap": "-2",
+        "d": "2"
+      },
+      {
+        "name": "Power weapon",
+        "abilities": [],
+        "range": "Melee",
+        "a": "4",
+        "ws": "3+",
+        "s": "5",
+        "ap": "-2",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deep Strike , Feel No Pain 6+"
+    ],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this model makes a melee attack, you can re-roll the Hit roll . While this model\u2019s unit is not within 6\" of one or more friendly BLOOD ANGELS CHARACTER models, or 12\" of one or more friendly CHAPLAIN models, it cannot be selected to Fall Back and its Objective Control characteristic is 0.",
+        "name": "Black Rage"
+      },
+      {
+        "type": "rule",
+        "text": "You can re-roll Charge rolls made for this unit.",
+        "name": "Savage Fury"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "5-10 Death Company Marines with Jump Packs"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "heavy bolt pistol; Astartes chainsword.",
+      "label": "Every model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "5 models",
+          "points": "120"
+        },
+        {
+          "label": "10 models",
+          "points": "230"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "FLY",
+    "JUMP PACK",
+    "GRENADES",
+    "IMPERIUM",
+    "TACTICUS",
+    "DEATH COMPANY",
+    "DEATH COMPANY MARINES WITH JUMP PACKS"
+  ],
+  "faction_keywords": [
+    "ADEPTUS ASTARTES",
+    "BLOOD ANGELS"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "For every 5 models in this unit, 1 model\u2019s heavy bolt pistol can be replaced with 1 plasma pistol.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "For every 5 models in this unit, 1 model\u2019s Astartes chainsword can be replaced with 1 eviscerator.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "1 model\u2019s Astartes chainsword can be replaced with one of the following:",
+          "items": [
+            "1 power fist",
+            "1 power weapon"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "For every 5 models in this unit, 1 model\u2019s heavy bolt pistol and Astartes chainsword can be replaced with one of the following:",
+          "items": [
+            "1 hand flamer and 1 Astartes chainsword",
+            "1 hand flamer and 1 power fist",
+            "1 hand flamer and 1 power weapon",
+            "1 heavy bolt pistol and 1 power fist",
+            "1 heavy bolt pistol and 1 power weapon",
+            "1 inferno pistol and 1 Astartes chainsword",
+            "1 inferno pistol and 1 power fist",
+            "1 inferno pistol and 1 power weapon",
+            "1 plasma pistol and 1 Astartes chainsword",
+            "1 plasma pistol and 1 power fist",
+            "1 plasma pistol and 1 power weapon"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deep Strike , Feel No Pain 6+"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model makes a melee attack, you can re-roll the Hit roll . While this model\u2019s unit is not within 6\" of one or more friendly BLOOD ANGELS CHARACTER models, or 12\" of one or more friendly CHAPLAIN models, it cannot be selected to Fall Back and its Objective Control characteristic is 0.",
+          "name": "Black Rage"
+        },
+        {
+          "type": "rule",
+          "text": "You can re-roll Charge rolls made for this unit.",
+          "name": "Savage Fury"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "5-10 Death Company Marines with Jump Packs"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "heavy bolt pistol; Astartes chainsword.",
+          "label": "Every model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "5 models",
+              "points": "120"
+            },
+            {
+              "label": "10 models",
+              "points": "230"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ATTACHED UNIT",
+      "entries": [
+        {
+          "type": "text",
+          "text": "If a CHAPLAIN model from your army with the Leader ability can be attached to ASSAULT INTERCESSORS WITH JUMP PACKS , it can be attached to this unit instead."
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "ATTACHED UNIT"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "ATTACHED UNIT"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

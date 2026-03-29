@@ -1,0 +1,290 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/orks/Big-Mek-In-Mega-Armour",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/orks/Big-Mek-In-Mega-Armour",
+    "canonicalSourceId": "wahapedia:0df7de6b0a0525021a5d8a998015a07d54577f8a",
+    "faction_slug": "orks",
+    "datasheet_slug": "Big-Mek-In-Mega-Armour",
+    "fetchedAt": "2026-03-29T17:24:00+00:00",
+    "contentHash": "0aa3cbe4e4ad2c32da4046ca0bd5b40a1790a3e11096dc5990385327f151b641",
+    "output_slug": "orks"
+  },
+  "name": "Big Mek In Mega Armour",
+  "base_size": "\u230040mm",
+  "characteristics": {
+    "M": "5\"",
+    "T": "6",
+    "Sv": "2+",
+    "W": "5",
+    "Ld": "7+",
+    "OC": "1"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Kombi-weapon",
+        "abilities": [
+          "anti-infantry 4+",
+          "devastating wounds",
+          "rapid fire 1"
+        ],
+        "range": "24\"",
+        "a": "1",
+        "bs": "5+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Kustom mega-blasta",
+        "abilities": [
+          "hazardous"
+        ],
+        "range": "24\"",
+        "a": "3",
+        "bs": "5+",
+        "s": "9",
+        "ap": "-2",
+        "d": "D6"
+      },
+      {
+        "name": "Kustom shoota",
+        "abilities": [
+          "rapid fire 2"
+        ],
+        "range": "18\"",
+        "a": "4",
+        "bs": "5+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Tellyport blasta",
+        "abilities": [
+          "blast"
+        ],
+        "range": "12\"",
+        "a": "3",
+        "bs": "5+",
+        "s": "8",
+        "ap": "-1",
+        "d": "3"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Killsaw",
+        "abilities": [],
+        "range": "Melee",
+        "a": "3",
+        "ws": "4+",
+        "s": "12",
+        "ap": "-3",
+        "d": "2"
+      },
+      {
+        "name": "Power klaw",
+        "abilities": [],
+        "range": "Melee",
+        "a": "4",
+        "ws": "3+",
+        "s": "9",
+        "ap": "-2",
+        "d": "2"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Leader"
+    ],
+    "faction": [
+      "Waaagh!"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, each time a model in that unit makes a ranged attack, re-roll a Hit roll of 1.",
+        "name": "More Dakka"
+      },
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, in your Command phase , you can return 1 destroyed Bodyguard model to that unit.",
+        "name": "Fix Dat Armour Up"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Big Mek in Mega Armour"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "kustom-mega blaster; power klaw.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "90"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "CHARACTER",
+    "MEGA ARMOUR",
+    "MEK",
+    "BIG MEK IN MEGA ARMOUR"
+  ],
+  "faction_keywords": [
+    "ORKS"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s kustom-mega blasta can be replaced with one of the following:",
+          "items": [
+            "1 killsaw",
+            "1 kombi-weapon",
+            "1 kustom shoota"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "This model can be equipped with one of the following:",
+          "items": [
+            "1 tellyport blasta",
+            "1 kustom force field"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "This model can be equipped with 1 grot oiler.",
+          "items": []
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Leader"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Waaagh!"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, each time a model in that unit makes a ranged attack, re-roll a Hit roll of 1.",
+          "name": "More Dakka"
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, in your Command phase , you can return 1 destroyed Bodyguard model to that unit.",
+          "name": "Fix Dat Armour Up"
+        }
+      ]
+    },
+    {
+      "title": "WARGEAR ABILITIES",
+      "entries": [
+        {
+          "type": "statement",
+          "text": "While the bearer is leading a unit, models in that unit have a 4+ invulnerable save against ranged attacks.",
+          "label": "Kustom Force Field"
+        },
+        {
+          "type": "statement",
+          "text": "Once per battle, at the end of your Movement phase , one model in the bearer\u2019s unit regains D3 lost wounds.",
+          "label": "Grot Oiler"
+        },
+        {
+          "type": "statement",
+          "text": "Place a Grot Oiler token next to the unit, removing it once this ability has been used.",
+          "label": "Designer\u2019s Note"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Big Mek in Mega Armour"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "kustom-mega blaster; power klaw.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "90"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "LEADER",
+      "entries": [
+        {
+          "type": "text",
+          "text": "This model can be attached to the following unit:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Meganobz"
+          ]
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

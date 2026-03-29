@@ -1,0 +1,302 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Deredeo-Dreadnought",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Deredeo-Dreadnought",
+    "canonicalSourceId": "wahapedia:d42235c9821a9f9f3c80ff4fea797cc9f2d675d4",
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Deredeo-Dreadnought",
+    "fetchedAt": "2026-03-29T17:57:18+00:00",
+    "contentHash": "eac05d5678eaa14f37632cb54d39d0a69c58c15d6644b56bc68c8a5d74ae4739",
+    "output_slug": "blood-angels"
+  },
+  "name": "Deredeo Dreadnought",
+  "base_size": "\u230080mm",
+  "characteristics": {
+    "M": "6\"",
+    "T": "9",
+    "Sv": "2+",
+    "W": "12",
+    "Ld": "6+",
+    "OC": "3",
+    "Invulnerable Save": "5+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Aiolos missile launcher",
+        "abilities": [
+          "blast"
+        ],
+        "range": "48\"",
+        "a": "D6+3",
+        "bs": "3+",
+        "s": "5",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Anvilus autocannon battery",
+        "abilities": [
+          "twin-linked"
+        ],
+        "range": "48\"",
+        "a": "4",
+        "bs": "3+",
+        "s": "9",
+        "ap": "-1",
+        "d": "3"
+      },
+      {
+        "name": "Arachnus heavy lascannon battery",
+        "abilities": [],
+        "range": "48\"",
+        "a": "2",
+        "bs": "3+",
+        "s": "12",
+        "ap": "-3",
+        "d": "D6+1"
+      },
+      {
+        "name": "Boreas air defence missiles",
+        "abilities": [
+          "anti-fly 2+"
+        ],
+        "range": "48\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "12",
+        "ap": "-3",
+        "d": "D6+1"
+      },
+      {
+        "name": "Hellfire plasma cannonade \u2013 standard",
+        "abilities": [],
+        "range": "36\"",
+        "a": "6",
+        "bs": "3+",
+        "s": "7",
+        "ap": "-2",
+        "d": "2"
+      },
+      {
+        "name": "Hellfire plasma cannonade \u2013 supercharge",
+        "abilities": [
+          "hazardous"
+        ],
+        "range": "36\"",
+        "a": "6",
+        "bs": "3+",
+        "s": "8",
+        "ap": "-3",
+        "d": "3"
+      },
+      {
+        "name": "Twin heavy bolter",
+        "abilities": [
+          "sustained hits 1",
+          "twin-linked"
+        ],
+        "range": "36\"",
+        "a": "3",
+        "bs": "3+",
+        "s": "5",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Twin heavy flamer",
+        "abilities": [
+          "ignores cover",
+          "torrent",
+          "twin-linked"
+        ],
+        "range": "12\"",
+        "a": "D6",
+        "bs": "N/A",
+        "s": "5",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Volkite falconet battery",
+        "abilities": [
+          "devastating wounds"
+        ],
+        "range": "30\"",
+        "a": "6",
+        "bs": "3+",
+        "s": "9",
+        "ap": "0",
+        "d": "2"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Armoured feet",
+        "abilities": [],
+        "range": "Melee",
+        "a": "5",
+        "ws": "3+",
+        "s": "6",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise D3"
+    ],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this model makes a ranged attack that targets a unit that is not Below Half-strength , you can re-roll the Hit roll .",
+        "name": "Deredeo Strike"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Deredeo Dreadnought"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "anvilus autocannon battery; twin heavy bolter; armoured feet.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "160"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "VEHICLE",
+    "WALKER",
+    "IMPERIUM",
+    "SMOKE",
+    "DREADNOUGHT",
+    "DEREDEO DREADNOUGHT",
+    "DEATHWING"
+  ],
+  "faction_keywords": [
+    "ADEPTUS ASTARTES"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s anvilus autocannon battery can be replaced with one of the following",
+          "items": [
+            "1 arachnus heavy lascannon battery",
+            "1 hellfire plasma carronade",
+            "1 volkite falconet battery"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "This model\u2019s twin heavy bolter can be replaced with 1 twin heavy flamer.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "This model can be equipped with one of the following:",
+          "items": [
+            "1 aiolos missile launcher",
+            "1 boreas air defence missiles"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise D3"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model makes a ranged attack that targets a unit that is not Below Half-strength , you can re-roll the Hit roll .",
+          "name": "Deredeo Strike"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Deredeo Dreadnought"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "anvilus autocannon battery; twin heavy bolter; armoured feet.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "160"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DAMAGED: 1-4 WOUNDS REMAINING",
+      "entries": [
+        {
+          "type": "text",
+          "text": "While this model has 1-4 wounds remaining, each time this model makes an attack, subtract 1 from the Hit roll ."
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-4 WOUNDS REMAINING"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-4 WOUNDS REMAINING"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

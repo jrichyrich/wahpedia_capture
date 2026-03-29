@@ -1,0 +1,236 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/orks/Big-Mek",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/orks/Big-Mek",
+    "canonicalSourceId": "wahapedia:3fc91d5005a0b6b2a437e54c3128e42bffe8ae24",
+    "faction_slug": "orks",
+    "datasheet_slug": "Big-Mek",
+    "fetchedAt": "2026-03-29T17:24:00+00:00",
+    "contentHash": "4e7951b0e8449621f0956f8cd28a57d8c4e943ce1fe1791ca56e122dc7686d69",
+    "output_slug": "orks"
+  },
+  "name": "Big Mek",
+  "base_size": "\u230050mm",
+  "characteristics": {
+    "M": "6\"",
+    "T": "5",
+    "Sv": "3+",
+    "W": "6",
+    "Ld": "7+",
+    "OC": "1"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Kustom mega-blasta",
+        "abilities": [
+          "hazardous"
+        ],
+        "range": "24\"",
+        "a": "3",
+        "bs": "5+",
+        "s": "9",
+        "ap": "-2",
+        "d": "D6"
+      },
+      {
+        "name": "Traktor blasta",
+        "abilities": [
+          "anti-fly 3+",
+          "devastating wounds"
+        ],
+        "range": "36\"",
+        "a": "1",
+        "bs": "5+",
+        "s": "10",
+        "ap": "-2",
+        "d": "D6+1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Drilla",
+        "abilities": [],
+        "range": "Melee",
+        "a": "2",
+        "ws": "3+",
+        "s": "12",
+        "ap": "-3",
+        "d": "3"
+      },
+      {
+        "name": "Power klaw",
+        "abilities": [],
+        "range": "Melee",
+        "a": "4",
+        "ws": "3+",
+        "s": "9",
+        "ap": "-2",
+        "d": "2"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Leader"
+    ],
+    "faction": [
+      "Waaagh!"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, each time a model in that unit makes a ranged attack, re-roll a Hit roll of 1.",
+        "name": "More Dakka"
+      },
+      {
+        "type": "rule",
+        "text": "You can re-roll Advance rolls made for this model\u2019s unit. In addition, each time this model\u2019s unit makes a Normal , Advance or Fall Back move , models in that unit can move through models and terrain features . When doing so, they can move within Engagement Range of such models but cannot end that move within Engagement Range of them, and any Desperate Escape test is automatically passed.",
+        "name": "Shokk-boosta"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Big Mek"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "kustom-mega blaster; power klaw.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "70"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "CHARACTER",
+    "GRENADES",
+    "MEK",
+    "BIG MEK"
+  ],
+  "faction_keywords": [
+    "ORKS"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s kustom mega-blasta can be replaced with 1 traktor blasta.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "This model\u2019s power klaw can be replaced with 1 drilla.",
+          "items": []
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Leader"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Waaagh!"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, each time a model in that unit makes a ranged attack, re-roll a Hit roll of 1.",
+          "name": "More Dakka"
+        },
+        {
+          "type": "rule",
+          "text": "You can re-roll Advance rolls made for this model\u2019s unit. In addition, each time this model\u2019s unit makes a Normal , Advance or Fall Back move , models in that unit can move through models and terrain features . When doing so, they can move within Engagement Range of such models but cannot end that move within Engagement Range of them, and any Desperate Escape test is automatically passed.",
+          "name": "Shokk-boosta"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Big Mek"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "kustom-mega blaster; power klaw.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "70"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "LEADER",
+      "entries": [
+        {
+          "type": "text",
+          "text": "This model can be attached to the following units:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Boyz",
+            "Breaka Boyz",
+            "Lootas",
+            "Mek Gunz",
+            "Nobz",
+            "Tankbustas"
+          ]
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

@@ -1,0 +1,273 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/orks/Chinork-Warkopta",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/orks/Chinork-Warkopta",
+    "canonicalSourceId": "wahapedia:80193011dded19e73ec68bd880f4887388599f53",
+    "faction_slug": "orks",
+    "datasheet_slug": "Chinork-Warkopta",
+    "fetchedAt": "2026-03-29T17:24:05+00:00",
+    "contentHash": "a72653f0be0ed5c74842c045c87570f6cd022cb7555f01010b700019b4bf76ba",
+    "output_slug": "orks"
+  },
+  "name": "Chinork Warkopta",
+  "base_size": "\u2300120 x 92mm flying base",
+  "characteristics": {
+    "M": "14\"",
+    "T": "8",
+    "Sv": "4+",
+    "W": "10",
+    "Ld": "7+",
+    "OC": "2",
+    "Invulnerable Save": "6+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Big shoota",
+        "abilities": [
+          "rapid fire 2"
+        ],
+        "range": "36\"",
+        "a": "3",
+        "bs": "5+",
+        "s": "5",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Deffgun",
+        "abilities": [
+          "rapid fire 1"
+        ],
+        "range": "48\"",
+        "a": "2",
+        "bs": "5+",
+        "s": "8",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Kustom mega-blasta",
+        "abilities": [
+          "hazardous"
+        ],
+        "range": "24\"",
+        "a": "3",
+        "bs": "5+",
+        "s": "9",
+        "ap": "-2",
+        "d": "D6"
+      },
+      {
+        "name": "Rattler kannon",
+        "abilities": [],
+        "range": "24\"",
+        "a": "6",
+        "bs": "5+",
+        "s": "6",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Rokkit launcha",
+        "abilities": [
+          "blast"
+        ],
+        "range": "24\"",
+        "a": "D3",
+        "bs": "5+",
+        "s": "9",
+        "ap": "-2",
+        "d": "3"
+      },
+      {
+        "name": "Skorcha",
+        "abilities": [
+          "ignores cover",
+          "torrent"
+        ],
+        "range": "12\"",
+        "a": "D6",
+        "bs": "N/A",
+        "s": "5",
+        "ap": "-1",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Armoured hull",
+        "abilities": [],
+        "range": "Melee",
+        "a": "3",
+        "ws": "4+",
+        "s": "6",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise D3 , Deep Strike , Firing Deck 12"
+    ],
+    "faction": [
+      "Waaagh!"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "If this model starts the game in Strategic Reserves , it can be set up in the Reinforcements step of your first, second or third Movement phase , regardless of any mission rules.",
+        "name": "Aerial Deployment"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Chinork Warkopta"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "big shoota; 2 deffguns; armoured hull.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "105"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "VEHICLE",
+    "FLY",
+    "TRANSPORT",
+    "SPEED FREEKS",
+    "CHINORK WARKOPTA"
+  ],
+  "faction_keywords": [
+    "ORKS"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model can be equipped with up to 2 big bomms.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "This model\u2019s big shoota can be replaced with one of the following:",
+          "items": [
+            "1 kustom mega-blasta",
+            "1 rokkit launcha",
+            "1 skorcha"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "This model\u2019s 2 deffguns can be replaced with 2 rattler kannons.",
+          "items": []
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise D3 , Deep Strike , Firing Deck 12"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Waaagh!"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "If this model starts the game in Strategic Reserves , it can be set up in the Reinforcements step of your first, second or third Movement phase , regardless of any mission rules.",
+          "name": "Aerial Deployment"
+        }
+      ]
+    },
+    {
+      "title": "WARGEAR ABILITIES",
+      "entries": [
+        {
+          "type": "statement",
+          "text": "Once per battle, after the bearer ends a Normal move , you can select one enemy unit it moved across during that move and roll six D6: for each 4+, that unit suffers 1 mortal wound .",
+          "label": "Big Bomms"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Chinork Warkopta"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "big shoota; 2 deffguns; armoured hull.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "105"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "TRANSPORT",
+      "entries": [
+        {
+          "type": "text",
+          "text": "This model has a transport capacity of 12 ORKS INFANTRY models. This model cannot transport Ghazghkull Thraka , MEGA ARMOUR or JUMP PACK models."
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "TRANSPORT"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "TRANSPORT"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

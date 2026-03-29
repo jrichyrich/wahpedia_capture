@@ -1,0 +1,264 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/orks/Lifta-Wagon",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/orks/Lifta-Wagon",
+    "canonicalSourceId": "wahapedia:78a53d0c0f04f6e770d32185d04c3d9bf2e10914",
+    "faction_slug": "orks",
+    "datasheet_slug": "Lifta-Wagon",
+    "fetchedAt": "2026-03-29T17:24:15+00:00",
+    "contentHash": "f9c87490cfae3ad3720b5403d9b0426a007ad911e53dbd6c1b2cc8cbd7d64f9e",
+    "output_slug": "orks"
+  },
+  "name": "Lifta Wagon",
+  "base_size": "\u2300Use model",
+  "characteristics": {
+    "M": "10\"",
+    "T": "10",
+    "Sv": "3+",
+    "W": "16",
+    "Ld": "7+",
+    "OC": "5",
+    "Invulnerable Save": "6+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Big shoota",
+        "abilities": [
+          "rapid fire 2"
+        ],
+        "range": "36\"",
+        "a": "3",
+        "bs": "5+",
+        "s": "5",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Lifta-droppa",
+        "abilities": [
+          "anti-vehicle 3+"
+        ],
+        "range": "36\"",
+        "a": "4",
+        "bs": "5+",
+        "s": "6",
+        "ap": "-3",
+        "d": "D6+1"
+      },
+      {
+        "name": "Rokkit launcha",
+        "abilities": [
+          "blast"
+        ],
+        "range": "24\"",
+        "a": "D3",
+        "bs": "5+",
+        "s": "9",
+        "ap": "-2",
+        "d": "3"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Deff rolla",
+        "abilities": [],
+        "range": "Melee",
+        "a": "6",
+        "ws": "3+",
+        "s": "9",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Grabbin\u2019 klaw",
+        "abilities": [
+          "extra attacks"
+        ],
+        "range": "Melee",
+        "a": "2",
+        "ws": "3+",
+        "s": "8",
+        "ap": "-2",
+        "d": "2"
+      },
+      {
+        "name": "Tracks and wheels",
+        "abilities": [],
+        "range": "Melee",
+        "a": "6",
+        "ws": "4+",
+        "s": "8",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Wreckin\u2019 ball",
+        "abilities": [
+          "extra attacks"
+        ],
+        "range": "Melee",
+        "a": "1",
+        "ws": "4+",
+        "s": "10",
+        "ap": "0",
+        "d": "D6"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise D6"
+    ],
+    "faction": [
+      "Waaagh!"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time an attack made with this model\u2019s lifta-droppa destroys an enemy model that has the Deadly Demise ability, that model\u2019s Deadly Demise ability inflicts mortal wounds on a D6 roll of 3+ instead of on a 6.",
+        "name": "Da Bigger Dey Are, da Better Dey Drop"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Lifta Wagon"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "lifta-droppa; tracks and wheels.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "135"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "VEHICLE",
+    "LIFTA WAGON"
+  ],
+  "faction_keywords": [
+    "ORKS"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s tracks and wheels can be replaced with 1 deff rolla.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "This model can be equipped with 1 grabbin\u2019 klaw.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "This model can be equipped with 1 wreckin\u2019 ball.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "This model can be equipped with one of the following:",
+          "items": [
+            "1 big shoota",
+            "2 big shootas",
+            "1 big shoota and 1 rokkit launcha",
+            "1 rokkit launcha",
+            "2 rokkit launchas"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise D6"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Waaagh!"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time an attack made with this model\u2019s lifta-droppa destroys an enemy model that has the Deadly Demise ability, that model\u2019s Deadly Demise ability inflicts mortal wounds on a D6 roll of 3+ instead of on a 6.",
+          "name": "Da Bigger Dey Are, da Better Dey Drop"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Lifta Wagon"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "lifta-droppa; tracks and wheels.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "135"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DAMAGED: 1-5 WOUNDS REMAINING",
+      "entries": [
+        {
+          "type": "text",
+          "text": "While this model has 1-5 wounds remaining, each time this model makes an attack, subtract 1 from the Hit roll ."
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-5 WOUNDS REMAINING"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-5 WOUNDS REMAINING"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

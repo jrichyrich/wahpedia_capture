@@ -1,0 +1,306 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/orks/Boyz",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/orks/Boyz",
+    "canonicalSourceId": "wahapedia:20d82d81bb8d604660fa0d655fc42f816269a26f",
+    "faction_slug": "orks",
+    "datasheet_slug": "Boyz",
+    "fetchedAt": "2026-03-29T17:24:03+00:00",
+    "contentHash": "e867cddb64adcc32501c572b4fe325143eed337250b9fd0b816d66f3184f4a7a",
+    "output_slug": "orks"
+  },
+  "name": "Boyz",
+  "base_size": "",
+  "characteristics": {
+    "M": "6\"",
+    "T": "5",
+    "Sv": "5+",
+    "W": "1",
+    "Ld": "7+",
+    "OC": "2"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Big shoota",
+        "abilities": [
+          "rapid fire 2"
+        ],
+        "range": "36\"",
+        "a": "3",
+        "bs": "5+",
+        "s": "5",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Kombi-weapon",
+        "abilities": [
+          "anti-infantry 4+",
+          "devastating wounds",
+          "rapid fire 1"
+        ],
+        "range": "24\"",
+        "a": "1",
+        "bs": "5+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Rokkit launcha",
+        "abilities": [
+          "blast"
+        ],
+        "range": "24\"",
+        "a": "D3",
+        "bs": "5+",
+        "s": "9",
+        "ap": "-2",
+        "d": "3"
+      },
+      {
+        "name": "Shoota",
+        "abilities": [
+          "rapid fire 1"
+        ],
+        "range": "18\"",
+        "a": "2",
+        "bs": "5+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Slugga",
+        "abilities": [
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "5+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Big choppa",
+        "abilities": [],
+        "range": "Melee",
+        "a": "3",
+        "ws": "3+",
+        "s": "7",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Choppa",
+        "abilities": [],
+        "range": "Melee",
+        "a": "3",
+        "ws": "3+",
+        "s": "4",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Close combat weapon",
+        "abilities": [],
+        "range": "Melee",
+        "a": "2",
+        "ws": "3+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Power klaw",
+        "abilities": [],
+        "range": "Melee",
+        "a": "3",
+        "ws": "4+",
+        "s": "9",
+        "ap": "-2",
+        "d": "2"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [],
+    "faction": [
+      "Waaagh!"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "At the end of your Command phase , if this unit is within range of an objective marker you control, that objective marker remains under your control, even if you have no models within range of it, until your opponent controls it at the start or end of any turn.",
+        "name": "Get Da Good Bitz"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Boss Nob"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "9-19 Boyz"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "slugga; big choppa.",
+      "label": "The Boss Nob is equipped with"
+    },
+    {
+      "type": "statement",
+      "text": "slugga; choppa.",
+      "label": "Every Boy is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "10 models",
+          "points": "80"
+        },
+        {
+          "label": "20 models",
+          "points": "170"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "BATTLELINE",
+    "MOB",
+    "GRENADES",
+    "BOYZ"
+  ],
+  "faction_keywords": [
+    "ORKS"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "The Boss Nob\u2019s big choppa can be replaced with 1 power klaw.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "The Boss Nob\u2019s big choppa and slugga can be replaced with 1 kombi-weapon and 1 close combat weapon.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "Any number of Boyz can each have their slugga and choppa replaced with 1 shoota and 1 close combat weapon.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "For every 10 models in this unit, 1 Boy\u2019s choppa and slugga can be replaced with one of the following:",
+          "items": [
+            "1 big shoota and 1 close combat weapon",
+            "1 rokkit launcha and 1 close combat weapon"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Waaagh!"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "At the end of your Command phase , if this unit is within range of an objective marker you control, that objective marker remains under your control, even if you have no models within range of it, until your opponent controls it at the start or end of any turn.",
+          "name": "Get Da Good Bitz"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Boss Nob"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "9-19 Boyz"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "slugga; big choppa.",
+          "label": "The Boss Nob is equipped with"
+        },
+        {
+          "type": "statement",
+          "text": "slugga; choppa.",
+          "label": "Every Boy is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "10 models",
+              "points": "80"
+            },
+            {
+              "label": "20 models",
+              "points": "170"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "BODYGUARD",
+      "entries": [
+        {
+          "type": "text",
+          "text": "If this unit has a Starting Strength of 20, you can attach up to two Leader units to it instead of one (but only if one of those is a WARBOSS unit). If you do, and this unit is destroyed, the Leader units attached to it become separate units with their original Starting Strengths ."
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "BODYGUARD"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "BODYGUARD"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

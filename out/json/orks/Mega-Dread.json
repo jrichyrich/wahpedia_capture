@@ -1,0 +1,237 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/orks/Mega-Dread",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/orks/Mega-Dread",
+    "canonicalSourceId": "wahapedia:0abd9ed44481a3185cd491bae8fbc21b4ce2442a",
+    "faction_slug": "orks",
+    "datasheet_slug": "Mega-Dread",
+    "fetchedAt": "2026-03-29T17:24:15+00:00",
+    "contentHash": "f834210124a2292aa553509b327c3101b704f6e4ef143aa3ad2ac02c3c7236c8",
+    "output_slug": "orks"
+  },
+  "name": "Mega Dread",
+  "base_size": "\u2300Use model",
+  "characteristics": {
+    "M": "8\"",
+    "T": "10",
+    "Sv": "2+",
+    "W": "16",
+    "Ld": "7+",
+    "OC": "5",
+    "Invulnerable Save": "6+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Boombits",
+        "abilities": [
+          "torrent"
+        ],
+        "range": "12\"",
+        "a": "D6",
+        "bs": "N/A",
+        "s": "5",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Killkannon",
+        "abilities": [],
+        "range": "24\"",
+        "a": "D6+3",
+        "bs": "5+",
+        "s": "9",
+        "ap": "-2",
+        "d": "2"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Dread killsaw",
+        "abilities": [],
+        "range": "Melee",
+        "a": "4",
+        "ws": "3+",
+        "s": "14",
+        "ap": "-3",
+        "d": "4"
+      },
+      {
+        "name": "Dread rippa klaw",
+        "abilities": [],
+        "range": "Melee",
+        "a": "6",
+        "ws": "3+",
+        "s": "12",
+        "ap": "-2",
+        "d": "3"
+      },
+      {
+        "name": "Stompy feet",
+        "abilities": [],
+        "range": "Melee",
+        "a": "4",
+        "ws": "3+",
+        "s": "7",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise D6"
+    ],
+    "faction": [
+      "Waaagh!"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this model is selected to fight, you can select one enemy unit within Engagement Range of it and roll one D6, adding 2 to the result if this model made a Charge move this turn: on a 4-5, that enemy unit suffers D3 mortal wounds ; on a 6+, that enemy unit suffers 3 mortal wounds.",
+        "name": "Mega Carnage"
+      },
+      {
+        "type": "rule",
+        "text": "If this model is equipped with 2 dread killsaws, those weapons have the [TWIN-LINKED] ability. If this model is equipped with 2 dread rippa klaws, those weapons have the [TWIN-LINKED] ability.",
+        "name": "Dead Rippy"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Mega Dread"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "2 boombits; killkannon; dread rippa klaw; stompy feet.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "225"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "VEHICLE",
+    "WALKER",
+    "MEGA DREAD"
+  ],
+  "faction_keywords": [
+    "ORKS"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s killkannon can be replaced with one of the following:",
+          "items": [
+            "1 dread killsaw",
+            "1 dread rippa klaw"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "This model\u2019s dread rippa klaw can be replaced with one of the following:",
+          "items": [
+            "1 dread killsaw",
+            "1 killkannon"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise D6"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Waaagh!"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model is selected to fight, you can select one enemy unit within Engagement Range of it and roll one D6, adding 2 to the result if this model made a Charge move this turn: on a 4-5, that enemy unit suffers D3 mortal wounds ; on a 6+, that enemy unit suffers 3 mortal wounds.",
+          "name": "Mega Carnage"
+        },
+        {
+          "type": "rule",
+          "text": "If this model is equipped with 2 dread killsaws, those weapons have the [TWIN-LINKED] ability. If this model is equipped with 2 dread rippa klaws, those weapons have the [TWIN-LINKED] ability.",
+          "name": "Dead Rippy"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Mega Dread"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "2 boombits; killkannon; dread rippa klaw; stompy feet.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "225"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DAMAGED: 1-5 WOUNDS REMAINING",
+      "entries": [
+        {
+          "type": "text",
+          "text": "While this model has 1-5 wounds remaining, each time this model makes an attack, subtract 1 from the Hit roll ."
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-5 WOUNDS REMAINING"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-5 WOUNDS REMAINING"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

@@ -1,0 +1,208 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/orks/Beastboss",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/orks/Beastboss",
+    "canonicalSourceId": "wahapedia:4143a145d294c1cb7f8d1574b4244d3b668cb6fe",
+    "faction_slug": "orks",
+    "datasheet_slug": "Beastboss",
+    "fetchedAt": "2026-03-29T17:23:58+00:00",
+    "contentHash": "703c68d169718e251c91ec88f2d613136b0210c56254595bf13c21953ab8a538",
+    "output_slug": "orks"
+  },
+  "name": "Beastboss",
+  "base_size": "\u230050mm",
+  "characteristics": {
+    "M": "6\"",
+    "T": "5",
+    "Sv": "4+",
+    "W": "6",
+    "Ld": "6+",
+    "OC": "1",
+    "Invulnerable Save": "5+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Shoota",
+        "abilities": [
+          "rapid fire 1"
+        ],
+        "range": "18\"",
+        "a": "2",
+        "bs": "4+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Beast Snagga klaw",
+        "abilities": [
+          "anti-monster 4+",
+          "anti-vehicle 4+"
+        ],
+        "range": "Melee",
+        "a": "4",
+        "ws": "3+",
+        "s": "10",
+        "ap": "-2",
+        "d": "2"
+      },
+      {
+        "name": "Beastchoppa",
+        "abilities": [
+          "anti-monster 4+",
+          "anti-vehicle 4+"
+        ],
+        "range": "Melee",
+        "a": "6",
+        "ws": "2+",
+        "s": "6",
+        "ap": "-1",
+        "d": "2"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Feel No Pain 6+ , Leader"
+    ],
+    "faction": [
+      "Waaagh!"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, each time a model in that unit makes a melee attack, add 1 to the Hit roll .",
+        "name": "Beastboss"
+      },
+      {
+        "type": "rule",
+        "text": "Each time this model makes a Charge move , until the end of the turn, melee weapons it is equipped with have the [DEVASTATING WOUNDS] ability.",
+        "name": "Beastly Rage"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Beastboss"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "shoota; beastchoppa; Beast Snagga klaw.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "80"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "CHARACTER",
+    "BEAST SNAGGA",
+    "WARBOSS",
+    "BEASTBOSS"
+  ],
+  "faction_keywords": [
+    "ORKS"
+  ],
+  "sections": [
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Feel No Pain 6+ , Leader"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Waaagh!"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, each time a model in that unit makes a melee attack, add 1 to the Hit roll .",
+          "name": "Beastboss"
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model makes a Charge move , until the end of the turn, melee weapons it is equipped with have the [DEVASTATING WOUNDS] ability.",
+          "name": "Beastly Rage"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Beastboss"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "shoota; beastchoppa; Beast Snagga klaw.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "80"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "LEADER",
+      "entries": [
+        {
+          "type": "text",
+          "text": "This model can be attached to the following unit:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Beast Snagga Boyz"
+          ]
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "exportedSectionTitles": [
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

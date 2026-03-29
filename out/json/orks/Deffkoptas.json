@@ -1,0 +1,210 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/orks/Deffkoptas",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/orks/Deffkoptas",
+    "canonicalSourceId": "wahapedia:2ec9962b760cd9af8514c488163ad197b8a1265c",
+    "faction_slug": "orks",
+    "datasheet_slug": "Deffkoptas",
+    "fetchedAt": "2026-03-29T17:24:08+00:00",
+    "contentHash": "725dd81f0acb83274caadc5e30fd6886d6b9ce47953792d06586870eb2f243a7",
+    "output_slug": "orks"
+  },
+  "name": "Deffkoptas",
+  "base_size": "\u230075 x 42mm",
+  "characteristics": {
+    "M": "12\"",
+    "T": "6",
+    "Sv": "4+",
+    "W": "4",
+    "Ld": "7+",
+    "OC": "2",
+    "Invulnerable Save": "6+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Kopta rokkits",
+        "abilities": [
+          "blast",
+          "twin-linked"
+        ],
+        "range": "24\"",
+        "a": "D3",
+        "bs": "5+",
+        "s": "9",
+        "ap": "-2",
+        "d": "3"
+      },
+      {
+        "name": "Kustom mega-blasta",
+        "abilities": [
+          "hazardous"
+        ],
+        "range": "24\"",
+        "a": "3",
+        "bs": "5+",
+        "s": "9",
+        "ap": "-2",
+        "d": "D6"
+      },
+      {
+        "name": "Slugga",
+        "abilities": [
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "5+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Spinnin\u2019 blades",
+        "abilities": [],
+        "range": "Melee",
+        "a": "6",
+        "ws": "3+",
+        "s": "5",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deep Strike"
+    ],
+    "faction": [
+      "Waaagh!"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this unit ends a Normal move , you can select one enemy unit it moved over during that move and roll one D6 for each model in this unit: for each 4+, that enemy unit suffers 1 mortal wound .",
+        "name": "Deff from Above"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "3-6 Deffkoptas"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "kopta rokkits; slugga; spinnin\u2019 blades.",
+      "label": "Every model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "3 models",
+          "points": "80"
+        },
+        {
+          "label": "6 models",
+          "points": "160"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "VEHICLE",
+    "FLY",
+    "GRENADES",
+    "SPEED FREEKS",
+    "DEFFKOPTAS"
+  ],
+  "faction_keywords": [
+    "ORKS"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "For every 3 models in this unit, 1 Deffkopta can have its kopta rokkits replaced with 1 kustom mega-blasta.",
+          "items": []
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deep Strike"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Waaagh!"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this unit ends a Normal move , you can select one enemy unit it moved over during that move and roll one D6 for each model in this unit: for each 4+, that enemy unit suffers 1 mortal wound .",
+          "name": "Deff from Above"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "3-6 Deffkoptas"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "kopta rokkits; slugga; spinnin\u2019 blades.",
+          "label": "Every model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "3 models",
+              "points": "80"
+            },
+            {
+              "label": "6 models",
+              "points": "160"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

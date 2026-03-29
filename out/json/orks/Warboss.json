@@ -1,0 +1,247 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/orks/Warboss",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/orks/Warboss",
+    "canonicalSourceId": "wahapedia:0f6e7e606493c827a77e72e402fdb39534f88002",
+    "faction_slug": "orks",
+    "datasheet_slug": "Warboss",
+    "fetchedAt": "2026-03-29T17:24:24+00:00",
+    "contentHash": "9a653787d0cbf190b61f369b1c5b7ccf7962ecdf39d480f7c8fcd917e07dd4b0",
+    "output_slug": "orks"
+  },
+  "name": "Warboss",
+  "base_size": "\u230040mm",
+  "characteristics": {
+    "M": "6\"",
+    "T": "5",
+    "Sv": "4+",
+    "W": "6",
+    "Ld": "6+",
+    "OC": "1",
+    "Invulnerable Save": "5+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Kombi-weapon",
+        "abilities": [
+          "anti-infantry 4+",
+          "devastating wounds",
+          "rapid fire 1"
+        ],
+        "range": "24\"",
+        "a": "1",
+        "bs": "5+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Twin slugga",
+        "abilities": [
+          "pistol",
+          "twin-linked"
+        ],
+        "range": "12\"",
+        "a": "2",
+        "bs": "5+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Attack squig",
+        "abilities": [
+          "extra attacks"
+        ],
+        "range": "Melee",
+        "a": "2",
+        "ws": "4+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Big choppa",
+        "abilities": [],
+        "range": "Melee",
+        "a": "5",
+        "ws": "2+",
+        "s": "8",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Power klaw",
+        "abilities": [],
+        "range": "Melee",
+        "a": "4",
+        "ws": "3+",
+        "s": "10",
+        "ap": "-2",
+        "d": "2"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Leader"
+    ],
+    "faction": [
+      "Waaagh!"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, each time a model in that unit makes a melee attack, add 1 to the Hit roll .",
+        "name": "Might is Right"
+      },
+      {
+        "type": "rule",
+        "text": "While the Waaagh! is active for your army, add 4 to the Attacks characteristic of this model\u2019s melee weapons.",
+        "name": "Da Biggest and da Best"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Warboss"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "kombi-weapon; twin slugga; big choppa.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "75"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "CHARACTER",
+    "GRENADES",
+    "WARBOSS"
+  ],
+  "faction_keywords": [
+    "ORKS"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s big choppa can be replaced with 1 power klaw.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "This model can be equipped with 1 attack squig.",
+          "items": []
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Leader"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Waaagh!"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, each time a model in that unit makes a melee attack, add 1 to the Hit roll .",
+          "name": "Might is Right"
+        },
+        {
+          "type": "rule",
+          "text": "While the Waaagh! is active for your army, add 4 to the Attacks characteristic of this model\u2019s melee weapons.",
+          "name": "Da Biggest and da Best"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Warboss"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "kombi-weapon; twin slugga; big choppa.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "75"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "LEADER",
+      "entries": [
+        {
+          "type": "text",
+          "text": "This model can be attached to the following units:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Boyz",
+            "Breaka Boyz",
+            "Nobz"
+          ]
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

@@ -1,0 +1,194 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/orks/Weirdboy",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/orks/Weirdboy",
+    "canonicalSourceId": "wahapedia:5a977af9b94fc3d968756300705d3e7e2122dbd9",
+    "faction_slug": "orks",
+    "datasheet_slug": "Weirdboy",
+    "fetchedAt": "2026-03-29T17:24:25+00:00",
+    "contentHash": "48250bfb68440229095c1dc89a2bb7befc7d91acc1c5f0b0db5b654485e83fec",
+    "output_slug": "orks"
+  },
+  "name": "Weirdboy",
+  "base_size": "\u230040mm",
+  "characteristics": {
+    "M": "6\"",
+    "T": "5",
+    "Sv": "5+",
+    "W": "4",
+    "Ld": "7+",
+    "OC": "1"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "\u2019Eadbanger",
+        "abilities": [
+          "precision",
+          "psychic"
+        ],
+        "range": "24\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "6",
+        "ap": "-3",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Weirdboy staff",
+        "abilities": [
+          "psychic"
+        ],
+        "range": "Melee",
+        "a": "3",
+        "ws": "3+",
+        "s": "8",
+        "ap": "-1",
+        "d": "D3"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise D3 , Leader"
+    ],
+    "faction": [
+      "Waaagh!"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, add 1 to the Strength and Damage characteristics of this model\u2019s \u2019Eadbanger weapon for every 5 models in that unit (rounding down), but while that unit contains 10 or more models, that weapon has the [HAZARDOUS] ability.",
+        "name": "Waaagh! Energy"
+      },
+      {
+        "type": "rule",
+        "text": "Once per turn, at the end of your Movement phase , one WEIRDBOY from your army can use this ability. If it does, roll one D6: on a 1, that WEIRDBOY \u2019s unit suffers D6 mortal wounds ; on a 2+, remove this WEIRDBOY \u2019s unit from the battlefield and set it up again anywhere on the battlefield that is more than 9\" horizontally away from all enemy models.",
+        "name": "Da Jump (Psychic)"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Weirdboy"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "\u2019Eadbanger; weirdboy staff.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "65"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "CHARACTER",
+    "PSYKER",
+    "WEIRDBOY"
+  ],
+  "faction_keywords": [
+    "ORKS"
+  ],
+  "sections": [
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise D3 , Leader"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Waaagh!"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, add 1 to the Strength and Damage characteristics of this model\u2019s \u2019Eadbanger weapon for every 5 models in that unit (rounding down), but while that unit contains 10 or more models, that weapon has the [HAZARDOUS] ability.",
+          "name": "Waaagh! Energy"
+        },
+        {
+          "type": "rule",
+          "text": "Once per turn, at the end of your Movement phase , one WEIRDBOY from your army can use this ability. If it does, roll one D6: on a 1, that WEIRDBOY \u2019s unit suffers D6 mortal wounds ; on a 2+, remove this WEIRDBOY \u2019s unit from the battlefield and set it up again anywhere on the battlefield that is more than 9\" horizontally away from all enemy models.",
+          "name": "Da Jump (Psychic)"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Weirdboy"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "\u2019Eadbanger; weirdboy staff.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "65"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "LEADER",
+      "entries": [
+        {
+          "type": "text",
+          "text": "This model can be attached to the following units:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Boyz",
+            "Breaka Boyz"
+          ]
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "exportedSectionTitles": [
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

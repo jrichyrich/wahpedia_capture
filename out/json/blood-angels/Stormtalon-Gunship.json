@@ -1,0 +1,242 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Stormtalon-Gunship",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Stormtalon-Gunship",
+    "canonicalSourceId": "wahapedia:ce52bc6abe52c0d1851875886b283f7850150481",
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Stormtalon-Gunship",
+    "fetchedAt": "2026-03-29T17:49:32+00:00",
+    "contentHash": "ad6ba4866d68530cd1be844d4c0a6bfd24525144688bab144706b9ac386a71d6",
+    "output_slug": "blood-angels"
+  },
+  "name": "Stormtalon Gunship",
+  "base_size": "\u2300120 x 92mm flying base",
+  "characteristics": {
+    "M": "20+\"",
+    "T": "8",
+    "Sv": "3+",
+    "W": "10",
+    "Ld": "6+",
+    "OC": "0"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Skyhammer missile launcher",
+        "abilities": [
+          "anti-fly 2+",
+          "twin-linked"
+        ],
+        "range": "48\"",
+        "a": "3",
+        "bs": "3+",
+        "s": "8",
+        "ap": "-1",
+        "d": "D3"
+      },
+      {
+        "name": "Twin assault cannon",
+        "abilities": [
+          "devastating wounds",
+          "twin-linked"
+        ],
+        "range": "24\"",
+        "a": "6",
+        "bs": "3+",
+        "s": "6",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Twin heavy bolter",
+        "abilities": [
+          "sustained hits 1",
+          "twin-linked"
+        ],
+        "range": "36\"",
+        "a": "3",
+        "bs": "3+",
+        "s": "5",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Twin lascannon",
+        "abilities": [
+          "twin-linked"
+        ],
+        "range": "48\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "12",
+        "ap": "-3",
+        "d": "D6+1"
+      },
+      {
+        "name": "Typhoon missile launcher \u2013 frag",
+        "abilities": [
+          "blast"
+        ],
+        "range": "48\"",
+        "a": "2D6",
+        "bs": "3+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Typhoon missile launcher \u2013 krak",
+        "abilities": [],
+        "range": "48\"",
+        "a": "2",
+        "bs": "3+",
+        "s": "9",
+        "ap": "-2",
+        "d": "D6"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Armoured hull",
+        "abilities": [],
+        "range": "Melee",
+        "a": "3",
+        "ws": "4+",
+        "s": "6",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise D3 , Hover"
+    ],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this model makes a ranged attack that targets a unit that cannot Fly , add 1 to the Hit roll .",
+        "name": "Strafing Run"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Stormtalon Gunship"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "skyhammer missile launcher; twin assault cannon; armoured hull.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "165"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "VEHICLE",
+    "FLY",
+    "AIRCRAFT",
+    "IMPERIUM",
+    "STORMTALON GUNSHIP",
+    "RAVENWING"
+  ],
+  "faction_keywords": [
+    "ADEPTUS ASTARTES"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s skyhammer missile launcher can be replaced with one of the following:",
+          "items": [
+            "1 twin heavy bolter",
+            "1 twin lascannon",
+            "1 typhoon missile launcher"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise D3 , Hover"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model makes a ranged attack that targets a unit that cannot Fly , add 1 to the Hit roll .",
+          "name": "Strafing Run"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Stormtalon Gunship"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "skyhammer missile launcher; twin assault cannon; armoured hull.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "165"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

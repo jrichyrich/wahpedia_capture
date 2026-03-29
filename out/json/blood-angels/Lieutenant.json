@@ -1,0 +1,341 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Lieutenant",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Lieutenant",
+    "canonicalSourceId": "wahapedia:5814ce192ee7a7be5fb5bf69b4798b74245df93f",
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Lieutenant",
+    "fetchedAt": "2026-03-29T17:30:05+00:00",
+    "contentHash": "c6116abad17c4ab782b811f604aed0429b211202af84bc7e060fade40a705b40",
+    "output_slug": "blood-angels"
+  },
+  "name": "Lieutenant",
+  "base_size": "\u230040mm",
+  "characteristics": {
+    "M": "6\"",
+    "T": "4",
+    "Sv": "3+",
+    "W": "4",
+    "Ld": "6+",
+    "OC": "1"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Bolt pistol",
+        "abilities": [
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "2+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Heavy bolt pistol",
+        "abilities": [
+          "pistol"
+        ],
+        "range": "18\"",
+        "a": "1",
+        "bs": "2+",
+        "s": "4",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Master-crafted bolter",
+        "abilities": [],
+        "range": "24\"",
+        "a": "2",
+        "bs": "2+",
+        "s": "4",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Neo-volkite pistol",
+        "abilities": [
+          "DEVASTATING WOUNDS",
+          "PISTOL"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "2+",
+        "s": "5",
+        "ap": "0",
+        "d": "2"
+      },
+      {
+        "name": "Plasma pistol \u2013 standard",
+        "abilities": [
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "2+",
+        "s": "7",
+        "ap": "-2",
+        "d": "1"
+      },
+      {
+        "name": "Plasma pistol \u2013 supercharge",
+        "abilities": [
+          "hazardous",
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "2+",
+        "s": "8",
+        "ap": "-3",
+        "d": "2"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Close combat weapon",
+        "abilities": [],
+        "range": "Melee",
+        "a": "5",
+        "ws": "2+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Master-crafted power weapon",
+        "abilities": [],
+        "range": "Melee",
+        "a": "5",
+        "ws": "2+",
+        "s": "5",
+        "ap": "-2",
+        "d": "2"
+      },
+      {
+        "name": "Power fist",
+        "abilities": [],
+        "range": "Melee",
+        "a": "4",
+        "ws": "2+",
+        "s": "8",
+        "ap": "-2",
+        "d": "2"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Leader"
+    ],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, weapons equipped by models in that unit have the [LETHAL HITS] ability.",
+        "name": "Tactical Precision"
+      },
+      {
+        "type": "rule",
+        "text": "This model\u2019s unit is eligible to shoot and declare a charge in a turn in which it Fell Back .",
+        "name": "Target Priority"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Lieutenant"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "bolt pistol; master-crafted bolter; close combat weapon.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "55"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "CHARACTER",
+    "GRENADES",
+    "IMPERIUM",
+    "TACTICUS",
+    "LIEUTENANT"
+  ],
+  "faction_keywords": [
+    "ADEPTUS ASTARTES"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s master-crafted bolter can be replaced with one of the following:",
+          "items": [
+            "1 plasma pistol",
+            "1 master-crafted power weapon",
+            "1 power fist"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "This model\u2019s bolt pistol, master-crafted bolter and close combat weapon can be replaced with 1 neo volkite pistol, 1 master-crafted power weapon and 1 storm shield.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "This model\u2019s bolt pistol can be replaced with 1 heavy bolt pistol.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "This model\u2019s close combat weapon can be replaced with one of the following:",
+          "items": [
+            "1 master-crafted power weapon",
+            "1 power fist"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Leader"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, weapons equipped by models in that unit have the [LETHAL HITS] ability.",
+          "name": "Tactical Precision"
+        },
+        {
+          "type": "rule",
+          "text": "This model\u2019s unit is eligible to shoot and declare a charge in a turn in which it Fell Back .",
+          "name": "Target Priority"
+        }
+      ]
+    },
+    {
+      "title": "WARGEAR ABILITIES",
+      "entries": [
+        {
+          "type": "statement",
+          "text": "The bearer has a 4+ invulnerable save .",
+          "label": "Storm Shield"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Lieutenant"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "bolt pistol; master-crafted bolter; close combat weapon.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "55"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "LEADER",
+      "entries": [
+        {
+          "type": "text",
+          "text": "This model can be attached to the following units:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Assault Intercessor Squad",
+            "Bladeguard Veteran Squad",
+            "Company Heroes",
+            "Hellblaster Squad",
+            "Infernus Squad",
+            "Intercessor Squad",
+            "Sternguard Veteran Squad",
+            "Tactical Squad",
+            "Crusader Squad",
+            "Sternguard Veteran Squad",
+            "Sword Brethren Squad",
+            "Inner Circle Companions",
+            "Deathwatch Veterans",
+            "Decimus Kill Team",
+            "Fortis Kill Team",
+            "Assault Squad",
+            "Command Squad",
+            "Crusader Squad (Legendary)",
+            "Vanguard Veteran Squad",
+            "Wolf Guard"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "You can attach this model to a unit it can lead even if one CAPTAIN or CHAPTER MASTER model has already been attached to it. If you do, and that Bodyguard unit is destroyed, the Leader units attached to it become separate units, with their original Starting Strengths ."
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

@@ -1,0 +1,214 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Aggressor-Squad",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Aggressor-Squad",
+    "canonicalSourceId": "wahapedia:efb0efe711b0c715742300a6e5dd395752ae1710",
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Aggressor-Squad",
+    "fetchedAt": "2026-03-29T17:40:17+00:00",
+    "contentHash": "d858e6f306be13ab86a6160e6c30968f6e639d1d0da2202f701b2fe9733b0dda",
+    "output_slug": "blood-angels"
+  },
+  "name": "Aggressor Squad",
+  "base_size": "\u230040mm",
+  "characteristics": {
+    "M": "5\"",
+    "T": "6",
+    "Sv": "3+",
+    "W": "3",
+    "Ld": "6+",
+    "OC": "1"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Auto boltstorm gauntlets",
+        "abilities": [
+          "twin-linked"
+        ],
+        "range": "18\"",
+        "a": "3",
+        "bs": "3+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Flamestorm gauntlets",
+        "abilities": [
+          "ignores cover",
+          "torrent",
+          "twin-linked"
+        ],
+        "range": "12\"",
+        "a": "D6+1",
+        "bs": "N/A",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Fragstorm grenade launcher",
+        "abilities": [
+          "blast"
+        ],
+        "range": "18\"",
+        "a": "D6",
+        "bs": "3+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Twin power fists",
+        "abilities": [
+          "twin-linked"
+        ],
+        "range": "Melee",
+        "a": "3",
+        "ws": "3+",
+        "s": "8",
+        "ap": "-2",
+        "d": "2"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time a model in this unit makes a ranged attack that targets the closest eligible target, improve the Armour Penetration characteristic of that attack by 1.",
+        "name": "Close-quarters Firepower"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Aggressor Sergeant"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "2-5 Aggressors"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "flamestorm gauntlets; twin power fist.",
+      "label": "Every model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "3 models",
+          "points": "95"
+        },
+        {
+          "label": "6 models",
+          "points": "190"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "IMPERIUM",
+    "GRAVIS",
+    "AGGRESSOR SQUAD"
+  ],
+  "faction_keywords": [
+    "ADEPTUS ASTARTES"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "All models in this unit can each have their flamestorm gauntlets replaced with 1 auto boltstorm gauntlets and 1 fragstorm grenade launcher.",
+          "items": []
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time a model in this unit makes a ranged attack that targets the closest eligible target, improve the Armour Penetration characteristic of that attack by 1.",
+          "name": "Close-quarters Firepower"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Aggressor Sergeant"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "2-5 Aggressors"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "flamestorm gauntlets; twin power fist.",
+          "label": "Every model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "3 models",
+              "points": "95"
+            },
+            {
+              "label": "6 models",
+              "points": "190"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

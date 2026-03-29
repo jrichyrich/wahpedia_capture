@@ -1,0 +1,373 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Death-Company-Marines-with-Bolt-Rifles",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Death-Company-Marines-with-Bolt-Rifles",
+    "canonicalSourceId": "wahapedia:461dc6450fa310e293fd5528fb62e527ffac7f17",
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Death-Company-Marines-with-Bolt-Rifles",
+    "fetchedAt": "2026-03-29T17:52:37+00:00",
+    "contentHash": "51577c14c6120c01702de61f7b37180574b99275d8e4a33e60d5b7117fa7aba4",
+    "output_slug": "blood-angels"
+  },
+  "name": "Death Company Marines with Bolt Rifles",
+  "base_size": "\u230032mm",
+  "characteristics": {
+    "M": "6\"",
+    "T": "4",
+    "Sv": "3+",
+    "W": "2",
+    "Ld": "6+",
+    "OC": "1"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Astartes grenade launcher - frag",
+        "abilities": [
+          "blast"
+        ],
+        "range": "24\"",
+        "a": "D3",
+        "bs": "3+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Astartes grenade launcher - krak",
+        "abilities": [],
+        "range": "24\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "9",
+        "ap": "-1",
+        "d": "D3"
+      },
+      {
+        "name": "Bolt pistol",
+        "abilities": [
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Bolt rifle",
+        "abilities": [
+          "assault",
+          "heavy"
+        ],
+        "range": "24\"",
+        "a": "2",
+        "bs": "3+",
+        "s": "4",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Hand flamer",
+        "abilities": [
+          "ignores cover",
+          "pistol",
+          "torrent"
+        ],
+        "range": "12\"",
+        "a": "D6",
+        "bs": "N/A",
+        "s": "3",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Inferno pistol",
+        "abilities": [
+          "pistol",
+          "melta 2"
+        ],
+        "range": "6\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "8",
+        "ap": "-4",
+        "d": "D3"
+      },
+      {
+        "name": "Plasma pistol \u2013 standard",
+        "abilities": [
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "7",
+        "ap": "-2",
+        "d": "1"
+      },
+      {
+        "name": "Plasma pistol \u2013 supercharge",
+        "abilities": [
+          "hazardous",
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "8",
+        "ap": "-3",
+        "d": "2"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Astartes chainsword",
+        "abilities": [],
+        "range": "Melee",
+        "a": "4",
+        "ws": "3+",
+        "s": "4",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Close combat weapon",
+        "abilities": [],
+        "range": "Melee",
+        "a": "3",
+        "ws": "3+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Eviscerator",
+        "abilities": [
+          "sustained hits 1"
+        ],
+        "range": "Melee",
+        "a": "3",
+        "ws": "3+",
+        "s": "7",
+        "ap": "-2",
+        "d": "2"
+      },
+      {
+        "name": "Power fist",
+        "abilities": [],
+        "range": "Melee",
+        "a": "3",
+        "ws": "3+",
+        "s": "8",
+        "ap": "-2",
+        "d": "2"
+      },
+      {
+        "name": "Power weapon",
+        "abilities": [],
+        "range": "Melee",
+        "a": "4",
+        "ws": "3+",
+        "s": "5",
+        "ap": "-2",
+        "d": "1"
+      },
+      {
+        "name": "Thunder hammer",
+        "abilities": [
+          "devastating wounds"
+        ],
+        "range": "Melee",
+        "a": "3",
+        "ws": "4+",
+        "s": "8",
+        "ap": "-2",
+        "d": "2"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Feel No Pain 6+"
+    ],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this model makes a melee attack, you can re-roll the Hit roll . While this model\u2019s unit is not within 6\" of one or more friendly BLOOD ANGELS CHARACTER models, or 12\" of one or more friendly CHAPLAIN models, it cannot be selected to Fall Back and its Objective Control characteristic is 0.",
+        "name": "Black Rage"
+      },
+      {
+        "type": "rule",
+        "text": "Once per turn, you can target this unit with the Fire Overwatch or the Heroic Intervention Stratagem for 0CP. While resolving that Stratagem, each time a model in this unit makes a ranged attack you can re-roll the Hit roll , or you can re-roll the Charge roll made for this unit (whichever applies).",
+        "name": "Visions of Heresy"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "5-10 Death Company Marines with Bolt Rifles"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "bolt pistol; bolt rifle; close combat weapon.",
+      "label": "Every model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "5 models",
+          "points": "85"
+        },
+        {
+          "label": "10 models",
+          "points": "160"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "GRENADES",
+    "IMPERIUM",
+    "TACTICUS",
+    "DEATH COMPANY",
+    "DEATH COMPANY MARINES WITH BOLT RIFLES"
+  ],
+  "faction_keywords": [
+    "ADEPTUS ASTARTES",
+    "BLOOD ANGELS"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "1 model\u2019s bolt rifle can be replaced with one of the following:",
+          "items": [
+            "1 Astartes chainsword",
+            "1 hand flamer",
+            "1 inferno pistol",
+            "1 plasma pistol"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "For every 5 models in this unit, 1 model's bolt rifle and close combat weapon can be replaced with 1 eviscerator.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "For every 5 models in this unit, 1 model equipped with a bolt rifle can be equipped with 1 Astartes grenade launcher.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "1 model\u2019s close combat weapon can be replaced with one of the following:",
+          "items": [
+            "1 Astartes chainsword",
+            "1 power fist",
+            "1 power weapon",
+            "1 thunder hammer"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Feel No Pain 6+"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model makes a melee attack, you can re-roll the Hit roll . While this model\u2019s unit is not within 6\" of one or more friendly BLOOD ANGELS CHARACTER models, or 12\" of one or more friendly CHAPLAIN models, it cannot be selected to Fall Back and its Objective Control characteristic is 0.",
+          "name": "Black Rage"
+        },
+        {
+          "type": "rule",
+          "text": "Once per turn, you can target this unit with the Fire Overwatch or the Heroic Intervention Stratagem for 0CP. While resolving that Stratagem, each time a model in this unit makes a ranged attack you can re-roll the Hit roll , or you can re-roll the Charge roll made for this unit (whichever applies).",
+          "name": "Visions of Heresy"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "5-10 Death Company Marines with Bolt Rifles"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "bolt pistol; bolt rifle; close combat weapon.",
+          "label": "Every model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "5 models",
+              "points": "85"
+            },
+            {
+              "label": "10 models",
+              "points": "160"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ATTACHED UNIT",
+      "entries": [
+        {
+          "type": "text",
+          "text": "If a CHAPLAIN model from your army with the Leader ability can be attached to an INTERCESSOR SQUAD unit, it can be attached to this unit instead."
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "ATTACHED UNIT"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "ATTACHED UNIT"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

@@ -1,0 +1,256 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Sanguinary-Guard",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Sanguinary-Guard",
+    "canonicalSourceId": "wahapedia:2a77600985b2188405b64ecb9024cb7b5f5fb9a8",
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Sanguinary-Guard",
+    "fetchedAt": "2026-03-29T17:53:20+00:00",
+    "contentHash": "6602b132edc08db5a19fd12c56264d7adf364e6c929f394a7bf48695f862e48c",
+    "output_slug": "blood-angels"
+  },
+  "name": "Sanguinary Guard",
+  "base_size": "\u230040mm",
+  "characteristics": {
+    "M": "12\"",
+    "T": "4",
+    "Sv": "2+",
+    "W": "3",
+    "Ld": "6+",
+    "OC": "1",
+    "Invulnerable Save": "4+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Angelus boltgun",
+        "abilities": [
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "2",
+        "bs": "3+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Inferno pistol",
+        "abilities": [
+          "melta 2",
+          "pistol"
+        ],
+        "range": "6\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "8",
+        "ap": "-4",
+        "d": "D3"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Encarmine blade",
+        "abilities": [],
+        "range": "Melee",
+        "a": "4",
+        "ws": "2+",
+        "s": "6",
+        "ap": "-3",
+        "d": "2"
+      },
+      {
+        "name": "Encarmine spear",
+        "abilities": [
+          "Lance"
+        ],
+        "range": "Melee",
+        "a": "4",
+        "ws": "2+",
+        "s": "6",
+        "ap": "-2",
+        "d": "2"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deep Strike"
+    ],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time a melee attack targets this unit, subtract 1 from the Hit roll .",
+        "name": "Angelic Visage"
+      },
+      {
+        "type": "rule",
+        "text": "While a CHARACTER model is leading this unit, each time a melee attack targets this unit, subtract 1 from the Wound roll .",
+        "name": "Heirs of Azkaellon"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "3-6 Sanguinary Guard"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "Angelus boltgun; encarmine blade.",
+      "label": "Every model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "3 models",
+          "points": "125"
+        },
+        {
+          "label": "6 models",
+          "points": "260"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "FLY",
+    "JUMP PACK",
+    "GRENADES",
+    "IMPERIUM",
+    "TACTICUS",
+    "SANGUINARY GUARD"
+  ],
+  "faction_keywords": [
+    "ADEPTUS ASTARTES",
+    "BLOOD ANGELS"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "Any number of models can each have their encarmine blade replaced with 1 encarmine spear.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "For every 3 models in this unit, 1 model\u2019s Angelus boltgun can be replaced with 1 inferno pistol.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "One model can be equipped with 1 Sanguinary banner.",
+          "items": []
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deep Strike"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time a melee attack targets this unit, subtract 1 from the Hit roll .",
+          "name": "Angelic Visage"
+        },
+        {
+          "type": "rule",
+          "text": "While a CHARACTER model is leading this unit, each time a melee attack targets this unit, subtract 1 from the Wound roll .",
+          "name": "Heirs of Azkaellon"
+        }
+      ]
+    },
+    {
+      "title": "WARGEAR ABILITIES",
+      "entries": [
+        {
+          "type": "statement",
+          "text": "Add 1 to the Objective Control characteristic of models in the bearer\u2019s unit.",
+          "label": "Sanguinary Banner"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "3-6 Sanguinary Guard"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "Angelus boltgun; encarmine blade.",
+          "label": "Every model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "3 models",
+              "points": "125"
+            },
+            {
+              "label": "6 models",
+              "points": "260"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ATTACHED UNIT",
+      "entries": [
+        {
+          "type": "text",
+          "text": "If a CAPTAIN model from your army with the Leader ability can be attached to an ASSAULT INTERCESSORS WITH JUMP PACKS unit, it can be attached to this unit instead."
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "ATTACHED UNIT"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "ATTACHED UNIT"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

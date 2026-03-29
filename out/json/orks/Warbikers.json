@@ -1,0 +1,243 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/orks/Warbikers",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/orks/Warbikers",
+    "canonicalSourceId": "wahapedia:417eeab124607eb010b286842ada004c43b7a460",
+    "faction_slug": "orks",
+    "datasheet_slug": "Warbikers",
+    "fetchedAt": "2026-03-29T17:24:23+00:00",
+    "contentHash": "55619b7807099da5cf6e3f728f996555dc44afb4c068c76d3990233a9cd9dbd7",
+    "output_slug": "orks"
+  },
+  "name": "Warbikers",
+  "base_size": "",
+  "characteristics": {
+    "M": "12\"",
+    "T": "6",
+    "Sv": "4+",
+    "W": "3",
+    "Ld": "7+",
+    "OC": "2",
+    "Invulnerable Save": "6+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Slugga",
+        "abilities": [
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "5+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Twin dakkagun",
+        "abilities": [
+          "assault",
+          "rapid fire 2",
+          "twin-linked"
+        ],
+        "range": "18\"",
+        "a": "3",
+        "bs": "5+",
+        "s": "5",
+        "ap": "0",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Big choppa",
+        "abilities": [],
+        "range": "Melee",
+        "a": "3",
+        "ws": "3+",
+        "s": "7",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Choppa",
+        "abilities": [],
+        "range": "Melee",
+        "a": "3",
+        "ws": "3+",
+        "s": "4",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Close combat weapon",
+        "abilities": [],
+        "range": "Melee",
+        "a": "2",
+        "ws": "3+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Power klaw",
+        "abilities": [],
+        "range": "Melee",
+        "a": "3",
+        "ws": "4+",
+        "s": "9",
+        "ap": "-2",
+        "d": "2"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [],
+    "faction": [
+      "Waaagh!"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time a model in this unit makes a ranged attack that targets a unit within 9\", improve the Armour Penetration characteristic of that attack by 1.",
+        "name": "Drive-by Dakka"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Boss Nob on Warbike"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "2-5 Warbikers"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "twin dakkagun; close combat weapon.",
+      "label": "Every model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "3 models",
+          "points": "65"
+        },
+        {
+          "label": "6 models",
+          "points": "130"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "MOUNTED",
+    "GRENADES",
+    "SPEED FREEKS",
+    "WARBIKERS"
+  ],
+  "faction_keywords": [
+    "ORKS"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "Each Warbiker can be equipped with one of the following:",
+          "items": [
+            "1 slugga",
+            "1 choppa"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "The Boss Nob on Warbike can be equipped with one of the following:",
+          "items": [
+            "1 slugga",
+            "1 big choppa",
+            "1 power klaw"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Waaagh!"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time a model in this unit makes a ranged attack that targets a unit within 9\", improve the Armour Penetration characteristic of that attack by 1.",
+          "name": "Drive-by Dakka"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Boss Nob on Warbike"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "2-5 Warbikers"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "twin dakkagun; close combat weapon.",
+          "label": "Every model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "3 models",
+              "points": "65"
+            },
+            {
+              "label": "6 models",
+              "points": "130"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

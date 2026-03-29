@@ -1,0 +1,198 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/orks/Wartrakks",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/orks/Wartrakks",
+    "canonicalSourceId": "wahapedia:0e3d2285db3f1b17b3e9bc350f4faa15914056b1",
+    "faction_slug": "orks",
+    "datasheet_slug": "Wartrakks",
+    "fetchedAt": "2026-03-29T17:24:24+00:00",
+    "contentHash": "c00fb16898d9f5d4813a90e6dfe9a97711d099e76f8d109e4cda9dec35c022d0",
+    "output_slug": "orks"
+  },
+  "name": "Wartrakks",
+  "base_size": "\u2300Use model",
+  "characteristics": {
+    "M": "12\"",
+    "T": "6",
+    "Sv": "4+",
+    "W": "6",
+    "Ld": "7+",
+    "OC": "2",
+    "Invulnerable Save": "6+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Rack of rokkits",
+        "abilities": [
+          "blast"
+        ],
+        "range": "24\"",
+        "a": "D3+1",
+        "bs": "5+",
+        "s": "9",
+        "ap": "-2",
+        "d": "3"
+      },
+      {
+        "name": "Twin big shoota",
+        "abilities": [
+          "rapid fire 2",
+          "twin-linked"
+        ],
+        "range": "36\"",
+        "a": "3",
+        "bs": "5+",
+        "s": "5",
+        "ap": "0",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Spiked wheel",
+        "abilities": [],
+        "range": "Melee",
+        "a": "2",
+        "ws": "4+",
+        "s": "6",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [],
+    "faction": [
+      "Waaagh!"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time a model in this unit makes a ranged attack that targets a unit within 9\", improve the Armour Penetration characteristic of that attack by 1.",
+        "name": "Drive-by Dakka"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1-2 Wartrakks"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "twin big shoota; spiked wheel.",
+      "label": "Every model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "50"
+        },
+        {
+          "label": "2 models",
+          "points": "100"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "MOUNTED",
+    "SPEED FREEKS",
+    "WARTRAKKS"
+  ],
+  "faction_keywords": [
+    "ORKS"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "Any number of models can each have their twin big shoota replaced with 1 rack of rokkits.",
+          "items": []
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Waaagh!"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time a model in this unit makes a ranged attack that targets a unit within 9\", improve the Armour Penetration characteristic of that attack by 1.",
+          "name": "Drive-by Dakka"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1-2 Wartrakks"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "twin big shoota; spiked wheel.",
+          "label": "Every model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "50"
+            },
+            {
+              "label": "2 models",
+              "points": "100"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "SPEED FREEKS",
+      "entries": [
+        {
+          "type": "text",
+          "text": "If a model from your army with the Leader ability can be attached to a WARBIKERS unit, it can be attached to this unit instead."
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "SPEED FREEKS"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "SPEED FREEKS"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

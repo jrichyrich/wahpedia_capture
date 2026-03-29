@@ -1,0 +1,232 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/orks/Meganobz",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/orks/Meganobz",
+    "canonicalSourceId": "wahapedia:7473a42e1f9060fe3e6ab4fd6662bd2dce90e0e1",
+    "faction_slug": "orks",
+    "datasheet_slug": "Meganobz",
+    "fetchedAt": "2026-03-29T17:24:16+00:00",
+    "contentHash": "fd3832ce68a2fc44ac87d198979ae553bf07321099ccc09c9cd14ab0dda84958",
+    "output_slug": "orks"
+  },
+  "name": "Meganobz",
+  "base_size": "\u230040mm",
+  "characteristics": {
+    "M": "5\"",
+    "T": "6",
+    "Sv": "2+",
+    "W": "3",
+    "Ld": "7+",
+    "OC": "1"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Kombi-weapon",
+        "abilities": [
+          "anti-infantry 4+",
+          "devastating wounds",
+          "rapid fire 1"
+        ],
+        "range": "24\"",
+        "a": "1",
+        "bs": "5+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Kustom shoota",
+        "abilities": [
+          "rapid fire 2"
+        ],
+        "range": "18\"",
+        "a": "4",
+        "bs": "5+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Killsaw",
+        "abilities": [],
+        "range": "Melee",
+        "a": "2",
+        "ws": "4+",
+        "s": "12",
+        "ap": "-3",
+        "d": "2"
+      },
+      {
+        "name": "Power klaw",
+        "abilities": [],
+        "range": "Melee",
+        "a": "3",
+        "ws": "4+",
+        "s": "9",
+        "ap": "-2",
+        "d": "2"
+      },
+      {
+        "name": "Twin killsaw",
+        "abilities": [
+          "twin-linked"
+        ],
+        "range": "Melee",
+        "a": "2",
+        "ws": "4+",
+        "s": "12",
+        "ap": "-3",
+        "d": "2"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [],
+    "faction": [
+      "Waaagh!"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While the Waaagh! is active for your army, models in this unit have the Feel No Pain 5+ ability.",
+        "name": "Krumpin\u2019 Time"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "2-6 Meganobz"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "kustom shoota; power klaw.",
+      "label": "Every model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "2 models",
+          "points": "65"
+        },
+        {
+          "label": "3 models",
+          "points": "95"
+        },
+        {
+          "label": "5 models",
+          "points": "160"
+        },
+        {
+          "label": "6 models",
+          "points": "190"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "GRENADES",
+    "MEGA ARMOUR",
+    "MEGANOBZ"
+  ],
+  "faction_keywords": [
+    "ORKS"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "Any number of models can each have their kustom shoota and power klaw replaced with one of the following:",
+          "items": [
+            "1 kombi-weapon and 1 power klaw",
+            "1 kombi-weapon and 1 killsaw",
+            "1 kustom shoota and 1 killsaw",
+            "1 killsaw and 1 power klaw",
+            "1 twin killsaw"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Waaagh!"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While the Waaagh! is active for your army, models in this unit have the Feel No Pain 5+ ability.",
+          "name": "Krumpin\u2019 Time"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "2-6 Meganobz"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "kustom shoota; power klaw.",
+          "label": "Every model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "2 models",
+              "points": "65"
+            },
+            {
+              "label": "3 models",
+              "points": "95"
+            },
+            {
+              "label": "5 models",
+              "points": "160"
+            },
+            {
+              "label": "6 models",
+              "points": "190"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

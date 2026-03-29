@@ -1,0 +1,289 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Death-Company-Captain-with-Jump-Pack",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Death-Company-Captain-with-Jump-Pack",
+    "canonicalSourceId": "wahapedia:43150934e3a85f6e08e400317624d70ee3a06b24",
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Death-Company-Captain-with-Jump-Pack",
+    "fetchedAt": "2026-03-29T17:32:27+00:00",
+    "contentHash": "b072c81a0f7c6b29c68abfd8599094ec172c524ffa189f34a9da5ace682a8e66",
+    "output_slug": "blood-angels"
+  },
+  "name": "Death Company Captain with jump pack",
+  "base_size": "\u230040mm",
+  "characteristics": {
+    "M": "12\"",
+    "T": "4",
+    "Sv": "3+",
+    "W": "5",
+    "Ld": "6+",
+    "OC": "1",
+    "Invulnerable Save": "4+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Hand flamer",
+        "abilities": [
+          "ignores cover",
+          "pistol",
+          "torrent"
+        ],
+        "range": "12\"",
+        "a": "D6",
+        "bs": "N/A",
+        "s": "3",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Heavy bolt pistol",
+        "abilities": [
+          "Pistol"
+        ],
+        "range": "18\"",
+        "a": "1",
+        "bs": "2+",
+        "s": "4",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Plasma pistol - standard",
+        "abilities": [
+          "Pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "2+",
+        "s": "7",
+        "ap": "-2",
+        "d": "1"
+      },
+      {
+        "name": "Plasma pistol - supercharge",
+        "abilities": [
+          "hazardous",
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "2+",
+        "s": "8",
+        "ap": "-3",
+        "d": "2"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Astartes chainsword",
+        "abilities": [],
+        "range": "Melee",
+        "a": "7",
+        "ws": "2+",
+        "s": "4",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Power fist",
+        "abilities": [],
+        "range": "Melee",
+        "a": "5",
+        "ws": "2+",
+        "s": "8",
+        "ap": "-2",
+        "d": "2"
+      },
+      {
+        "name": "Relic weapon",
+        "abilities": [],
+        "range": "Melee",
+        "a": "6",
+        "ws": "2+",
+        "s": "5",
+        "ap": "-2",
+        "d": "2"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deep Strike , Feel No Pain 6+ , Leader"
+    ],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, melee weapons equipped by models in that unit have the [SUSTAINED HITS 1] ability.",
+        "name": "Lost to Fury"
+      },
+      {
+        "type": "rule",
+        "text": "Each time this model makes a melee attack, you can re-roll the Hit roll . While this model\u2019s unit is not within 6\" of one or more friendly BLOOD ANGELS CHARACTER models, or 12\" of one or more friendly CHAPLAIN models, it cannot be selected to Fall Back and its Objective Control characteristic is 0.",
+        "name": "Black Rage"
+      },
+      {
+        "type": "rule",
+        "text": "If this model is destroyed by a melee attack, after the attacking unit has finished making its attacks, you can roll one D6, adding 2 to the result if the attacking unit contains the enemy WARLORD : on a 2-3, that enemy unit suffers D3 mortal wounds ; on a 4-5, that enemy unit suffers 3 mortal wounds; on a 6+, that enemy unit suffers D3+3 mortal wounds.",
+        "name": "Death Vision of Sanguinius"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Death Company Captain with Jump Pack"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "heavy bolt pistol; Astartes chainsword.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "75"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "CHARACTER",
+    "JUMP PACK",
+    "FLY",
+    "GRENADES",
+    "IMPERIUM",
+    "TACTICUS",
+    "DEATH COMPANY",
+    "CAPTAIN"
+  ],
+  "faction_keywords": [
+    "ADEPTUS ASTARTES",
+    "BLOOD ANGELS"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s heavy bolt pistol can be replaced with one of the following:",
+          "items": [
+            "1 plasma pistol",
+            "1 hand flamer"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "This model\u2019s Astartes chainsword can be replaced with one of the following:",
+          "items": [
+            "1 relic weapon",
+            "1 power fist"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deep Strike , Feel No Pain 6+ , Leader"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, melee weapons equipped by models in that unit have the [SUSTAINED HITS 1] ability.",
+          "name": "Lost to Fury"
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model makes a melee attack, you can re-roll the Hit roll . While this model\u2019s unit is not within 6\" of one or more friendly BLOOD ANGELS CHARACTER models, or 12\" of one or more friendly CHAPLAIN models, it cannot be selected to Fall Back and its Objective Control characteristic is 0.",
+          "name": "Black Rage"
+        },
+        {
+          "type": "rule",
+          "text": "If this model is destroyed by a melee attack, after the attacking unit has finished making its attacks, you can roll one D6, adding 2 to the result if the attacking unit contains the enemy WARLORD : on a 2-3, that enemy unit suffers D3 mortal wounds ; on a 4-5, that enemy unit suffers 3 mortal wounds; on a 6+, that enemy unit suffers D3+3 mortal wounds.",
+          "name": "Death Vision of Sanguinius"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Death Company Captain with Jump Pack"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "heavy bolt pistol; Astartes chainsword.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "75"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "LEADER",
+      "entries": [
+        {
+          "type": "text",
+          "text": "This model can be attached to the following unit:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Death Company Marines With Jump Packs"
+          ]
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

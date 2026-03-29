@@ -1,0 +1,249 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/orks/Grot-Tanks",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/orks/Grot-Tanks",
+    "canonicalSourceId": "wahapedia:4a583e02a88f17bee79b4c976c36ba1c113532d7",
+    "faction_slug": "orks",
+    "datasheet_slug": "Grot-Tanks",
+    "fetchedAt": "2026-03-29T17:24:12+00:00",
+    "contentHash": "d0b3dc7c01cd7815ffd3585267c61465a118c09fb0217fc31408f7196c3243d9",
+    "output_slug": "orks"
+  },
+  "name": "Grot Tanks",
+  "base_size": "\u2300Use model",
+  "characteristics": {
+    "M": "10\"",
+    "T": "6",
+    "Sv": "3+",
+    "W": "5",
+    "Ld": "8+",
+    "OC": "2"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Grot tank shoota",
+        "abilities": [
+          "devastating wounds",
+          "rapid fire 2"
+        ],
+        "range": "36\"",
+        "a": "3",
+        "bs": "4+",
+        "s": "5",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Grotzooka",
+        "abilities": [
+          "blast",
+          "ignores cover"
+        ],
+        "range": "18\"",
+        "a": "D3+3",
+        "bs": "4+",
+        "s": "6",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Kustom mega-blasta",
+        "abilities": [
+          "hazardous"
+        ],
+        "range": "24\"",
+        "a": "2",
+        "bs": "4+",
+        "s": "9",
+        "ap": "-2",
+        "d": "D6"
+      },
+      {
+        "name": "Rokkit launcha",
+        "abilities": [
+          "blast"
+        ],
+        "range": "24\"",
+        "a": "D3",
+        "bs": "4+",
+        "s": "9",
+        "ap": "-2",
+        "d": "3"
+      },
+      {
+        "name": "Skorcha",
+        "abilities": [
+          "ignores cover",
+          "torrent"
+        ],
+        "range": "12\"",
+        "a": "D6",
+        "bs": "N/A",
+        "s": "5",
+        "ap": "-1",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Ramshackle hull",
+        "abilities": [],
+        "range": "Melee",
+        "a": "3",
+        "ws": "5+",
+        "s": "6",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise 1"
+    ],
+    "faction": [
+      "Waaagh!"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Once per turn, when an enemy unit ends a Normal , Advance or Fall Back move within 9\" of this unit, if this unit is not within Engagement Range of one or more enemy units, it can make a Normal move of up to 6\".",
+        "name": "Scatter!"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "4-8 Grot Tanks"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "Grot tank shoota; ramshackle hull.",
+      "label": "Every model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "4 models",
+          "points": "155"
+        },
+        {
+          "label": "8 models",
+          "points": "310"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "VEHICLE",
+    "GROTS",
+    "GROT TANKS"
+  ],
+  "faction_keywords": [
+    "ORKS"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "Any number of models can each have their big shoota replaced with one of the following:",
+          "items": [
+            "1 grotzooka",
+            "1 kustom mega-blasta",
+            "1 rokkit launcha",
+            "1 skorcha"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "For every four models in this unit, one model can be equipped with one of the following in addition to any other weapons:",
+          "items": [
+            "1 Grot tank shoota",
+            "1 grotzooka",
+            "1 kustom mega-blasta",
+            "1 rokkit launcha",
+            "1 skorcha"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise 1"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Waaagh!"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Once per turn, when an enemy unit ends a Normal , Advance or Fall Back move within 9\" of this unit, if this unit is not within Engagement Range of one or more enemy units, it can make a Normal move of up to 6\".",
+          "name": "Scatter!"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "4-8 Grot Tanks"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "Grot tank shoota; ramshackle hull.",
+          "label": "Every model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "4 models",
+              "points": "155"
+            },
+            {
+              "label": "8 models",
+              "points": "310"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

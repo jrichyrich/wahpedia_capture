@@ -1,0 +1,217 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/orks/Deffkilla-Wartrike",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/orks/Deffkilla-Wartrike",
+    "canonicalSourceId": "wahapedia:6cd66f97af38987e8514995aec09f73c896a10e4",
+    "faction_slug": "orks",
+    "datasheet_slug": "Deffkilla-Wartrike",
+    "fetchedAt": "2026-03-29T17:24:08+00:00",
+    "contentHash": "1fbf4d5639a4928ea0ceb462bb230f784a889257c8ad862a45578e883d5d9040",
+    "output_slug": "orks"
+  },
+  "name": "Deffkilla Wartrike",
+  "base_size": "\u2300150 x 95mm",
+  "characteristics": {
+    "M": "12\"",
+    "T": "6",
+    "Sv": "4+",
+    "W": "9",
+    "Ld": "6+",
+    "OC": "3",
+    "Invulnerable Save": "5+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Boomstikks",
+        "abilities": [
+          "assault"
+        ],
+        "range": "12\"",
+        "a": "6",
+        "bs": "5+",
+        "s": "5",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Killa jet \u2013 burna",
+        "abilities": [
+          "ignores cover",
+          "torrent"
+        ],
+        "range": "12\"",
+        "a": "D6",
+        "bs": "N/A",
+        "s": "5",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Killa jet \u2013 cutta",
+        "abilities": [
+          "melta 2"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "5+",
+        "s": "9",
+        "ap": "-4",
+        "d": "D6"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Snagga klaw",
+        "abilities": [],
+        "range": "Melee",
+        "a": "4",
+        "ws": "3+",
+        "s": "10",
+        "ap": "-2",
+        "d": "2"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise 1 , Leader"
+    ],
+    "faction": [
+      "Waaagh!"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, each time a model in that unit makes a melee attack, add 1 to the Hit roll .",
+        "name": "Speedboss"
+      },
+      {
+        "type": "rule",
+        "text": "Each time this model\u2019s unit Advances , do not make an Advance roll for it. Instead, until the end of the phase, add 6\" to the Move characteristic of models in this model\u2019s unit.",
+        "name": "Fuel-mixa Grot"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Defkilla Wartrike"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "defkilla boomsticks; killajet; snagga klaw.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "80"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "MOUNTED",
+    "CHARACTER",
+    "WARBOSS",
+    "SPEED FREEKS",
+    "DEFFKILLA WARTRIKE"
+  ],
+  "faction_keywords": [
+    "ORKS"
+  ],
+  "sections": [
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise 1 , Leader"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Waaagh!"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, each time a model in that unit makes a melee attack, add 1 to the Hit roll .",
+          "name": "Speedboss"
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model\u2019s unit Advances , do not make an Advance roll for it. Instead, until the end of the phase, add 6\" to the Move characteristic of models in this model\u2019s unit.",
+          "name": "Fuel-mixa Grot"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Defkilla Wartrike"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "defkilla boomsticks; killajet; snagga klaw.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "80"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "LEADER",
+      "entries": [
+        {
+          "type": "text",
+          "text": "This model can be attached to the following unit:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Warbikers"
+          ]
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "exportedSectionTitles": [
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

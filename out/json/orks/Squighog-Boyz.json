@@ -1,0 +1,277 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/orks/Squighog-Boyz",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/orks/Squighog-Boyz",
+    "canonicalSourceId": "wahapedia:67b1799b4cc78e737396c6c189e09b3d5ec364f2",
+    "faction_slug": "orks",
+    "datasheet_slug": "Squighog-Boyz",
+    "fetchedAt": "2026-03-29T17:24:21+00:00",
+    "contentHash": "67927b6d26f76e90b66bc70b1aea45c0ef34d1a32e7b395a6a956d514956d954",
+    "output_slug": "orks"
+  },
+  "name": "Squighog Boyz",
+  "base_size": "",
+  "characteristics": {
+    "M": "10\"",
+    "T": "7",
+    "Sv": "4+",
+    "W": "3",
+    "Ld": "7+",
+    "OC": "2"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Saddlegit weapons",
+        "abilities": [
+          "assault"
+        ],
+        "range": "9\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "3",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Slugga",
+        "abilities": [
+          "Pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "5+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Stikka",
+        "abilities": [
+          "assault",
+          "anti-monster 4+",
+          "anti-vehicle 4+"
+        ],
+        "range": "9\"",
+        "a": "1",
+        "bs": "5+",
+        "s": "5",
+        "ap": "-1",
+        "d": "2"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Big Choppa",
+        "abilities": [
+          "anti-monster 4+",
+          "anti-vehicle 4+"
+        ],
+        "range": "Melee",
+        "a": "4",
+        "ws": "3+",
+        "s": "6",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Stikka",
+        "abilities": [
+          "anti-monster 4+",
+          "anti-vehicle 4+",
+          "lance"
+        ],
+        "range": "Melee",
+        "a": "3",
+        "ws": "3+",
+        "s": "5",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Squig jaws",
+        "abilities": [
+          "extra attacks"
+        ],
+        "range": "Melee",
+        "a": "3",
+        "ws": "4+",
+        "s": "6",
+        "ap": "-1",
+        "d": "2"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Feel No Pain 5+"
+    ],
+    "faction": [
+      "Waaagh!"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "You can ignore any or all modifiers to this unit\u2019s Move characteristic and to Advance and Charge rolls made for this unit.",
+        "name": "Wild Ride"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1-2 Nob On Smasha Squig"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "3-6 Squighog Boyz"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "slugga; big choppa; squig jaws.",
+      "label": "Every Nob on Smasha Squig is equipped with"
+    },
+    {
+      "type": "statement",
+      "text": "saddlegit weapons; stikka; squig jaws.",
+      "label": "Every Squighog Boy is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "4 models",
+          "points": "150"
+        },
+        {
+          "label": "8 models",
+          "points": "300"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "MOUNTED",
+    "BEAST SNAGGA",
+    "GRENADES",
+    "SQUIGHOG BOYZ"
+  ],
+  "faction_keywords": [
+    "ORKS"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "For every 3 models in this unit, this unit can be equipped with 1 bomb squig.",
+          "items": []
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Feel No Pain 5+"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Waaagh!"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "You can ignore any or all modifiers to this unit\u2019s Move characteristic and to Advance and Charge rolls made for this unit.",
+          "name": "Wild Ride"
+        }
+      ]
+    },
+    {
+      "title": "WARGEAR ABILITIES",
+      "entries": [
+        {
+          "type": "statement",
+          "text": "Once per battle, for each bomb squig this unit has, after this unit ends a Normal move , you can use one Bomb Squig. If you do, select one enemy unit within 12\" and visible to this unit and roll one D6: on a 3+, that enemy unit suffers D3 mortal wounds .",
+          "label": "Bomb Squigs"
+        },
+        {
+          "type": "statement",
+          "text": "Place the relevant number of Bomb Squig tokens next to the unit, removing one each time this unit uses this ability.",
+          "label": "Designer\u2019s Note"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1-2 Nob On Smasha Squig"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "3-6 Squighog Boyz"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "slugga; big choppa; squig jaws.",
+          "label": "Every Nob on Smasha Squig is equipped with"
+        },
+        {
+          "type": "statement",
+          "text": "saddlegit weapons; stikka; squig jaws.",
+          "label": "Every Squighog Boy is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "4 models",
+              "points": "150"
+            },
+            {
+              "label": "8 models",
+              "points": "300"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

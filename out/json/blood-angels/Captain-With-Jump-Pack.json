@@ -1,0 +1,317 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Captain-With-Jump-Pack",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Captain-With-Jump-Pack",
+    "canonicalSourceId": "wahapedia:220c95917b02dc50203bfab9f897f27c0c1dc75a",
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Captain-With-Jump-Pack",
+    "fetchedAt": "2026-03-29T17:28:17+00:00",
+    "contentHash": "da8381895f59ded931d745dec590cb047b3bcb68418fea32c27c1f81f47e7956",
+    "output_slug": "blood-angels"
+  },
+  "name": "Captain With Jump Pack",
+  "base_size": "\u230040mm",
+  "characteristics": {
+    "M": "12\"",
+    "T": "4",
+    "Sv": "3+",
+    "W": "5",
+    "Ld": "6+",
+    "OC": "1",
+    "Invulnerable Save": "4+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Hand flamer",
+        "abilities": [
+          "ignores cover",
+          "pistol",
+          "torrent"
+        ],
+        "range": "12\"",
+        "a": "D6",
+        "bs": "N/A",
+        "s": "3",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Heavy bolt pistol",
+        "abilities": [
+          "PISTOL"
+        ],
+        "range": "18\"",
+        "a": "1",
+        "bs": "2+",
+        "s": "4",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Plasma pistol \u2013 standard",
+        "abilities": [
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "2+",
+        "s": "7",
+        "ap": "-2",
+        "d": "1"
+      },
+      {
+        "name": "Plasma pistol \u2013 supercharge",
+        "abilities": [
+          "hazardous",
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "2+",
+        "s": "8",
+        "ap": "-3",
+        "d": "2"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Astartes chainsword",
+        "abilities": [],
+        "range": "Melee",
+        "a": "7",
+        "ws": "2+",
+        "s": "4",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Power fist",
+        "abilities": [],
+        "range": "Melee",
+        "a": "5",
+        "ws": "2+",
+        "s": "8",
+        "ap": "-2",
+        "d": "2"
+      },
+      {
+        "name": "Relic weapon",
+        "abilities": [],
+        "range": "Melee",
+        "a": "6",
+        "ws": "2+",
+        "s": "5",
+        "ap": "-2",
+        "d": "2"
+      },
+      {
+        "name": "Thunder hammer",
+        "abilities": [
+          "devastating wounds"
+        ],
+        "range": "Melee",
+        "a": "5",
+        "ws": "3+",
+        "s": "8",
+        "ap": "-2",
+        "d": "2"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deep Strike , Leader"
+    ],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, each time that unit ends a Charge move , until the end of the turn, add 1 to the Strength characteristic of melee weapons equipped by models in that unit.",
+        "name": "Angel\u2019s Wrath"
+      },
+      {
+        "type": "rule",
+        "text": "Once per battle round , one unit from your army with this ability can use it when its unit is targeted with a Stratagem . If it does, reduce the CP cost of that use of that Stratagem by 1CP.",
+        "name": "Rites of Battle"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Captain with Jump Pack"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "heavy bolt pistol; Astartes chainsword.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "75"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "CHARACTER",
+    "JUMP PACK",
+    "FLY",
+    "GRENADES",
+    "IMPERIUM",
+    "TACTICUS",
+    "CAPTAIN"
+  ],
+  "faction_keywords": [
+    "ADEPTUS ASTARTES"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s heavy bolt pistol can be replaced with one of the following:",
+          "items": [
+            "1 plasma pistol",
+            "1 hand flamer"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "This model\u2019s Astartes chainsword can be replaced with one of the following:",
+          "items": [
+            "1 power fist",
+            "1 relic weapon"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "This model\u2019s heavy bolt pistol and Astartes chainsword can be replaced with 1 thunder hammer and 1 relic shield.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "If this model is equipped with a heavy bolt pistol and an Astartes chainsword, it can be equipped with 1 relic shield. This model\u2019s heavy bolt pistol and Astartes chainsword cannot be replaced.",
+          "items": []
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deep Strike , Leader"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, each time that unit ends a Charge move , until the end of the turn, add 1 to the Strength characteristic of melee weapons equipped by models in that unit.",
+          "name": "Angel\u2019s Wrath"
+        },
+        {
+          "type": "rule",
+          "text": "Once per battle round , one unit from your army with this ability can use it when its unit is targeted with a Stratagem . If it does, reduce the CP cost of that use of that Stratagem by 1CP.",
+          "name": "Rites of Battle"
+        }
+      ]
+    },
+    {
+      "title": "WARGEAR ABILITIES",
+      "entries": [
+        {
+          "type": "statement",
+          "text": "The bearer has a Wounds characteristic of 6.",
+          "label": "Relic Shield"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Captain with Jump Pack"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "heavy bolt pistol; Astartes chainsword.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "75"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "LEADER",
+      "entries": [
+        {
+          "type": "text",
+          "text": "This model can be attached to the following units:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Assault Intercessors With Jump Packs",
+            "Vanguard Veteran Squad With Jump Packs",
+            "Sanguinary Guard",
+            "Talonstrike Kill Team",
+            "Assault Squad with Jump Packs",
+            "Skyclaws",
+            "Wolf Guard"
+          ]
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

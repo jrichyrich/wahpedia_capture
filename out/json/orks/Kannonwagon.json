@@ -1,0 +1,219 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/orks/Kannonwagon",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/orks/Kannonwagon",
+    "canonicalSourceId": "wahapedia:c77b9546febbb0390fcce6f38c6380dd69c5f88f",
+    "faction_slug": "orks",
+    "datasheet_slug": "Kannonwagon",
+    "fetchedAt": "2026-03-29T17:24:12+00:00",
+    "contentHash": "2f8c63fc2381f44068dc177fee0b65a38ac59f68dfcaed1367d690f691fdeb5e",
+    "output_slug": "orks"
+  },
+  "name": "Kannonwagon",
+  "base_size": "\u2300Use model",
+  "characteristics": {
+    "M": "12\"",
+    "T": "10",
+    "Sv": "4+",
+    "W": "16",
+    "Ld": "7+",
+    "OC": "4",
+    "Invulnerable Save": "6+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Big shoota",
+        "abilities": [
+          "rapid fire 2"
+        ],
+        "range": "36\"",
+        "a": "3",
+        "bs": "5+",
+        "s": "5",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Supa-kannon \u2013 frag",
+        "abilities": [
+          "blast"
+        ],
+        "range": "36\"",
+        "a": "D6+3",
+        "bs": "5+",
+        "s": "5",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Supa-kannon \u2013 shell",
+        "abilities": [],
+        "range": "36\"",
+        "a": "1",
+        "bs": "5+",
+        "s": "9",
+        "ap": "-2",
+        "d": "D3+3"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Spiked ram",
+        "abilities": [],
+        "range": "Melee",
+        "a": "3",
+        "ws": "4+",
+        "s": "8",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise D6 , Firing Deck 6"
+    ],
+    "faction": [
+      "Waaagh!"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "In your Shooting phase , just after selecting a target for this model\u2019s supa-kannon, roll one D6 for the target unit and every other unit within 3\" of that unit: on a 5+, the unit being rolled for is struck by a concussive wave. After this model has finished making its attacks against that target unit this phase, each unit struck by a concussive wave this phase suffers D3 mortal wounds .",
+        "name": "Big Booms"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Kannonwagon"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "supa-kannon; spiked ram.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "115"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "VEHICLE",
+    "TRANSPORT",
+    "KANNONWAGON"
+  ],
+  "faction_keywords": [
+    "ORKS"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model can be equipped with up to 3 big shootas.",
+          "items": []
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise D6 , Firing Deck 6"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Waaagh!"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "In your Shooting phase , just after selecting a target for this model\u2019s supa-kannon, roll one D6 for the target unit and every other unit within 3\" of that unit: on a 5+, the unit being rolled for is struck by a concussive wave. After this model has finished making its attacks against that target unit this phase, each unit struck by a concussive wave this phase suffers D3 mortal wounds .",
+          "name": "Big Booms"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Kannonwagon"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "supa-kannon; spiked ram.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "115"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DAMAGED: 1-5 WOUNDS REMAINING",
+      "entries": [
+        {
+          "type": "text",
+          "text": "While this model has 1-5 wounds remaining, each time this model makes an attack, subtract 1 from the Hit roll ."
+        }
+      ]
+    },
+    {
+      "title": "TRANSPORT",
+      "entries": [
+        {
+          "type": "text",
+          "text": "This model has a transport capacity of 6 ORKS INFANTRY models. Each MEGA ARMOUR or JUMP PACK model takes up the space of 2 models. This model cannot transport Ghazghkull Thraka ."
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-5 WOUNDS REMAINING",
+      "TRANSPORT"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-5 WOUNDS REMAINING",
+      "TRANSPORT"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

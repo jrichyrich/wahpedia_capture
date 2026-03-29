@@ -1,0 +1,270 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Death-Company-Dreadnought",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/space-marines/Death-Company-Dreadnought",
+    "canonicalSourceId": "wahapedia:cccff88d327b7181d5d0683544d3f9e430e7984c",
+    "faction_slug": "space-marines",
+    "datasheet_slug": "Death-Company-Dreadnought",
+    "fetchedAt": "2026-03-29T17:52:01+00:00",
+    "contentHash": "a93668da26371f298232f5fc7261caf6d1147ffabb36f77ff18c62b7384c109a",
+    "output_slug": "blood-angels"
+  },
+  "name": "Death Company Dreadnought",
+  "base_size": "\u230090mm",
+  "characteristics": {
+    "M": "8\"",
+    "T": "10",
+    "Sv": "2+",
+    "W": "12",
+    "Ld": "6+",
+    "OC": "4"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Blood fist bolt rifles",
+        "abilities": [
+          "twin-linked"
+        ],
+        "range": "24\"",
+        "a": "4",
+        "bs": "3+",
+        "s": "4",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Twin heavy bolter",
+        "abilities": [
+          "sustained hits 1",
+          "twin-linked"
+        ],
+        "range": "36\"",
+        "a": "3",
+        "bs": "3+",
+        "s": "5",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Twin Icarus ironhail heavy stubber",
+        "abilities": [
+          "ANTI-FLY 4+",
+          "RAPID FIRE 3",
+          "TWIN-LINKED"
+        ],
+        "range": "36\"",
+        "a": "3",
+        "bs": "3+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Twin multi-melta",
+        "abilities": [
+          "melta 2",
+          "twin-linked"
+        ],
+        "range": "18\"",
+        "a": "2",
+        "bs": "3+",
+        "s": "9",
+        "ap": "-4",
+        "d": "D6"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Blood fists",
+        "abilities": [
+          "twin-linked"
+        ],
+        "range": "Melee",
+        "a": "6",
+        "ws": "3+",
+        "s": "12",
+        "ap": "-2",
+        "d": "3"
+      },
+      {
+        "name": "Blood talons - strike",
+        "abilities": [
+          "twin-linked"
+        ],
+        "range": "Melee",
+        "a": "6",
+        "ws": "3+",
+        "s": "12",
+        "ap": "-2",
+        "d": "3"
+      },
+      {
+        "name": "Blood talons - sweep",
+        "abilities": [
+          "twin-linked"
+        ],
+        "range": "Melee",
+        "a": "10",
+        "ws": "3+",
+        "s": "7",
+        "ap": "-2",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise D3 , Feel No Pain 6+"
+    ],
+    "faction": [
+      "Oath of Moment"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this model makes a melee attack, you can re-roll the Hit roll . While this model\u2019s unit is not within 6\" of one or more friendly BLOOD ANGELS CHARACTER models, or 12\" of one or more friendly CHAPLAIN models, it cannot be selected to Fall Back and its Objective Control characteristic is 0.",
+        "name": "Black Rage"
+      },
+      {
+        "type": "rule",
+        "text": "In your opponent\u2019s Shooting phase , each time an enemy unit has shot, if this model was hit by one or more of those attacks, it can make a Driven by Fury move. To do so, roll one D6 and add 2 to the roll: this model moves a number of inches up to the result, but must finish as close as possible to the closest enemy unit (excluding AIRCRAFT ). When doing so, this model can be moved within Engagement Range of that enemy unit. A model cannot make a Driven by Fury move while it is Battle-shocked or within Engagement Range of one or more enemy units, and can only make one Driven by Fury move per phase.",
+        "name": "Driven by Fury"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Death Company Dreadnought"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "twin Icarus ironhail heavy stubber; twin heavy bolter; blood fist bolt rifles; blood fists.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "160"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "VEHICLE",
+    "WALKER",
+    "IMPERIUM",
+    "DREADNOUGHT",
+    "DEATH COMPANY",
+    "DEATH COMPANY DREADNOUGHT"
+  ],
+  "faction_keywords": [
+    "ADEPTUS ASTARTES",
+    "BLOOD ANGELS"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s twin heavy bolter can be replaced with 1 twin multi-melta.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "This model's blood fists and blood fist bolt rifles can be replaced with 1 blood talons.",
+          "items": []
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise D3 , Feel No Pain 6+"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Oath of Moment"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model makes a melee attack, you can re-roll the Hit roll . While this model\u2019s unit is not within 6\" of one or more friendly BLOOD ANGELS CHARACTER models, or 12\" of one or more friendly CHAPLAIN models, it cannot be selected to Fall Back and its Objective Control characteristic is 0.",
+          "name": "Black Rage"
+        },
+        {
+          "type": "rule",
+          "text": "In your opponent\u2019s Shooting phase , each time an enemy unit has shot, if this model was hit by one or more of those attacks, it can make a Driven by Fury move. To do so, roll one D6 and add 2 to the roll: this model moves a number of inches up to the result, but must finish as close as possible to the closest enemy unit (excluding AIRCRAFT ). When doing so, this model can be moved within Engagement Range of that enemy unit. A model cannot make a Driven by Fury move while it is Battle-shocked or within Engagement Range of one or more enemy units, and can only make one Driven by Fury move per phase.",
+          "name": "Driven by Fury"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Death Company Dreadnought"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "twin Icarus ironhail heavy stubber; twin heavy bolter; blood fist bolt rifles; blood fists.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "160"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DAMAGED: 1-4 WOUNDS REMAINING",
+      "entries": [
+        {
+          "type": "text",
+          "text": "While this model has 1-4 wounds remaining, each time this model makes an attack, subtract 1 from the Hit roll ."
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-4 WOUNDS REMAINING"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-4 WOUNDS REMAINING"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

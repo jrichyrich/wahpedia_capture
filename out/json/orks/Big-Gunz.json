@@ -1,0 +1,230 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/orks/Big-Gunz",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/orks/Big-Gunz",
+    "canonicalSourceId": "wahapedia:ba5916c05f6d7994310c6fca7582605c4ff1f8f7",
+    "faction_slug": "orks",
+    "datasheet_slug": "Big-Gunz",
+    "fetchedAt": "2026-03-29T17:23:57+00:00",
+    "contentHash": "14810bf13b9e8727f323d5f409bc454c806055b187bb58e031c8889bd075fb94",
+    "output_slug": "orks"
+  },
+  "name": "Big Gunz",
+  "base_size": "\u2300Use model",
+  "characteristics": {
+    "M": "3\"",
+    "T": "4",
+    "Sv": "5+",
+    "W": "3",
+    "Ld": "8+",
+    "OC": "1",
+    "Invulnerable Save": "6+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Kannon \u2013 frag",
+        "abilities": [
+          "blast",
+          "heavy"
+        ],
+        "range": "36\"",
+        "a": "D6",
+        "bs": "6+",
+        "s": "5",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Kannon \u2013 shell",
+        "abilities": [
+          "heavy"
+        ],
+        "range": "36\"",
+        "a": "1",
+        "bs": "6+",
+        "s": "9",
+        "ap": "-2",
+        "d": "D6"
+      },
+      {
+        "name": "Lobba",
+        "abilities": [
+          "blast",
+          "heavy",
+          "indirect fire"
+        ],
+        "range": "48\"",
+        "a": "D6",
+        "bs": "6+",
+        "s": "5",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Zzap gun",
+        "abilities": [
+          "devastating wounds",
+          "heavy"
+        ],
+        "range": "36\"",
+        "a": "1",
+        "bs": "6+",
+        "s": "2D6",
+        "ap": "-3",
+        "d": "3"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Close combat weapons",
+        "abilities": [],
+        "range": "Melee",
+        "a": "2",
+        "ws": "3+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [],
+    "faction": [
+      "Waaagh!"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time a model in this unit makes a ranged attack that targets a unit containing 10 or more models, re-roll a Hit roll of 1.",
+        "name": "Splat!"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1-2 Big Gunz"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "kannon; close combat weapons.",
+      "label": "Every model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "20"
+        },
+        {
+          "label": "2 models",
+          "points": "40"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "VEHICLE",
+    "ARTILLERY",
+    "GROTS",
+    "BIG GUNZ"
+  ],
+  "faction_keywords": [
+    "ORKS"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "Any number of models can each have their kannon replaced with one of the following:",
+          "items": [
+            "1 lobba",
+            "1 zzap gun"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Waaagh!"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time a model in this unit makes a ranged attack that targets a unit containing 10 or more models, re-roll a Hit roll of 1.",
+          "name": "Splat!"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1-2 Big Gunz"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "kannon; close combat weapons.",
+          "label": "Every model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "20"
+            },
+            {
+              "label": "2 models",
+              "points": "40"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "BIG GUNZ",
+      "entries": [
+        {
+          "type": "statement",
+          "text": "Place two Grot Crew tokens next to each Mek Gun model when this unit is first set up, removing one each time its Big Gun model loses a wound (a Big Gun model itself is considered to represent its final wound).",
+          "label": "Designer\u2019s Note"
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "BIG GUNZ"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "BIG GUNZ"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}
