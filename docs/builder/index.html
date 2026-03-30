@@ -375,6 +375,64 @@
             line-height: 1.45;
         }
 
+        .rules-disclosure {
+            display: grid;
+            gap: 10px;
+        }
+
+        .rules-disclosure-card {
+            display: grid;
+            gap: 8px;
+            padding: 10px;
+            border: 1px solid var(--line);
+            background: rgba(255, 255, 255, 0.72);
+        }
+
+        .rules-disclosure-header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .rules-disclosure-title {
+            font-family: "Exo 2", sans-serif;
+            font-size: 18px;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .rules-disclosure-subtitle {
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--muted);
+            letter-spacing: 0.04em;
+        }
+
+        .rules-disclosure-summary,
+        .rules-disclosure-body {
+            font-size: 14px;
+            line-height: 1.55;
+        }
+
+        .rules-disclosure-body {
+            padding-top: 8px;
+            border-top: 1px solid rgba(49, 34, 18, 0.12);
+        }
+
+        .rules-disclosure-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .rules-disclosure-toggle {
+            align-self: flex-start;
+            white-space: nowrap;
+        }
+
         .stratagem-toolbar {
             display: flex;
             flex-wrap: wrap;
@@ -1206,6 +1264,7 @@
                 relevance: "all",
                 phase: "all",
             },
+            armyRulesExpanded: {},
         };
 
         const els = {
@@ -1356,6 +1415,86 @@
             }[battleSize] || "Strike Force";
         }
 
+        function normalizeInlineText(value) {
+            return String(value || "").replace(/\s+/g, " ").trim();
+        }
+
+        function disclosureKey(prefix, value) {
+            const normalizedValue = normalizeInlineText(value)
+                .toLowerCase()
+                .replace(/[^a-z0-9]+/g, "-")
+                .replace(/^-+|-+$/g, "");
+            return `${prefix}:${normalizedValue || "default"}`;
+        }
+
+        function summarizeCopy(value, maxLength = 220) {
+            const text = normalizeInlineText(value);
+            if (!text) {
+                return { preview: "", truncated: false };
+            }
+            if (text.length <= maxLength) {
+                return { preview: text, truncated: false };
+            }
+            const sentenceMatch = text.match(/^(.{80,260}?[.!?])(?:\s|$)/);
+            if (sentenceMatch && sentenceMatch[1].length <= maxLength + 40) {
+                return { preview: sentenceMatch[1], truncated: true };
+            }
+            const truncated = text.slice(0, maxLength);
+            const safeBoundary = truncated.lastIndexOf(" ");
+            const preview = safeBoundary > 80 ? truncated.slice(0, safeBoundary) : truncated;
+            return { preview: `${preview}...`, truncated: true };
+        }
+
+        function noisyDetachmentSummary(value) {
+            const text = normalizeInlineText(value);
+            return /(?:\bstratagems\b|when:|target:|effect:)/i.test(text) || text.length > 420;
+        }
+
+        function preferredDetachmentOverview(activeDetachment) {
+            if (!activeDetachment) {
+                return "";
+            }
+            const summary = normalizeInlineText(activeDetachment.summary || "");
+            if (summary && !noisyDetachmentSummary(summary)) {
+                return summary;
+            }
+            return normalizeInlineText(activeDetachment.rule && activeDetachment.rule.body ? activeDetachment.rule.body : "");
+        }
+
+        function rulesDisclosureCard(options) {
+            const key = options.key;
+            const title = normalizeInlineText(options.title || "");
+            const subtitle = normalizeInlineText(options.subtitle || "");
+            const body = normalizeInlineText(options.body || "");
+            const previewData = summarizeCopy(options.preview || body, options.maxLength || 220);
+            const expanded = Boolean(state.armyRulesExpanded[key]);
+            const toggleLabel = expanded ? "Hide details" : "Show details";
+            const hasDetails = Boolean(body) && (previewData.truncated || body !== previewData.preview || options.forceToggle);
+            const metaHtml = options.metaHtml || "";
+            return `
+                <div class="rules-disclosure-card">
+                    <div class="rules-disclosure-header">
+                        <div>
+                            ${subtitle ? `<div class="rules-disclosure-subtitle">${escapeHtml(subtitle)}</div>` : ""}
+                            <div class="rules-disclosure-title">${escapeHtml(title)}</div>
+                        </div>
+                        ${hasDetails ? `
+                            <button
+                                class="btn rules-disclosure-toggle"
+                                type="button"
+                                data-action="toggle-army-rule-section"
+                                data-key="${escapeHtml(key)}"
+                                aria-expanded="${expanded ? "true" : "false"}"
+                            >${toggleLabel}</button>
+                        ` : ""}
+                    </div>
+                    ${metaHtml ? `<div class="rules-disclosure-meta">${metaHtml}</div>` : ""}
+                    ${previewData.preview ? `<div class="rules-disclosure-summary">${escapeHtml(previewData.preview)}</div>` : ""}
+                    ${expanded && body ? `<div class="rules-disclosure-body">${escapeHtml(body)}</div>` : ""}
+                </div>
+            `;
+        }
+
         function previewSourceModeLabel(previewSourceMode) {
             return previewSourceMode === "source-image" ? "Original Wahapedia" : "Configured card";
         }
@@ -1490,6 +1629,46 @@
             const rulesWarningHtml = (state.catalog.build && Array.isArray(state.catalog.build.rulesWarnings) && state.catalog.build.rulesWarnings.length)
                 ? state.catalog.build.rulesWarnings.map((warning) => `<div class="inline-note inline-note-warning">${escapeHtml(warning)}</div>`).join("")
                 : "";
+            const factionRulesHtml = armyRules.length
+                ? `<div class="rules-disclosure">${armyRules.map((rule) => rulesDisclosureCard({
+                    key: disclosureKey("faction-rule", rule.id || rule.name),
+                    title: rule.name,
+                    subtitle: "Faction rule",
+                    preview: rule.body,
+                    body: rule.body,
+                })).join("")}</div>`
+                : `<div class="inline-note">No faction rules were parsed for this catalog yet.</div>`;
+            const detachmentMetaHtml = activeDetachment
+                ? [
+                    `<span class="pill">${escapeHtml(String(Array.isArray(activeDetachment.stratagems) ? activeDetachment.stratagems.length : 0))} stratagems</span>`,
+                    `<span class="pill">${escapeHtml(String(Array.isArray(activeDetachment.enhancements) ? activeDetachment.enhancements.length : 0))} enhancements</span>`,
+                    `<span class="pill">Assigned ${escapeHtml(String(enhancementCount))}/3</span>`,
+                ].join("")
+                : "";
+            const detachmentOverview = preferredDetachmentOverview(activeDetachment);
+            const cleanDetachmentSummary = activeDetachment && !noisyDetachmentSummary(activeDetachment.summary || "")
+                ? normalizeInlineText(activeDetachment.summary || "")
+                : "";
+            const detachmentSections = activeDetachment ? [
+                rulesDisclosureCard({
+                    key: disclosureKey("detachment-overview", activeDetachment.id || activeDetachment.name),
+                    title: activeDetachment.name,
+                    subtitle: "Detachment overview",
+                    preview: detachmentOverview,
+                    body: cleanDetachmentSummary,
+                    metaHtml: detachmentMetaHtml,
+                }),
+                rulesDisclosureCard({
+                    key: disclosureKey("detachment-rule", activeDetachment.rule && activeDetachment.rule.name ? activeDetachment.rule.name : activeDetachment.name),
+                    title: activeDetachment.rule && activeDetachment.rule.name ? activeDetachment.rule.name : "Detachment Rule",
+                    subtitle: "Detachment rule",
+                    preview: activeDetachment.rule && activeDetachment.rule.body ? activeDetachment.rule.body : "",
+                    body: activeDetachment.rule && activeDetachment.rule.body ? activeDetachment.rule.body : "",
+                }),
+            ] : [];
+            const detachmentRestrictionsHtml = activeDetachment && Array.isArray(activeDetachment.restrictionsText) && activeDetachment.restrictionsText.length
+                ? activeDetachment.restrictionsText.map((text) => `<div class="inline-note">${escapeHtml(text)}</div>`).join("")
+                : "";
 
             els.armyRulesPanel.innerHTML = `
                 <div class="section-heading">Army Rules</div>
@@ -1498,9 +1677,7 @@
                     <div class="army-rules-block">
                         <h3>Faction Rules</h3>
                         <div class="army-rules-copy">
-                            ${armyRules.length
-                                ? armyRules.map((rule) => `<div><strong>${escapeHtml(rule.name)}</strong><div>${escapeHtml(rule.body)}</div></div>`).join("")
-                                : `<div class="inline-note">No faction rules were parsed for this catalog yet.</div>`}
+                            ${factionRulesHtml}
                         </div>
                     </div>
                     <div class="army-rules-block">
@@ -1508,14 +1685,8 @@
                         <div class="army-rules-copy">
                             ${activeDetachment
                                 ? `
-                                    <div><strong>${escapeHtml(activeDetachment.name)}</strong></div>
-                                    ${activeDetachment.summary ? `<div>${escapeHtml(activeDetachment.summary)}</div>` : ""}
-                                    <div><strong>${escapeHtml(activeDetachment.rule && activeDetachment.rule.name ? activeDetachment.rule.name : "Detachment Rule")}</strong></div>
-                                    <div>${escapeHtml(activeDetachment.rule && activeDetachment.rule.body ? activeDetachment.rule.body : "")}</div>
-                                    <div class="inline-note">Enhancements assigned: ${enhancementCount}/3</div>
-                                    ${(Array.isArray(activeDetachment.restrictionsText) && activeDetachment.restrictionsText.length)
-                                        ? activeDetachment.restrictionsText.map((text) => `<div class="inline-note">${escapeHtml(text)}</div>`).join("")
-                                        : ""}
+                                    <div class="rules-disclosure">${detachmentSections.join("")}</div>
+                                    ${detachmentRestrictionsHtml}
                                 `
                                 : `<div class="inline-note inline-note-warning">Select a detachment to activate detachment rules, enhancements, and stratagems.</div>`}
                         </div>
@@ -3096,6 +3267,14 @@
                 ? event.target.closest("[data-action]")
                 : null;
             if (!target) {
+                return;
+            }
+            if (target.dataset.action === "toggle-army-rule-section") {
+                const key = target.dataset.key || "";
+                if (key) {
+                    state.armyRulesExpanded[key] = !state.armyRulesExpanded[key];
+                    renderArmyRulesPanel(deriveRoster());
+                }
                 return;
             }
             if (target.dataset.action === "stratagem-filter-relevance") {

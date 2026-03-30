@@ -862,6 +862,8 @@ class BuilderAppSmokeTests(unittest.TestCase):
         self.assertIn("Army Rules", html)
         self.assertIn("legality-summary", html)
         self.assertIn("army-rules-panel", html)
+        self.assertIn('data-action="toggle-army-rule-section"', html)
+        self.assertIn("Show details", html)
         self.assertIn('data-action="warlord-select"', html)
         self.assertIn('data-action="enhancement-select"', html)
         self.assertIn('data-action="attachment-select"', html)
