@@ -1,6 +1,6 @@
 {
   "schemaVersion": 6,
-  "generatedAt": "2026-03-30T19:34:30+00:00",
+  "generatedAt": "2026-03-30T20:05:19+00:00",
   "faction": {
     "slug": "orks",
     "name": "Orks",
@@ -11,41 +11,12 @@
     "catalogUnitCount": 86,
     "missingStats": [],
     "manualSelectionUnits": [],
-    "manualWargearUnits": [
-      {
-        "unitId": "battlewagon",
-        "name": "Battlewagon"
-      },
-      {
-        "unitId": "big-ed-bossbunka",
-        "name": "Big\u2019ed Bossbunka"
-      },
-      {
-        "unitId": "chinork-warkopta",
-        "name": "Chinork Warkopta"
-      },
-      {
-        "unitId": "deff-dread",
-        "name": "Deff Dread"
-      },
-      {
-        "unitId": "deff-rolla-battle-fortress",
-        "name": "Deff Rolla Battle Fortress"
-      },
-      {
-        "unitId": "deffkoptas",
-        "name": "Deffkoptas"
-      },
-      {
-        "unitId": "kannonwagon",
-        "name": "Kannonwagon"
-      }
-    ],
+    "manualWargearUnits": [],
     "renderIssueUnits": [],
     "rulesWarnings": [],
     "supportSummary": {
-      "readyUnitCount": 79,
-      "partialUnitCount": 7,
+      "readyUnitCount": 86,
+      "partialUnitCount": 0,
       "incompatibleUnitCount": 0,
       "configuredOnlyPreviewCount": 0,
       "sourceImagePreviewCount": 86
@@ -1794,12 +1765,20 @@
           {
             "id": "this-model-can-be-equipped-with-up-to-4-big-shootas-3",
             "label": "This model can be equipped with up to 4 big shootas.",
-            "target": null,
-            "actor": null,
-            "action": null,
-            "selectionMode": "manual",
-            "choices": [],
-            "allocationLimit": null
+            "target": "this model",
+            "actor": "this model",
+            "action": "equip",
+            "selectionMode": "allocation",
+            "choices": [
+              {
+                "id": "1-big-shoota",
+                "label": "1 big shoota"
+              }
+            ],
+            "allocationLimit": {
+              "kind": "static",
+              "max": 4
+            }
           },
           {
             "id": "this-model-s-tracks-and-wheels-can-be-replaced-with-1-deff-rolla-4",
@@ -1821,10 +1800,10 @@
           {
             "id": "this-model-can-be-equipped-with-any-of-the-following-5",
             "label": "This model can be equipped with any of the following:",
-            "target": null,
-            "actor": null,
-            "action": null,
-            "selectionMode": "manual",
+            "target": "this model",
+            "actor": "this model",
+            "action": "equip",
+            "selectionMode": "multi",
             "choices": [
               {
                 "id": "1-ard-case",
@@ -1839,18 +1818,20 @@
                 "label": "1 wreckin\u2019 ball"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "pickCount": 3,
+            "requireDistinct": true
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -2019,10 +2000,8 @@
         }
       ],
       "support": {
-        "supportLevel": "partial",
-        "supportReasons": [
-          "manual_wargear"
-        ],
+        "supportLevel": "full",
+        "supportReasons": [],
         "previewSupport": "source-image"
       }
     },
@@ -5410,23 +5389,31 @@
           {
             "id": "this-model-can-be-equipped-with-up-to-3-additional-big-shootas-1",
             "label": "This model can be equipped with up to 3 additional big shootas.",
-            "target": null,
-            "actor": null,
-            "action": null,
-            "selectionMode": "manual",
-            "choices": [],
-            "allocationLimit": null
+            "target": "this model",
+            "actor": "this model",
+            "action": "equip",
+            "selectionMode": "allocation",
+            "choices": [
+              {
+                "id": "1-additional-big-shoota",
+                "label": "1 additional big shoota"
+              }
+            ],
+            "allocationLimit": {
+              "kind": "static",
+              "max": 3
+            }
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "FORTIFICATION",
@@ -5541,10 +5528,8 @@
         }
       ],
       "support": {
-        "supportLevel": "partial",
-        "supportReasons": [
-          "manual_wargear"
-        ],
+        "supportLevel": "full",
+        "supportReasons": [],
         "previewSupport": "source-image"
       }
     },
@@ -7947,12 +7932,20 @@
           {
             "id": "this-model-can-be-equipped-with-up-to-2-big-bomms-1",
             "label": "This model can be equipped with up to 2 big bomms.",
-            "target": null,
-            "actor": null,
-            "action": null,
-            "selectionMode": "manual",
-            "choices": [],
-            "allocationLimit": null
+            "target": "this model",
+            "actor": "this model",
+            "action": "equip",
+            "selectionMode": "allocation",
+            "choices": [
+              {
+                "id": "1-big-bomm",
+                "label": "1 big bomm"
+              }
+            ],
+            "allocationLimit": {
+              "kind": "static",
+              "max": 2
+            }
           },
           {
             "id": "this-model-s-big-shoota-can-be-replaced-with-one-of-the-following-2",
@@ -7998,14 +7991,14 @@
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -8140,10 +8133,8 @@
         }
       ],
       "support": {
-        "supportLevel": "partial",
-        "supportReasons": [
-          "manual_wargear"
-        ],
+        "supportLevel": "full",
+        "supportReasons": [],
         "previewSupport": "source-image"
       }
     },
@@ -8954,11 +8945,15 @@
           {
             "id": "this-model-s-big-shootas-can-each-be-replaced-with-one-of-the-following-1",
             "label": "This model\u2019s big shootas can each be replaced with one of the following:",
-            "target": null,
+            "target": "big shootas can each be",
             "actor": null,
-            "action": null,
-            "selectionMode": "manual",
+            "action": "replace",
+            "selectionMode": "single",
             "choices": [
+              {
+                "id": "one-of-the-following",
+                "label": "one of the following"
+              },
               {
                 "id": "1-dread-klaw",
                 "label": "1 dread klaw"
@@ -8976,16 +8971,21 @@
                 "label": "1 skorcha"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           },
           {
             "id": "this-model-s-dread-klaws-can-each-be-replaced-with-one-of-the-following-2",
             "label": "This model\u2019s dread klaws can each be replaced with one of the following:",
-            "target": null,
+            "target": "dread klaws can each be",
             "actor": null,
-            "action": null,
-            "selectionMode": "manual",
+            "action": "replace",
+            "selectionMode": "single",
             "choices": [
+              {
+                "id": "one-of-the-following",
+                "label": "one of the following"
+              },
               {
                 "id": "1-big-shoota",
                 "label": "1 big shoota"
@@ -9003,18 +9003,19 @@
                 "label": "1 skorcha"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -9105,10 +9106,8 @@
       ],
       "renderBlocks": [],
       "support": {
-        "supportLevel": "partial",
-        "supportReasons": [
-          "manual_wargear"
-        ],
+        "supportLevel": "full",
+        "supportReasons": [],
         "previewSupport": "source-image"
       }
     },
@@ -9308,12 +9307,20 @@
           {
             "id": "this-model-can-be-equipped-with-up-to-5-big-shootas-1",
             "label": "This model can be equipped with up to 5 big shootas.",
-            "target": null,
-            "actor": null,
-            "action": null,
-            "selectionMode": "manual",
-            "choices": [],
-            "allocationLimit": null
+            "target": "this model",
+            "actor": "this model",
+            "action": "equip",
+            "selectionMode": "allocation",
+            "choices": [
+              {
+                "id": "1-big-shoota",
+                "label": "1 big shoota"
+              }
+            ],
+            "allocationLimit": {
+              "kind": "static",
+              "max": 5
+            }
           },
           {
             "id": "each-of-this-model-s-zzap-guns-can-be-replaced-with-one-of-the-following-2",
@@ -9380,14 +9387,14 @@
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -9529,10 +9536,8 @@
         }
       ],
       "support": {
-        "supportLevel": "partial",
-        "supportReasons": [
-          "manual_wargear"
-        ],
+        "supportLevel": "full",
+        "supportReasons": [],
         "previewSupport": "source-image"
       }
     },
@@ -9925,23 +9930,38 @@
           {
             "id": "for-every-3-models-in-this-unit-1-deffkopta-can-have-its-kopta-rokkits-replaced-with-1-kustom-mega-blasta-1",
             "label": "For every 3 models in this unit, 1 Deffkopta can have its kopta rokkits replaced with 1 kustom mega-blasta.",
-            "target": null,
-            "actor": null,
-            "action": null,
-            "selectionMode": "manual",
-            "choices": [],
-            "allocationLimit": null
+            "target": "kopta rokkits",
+            "actor": "Deffkopta",
+            "action": "replace",
+            "selectionMode": "allocation",
+            "choices": [
+              {
+                "id": "1-kustom-mega-blasta",
+                "label": "1 kustom mega-blasta"
+              }
+            ],
+            "allocationLimit": {
+              "kind": "ratio",
+              "perModels": 3,
+              "maxPerStep": 1
+            },
+            "poolKey": "deffkopta-kopta-rokkits",
+            "poolLimit": {
+              "kind": "ratio",
+              "perModels": 3,
+              "maxPerStep": 1
+            }
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -10023,10 +10043,8 @@
       ],
       "renderBlocks": [],
       "support": {
-        "supportLevel": "partial",
-        "supportReasons": [
-          "manual_wargear"
-        ],
+        "supportLevel": "full",
+        "supportReasons": [],
         "previewSupport": "source-image"
       }
     },
@@ -13300,23 +13318,31 @@
           {
             "id": "this-model-can-be-equipped-with-up-to-3-big-shootas-1",
             "label": "This model can be equipped with up to 3 big shootas.",
-            "target": null,
-            "actor": null,
-            "action": null,
-            "selectionMode": "manual",
-            "choices": [],
-            "allocationLimit": null
+            "target": "this model",
+            "actor": "this model",
+            "action": "equip",
+            "selectionMode": "allocation",
+            "choices": [
+              {
+                "id": "1-big-shoota",
+                "label": "1 big shoota"
+              }
+            ],
+            "allocationLimit": {
+              "kind": "static",
+              "max": 3
+            }
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -13433,10 +13459,8 @@
         }
       ],
       "support": {
-        "supportLevel": "partial",
-        "supportReasons": [
-          "manual_wargear"
-        ],
+        "supportLevel": "full",
+        "supportReasons": [],
         "previewSupport": "source-image"
       }
     },

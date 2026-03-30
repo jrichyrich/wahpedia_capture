@@ -455,6 +455,14 @@ def normalize_inline_choice(label: str) -> dict[str, object]:
     return normalize_wargear_choice(value)
 
 
+def normalize_wrapper_choice(label: str) -> dict[str, object]:
+    value = normalize_space(label)
+    value = re.sub(r"^(?:Replace|Be equipped with|Be equipped|Equipped with)\s+", "", value, flags=re.IGNORECASE)
+    value = re.sub(r"^(?:its|their)\s+.+?\s+with\s+", "", value, flags=re.IGNORECASE)
+    value = re.sub(r"^(?:with)\s+", "", value, flags=re.IGNORECASE)
+    return normalize_inline_choice(value)
+
+
 def parse_number_token(value: str | None) -> int | None:
     normalized = normalize_space(value).lower()
     if not normalized:
@@ -508,6 +516,11 @@ def infer_pool_key(actor: str | None, target: str | None, eligibility_text: str 
 def parse_wargear_prompt(text: str, items: list[str] | None = None) -> dict[str, object]:
     items = list(items or [])
     text = normalize_space(text)
+    text = re.sub(r"\s+replaced one of the following", " replaced with one of the following", text, flags=re.IGNORECASE)
+    text = re.sub(r"\s+can be replace with\s+", " can be replaced with ", text, flags=re.IGNORECASE)
+    text = re.sub(r"\s+can replaced with\s+", " can be replaced with ", text, flags=re.IGNORECASE)
+    text = re.sub(r"\s+replaced with equipped with\s+", " replaced with ", text, flags=re.IGNORECASE)
+    text = re.sub(r"\s+replaced with with\s+", " replaced with ", text, flags=re.IGNORECASE)
     result = {
         "target": None,
         "actor": None,
@@ -580,6 +593,62 @@ def parse_wargear_prompt(text: str, items: list[str] | None = None) -> dict[str,
                 "choices": [normalize_wargear_choice(item) for item in items if normalize_space(item)],
                 "pickCount": pick_count,
                 "requireDistinct": False,
+            }
+        )
+        return result
+
+    wrapper_choice_match = re.match(
+        r"^(.*?) can do one of the following(?:\*|:|\.)*$",
+        text,
+        flags=re.IGNORECASE,
+    )
+    if wrapper_choice_match and items:
+        result.update(
+            {
+                "target": singularize_actor(wrapper_choice_match.group(1)),
+                "action": None,
+                "selectionMode": "single",
+                "choices": [normalize_wrapper_choice(item) for item in items if normalize_space(item)],
+            }
+        )
+        return result
+
+    capped_inline_equip_match = re.match(
+        rf"^(?:This model|It) can be equipped with up to ({NUMBER_PATTERN}) (.+?)(?:\*|:|\.)*$",
+        text,
+        flags=re.IGNORECASE,
+    )
+    if capped_inline_equip_match:
+        max_count = parse_number_token(capped_inline_equip_match.group(1))
+        choice_label = singularize_actor(capped_inline_equip_match.group(2))
+        result.update(
+            {
+                "target": "this model",
+                "actor": "this model",
+                "action": "equip",
+                "selectionMode": "allocation",
+                "choices": [normalize_inline_choice(f"1 {choice_label}")],
+                "allocationLimit": {"kind": "static", "max": max_count},
+            }
+        )
+        return result
+
+    any_of_multi_match = re.match(
+        r"^(?:This model|It) can be equipped with any of the following(?:\*|:|\.)*$",
+        text,
+        flags=re.IGNORECASE,
+    )
+    if any_of_multi_match and items:
+        choices = [normalize_wargear_choice(item) for item in items if normalize_space(item)]
+        result.update(
+            {
+                "target": "this model",
+                "actor": "this model",
+                "action": "equip",
+                "selectionMode": "multi",
+                "choices": choices,
+                "pickCount": len(choices),
+                "requireDistinct": True,
             }
         )
         return result
@@ -669,6 +738,15 @@ def parse_wargear_prompt(text: str, items: list[str] | None = None) -> dict[str,
             lambda match: {"kind": "ratio", "perModels": parse_number_token(match.group(1)), "maxPerStep": parse_number_token(match.group(2))},
         ),
         (
+            rf"^For every ({NUMBER_PATTERN}) models? in (?:this unit|the unit), ({NUMBER_PATTERN}) (.+?) can have its (.+?) replaced with ((?:{NUMBER_PATTERN}) .+?)(?:\*|:|\.)*$",
+            "replace",
+            lambda match: normalize_space(match.group(4)),
+            lambda match: [normalize_inline_choice(match.group(5))],
+            lambda _match: "allocation",
+            lambda match: normalize_space(match.group(3)),
+            lambda match: {"kind": "ratio", "perModels": parse_number_token(match.group(1)), "maxPerStep": parse_number_token(match.group(2))},
+        ),
+        (
             rf"^For every ({NUMBER_PATTERN}) models? in (?:this unit|the unit), ({NUMBER_PATTERN}) (.+?) can be equipped with (?:one )?(.+?)(?:\*|:|\.)*$",
             "equip",
             lambda match: normalize_space(match.group(3)),
@@ -679,6 +757,24 @@ def parse_wargear_prompt(text: str, items: list[str] | None = None) -> dict[str,
         ),
         (
             r"^Any number of (models|.+?) can (?:each )?have their (.+? and .+?) replaced with (.+? and .+?)(?:\*|:|\.)*$",
+            "replace",
+            lambda match: normalize_space(match.group(2)),
+            lambda match: [normalize_inline_choice(match.group(3))],
+            lambda _match: "allocation",
+            lambda match: normalize_space(f"Any number of {match.group(1)}"),
+            lambda _match: {"kind": "modelCount"},
+        ),
+        (
+            r"^Any number of (.+?)[’'] (.+?) can each be replaced with one of the following(?:\*|:|\.)*$",
+            "replace",
+            lambda match: normalize_space(match.group(2)),
+            lambda _match: [],
+            lambda _match: "allocation",
+            lambda match: normalize_space(f"Any number of {match.group(1)}"),
+            lambda _match: {"kind": "modelCount"},
+        ),
+        (
+            rf"^Any number of (.+?)[’'] (.+?) can each be replaced with ((?:{NUMBER_PATTERN}) .+?)(?:\*|:|\.)*$",
             "replace",
             lambda match: normalize_space(match.group(2)),
             lambda match: [normalize_inline_choice(match.group(3))],
@@ -916,6 +1012,15 @@ def parse_wargear_prompt(text: str, items: list[str] | None = None) -> dict[str,
             "replace",
             lambda match: normalize_space(match.group(1)),
             lambda _match: [],
+            lambda _match: "single",
+            lambda _match: None,
+            lambda _match: None,
+        ),
+        (
+            rf"^(?:This model|It)[’']s (.+?) replaced with ((?:{NUMBER_PATTERN}) .+?)(?:\*|:|\.)*$",
+            "replace",
+            lambda match: normalize_space(match.group(1)),
+            lambda match: [normalize_inline_choice(match.group(2))],
             lambda _match: "single",
             lambda _match: None,
             lambda _match: None,

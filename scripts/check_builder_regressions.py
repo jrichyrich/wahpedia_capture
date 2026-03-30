@@ -9,7 +9,7 @@ from build_builder_catalog import build_all, default_source_root
 EXPECTED_WARNING_BASELINE = {
     "missingStatsCount": 0,
     "manualSelectionCount": 0,
-    "manualWargearCount": 53,
+    "manualWargearCount": 2,
 }
 
 

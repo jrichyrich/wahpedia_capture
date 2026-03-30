@@ -1,6 +1,6 @@
 {
   "schemaVersion": 6,
-  "generatedAt": "2026-03-30T19:34:30+00:00",
+  "generatedAt": "2026-03-30T20:05:19+00:00",
   "faction": {
     "slug": "space-marines",
     "name": "Space Marines",
@@ -11,45 +11,12 @@
     "catalogUnitCount": 155,
     "missingStats": [],
     "manualSelectionUnits": [],
-    "manualWargearUnits": [
-      {
-        "unitId": "assault-squad-with-jump-packs",
-        "name": "Assault Squad With Jump Packs"
-      },
-      {
-        "unitId": "assault-squad",
-        "name": "Assault Squad"
-      },
-      {
-        "unitId": "company-veterans-on-bikes",
-        "name": "Company Veterans On Bikes"
-      },
-      {
-        "unitId": "ironclad-dreadnought",
-        "name": "Ironclad Dreadnought"
-      },
-      {
-        "unitId": "javelin-attack-speeder",
-        "name": "Javelin Attack Speeder"
-      },
-      {
-        "unitId": "tarantula-sentry-battery",
-        "name": "Tarantula Sentry Battery"
-      },
-      {
-        "unitId": "vanguard-veteran-squad-with-jump-packs",
-        "name": "Vanguard Veteran Squad With Jump Packs"
-      },
-      {
-        "unitId": "vanguard-veteran-squad",
-        "name": "Vanguard Veteran Squad"
-      }
-    ],
+    "manualWargearUnits": [],
     "renderIssueUnits": [],
     "rulesWarnings": [],
     "supportSummary": {
-      "readyUnitCount": 147,
-      "partialUnitCount": 8,
+      "readyUnitCount": 155,
+      "partialUnitCount": 0,
       "incompatibleUnitCount": 0,
       "configuredOnlyPreviewCount": 0,
       "sourceImagePreviewCount": 155
@@ -8451,11 +8418,19 @@
           {
             "id": "the-assault-sergeant-can-do-one-of-the-following-3",
             "label": "The Assault Sergeant can do one of the following:",
-            "target": null,
+            "target": "The Assault Sergeant",
             "actor": null,
             "action": null,
-            "selectionMode": "manual",
+            "selectionMode": "single",
             "choices": [
+              {
+                "id": "1-twin-lightning-claws",
+                "label": "1 twin lightning claws"
+              },
+              {
+                "id": "1-astartes-shield",
+                "label": "1 Astartes shield"
+              },
               {
                 "id": "replace-its-bolt-pistol-and-astartes-chainsword-with-1-twin-lightning-claws",
                 "label": "Replace its bolt pistol and Astartes chainsword with 1 twin lightning claws"
@@ -8529,14 +8504,14 @@
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -8704,10 +8679,8 @@
         }
       ],
       "support": {
-        "supportLevel": "partial",
-        "supportReasons": [
-          "manual_wargear"
-        ],
+        "supportLevel": "full",
+        "supportReasons": [],
         "previewSupport": "source-image"
       }
     },
@@ -9084,11 +9057,19 @@
           {
             "id": "the-assault-sergeant-with-jump-pack-can-do-one-of-the-following-3",
             "label": "The Assault Sergeant with Jump Pack can do one of the following:",
-            "target": null,
+            "target": "The Assault Sergeant with Jump Pack",
             "actor": null,
             "action": null,
-            "selectionMode": "manual",
+            "selectionMode": "single",
             "choices": [
+              {
+                "id": "1-twin-lightning-claws",
+                "label": "1 twin lightning claws"
+              },
+              {
+                "id": "1-astartes-shield",
+                "label": "1 Astartes shield"
+              },
               {
                 "id": "replace-its-bolt-pistol-and-astartes-chainsword-with-1-twin-lightning-claws",
                 "label": "Replace its bolt pistol and Astartes chainsword with 1 twin lightning claws"
@@ -9162,14 +9143,14 @@
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -9338,10 +9319,8 @@
         }
       ],
       "support": {
-        "supportLevel": "partial",
-        "supportReasons": [
-          "manual_wargear"
-        ],
+        "supportLevel": "full",
+        "supportReasons": [],
         "previewSupport": "source-image"
       }
     },
@@ -19415,10 +19394,10 @@
           {
             "id": "any-number-of-veteran-bikers-bolt-pistols-can-each-be-replaced-with-one-of-the-following-3",
             "label": "Any number of Veteran Bikers\u2019 bolt pistols can each be replaced with one of the following:",
-            "target": null,
-            "actor": null,
-            "action": null,
-            "selectionMode": "manual",
+            "target": "bolt pistols",
+            "actor": "Any number of Veteran Bikers",
+            "action": "replace",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-grav-pistol",
@@ -19445,15 +19424,21 @@
                 "label": "1 storm shield"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": {
+              "kind": "modelCount"
+            },
+            "poolKey": "any-number-of-veteran-biker-bolt-pistols",
+            "poolLimit": {
+              "kind": "modelCount"
+            }
           },
           {
             "id": "any-number-of-veteran-bikers-astartes-chainswords-can-each-be-replaced-with-one-of-the-following-4",
             "label": "Any number of Veteran Bikers\u2019 Astartes chainswords can each be replaced with one of the following:",
-            "target": null,
-            "actor": null,
-            "action": null,
-            "selectionMode": "manual",
+            "target": "Astartes chainswords",
+            "actor": "Any number of Veteran Bikers",
+            "action": "replace",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-flamer",
@@ -19496,18 +19481,24 @@
                 "label": "1 storm shield"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": {
+              "kind": "modelCount"
+            },
+            "poolKey": "any-number-of-veteran-biker-astartes-chainswords",
+            "poolLimit": {
+              "kind": "modelCount"
+            }
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "MOUNTED",
@@ -19674,10 +19665,8 @@
         }
       ],
       "support": {
-        "supportLevel": "partial",
-        "supportReasons": [
-          "manual_wargear"
-        ],
+        "supportLevel": "full",
+        "supportReasons": [],
         "previewSupport": "source-image"
       }
     },
@@ -29608,12 +29597,20 @@
           {
             "id": "this-model-can-be-equipped-with-up-to-2-hunter-killer-missiles-5",
             "label": "This model can be equipped with up to 2 hunter-killer missiles.",
-            "target": null,
-            "actor": null,
-            "action": null,
-            "selectionMode": "manual",
-            "choices": [],
-            "allocationLimit": null
+            "target": "this model",
+            "actor": "this model",
+            "action": "equip",
+            "selectionMode": "allocation",
+            "choices": [
+              {
+                "id": "1-hunter-killer-missile",
+                "label": "1 hunter-killer missile"
+              }
+            ],
+            "allocationLimit": {
+              "kind": "static",
+              "max": 2
+            }
           },
           {
             "id": "this-model-can-be-equipped-with-1-ironclad-assault-launchers-6",
@@ -29633,14 +29630,14 @@
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -29768,10 +29765,8 @@
         }
       ],
       "support": {
-        "supportLevel": "partial",
-        "supportReasons": [
-          "manual_wargear"
-        ],
+        "supportLevel": "full",
+        "supportReasons": [],
         "previewSupport": "source-image"
       }
     },
@@ -29972,23 +29967,31 @@
           {
             "id": "this-model-can-be-equipped-with-up-to-2-hunter-killer-missiles-3",
             "label": "This model can be equipped with up to 2 hunter-killer missiles.",
-            "target": null,
-            "actor": null,
-            "action": null,
-            "selectionMode": "manual",
-            "choices": [],
-            "allocationLimit": null
+            "target": "this model",
+            "actor": "this model",
+            "action": "equip",
+            "selectionMode": "allocation",
+            "choices": [
+              {
+                "id": "1-hunter-killer-missile",
+                "label": "1 hunter-killer missile"
+              }
+            ],
+            "allocationLimit": {
+              "kind": "static",
+              "max": 2
+            }
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -30076,10 +30079,8 @@
       ],
       "renderBlocks": [],
       "support": {
-        "supportLevel": "partial",
-        "supportReasons": [
-          "manual_wargear"
-        ],
+        "supportLevel": "full",
+        "supportReasons": [],
         "previewSupport": "source-image"
       }
     },
@@ -51710,23 +51711,29 @@
           {
             "id": "this-model-s-twin-heavy-bolter-replaced-with-1-twin-lascannon-1",
             "label": "This model\u2019s twin heavy bolter replaced with 1 twin lascannon.",
-            "target": null,
+            "target": "twin heavy bolter",
             "actor": null,
-            "action": null,
-            "selectionMode": "manual",
-            "choices": [],
-            "allocationLimit": null
+            "action": "replace",
+            "selectionMode": "single",
+            "choices": [
+              {
+                "id": "1-twin-lascannon",
+                "label": "1 twin lascannon"
+              }
+            ],
+            "allocationLimit": null,
+            "poolLimit": "modelCount"
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "VEHICLE",
@@ -51804,10 +51811,8 @@
       ],
       "renderBlocks": [],
       "support": {
-        "supportLevel": "partial",
-        "supportReasons": [
-          "manual_wargear"
-        ],
+        "supportLevel": "full",
+        "supportReasons": [],
         "previewSupport": "source-image"
       }
     },
@@ -55348,10 +55353,10 @@
           {
             "id": "any-number-of-models-can-each-have-their-bolt-pistol-replaced-one-of-the-following-1",
             "label": "Any number of models can each have their bolt pistol replaced one of the following:",
-            "target": null,
-            "actor": null,
-            "action": null,
-            "selectionMode": "manual",
+            "target": "bolt pistol",
+            "actor": "Any number of models",
+            "action": "replace",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-storm-shield",
@@ -55374,18 +55379,22 @@
                 "label": "1 plasma pistol"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": {
+              "kind": "modelCount"
+            },
+            "poolKey": "model-bolt-pistol",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -55521,10 +55530,8 @@
         }
       ],
       "support": {
-        "supportLevel": "partial",
-        "supportReasons": [
-          "manual_wargear"
-        ],
+        "supportLevel": "full",
+        "supportReasons": [],
         "previewSupport": "source-image"
       }
     },
@@ -55721,10 +55728,10 @@
           {
             "id": "any-number-of-models-can-each-have-their-bolt-pistol-replaced-one-of-the-following-1",
             "label": "Any number of models can each have their bolt pistol replaced one of the following:",
-            "target": null,
-            "actor": null,
-            "action": null,
-            "selectionMode": "manual",
+            "target": "bolt pistol",
+            "actor": "Any number of models",
+            "action": "replace",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-storm-shield",
@@ -55747,18 +55754,22 @@
                 "label": "1 plasma pistol"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": {
+              "kind": "modelCount"
+            },
+            "poolKey": "model-bolt-pistol",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -55878,10 +55889,8 @@
         }
       ],
       "support": {
-        "supportLevel": "partial",
-        "supportReasons": [
-          "manual_wargear"
-        ],
+        "supportLevel": "full",
+        "supportReasons": [],
         "previewSupport": "source-image"
       }
     },

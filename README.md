@@ -215,20 +215,20 @@ Saved rosters only store roster metadata plus unit/config references; they do no
 
 The generated builder report now tracks both end-user support coverage and parser warning buckets. The current generated manifest reports:
 
-- `1207` ready units
-- `124` partial units
+- `1251` ready units
+- `80` partial units
 - `78` configured-only preview units because a source datasheet image is missing
 - `0` units with missing exported stats
 - `0` units with manual selection labels
-- `53` units whose wargear still requires manual interpretation
+- `2` units whose wargear still requires manual interpretation
 
 `python scripts/check_builder_regressions.py` currently expects:
 
 - `0` missing-stat units
 - `0` manual-selection units
-- `53` manual-wargear units
+- `2` manual-wargear units
 
-That manual-wargear baseline is temporary and should keep shrinking as the parser gains support for count-based and multi-pick equipment patterns. Missing source images are treated as preview-quality gaps rather than roster-blocking failures.
+The only remaining manual-wargear holdouts are the Aeldari and Drukhari `Troupe` datasheets, which still use model-count conditional wrappers that the current builder does not evaluate automatically. Missing source images are treated as preview-quality gaps rather than roster-blocking failures.
 
 Run the builder-focused tests locally with:
 

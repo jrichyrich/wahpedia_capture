@@ -200,6 +200,68 @@ class BuilderCatalogTests(unittest.TestCase):
         self.assertEqual(for_every["allocationLimit"], {"kind": "ratio", "perModels": 5, "maxPerStep": 1})
         self.assertEqual(for_every["target"], "Corsair firearm")
 
+    def test_parse_wargear_prompt_supports_wrapper_and_typo_variants(self):
+        wrapper = build_builder_catalog.parse_wargear_prompt(
+            "The Assault Sergeant can do one of the following:",
+            [
+                "Replace its bolt pistol and Astartes chainsword with 1 twin lightning claws.",
+                "Be equipped with 1 Astartes shield.",
+            ],
+        )
+        self.assertEqual(wrapper["selectionMode"], "single")
+        self.assertIsNone(wrapper["action"])
+        self.assertEqual([choice["label"] for choice in wrapper["choices"]], ["1 twin lightning claws", "1 Astartes shield"])
+
+        possessive_allocation = build_builder_catalog.parse_wargear_prompt(
+            "Any number of Veteran Bikers’ bolt pistols can each be replaced with one of the following:",
+            ["1 grav-pistol", "1 plasma pistol"],
+        )
+        self.assertEqual(possessive_allocation["selectionMode"], "allocation")
+        self.assertEqual(possessive_allocation["target"], "bolt pistols")
+        self.assertEqual(possessive_allocation["actor"], "Any number of Veteran Bikers")
+        self.assertEqual(possessive_allocation["allocationLimit"], {"kind": "modelCount"})
+
+        typo_missing_with = build_builder_catalog.parse_wargear_prompt(
+            "Any number of models can each have their bolt pistol replaced one of the following:",
+            ["1 storm shield", "1 plasma pistol"],
+        )
+        self.assertEqual(typo_missing_with["selectionMode"], "allocation")
+        self.assertEqual(typo_missing_with["target"], "bolt pistol")
+
+        typo_missing_can = build_builder_catalog.parse_wargear_prompt(
+            "This model’s twin heavy bolter replaced with 1 twin lascannon."
+        )
+        self.assertEqual(typo_missing_can["selectionMode"], "single")
+        self.assertEqual(typo_missing_can["action"], "replace")
+        self.assertEqual(typo_missing_can["choices"][0]["label"], "1 twin lascannon")
+
+    def test_parse_wargear_prompt_supports_capped_inline_and_any_of_equips(self):
+        capped_inline = build_builder_catalog.parse_wargear_prompt(
+            "This model can be equipped with up to 2 hunter-killer missiles."
+        )
+        self.assertEqual(capped_inline["selectionMode"], "allocation")
+        self.assertEqual(capped_inline["action"], "equip")
+        self.assertEqual(capped_inline["target"], "this model")
+        self.assertEqual(capped_inline["allocationLimit"], {"kind": "static", "max": 2})
+        self.assertEqual(capped_inline["choices"][0]["label"], "1 hunter-killer missile")
+
+        any_of = build_builder_catalog.parse_wargear_prompt(
+            "This model can be equipped with any of the following:",
+            ["1 'ard case", "1 grabbin' klaw", "1 wreckin' ball"],
+        )
+        self.assertEqual(any_of["selectionMode"], "multi")
+        self.assertEqual(any_of["action"], "equip")
+        self.assertEqual(any_of["pickCount"], 3)
+        self.assertEqual([choice["label"] for choice in any_of["choices"]], ["1 'ard case", "1 grabbin' klaw", "1 wreckin' ball"])
+
+        deffkopta = build_builder_catalog.parse_wargear_prompt(
+            "For every 3 models in this unit, 1 Deffkopta can have its kopta rokkits replaced with 1 kustom mega-blasta."
+        )
+        self.assertEqual(deffkopta["selectionMode"], "allocation")
+        self.assertEqual(deffkopta["actor"], "Deffkopta")
+        self.assertEqual(deffkopta["target"], "kopta rokkits")
+        self.assertEqual(deffkopta["allocationLimit"], {"kind": "ratio", "perModels": 3, "maxPerStep": 1})
+
     def test_build_composition_parses_upgrade_point_labels(self):
         composition = build_builder_catalog.build_composition(
             [
@@ -778,7 +840,7 @@ class BuilderCatalogTests(unittest.TestCase):
                     canonical_key = source.get("canonicalSourceId") or source.get("url")
                     manual_units.setdefault(canonical_key, (faction_dir.name, unit["name"]))
 
-        self.assertLessEqual(len(manual_units), 25, sorted(manual_units.values()))
+        self.assertLessEqual(len(manual_units), 2, sorted(manual_units.values()))
 
 
 class BuilderAppSmokeTests(unittest.TestCase):
