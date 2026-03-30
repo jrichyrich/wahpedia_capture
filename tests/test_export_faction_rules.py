@@ -2,6 +2,8 @@ import importlib.util
 import unittest
 from pathlib import Path
 
+from bs4 import BeautifulSoup
+
 
 ROOT = Path(__file__).resolve().parents[1]
 MODULE_PATH = ROOT / "scripts" / "export_faction_rules.py"
@@ -50,6 +52,43 @@ def faction_fixture(detachment_name: str, army_rule_name: str, enhancement_name:
     """
 
 
+def wahapedia_markup_fixture() -> str:
+    return """
+    <html>
+      <body>
+        <h2>Introduction</h2>
+        <div>Intro text.</div>
+        <h2>Army Rules</h2>
+        <div>
+          <h3>Martial Ka'tah</h3>
+          <div>Army rule body text.</div>
+        </div>
+        <h2>Shield Host</h2>
+        <div>This detachment rewards aggressive play.</div>
+        <div class="BreakInsideAvoid">
+          <h3>Stratagems</h3>
+          <div class="str10Wrap BreakInsideAvoid str10ColorYour">
+            <div class="str10Name">MULTIPOTENTIALITY</div>
+            <div class="str10Border">
+              <div class="str10DiamondWrap">1CP</div>
+              <div class="str10Type">Shield Host – Strategic Ploy Stratagem</div>
+              <div class="str10Legend ShowFluff">Flavor text.</div>
+              <div class="str10Text">
+                <span class="str10ColorYour">WHEN:</span>
+                Your <a>Movement phase</a>.
+                <span class="str10ColorYour">TARGET:</span>
+                One ADEPTUS CUSTODES unit from your army that Fell Back this phase.
+                <span class="str10ColorYour">EFFECT:</span>
+                Until the end of your turn, that unit is eligible to shoot and declare a charge in a turn in which it Fell Back.
+              </div>
+            </div>
+          </div>
+        </div>
+      </body>
+    </html>
+    """
+
+
 class ExportFactionRulesTests(unittest.TestCase):
     def test_parse_adeptus_custodes_fixture(self):
         rules = export_faction_rules.parse_faction_page_html(
@@ -79,6 +118,14 @@ class ExportFactionRulesTests(unittest.TestCase):
         self.assertEqual(rules["armyRules"][0]["sourceUrl"], "http://example/drukhari")
         self.assertEqual(rules["detachments"][0]["enhancements"][0]["eligibilityText"], "Character model only.")
         self.assertEqual(rules["detachments"][0]["stratagems"][0]["target"], "One CHARACTER unit from your army.")
+
+    def test_parse_wahapedia_markup_stratagem_name_from_wrapper(self):
+        soup = BeautifulSoup(wahapedia_markup_fixture(), "html.parser")
+        section = soup.find("div", class_="BreakInsideAvoid")
+        stratagem = export_faction_rules.parse_stratagems(section)[0]
+        self.assertEqual(stratagem["name"], "MULTIPOTENTIALITY")
+        self.assertEqual(stratagem["cp"], 1)
+        self.assertEqual(stratagem["kind"], "Strategic Ploy")
 
 
 if __name__ == "__main__":

@@ -357,6 +357,55 @@ def parse_labeled_text(full_text: str, label: str, next_labels: list[str]) -> st
     return normalize_space(match.group(1)) if match else ""
 
 
+def is_cp_line(value: str) -> bool:
+    return bool(re.fullmatch(r"\d+\s*CP", normalize_space(value), flags=re.IGNORECASE))
+
+
+def looks_like_stratagem_name(value: str) -> bool:
+    text = normalize_space(value)
+    if not text or is_cp_line(text):
+        return False
+    if text in GENERIC_SECTION_TITLES or text.rstrip(":").upper() in KEYWORD_LABELS:
+        return False
+    if "Stratagem" in text:
+        return False
+    return True
+
+
+def previous_named_sibling(tag: Tag) -> str:
+    for sibling in tag.previous_siblings:
+        if not isinstance(sibling, Tag):
+            continue
+        if "str10Name" in sibling.get("class", []):
+            text = minimal_text_from_tag(sibling)
+            if looks_like_stratagem_name(text):
+                return text
+        text = minimal_text_from_tag(sibling)
+        if looks_like_stratagem_name(text):
+            return text
+    return ""
+
+
+def resolve_stratagem_name(section_fragment: Tag, block: Tag, lines: list[str]) -> str:
+    cp_index = next((index for index, line in enumerate(lines) if is_cp_line(line)), None)
+    if cp_index is not None and cp_index > 0 and looks_like_stratagem_name(lines[cp_index - 1]):
+        return normalize_space(lines[cp_index - 1])
+    if lines and looks_like_stratagem_name(lines[0]):
+        return normalize_space(lines[0])
+
+    current: Tag | None = block
+    while isinstance(current, Tag):
+        sibling_name = previous_named_sibling(current)
+        if sibling_name:
+            return sibling_name
+        if current is section_fragment:
+            break
+        parent = current.parent
+        current = parent if isinstance(parent, Tag) else None
+
+    return normalize_space(lines[0]) if lines else ""
+
+
 def parse_stratagems(section_fragment: Tag | None) -> list[dict[str, object]]:
     if not section_fragment:
         return []
@@ -371,7 +420,7 @@ def parse_stratagems(section_fragment: Tag | None) -> list[dict[str, object]]:
         lines = [normalize_space(line) for line in block.get_text("\n", strip=True).splitlines() if normalize_space(line)]
         if len(lines) < 4:
             continue
-        name = lines[0]
+        name = resolve_stratagem_name(section_fragment, block, lines)
         cp_line = next((line for line in lines if re.fullmatch(r"\d+CP", line, flags=re.IGNORECASE)), "")
         kind_line = next((line for line in lines if "Stratagem" in line), "")
         if not cp_line or not kind_line:
