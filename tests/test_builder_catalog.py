@@ -859,6 +859,7 @@ class BuilderAppSmokeTests(unittest.TestCase):
         self.assertIn("Saved rosters", html)
         self.assertIn("battle-size-select", html)
         self.assertIn("detachment-select", html)
+        self.assertIn('<option value="mounted">Mounted</option>', html)
         self.assertIn("Army Rules", html)
         self.assertIn("legality-summary", html)
         self.assertIn("army-rules-panel", html)
@@ -874,6 +875,7 @@ class BuilderAppSmokeTests(unittest.TestCase):
         self.assertIn("Original Wahapedia", html)
         self.assertIn("manifest.reportFile", html)
         self.assertIn("BuilderApp.buildMissingSourceCardLookup", html)
+        self.assertIn('if (keywords.includes("MOUNTED")) return "mounted";', html)
 
 
 if __name__ == "__main__":

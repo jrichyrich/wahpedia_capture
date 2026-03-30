@@ -1055,6 +1055,7 @@
                     <option value="all">All roles</option>
                     <option value="character">Character</option>
                     <option value="battleline">Battleline</option>
+                    <option value="mounted">Mounted</option>
                     <option value="transport">Transport</option>
                     <option value="vehicle">Vehicle</option>
                     <option value="monster">Monster</option>
@@ -1887,6 +1888,7 @@
             const keywords = Array.isArray(unit.keywords) ? unit.keywords : [];
             if (keywords.includes("CHARACTER")) return "character";
             if (keywords.includes("BATTLELINE")) return "battleline";
+            if (keywords.includes("MOUNTED")) return "mounted";
             if (keywords.includes("DEDICATED TRANSPORT") || keywords.includes("TRANSPORT")) return "transport";
             if (keywords.includes("AIRCRAFT")) return "aircraft";
             if (keywords.includes("MONSTER")) return "monster";
