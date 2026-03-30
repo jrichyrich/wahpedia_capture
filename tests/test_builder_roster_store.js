@@ -21,6 +21,64 @@ function createMemoryStorage() {
 function sampleCatalog() {
     return {
         faction: { slug: "aeldari", name: "Aeldari" },
+        rules: {
+            armyRules: [
+                {
+                    id: "strands-of-fate",
+                    name: "Strands of Fate",
+                    body: "Example army rule.",
+                    sourceUrl: "http://example/aeldari",
+                },
+            ],
+            detachments: [
+                {
+                    id: "battle-host",
+                    name: "Battle Host",
+                    summary: "Generalist detachment.",
+                    rule: {
+                        name: "Battle Host",
+                        body: "Example detachment rule.",
+                    },
+                    restrictionsText: [],
+                    enhancements: [
+                        {
+                            id: "phoenix-gem",
+                            name: "Phoenix Gem",
+                            points: 35,
+                            body: "Character model only.",
+                            eligibilityText: "Character model only.",
+                        },
+                        {
+                            id: "fates-messenger",
+                            name: "Fate's Messenger",
+                            points: 15,
+                            body: "Character model only.",
+                            eligibilityText: "Character model only.",
+                        },
+                        {
+                            id: "reader-of-the-runes",
+                            name: "Reader of the Runes",
+                            points: 20,
+                            body: "Character model only.",
+                            eligibilityText: "Character model only.",
+                        },
+                    ],
+                    stratagems: [
+                        {
+                            id: "lightning-fast-reactions",
+                            name: "Lightning-fast Reactions",
+                            cp: 1,
+                            kind: "Battle Tactic",
+                            when: "Your opponent's Shooting phase, just after an enemy unit has selected its targets.",
+                            target: "One AELDARI INFANTRY unit from your army.",
+                            effect: "Example effect.",
+                            phaseTags: ["shooting", "opponent"],
+                            keywordHints: ["AELDARI INFANTRY"],
+                        },
+                    ],
+                },
+            ],
+        },
         units: [
             {
                 unitId: "avatar-of-khaine",
@@ -161,6 +219,10 @@ function sampleCatalog() {
                     { id: "1-model", label: "1 model", points: 100, selectionKind: "models", modelCount: 1 },
                 ],
                 wargear: { options: [] },
+                composition: {
+                    modelCountOptions: [{ label: "1 Prince Yriel", minModels: 1, maxModels: 1 }],
+                    statements: [],
+                },
             },
             {
                 unitId: "fire-prism",
@@ -171,15 +233,20 @@ function sampleCatalog() {
                     { id: "1-model", label: "1 model", points: 180, selectionKind: "models", modelCount: 1 },
                 ],
                 wargear: { options: [] },
+                composition: {
+                    modelCountOptions: [{ label: "1 Fire Prism", minModels: 1, maxModels: 1 }],
+                    statements: [],
+                },
             },
         ],
     };
 }
 
-function legalArmy(warlordInstanceId = "entry-1", battleSize = "strike-force") {
+function legalArmy(warlordInstanceId = "entry-1", battleSize = "strike-force", detachmentId = "battle-host") {
     return {
         battleSize,
         warlordInstanceId,
+        detachmentId,
     };
 }
 
@@ -237,6 +304,7 @@ test("saveRosterToStorage persists payload and active id", () => {
     assert.equal(loaded.name, "Swordwind");
     assert.equal(loaded.army.battleSize, "strike-force");
     assert.equal(loaded.army.warlordInstanceId, "entry-1");
+    assert.equal(loaded.army.detachmentId, "battle-host");
     assert.equal(loaded.entries[0].embarkedInInstanceId, "entry-3");
     assert.equal(loaded.entries[1].attachedToInstanceId, "entry-1");
     assert.equal(loaded.entries[1].optionId, "1-model");
@@ -286,6 +354,7 @@ test("import/export round trips roster JSON", () => {
     assert.equal(imported.factionSlug, "aeldari");
     assert.equal(imported.army.battleSize, "strike-force");
     assert.equal(imported.army.warlordInstanceId, "entry-1");
+    assert.equal(imported.army.detachmentId, "battle-host");
     assert.equal(imported.entries[0].quantity, 2);
     assert.equal(imported.entries[0].attachedToInstanceId, "entry-2");
     assert.deepEqual(imported.entries[0].upgradeOptionIds, ["exarch-upgrade"]);
@@ -336,6 +405,82 @@ test("deriveResolvedRoster resolves by optionId and totals valid entries", () =>
     assert.equal(resolved.totalPoints, 1180);
     assert.equal(resolved.invalidEntries.length, 0);
     assert.equal(resolved.armyIssues.length, 0);
+    assert.equal(resolved.army.activeDetachment.id, "battle-host");
+    assert.equal(resolved.army.availableEnhancements.length, 3);
+    assert.equal(resolved.army.stratagems.length, 1);
+});
+
+test("deriveResolvedRoster adds enhancement points and exposes enhancement metadata", () => {
+    const resolved = Store.deriveResolvedRoster({
+        roster: {
+            id: "roster-enhancement",
+            factionSlug: "aeldari",
+            name: "Enhancement",
+            army: legalArmy("entry-1"),
+            entries: [
+                {
+                    instanceId: "entry-1",
+                    unitId: "autarch",
+                    optionId: "1-model",
+                    quantity: 1,
+                    enhancementId: "phoenix-gem",
+                    wargearSelections: {},
+                },
+            ],
+        },
+        catalog: sampleCatalog(),
+        availableFactionSlugs: ["aeldari"],
+    });
+
+    assert.equal(resolved.entries[0].activeEnhancement.name, "Phoenix Gem");
+    assert.equal(resolved.entries[0].linePointsBase, 90);
+    assert.equal(resolved.entries[0].linePointsEnhancement, 35);
+    assert.equal(resolved.entries[0].linePoints, 125);
+    assert.equal(resolved.totalPoints, 125);
+    assert.equal(resolved.invalidEntries.length, 0);
+});
+
+test("deriveResolvedRoster requires a detachment when faction rules expose detachments", () => {
+    const resolved = Store.deriveResolvedRoster({
+        roster: {
+            id: "roster-missing-detachment",
+            factionSlug: "aeldari",
+            name: "No Detachment",
+            army: { battleSize: "strike-force", warlordInstanceId: "entry-1", detachmentId: null },
+            entries: [
+                { instanceId: "entry-1", unitId: "autarch", optionId: "1-model", quantity: 1, wargearSelections: {} },
+            ],
+        },
+        catalog: sampleCatalog(),
+        availableFactionSlugs: ["aeldari"],
+    });
+
+    assert.ok(resolved.armyIssues.some((issue) => issue.code === "missing-detachment"));
+});
+
+test("deriveResolvedRoster rejects illegal enhancement assignments", () => {
+    const resolved = Store.deriveResolvedRoster({
+        roster: {
+            id: "roster-enhancement-illegal",
+            factionSlug: "aeldari",
+            name: "Illegal Enhancements",
+            army: legalArmy("entry-1"),
+            entries: [
+                { instanceId: "entry-1", unitId: "autarch", optionId: "1-model", quantity: 1, enhancementId: "phoenix-gem", wargearSelections: {} },
+                { instanceId: "entry-2", unitId: "guardian-defenders", optionId: "10-models", quantity: 1, enhancementId: "fates-messenger", wargearSelections: {} },
+                { instanceId: "entry-3", unitId: "prince-yriel", optionId: "1-model", quantity: 1, enhancementId: "reader-of-the-runes", wargearSelections: {} },
+                { instanceId: "entry-4", unitId: "avatar-of-khaine", optionId: "1-model", quantity: 1, enhancementId: "phoenix-gem", wargearSelections: {} },
+            ],
+        },
+        catalog: sampleCatalog(),
+        availableFactionSlugs: ["aeldari"],
+    });
+
+    assert.match(resolved.entries[1].issues.join(" "), /Character units/i);
+    assert.match(resolved.entries[2].issues.join(" "), /Epic Heroes cannot take enhancements/i);
+    assert.match(resolved.entries[0].issues.join(" "), /only be selected once per roster/i);
+    assert.match(resolved.entries[3].issues.join(" "), /only be selected once per roster/i);
+    assert.ok(resolved.armyIssues.some((issue) => issue.code === "too-many-enhancements"));
 });
 
 test("deriveResolvedRoster upgrades legacy upgrade-only selections into additive points", () => {
@@ -398,8 +543,10 @@ test("migrateSavedRosterDocument defaults army state for legacy rosters", () => 
 
     assert.equal(migrated.army.battleSize, "strike-force");
     assert.equal(migrated.army.warlordInstanceId, null);
+    assert.equal(migrated.army.detachmentId, null);
     assert.equal(migrated.entries[0].attachedToInstanceId, null);
     assert.equal(migrated.entries[0].embarkedInInstanceId, null);
+    assert.equal(migrated.entries[0].enhancementId, null);
 });
 
 test("deriveResolvedRoster validates multi-pick limits and shared pools", () => {

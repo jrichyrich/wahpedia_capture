@@ -14,7 +14,8 @@ except ModuleNotFoundError:
     from datasheet_schema import EXPORT_SCHEMA_VERSION, PARSER_VERSION
 
 
-SCHEMA_VERSION = 4
+SCHEMA_VERSION = 5
+FACTION_RULES_SCHEMA_VERSION = 1
 STATS_ORDER = ("M", "T", "Sv", "W", "Ld", "OC")
 SECTION_EXCLUDES = {"ABILITIES", "UNIT COMPOSITION", "WARGEAR OPTIONS"}
 POINTS_LABEL_HINTS = ("model", "models")
@@ -59,6 +60,10 @@ def default_source_cards_root() -> Path:
     return repo_root() / "out" / "factions"
 
 
+def default_faction_rules_root() -> Path:
+    return repo_root() / "out" / "faction_rules"
+
+
 def slug_to_title(slug: str) -> str:
     return slug.replace("-", " ").title()
 
@@ -74,6 +79,13 @@ def normalize_space(value: object) -> str:
 
 def normalize_label_key(text: str) -> str:
     return re.sub(r"[^a-z0-9]+", " ", (text or "").lower()).strip()
+
+
+def empty_rules() -> dict[str, object]:
+    return {
+        "armyRules": [],
+        "detachments": [],
+    }
 
 
 def load_export_manifest(source_root: Path) -> dict[str, object]:
@@ -1313,12 +1325,50 @@ def normalize_card(faction_slug: str, card: dict[str, object]) -> tuple[dict[str
     return normalized, diagnostics
 
 
-def build_faction_catalog(faction_slug: str, cards: list[dict[str, object]], output_path: Path) -> dict[str, object]:
+def load_faction_rules(
+    faction_slug: str,
+    faction_rules_root: Path | None,
+) -> tuple[dict[str, object], list[str]]:
+    rules_root = Path(faction_rules_root) if faction_rules_root else default_faction_rules_root()
+    rules_path = rules_root / f"{faction_slug}.json"
+    warnings: list[str] = []
+    if not rules_path.exists():
+        warnings.append(f"Faction rules export missing for {faction_slug}: {rules_path}")
+        return empty_rules(), warnings
+
+    payload = json.loads(rules_path.read_text(encoding="utf-8"))
+    if payload.get("schemaVersion") != FACTION_RULES_SCHEMA_VERSION:
+        warnings.append(
+            f"Faction rules schema mismatch for {faction_slug}: expected {FACTION_RULES_SCHEMA_VERSION}, got {payload.get('schemaVersion')}"
+        )
+        return empty_rules(), warnings
+
+    rules = payload.get("rules")
+    if not isinstance(rules, dict):
+        warnings.append(f"Faction rules payload has unexpected shape for {faction_slug}: {rules_path}")
+        return empty_rules(), warnings
+
+    army_rules = rules.get("armyRules")
+    detachments = rules.get("detachments")
+    return {
+        "armyRules": army_rules if isinstance(army_rules, list) else [],
+        "detachments": detachments if isinstance(detachments, list) else [],
+    }, warnings
+
+
+def build_faction_catalog(
+    faction_slug: str,
+    cards: list[dict[str, object]],
+    output_path: Path,
+    *,
+    faction_rules_root: Path | None = None,
+) -> dict[str, object]:
     units: list[dict[str, object]] = []
     missing_stats: list[dict[str, object]] = []
     manual_units: list[dict[str, object]] = []
     manual_wargear_units: list[dict[str, object]] = []
     render_issue_units: list[dict[str, object]] = []
+    rules, rules_warnings = load_faction_rules(faction_slug, faction_rules_root)
 
     for card in cards:
         unit, diagnostics = normalize_card(faction_slug, card)
@@ -1370,7 +1420,9 @@ def build_faction_catalog(faction_slug: str, cards: list[dict[str, object]], out
             "manualSelectionUnits": manual_units,
             "manualWargearUnits": manual_wargear_units,
             "renderIssueUnits": render_issue_units,
+            "rulesWarnings": rules_warnings,
         },
+        "rules": rules,
         "units": units,
     }
     output_path.write_text(json.dumps(catalog, indent=2), encoding="utf-8")
@@ -1396,6 +1448,7 @@ def write_report(output_root: Path, manifest: dict[str, object]) -> None:
         f"- Manual selection units: {manifest['report']['totals']['manualSelectionCount']}",
         f"- Units with manual wargear: {manifest['report']['totals']['manualWargearCount']}",
         f"- Units with render issues: {manifest['report']['totals']['renderIssueCount']}",
+        f"- Factions with rules warnings: {manifest['report']['totals']['rulesWarningFactionCount']}",
         f"- Source cards copied: {manifest['report']['totals']['sourceCardCopiedCount']}",
         f"- Source cards missing: {manifest['report']['totals']['sourceCardMissingCount']}",
         "",
@@ -1414,6 +1467,7 @@ def write_report(output_root: Path, manifest: dict[str, object]) -> None:
                 f"- Manual selection units: {faction['manualSelectionCount']}",
                 f"- Manual wargear units: {faction['manualWargearCount']}",
                 f"- Render issue units: {faction['renderIssueCount']}",
+                f"- Rules warnings: {faction['rulesWarningCount']}",
                 f"- Source cards copied: {faction['sourceCardCopiedCount']}",
                 f"- Source cards missing: {faction['sourceCardMissingCount']}",
                 "",
@@ -1523,10 +1577,12 @@ def build_all(
     factions: list[str] | None = None,
     clean: bool = False,
     source_cards_root: Path | None = None,
+    faction_rules_root: Path | None = None,
 ) -> dict[str, object]:
     source_root = Path(source_root)
     output_root = Path(output_root)
     source_cards_root = Path(source_cards_root) if source_cards_root else default_source_cards_root()
+    faction_rules_root = Path(faction_rules_root) if faction_rules_root else default_faction_rules_root()
     if not source_root.exists():
         raise FileNotFoundError(f"Source root not found: {source_root}")
 
@@ -1548,6 +1604,7 @@ def build_all(
     total_manual_selection = 0
     total_manual_wargear = 0
     total_render_issues = 0
+    rules_warning_faction_count = 0
 
     for faction_slug in target_factions:
         index_path = source_root / faction_slug / "index.json"
@@ -1557,9 +1614,17 @@ def build_all(
         for card in cards:
             validate_card_export_metadata(card, faction_slug, record_lookup, index_path)
         output_catalog_path = catalog_dir / f"{faction_slug}.json"
-        catalog = build_faction_catalog(faction_slug, cards, output_catalog_path)
+        catalog = build_faction_catalog(
+            faction_slug,
+            cards,
+            output_catalog_path,
+            faction_rules_root=faction_rules_root,
+        )
         built_catalogs.append(catalog)
         build_info = catalog["build"]
+        rules_warning_count = len(build_info.get("rulesWarnings", []))
+        if rules_warning_count:
+            rules_warning_faction_count += 1
 
         manifest_factions.append(
             {
@@ -1571,6 +1636,7 @@ def build_all(
                 "manualSelectionCount": len(build_info["manualSelectionUnits"]),
                 "manualWargearCount": len(build_info["manualWargearUnits"]),
                 "renderIssueCount": len(build_info["renderIssueUnits"]),
+                "rulesWarningCount": rules_warning_count,
             }
         )
         report_factions.append(
@@ -1582,6 +1648,7 @@ def build_all(
                 "manualSelectionUnits": build_info["manualSelectionUnits"],
                 "manualWargearUnits": build_info["manualWargearUnits"],
                 "renderIssueUnits": build_info["renderIssueUnits"],
+                "rulesWarnings": build_info.get("rulesWarnings", []),
             }
         )
         total_units += catalog["faction"]["unitCount"]
@@ -1620,6 +1687,7 @@ def build_all(
                 "manualSelectionCount": total_manual_selection,
                 "manualWargearCount": total_manual_wargear,
                 "renderIssueCount": total_render_issues,
+                "rulesWarningFactionCount": rules_warning_faction_count,
                 "sourceCardCopiedCount": source_card_report["copiedCount"],
                 "sourceCardMissingCount": source_card_report["missingCount"],
             },
@@ -1655,6 +1723,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--output-root", default=str(default_output_root()))
     parser.add_argument("--docs-data-root", default=str(default_docs_data_root()))
     parser.add_argument("--source-cards-root", default=str(default_source_cards_root()))
+    parser.add_argument("--faction-rules-root", default=str(default_faction_rules_root()))
     parser.add_argument("--faction", action="append", dest="factions")
     parser.add_argument("--clean", action="store_true")
     return parser.parse_args()
@@ -1668,6 +1737,7 @@ def main() -> None:
         factions=args.factions,
         clean=args.clean,
         source_cards_root=Path(args.source_cards_root),
+        faction_rules_root=Path(args.faction_rules_root),
     )
     publish_docs_data(Path(args.output_root), Path(args.docs_data_root))
     publish_source_cards(Path(args.docs_data_root), Path(args.source_cards_root))

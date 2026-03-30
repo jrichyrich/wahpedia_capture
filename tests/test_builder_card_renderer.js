@@ -62,6 +62,38 @@ test("renderCard shows current loadout chips and weapon highlight badges", () =>
     assert.match(html, /Witchblade/);
 });
 
+test("renderCard includes selected enhancement in header and current loadout", () => {
+    const renderer = loadRenderer();
+    const unit = {
+        name: "Autarch",
+        stats: { M: '7"', T: "3", Sv: "3+", W: "4", Ld: "6+", OC: "2" },
+        quality: { missingStats: [] },
+        selectionMode: "parsed",
+        pointsOptions: [{ id: "1-model", label: "1 model", points: 90, selectionKind: "models" }],
+        weapons: { ranged: [], melee: [] },
+        abilities: { core: [], faction: [], datasheet: [], other: [] },
+        renderBlocks: [],
+        composition: { rawLines: ["1 Autarch"] },
+        keywords: ["INFANTRY", "CHARACTER"],
+        factionKeywords: ["AELDARI"],
+    };
+
+    const html = renderer.renderCard(unit, {
+        selectedOption: unit.pointsOptions[0],
+        selectedEnhancement: {
+            id: "phoenix-gem",
+            name: "Phoenix Gem",
+            points: 35,
+            body: "Character model only.",
+        },
+        manualWargearGroups: [],
+    });
+
+    assert.match(html, /Enhancement: Phoenix Gem/);
+    assert.match(html, /Character model only/);
+    assert.match(html, /enhancement/);
+});
+
 test("renderCard print-clean mode hides replaced weapon rows when selection is resolved", () => {
     const renderer = loadRenderer();
     const unit = {

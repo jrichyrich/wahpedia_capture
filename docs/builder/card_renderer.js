@@ -74,6 +74,7 @@
     function buildLoadoutState(unit, options) {
         const selectedWargear = Array.isArray(options.selectedWargear) ? options.selectedWargear : [];
         const selectedUpgrades = Array.isArray(options.selectedUpgrades) ? options.selectedUpgrades : [];
+        const selectedEnhancement = options.selectedEnhancement || null;
         const manualWargearGroups = Array.isArray(options.manualWargearGroups) ? options.manualWargearGroups : [];
         const relationshipNotes = Array.isArray(options.relationshipNotes) ? options.relationshipNotes : [];
         const selectedReferences = [];
@@ -141,6 +142,14 @@
                 detail: `+${upgrade.points} pts upgrade`,
             });
         });
+
+        if (selectedEnhancement) {
+            currentLoadout.push({
+                type: "enhancement",
+                label: selectedEnhancement.name,
+                detail: `${selectedEnhancement.body} (+${selectedEnhancement.points} pts)`,
+            });
+        }
 
         manualWargearGroups.forEach((group) => {
             currentLoadout.push({
@@ -291,6 +300,7 @@
     function renderCompositionExtras(unit, options) {
         const selectedOption = options.selectedOption || defaultPointsOption(unit);
         const selectedUpgrades = Array.isArray(options.selectedUpgrades) ? options.selectedUpgrades : [];
+        const selectedEnhancement = options.selectedEnhancement || null;
         const quantity = options.quantity || 1;
         const selectedPoints = typeof options.selectedPoints === "number"
             ? options.selectedPoints
@@ -309,6 +319,9 @@
         selectedUpgrades.forEach((upgrade) => {
             chips.push(`<span class="selection-chip">Upgrade: ${escapeHtml(upgrade.label)}</span>`);
         });
+        if (selectedEnhancement) {
+            chips.push(`<span class="selection-chip">Enhancement: ${escapeHtml(selectedEnhancement.name)}</span>`);
+        }
         if (unit.selectionMode === "manual") {
             chips.push(`<span class="selection-chip">Manual labels</span>`);
         }
@@ -457,6 +470,7 @@
         const chips = [];
         const selectedOption = options.selectedOption || defaultPointsOption(unit);
         const selectedUpgrades = Array.isArray(options.selectedUpgrades) ? options.selectedUpgrades : [];
+        const selectedEnhancement = options.selectedEnhancement || null;
 
         if (selectedOption && selectedOption.label) {
             chips.push(`<span class="config-chip">Config: ${escapeHtml(selectedOption.label)}</span>`);
@@ -464,6 +478,9 @@
         selectedUpgrades.forEach((upgrade) => {
             chips.push(`<span class="config-chip config-chip-upgrade">+ ${escapeHtml(upgrade.label)}</span>`);
         });
+        if (selectedEnhancement) {
+            chips.push(`<span class="config-chip config-chip-selected">Enhancement: ${escapeHtml(selectedEnhancement.name)}</span>`);
+        }
         loadoutState.currentLoadout
             .filter((item) => item.type === "wargear")
             .forEach((item) => {
@@ -500,6 +517,9 @@
         }
         if (selectedUpgrades.length) {
             meta.push(`Upgrades: ${selectedUpgrades.map((upgrade) => upgrade.label).join(", ")}`);
+        }
+        if (opts.selectedEnhancement) {
+            meta.push(`Enhancement: ${opts.selectedEnhancement.name}`);
         }
         if (quantity > 1) {
             meta.push(`Qty ${quantity}`);

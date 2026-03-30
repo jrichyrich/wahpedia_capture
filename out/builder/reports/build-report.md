@@ -1,6 +1,6 @@
 # Builder Catalog Build Report
 
-- Generated at: 2026-03-29T19:25:09+00:00
+- Generated at: 2026-03-30T17:08:35+00:00
 - Source root: `/Users/jasricha/Documents/Github_Personal/wahpedia_capture/out/json`
 - Factions imported: 11
 - Total units: 1331
@@ -8,6 +8,7 @@
 - Manual selection units: 0
 - Units with manual wargear: 53
 - Units with render issues: 0
+- Factions with rules warnings: 0
 - Source cards copied: 1253
 - Source cards missing: 78
 
@@ -21,6 +22,7 @@
 - Manual selection units: 0
 - Manual wargear units: 0
 - Render issue units: 0
+- Rules warnings: 0
 - Source cards copied: 31
 - Source cards missing: 0
 
@@ -32,6 +34,7 @@
 - Manual selection units: 0
 - Manual wargear units: 1
 - Render issue units: 0
+- Rules warnings: 0
 - Source cards copied: 97
 - Source cards missing: 0
 
@@ -43,6 +46,7 @@
 - Manual selection units: 0
 - Manual wargear units: 0
 - Render issue units: 0
+- Rules warnings: 0
 - Source cards copied: 128
 - Source cards missing: 0
 
@@ -54,6 +58,7 @@
 - Manual selection units: 0
 - Manual wargear units: 9
 - Render issue units: 0
+- Rules warnings: 0
 - Source cards copied: 181
 - Source cards missing: 0
 
@@ -65,6 +70,7 @@
 - Manual selection units: 0
 - Manual wargear units: 8
 - Render issue units: 0
+- Rules warnings: 0
 - Source cards copied: 174
 - Source cards missing: 0
 
@@ -76,6 +82,7 @@
 - Manual selection units: 0
 - Manual wargear units: 0
 - Render issue units: 0
+- Rules warnings: 0
 - Source cards copied: 71
 - Source cards missing: 0
 
@@ -87,6 +94,7 @@
 - Manual selection units: 0
 - Manual wargear units: 1
 - Render issue units: 0
+- Rules warnings: 0
 - Source cards copied: 47
 - Source cards missing: 0
 
@@ -98,6 +106,7 @@
 - Manual selection units: 0
 - Manual wargear units: 7
 - Render issue units: 0
+- Rules warnings: 0
 - Source cards copied: 86
 - Source cards missing: 0
 
@@ -109,6 +118,7 @@
 - Manual selection units: 0
 - Manual wargear units: 8
 - Render issue units: 0
+- Rules warnings: 0
 - Source cards copied: 155
 - Source cards missing: 0
 
@@ -120,6 +130,7 @@
 - Manual selection units: 0
 - Manual wargear units: 11
 - Render issue units: 0
+- Rules warnings: 0
 - Source cards copied: 191
 - Source cards missing: 0
 
@@ -131,5 +142,6 @@
 - Manual selection units: 0
 - Manual wargear units: 8
 - Render issue units: 0
+- Rules warnings: 0
 - Source cards copied: 92
 - Source cards missing: 78

@@ -1,6 +1,6 @@
 {
-  "schemaVersion": 4,
-  "generatedAt": "2026-03-29T19:25:08+00:00",
+  "schemaVersion": 5,
+  "generatedAt": "2026-03-30T17:08:35+00:00",
   "faction": {
     "slug": "adeptus-custodes",
     "name": "Adeptus Custodes",
@@ -12,7 +12,820 @@
     "missingStats": [],
     "manualSelectionUnits": [],
     "manualWargearUnits": [],
-    "renderIssueUnits": []
+    "renderIssueUnits": [],
+    "rulesWarnings": []
+  },
+  "rules": {
+    "armyRules": [
+      {
+        "id": "martial-ka-tah",
+        "name": "Martial Ka\u2019tah",
+        "body": "Martial Ka\u2019tah Specialised disciplines mastered by Custodians over decades if not centuries, each ka\u2019tah equips its practitioner to overmaster any foe in a particular discipline or philosophy. Martial katahs allow the warriors of the Adeptus Custodes to deploy stances, movements, war philosophies and lethal skills that enhance their already terrifying martial prowess and focus it against particular threats. Each time a unit from your army with this ability is selected to fight, select one of the Ka\u2019tah Stances below. Until that unit has finished making its attacks, the selected Stance is active for it and it gains the relevant ability: Dacatarai Stance Those Custodians skilled in the Dacatarai Ka'tah are able to turn their enemies numerical advantage against them. Reserved for when the Custodians must battle seething hordes of foes, this stance sees them reap a terrible tally Melee weapons equipped by models in this unit have the [SUSTAINED HITS 1] ability. Rendax Stance Masters of Rendax are superlative monster and war machine hunters. They have studied every aspect of how to do battle with a foe far larger than themselves, how to evade its powerful attacks, exploit its blind spots and lay it low. Melee weapons equipped by models in this unit have the [LETHAL HITS] ability. Talons Of The Emperor Detachment Rule",
+        "sourceUrl": "http://wahapedia.ru/wh40k10ed/factions/adeptus-custodes/"
+      }
+    ],
+    "detachments": [
+      {
+        "name": "Talons Of The Emperor",
+        "summary": "Stratagems HUNT AS ONE 1CP Talons Of The Emperor \u2013 Strategic Ploy Stratagem Custodians and Null Maidens cover one another seamlessly as they manoeuvre to corner their prey. WHEN: Start of your Movement phase . TARGET: Up to two ADEPTUS CUSTODES units from your army. EFFECT: Until the end of the turn, your units are eilgible to shoot and/or declare a charge in a turn in which they Fell Back . RESTRICTIONS: You can only select two units if one (and only one) of them is an ANATHEMA PSYKANA unit and both are within 6\" of each other. TALONS INTERLOCKED 1CP Talons Of The Emperor \u2013 Battle Tactic Stratagem With practiced ease, the Talons of the Emperor establish vicious crossfires to cut the foe apart. WHEN: Your Shooting phase . TARGET: Up to two ADEPTUS CUSTODES INFANTRY units from your army, and one enemy unit that is an eligible target for all of those units. EFFECT: Until the end of the phase, your units can only target that enemy unit, but each time a model in one of your units makes a ranged attack, improve the Strength and Armour Penetration characteristics of that attack by 1. RESTRICTIONS: You can only select two units if one (and only one) of them is an ANATHEMA PSYKANA unit and both are within 6\" of each other. EMPYRIC SEVERANCE 1CP Talons Of The Emperor \u2013 Battle Tactic Stratagem Null Maidens quash the manifestations of witches. WHEN: Your opponent\u2019s Shooting phase or the Fight phase , just after an enemy unit has selected its targets. TARGET: One ADEPTUS CUSTODES unit from your army that was selected as the target of one or more of the attacking unit\u2019s attacks, and one friendly ANATHEMA PSYKANA unit within 6\" of that ADEPTUS CUSTODES unit. EFFECT: Until the end of the phase, your unit has the Feel No Pain 4+ ability against Psychic attacks and mortal wounds . EMPEROR\u2019S EXECUTIONERS 2CP Talons Of The Emperor \u2013 Battle Tactic Stratagem The Talons of the Emperor tear apart their prey. WHEN: Start of the Fight phase . TARGET: Up to two ADEPTUS CUSTODES units from your army. EFFECT: Until the end of the phase, each time a model in one of your units targets an enemy unit that is below its Starting Strength , add 1 to the Wound roll . RESTRICTIONS: You can only select two units if one (and only one) of them is an ANATHEMA PSYKANA unit and both are within 6\" of each other. TALONED PINCER 1CP Talons Of The Emperor \u2013 Battle Tactic Stratagem Every move the enemy makes only sees them fall. WHEN: Your opponent\u2019s Movement phase , just after an enemy unit ends a Normal , Advance or Fall Back move . TARGET: Up to two ADEPTUS CUSTODES units from your army that are within 9\" of that enemy unit. EFFECT: Your units can make a Normal move of up to 6\". RESTRICTIONS: You cannot select units that are within Engagement Range of one or more enemy units. You can only select two units if one (and only one) of them is an ANATHEMA PSYKANA unit and both are within 6\" of each other. SHIELD OF HONOUR 1CP Talons Of The Emperor \u2013 Epic Deed Stratagem It is second nature for Custodes to place themselves between their comrades and potential peril. WHEN: Your opponent\u2019s Shooting phase , just after an enemy unit has selected its targets. TARGET: One ANATHEMA PSYKANA INFANTRY unit from your army that was selected as the target of one or more of the attacking unit\u2019s attacks, and one other friendly ADEPTUS CUSTODES INFANTRY unit (excluding ANATHEMA PSYKANA units) within 6\" of that ANATHEMA PSYKANA INFANTRY unit. EFFECT: Until the end of the phase, any attack that targets your ANATHEMA PSYKANA unit must instead target your other ADEPTUS CUSTODES unit (unless it is not an eligible target).",
+        "rule": {
+          "name": "Revered Companions",
+          "body": "Revered Companions The Custodians and the Silent Sisters often fought as one during the earliest days of the Imperium. Ten thousand years on, they have lost none of the unity of doctrine and purpose that makes them such a deadly combination. ANATHEMA PSYKANA units from your army gain the following the ability: Null Aegis (Aura): While an ADEPTUS CUSTODES unit is within 6\" of this unit, models in that unit have the Feel No Pain 5+ ability against Psychic Attacks and mortal wounds . All other ADEPTUS CUSTODES units from your army gain the following ability: Deadly Unity (Aura): While an ANATHEMA PSYKANA unit is within 6\" of this unit, each time a model in that ANATHEMA PSYKANA unit makes an attack, add 1 to the Hit roll ."
+        },
+        "restrictionsText": [],
+        "enhancements": [
+          {
+            "id": "aegis-projector",
+            "name": "Aegis Projector",
+            "points": 20,
+            "body": "This archeotech field projector triggers in response to autopremonitory danger input. It pulse-casts a temporary force field that can stave off even the most powerful attacks, before charging ready for another use. ADEPTUS CUSTODES model only. Once per turn, the first time a saving throw is failed for the bearer\u2019s unit, change the Damage characteristic of that attack to 0.",
+            "eligibilityText": "ADEPTUS CUSTODES model only."
+          },
+          {
+            "id": "champion-of-the-imperium",
+            "name": "Champion of the Imperium",
+            "points": 25,
+            "body": "This leader is amongst the finest martial champions in all the Emperor's realm, and their mere presence inspires their followers to remarkable efforts. ADEPTUS CUSTODES model only. The range of the bearer\u2019s Null Aegis or Deadly Unity ability is increased to 9\".",
+            "eligibilityText": "ADEPTUS CUSTODES model only."
+          },
+          {
+            "id": "gift-of-terran-artifice",
+            "name": "Gift of Terran Artifice",
+            "points": 15,
+            "body": "This warrior wields a close-quarters weapon crafted by the finest noble artisans of Terra, the workmanship of which is magnificent in its lethality. ADEPTUS CUSTODES model only. Each time the bearer makes a melee attack, add 1 to the Wound roll .",
+            "eligibilityText": "ADEPTUS CUSTODES model only."
+          },
+          {
+            "id": "radiant-mantle",
+            "name": "Radiant Mantle",
+            "points": 30,
+            "body": "The golden glory of the Emperor himself glows around this magnificent warrior like Sol's own fire. Enemies are blinded by its light, forced to recoil in pain and terror. ADEPTUS CUSTODES model only. Each time an attack targets the bearer\u2019s unit, if the attacking model is within 12\", subtract 1 from the Hit roll .",
+            "eligibilityText": "ADEPTUS CUSTODES model only."
+          }
+        ],
+        "stratagems": [
+          {
+            "id": "1cp",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Strategic Ploy",
+            "when": "Start of your Movement phase .",
+            "target": "Up to two ADEPTUS CUSTODES units from your army.",
+            "effect": "Until the end of the turn, your units are eilgible to shoot and/or declare a charge in a turn in which they Fell Back . RESTRICTIONS: You can only select two units if one (and only one) of them is an ANATHEMA PSYKANA unit and both are within 6\" of each other.",
+            "phaseTags": [
+              "movement"
+            ],
+            "keywordHints": [
+              "ADEPTUS CUSTODES"
+            ]
+          },
+          {
+            "id": "1cp-2",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Battle Tactic",
+            "when": "Your Shooting phase .",
+            "target": "Up to two ADEPTUS CUSTODES INFANTRY units from your army, and one enemy unit that is an eligible target for all of those units.",
+            "effect": "Until the end of the phase, your units can only target that enemy unit, but each time a model in one of your units makes a ranged attack, improve the Strength and Armour Penetration characteristics of that attack by 1. RESTRICTIONS: You can only select two units if one (and only one) of them is an ANATHEMA PSYKANA unit and both are within 6\" of each other.",
+            "phaseTags": [
+              "shooting"
+            ],
+            "keywordHints": [
+              "ADEPTUS CUSTODES INFANTRY"
+            ]
+          },
+          {
+            "id": "1cp-3",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Battle Tactic",
+            "when": "Your opponent\u2019s Shooting phase or the Fight phase , just after an enemy unit has selected its targets.",
+            "target": "One ADEPTUS CUSTODES unit from your army that was selected as the target of one or more of the attacking unit\u2019s attacks, and one friendly ANATHEMA PSYKANA unit within 6\" of that ADEPTUS CUSTODES unit.",
+            "effect": "Until the end of the phase, your unit has the Feel No Pain 4+ ability against Psychic attacks and mortal wounds .",
+            "phaseTags": [
+              "shooting",
+              "fight",
+              "opponent"
+            ],
+            "keywordHints": [
+              "ADEPTUS CUSTODES",
+              "ANATHEMA PSYKANA"
+            ]
+          },
+          {
+            "id": "2cp",
+            "name": "2CP",
+            "cp": 2,
+            "kind": "Battle Tactic",
+            "when": "Start of the Fight phase .",
+            "target": "Up to two ADEPTUS CUSTODES units from your army.",
+            "effect": "Until the end of the phase, each time a model in one of your units targets an enemy unit that is below its Starting Strength , add 1 to the Wound roll . RESTRICTIONS: You can only select two units if one (and only one) of them is an ANATHEMA PSYKANA unit and both are within 6\" of each other.",
+            "phaseTags": [
+              "fight"
+            ],
+            "keywordHints": [
+              "ADEPTUS CUSTODES"
+            ]
+          },
+          {
+            "id": "1cp-4",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Battle Tactic",
+            "when": "Your opponent\u2019s Movement phase , just after an enemy unit ends a Normal , Advance or Fall Back move .",
+            "target": "Up to two ADEPTUS CUSTODES units from your army that are within 9\" of that enemy unit.",
+            "effect": "Your units can make a Normal move of up to 6\". RESTRICTIONS: You cannot select units that are within Engagement Range of one or more enemy units. You can only select two units if one (and only one) of them is an ANATHEMA PSYKANA unit and both are within 6\" of each other.",
+            "phaseTags": [
+              "movement",
+              "opponent"
+            ],
+            "keywordHints": [
+              "ADEPTUS CUSTODES"
+            ]
+          },
+          {
+            "id": "1cp-5",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Epic Deed",
+            "when": "Your opponent\u2019s Shooting phase , just after an enemy unit has selected its targets.",
+            "target": "One ANATHEMA PSYKANA INFANTRY unit from your army that was selected as the target of one or more of the attacking unit\u2019s attacks, and one other friendly ADEPTUS CUSTODES INFANTRY unit (excluding ANATHEMA PSYKANA units) within 6\" of that ANATHEMA PSYKANA INFANTRY unit.",
+            "effect": "Until the end of the phase, any attack that targets your ANATHEMA PSYKANA unit must instead target your other ADEPTUS CUSTODES unit (unless it is not an eligible target).",
+            "phaseTags": [
+              "shooting",
+              "opponent"
+            ],
+            "keywordHints": [
+              "ANATHEMA PSYKANA INFANTRY",
+              "ADEPTUS CUSTODES INFANTRY",
+              "ANATHEMA PSYKANA"
+            ]
+          }
+        ],
+        "id": "talons-of-the-emperor"
+      },
+      {
+        "name": "Shield Host",
+        "summary": "Stratagems ARCANE GENETIC ALCHEMY 1CP Shield Host \u2013 Battle Tactic Stratagem The Adeptus Custodes are individually engineered on a molecular level using secrets of genetic alchemy that render them virtual demigods in battle. WHEN: Any phase, just after a mortal wound has been allocated to an ADEPTUS CUSTODES model from your army(excluding ANATHEMA PSYKANA models). TARGET: That ADEPTUS CUSTODES model\u2019s unit. EFFECT: Until the end of the phase, models in your unit have the Feel No Pain 4+ ability against mortal wounds . AVENGE THE FALLEN 1CP Shield Host \u2013 Strategic Ploy Stratagem The loss of a single Talon of the Emperor is commemorated by the tolling of the Bell of Lost Souls on Terra, and by their comrades\u2019 bloody vengeance on the battlefield. WHEN: Start of the Fight phase . TARGET: One ADEPTUS CUSTODES unit from your army (excluding ANATHEMA PSYKANA units) that is below its Starting Strength . EFFECT: Until the end of the phase, add 1 to the Attacks characteristic of melee weapons equipped by models in that unit. If your unit is Below Half-strength , until the end of the phase, add 2 to the Attacks characteristic of those melee weapons instead. UNWAVERING SENTINELS 1CP Shield Host \u2013 Strategic Ploy Stratagem Once the Custodians have laid claim to a location, they defend it with incredible tenacity and skill. WHEN: Fight phase , just after an enemy unit has selected its targets. TARGET: One ADEPTUS CUSTODES INFANTRY unit from your army (excluding ANATHEMA PSYKANA units) that is within range of an objective marker you control and that was selected as the target of one or more of the attacking unit\u2019s attacks. EFFECT: Until the end of the phase, each time a melee attack targets your unit, subtract 1 from the Hit roll . MULTIPOTENTIALITY 1CP Shield Host \u2013 Strategic Ploy Stratagem So widely skilled and studied are the Custodians that, whatever situation they find themselves in, they have the martial wisdom to prevail. WHEN: Your Movement phase . TARGET: One ADEPTUS CUSTODES unit from your army that Fell Back this phase. EFFECT: Until the end of your turn, that unit is eligible to shoot and declare a charge in a turn in which it Fell Back. VIGILANCE ETERNAL 1CP Shield Host \u2013 Strategic Ploy Stratagem Simply because the Adeptus Custodes do not stand sentinel over a strategic location or asset, does not mean that it - or any who would threaten it - escapes their gaze. WHEN: Your Movement phase . TARGET: One ADEPTUS CUSTODES BATTLELINE unit from your army (excluding ANATHEMA PSYKANA units) within range of an objective marker you control. EFFECT: That objective marker remains under your control even if you have no models within range of it, until your opponent controls it at the start or end of any turn. ARCHEOTECH MUNITIONS 1CP Shield Host \u2013 Wargear Stratagem The Shield Hosts have access to stockpiles of ancient and incredibly rare weaponry and ammunition. WHEN: Your Shooting phase . TARGET: One ADEPTUS CUSTODES unit from your army (excluding ANATHEMA PSYKANA units) that has not been selected to shoot this phase. EFFECT: Select either the [LETHAL HITS] or [SUSTAINED HITS 1] ability. Until the end of the phase ranged weapons equipped by models in your unit have the selected ability.",
+        "rule": {
+          "name": "Martial Mastery",
+          "body": "Martial Mastery The Custodians have perfected countless ways of making war, be it on a personal, tactical or strategic scale. At the start of the battle round , you can select one of the bullet points below. If you do, until the start of the next battle round, that bullet point\u2019s effects apply. Each time an ADEPTUS CUSTODES model from your army with the Martial Ka\u2019tah ability makes a melee attack, a successful unmodified Hit roll of 5+ scores a Critical Hit . Improve the Armour Penetration characteristic of melee weapons equipped by ADEPTUS CUSTODES models from your army with the Martial Ka\u2019tah ability by 1."
+        },
+        "restrictionsText": [],
+        "enhancements": [
+          {
+            "id": "auric-mantle",
+            "name": "Auric Mantle",
+            "points": 15,
+            "body": "This auramite weave garment is draped about its wearers shoulders before they don their battle armour. It forms a final, incredibly resilient layer of protection for them should all their other defences fail. SHIELD-CAPTAIN or BLADE CHAMPION model only. Add 2 to the bearer\u2019s Wounds characteristic.",
+            "eligibilityText": "SHIELD-CAPTAIN or BLADE CHAMPION model only."
+          },
+          {
+            "id": "castellan-s-mark",
+            "name": "Castellan\u2019s Mark",
+            "points": 20,
+            "body": "This finely worked pauldron is awarded to whichever living Custodian currently holds the greatest tally of victories in the Blood Games. The one who bears the Castellan 's Mark is guaranteed to be a superlative strategic genius. SHIELD-CAPTAIN model only. After both players have deployed their armies, you can select up to two ADEPTUS CUSTODES units from your army (excluding ANATHEMA PSYKANA units) and redeploy all of those units. When doing so, any of those units can be placed into Strategic Reserves , regardless of how many units are already in Strategic Reserves.",
+            "eligibilityText": "SHIELD-CAPTAIN model only."
+          },
+          {
+            "id": "from-the-hall-of-armouries",
+            "name": "From the Hall of Armouries",
+            "points": 25,
+            "body": "The racks of the Adeptus Custodes\u2019 armouries yield up some of the most finely crafted close-quarters weaponry borne by any soldiers of the Imperium. SHIELD-CAPTAIN model only. Add 1 to the Strength and Damage characteristics of the bearer\u2019s melee weapons.",
+            "eligibilityText": "SHIELD-CAPTAIN model only."
+          },
+          {
+            "id": "panoptispex",
+            "name": "Panoptispex",
+            "points": 5,
+            "body": "This incredibly advanced precursor to Imperial auspicators is able to see through solid objects and into esoteric spectra, meaning no malcontent against the Throne can ever hide from its bearer\u2019s gaze. SHIELD-CAPTAIN or BLADE CHAMPION model only. While the bearer is leading a unit, ranged weapons equipped by models in that unit have the [IGNORES cover] ability.",
+            "eligibilityText": "SHIELD-CAPTAIN or BLADE CHAMPION model only."
+          }
+        ],
+        "stratagems": [
+          {
+            "id": "1cp",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Battle Tactic",
+            "when": "Any phase, just after a mortal wound has been allocated to an ADEPTUS CUSTODES model from your army(excluding ANATHEMA PSYKANA models).",
+            "target": "That ADEPTUS CUSTODES model\u2019s unit.",
+            "effect": "Until the end of the phase, models in your unit have the Feel No Pain 4+ ability against mortal wounds .",
+            "phaseTags": [
+              "any"
+            ],
+            "keywordHints": [
+              "ADEPTUS CUSTODES"
+            ]
+          },
+          {
+            "id": "1cp-2",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Strategic Ploy",
+            "when": "Start of the Fight phase .",
+            "target": "One ADEPTUS CUSTODES unit from your army (excluding ANATHEMA PSYKANA units) that is below its Starting Strength .",
+            "effect": "Until the end of the phase, add 1 to the Attacks characteristic of melee weapons equipped by models in that unit. If your unit is Below Half-strength , until the end of the phase, add 2 to the Attacks characteristic of those melee weapons instead.",
+            "phaseTags": [
+              "fight"
+            ],
+            "keywordHints": [
+              "ADEPTUS CUSTODES",
+              "ANATHEMA PSYKANA"
+            ]
+          },
+          {
+            "id": "1cp-3",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Strategic Ploy",
+            "when": "Fight phase , just after an enemy unit has selected its targets.",
+            "target": "One ADEPTUS CUSTODES INFANTRY unit from your army (excluding ANATHEMA PSYKANA units) that is within range of an objective marker you control and that was selected as the target of one or more of the attacking unit\u2019s attacks.",
+            "effect": "Until the end of the phase, each time a melee attack targets your unit, subtract 1 from the Hit roll .",
+            "phaseTags": [
+              "fight"
+            ],
+            "keywordHints": [
+              "ADEPTUS CUSTODES INFANTRY",
+              "ANATHEMA PSYKANA"
+            ]
+          },
+          {
+            "id": "1cp-4",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Strategic Ploy",
+            "when": "Your Movement phase .",
+            "target": "One ADEPTUS CUSTODES unit from your army that Fell Back this phase.",
+            "effect": "Until the end of your turn, that unit is eligible to shoot and declare a charge in a turn in which it Fell Back.",
+            "phaseTags": [
+              "movement"
+            ],
+            "keywordHints": [
+              "ADEPTUS CUSTODES"
+            ]
+          },
+          {
+            "id": "1cp-5",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Strategic Ploy",
+            "when": "Your Movement phase .",
+            "target": "One ADEPTUS CUSTODES BATTLELINE unit from your army (excluding ANATHEMA PSYKANA units) within range of an objective marker you control.",
+            "effect": "That objective marker remains under your control even if you have no models within range of it, until your opponent controls it at the start or end of any turn.",
+            "phaseTags": [
+              "movement"
+            ],
+            "keywordHints": [
+              "ADEPTUS CUSTODES BATTLELINE",
+              "ANATHEMA PSYKANA"
+            ]
+          },
+          {
+            "id": "1cp-6",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Wargear",
+            "when": "Your Shooting phase .",
+            "target": "One ADEPTUS CUSTODES unit from your army (excluding ANATHEMA PSYKANA units) that has not been selected to shoot this phase.",
+            "effect": "Select either the [LETHAL HITS] or [SUSTAINED HITS 1] ability. Until the end of the phase ranged weapons equipped by models in your unit have the selected ability.",
+            "phaseTags": [
+              "shooting"
+            ],
+            "keywordHints": [
+              "ADEPTUS CUSTODES",
+              "ANATHEMA PSYKANA"
+            ]
+          }
+        ],
+        "id": "shield-host"
+      },
+      {
+        "name": "Null Maiden Vigil",
+        "summary": "Stratagems DESPERATION\u2019S PRICE 1CP Null Maiden Vigil \u2013 Strategic Ploy Stratagem To overcome the Null Maidens\u2019 aura, enemy psykers overstretch themselves with horrible consequences. WHEN: Any phase, just after an enemy PSYKER unit has either finished using a Psychic ability that targets a unit, or finished making Psychic Attacks . TARGET: One ANATHEMA PSYKANA unit from your army within 18\" of that enemy PSYKER unit. EFFECT: That enemy PSYKER unit must take a Leadership test If the test is passed, that PSYKER unit is Battle-shocked ; if the test is failed that PSYKER unit suffers 3 mortal wounds and is Battle-shocked. WITCH HUNTERS 1CP Null Maiden Vigil \u2013 Battle Tactic Stratagem Null Maidens train to slay psykers with swift martial efficiency, for they know their prey have many weapons beyond just their powers and must not be allowed time or opportunity to employ them. WHEN: Your Shooting phase or the Fight phase . TARGET: One ANATHEMA PSYKANA unit from your army that has not been selected to shoot or fight this phase. EFFECT: Select either the [LETHAL HITS] or [SUSTAINED HITS 1] ability. Until the end of the phase, weapons equipped by models in your unit have the selected ability, but models in your unit can only target PSYKER units with their attacks. ANATHEMA BLADEMASTERY 1CP Null Maiden Vigil \u2013 Battle Tactic Stratagem The Vigilators train tirelessly in the art of the swift, beheading strike, with a particular emphasis on the swift elimination of enemy witches. WHEN: Fight phase . TARGET: One VIGILATORS unit from your army that has not been selected to fight this phase. EFFECT: Until the end of the phase, each time a model in your unit makes a melee attack, you can re-roll the Hit roll If the target of that attack is Battle-shocked or a PSYKER , you can re-roll the Wound roll as well. PSY-CHAFF VOLLEY 1CP Null Maiden Vigil \u2013 Strategic Ploy Stratagem Prosecutors can fire psy-chaff bolts whose esoteric emissions weaken those targets not slain outright. WHEN: Your Shooting phase . TARGET: One PROSECUTORS unit from your army that has just shot. EFFECT: Select one enemy unit hit by one or more of those attacks. Until the start of your next turn, while your unit is on the battlefield, that enemy unit is prosecuted. While a unit is prosecuted, each time an ANATHEMA PSYKANA model makes an attack against that unit, improve the Armour Penetration characteristic of that attack by 1. While a PSYKER or Battle-shocked unit is prosecuted, each time a model in that unit makes an attack, subtract 1 from the Hit roll . PURGATION SWEEP 1CP Null Maiden Vigil \u2013 Battle Tactic Stratagem Witchseekers know their role in combat is to spread indiscriminate carnage through the foe\u2019s ranks. WHEN: Your Shooting phase . TARGET: One WITCHSEEKERS unit from your army that has not been selected to shoot this phase. EFFECT: Until the end of the phase, add 1 to the Attacks characteristic of Torrent weapons equipped by models in your unit. If such a weapon targets a PSYKER or Battle-shocked unit this phase, add 2 to its Attacks characteristic instead. PSYCHIC ABOMINATIONS 1CP Null Maiden Vigil \u2013 Strategic Ploy Stratagem Enemies must overcome disorienting waves of revulsion in order to even focus upon Null Maidens. WHEN: Your opponent\u2019s Shooting phase , just after an enemy unit has selected its targets. TARGET: One ANATHEMA PSYKANA INFANTRY unit from your army that was selected as the target of one or more of the attacking unit\u2019s attacks. EFFECT: Until the end of the phase, your unit has the Stealth ability, and Battle-shocked and PSYKER models can only select your unit as a target of a ranged attack if they are within 12\".",
+        "rule": {
+          "name": "Creeping Dread (Aura)",
+          "body": "Creeping Dread (Aura) The instinctive fear caused by the Pariah gene spreads like a terrible pall before the cadres of the Silent Sisterhood. In the Battle-shock step of your opponent\u2019s Command phase , if an enemy unit that is either a PSYKER unit or below its Starting Strength is within 12\" of one or more ANATHEMA PSYKANA models from your army, that enemy unit must take a Battle-shock test . If that unit is Below Half-strength , it must subtract 1 from its Battle-shock test this phase instead. Designer\u2019s Note: This means that all enemy PSYKER units within range of this Aura ability and all enemy units within range of this Aura ability that have lost one or more models must take a Battle-shock test in your opponents Command phase, not just those that are Below Half-strength. KEYWORDS If you select this Detachment, PROSECUTORS units from your army have the BATTLELINE keyword."
+        },
+        "restrictionsText": [],
+        "enhancements": [
+          {
+            "id": "enhanced-voidsheen-cloak",
+            "name": "Enhanced Voidsheen Cloak",
+            "points": 10,
+            "body": "Now rare, enhanced voidsheen cloaks were worn by commanders of the Sisters of Silence during the Great Crusade. They are made from micro-vitrious mesh designed to diffract and absorb attacks, and include inbuilt refractor fields. ANATHEMA PSYKANA model only. Each time an attack is allocated to the bearer, subtract 1 from the Damage characteristic of that attack. If that attack was made by a PSYKER or Battle-shocked model, change the Damage characteristic of that attack to 1 instead.",
+            "eligibilityText": "ANATHEMA PSYKANA model only."
+          },
+          {
+            "id": "huntress-eye",
+            "name": "Huntress\u2019 Eye",
+            "points": 15,
+            "body": "This ancient bionic acts like a miniature animus speculum, focusing the bearers null abilities into a stare that can literally terrify foes to death. ANATHEMA PSYKANA model only. In your Command phase , select one enemy unit within 12\" of the bearer. That unit must take a Battle-shock test .",
+            "eligibilityText": "ANATHEMA PSYKANA model only."
+          },
+          {
+            "id": "oblivion-knight",
+            "name": "Oblivion Knight",
+            "points": 25,
+            "body": "Oblivion Knights are among the most powerful and experienced of the Sisters of Silence. When one leads their sisters in the field, witches must truly beware. ANATHEMA PSYKANA model only. While the bearer is leading a unit, each time a model in that unit makes an attack, add 1 to the Hit roll . If that attack targeted an enemy PSYKER unit, add 1 to the Wound roll as well.",
+            "eligibilityText": "ANATHEMA PSYKANA model only."
+          },
+          {
+            "id": "raptor-blade",
+            "name": "Raptor Blade",
+            "points": 5,
+            "body": "The Raptor Blade is an ancient relic of the Null Maidens, as razor sharp now as it was on the day of its forging and ever the bane of witches. ANATHEMA PSYKANA model only. Add 1 to the Attacks, Strength and Damage characteristics of the bearers melee weapons. While the bearer is within Engagement Range of one or more enemy PSYKER units that are Battle-shocked , add 2 to the Attacks, Strength and Damage characteristics of the bearer\u2019s melee weapons instead.",
+            "eligibilityText": "ANATHEMA PSYKANA model only."
+          }
+        ],
+        "stratagems": [
+          {
+            "id": "1cp",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Strategic Ploy",
+            "when": "Any phase, just after an enemy PSYKER unit has either finished using a Psychic ability that targets a unit, or finished making Psychic Attacks .",
+            "target": "One ANATHEMA PSYKANA unit from your army within 18\" of that enemy PSYKER unit.",
+            "effect": "That enemy PSYKER unit must take a Leadership test If the test is passed, that PSYKER unit is Battle-shocked ; if the test is failed that PSYKER unit suffers 3 mortal wounds and is Battle-shocked.",
+            "phaseTags": [
+              "any"
+            ],
+            "keywordHints": [
+              "ANATHEMA PSYKANA",
+              "PSYKER"
+            ]
+          },
+          {
+            "id": "1cp-2",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Battle Tactic",
+            "when": "Your Shooting phase or the Fight phase .",
+            "target": "One ANATHEMA PSYKANA unit from your army that has not been selected to shoot or fight this phase.",
+            "effect": "Select either the [LETHAL HITS] or [SUSTAINED HITS 1] ability. Until the end of the phase, weapons equipped by models in your unit have the selected ability, but models in your unit can only target PSYKER units with their attacks.",
+            "phaseTags": [
+              "shooting",
+              "fight"
+            ],
+            "keywordHints": [
+              "ANATHEMA PSYKANA"
+            ]
+          },
+          {
+            "id": "1cp-3",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Battle Tactic",
+            "when": "Fight phase .",
+            "target": "One VIGILATORS unit from your army that has not been selected to fight this phase.",
+            "effect": "Until the end of the phase, each time a model in your unit makes a melee attack, you can re-roll the Hit roll If the target of that attack is Battle-shocked or a PSYKER , you can re-roll the Wound roll as well.",
+            "phaseTags": [
+              "fight"
+            ],
+            "keywordHints": [
+              "VIGILATORS"
+            ]
+          },
+          {
+            "id": "1cp-4",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Strategic Ploy",
+            "when": "Your Shooting phase .",
+            "target": "One PROSECUTORS unit from your army that has just shot.",
+            "effect": "Select one enemy unit hit by one or more of those attacks. Until the start of your next turn, while your unit is on the battlefield, that enemy unit is prosecuted. While a unit is prosecuted, each time an ANATHEMA PSYKANA model makes an attack against that unit, improve the Armour Penetration characteristic of that attack by 1. While a PSYKER or Battle-shocked unit is prosecuted, each time a model in that unit makes an attack, subtract 1 from the Hit roll .",
+            "phaseTags": [
+              "shooting"
+            ],
+            "keywordHints": [
+              "PROSECUTORS"
+            ]
+          },
+          {
+            "id": "1cp-5",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Battle Tactic",
+            "when": "Your Shooting phase .",
+            "target": "One WITCHSEEKERS unit from your army that has not been selected to shoot this phase.",
+            "effect": "Until the end of the phase, add 1 to the Attacks characteristic of Torrent weapons equipped by models in your unit. If such a weapon targets a PSYKER or Battle-shocked unit this phase, add 2 to its Attacks characteristic instead.",
+            "phaseTags": [
+              "shooting"
+            ],
+            "keywordHints": [
+              "WITCHSEEKERS"
+            ]
+          },
+          {
+            "id": "1cp-6",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Strategic Ploy",
+            "when": "Your opponent\u2019s Shooting phase , just after an enemy unit has selected its targets.",
+            "target": "One ANATHEMA PSYKANA INFANTRY unit from your army that was selected as the target of one or more of the attacking unit\u2019s attacks.",
+            "effect": "Until the end of the phase, your unit has the Stealth ability, and Battle-shocked and PSYKER models can only select your unit as a target of a ranged attack if they are within 12\".",
+            "phaseTags": [
+              "shooting",
+              "opponent"
+            ],
+            "keywordHints": [
+              "ANATHEMA PSYKANA INFANTRY"
+            ]
+          }
+        ],
+        "id": "null-maiden-vigil"
+      },
+      {
+        "name": "Auric Champions",
+        "summary": "Stratagems SLAYER OF CHAMPIONS 1CP Auric Champions \u2013 Epic Deed Stratagem Whatfoe can withstand a warrior who has so tested the defences of the Throneworld itself? WHEN: Any phase. TARGET: One ADEPTUS CUSTODES CHARACTER unit from your army that has just destroyed the unit you selected at the start of your Command phase as the target of your Assemblage of Might ability. EFFECT: Select one enemy unit on the battlefield Until the start of your next Command phase, each time an ADEPTUS CUSTODES CHARACTER model from your army makes an attack that target that enemy unit, add 1 to the Wound roll In addition, if the destroyed unit was a CHARACTER unit, gain 1CP. SUPERHUMAN RESERVES 2CP Auric Champions \u2013 Epic Deed Stratagem With practiced ease, the Talons of the Emperor establish vicious crossfires to cut the foe apart. WHEN: Any phase, just after an ADEPTUS CUSTODES WARLORD model from your army has used an ability on its datasheet or from an Enhancement that says it can only be used Once per battle. TARGET: That ADEPTUS CUSTODES WARLORD model. EFFECT: Your model can use its Once per battle\u2019 ability one additional time during this battle (but not in the same phase). RESTRICTIONS: You cannot use this Stratagem more than once per battle. THE EMPEROR\u2019S AUSPICE 1CP Auric Champions \u2013 Epic Deed Stratagem In an age plagued by monsters, when primordial horrors from the darkest void circle Humanity's dying light, still the Adeptus Custodes stand strong. WHEN: Your opponent\u2019s Shooting phase or the Fight phase , just after an enemy unit has selected its targets. TARGET: One ADEPTUS CUSTODES CHARACTER unit from your army that was selected as the target of one or more of the attacking unit\u2019s attacks. EFFECT: Until the end of the phase, CHARACTER models in your unit have the Feel No Pain 4+ ability. EARNING OF A NAME 1CP Auric Champions \u2013 Epic Deed Stratagem To lay low the greatest and most terrible monsters and heretics is to earn new names for a Custodian's mighty tally. WHEN: Fight phase . TARGET: Up to two ADEPTUS CUSTODES CHARACTER units from your army that have not been selected to fight this phase. EFFECT: Until the end of the phase, each time a CHARACTER model in either of your units makes an attack that targets a MONSTER or VEHICLE unit, you can re-roll the Hit roll and you can re-roll the Wound roll . VIGIL UNENDING 2CP Auric Champions \u2013 Epic Deed Stratagem The Custodes do not yield while their duty remains unfulfilled. WHEN: Fight phase . TARGET: One ADEPTUS CUSTODES CHARACTER model from your army that was just destroyed and has not fought this phase. You can use this Stratagem on that unit even though it was just destroyed. EFFECT: Do not remove your destroyed model from play. The destroyed model can fight after the attacking unit has finished making attacks , and is then removed from play. SHOULDER THE MANTLE 1CP Auric Champions \u2013 Epic Deed Stratagem The greatest Custodians know when it is both their duty and their right to command their comrades. WHEN: Your Movement phase , before the Reinforcements step . TARGET: One ADEPTUS CUSTODES CHARACTER model from your army that is not leading a unit. EFFECT: Select one friendly unit (excluding Battle-shocked and Attached units) within 2\" horizontally and 5\" vertically of your model that it could lead (as described in the Leader section of its datasheet ). Your model attaches to that unit as a Leader. Change that unit\u2019s Starting Strength accordingly.",
+        "rule": {
+          "name": "Assemblage of Might",
+          "body": "Assemblage of Might When such exceptional warriors as these gather to quest in the Emperors name, even the most dreadful foes of Humanity are right to fear for their lives. At the start of your Command phase , select one unit from your opponent\u2019s army. Until the start of your next Command phase, each time a model in an ADEPTUS CUSTODES CHARACTER unit from your army makes an attack that targets that enemy unit, add 1 to the Wound roll ."
+        },
+        "restrictionsText": [],
+        "enhancements": [
+          {
+            "id": "blade-imperator",
+            "name": "Blade Imperator",
+            "points": 25,
+            "body": "This warrior is the Emperors own wrath made manifest, the living weapon of the Master of Mankind. ADEPTUS CUSTODES model only. Each time the bearer\u2019s unit ends a Charge move , select one enemy unit within Engagement Range of the bearer and roll one D6: on a 4+, that enemy unit suffers D3 mortal wounds . Once per battle, after the bearer s unit ends a Charge move, all enemy units within 6\" of the bearer must take a Battle-shock test .",
+            "eligibilityText": "ADEPTUS CUSTODES model only."
+          },
+          {
+            "id": "inspirational-exemplar",
+            "name": "Inspirational Exemplar",
+            "points": 10,
+            "body": "Here is a singular being even the mighty Custodians can look up to and be inspired by ADEPTUS CUSTODES model only. The bearer has a Leadership characteristic of 5+. Once per battle, at the start of any phase, you can select one friendly ADEPTUS CUSTODES unit that is Battle-shocked and within 12\" of the bearer; that unit is no longer Battle-shocked.",
+            "eligibilityText": "Here is a singular being even the mighty Custodians can look up to and be inspired by ADEPTUS CUSTODES model only."
+          },
+          {
+            "id": "martial-philosopher",
+            "name": "Martial Philosopher",
+            "points": 30,
+            "body": "Few in the history of the Imperium have been so skilled in reading - and directing- the ebb and flow of battle. ADEPTUS CUSTODES model only. The bearer\u2019s unit is eligible to shoot and/or declare a charge in a turn in which it Fell Back . Once per battle, when an enemy unit ends a Normal , Advance or Fall Back move within 9\" of the bearer, if the bearer\u2019s unit is not within Engagement Range of one or more enemy units, it can make a Normal move of up to 6\".",
+            "eligibilityText": "ADEPTUS CUSTODES model only."
+          },
+          {
+            "id": "veiled-blade",
+            "name": "Veiled Blade",
+            "points": 25,
+            "body": "Said to have been fashioned for dark deeds during the Horus Heresy, this blade is an icon of vengeance. ADEPTUS CUSTODES model only. Add 2 to the Attacks characteristic of the bearers melee weapons. Once per battle, at the start of any Command phase , triple the bearer\u2019s Objective Control characteristic until the end of the turn.",
+            "eligibilityText": "ADEPTUS CUSTODES model only."
+          }
+        ],
+        "stratagems": [
+          {
+            "id": "2cp",
+            "name": "2CP",
+            "cp": 2,
+            "kind": "Epic Deed",
+            "when": "Any phase, just after an ADEPTUS CUSTODES WARLORD model from your army has used an ability on its datasheet or from an Enhancement that says it can only be used Once per battle.",
+            "target": "That ADEPTUS CUSTODES WARLORD model.",
+            "effect": "Your model can use its Once per battle\u2019 ability one additional time during this battle (but not in the same phase). RESTRICTIONS: You cannot use this Stratagem more than once per battle.",
+            "phaseTags": [
+              "any"
+            ],
+            "keywordHints": [
+              "ADEPTUS CUSTODES WARLORD"
+            ]
+          },
+          {
+            "id": "1cp",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Epic Deed",
+            "when": "Your opponent\u2019s Shooting phase or the Fight phase , just after an enemy unit has selected its targets.",
+            "target": "One ADEPTUS CUSTODES CHARACTER unit from your army that was selected as the target of one or more of the attacking unit\u2019s attacks.",
+            "effect": "Until the end of the phase, CHARACTER models in your unit have the Feel No Pain 4+ ability.",
+            "phaseTags": [
+              "shooting",
+              "fight",
+              "opponent"
+            ],
+            "keywordHints": [
+              "ADEPTUS CUSTODES CHARACTER"
+            ]
+          },
+          {
+            "id": "1cp-2",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Epic Deed",
+            "when": "Fight phase .",
+            "target": "Up to two ADEPTUS CUSTODES CHARACTER units from your army that have not been selected to fight this phase.",
+            "effect": "Until the end of the phase, each time a CHARACTER model in either of your units makes an attack that targets a MONSTER or VEHICLE unit, you can re-roll the Hit roll and you can re-roll the Wound roll .",
+            "phaseTags": [
+              "fight"
+            ],
+            "keywordHints": [
+              "ADEPTUS CUSTODES CHARACTER"
+            ]
+          },
+          {
+            "id": "2cp-2",
+            "name": "2CP",
+            "cp": 2,
+            "kind": "Epic Deed",
+            "when": "Fight phase .",
+            "target": "One ADEPTUS CUSTODES CHARACTER model from your army that was just destroyed and has not fought this phase. You can use this Stratagem on that unit even though it was just destroyed.",
+            "effect": "Do not remove your destroyed model from play. The destroyed model can fight after the attacking unit has finished making attacks , and is then removed from play.",
+            "phaseTags": [
+              "fight"
+            ],
+            "keywordHints": [
+              "ADEPTUS CUSTODES CHARACTER"
+            ]
+          },
+          {
+            "id": "1cp-3",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Epic Deed",
+            "when": "Your Movement phase , before the Reinforcements step .",
+            "target": "One ADEPTUS CUSTODES CHARACTER model from your army that is not leading a unit.",
+            "effect": "Select one friendly unit (excluding Battle-shocked and Attached units) within 2\" horizontally and 5\" vertically of your model that it could lead (as described in the Leader section of its datasheet ). Your model attaches to that unit as a Leader. Change that unit\u2019s Starting Strength accordingly.",
+            "phaseTags": [
+              "movement"
+            ],
+            "keywordHints": [
+              "ADEPTUS CUSTODES CHARACTER"
+            ]
+          }
+        ],
+        "id": "auric-champions"
+      },
+      {
+        "name": "Solar Spearhead",
+        "summary": "Within the deepest engine vaults of the Imperial Palace, the ancient and mighty vehicles of the Custodians reside. Auramite-clad combat walkers bristling with arcane weapons are roused from stasis, ready to be unleashed upon the galaxy\u2019s battlefields. Venerable Land Raiders as old as the Imperium are awoken by complex rituals and prepared for war. When battle dawns, these dread engines of destruction stride or rumble towards the cowering foe, their guns emitting furious torrents of destruction. Those brave or foolish enough to stand before this armoured spearhead are crushed beneath the tread of auric battle tanks or smashed to a bloody pulp by wrathful interred champions. Stratagems FLAWLESS CONSTRUCTION 1CP Solar Spearhead \u2013 Battle Tactic Stratagem The vehicles of the Adeptus Custodes are the finest examples of their kind. Their expertly wrought armoured forms contain ancient and esoteric technology, including auto-repair subroutines and reactive field generators. WHEN: Your opponent\u2019s Shooting phase or the Fight phase , just after an enemy unit has selected its targets. TARGET: One ADEPTUS CUSTODES VEHICLE unit from your army that was selected as the target of one or more of the attacking unit\u2019s attacks. EFFECT: Until the end of the phase, each time an attack targets a model in your unit, if the Strength characteristic of that attack is greater than the Toughness characteristic of your unit, subtract 1 from the Wound roll . EMPEROR\u2019S VENGEANCE 1CP Solar Spearhead \u2013 Battle Tactic Stratagem Even as death\u2019s cold embrace falls upon them, Custodians vent the last of their wrath upon the foe. WHEN: Fight phase , just after an enemy unit has selected its targets. TARGET: One ADEPTUS CUSTODES unit from your army that was selected as the target of one or more of the attacking unit\u2019s attacks. EFFECT: Until the end of the phase, each time a model in your unit is destroyed, if that model has not fought this phase, roll one D6, adding 1 to the result if your unit has the WALKER keyword. On a 4+, do not remove it from play; The destroyed model can fight after the attacking unit has finished making its attacks (when doing so, it is assumed to have 1 wound remaining), and is then removed from play. WRATHFUL ADVANCE 1CP Solar Spearhead \u2013 Battle Tactic Stratagem The golden-armoured onslaught smashes through the enemy line, trapping the foe and preventing their escape. WHEN: Fight phase , just before an ADEPTUS CUSTODES unit from your army Piles In . TARGET: That ADEPTUS CUSTODES unit. EFFECT: Until the end of the phase, each time a model in your unit makes a Pile-in move, it can move up to D3+3\" instead of up to 3\". UNSTOPPABLE 1CP Solar Spearhead \u2013 Strategic Ploy Stratagem Armoured in adamantine and possessed of furious machine spirits, the vehicles of the Adeptus Custodes are almost impossible to stop in their tracks. WHEN: Your Movement phase or your Charge phase . TARGET: One ADEPTUS CUSTODES VEHICLE or ADEPTUS CUSTODES MOUNTED unit from your army. EFFECT: Until the end of the phase, each time a model in your unit makes a move, it can move through terrain features . RELENTLESS PERSECUTION 1CP Solar Spearhead \u2013 Strategic Ploy Stratagem Custodians coax wrathful fury from their war engines\u2019 machine spirits to hunt down and eliminate their foes at speed. WHEN: Your Movement phase , just after an ADEPTUS CUSTODES VEHICLE unit from your army Advances . TARGET: That ADEPTUS CUSTODES VEHICLE unit. EFFECT: Until the end of the turn, your unit is eligible to shoot in a turn in which it Advanced. If your unit has the WALKER keyword, until the end of the turn, your unit is eligible to shoot and declare a charge in a turn in which it Advanced instead. PUNISHMENT INESCAPABLE 1CP Solar Spearhead \u2013 Strategic Ploy Stratagem The Ten Thousand are relentless in pursuing the Emperor\u2019s foes and thorough in their annihilation. No armour, sorcery or hiding place can shield an enemy from their wrath. WHEN: Your Shooting phase . TARGET: One ADEPTUS CUSTODES unit from your army that has not been selected to shoot this phase. EFFECT: Until the end of the phase, ranged weapons equipped by models in your unit have the [IGNORES COVER] ability, and until the end of the phase, each time a model in your unit makes an attack, you can ignore any or all modifiers to that attack\u2019s Ballistic Skill characteristic and/or any or all modifiers to the Hit roll .",
+        "rule": {
+          "name": "Auric Armour",
+          "body": "Auric Armour The venerable war engines of the Adeptus Custodes possess aggressive machine spirits. While an ADEPTUS CUSTODES VEHICLE unit from your army is at Starting Strength , unless that unit is an AIRCRAFT or it is Battle-shocked , add 2 to the Objective Control characteristic of models in that unit. While an ADEPTUS CUSTODES VEHICLE unit from your army is below Starting Strength, each time a model in that unit makes an attack, re-roll a Hit roll of 1. While an ADEPTUS CUSTODES VEHICLE unit from your army is Below Half-strength , each time a model in that unit makes an attack, re-roll a Hit roll of 1 and re-roll a Wound roll of 1. MORITOI ANCIENTS The Adeptus Custodes\u2019 honoured fallen are ever eager for battle. Add 2\" to the Move characteristic of models in ADEPTUS CUSTODES WALKER units from your army and add 1 to Advance and Charge rolls made for such units. KEYWORDS In the Muster Armies step, you can select up to 2 ADEPTUS CUSTODES WALKER models from your army. The selected units gain the CHARACTER keyword. Designer\u2019s Note: This means that the selected models can be given Enhancements and one of them can be selected as your WARLORD ."
+        },
+        "restrictionsText": [],
+        "enhancements": [
+          {
+            "id": "adamantine-talisman",
+            "name": "Adamantine Talisman",
+            "points": 25,
+            "body": "This amulet contains a reservoir of promethium harvested from the wreckage of one of the Adeptus Custodes\u2019 most ancient Land Raiders. The fluid is said to possess the last lingering traces of that ancient vehicle\u2019s bellicose machine spirit, inspiring greater might and ferocity within its bearer. ADEPTUS CUSTODES model only. Improve the Attacks, Strength and Damage characteristics of melee weapons equipped by the bearer by 1.",
+            "eligibilityText": "ADEPTUS CUSTODES model only."
+          },
+          {
+            "id": "augury-uplink",
+            "name": "Augury Uplink",
+            "points": 35,
+            "body": "The war engines of the Adeptus Custodes possess an array of augury equipment that combines to build an intricate picture of the unfolding conflict, enabling the bearer to tap into this accumulated data stream, detect incoming threats and angle their armour to repel the worst of enemy attacks. ADEPTUS CUSTODES model only. The bearer has the Feel No Pain 5+ ability.",
+            "eligibilityText": "ADEPTUS CUSTODES model only."
+          },
+          {
+            "id": "honoured-fallen-aura",
+            "name": "Honoured Fallen (Aura)",
+            "points": 15,
+            "body": "The eldest warriors of the Moritoi are revered champions with centuries of battle experience, and their presence on the battlefield is inspirational. ADEPTUS CUSTODES VEHICLE model only. While a friendly ADEPTUS CUSTODES INFANTRY or ADEPTUS CUSTODES MOUNTED unit is within 6\" of the bearer, each time a model in that unit makes an attack, re-roll a Hit roll of 1.",
+            "eligibilityText": "ADEPTUS CUSTODES VEHICLE model only."
+          },
+          {
+            "id": "veteran-of-the-kataphraktoi",
+            "name": "Veteran of the Kataphraktoi",
+            "points": 10,
+            "body": "This champion has served amongst the Kataphraktoi and is a master at coordinating swift armoured assaults. ADEPTUS CUSTODES INFANTRY or ADEPTUS CUSTODES MOUNTED model only. In your Command phase , select one ADEPTUS CUSTODES VEHICLE or ADEPTUS CUSTODES MOUNTED unit within 6\" of the bearer. Until the start of your next Command phase , that unit is eligible to shoot in a turn in which it Fell Back .",
+            "eligibilityText": "ADEPTUS CUSTODES INFANTRY or ADEPTUS CUSTODES MOUNTED model only."
+          }
+        ],
+        "stratagems": [
+          {
+            "id": "1cp",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Battle Tactic",
+            "when": "Your opponent\u2019s Shooting phase or the Fight phase , just after an enemy unit has selected its targets.",
+            "target": "One ADEPTUS CUSTODES VEHICLE unit from your army that was selected as the target of one or more of the attacking unit\u2019s attacks.",
+            "effect": "Until the end of the phase, each time an attack targets a model in your unit, if the Strength characteristic of that attack is greater than the Toughness characteristic of your unit, subtract 1 from the Wound roll .",
+            "phaseTags": [
+              "shooting",
+              "fight",
+              "opponent"
+            ],
+            "keywordHints": [
+              "ADEPTUS CUSTODES VEHICLE"
+            ]
+          },
+          {
+            "id": "1cp-2",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Battle Tactic",
+            "when": "Fight phase , just after an enemy unit has selected its targets.",
+            "target": "One ADEPTUS CUSTODES unit from your army that was selected as the target of one or more of the attacking unit\u2019s attacks.",
+            "effect": "Until the end of the phase, each time a model in your unit is destroyed, if that model has not fought this phase, roll one D6, adding 1 to the result if your unit has the WALKER keyword. On a 4+, do not remove it from play; The destroyed model can fight after the attacking unit has finished making its attacks (when doing so, it is assumed to have 1 wound remaining), and is then removed from play.",
+            "phaseTags": [
+              "fight"
+            ],
+            "keywordHints": [
+              "ADEPTUS CUSTODES"
+            ]
+          },
+          {
+            "id": "1cp-3",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Battle Tactic",
+            "when": "Fight phase , just before an ADEPTUS CUSTODES unit from your army Piles In .",
+            "target": "That ADEPTUS CUSTODES unit.",
+            "effect": "Until the end of the phase, each time a model in your unit makes a Pile-in move, it can move up to D3+3\" instead of up to 3\".",
+            "phaseTags": [
+              "fight"
+            ],
+            "keywordHints": [
+              "ADEPTUS CUSTODES"
+            ]
+          },
+          {
+            "id": "1cp-4",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Strategic Ploy",
+            "when": "Your Movement phase or your Charge phase .",
+            "target": "One ADEPTUS CUSTODES VEHICLE or ADEPTUS CUSTODES MOUNTED unit from your army.",
+            "effect": "Until the end of the phase, each time a model in your unit makes a move, it can move through terrain features .",
+            "phaseTags": [
+              "movement",
+              "charge"
+            ],
+            "keywordHints": [
+              "ADEPTUS CUSTODES VEHICLE",
+              "ADEPTUS CUSTODES MOUNTED"
+            ]
+          },
+          {
+            "id": "1cp-5",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Strategic Ploy",
+            "when": "Your Movement phase , just after an ADEPTUS CUSTODES VEHICLE unit from your army Advances .",
+            "target": "That ADEPTUS CUSTODES VEHICLE unit.",
+            "effect": "Until the end of the turn, your unit is eligible to shoot in a turn in which it Advanced. If your unit has the WALKER keyword, until the end of the turn, your unit is eligible to shoot and declare a charge in a turn in which it Advanced instead.",
+            "phaseTags": [
+              "movement"
+            ],
+            "keywordHints": [
+              "ADEPTUS CUSTODES VEHICLE"
+            ]
+          },
+          {
+            "id": "1cp-6",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Strategic Ploy",
+            "when": "Your Shooting phase .",
+            "target": "One ADEPTUS CUSTODES unit from your army that has not been selected to shoot this phase.",
+            "effect": "Until the end of the phase, ranged weapons equipped by models in your unit have the [IGNORES COVER] ability, and until the end of the phase, each time a model in your unit makes an attack, you can ignore any or all modifiers to that attack\u2019s Ballistic Skill characteristic and/or any or all modifiers to the Hit roll .",
+            "phaseTags": [
+              "shooting"
+            ],
+            "keywordHints": [
+              "ADEPTUS CUSTODES"
+            ]
+          }
+        ],
+        "id": "solar-spearhead"
+      },
+      {
+        "name": "Lions of the Emperor",
+        "summary": "Many of the galaxy\u2019s warrior cultures accept the time-honoured truth that there is greater strength in numbers. Not so for the champions of the Adeptus Custodes, the Lions of the Emperor. Each of them is an army unto themselves, a warrior of legend gifted with terrifying strength, armoured in nigh-impenetrable golden plate and possessing limitless resolve. When the greatest Custodians take to the field at once, those auric-armoured champions have no need to pool their resources in order to smite their foes. Relying instead upon their superhuman strength and mastery of martial ka\u2019tahs, they hurl themselves into the midst of the enemy, sweeping aside gunlines, eviscerating rampaging monsters and obliterating enemy war machines with terrifying ease. Stratagems GILDED CHAMPION 1CP Lions of the Emperor \u2013 Strategic Ploy Stratagem The shining champions of the Adeptus Custodes are looked upon in awe by all who witness their grim arts. Their judgement is without flaw, and their tactical acumen utterly impeccable. WHEN: Any phase, just after an ADEPTUS CUSTODES CHARACTER model from your army has used an ability on its datasheet that states it can only be used \u2018once per battle\u2019. TARGET: That ADEPTUS CUSTODES CHARACTER model. EFFECT: Your model can use that \u2018once per battle\u2019 ability one additional time during the battle (but not in the same phase). RESTRICTIONS: You cannot use this Stratagem on the same ADEPTUS CUSTODES CHARACTER model more than once per battle. DEFIANT TO THE LAST 1CP Lions of the Emperor \u2013 Strategic Ploy Stratagem The harder the battle, and the heavier their losses, the more resolute the Lions of the Emperor become. WHEN: Fight phase , just after an enemy unit has selected its targets. TARGET: One ADEPTUS CUSTODES unit from your army that was selected as the target of one or more of the attacking unit\u2019s attacks. EFFECT: Until the end of the phase, each time a model in your unit is destroyed, if that model has not fought this phase, roll one D6, adding 2 to the result if that model has the CHARACTER keyword. On a 4+, do not remove it from play; the destroyed model can fight after the attacking unit has finished making its attacks (when doing so, it is treated as having 1 wound remaining), and is then removed from play. PEERLESS WARRIOR 1CP Lions of the Emperor \u2013 Battle Tactic Stratagem With every strike, the Lions of the Emperor prove themselves the masters of single combat, even when engaging the mightiest foes. WHEN: Fight phase . TARGET: One ADEPTUS CUSTODES unit from your army that has not been selected to fight this phase. EFFECT: Until the end of the phase, melee weapons equipped by models in your unit have the [PRECISION] ability. UNLEASH THE LIONS 1CP Lions of the Emperor \u2013 Strategic Ploy Stratagem Heroic bands of Terminator-armoured Custodians engage entire armies in unrelenting battle. WHEN: Your Command phase . TARGET: One ALLARUS CUSTODIANS or AQUILON CUSTODIANS unit from your army that is on the battlefield. EFFECT: That unit is split into separate units, each containing one model. These new units each have a Starting Strength of 1. MANOEUVRE AND FIRE 1CP Lions of the Emperor \u2013 Strategic Ploy Stratagem The Adeptus Custodes are unrelenting in their advance, laying down punishing fire even as they manoeuvre to new positions. WHEN: Your Movement phase , just after an ADEPTUS CUSTODES unit from your army Falls Back . TARGET: That ADEPTUS CUSTODES unit. EFFECT: Until the end of the turn, your unit is eligible to shoot and declare a charge in a turn in which it Fell Back. SWIFT AS THE EAGLE 1CP Lions of the Emperor \u2013 Strategic Ploy Stratagem Although every Custodian is devastatingly fast on the battlefield, with preternatural reactions to match, the Lions of the Emperor are outstanding even among their peers. WHEN: Your opponent\u2019s Shooting phase , just after an enemy unit has shot. TARGET: One ADEPTUS CUSTODES unit from your army (excluding VEHICLE units) that was selected as the target of one or more of the attacking unit\u2019s attacks. EFFECT: Your unit can make a Normal move of up to D6\".",
+        "rule": {
+          "name": "Against All Odds",
+          "body": "Against All Odds The Adeptus Custodes are outnumbered on every battlefield upon which they fight, yet no matter the foe, and no matter their number, the Lions of the Emperor will prevail. Each time a model in an ADEPTUS CUSTODES unit from your army (excluding VEHICLES ) makes an attack, if there are no other friendly units within 6\" of that unit, add 1 to the Hit roll and add 1 to the Wound roll ."
+        },
+        "restrictionsText": [],
+        "enhancements": [
+          {
+            "id": "superior-creation",
+            "name": "Superior Creation",
+            "points": 25,
+            "body": "The cellular alchemy by which this heroic warrior was forged has rendered them breathtakingly resilient. ADEPTUS CUSTODES INFANTRY model only. The first time the bearer is destroyed, roll one D6 at the end of the phase. On a 2+, set the bearer back up on the battlefield, as close as possible to where it was destroyed and not within Engagement Range of one or more enemy units, with its full wounds remaining.",
+            "eligibilityText": "ADEPTUS CUSTODES INFANTRY model only."
+          },
+          {
+            "id": "praesidius",
+            "name": "Praesidius",
+            "points": 25,
+            "body": "Fashioned by the Terran armourer Annah Tsvochakin in the latter years of the 32nd millennium, the stunningly worked Praesidius is a singular artefact. Nestled within its golden form are a series of microshield generators and stealth emitters. Employing a modification of displacer technology, the shield generates small localised displacement bubbles at the point of impact, literally beaming bolts, bullets and the tips of blades harmlessly away from its bearer. ADEPTUS CUSTODES model only. The bearer has the Lone Operative and Stealth abilities.",
+            "eligibilityText": "ADEPTUS CUSTODES model only."
+          },
+          {
+            "id": "fierce-conqueror",
+            "name": "Fierce Conqueror",
+            "points": 15,
+            "body": "This Captain-Commander has trained extensively to face multiple foes at once, knowing that the Custodes will always be outnumbered. SHIELD-CAPTAIN model only. At the start of the Fight phase , until the end of the phase, add 2 to the Attacks characteristic of melee weapons equipped by the bearer for every 5 enemy models within 6\" of the bearer (rounding down).",
+            "eligibilityText": "SHIELD-CAPTAIN model only."
+          },
+          {
+            "id": "admonimortis",
+            "name": "Admonimortis",
+            "points": 10,
+            "body": "A relic of the Dread Host, this towering blade was wrought to make a bloody example of those who dare to set themselves against the might of Terra. SHIELD-CAPTAIN model only. Improve the Strength characteristic of melee weapons equipped by the bearer by 3, and improve the Armour Penetration and Damage characteristics of those weapons by 1.",
+            "eligibilityText": "SHIELD-CAPTAIN model only."
+          }
+        ],
+        "stratagems": [
+          {
+            "id": "1cp",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Strategic Ploy",
+            "when": "Any phase, just after an ADEPTUS CUSTODES CHARACTER model from your army has used an ability on its datasheet that states it can only be used \u2018once per battle\u2019.",
+            "target": "That ADEPTUS CUSTODES CHARACTER model.",
+            "effect": "Your model can use that \u2018once per battle\u2019 ability one additional time during the battle (but not in the same phase). RESTRICTIONS: You cannot use this Stratagem on the same ADEPTUS CUSTODES CHARACTER model more than once per battle.",
+            "phaseTags": [
+              "any"
+            ],
+            "keywordHints": [
+              "ADEPTUS CUSTODES CHARACTER"
+            ]
+          },
+          {
+            "id": "1cp-2",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Strategic Ploy",
+            "when": "Fight phase , just after an enemy unit has selected its targets.",
+            "target": "One ADEPTUS CUSTODES unit from your army that was selected as the target of one or more of the attacking unit\u2019s attacks.",
+            "effect": "Until the end of the phase, each time a model in your unit is destroyed, if that model has not fought this phase, roll one D6, adding 2 to the result if that model has the CHARACTER keyword. On a 4+, do not remove it from play; the destroyed model can fight after the attacking unit has finished making its attacks (when doing so, it is treated as having 1 wound remaining), and is then removed from play.",
+            "phaseTags": [
+              "fight"
+            ],
+            "keywordHints": [
+              "ADEPTUS CUSTODES"
+            ]
+          },
+          {
+            "id": "1cp-3",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Battle Tactic",
+            "when": "Fight phase .",
+            "target": "One ADEPTUS CUSTODES unit from your army that has not been selected to fight this phase.",
+            "effect": "Until the end of the phase, melee weapons equipped by models in your unit have the [PRECISION] ability.",
+            "phaseTags": [
+              "fight"
+            ],
+            "keywordHints": [
+              "ADEPTUS CUSTODES"
+            ]
+          },
+          {
+            "id": "1cp-4",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Strategic Ploy",
+            "when": "Your Command phase .",
+            "target": "One ALLARUS CUSTODIANS or AQUILON CUSTODIANS unit from your army that is on the battlefield.",
+            "effect": "That unit is split into separate units, each containing one model. These new units each have a Starting Strength of 1.",
+            "phaseTags": [
+              "command"
+            ],
+            "keywordHints": [
+              "ALLARUS CUSTODIANS",
+              "AQUILON CUSTODIANS"
+            ]
+          },
+          {
+            "id": "1cp-5",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Strategic Ploy",
+            "when": "Your Movement phase , just after an ADEPTUS CUSTODES unit from your army Falls Back .",
+            "target": "That ADEPTUS CUSTODES unit.",
+            "effect": "Until the end of the turn, your unit is eligible to shoot and declare a charge in a turn in which it Fell Back.",
+            "phaseTags": [
+              "movement"
+            ],
+            "keywordHints": [
+              "ADEPTUS CUSTODES"
+            ]
+          },
+          {
+            "id": "1cp-6",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Strategic Ploy",
+            "when": "Your opponent\u2019s Shooting phase , just after an enemy unit has shot.",
+            "target": "One ADEPTUS CUSTODES unit from your army (excluding VEHICLE units) that was selected as the target of one or more of the attacking unit\u2019s attacks.",
+            "effect": "Your unit can make a Normal move of up to D6\".",
+            "phaseTags": [
+              "shooting",
+              "opponent"
+            ],
+            "keywordHints": [
+              "ADEPTUS CUSTODES",
+              "VEHICLE"
+            ]
+          }
+        ],
+        "id": "lions-of-the-emperor"
+      }
+    ]
   },
   "units": [
     {

@@ -1,0 +1,1249 @@
+{
+  "schemaVersion": 1,
+  "parserVersion": "2026-03-30-army-rules-v1",
+  "generatedAt": "2026-03-30T17:07:33+00:00",
+  "outputSlug": "orks",
+  "sourceUrl": "http://wahapedia.ru/wh40k10ed/factions/orks/",
+  "rules": {
+    "armyRules": [
+      {
+        "id": "waaagh",
+        "name": "Waaagh!",
+        "body": "Waaagh! The infamous war cry of the Orks is known and feared throughout the galaxy. When it echoes across the battlefield, bellowed from hundreds or even thousands of greenskin mouths, even the most stalwart warriors fear the onslaught to come. If your Army Faction is ORKS , once per battle, at the start of your Command phase , you can call a Waaagh!. If you do, until the start of your next Command phase, the Waaagh! is active for your army and: Units from your army with this ability are eligible to declare a charge in a turn in which they Advanced . Add 1 to the Strength and Attacks characteristics of melee weapons equipped by models from your army with this ability. Models from your army with this ability have a 5+ invulnerable save . War Horde Detachment Rule",
+        "sourceUrl": "http://wahapedia.ru/wh40k10ed/factions/orks/"
+      }
+    ],
+    "detachments": [
+      {
+        "name": "War Horde",
+        "summary": "Detachment Rule Stratagems CAREEN! 1CP War Horde \u2013 Epic Deed Stratagem If their vehicle is on its last legs, any Ork worth their steering wheel will aim its blazing remains into the nearest cluster of enemies. The ensuing explosions never fail to raise a rousing cheer from nearby Ork onlookers. WHEN: Any phase, just after an ORKS VEHICLE unit from your army with the Deadly Demise ability is destroyed . TARGET: That destroyed ORKS VEHICLE unit, if you roll a 6 for its Deadly Demise ability. You can use this Stratagem on that unit even though it was just destroyed. EFFECT: Your unit can make a Normal or Fall Back move before its Deadly Demise ability is resolved, and before any embarked units perform an Emergency Disembarkation. When making this move, your unit can move over enemy units (excluding MONSTERS and VEHICLES ) as if they were not there. ORKS IS NEVER BEATEN 2CP War Horde \u2013 Epic Deed Stratagem So resilient is Ork physiology \u2013 and so slow are Orks on the uptake \u2013 that even killing wounds can take a while to register. WHEN: Fight phase , just after an enemy unit has selected its targets. TARGET: One ORKS unit from your army that was selected as the target of one or more of the attacking unit\u2019s attacks. EFFECT: Until the end of the phase, each time a model in your unit is destroyed , if that model has not fought this phase, do not remove it from play. The destroyed model can fight after the attacking model\u2019s unit has finished making attacks , and is then removed from play. UNBRIDLED CARNAGE 1CP War Horde \u2013 Battle Tactic Stratagem When Orks get stuck into the foe, the carnage is wonderful to behold, at least for other Orks. WHEN: Fight phase . TARGET: One ORKS unit from your army that has not been selected to fight this phase. EFFECT: Until the end of the phase, each time a model in your unit makes a melee attack, an unmodified hit roll of 5+ scores a Critical Hit . \u2019ARD AS NAILS 1CP War Horde \u2013 Battle Tactic Stratagem Even the lowliest Ork Boy has a toughened hide and a dense skull. While there yet remains the prospect of a git to give a good kicking, it takes a blow of truly phenomenal strength to even give the Ork pause. WHEN: Your opponent\u2019s Shooting phase or the Fight phase , just after an enemy unit has selected its targets. TARGET: One ORKS unit from your army (excluding GROTS , MONSTER and VEHICLE units) that was selected as the target of one or more of the attacking unit\u2019s attacks. EFFECT: Until the end of the phase, each time an attack targets your unit, subtract 1 from the Wound roll . MOB RULE 1CP War Horde \u2013 Battle Tactic Stratagem The more Orks that gather in one place the more the Waaagh! energy flows, and the more fearless they all become. WHEN: End of your Command phase . TARGET: One MOB unit from your army that contains 10 or more models and is not Below Half-strength . EFFECT: Select one friendly Battle-shocked ORKS INFANTRY unit within 6\" of that MOB unit. That ORKS INFANTRY unit is no longer Battle-shocked. ERE WE GO 1CP War Horde \u2013 Battle Tactic Stratagem Even Orks can put on a surprising turn of speed when the promise of a good face-to-face fight is in the offing. WHEN: Start of your Movement phase . TARGET: One ORKS INFANTRY unit from your army. EFFECT: Until the end of the turn, add 2 to Advance and Charge rolls made for your unit.",
+        "rule": {
+          "name": "Get Stuck In",
+          "body": "Get Stuck In Once an Ork gets stuck into hand-to-hand combat, they quickly overwhelm their enemies through sheer ferocity and an eagerness to give the gitz a good kicking. Melee weapons equipped by ORKS models from your army have the [SUSTAINED HITS 1] ability."
+        },
+        "restrictionsText": [],
+        "enhancements": [
+          {
+            "id": "follow-me-ladz",
+            "name": "Follow Me Ladz",
+            "points": 25,
+            "body": "Always found at the forefront of an assault, this Ork likes to be the first into the fray. ORKS model only. While the bearer is leading a unit, add 2\" to the Move characteristic of models in that unit.",
+            "eligibilityText": "ORKS model only."
+          },
+          {
+            "id": "headwoppa-s-killchoppa",
+            "name": "Headwoppa\u2019s Killchoppa",
+            "points": 20,
+            "body": "Grand Warboss Headwoppa and his tribe were last seen charging headlong into a horde of Khornate daemons, but legend speaks of a blood-slick choppa that still turns up occasionally. Though this weapon looks normal, a dark voice is said to growl in the mind of its wielder, driving them on to ever greater excesses of violence. ORKS model only. Melee weapons equipped by the bearer (excluding Extra Attacks weapons) have the [DEVASTATING WOUNDS] ability.",
+            "eligibilityText": "ORKS model only."
+          },
+          {
+            "id": "kunnin-but-brutal",
+            "name": "Kunnin\u2019 But Brutal",
+            "points": 15,
+            "body": "Feigning weakness, this greenskin allows his foes to close in before delivering a brutal flurry of attacks. ORKS model only. While the bearer is leading a unit, that unit is eligible to shoot and declare a charge in a turn in which it Fell Back .",
+            "eligibilityText": "ORKS model only."
+          },
+          {
+            "id": "supa-cybork-body",
+            "name": "Supa-Cybork Body",
+            "points": 15,
+            "body": "The original owner of this one-of-a-kind endoskeleton became the envy of every Warboss around, and was soon gutted and stripped for parts by a stronger rival. The Supa-Cybork Body has been retransplanted several times since then, filling its new owner with confidence, resilience and a belated hope that the Painboyz gave it a quick clean before shoving it back in place\u2026 ORKS model only. The bearer has the Feel No Pain 4+ ability.",
+            "eligibilityText": "The Supa-Cybork Body has been retransplanted several times since then, filling its new owner with confidence, resilience and a belated hope that the Painboyz gave it a quick clean before shoving it back in place\u2026 ORKS model only."
+          }
+        ],
+        "stratagems": [
+          {
+            "id": "1cp",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Epic Deed",
+            "when": "Any phase, just after an ORKS VEHICLE unit from your army with the Deadly Demise ability is destroyed .",
+            "target": "That destroyed ORKS VEHICLE unit, if you roll a 6 for its Deadly Demise ability. You can use this Stratagem on that unit even though it was just destroyed.",
+            "effect": "Your unit can make a Normal or Fall Back move before its Deadly Demise ability is resolved, and before any embarked units perform an Emergency Disembarkation. When making this move, your unit can move over enemy units (excluding MONSTERS and VEHICLES ) as if they were not there.",
+            "phaseTags": [
+              "any"
+            ],
+            "keywordHints": [
+              "ORKS VEHICLE"
+            ]
+          },
+          {
+            "id": "2cp",
+            "name": "2CP",
+            "cp": 2,
+            "kind": "Epic Deed",
+            "when": "Fight phase , just after an enemy unit has selected its targets.",
+            "target": "One ORKS unit from your army that was selected as the target of one or more of the attacking unit\u2019s attacks.",
+            "effect": "Until the end of the phase, each time a model in your unit is destroyed , if that model has not fought this phase, do not remove it from play. The destroyed model can fight after the attacking model\u2019s unit has finished making attacks , and is then removed from play.",
+            "phaseTags": [
+              "fight"
+            ],
+            "keywordHints": [
+              "ORKS"
+            ]
+          },
+          {
+            "id": "1cp-2",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Battle Tactic",
+            "when": "Fight phase .",
+            "target": "One ORKS unit from your army that has not been selected to fight this phase.",
+            "effect": "Until the end of the phase, each time a model in your unit makes a melee attack, an unmodified hit roll of 5+ scores a Critical Hit .",
+            "phaseTags": [
+              "fight"
+            ],
+            "keywordHints": [
+              "ORKS"
+            ]
+          },
+          {
+            "id": "1cp-3",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Battle Tactic",
+            "when": "Your opponent\u2019s Shooting phase or the Fight phase , just after an enemy unit has selected its targets.",
+            "target": "One ORKS unit from your army (excluding GROTS , MONSTER and VEHICLE units) that was selected as the target of one or more of the attacking unit\u2019s attacks.",
+            "effect": "Until the end of the phase, each time an attack targets your unit, subtract 1 from the Wound roll .",
+            "phaseTags": [
+              "shooting",
+              "fight",
+              "opponent"
+            ],
+            "keywordHints": [
+              "ORKS",
+              "GROTS",
+              "MONSTER",
+              "VEHICLE"
+            ]
+          },
+          {
+            "id": "1cp-4",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Battle Tactic",
+            "when": "End of your Command phase .",
+            "target": "One MOB unit from your army that contains 10 or more models and is not Below Half-strength .",
+            "effect": "Select one friendly Battle-shocked ORKS INFANTRY unit within 6\" of that MOB unit. That ORKS INFANTRY unit is no longer Battle-shocked.",
+            "phaseTags": [
+              "command"
+            ],
+            "keywordHints": [
+              "MOB"
+            ]
+          },
+          {
+            "id": "1cp-5",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Battle Tactic",
+            "when": "Start of your Movement phase .",
+            "target": "One ORKS INFANTRY unit from your army.",
+            "effect": "Until the end of the turn, add 2 to Advance and Charge rolls made for your unit.",
+            "phaseTags": [
+              "movement"
+            ],
+            "keywordHints": [
+              "ORKS INFANTRY"
+            ]
+          }
+        ],
+        "id": "war-horde"
+      },
+      {
+        "name": "Da Big Hunt",
+        "summary": "Stratagems DRAG IT DOWN 1CP Da Big Hunt \u2013 Battle Tactic Stratagem Beast Snaggas have many tales of the times they took on the biggest prey, clobbering them with so many blows that what was left was a crumpled mass of broken hide and squished innards. WHEN: Fight phase . TARGET: One BEAST SNAGGA unit from your army that has not been selected to fight this phase. EFFECT: Until the end of the phase, melee weapons equipped by models in your unit have the [SUSTAINED HITS 1] ability. In addition, each time a model in your unit makes a melee attack that targets your Prey, a Critical Hit is scored on an unmodified Hit roll of 5+, instead of only a 6. UNSTOPPABLE MOMENTUM 1CP Da Big Hunt \u2013 Strategic Ploy Stratagem Smasha squigs are essentially battering rams on legs. Driven on by the squighogs piling in behind them, they plunge headlong into the foe, trampling one after the next. WHEN: Your Charge phase , just after a BEAST SNAGGA MOUNTED unit from your army ends a Charge move . TARGET: That BEAST SNAGGA unit. EFFECT: Select one enemy unit within Engagement Range of your unit and roll one D6 for each model in your unit: for each 4+, that enemy unit suffers 1 mortal wound (to a maximum of 6 mortal wounds). If that enemy unit is your Prey, roll three additional D6. DAT ONE\u2019S EVEN BIGGA! 1CP Da Big Hunt \u2013 Strategic Ploy Stratagem When bigger prey is sighted, nothing can keep a mob of Beast Snaggas from it. A great hunting chant erupts, and lesser gitz are swiftly forgotten in the enthusiastic impetus to pile into a bigger challenge. WHEN: Your Charge phase . TARGET: One BEAST SNAGGA unit from your army. EFFECT: Until the end of the phase, your unit is eligible to charge in a turn in which it Advanced or Fell Back . In addition, you can re-roll Charge rolls made for your unit, provided one of the targets of that charge is your Prey. WHERE D\u2019YA FINK YOU\u2019RE GOING? 1CP Da Big Hunt \u2013 Strategic Ploy Stratagem Beast Snagga victims often make a break for it before the Orks have had their fill of fighting. With a roar, the Orks immediately give chase, or else lose interest and lunge after other potential trophies. WHEN: Your opponent\u2019s Movement phase , just after an enemy unit ends a Fall Back move . TARGET: One BEAST SNAGGA INFANTRY or BEAST SNAGGA MOUNTED unit from your army that was within Engagement Range of that enemy unit at the start of the phase. EFFECT: If your unit is not within Engagement Range of one or more enemy units, it can make a Normal move of up to 6\". STALKIN\u2019 TAKTIKS 1CP Da Big Hunt \u2013 Battle Tactic Stratagem There is no hiding a Beast Snagga stampede, but the more agile amongst the hunters know how to evade the worst of an unsporting prey\u2019s dakka. WHEN: Your opponent\u2019s Shooting phase , just after an enemy unit has selected its targets. TARGET: One BEAST SNAGGA INFANTRY or BEAST SNAGGA MOUNTED unit from your army that was selected as the target of one or more of the attacking unit\u2019s attacks. EFFECT: Until the end of the phase, each time a ranged attack targets your unit, models in your unit have the Benefit of Cover against that attack. In addition, if your unit has the INFANTRY keyword, until the end of the phase, models in your unit have the Stealth ability. INSTINCTIVE HUNTERS 1CP Da Big Hunt \u2013 Strategic Ploy Stratagem With a keen eye for tracking their prey, especially kunnin' Beast Snaggas will circle round the hunt site to ambush the luckless gitz from another angle. WHEN: End of your opponent\u2019s Fight phase . TARGET: One BEAST SNAGGA unit from your army that is not within Engagement Range of one or more enemy unit. EFFECT: Remove your unit from the battlefield and place it into Strategic Reserves .",
+        "rule": {
+          "name": "Da Hunt Is On",
+          "body": "Da Hunt Is On Spying the largest or most dangerous threats on the battlefield - besides the Orks themselves - Beast Snaggas chase them down with gleeful enthusiasm, mobs racing each other to claim the kill and to snag a worthy trophy with which to proclaim their status as the warband\u2019s greatest hunters. Until, that is, the easily distracted ladz notice their next quarry. At the start of your Command phase , select one MONSTER , VEHICLE or CHARACTER unit from your opponent\u2019s army. Until the start of your next Command phase, that enemy unit is your Prey: Each time a BEAST SNAGGA unit from your army declares a charge that includes your Prey as one of the targets, you can re-roll the Charge roll . Each time a BEAST SNAGGA model from your army makes an attack that targets your Prey, improve the Armour Penetration characteristic of that attack by 1."
+        },
+        "restrictionsText": [],
+        "enhancements": [
+          {
+            "id": "glory-hog",
+            "name": "Glory Hog",
+            "points": 30,
+            "body": "Obsessed with being the first to make a kill, this hunter spurs his unruly mount ahead of the warband, coaxing his mob to follow him with the explicit threat of feeding them to his squigosaur if they don\u2019t keep up. BEASTBOSS ON SQUIGOSAUR model only. Models in the bearer\u2019s unit have the Scouts 9\" ability.",
+            "eligibilityText": "BEASTBOSS ON SQUIGOSAUR model only."
+          },
+          {
+            "id": "proper-killy",
+            "name": "Proper Killy",
+            "points": 15,
+            "body": "This Beast Snagga is an unstoppable engine of destructive butchery who has left the brutalised corpses of his huge prey piled in his wake on world after world. BEAST SNAGGA model only. Add 1 to the Damage characteristic of melee weapons equipped by the bearer.",
+            "eligibilityText": "BEAST SNAGGA model only."
+          },
+          {
+            "id": "skrag-every-stash",
+            "name": "Skrag Every Stash!",
+            "points": 25,
+            "body": "Successful hunt leaders are never short of a kunnin' plan to flush out the prey. This sneaky git has mastered the art of ransacking whatever the prey values, luring the quarry in to retaliate or else ensuring they\u2019re cornered, with no bolthole or gear to fall back on. BEAST SNAGGA model only. At the end of your Command phase , if the bearer is within range of an objective marker you control, that objective marker remains under your control, even if you have no models within range of it, until your opponent controls it at the start or end of any turn.",
+            "eligibilityText": "BEAST SNAGGA model only."
+          },
+          {
+            "id": "surly-as-a-squiggoth",
+            "name": "Surly as a Squiggoth",
+            "points": 20,
+            "body": "With a lifetime of leading notoriously deadly Beast Snagga hunts behind them, and gnarled hides thicker than Battlewagon armour, this Ork and his favoured Boyz have survived blows that would fell a Gargant. BEASTBOSS ON SQUIGOSAUR model only. While the bearer is leading a unit, each time an attack targets that unit, if the Strength characteristic of that attack is greater than the Toughness characteristic of that unit, subtract 1 from the Wound roll .",
+            "eligibilityText": "BEASTBOSS ON SQUIGOSAUR model only."
+          }
+        ],
+        "stratagems": [
+          {
+            "id": "1cp",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Battle Tactic",
+            "when": "Fight phase .",
+            "target": "One BEAST SNAGGA unit from your army that has not been selected to fight this phase.",
+            "effect": "Until the end of the phase, melee weapons equipped by models in your unit have the [SUSTAINED HITS 1] ability. In addition, each time a model in your unit makes a melee attack that targets your Prey, a Critical Hit is scored on an unmodified Hit roll of 5+, instead of only a 6.",
+            "phaseTags": [
+              "fight"
+            ],
+            "keywordHints": [
+              "BEAST SNAGGA"
+            ]
+          },
+          {
+            "id": "1cp-2",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Strategic Ploy",
+            "when": "Your Charge phase , just after a BEAST SNAGGA MOUNTED unit from your army ends a Charge move .",
+            "target": "That BEAST SNAGGA unit.",
+            "effect": "Select one enemy unit within Engagement Range of your unit and roll one D6 for each model in your unit: for each 4+, that enemy unit suffers 1 mortal wound (to a maximum of 6 mortal wounds). If that enemy unit is your Prey, roll three additional D6.",
+            "phaseTags": [
+              "charge"
+            ],
+            "keywordHints": [
+              "BEAST SNAGGA"
+            ]
+          },
+          {
+            "id": "1cp-3",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Strategic Ploy",
+            "when": "Your Charge phase .",
+            "target": "One BEAST SNAGGA unit from your army.",
+            "effect": "Until the end of the phase, your unit is eligible to charge in a turn in which it Advanced or Fell Back . In addition, you can re-roll Charge rolls made for your unit, provided one of the targets of that charge is your Prey.",
+            "phaseTags": [
+              "charge"
+            ],
+            "keywordHints": [
+              "BEAST SNAGGA"
+            ]
+          },
+          {
+            "id": "1cp-4",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Strategic Ploy",
+            "when": "Your opponent\u2019s Movement phase , just after an enemy unit ends a Fall Back move .",
+            "target": "One BEAST SNAGGA INFANTRY or BEAST SNAGGA MOUNTED unit from your army that was within Engagement Range of that enemy unit at the start of the phase.",
+            "effect": "If your unit is not within Engagement Range of one or more enemy units, it can make a Normal move of up to 6\".",
+            "phaseTags": [
+              "movement",
+              "opponent"
+            ],
+            "keywordHints": [
+              "BEAST SNAGGA INFANTRY",
+              "BEAST SNAGGA MOUNTED"
+            ]
+          },
+          {
+            "id": "1cp-5",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Battle Tactic",
+            "when": "Your opponent\u2019s Shooting phase , just after an enemy unit has selected its targets.",
+            "target": "One BEAST SNAGGA INFANTRY or BEAST SNAGGA MOUNTED unit from your army that was selected as the target of one or more of the attacking unit\u2019s attacks.",
+            "effect": "Until the end of the phase, each time a ranged attack targets your unit, models in your unit have the Benefit of Cover against that attack. In addition, if your unit has the INFANTRY keyword, until the end of the phase, models in your unit have the Stealth ability.",
+            "phaseTags": [
+              "shooting",
+              "opponent"
+            ],
+            "keywordHints": [
+              "BEAST SNAGGA INFANTRY",
+              "BEAST SNAGGA MOUNTED"
+            ]
+          },
+          {
+            "id": "1cp-6",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Strategic Ploy",
+            "when": "End of your opponent\u2019s Fight phase .",
+            "target": "One BEAST SNAGGA unit from your army that is not within Engagement Range of one or more enemy unit.",
+            "effect": "Remove your unit from the battlefield and place it into Strategic Reserves .",
+            "phaseTags": [
+              "fight",
+              "opponent"
+            ],
+            "keywordHints": [
+              "BEAST SNAGGA"
+            ]
+          }
+        ],
+        "id": "da-big-hunt"
+      },
+      {
+        "name": "Kult of Speed",
+        "summary": "Stratagems SPEEDIEST FREEKS 1CP Kult of Speed \u2013 Strategic Ploy Stratagem Speed Freeks are often just blurs of vehicular mayhem that prove difficult to land a blow on. WHEN: Your opponent\u2019s Shooting phase or the Fight phase , just after an enemy unit has selected its targets. TARGET: One SPEED FREEKS or TRUKK unit from your army that was selected as the target of one or more of the attacking unit\u2019s attacks. EFFECT: Until the end of the phase, models in your unit have a 5+ invulnerable save . If your unit is a VEHICLE unit with an unmodified Toughness characteristic of 8 or less, until the end of the phase, models in your unit have a 4+ invulnerable save instead. SQUIG FLINGIN\u2019 1CP Kult of Speed \u2013 Strategic Ploy Stratagem Speed Freeks live in their vehicles, so it's no surprise to find small squigs lurking in some compartments. A few are vicious, and entertaining, enough to be worth lobbing into nearby enemies to cause anarchy. WHEN: Your Movement phase , just after a SPEED FREEKS or TRUKK unit from your army ends a Normal , Advance or Fall Back move . TARGET: That SPEED FREEKS or TRUKK unit. EFFECT: Select one enemy unit within 9\" of your unit. That enemy unit must take a Battle-shock test and, when doing so, subtract 1 from the result. DAKKASTORM 1CP Kult of Speed \u2013 Battle Tactic Stratagem Often all an enemy will see of a Kult of Speed is a blur as they speed by, all guns blazing. WHEN: Your Shooting phase . TARGET: One SPEED FREEKS unit from your army that has not been selected to shoot this phase. EFFECT: Until the end of the phase, ranged weapons equipped by models in your unit have the [SUSTAINED HITS 1] ability. While targeting a unit within 9\", they have the [SUSTAINED HITS 2] ability instead. RESTRICTIONS: A unit cannot be targeted by this and the Blitza Fire Stratagem in the same phase. BLITZA FIRE 1CP Kult of Speed \u2013 Battle Tactic Stratagem Fiercely gripping the trigger, with a manic grin as they close on their foes, Speed Freeks fire so many rounds that some just have to find a weak spot. WHEN: Your Shooting phase . TARGET: One SPEED FREEKS unit from your army that has not been selected to shoot this phase. EFFECT: Until the end of the phase, ranged weapons equipped by models in your unit have the [LETHAL HITS] ability and, each time a model in your unit makes an attack that targets a unit within 9\", a Critical Hit is scored on an unmodified Hit roll of 5+, instead of only a 6. RESTRICTIONS: A unit cannot be targeted by this and the Dakkastorm Stratagem in the same phase. FULL THROTTLE! 1CP Kult of Speed \u2013 Battle Tactic Stratagem When racing buggies and warbikes charge at full pelt, the power behind their crews\u2019 assault is so great that they can smash through the enemy. WHEN: Your Charge phase , just after a SPEED FREEKS unit from your army ends a Charge move . TARGET: That SPEED FREEKS unit. EFFECT: Until the end of the turn, each time a model in your unit makes a melee attack, add 1 to the Wound roll . MORE GITZ OVER \u2019ERE! 1CP Kult of Speed \u2013 Strategic Ploy Stratagem Sometimes new targets that emerge are just too juicy to ignore. WHEN: Your opponent\u2019s Movement phase , just after an enemy unit ends a Normal , Advance or Fall Back move . TARGET: One SPEED FREEKS unit from your army that is within 9\" of that enemy unit and is not within Engagement Range of one or more enemy units. EFFECT: Your unit can make a Normal move of up to 6\".",
+        "rule": {
+          "name": "Adrenaline Junkies",
+          "body": "Adrenaline Junkies If there is one thing Speed Freeks love more than racing full tilt towards the enemy, smashing into them and pulling hair pin turns to do it all again, it is loosing incredible amounts of noisy, chugging dakka as they do so. SPEED FREEKS units from your army are eligible to shoot and declare a charge in a turn in which they Advanced or Fell Back ."
+        },
+        "restrictionsText": [],
+        "enhancements": [
+          {
+            "id": "fasta-than-yooz",
+            "name": "Fasta Than Yooz",
+            "points": 35,
+            "body": "The thrill-seeking Orks at the head of Speed Freeks warbands lead their Kult of Speed brethren right into enemy lines, leaping from speeding Trukks and Battlewagons if need be to plunge into the fight. ORKS INFANTRY model only. Each time the bearer\u2019s unit disembarks from a TRANSPORT after that TRANSPORT has made a Normal move , the bearer\u2019s unit is still eligible to declare a charge this turn.",
+            "eligibilityText": "ORKS INFANTRY model only."
+          },
+          {
+            "id": "speed-makes-right",
+            "name": "Speed Makes Right",
+            "points": 25,
+            "body": "This Orks adrenaline-addled mind lurches from one insight to the next, a bone-shaker whose engine only fires on all cylinders when he is in the thick of the fighting. Once there, however, it revs into overdrive. ORKS model only. In your Command phase , if the bearer (or a TRANSPORT the bearer is embarked within) is within 9\" of one or more enemy units, roll one D6: on a 3+, you gain 1CP.",
+            "eligibilityText": "ORKS model only."
+          },
+          {
+            "id": "squig-hide-tyres",
+            "name": "Squig-hide Tyres",
+            "points": 15,
+            "body": "Scaly squig-hide is the perfect material for fast and grippy tyres, able to provide traction even in the mire of blood, guts and oil left over from most Speed Freekfights. DEFFKILLA WARTRIKE model only. Each time a model in the bearer\u2019s unit makes a Consolidation move , it can move up to 6\" instead of up to 3\".",
+            "eligibilityText": "DEFFKILLA WARTRIKE model only."
+          },
+          {
+            "id": "wazblasta",
+            "name": "Wazblasta",
+            "points": 10,
+            "body": "This warlord\u2019s fanatical devotion to speed is such that he cannot stand being anywhere other than in the heart of the action and he pushes the ladz around him to crank their throttles in order to close the distance with the enemy as soon as possible. DEFFKILLA WARTRIKE model only. In your Shooting phase , after the bearer\u2019s unit has shot, if it is not within Engagement Range of one or more enemy units, it can make a Normal move of up to 6\". If it does, until the end of the turn, it is not eligible to declare a charge .",
+            "eligibilityText": "DEFFKILLA WARTRIKE model only."
+          }
+        ],
+        "stratagems": [
+          {
+            "id": "1cp",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Strategic Ploy",
+            "when": "Your opponent\u2019s Shooting phase or the Fight phase , just after an enemy unit has selected its targets.",
+            "target": "One SPEED FREEKS or TRUKK unit from your army that was selected as the target of one or more of the attacking unit\u2019s attacks.",
+            "effect": "Until the end of the phase, models in your unit have a 5+ invulnerable save . If your unit is a VEHICLE unit with an unmodified Toughness characteristic of 8 or less, until the end of the phase, models in your unit have a 4+ invulnerable save instead.",
+            "phaseTags": [
+              "shooting",
+              "fight",
+              "opponent"
+            ],
+            "keywordHints": [
+              "SPEED FREEKS",
+              "TRUKK"
+            ]
+          },
+          {
+            "id": "1cp-2",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Strategic Ploy",
+            "when": "Your Movement phase , just after a SPEED FREEKS or TRUKK unit from your army ends a Normal , Advance or Fall Back move .",
+            "target": "That SPEED FREEKS or TRUKK unit.",
+            "effect": "Select one enemy unit within 9\" of your unit. That enemy unit must take a Battle-shock test and, when doing so, subtract 1 from the result.",
+            "phaseTags": [
+              "movement"
+            ],
+            "keywordHints": [
+              "SPEED FREEKS",
+              "TRUKK"
+            ]
+          },
+          {
+            "id": "1cp-3",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Battle Tactic",
+            "when": "Your Shooting phase .",
+            "target": "One SPEED FREEKS unit from your army that has not been selected to shoot this phase.",
+            "effect": "Until the end of the phase, ranged weapons equipped by models in your unit have the [SUSTAINED HITS 1] ability. While targeting a unit within 9\", they have the [SUSTAINED HITS 2] ability instead. RESTRICTIONS: A unit cannot be targeted by this and the Blitza Fire Stratagem in the same phase.",
+            "phaseTags": [
+              "shooting"
+            ],
+            "keywordHints": [
+              "SPEED FREEKS"
+            ]
+          },
+          {
+            "id": "1cp-4",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Battle Tactic",
+            "when": "Your Shooting phase .",
+            "target": "One SPEED FREEKS unit from your army that has not been selected to shoot this phase.",
+            "effect": "Until the end of the phase, ranged weapons equipped by models in your unit have the [LETHAL HITS] ability and, each time a model in your unit makes an attack that targets a unit within 9\", a Critical Hit is scored on an unmodified Hit roll of 5+, instead of only a 6. RESTRICTIONS: A unit cannot be targeted by this and the Dakkastorm Stratagem in the same phase.",
+            "phaseTags": [
+              "shooting"
+            ],
+            "keywordHints": [
+              "SPEED FREEKS"
+            ]
+          },
+          {
+            "id": "1cp-5",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Battle Tactic",
+            "when": "Your Charge phase , just after a SPEED FREEKS unit from your army ends a Charge move .",
+            "target": "That SPEED FREEKS unit.",
+            "effect": "Until the end of the turn, each time a model in your unit makes a melee attack, add 1 to the Wound roll .",
+            "phaseTags": [
+              "charge"
+            ],
+            "keywordHints": [
+              "SPEED FREEKS"
+            ]
+          },
+          {
+            "id": "1cp-6",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Strategic Ploy",
+            "when": "Your opponent\u2019s Movement phase , just after an enemy unit ends a Normal , Advance or Fall Back move .",
+            "target": "One SPEED FREEKS unit from your army that is within 9\" of that enemy unit and is not within Engagement Range of one or more enemy units.",
+            "effect": "Your unit can make a Normal move of up to 6\".",
+            "phaseTags": [
+              "movement",
+              "opponent"
+            ],
+            "keywordHints": [
+              "SPEED FREEKS"
+            ]
+          }
+        ],
+        "id": "kult-of-speed"
+      },
+      {
+        "name": "Dread Mob",
+        "summary": "Stratagems KLANKIN\u2019 KLAWS 1CP Dread Mob \u2013 Battle Tactic Stratagem The krews of a Mek\u2019s stompiest contraptions revel in ripping apart anything they can get their kiaws on, heedless of the damage done to their own gubbinz. WHEN: Fight phase . TARGET: One ORKS WALKER unit from your army that has not been selected to fight this phase. EFFECT: Each time you use this Stratagem, you can choose to push it. Until the end of the phase, add 2 to the Strength characteristic of melee weapons equipped by models in your unit and, if you chose to push it, until the end of the phase, add 1 to the Damage characteristic of those weapons and they have the [HAZARDOUS] ability as well. SUPERFUELLED BOILER 1CP Dread Mob \u2013 Strategic Ploy Stratagem By pushing their engines past any sane level, Ork combat walkers can build terrifying momentum. WHEN: Your Movement phase , just after an ORKS WALKER unit from your army has been selected to Advance . TARGET: That ORKS WALKER unit. EFFECT: Until the end of the turn, you can re-roll Advance rolls made for your unit and ranged weapons equipped by models in your unit have the [ASSAULT] ability. BIGGER SHELLS FOR BIGGER GITZ 1CP Dread Mob \u2013 Battle Tactic Stratagem Stashes of extra speshul ammo provided by the Meks are often expended on rival monstrosities. WHEN: Your Shooting phase . TARGET: One MEK , ORKS WALKER or GROTS VEHICLE unit from your army that has not been selected to shoot this phase. EFFECT: Each time you use this Stratagem, you can choose to push it. Until the end of the phase, each time a model in your unit makes an attack that targets a MONSTER or VEHICLE , add 1 to the Wound roll . If you chose to push it, add 1 to the Damage characteristic of that attack and, until the end of the phase, ranged weapons equipped by models in your unit have the [HAZARDOUS] ability as well. DAKKA! DAKKA! DAKKA! 1CP Dread Mob \u2013 Battle Tactic Stratagem Orks have a tendency to hold the trigger down until their weapon stops firing, falls apart or misfires. WHEN: Your Shooting phase . TARGET: One ORKS WALKER or GROTS VEHICLE unit from your army that has not been selected to shoot this phase. EFFECT: Each time you use this Stratagem, you can choose to push it. Until the end of the phase, each time a model in your unit makes an attack, re-roll a Hit roll of 1. If you chose to push it, you can re-roll the Hit roll instead and, until the end of the phase, ranged weapons equipped by models in your unit have the [HAZARDOUS] ability as well. CONNIVING RUNTS 1CP Dread Mob \u2013 Strategic Ploy Stratagem A Gretchin\u2019s lot is often a wretched one, and the spiteful zoggers will take any chance to cause pain and mischief using sneaky traps before legging it. WHEN: Your opponent\u2019s Movement phase , just after an enemy unit ends a Normal , Advance or Fall Back move . TARGET: One GRETCHIN unit from your army that is within 9\" of that enemy unit and not within Engagement Range of any enemy units. EFFECT: Roll one D6: on a 4+, that enemy unit suffers D3+1 mortal wounds . Your unit can then make a Normal move. EXTRA GUBBINZ 1CP Dread Mob \u2013 Battle Tactic Stratagem The Meks' creations can afford to have all manner of useless junk blasted from them with little effect. WHEN: Your opponent\u2019s Shooting phase , just after an enemy unit has selected its targets. TARGET: One ORKS WALKER or GROTS VEHICLE unit from your army (excluding TITANIC units) that was selected as the target of one or more of the attacking unit\u2019s attacks. EFFECT: Until the end of the phase, each time an attack is allocated to a model in your unit, subtract 1 from the Damage characteristic of that attack.",
+        "rule": {
+          "name": "Try Dat Button!",
+          "body": "Try Dat Button! Inventive Meks wire all manner of kustomised gubbinz, suspicious extras and inviting big red buttons to weapons or into the cockpits of their clanking kan creations. Eager Orks are always enthusiastic to try out such random innovations to see what sort of destruction they can cause. Sometimes this can be risky, but that\u2019s half the fun! Each time a MEK , ORKS WALKER or GROTS VEHICLE unit from your army is selected to shoot or fight, roll one D6. Until the end of the phase, weapons equipped by models in that unit have the corresponding ability shown in the table below. D6 BUTTON EFFECT [SUSTAINED HITS 1] ability. [LETHAL HITS] ability. Each time an attack is made with this weapon, on a Critical Wound , improve the Armour Penetration characteristic of that attack by 2. Alternatively, when such a unit is selected to shoot or fight, you can select one of the abilities above instead of rolling the D6. If you do, until the end of the phase, weapons equipped by models in that unit have the [HAZARDOUS] ability as well. If a weapon equipped by a model from you army has the [HAZARDOUS] ability from multiple sources, each time you take a Hazardous test for that weapon, it is failed on a roll of a 1 or a 2. KEYWORDS GRETCHIN units from your army gain the BATTLELINE keyword."
+        },
+        "restrictionsText": [],
+        "enhancements": [
+          {
+            "id": "gitfinder-googlez",
+            "name": "Gitfinder Googlez",
+            "points": 10,
+            "body": "By squinting hard through the mismatched lenses of these goggles, even the sneakiest git can be pinpointed. MEK model only. Ranged weapons equipped by models in the bearer\u2019s unit have the [ignores cover] ability.",
+            "eligibilityText": "MEK model only."
+          },
+          {
+            "id": "press-it-fasta",
+            "name": "Press It Fasta!",
+            "points": 35,
+            "body": "Impatient for better results, this Mek is an avid advocate of the theory that smashing buttons and cranking dials faster makes kustom guns more shooty. MEK model only. Each time the bearer\u2019s unit is selected to shoot, when rolling to determine which ability that unit\u2019s weapons gain from the Try Dat Button! Detachment rule, roll one additional D6: until the end of the phase, ranged weapons equipped by models in that unit gain both Button Effects generated by those rolls. If a duplicate Button Effect is rolled, it has no additional effect.",
+            "eligibilityText": "MEK model only."
+          },
+          {
+            "id": "smoky-gubbinz",
+            "name": "Smoky Gubbinz",
+            "points": 15,
+            "body": "This loud, fume-belching device wreathes the bearer and his mates in a thick bank of smoke. This is hard for the enemy to see through, but has little detriment on the Orks\u2019 own accuracy. MEK model only. Models in the bearer\u2019s unit have the Stealth ability.",
+            "eligibilityText": "MEK model only."
+          },
+          {
+            "id": "supa-glowy-fing",
+            "name": "Supa-glowy Fing",
+            "points": 20,
+            "body": "The Mek cobbled together this strange device in a flash of feverish inventin\u2019. He isn\u2019t sure what it does - and it glows weirdly - but he proudly carries it to battle, eager to know what its big switch will do this time. MEK model only. In your Command phase , select one enemy unit within 18\" of and visible to the bearer, then roll one D6: on a 1-2, that enemy unit must take a Battle-shock test ; on a 3-4, that enemy unit suffers D3 mortal wounds ; on a 5-6, until the start of your next Command phase, each time a model in that enemy unit makes an attack, subtract 1 from the Hit roll .",
+            "eligibilityText": "MEK model only."
+          }
+        ],
+        "stratagems": [
+          {
+            "id": "1cp",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Battle Tactic",
+            "when": "Fight phase .",
+            "target": "One ORKS WALKER unit from your army that has not been selected to fight this phase.",
+            "effect": "Each time you use this Stratagem, you can choose to push it. Until the end of the phase, add 2 to the Strength characteristic of melee weapons equipped by models in your unit and, if you chose to push it, until the end of the phase, add 1 to the Damage characteristic of those weapons and they have the [HAZARDOUS] ability as well.",
+            "phaseTags": [
+              "fight"
+            ],
+            "keywordHints": [
+              "ORKS WALKER"
+            ]
+          },
+          {
+            "id": "1cp-2",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Strategic Ploy",
+            "when": "Your Movement phase , just after an ORKS WALKER unit from your army has been selected to Advance .",
+            "target": "That ORKS WALKER unit.",
+            "effect": "Until the end of the turn, you can re-roll Advance rolls made for your unit and ranged weapons equipped by models in your unit have the [ASSAULT] ability.",
+            "phaseTags": [
+              "movement"
+            ],
+            "keywordHints": [
+              "ORKS WALKER"
+            ]
+          },
+          {
+            "id": "1cp-3",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Battle Tactic",
+            "when": "Your Shooting phase .",
+            "target": "One MEK , ORKS WALKER or GROTS VEHICLE unit from your army that has not been selected to shoot this phase.",
+            "effect": "Each time you use this Stratagem, you can choose to push it. Until the end of the phase, each time a model in your unit makes an attack that targets a MONSTER or VEHICLE , add 1 to the Wound roll . If you chose to push it, add 1 to the Damage characteristic of that attack and, until the end of the phase, ranged weapons equipped by models in your unit have the [HAZARDOUS] ability as well.",
+            "phaseTags": [
+              "shooting"
+            ],
+            "keywordHints": [
+              "MEK",
+              "ORKS WALKER",
+              "GROTS VEHICLE"
+            ]
+          },
+          {
+            "id": "1cp-4",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Battle Tactic",
+            "when": "Your Shooting phase .",
+            "target": "One ORKS WALKER or GROTS VEHICLE unit from your army that has not been selected to shoot this phase.",
+            "effect": "Each time you use this Stratagem, you can choose to push it. Until the end of the phase, each time a model in your unit makes an attack, re-roll a Hit roll of 1. If you chose to push it, you can re-roll the Hit roll instead and, until the end of the phase, ranged weapons equipped by models in your unit have the [HAZARDOUS] ability as well.",
+            "phaseTags": [
+              "shooting"
+            ],
+            "keywordHints": [
+              "ORKS WALKER",
+              "GROTS VEHICLE"
+            ]
+          },
+          {
+            "id": "1cp-5",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Strategic Ploy",
+            "when": "Your opponent\u2019s Movement phase , just after an enemy unit ends a Normal , Advance or Fall Back move .",
+            "target": "One GRETCHIN unit from your army that is within 9\" of that enemy unit and not within Engagement Range of any enemy units.",
+            "effect": "Roll one D6: on a 4+, that enemy unit suffers D3+1 mortal wounds . Your unit can then make a Normal move.",
+            "phaseTags": [
+              "movement",
+              "opponent"
+            ],
+            "keywordHints": [
+              "GRETCHIN"
+            ]
+          },
+          {
+            "id": "1cp-6",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Battle Tactic",
+            "when": "Your opponent\u2019s Shooting phase , just after an enemy unit has selected its targets.",
+            "target": "One ORKS WALKER or GROTS VEHICLE unit from your army (excluding TITANIC units) that was selected as the target of one or more of the attacking unit\u2019s attacks.",
+            "effect": "Until the end of the phase, each time an attack is allocated to a model in your unit, subtract 1 from the Damage characteristic of that attack.",
+            "phaseTags": [
+              "shooting",
+              "opponent"
+            ],
+            "keywordHints": [
+              "ORKS WALKER",
+              "GROTS VEHICLE",
+              "TITANIC"
+            ]
+          }
+        ],
+        "id": "dread-mob"
+      },
+      {
+        "name": "Green Tide",
+        "summary": "Stratagems COMPETITIVE STREAK 1CP Green Tide \u2013 Battle Tactic Stratagem Galvanised by the rest of their mates fighting around them, Orks will redouble their efforts to outdo each other. WHEN: Fight phase . TARGET: One BOYZ unit from your army that has not been selected to fight this phase. EFFECT: Until the end of the phase, each time a model in your unit makes an attack, re-roll a Wound roll of 1. If your unit contains 10 or more models, re-roll the Wound roll instead. BULLDOZER BRUTALITY 1CP Green Tide \u2013 Battle Tactic Stratagem In the massive fights that Orks enjoy, the only way to ensure a slice of the action is to bludgeon a path through the press to get a hand on the enemy. WHEN: Fight phase . TARGET: One BOYZ unit from your army that has not been selected to fight this phase and is within Engagement Range of one or more enemy units. EFFECT: Until the end of the phase, each time your unit is selected to fight, when determining which models in your unit are eligible to fight, any models in your unit that are within 3\" of one or more enemy models are eligible to fight. When resolving those attacks, such models can target one of those enemy units that is within 3\" of them and within Engagement Range of their unit. BRAGGIN\u2019 RIGHTS 1CP Green Tide \u2013 Strategic Ploy Stratagem With volleys of wagers, threats, insults, dung and the occasional hurled rock, mobs of Orks bolster each other\u2019s spirits in the most Orky ways possible. WHEN: Your Command phase . TARGET: Two BOYZ units from your army that are within 6\" of each other. EFFECT: Until the start of your next Command phase, while those two units are within 6\" of each other, they both count as containing 10 or more models for the purposes of your Detachment rule, any Enhancements models from your army have and any Stratagems you use. COME ON LADZ! 1CP Green Tide \u2013 Strategic Ploy Stratagem Orks are drawn to conflict and constantly race into battle at the merest hint of violence. WHEN: Your Command phase . TARGET: One BOYZ unit from your army. EFFECT: Return up to D3+2 destroyed models to your unit (excluding CHARACTER models). TIDE OF MUSCLE 1CP Green Tide \u2013 Epic Deed Stratagem Once a horde of Orks get a sight of the foe, nothing can stop them. WHEN: Your Charge phase . TARGET: One BOYZ unit from your army that has not declared a charge this phase. EFFECT: Until the end of the phase, each time your unit declares a charge, add 1 to the Charge roll and, if your unit contains 10 or more models, you can re-roll the Charge roll.\u2019 GO GET \u2019EM! 1CP Green Tide \u2013 Strategic Ploy Stratagem Keeping Orks at arm\u2019s length and pummelling them with as much firepower as possible is often the safest tactic for their victims. Unfortunately, it can also draw their attention and give them the urge to re-educate the gitz in the joys of up-close savagery. WHEN: Your opponent\u2019s Shooting phase , just after an enemy unit has selected its targets. TARGET: One BOYZ unit from your army that was selected as the target of one or more of the attacking unit\u2019s attacks. EFFECT: After the attacking unit has shot, your unit can make a Go Get \u2019Em! move. To do so, roll one D6: each model in your unit can move a distance in inches up to the result, but your unit must end that move as close as possible to the closest enemy unit. When doing so, those models can be moved within Engagement Range of that enemy unit. If your unit contains 10 or more models, you can re-roll the D6 to determine how far your unit can move.",
+        "rule": {
+          "name": "Mob Mentality",
+          "body": "Mob Mentality Caught up in the infectious and nigh supernatural belligerence that suffuses such large hordes of Orks on the warpath, the Boyz tend to push through lethal wounds, being too immersed in the energetic riot to worry about such things as long as they have a load of mates to enjoy the fight with. Each time an attack targets a BOYZ unit from your army, models in that unit have a 6+ invulnerable save against that attack. Each time an attack targets a BOYZ unit from your army that contains 10 or more models, models in that unit have a 5+ invulnerable save against that attack.\u2019"
+        },
+        "restrictionsText": [],
+        "enhancements": [
+          {
+            "id": "bloodthirsty-belligerence",
+            "name": "Bloodthirsty Belligerence",
+            "points": 15,
+            "body": "Buoyed on by his chanting ladz and eager to smash into his enemies first, this boss leads the way, racing towards one fight after the next. ORKS INFANTRY model only. While the bearer is leading a unit, you can re-roll Advance rolls made for that unit. While that unit contains 10 or more models, you can re-roll Charge rolls made for that unit as well.",
+            "eligibilityText": "ORKS INFANTRY model only."
+          },
+          {
+            "id": "brutal-but-kunnin",
+            "name": "Brutal But Kunnin\u2019",
+            "points": 25,
+            "body": "What tactics occasionally pop into this Orks head revolve purely around throwing as many Boyz into the enemy\u2019s face as possible. ORKS INFANTRY model only. In your Command phase , if the bearer is on the battlefield (or is embarked within a TRANSPORT that is on the battlefield), roll one D6, adding 2 to the result if the bearer\u2019s unit contains 10 or more models: on a 5+, you gain 1CP.",
+            "eligibilityText": "ORKS INFANTRY model only."
+          },
+          {
+            "id": "ferocious-show-off",
+            "name": "Ferocious Show Off",
+            "points": 10,
+            "body": "This brutal fighter is even more dangerous with a raucous audience of chanting Orks as he displays his violent abilities as a warning to all. ORKS INFANTRY model only. Each time the bearer fights, while resolving those attacks, add 1 to the Strength characteristic of the bearers melee weapons. If the bearer\u2019s unit contains 10 or more models, while resolving those attacks, add 3 to the Strength characteristic instead.",
+            "eligibilityText": "ORKS INFANTRY model only."
+          },
+          {
+            "id": "raucous-warcaller",
+            "name": "Raucous Warcaller",
+            "points": 20,
+            "body": "This hulking boss is a focal point of violent enthusiasm. Orks flocking to his bosspole feel emboldened, the boss exuding an energetic dynamism that keeps his ladz at the height of rampaging excitement. ORKS INFANTRY model only. While the bearer is leading a unit, that unit always counts as containing 10 or more models for the purposes of your Detachment rule and any Stratagems you use.",
+            "eligibilityText": "ORKS INFANTRY model only."
+          }
+        ],
+        "stratagems": [
+          {
+            "id": "1cp",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Battle Tactic",
+            "when": "Fight phase .",
+            "target": "One BOYZ unit from your army that has not been selected to fight this phase.",
+            "effect": "Until the end of the phase, each time a model in your unit makes an attack, re-roll a Wound roll of 1. If your unit contains 10 or more models, re-roll the Wound roll instead.",
+            "phaseTags": [
+              "fight"
+            ],
+            "keywordHints": [
+              "BOYZ"
+            ]
+          },
+          {
+            "id": "1cp-2",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Battle Tactic",
+            "when": "Fight phase .",
+            "target": "One BOYZ unit from your army that has not been selected to fight this phase and is within Engagement Range of one or more enemy units.",
+            "effect": "Until the end of the phase, each time your unit is selected to fight, when determining which models in your unit are eligible to fight, any models in your unit that are within 3\" of one or more enemy models are eligible to fight. When resolving those attacks, such models can target one of those enemy units that is within 3\" of them and within Engagement Range of their unit.",
+            "phaseTags": [
+              "fight"
+            ],
+            "keywordHints": [
+              "BOYZ"
+            ]
+          },
+          {
+            "id": "1cp-3",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Strategic Ploy",
+            "when": "Your Command phase .",
+            "target": "Two BOYZ units from your army that are within 6\" of each other.",
+            "effect": "Until the start of your next Command phase, while those two units are within 6\" of each other, they both count as containing 10 or more models for the purposes of your Detachment rule, any Enhancements models from your army have and any Stratagems you use.",
+            "phaseTags": [
+              "command"
+            ],
+            "keywordHints": [
+              "BOYZ"
+            ]
+          },
+          {
+            "id": "1cp-4",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Strategic Ploy",
+            "when": "Your Command phase .",
+            "target": "One BOYZ unit from your army.",
+            "effect": "Return up to D3+2 destroyed models to your unit (excluding CHARACTER models).",
+            "phaseTags": [
+              "command"
+            ],
+            "keywordHints": [
+              "BOYZ"
+            ]
+          },
+          {
+            "id": "1cp-5",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Epic Deed",
+            "when": "Your Charge phase .",
+            "target": "One BOYZ unit from your army that has not declared a charge this phase.",
+            "effect": "Until the end of the phase, each time your unit declares a charge, add 1 to the Charge roll and, if your unit contains 10 or more models, you can re-roll the Charge roll.\u2019",
+            "phaseTags": [
+              "charge"
+            ],
+            "keywordHints": [
+              "BOYZ"
+            ]
+          },
+          {
+            "id": "1cp-6",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Strategic Ploy",
+            "when": "Your opponent\u2019s Shooting phase , just after an enemy unit has selected its targets.",
+            "target": "One BOYZ unit from your army that was selected as the target of one or more of the attacking unit\u2019s attacks.",
+            "effect": "After the attacking unit has shot, your unit can make a Go Get \u2019Em! move. To do so, roll one D6: each model in your unit can move a distance in inches up to the result, but your unit must end that move as close as possible to the closest enemy unit. When doing so, those models can be moved within Engagement Range of that enemy unit. If your unit contains 10 or more models, you can re-roll the D6 to determine how far your unit can move.",
+            "phaseTags": [
+              "shooting",
+              "opponent"
+            ],
+            "keywordHints": [
+              "BOYZ"
+            ]
+          }
+        ],
+        "id": "green-tide"
+      },
+      {
+        "name": "Bully Boyz",
+        "summary": "Stratagems ARMED TO DATEEF 1CP Bully Boyz \u2013 Battle Tactic Stratagem Nobz load themselves with all manner of weapons in shows of wealth and influence, enabling them to smash the foe with a ceaseless barrage of attacks. WHEN: Your Shooting phase or the Fight phase . TARGET: One NOBZ or MEGANOBZ unit from your army that has not been selected to shoot or fight this phase. EFFECT: Until the end of the phase, each time a model in your unit makes an attack, re-roll a Hit roll of 1. If a Waaagh! is active for your unit, you can re-roll the Hit roll instead. TOO ARROGANT TO DIE 1CP Bully Boyz \u2013 Strategic Ploy Stratagem With bone-headed arrogance, Nobz will carry on killing before their deaths finally register. WHEN: Your opponent\u2019s Shooting phase or the Fight phase , just after an enemy unit has selected its targets. TARGET: One NOBZ or MEGANOBZ unit from your army that was selected as the target of one or more of the attacking unit\u2019s attacks. EFFECT: Until the end of the phase, each time a model in your unit is destroyed , if that model has not shot or fought this phase, roll one D6, adding 2 to the result if a Waaagh! is active for your unit. On a 5+, do not remove the destroyed model from play; it can shoot or fight after the attacking unit has finished making its attacks, and is then removed from play. ALWAYS LOOKIN\u2019 FER A FIGHT 1CP Bully Boyz \u2013 Strategic Ploy Stratagem As one enemy falls to the choppas of a battle-hungry mob of Nobz, they immediately seek out more. WHEN: Fight phase , just after an enemy unit is destroyed . TARGET: One NOBZ or MEGANOBZ unit from your army that destroyed that enemy unit. EFFECT: Until the end of the phase, each time your unit makes a Consolidation move , it can move up to D3+3\" instead of up to 3\". If a Waaagh! is active for your unit, it can move up to 6\" instead. CRUSHING IMPACT 1CP Bully Boyz \u2013 Epic Deed Stratagem When a thundering mob of hulking Ork Nobz stampedes into the foe, their crushing momentum is a lethal weapon by itself. WHEN: Your Charge phase , just after a NOBZ or MEGANOBZ unit from your army ends a Charge move . TARGET: That NOBZ or MEGANOBZ unit. EFFECT: Select one enemy unit within Engagement Range of your unit, then roll one D6 for each model in your unit that is within Engagement Range of that enemy unit: for each 5+, that enemy unit suffers 1 mortal wound (to a maximum of 6 mortal wounds). If a Waaagh! is active for your unit, that enemy unit suffers 1 mortal wound for each 4+ instead. CUT\u2019EM DOWN 1CP Bully Boyz \u2013 Battle Tactic Stratagem Furious with any snivelling gitz who attempt to back away from a good fight, Nobz will ruthlessly hack them apart as they turn to flee. WHEN: Your opponent\u2019s Movement phase , just after an enemy unit is selected to Fall Back . TARGET: One NOBZ or MEGANOBZ unit from your army within Engagement Range of that enemy unit. EFFECT: When that enemy unit Falls Back , all models in that enemy unit must take a Desperate Escape test . When doing so, if a Waaagh! is active for your unit, subtract 1 from each of those tests. HULKING BRUTES 1CP Bully Boyz \u2013 Battle Tactic Stratagem The sheer aggressive contempt advancing Nobz project, not to mention their thick skulls and \u2018eavy armour, make them a terrifying prospect for foes desperately trying to gun them down. WHEN: Your opponent\u2019s Shooting phase , just after an enemy unit has selected its targets. TARGET: One NOBZ or MEGANOBZ unit from your army that was selected as the target of one or more of the attacking unit\u2019s attacks. EFFECT: Until the attacking unit has finished making its attacks, each time an attack targets your unit, worsen the Armour Penetration characteristic of that attack by 1.",
+        "rule": {
+          "name": "Da Boss Is Watchin\u2019",
+          "body": "Da Boss Is Watchin\u2019 Gathered together into an all-conquering mass of hulking brutes, the biggest Nobz and their even larger bosses are - or so they claim - more Orky than anyone else. Their bellowed war cries are louder, their self-belief, impetus and sheer presence an affront to the senses. Theirs is a violent momentum that can roll through entire enemy armies in an unrelenting wave of aggression. At the start of your Command phase , in a turn in which you have not called a Waaagh! , if you have one or more WARBOSS models on the battlefield (or embarked within a TRANSPORT that is on the battlefield), you can call a Waaagh! for a second time this battle. When doing so, that second Waaagh! only counts as having been called for WARBOSS , NOBZ and MEGANOBZ units from your army."
+        },
+        "restrictionsText": [],
+        "enhancements": [
+          {
+            "id": "big-gob",
+            "name": "Big Gob",
+            "points": 20,
+            "body": "This warlords bellowing war cry is so loud that it can be heard over the thickest of fighting, rolling outwards in a terrifying bestial roar. INFANTRY WARBOSS model only. At the start of the Fight phase , select one enemy unit within Engagement range of the bearer. That unit must take a Battle-shock test , and when doing so, subtract 1 from the result.",
+            "eligibilityText": "INFANTRY WARBOSS model only."
+          },
+          {
+            "id": "da-biggest-boss",
+            "name": "Da Biggest Boss",
+            "points": 15,
+            "body": "The bigger the Waaagh!, the bigger the boss must be to exert control. This Ork has countless huge battles under his belt and has grown in stature and aggression to match. INFANTRY WARBOSS model only. Add 2 to the bearer\u2019s Wounds characteristic.",
+            "eligibilityText": "INFANTRY WARBOSS model only."
+          },
+          {
+            "id": "eadstompa",
+            "name": "\u2019Eadstompa",
+            "points": 10,
+            "body": "A solid slab of muscle and aggression, this Ork is living embodiment of the undeniable truth of his enemies\u2019 inferiority. INFANTRY WARBOSS model only. Each time the bearer makes an attack that targets a unit that is below its Starting Strength , re-roll a Wound roll of 1. If that unit is Below Half-strength , you can re-roll the Wound roll instead.",
+            "eligibilityText": "INFANTRY WARBOSS model only."
+          },
+          {
+            "id": "tellyporta",
+            "name": "Tellyporta",
+            "points": 25,
+            "body": "Nothing shocks the enemy like an angry mob of the biggest and surliest Orks imaginable suddenly appearing in a blast of green lightning! WARBOSS IN MEGA ARMOUR model only. Models in the bearer\u2019s unit have the Deep Strike ability.",
+            "eligibilityText": "Nothing shocks the enemy like an angry mob of the biggest and surliest Orks imaginable suddenly appearing in a blast of green lightning! WARBOSS IN MEGA ARMOUR model only."
+          }
+        ],
+        "stratagems": [
+          {
+            "id": "1cp",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Battle Tactic",
+            "when": "Your Shooting phase or the Fight phase .",
+            "target": "One NOBZ or MEGANOBZ unit from your army that has not been selected to shoot or fight this phase.",
+            "effect": "Until the end of the phase, each time a model in your unit makes an attack, re-roll a Hit roll of 1. If a Waaagh! is active for your unit, you can re-roll the Hit roll instead.",
+            "phaseTags": [
+              "shooting",
+              "fight"
+            ],
+            "keywordHints": [
+              "NOBZ",
+              "MEGANOBZ"
+            ]
+          },
+          {
+            "id": "1cp-2",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Strategic Ploy",
+            "when": "Your opponent\u2019s Shooting phase or the Fight phase , just after an enemy unit has selected its targets.",
+            "target": "One NOBZ or MEGANOBZ unit from your army that was selected as the target of one or more of the attacking unit\u2019s attacks.",
+            "effect": "Until the end of the phase, each time a model in your unit is destroyed , if that model has not shot or fought this phase, roll one D6, adding 2 to the result if a Waaagh! is active for your unit. On a 5+, do not remove the destroyed model from play; it can shoot or fight after the attacking unit has finished making its attacks, and is then removed from play.",
+            "phaseTags": [
+              "shooting",
+              "fight",
+              "opponent"
+            ],
+            "keywordHints": [
+              "NOBZ",
+              "MEGANOBZ"
+            ]
+          },
+          {
+            "id": "1cp-3",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Strategic Ploy",
+            "when": "Fight phase , just after an enemy unit is destroyed .",
+            "target": "One NOBZ or MEGANOBZ unit from your army that destroyed that enemy unit.",
+            "effect": "Until the end of the phase, each time your unit makes a Consolidation move , it can move up to D3+3\" instead of up to 3\". If a Waaagh! is active for your unit, it can move up to 6\" instead.",
+            "phaseTags": [
+              "fight"
+            ],
+            "keywordHints": [
+              "NOBZ",
+              "MEGANOBZ"
+            ]
+          },
+          {
+            "id": "1cp-4",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Epic Deed",
+            "when": "Your Charge phase , just after a NOBZ or MEGANOBZ unit from your army ends a Charge move .",
+            "target": "That NOBZ or MEGANOBZ unit.",
+            "effect": "Select one enemy unit within Engagement Range of your unit, then roll one D6 for each model in your unit that is within Engagement Range of that enemy unit: for each 5+, that enemy unit suffers 1 mortal wound (to a maximum of 6 mortal wounds). If a Waaagh! is active for your unit, that enemy unit suffers 1 mortal wound for each 4+ instead.",
+            "phaseTags": [
+              "charge"
+            ],
+            "keywordHints": [
+              "NOBZ",
+              "MEGANOBZ"
+            ]
+          },
+          {
+            "id": "1cp-5",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Battle Tactic",
+            "when": "Your opponent\u2019s Movement phase , just after an enemy unit is selected to Fall Back .",
+            "target": "One NOBZ or MEGANOBZ unit from your army within Engagement Range of that enemy unit.",
+            "effect": "When that enemy unit Falls Back , all models in that enemy unit must take a Desperate Escape test . When doing so, if a Waaagh! is active for your unit, subtract 1 from each of those tests.",
+            "phaseTags": [
+              "movement",
+              "opponent"
+            ],
+            "keywordHints": [
+              "NOBZ",
+              "MEGANOBZ"
+            ]
+          },
+          {
+            "id": "1cp-6",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Battle Tactic",
+            "when": "Your opponent\u2019s Shooting phase , just after an enemy unit has selected its targets.",
+            "target": "One NOBZ or MEGANOBZ unit from your army that was selected as the target of one or more of the attacking unit\u2019s attacks.",
+            "effect": "Until the attacking unit has finished making its attacks, each time an attack targets your unit, worsen the Armour Penetration characteristic of that attack by 1.",
+            "phaseTags": [
+              "shooting",
+              "opponent"
+            ],
+            "keywordHints": [
+              "NOBZ",
+              "MEGANOBZ"
+            ]
+          }
+        ],
+        "id": "bully-boyz"
+      },
+      {
+        "name": "Taktikal Brigade",
+        "summary": "The Orks who belong to the Blood Axe clan seek to apply their own brand of taktiks to their endless wars. The most cunning of Blood Axe leaders have adapted the strategies of other species into a unique brand of clandestine warfare that, whilst simplistic, is brutally effective. Stratagems DAT\u2019S OURS 1CP Taktikal Brigade \u2013 Strategic Ploy Stratagem A few Orks, particularly those of the Blood Axe Clan, can resist their destructive urges long enough to prioritise the seizing of objectives. WHEN: Command phase . TARGET: One ORKS unit from your army that is within Engagement Range of one or more enemy units. EFFECT: Until the start of the next Command phase, add 1 to the Objective Control characteristic of models in your unit. FIGHT PROPPA 1CP Taktikal Brigade \u2013 Battle Tactic Stratagem Some deviant Blood Axes go so far as to practise hand-to-hand combat, tailoring fighting styles to specific types of enemies. WHEN: Fight phase . TARGET: One ORKS INFANTRY or ORKS MOUNTED unit from your army that has not been selected to fight this phase. EFFECT: Select the [SUSTAINED HITS 1] or [LETHAL HITS] ability. Until the end of the phase, melee weapons equipped by models in your unit have the selected ability. TAKTIKAL RETREAT 1CP Taktikal Brigade \u2013 Strategic Ploy Stratagem Blood Axes feel no shame in retreating from a fight, particularly if the boss wants someone else duffed up. WHEN: Your Movement phase , just after an ORKS unit from your army Falls Back . TARGET: That ORKS unit. EFFECT: Until the end of the turn, your unit is eligible to shoot and declare a charge in a turn in which it Fell Back. KRUNCHIN\u2019 DESCENT 1CP Taktikal Brigade \u2013 Battle Tactic Stratagem With their rocket packs at full throttle, Stormboyz plummet to smash into their foes with bone-crushing force. WHEN: Your Charge phase , just after a STORMBOYZ unit from your army ends a Charge move. TARGET: That STORMBOYZ unit. EFFECT: Select one enemy unit within Engagement Range of your unit, then roll one D6 for each model in your unit that is within Engagement Range of that enemy unit: for each 4+, that enemy unit suffers 1 mortal wound (to a maximum of 6 mortal wounds). ON TO DA NEXT 1CP Taktikal Brigade \u2013 Strategic Ploy Stratagem Seeing little value in pursuing fleeing foes, Blood Axe mobs turn their attention towards the next fight or press towards whatever cache of shiny gubbinz the boss desires. WHEN: Your opponent\u2019s Movement phase , just after an enemy unit Falls Back . TARGET: One ORKS unit from your army that was within Engagement Range of that enemy unit at the start of the phase. EFFECT: Your unit can make a Normal move of up to 6\". DED SNEAKY 1CP Taktikal Brigade \u2013 Strategic Ploy Stratagem Utilising camouflage, cover or misdirection, these Orks slip away to prepare their next ambush, leaving their foes staring at thin air. WHEN: End of your opponent\u2019s Fight phase . TARGET: One KOMMANDOS or STORMBOYZ unit from your army that is not within Engagement Range of one or more enemy units. EFFECT: Remove your unit from the battlefield and place it into Strategic Reserves .",
+        "rule": {
+          "name": "Lissen \u2019Ere",
+          "body": "Lissen \u2019Ere Blood Axe leaders bellow actual orders to the ladz under their command. Once per battle round , in your Command phase or after being set up on the battlefield in your Movement phase , each BOSS SNIKROT , MEK and WARBOSS model in your army can issue Taktiks abilities. To do so, select one of the Taktiks abilities below and select one friendly ORKS unit within 6\" of that model to issue them to. That model must take a Leadership test : if failed, the selected unit suffers 1 mortal wound . Until the start of your next Command phase, the selected unit is affected by the selected Taktik. A unit cannot have Taktiks issued to it in this way more than once per battle round. Taktiks abilities cannot be issued to Battle-shocked units, and if a unit affected by Taktiks becomes Battle-shocked, all Taktiks cease to affect that unit while it is Battle-shocked. Get Stuck In: You can re-roll Charge rolls made for this unit. Get On Wiv It: Add 1 to the Strength characteristic of melee weapons equipped by models in this unit. Sneaky Stalkin\u2019: INFANTRY and MOUNTED models (excluding MEGANOBZ ) in this unit have the Stealth ability and each time a ranged attack targets this unit, those models have the Benefit of Cover against that attack. Shoota Drills: Each time an INFANTRY or MOUNTED model in this unit makes a ranged attack, add 1 to the Hit roll . KEYWORDS STORMBOYZ units from your army gain the BATTLELINE keyword."
+        },
+        "restrictionsText": [],
+        "enhancements": [
+          {
+            "id": "skwad-leader",
+            "name": "Skwad Leader",
+            "points": 15,
+            "body": "An exemplar of the Blood Axes\u2019 devious arts, this Warboss leads mobs of cunning Kommandos to battle. WARBOSS INFANTRY model only. During the Declare Battle Formations step, the bearer can be attached to a KOMMANDOS unit. While leading a Kommandos unit, it has the Infiltrators and Stealth abilities.",
+            "eligibilityText": "WARBOSS INFANTRY model only."
+          },
+          {
+            "id": "mek-kaptin",
+            "name": "Mek Kaptin",
+            "points": 45,
+            "body": "Whilst Flash Gitz hate discipline of any sort, particularly militant Meks can keep them in line with a combination of brutal discipline and the promise of shiny gubbinz. BIG MEK , BIG MEK IN MEGA ARMOUR or BIG MEK WITH SHOKK ATTACK GUN model only. During the Declare Battle Formations step, the bearer can be attached to a FLASH GITZ unit. Each time a model in the bearer\u2019s unit makes a ranged attack, you can re-roll the Hit roll .",
+            "eligibilityText": "BIG MEK , BIG MEK IN MEGA ARMOUR or BIG MEK WITH SHOKK ATTACK GUN model only."
+          },
+          {
+            "id": "mork-s-kunnin",
+            "name": "Mork\u2019s Kunnin\u2019",
+            "points": 15,
+            "body": "Possessed of an exceptionally keen mind \u2013 for an Ork at least \u2013 this boss matches wits with his opponents, holding his ladz back until an opportune moment arrives. ORKS model only. After both players have deployed their armies, select up to three ORKS units from your army and redeploy them. When doing so, you can set those units up in Strategic Reserves , regardless of how many units are already in Strategic Reserves.",
+            "eligibilityText": "ORKS model only."
+          },
+          {
+            "id": "gob-boomer",
+            "name": "Gob Boomer",
+            "points": 10,
+            "body": "Cobbled together from the remains of a humie vox-caster, this device amplifies this Ork\u2019s already booming voice, carrying their bellowed orders further WARBOSS or MEK model only. Each time the bearer issues Taktiks , it can do so to a friendly ORKS INFANTRY or ORKS MOUNTED unit within 18\", instead of 6\".",
+            "eligibilityText": "Cobbled together from the remains of a humie vox-caster, this device amplifies this Ork\u2019s already booming voice, carrying their bellowed orders further WARBOSS or MEK model only."
+          }
+        ],
+        "stratagems": [
+          {
+            "id": "1cp",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Strategic Ploy",
+            "when": "Command phase .",
+            "target": "One ORKS unit from your army that is within Engagement Range of one or more enemy units.",
+            "effect": "Until the start of the next Command phase, add 1 to the Objective Control characteristic of models in your unit.",
+            "phaseTags": [
+              "command"
+            ],
+            "keywordHints": [
+              "ORKS"
+            ]
+          },
+          {
+            "id": "1cp-2",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Battle Tactic",
+            "when": "Fight phase .",
+            "target": "One ORKS INFANTRY or ORKS MOUNTED unit from your army that has not been selected to fight this phase.",
+            "effect": "Select the [SUSTAINED HITS 1] or [LETHAL HITS] ability. Until the end of the phase, melee weapons equipped by models in your unit have the selected ability.",
+            "phaseTags": [
+              "fight"
+            ],
+            "keywordHints": [
+              "ORKS INFANTRY",
+              "ORKS MOUNTED"
+            ]
+          },
+          {
+            "id": "1cp-3",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Strategic Ploy",
+            "when": "Your Movement phase , just after an ORKS unit from your army Falls Back .",
+            "target": "That ORKS unit.",
+            "effect": "Until the end of the turn, your unit is eligible to shoot and declare a charge in a turn in which it Fell Back.",
+            "phaseTags": [
+              "movement"
+            ],
+            "keywordHints": [
+              "ORKS"
+            ]
+          },
+          {
+            "id": "1cp-4",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Battle Tactic",
+            "when": "Your Charge phase , just after a STORMBOYZ unit from your army ends a Charge move.",
+            "target": "That STORMBOYZ unit.",
+            "effect": "Select one enemy unit within Engagement Range of your unit, then roll one D6 for each model in your unit that is within Engagement Range of that enemy unit: for each 4+, that enemy unit suffers 1 mortal wound (to a maximum of 6 mortal wounds).",
+            "phaseTags": [
+              "charge"
+            ],
+            "keywordHints": [
+              "STORMBOYZ"
+            ]
+          },
+          {
+            "id": "1cp-5",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Strategic Ploy",
+            "when": "Your opponent\u2019s Movement phase , just after an enemy unit Falls Back .",
+            "target": "One ORKS unit from your army that was within Engagement Range of that enemy unit at the start of the phase.",
+            "effect": "Your unit can make a Normal move of up to 6\".",
+            "phaseTags": [
+              "movement",
+              "opponent"
+            ],
+            "keywordHints": [
+              "ORKS"
+            ]
+          },
+          {
+            "id": "1cp-6",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Strategic Ploy",
+            "when": "End of your opponent\u2019s Fight phase .",
+            "target": "One KOMMANDOS or STORMBOYZ unit from your army that is not within Engagement Range of one or more enemy units.",
+            "effect": "Remove your unit from the battlefield and place it into Strategic Reserves .",
+            "phaseTags": [
+              "fight",
+              "opponent"
+            ],
+            "keywordHints": [
+              "KOMMANDOS",
+              "STORMBOYZ"
+            ]
+          }
+        ],
+        "id": "taktikal-brigade"
+      },
+      {
+        "name": "More Dakka!",
+        "summary": "Of all the Ork manias, few are as widespread as the love of heavy firepower. Temporarily united by a shared love of loud and destructive dakka, hordes of similarly obsessed Orks can produce storms of killing fire capable of felling even the most heavily armoured of enemies. Stratagems ORKS IS STILL ORKS 1CP More Dakka! \u2013 Battle Tactic Stratagem Even though they may be armed with the flashiest shootas, when enemies stray within arms reach, an Orks first and strongest instinct is to use their snazzy shoota as a cudgel, and bash their foe to a pulp. WHEN: Fight phase . TARGET: One ORKS unit from your army that has not been selected to fight this phase. EFFECT: Until the end of the phase, each time a model in your unit makes an attack that targets an enemy unit, re-roll a Wound roll of 1. If that enemy unit is within range of an objective marker , you can re-roll the Wound roll instead. GET STUCK IN, LADZ! 2CP More Dakka! \u2013 Epic Deed Stratagem Lashing out with ferocious blows and bellowing loud enough to burst eardrums, the biggest Ork present persuades his ladz to fight even harder. WHEN: Your Command phase . TARGET: One ORKS unit from your army (excluding GRETCHIN units). EFFECT: Until the start of your next Command phase, the Waaagh! is active for your unit, even if you have already called a Waaagh! this battle. Designer\u2019s Note: This means that any abilities that are in effect while the Waaagh! is active for your army will be in effect for your unit. HUGE SHOW-OFFS 1CP More Dakka! \u2013 Epic Deed Stratagem The pilots of the biggest Orky war machines are prone to showing off when the dakka starts flying. After all, they have a reputation to uphold. WHEN: Your Command phase . TARGET: One ORKS WALKER unit (excluding KILLA KANS ) from your army. EFFECT: Until the start of your next Command phase, improve your unit\u2019s Move, Leadership and Objective Control characteristics by 1, and each time a model in your unit makes an attack, add 1 to the Hit roll . LONG, UNCONTROLLED BURSTS 1CP More Dakka! \u2013 Battle Tactic Stratagem When facing off against sneaky gitz who like to lurk in cover, most Orks believe the most effective strategy is to fire off so many bullets and munitions that something is bound to hit the target. WHEN: Your Shooting phase . TARGET: One ORKS unit from your army that has not been selected to shoot this phase. EFFECT: Until the end of the phase, ranged weapons equipped by models in your unit have the [IGNORES COVER] ability. SPESHUL SHELLS 1CP More Dakka! \u2013 Wargear Stratagem Nothing helps a round punch through armour better than stuffing it full of extra propellant. WHEN: Your Shooting phase . TARGET: One ORKS unit from your army that has not been selected to shoot this phase. EFFECT: Until the end of the phase, each time a model in your unit makes a ranged attack that targets the closest eligible target within 18\", improve the Armour Penetration characteristic of ranged weapons equipped by models in your unit by 1. CALL DAT DAKKA? 1CP More Dakka! \u2013 Strategic Ploy Stratagem Gun-crazed mobs of Orks take incoming fire as a primal challenge, one that must be answered with an even bigger show of dakka. WHEN: Your opponent\u2019s Shooting phase , just after an enemy unit has shot. TARGET: One ORKS unit from your army that had one or more of its models destroyed as a result of the attacking unit\u2019s attacks. EFFECT: Your unit can shoot as if it were your Shooting phase, but must target only that enemy unit when doing so, and can only do so if that enemy unit is an eligible target.",
+        "rule": {
+          "name": "Dakka! Dakka! Dakka!",
+          "body": "Dakka! Dakka! Dakka! Orks have no real concept of ammunition preservation, instead tending to hold the trigger down until their ammunition runs dry or their weapon falls apart in their hands. Ranged weapons equipped by ORKS INFANTRY and ORKS WALKER models from your army have the [ASSAULT] ability. While the Waaagh! is active for your army, during your Shooting phase , ranged weapons equipped by ORKS INFANTRY and ORKS WALKER models from your army have the [SUSTAINED HITS 1] ability"
+        },
+        "restrictionsText": [],
+        "enhancements": [
+          {
+            "id": "da-gobshot-thunderbuss",
+            "name": "Da Gobshot Thunderbuss",
+            "points": 15,
+            "body": "Requiring an entire chest of teef to be loaded into its breach before each shot, the Gobshot Thunderbuss\u2019 worky gubbinz plates its unconventional ammunition in gold before firing it in an inescapable cone of fanged death. Not only can this madcap weapon sweep away swathes of enemies with every shot, it also fires a literal fortune in teef every time, proclaiming its owner\u2019s obscene wealth in the process. ORKS model only. Ranged weapons equipped by the bearer have the [DEVASTATING WOUNDS] and [HAZARDOUS] abilities.",
+            "eligibilityText": "ORKS model only."
+          },
+          {
+            "id": "dead-shiny-shootas",
+            "name": "Dead Shiny Shootas",
+            "points": 35,
+            "body": "Rumoured to have been made by Big Mek Buzzgob, da Dead Shiny Shootas are a set of multi-barrelled brutes packed full of dakka. The guns kick out a deafening storm of hot lead, much to the enjoyment of the Orks pulling the triggers, their volume of fire so great that even the most inaccurate shooter can land a respectable number of hits. ORKS model only. Ranged weapons equipped by models in the bearer\u2019s unit have the [RAPID FIRE 1] ability.",
+            "eligibilityText": "ORKS model only."
+          },
+          {
+            "id": "targetin-squigs",
+            "name": "Targetin\u2019 Squigs",
+            "points": 15,
+            "body": "The flashiest gitz have specially-bred targetin\u2019 squigs mounted atop their favourite shoota. It\u2019s not certain whether these creatures actually aid the bearer or not as they cling for dear life atop their perches, which are inevitably the biggest shoota the owner has, as nothing aids accuracy like firing so many shots that you just can\u2019t miss. ORKS model only. Each time a model in the bearer\u2019s unit makes a ranged attack, add 1 to the Hit roll .",
+            "eligibilityText": "ORKS model only."
+          },
+          {
+            "id": "zog-off-and-eat-dakka",
+            "name": "Zog Off and Eat Dakka!",
+            "points": 10,
+            "body": "There\u2019s no point in having the loudest and flashiest shoota if gitz don\u2019t let ya fire them. This Ork will even go so far as to avoid a punch up in order to fire his snazzy weapons. ORKS model only. The bearer\u2019s unit is eligible to shoot in a turn in which it Fell Back .",
+            "eligibilityText": "ORKS model only."
+          }
+        ],
+        "stratagems": [
+          {
+            "id": "1cp",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Battle Tactic",
+            "when": "Fight phase .",
+            "target": "One ORKS unit from your army that has not been selected to fight this phase.",
+            "effect": "Until the end of the phase, each time a model in your unit makes an attack that targets an enemy unit, re-roll a Wound roll of 1. If that enemy unit is within range of an objective marker , you can re-roll the Wound roll instead.",
+            "phaseTags": [
+              "fight"
+            ],
+            "keywordHints": [
+              "ORKS"
+            ]
+          },
+          {
+            "id": "2cp",
+            "name": "2CP",
+            "cp": 2,
+            "kind": "Epic Deed",
+            "when": "Your Command phase .",
+            "target": "One ORKS unit from your army (excluding GRETCHIN units).",
+            "effect": "Until the start of your next Command phase, the Waaagh! is active for your unit, even if you have already called a Waaagh! this battle. Designer\u2019s Note: This means that any abilities that are in effect while the Waaagh! is active for your army will be in effect for your unit.",
+            "phaseTags": [
+              "command"
+            ],
+            "keywordHints": [
+              "ORKS",
+              "GRETCHIN"
+            ]
+          },
+          {
+            "id": "1cp-2",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Epic Deed",
+            "when": "Your Command phase .",
+            "target": "One ORKS WALKER unit (excluding KILLA KANS ) from your army.",
+            "effect": "Until the start of your next Command phase, improve your unit\u2019s Move, Leadership and Objective Control characteristics by 1, and each time a model in your unit makes an attack, add 1 to the Hit roll .",
+            "phaseTags": [
+              "command"
+            ],
+            "keywordHints": [
+              "ORKS WALKER",
+              "KILLA KANS"
+            ]
+          },
+          {
+            "id": "1cp-3",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Battle Tactic",
+            "when": "Your Shooting phase .",
+            "target": "One ORKS unit from your army that has not been selected to shoot this phase.",
+            "effect": "Until the end of the phase, ranged weapons equipped by models in your unit have the [IGNORES COVER] ability.",
+            "phaseTags": [
+              "shooting"
+            ],
+            "keywordHints": [
+              "ORKS"
+            ]
+          },
+          {
+            "id": "1cp-4",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Wargear",
+            "when": "Your Shooting phase .",
+            "target": "One ORKS unit from your army that has not been selected to shoot this phase.",
+            "effect": "Until the end of the phase, each time a model in your unit makes a ranged attack that targets the closest eligible target within 18\", improve the Armour Penetration characteristic of ranged weapons equipped by models in your unit by 1.",
+            "phaseTags": [
+              "shooting"
+            ],
+            "keywordHints": [
+              "ORKS"
+            ]
+          },
+          {
+            "id": "1cp-5",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Strategic Ploy",
+            "when": "Your opponent\u2019s Shooting phase , just after an enemy unit has shot.",
+            "target": "One ORKS unit from your army that had one or more of its models destroyed as a result of the attacking unit\u2019s attacks.",
+            "effect": "Your unit can shoot as if it were your Shooting phase, but must target only that enemy unit when doing so, and can only do so if that enemy unit is an eligible target.",
+            "phaseTags": [
+              "shooting",
+              "opponent"
+            ],
+            "keywordHints": [
+              "ORKS"
+            ]
+          }
+        ],
+        "id": "more-dakka"
+      },
+      {
+        "name": "Freebooter Krew",
+        "summary": "Ork Freebooterz are the most selfish, acquisitive and merciless of their kind. Kicked out of their tribes for failing to respect even the brutal structures of Orkoid society, they find their way into the company of equally shifty gits and form Freebooter krewz. Freebooterz typically sail the void aboard kroozers bristling with guns and boarding craft, and take every opportunity to pillage and destroy everything in their path. When Freebooter Krewz gather under the banner of an especially ambitious and cunning Kaptin, they form pirate fleets that can endanger even fortified worlds and full-fledged battle stations. Any manner of Ork can become a Freebooter \u2013 though the most iconic of their kind are the gunned-up show-offs known as Flash Gitz \u2013 and so their krewz may include mobs of Boyz and Grots, hurtling packs of bad Ork Bikerboyz, piratical Beast Snaggas, fleets of trophy-festooned Battlewagons and more besides. The only unifying features are the Freebooterz\u2019 greed for loot of every kind, and their willingness to do just about anything to get their talons on it. Stratagems BASH AND GRAB 1CP Freebooter Krew \u2013 Battle Tactic Stratagem Freebooterz waste no time getting violently stuck into anyone unwise enough to try to keep prized loot out of their grasping claws. WHEN: The Fight phase . TARGET: One ORKS unit from your army that has not been selected to fight this phase. EFFECT: Until the end of the phase, each time a model in your unit makes an attack that targets an enemy unit within range of the loot objective , you can re-roll the Wound roll . GRAB AND BASH 1CP Freebooter Krew \u2013 Strategic Ploy Stratagem Few warriors in the galaxy fight with greater brutality than a Freebooter determined to hang onto his loot. WHEN: Your Command phase . TARGET: One Orks unit from your army (excluding GRETCHIN units) that is within range of the loot objective . EFFECT: Until the start of your next Command phase, the Waaagh! is active for your unit, even if you have already called a Waaagh! this battle. Designer\u2019s Note: This means that any abilities that are in effect while the Waaagh! is active for your army will be in effect for your unit. BOARDIN\u2019 RUSH 1CP Freebooter Krew \u2013 Battle Tactic Stratagem Having cut their gold-plated fangs storming aboard hostile warships, these Freebooterz are good at getting stuck straight into the enemy. WHEN: Your Movement phase . TARGET: One ORKS unit from your army that has not been selected to move this phase. EFFECT: Until the end of the phase, each time your unit Advances , do not make an Advance roll . Instead, until the end of the phase, add 6\" to the Move characteristic of models in your unit. DECK FRAGGERS 1CP Freebooter Krew \u2013 Strategic Ploy Stratagem Invented by some sadistic Bad Mek, these shrapnel-packed rounds of kustom ammunition are excellent for scything down tight-packed enemy infantry. WHEN: Your Shooting phase . TARGET: One ORKS unit from your army that has not been selected to shoot this phase. EFFECT: Until the end of the phase, each time a model in your unit targets an INFANTRY unit with a ranged weapon, that weapon has the [BLAST] ability. ROLLING LOOT-HEAP 1CP Freebooter Krew \u2013 Strategic Ploy Stratagem Just because an enemy vehicle is still mobile and fighting doesn\u2019t stop any suitably arrogant Flash Gitz from claiming it as their loot, especially when their snazzguns are more than capable of explosively backing up that claim. WHEN: Your Shooting phase . TARGET: One FLASH GITZ unit from your army that has not been selected to shoot this phase. EFFECT: Until the end of the phase, ranged weapons equipped by models in your unit have the [ANTI-VEHICLE 4+] ability. KRUMP AND RUN 1CP Freebooter Krew \u2013 Strategic Ploy Stratagem Freebooterz are unscrupulous pirates through and through, always on the look out for new looting opportunities and sometimes even willing to forgo a good punch up in favour of hauling away their riches. WHEN: Your opponent\u2019s Movement phase , just after an enemy unit falls back . TARGET: One ORKS unit from your army that was within engagement range of that enemy unit at the start of the phase and is not within range of one or more enemy units. EFFECT: Your unit can make a Normal move of up to 6\".",
+        "rule": {
+          "name": "Here Be Loot",
+          "body": "Here Be Loot Grabbing loot is a Freebooter\u2019s favourite pastime, followed closely by bludgeoning senseless anyone stupid enough to try to stop him doing so \u2013 or, even worse, seeking to take the loot for themselves. At the start of the battle round , select one objective marker . Until the start of the next battle round, that objective marker is your loot objective. Each time a model in an ORKS INFANTRY , ORKS MOUNTED or ORKS WALKER unit from your army makes an attack, that attack has the [SUSTAINED HITS 1] ability if either or both of the following are true: That model\u2019s unit is within range of your loot objective. That attack targets a unit within range of your loot objective."
+        },
+        "restrictionsText": [],
+        "enhancements": [
+          {
+            "id": "da-kaptin",
+            "name": "Da Kaptin",
+            "points": 10,
+            "body": "Kaptins are experts in violently motivating their lads in the pursuit of even more loot. WARBOSS model only. Once per battle round , at the start of any phase, you can select one friendly ORKS unit that is Battle-shocked and within 12\" of the bearer. That unit suffers D3 mortal wounds and it is no longer Battle-shocked.",
+            "eligibilityText": "WARBOSS model only."
+          },
+          {
+            "id": "git-spotter-squig",
+            "name": "Git-spotter Squig",
+            "points": 20,
+            "body": "Wealthy Freebooterz can afford augmetically enhanced Git-spotter Squigs to sit on their shoulders and spot gits. ORKS model only. Ranged weapons equipped by models in the bearer\u2019s unit have the [IGNORES COVER] ability.",
+            "eligibilityText": "ORKS model only."
+          },
+          {
+            "id": "bionik-workshop",
+            "name": "Bionik Workshop",
+            "points": 15,
+            "body": "Bad Meks and Doks are sought after by Freebooterz to provide cybork bioniks for those with the teef to pay. BIG MEK or PAINBOY model only. At the start of the battle, roll one D3 and compare the result to the list below. Until the end of the battle, models in the bearer\u2019s unit have that bioniks ability. Bionik Legs: Add 2\" to the Move characteristic of this model. Bionik Arms: Add 1 to the Strength characteristic of melee weapons equipped by this model. Bionik Bonce: Improve the Weapon Skill characteristic of melee weapons equipped by this model by 1.",
+            "eligibilityText": "BIG MEK or PAINBOY model only."
+          },
+          {
+            "id": "razgit-s-magik-map",
+            "name": "Razgit\u2019s Magik Map",
+            "points": 25,
+            "body": "Stolen from a humie cogboy, this remarkable digital map helps Freebooterz outwit their enemies. ORKS model only. After both players have deployed their armies, select up to three ORKS INFANTRY units from your army and redeploy them. When doing so, you can set those units up in Strategic Reserves , regardless of how many units are already in Strategic Reserves.",
+            "eligibilityText": "ORKS model only."
+          }
+        ],
+        "stratagems": [
+          {
+            "id": "1cp",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Battle Tactic",
+            "when": "The Fight phase .",
+            "target": "One ORKS unit from your army that has not been selected to fight this phase.",
+            "effect": "Until the end of the phase, each time a model in your unit makes an attack that targets an enemy unit within range of the loot objective , you can re-roll the Wound roll .",
+            "phaseTags": [
+              "fight"
+            ],
+            "keywordHints": [
+              "ORKS"
+            ]
+          },
+          {
+            "id": "1cp-2",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Strategic Ploy",
+            "when": "Your Command phase .",
+            "target": "One Orks unit from your army (excluding GRETCHIN units) that is within range of the loot objective .",
+            "effect": "Until the start of your next Command phase, the Waaagh! is active for your unit, even if you have already called a Waaagh! this battle. Designer\u2019s Note: This means that any abilities that are in effect while the Waaagh! is active for your army will be in effect for your unit.",
+            "phaseTags": [
+              "command"
+            ],
+            "keywordHints": [
+              "GRETCHIN"
+            ]
+          },
+          {
+            "id": "1cp-3",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Battle Tactic",
+            "when": "Your Movement phase .",
+            "target": "One ORKS unit from your army that has not been selected to move this phase.",
+            "effect": "Until the end of the phase, each time your unit Advances , do not make an Advance roll . Instead, until the end of the phase, add 6\" to the Move characteristic of models in your unit.",
+            "phaseTags": [
+              "movement"
+            ],
+            "keywordHints": [
+              "ORKS"
+            ]
+          },
+          {
+            "id": "1cp-4",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Strategic Ploy",
+            "when": "Your Shooting phase .",
+            "target": "One ORKS unit from your army that has not been selected to shoot this phase.",
+            "effect": "Until the end of the phase, each time a model in your unit targets an INFANTRY unit with a ranged weapon, that weapon has the [BLAST] ability.",
+            "phaseTags": [
+              "shooting"
+            ],
+            "keywordHints": [
+              "ORKS"
+            ]
+          },
+          {
+            "id": "1cp-5",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Strategic Ploy",
+            "when": "Your Shooting phase .",
+            "target": "One FLASH GITZ unit from your army that has not been selected to shoot this phase.",
+            "effect": "Until the end of the phase, ranged weapons equipped by models in your unit have the [ANTI-VEHICLE 4+] ability.",
+            "phaseTags": [
+              "shooting"
+            ],
+            "keywordHints": [
+              "FLASH GITZ"
+            ]
+          },
+          {
+            "id": "1cp-6",
+            "name": "1CP",
+            "cp": 1,
+            "kind": "Strategic Ploy",
+            "when": "Your opponent\u2019s Movement phase , just after an enemy unit falls back .",
+            "target": "One ORKS unit from your army that was within engagement range of that enemy unit at the start of the phase and is not within range of one or more enemy units.",
+            "effect": "Your unit can make a Normal move of up to 6\".",
+            "phaseTags": [
+              "movement",
+              "opponent"
+            ],
+            "keywordHints": [
+              "ORKS"
+            ]
+          }
+        ],
+        "id": "freebooter-krew"
+      }
+    ]
+  }
+}

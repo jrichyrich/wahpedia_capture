@@ -109,6 +109,7 @@
         return {
             selectedOption: entry ? entry.selectedOption : null,
             selectedUpgrades: entry ? entry.selectedUpgrades : [],
+            selectedEnhancement: entry ? entry.activeEnhancement : null,
             selectedPoints: entry ? entry.linePoints : null,
             quantity: entry ? entry.quantity : 1,
             renderMode: previewRenderMode || "default",
@@ -277,6 +278,10 @@
             return Boolean(unit && Array.isArray(unit.keywords) && unit.keywords.includes("CHARACTER"));
         }
 
+        function isEpicHeroUnit(unit) {
+            return Boolean(unit && Array.isArray(unit.keywords) && unit.keywords.includes("EPIC HERO"));
+        }
+
         function ensureWarlordSelection(preferredInstanceId) {
             const army = ensureArmyState();
             const characterEntryIds = state.roster
@@ -382,6 +387,7 @@
                 upgradeOptionIds: [],
                 quantity: 1,
                 wargearSelections: {},
+                enhancementId: null,
                 attachedToInstanceId: null,
                 embarkedInInstanceId: null,
             };
@@ -430,6 +436,22 @@
                 return false;
             }
             entry.quantity = Math.max(1, Number(quantity) || 1);
+            rerenderAndPersist();
+            return true;
+        }
+
+        function updateRosterEnhancement(instanceId, enhancementId) {
+            const entry = state.roster.find((item) => item.instanceId === instanceId);
+            if (!entry) {
+                return false;
+            }
+            const unit = catalogUnitById(entry.unitId);
+            if (!unit || !isCharacterUnit(unit) || isEpicHeroUnit(unit)) {
+                entry.enhancementId = null;
+                rerenderAndPersist();
+                return false;
+            }
+            entry.enhancementId = enhancementId ? String(enhancementId).trim() || null : null;
             rerenderAndPersist();
             return true;
         }
@@ -594,6 +616,13 @@
             return true;
         }
 
+        function updateArmyDetachment(detachmentId) {
+            const army = ensureArmyState();
+            army.detachmentId = detachmentId ? String(detachmentId).trim() || null : null;
+            rerenderAndPersist();
+            return true;
+        }
+
         function updateArmyWarlord(instanceId) {
             const army = ensureArmyState();
             const entry = state.roster.find((item) => item.instanceId === instanceId) || null;
@@ -671,6 +700,9 @@
             const wargearMulti = target && typeof target.closest === "function"
                 ? target.closest('[data-action="wargear-multi-toggle"]')
                 : null;
+            const enhancement = target && typeof target.closest === "function"
+                ? target.closest('[data-action="enhancement-select"]')
+                : null;
             const warlord = target && typeof target.closest === "function"
                 ? target.closest('[data-action="warlord-select"]')
                 : null;
@@ -710,6 +742,9 @@
                     wargearMulti
                 );
             }
+            if (enhancement) {
+                return updateRosterEnhancement(enhancement.dataset.instanceId, enhancement.value);
+            }
             if (warlord) {
                 return updateArmyWarlord(warlord.dataset.instanceId);
             }
@@ -744,7 +779,9 @@
             updateRosterWargear,
             updateRosterWargearAllocation,
             updateRosterWargearMulti,
+            updateRosterEnhancement,
             updateArmyBattleSize,
+            updateArmyDetachment,
             updateArmyWarlord,
             updateRosterAttachment,
             updateRosterEmbark,

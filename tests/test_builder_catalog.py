@@ -247,9 +247,11 @@ class BuilderCatalogTests(unittest.TestCase):
             output_root = Path(tmpdir) / "out"
             docs_root = Path(tmpdir) / "docs"
             source_cards_root = Path(tmpdir) / "cards"
+            faction_rules_root = Path(tmpdir) / "faction-rules"
             faction_dir = source_root / "test-faction"
             faction_dir.mkdir(parents=True)
             (source_cards_root / "test-faction").mkdir(parents=True)
+            faction_rules_root.mkdir(parents=True)
 
             unit_one = {
                 "exportSchemaVersion": 1,
@@ -346,12 +348,69 @@ class BuilderCatalogTests(unittest.TestCase):
                 encoding="utf-8",
             )
             (source_cards_root / "test-faction" / "One.png").write_bytes(b"fake-png")
+            (faction_rules_root / "test-faction.json").write_text(
+                json.dumps(
+                    {
+                        "schemaVersion": 1,
+                        "parserVersion": "test-parser",
+                        "generatedAt": "2026-03-30T00:00:00+00:00",
+                        "outputSlug": "test-faction",
+                        "sourceUrl": "http://example/faction",
+                        "rules": {
+                            "armyRules": [
+                                {
+                                    "id": "army-rule",
+                                    "name": "Martial Ka'tah",
+                                    "body": "Example army rule text.",
+                                    "sourceUrl": "http://example/faction",
+                                }
+                            ],
+                            "detachments": [
+                                {
+                                    "id": "shield-host",
+                                    "name": "Shield Host",
+                                    "summary": "Example detachment summary.",
+                                    "rule": {
+                                        "name": "Aegis",
+                                        "body": "Example detachment rule text.",
+                                    },
+                                    "restrictionsText": ["Example restriction"],
+                                    "enhancements": [
+                                        {
+                                            "id": "from-the-hall-of-armouries",
+                                            "name": "From the Hall of Armouries",
+                                            "points": 25,
+                                            "body": "Example enhancement.",
+                                            "eligibilityText": "Adeptus Custodes model only.",
+                                        }
+                                    ],
+                                    "stratagems": [
+                                        {
+                                            "id": "arcane-genetic-alchemy",
+                                            "name": "Arcane Genetic Alchemy",
+                                            "cp": 1,
+                                            "kind": "Battle Tactic",
+                                            "when": "Your opponent's Shooting phase, just after an enemy unit has selected its targets.",
+                                            "target": "One ADEPTUS CUSTODES unit from your army.",
+                                            "effect": "Example stratagem effect.",
+                                            "phaseTags": ["shooting", "opponent"],
+                                            "keywordHints": ["ADEPTUS CUSTODES"],
+                                        }
+                                    ],
+                                }
+                            ],
+                        },
+                    }
+                ),
+                encoding="utf-8",
+            )
 
             manifest = build_builder_catalog.build_all(
                 source_root,
                 output_root,
                 clean=True,
                 source_cards_root=source_cards_root,
+                faction_rules_root=faction_rules_root,
             )
             self.assertEqual(manifest["report"]["totals"]["factionCount"], 1)
             self.assertEqual(manifest["report"]["totals"]["unitCount"], 2)
@@ -359,6 +418,7 @@ class BuilderCatalogTests(unittest.TestCase):
             self.assertEqual(manifest["report"]["totals"]["manualSelectionCount"], 0)
             self.assertEqual(manifest["report"]["totals"]["manualWargearCount"], 0)
             self.assertEqual(manifest["report"]["totals"]["renderIssueCount"], 0)
+            self.assertEqual(manifest["report"]["totals"]["rulesWarningFactionCount"], 0)
             self.assertEqual(manifest["report"]["totals"]["sourceCardCopiedCount"], 1)
             self.assertEqual(manifest["report"]["totals"]["sourceCardMissingCount"], 1)
             self.assertTrue((output_root / "catalogs" / "test-faction.json").exists())
@@ -367,6 +427,10 @@ class BuilderCatalogTests(unittest.TestCase):
             self.assertFalse((output_root / "source-cards").exists())
             self.assertEqual(manifest["factions"][0]["sourceCardCopiedCount"], 1)
             self.assertEqual(manifest["factions"][0]["sourceCardMissingCount"], 1)
+            catalog = json.loads((output_root / "catalogs" / "test-faction.json").read_text(encoding="utf-8"))
+            self.assertEqual(catalog["schemaVersion"], 5)
+            self.assertEqual(catalog["rules"]["armyRules"][0]["name"], "Martial Ka'tah")
+            self.assertEqual(catalog["rules"]["detachments"][0]["enhancements"][0]["points"], 25)
             self.assertEqual(
                 manifest["report"]["factions"][0]["missingSourceCards"][0]["name"],
                 "Unit Two",
@@ -374,6 +438,76 @@ class BuilderCatalogTests(unittest.TestCase):
             build_builder_catalog.publish_docs_data(output_root, docs_root)
             build_builder_catalog.publish_source_cards(docs_root, source_cards_root)
             self.assertTrue((docs_root / "source-cards" / "test-faction" / "One.png").exists())
+
+    def test_build_all_uses_empty_rules_and_warning_when_rules_export_is_missing(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            source_root = Path(tmpdir) / "source"
+            output_root = Path(tmpdir) / "out"
+            source_cards_root = Path(tmpdir) / "cards"
+            faction_rules_root = Path(tmpdir) / "faction-rules"
+            faction_dir = source_root / "test-faction"
+            faction_dir.mkdir(parents=True)
+            source_cards_root.mkdir(parents=True)
+            faction_rules_root.mkdir(parents=True)
+
+            card = {
+                "exportSchemaVersion": 1,
+                "parserVersion": "2026-03-20-builder-fidelity-v2",
+                "source": {
+                    "url": "http://example/One",
+                    "normalizedUrl": "http://example/One",
+                    "canonicalSourceId": "wahapedia:one",
+                    "faction_slug": "test-faction",
+                    "datasheet_slug": "One",
+                    "output_slug": "test-faction",
+                },
+                "name": "Unit One",
+                "characteristics": {"M": '6"', "T": "4", "Sv": "3+", "W": "2", "Ld": "7+", "OC": "1"},
+                "weapons": {"ranged_weapons": [], "melee_weapons": []},
+                "abilities": {"core": [], "faction": [], "datasheet": [], "other": []},
+                "unit_composition": [
+                    {"type": "list", "items": ["5 Unit One"]},
+                    {"type": "points", "rows": [{"label": "5 models", "points": "95"}]},
+                ],
+                "keywords": ["INFANTRY"],
+                "faction_keywords": ["TEST"],
+                "sections": [],
+            }
+            (faction_dir / "index.json").write_text(json.dumps([card]), encoding="utf-8")
+            (source_root / "export-manifest.json").write_text(
+                json.dumps(
+                    {
+                        "exportSchemaVersion": 1,
+                        "parserVersion": "2026-03-20-builder-fidelity-v2",
+                        "records": [
+                            {
+                                "outputSlug": "test-faction",
+                                "datasheetSlug": "One",
+                                "canonicalSourceId": "wahapedia:one",
+                                "normalizedSourceUrl": "http://example/One",
+                                "exportSchemaVersion": 1,
+                                "parserVersion": "2026-03-20-builder-fidelity-v2",
+                                "sharedCoreHash": "shared-one",
+                            }
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+
+            manifest = build_builder_catalog.build_all(
+                source_root,
+                output_root,
+                clean=True,
+                source_cards_root=source_cards_root,
+                faction_rules_root=faction_rules_root,
+            )
+
+            catalog = json.loads((output_root / "catalogs" / "test-faction.json").read_text(encoding="utf-8"))
+            self.assertEqual(catalog["rules"], {"armyRules": [], "detachments": []})
+            self.assertEqual(manifest["report"]["totals"]["rulesWarningFactionCount"], 1)
+            self.assertEqual(manifest["factions"][0]["rulesWarningCount"], 1)
+            self.assertIn("Faction rules export missing", manifest["report"]["factions"][0]["rulesWarnings"][0])
 
     def test_build_all_fails_on_stale_export_schema(self):
         with tempfile.TemporaryDirectory() as tmpdir:
@@ -653,8 +787,12 @@ class BuilderAppSmokeTests(unittest.TestCase):
         self.assertIn("Export JSON", html)
         self.assertIn("Saved rosters", html)
         self.assertIn("battle-size-select", html)
+        self.assertIn("detachment-select", html)
+        self.assertIn("Army Rules", html)
         self.assertIn("legality-summary", html)
+        self.assertIn("army-rules-panel", html)
         self.assertIn('data-action="warlord-select"', html)
+        self.assertIn('data-action="enhancement-select"', html)
         self.assertIn('data-action="attachment-select"', html)
         self.assertIn('data-action="embark-select"', html)
         self.assertIn('data-action="wargear-multi-toggle"', html)

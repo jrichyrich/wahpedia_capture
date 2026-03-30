@@ -7,7 +7,7 @@
 })(typeof globalThis !== "undefined" ? globalThis : this, function () {
     "use strict";
 
-    const ROSTER_SCHEMA_VERSION = 5;
+    const ROSTER_SCHEMA_VERSION = 6;
     const STORAGE_NAMESPACE = "wahpediaCapture.builder.v1";
     const INDEX_KEY = `${STORAGE_NAMESPACE}.savedRosters`;
     const ACTIVE_KEY = `${STORAGE_NAMESPACE}.activeRosterId`;
@@ -62,9 +62,12 @@
         const battleSize = normalizeBattleSize(payload.battleSize || payload.battle_size);
         const warlordInstanceId = payload.warlordInstanceId || payload.warlord_instance_id;
         const normalizedWarlordId = warlordInstanceId ? String(warlordInstanceId).trim() : null;
+        const detachmentId = payload.detachmentId || payload.detachment_id;
+        const normalizedDetachmentId = detachmentId ? String(detachmentId).trim() : null;
         return {
             battleSize,
             warlordInstanceId: normalizedWarlordId || null,
+            detachmentId: normalizedDetachmentId || null,
         };
     }
 
@@ -170,6 +173,7 @@
                 : [],
             quantity: normalizeQuantity(entry.quantity),
             wargearSelections,
+            enhancementId: entry.enhancementId ? String(entry.enhancementId).trim() : null,
             attachedToInstanceId: normalizeInstanceReference(entry.attachedToInstanceId || entry.attached_to_instance_id),
             embarkedInInstanceId: normalizeInstanceReference(entry.embarkedInInstanceId || entry.embarked_in_instance_id),
         };
@@ -220,6 +224,7 @@
             upgradeOptionIds: Array.isArray(entry.upgradeOptionIds) ? [...entry.upgradeOptionIds] : [],
             quantity: normalizeQuantity(entry.quantity),
             wargearSelections: { ...(entry.wargearSelections || {}) },
+            enhancementId: entry.enhancementId ? String(entry.enhancementId) : null,
             attachedToInstanceId: normalizeInstanceReference(entry.attachedToInstanceId),
             embarkedInInstanceId: normalizeInstanceReference(entry.embarkedInInstanceId),
         };
@@ -238,6 +243,7 @@
             upgradeOptionIds: Array.isArray(entry.upgradeOptionIds) ? entry.upgradeOptionIds : [],
             quantity: entry.quantity,
             wargearSelections: entry.wargearSelections || {},
+            enhancementId: entry.enhancementId || null,
             attachedToInstanceId: entry.attachedToInstanceId || null,
             embarkedInInstanceId: entry.embarkedInInstanceId || null,
         });
@@ -760,6 +766,34 @@
         return (catalog && Array.isArray(catalog.units) ? catalog.units : []).find((unit) => unit.unitId === unitId) || null;
     }
 
+    function catalogRules(catalog) {
+        const rules = catalog && typeof catalog.rules === "object" ? catalog.rules : {};
+        return {
+            armyRules: Array.isArray(rules.armyRules) ? rules.armyRules : [],
+            detachments: Array.isArray(rules.detachments) ? rules.detachments : [],
+        };
+    }
+
+    function resolveActiveDetachment(catalog, army) {
+        const detachments = catalogRules(catalog).detachments;
+        if (!detachments.length) {
+            return null;
+        }
+        const detachmentId = army && army.detachmentId ? String(army.detachmentId).trim() : "";
+        if (!detachmentId) {
+            return null;
+        }
+        return detachments.find((detachment) => detachment && detachment.id === detachmentId) || null;
+    }
+
+    function findEnhancement(activeDetachment, enhancementId) {
+        if (!activeDetachment || !enhancementId) {
+            return null;
+        }
+        const enhancements = Array.isArray(activeDetachment.enhancements) ? activeDetachment.enhancements : [];
+        return enhancements.find((enhancement) => enhancement && enhancement.id === enhancementId) || null;
+    }
+
     function splitPointsOptions(unit) {
         const all = unit && Array.isArray(unit.pointsOptions) ? unit.pointsOptions : [];
         const upgrades = all.filter((option) => option.selectionKind === "upgrade");
@@ -1060,6 +1094,14 @@
         const availableFactionSlugs = Array.isArray(options.availableFactionSlugs) ? options.availableFactionSlugs : [];
         const entries = [];
         const army = normalizeArmyState(roster.army);
+        const rules = catalogRules(catalog);
+        const activeDetachment = resolveActiveDetachment(catalog, army);
+        const availableEnhancements = activeDetachment && Array.isArray(activeDetachment.enhancements)
+            ? activeDetachment.enhancements
+            : [];
+        const stratagems = activeDetachment && Array.isArray(activeDetachment.stratagems)
+            ? activeDetachment.stratagems
+            : [];
         let totalPoints = 0;
 
         roster.entries.forEach((entry, index) => {
@@ -1085,14 +1127,19 @@
             const wargearResolution = unit ? resolveWargearSelections(unit, entry, selectedOption) : { selections: [], issues: [] };
             issues.push(...wargearResolution.issues);
 
-            const unitPoints = !issues.length && selectedOption && typeof selectedOption.points === "number"
+            const activeEnhancement = findEnhancement(activeDetachment, entry.enhancementId);
+            const unitPointsBase = selectedOption && typeof selectedOption.points === "number"
                 ? selectedOption.points + pointsResolution.selectedUpgrades.reduce((sum, option) => {
                     return typeof option.points === "number" ? sum + option.points : sum;
                 }, 0)
                 : 0;
-            const linePoints = !issues.length
-                ? unitPoints * entry.quantity
+            const unitPointsEnhancement = activeEnhancement && typeof activeEnhancement.points === "number"
+                ? activeEnhancement.points
                 : 0;
+            const linePointsBase = unitPointsBase * entry.quantity;
+            const linePointsEnhancement = unitPointsEnhancement * entry.quantity;
+            const unitPoints = unitPointsBase + unitPointsEnhancement;
+            const linePoints = linePointsBase + linePointsEnhancement;
             totalPoints += linePoints;
 
             entries.push({
@@ -1103,12 +1150,15 @@
                 unit,
                 selectedOption,
                 selectedUpgrades: pointsResolution.selectedUpgrades,
+                activeEnhancement,
                 options: pointsResolution.options,
                 upgradeOptions: pointsResolution.upgradeOptions,
                 wargearSelections: wargearResolution.selections,
                 issues,
                 isValid: issues.length === 0,
                 unitPoints,
+                linePointsBase,
+                linePointsEnhancement,
                 linePoints,
                 entry,
             });
@@ -1121,6 +1171,8 @@
         const characterEntries = resolvedEntries.filter((entry) => unitHasKeyword(entry.unit, "CHARACTER"));
         const dedicatedTransportEntries = resolvedEntries.filter((entry) => unitHasKeyword(entry.unit, "DEDICATED TRANSPORT"));
         const transportEntries = resolvedEntries.filter((entry) => unitHasKeyword(entry.unit, "TRANSPORT"));
+        const enhancementEntries = [];
+        const assignedEnhancementEntries = [];
         const duplicateCounts = new Map();
         const duplicateCaps = new Map();
         const entriesById = new Map(entries.map((entry) => [entry.instanceId, entry]));
@@ -1129,6 +1181,20 @@
         const embarkedUnitIdsByTransport = new Map();
         const transportSeatUsageByTransport = new Map();
         const unsupportedTransportEntries = [];
+
+        if (rules.detachments.length && !army.detachmentId) {
+            armyIssues.push({
+                code: "missing-detachment",
+                level: "error",
+                message: "Roster must select a detachment to unlock faction rules, enhancements, and stratagems.",
+            });
+        } else if (army.detachmentId && !activeDetachment) {
+            armyIssues.push({
+                code: "invalid-detachment",
+                level: "error",
+                message: "Selected detachment is not available in the current catalog.",
+            });
+        }
 
         resolvedEntries.forEach((entry) => {
             const datasheetName = entry.unit && entry.unit.name ? entry.unit.name : entry.displayName;
@@ -1152,7 +1218,51 @@
                 transportCapacity: null,
                 relationshipNotes: [],
             };
+
+            if (!entry.entry.enhancementId) {
+                return;
+            }
+            assignedEnhancementEntries.push(entry);
+            if (!army.detachmentId || !activeDetachment) {
+                entry.issues.push("Enhancements require an active detachment.");
+                return;
+            }
+            if (!entry.activeEnhancement) {
+                entry.issues.push(`Saved enhancement is not available in ${activeDetachment.name}.`);
+                return;
+            }
+            if (!unitHasKeyword(entry.unit, "CHARACTER")) {
+                entry.issues.push("Enhancements can only be assigned to Character units.");
+                return;
+            }
+            if (unitHasKeyword(entry.unit, "EPIC HERO")) {
+                entry.issues.push("Epic Heroes cannot take enhancements.");
+                return;
+            }
+            enhancementEntries.push(entry);
         });
+
+        const enhancementCounts = new Map();
+        enhancementEntries.forEach((entry) => {
+            const enhancementId = entry.activeEnhancement && entry.activeEnhancement.id;
+            if (!enhancementId) {
+                return;
+            }
+            enhancementCounts.set(enhancementId, (enhancementCounts.get(enhancementId) || 0) + 1);
+        });
+        enhancementEntries.forEach((entry) => {
+            const enhancementId = entry.activeEnhancement && entry.activeEnhancement.id;
+            if (enhancementId && (enhancementCounts.get(enhancementId) || 0) > 1) {
+                entry.issues.push(`${entry.activeEnhancement.name} can only be selected once per roster.`);
+            }
+        });
+        if (assignedEnhancementEntries.length > 3) {
+            armyIssues.push({
+                code: "too-many-enhancements",
+                level: "error",
+                message: `Roster assigns ${assignedEnhancementEntries.length} enhancements; the maximum is 3.`,
+            });
+        }
 
         entries.forEach((entry) => {
             if (!entry.unit) {
@@ -1413,14 +1523,6 @@
             });
         }
 
-        if (characterEntries.length) {
-            armyWarnings.push({
-                code: "enhancements-not-modeled",
-                level: "warning",
-                message: "Enhancement selection is not modeled yet, so enhancement limits and uniqueness are not checked.",
-            });
-        }
-
         if (unsupportedTransportEntries.length) {
             armyWarnings.push({
                 code: "transport-rules-partial",
@@ -1432,6 +1534,12 @@
         entries.forEach((entry) => {
             entry.isValid = entry.issues.length === 0;
         });
+
+        army.activeDetachment = activeDetachment;
+        army.availableEnhancements = availableEnhancements;
+        army.stratagems = stratagems;
+        army.armyRules = rules.armyRules;
+        army.detachments = rules.detachments;
 
         return {
             roster,

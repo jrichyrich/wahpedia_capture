@@ -88,6 +88,12 @@ def parse_args() -> argparse.Namespace:
         help="Optional faction slug to refresh with export_datasheet_json.py before building catalogs.",
     )
     parser.add_argument(
+        "--export-faction-rules",
+        action="append",
+        default=[],
+        help="Optional faction slug to refresh with export_faction_rules.py before building catalogs.",
+    )
+    parser.add_argument(
         "--build-faction",
         action="append",
         default=[],
@@ -143,6 +149,16 @@ def main() -> None:
         )
 
     run_command([PYTHON, "scripts/export_datasheet_json.py", "--sync-duplicates"])
+
+    faction_rules_targets = sorted({
+        *discover_impacted_output_slugs(args.export_faction_rules),
+        *(args.build_faction or export_slugs),
+    })
+    if faction_rules_targets:
+        command = [PYTHON, "scripts/export_faction_rules.py"]
+        for slug in faction_rules_targets:
+            command.extend(["--output-slug", slug])
+        run_command(command)
 
     if args.render_example_html:
         render_all_examples()

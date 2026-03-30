@@ -305,8 +305,121 @@
 
         .roster-manager-grid {
             display: grid;
-            grid-template-columns: minmax(0, 240px) minmax(0, 1fr) minmax(0, 220px);
+            grid-template-columns: minmax(0, 220px) minmax(0, 1fr) minmax(0, 220px) minmax(0, 220px);
             gap: 12px;
+        }
+
+        .army-rules-panel {
+            display: grid;
+            gap: 12px;
+            padding: 14px 16px;
+            border: 1px solid var(--line);
+            background: #fbf8f1;
+        }
+
+        .army-rules-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .army-rules-block {
+            border: 1px solid var(--line);
+            background: var(--panel-2);
+            padding: 12px;
+        }
+
+        .army-rules-block h3,
+        .army-rules-block h4 {
+            margin: 0 0 8px;
+            font-family: "Exo 2", sans-serif;
+            font-size: 16px;
+            text-transform: uppercase;
+        }
+
+        .army-rules-copy {
+            display: grid;
+            gap: 8px;
+            font-size: 14px;
+            line-height: 1.45;
+        }
+
+        .stratagem-toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .stratagem-chip {
+            border: 1px solid var(--ink);
+            background: var(--panel-2);
+            padding: 6px 10px;
+            font: inherit;
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+        .stratagem-chip.is-active {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: white;
+        }
+
+        .stratagem-groups {
+            display: grid;
+            gap: 12px;
+        }
+
+        .stratagem-group {
+            display: grid;
+            gap: 8px;
+        }
+
+        .stratagem-list {
+            display: grid;
+            gap: 8px;
+        }
+
+        .stratagem-card {
+            border: 1px solid var(--line);
+            background: var(--panel-2);
+            padding: 12px;
+        }
+
+        .stratagem-card.is-relevant {
+            border-color: #d1a493;
+            background: #fff7f3;
+        }
+
+        .stratagem-card-header {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 6px;
+        }
+
+        .stratagem-card-title {
+            font-family: "Exo 2", sans-serif;
+            font-size: 16px;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .stratagem-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .stratagem-body {
+            display: grid;
+            gap: 4px;
+            font-size: 13px;
+            line-height: 1.45;
         }
 
         .roster-manager-actions {
@@ -523,6 +636,10 @@
             .roster-manager-grid {
                 grid-template-columns: 1fr;
             }
+
+            .army-rules-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 640px) {
@@ -732,6 +849,10 @@
                     <span class="sidebar-meta-label">Missing Stats</span>
                     <span id="catalog-missing-count" class="sidebar-meta-value">0</span>
                 </div>
+                <div class="sidebar-meta-row">
+                    <span class="sidebar-meta-label">Detachments</span>
+                    <span id="catalog-detachment-count" class="sidebar-meta-value">0</span>
+                </div>
             </div>
 
             <div>
@@ -773,6 +894,12 @@
                                 <option value="onslaught">Onslaught (3000)</option>
                             </select>
                         </div>
+                        <div class="field-group">
+                            <label class="field-label" for="detachment-select">Detachment</label>
+                            <select id="detachment-select" disabled>
+                                <option value="">No detachment</option>
+                            </select>
+                        </div>
                     </div>
                     <div class="roster-manager-actions">
                         <button id="save-roster" class="btn">Save roster</button>
@@ -781,6 +908,7 @@
                         <button id="export-roster" class="btn">Export JSON</button>
                         <button id="delete-roster" class="btn">Delete roster</button>
                     </div>
+                    <div id="army-rules-panel" class="army-rules-panel"></div>
                     <div id="legality-summary" class="legality-summary"></div>
                     <div id="roster-status" class="roster-status"></div>
                 </div>
@@ -858,6 +986,10 @@
             missingSourceCardLookup: new Set(),
             mobilePreviewVisible: false,
             wasMobileViewport: false,
+            stratagemFilter: {
+                relevance: "all",
+                phase: "all",
+            },
         };
 
         const els = {
@@ -868,6 +1000,7 @@
             catalogUnitCount: document.getElementById("catalog-unit-count"),
             catalogManualCount: document.getElementById("catalog-manual-count"),
             catalogMissingCount: document.getElementById("catalog-missing-count"),
+            catalogDetachmentCount: document.getElementById("catalog-detachment-count"),
             rosterTitle: document.getElementById("roster-title"),
             rosterSubtitle: document.getElementById("roster-subtitle"),
             rosterBody: document.getElementById("roster-body"),
@@ -883,12 +1016,14 @@
             printRoster: document.getElementById("print-roster"),
             rosterName: document.getElementById("roster-name"),
             battleSizeSelect: document.getElementById("battle-size-select"),
+            detachmentSelect: document.getElementById("detachment-select"),
             savedRosterSelect: document.getElementById("saved-roster-select"),
             saveRoster: document.getElementById("save-roster"),
             newRoster: document.getElementById("new-roster"),
             importRoster: document.getElementById("import-roster"),
             exportRoster: document.getElementById("export-roster"),
             deleteRoster: document.getElementById("delete-roster"),
+            armyRulesPanel: document.getElementById("army-rules-panel"),
             legalitySummary: document.getElementById("legality-summary"),
             rosterStatus: document.getElementById("roster-status"),
             importRosterFile: document.getElementById("import-roster-file"),
@@ -960,6 +1095,55 @@
             }[battleSize] || "Strike Force";
         }
 
+        function catalogDetachments() {
+            return state.catalog && state.catalog.rules && Array.isArray(state.catalog.rules.detachments)
+                ? state.catalog.rules.detachments
+                : [];
+        }
+
+        function rosterKeywordLookup(derived) {
+            const lookup = new Set();
+            (derived && Array.isArray(derived.entries) ? derived.entries : []).forEach((entry) => {
+                if (!entry || !entry.unit) {
+                    return;
+                }
+                [
+                    ...(Array.isArray(entry.unit.keywords) ? entry.unit.keywords : []),
+                    ...(Array.isArray(entry.unit.factionKeywords) ? entry.unit.factionKeywords : []),
+                    entry.unit.name,
+                ].forEach((value) => {
+                    const normalized = String(value || "").trim().toUpperCase();
+                    if (normalized) {
+                        lookup.add(normalized);
+                    }
+                });
+            });
+            return lookup;
+        }
+
+        function stratagemMatchesRoster(stratagem, keywordLookup) {
+            const hints = Array.isArray(stratagem && stratagem.keywordHints) ? stratagem.keywordHints : [];
+            if (!hints.length || !(keywordLookup instanceof Set) || keywordLookup.size === 0) {
+                return false;
+            }
+            return hints.some((hint) => {
+                const normalizedHint = String(hint || "").trim().toUpperCase();
+                return normalizedHint && Array.from(keywordLookup).some((keyword) => keyword.includes(normalizedHint) || normalizedHint.includes(keyword));
+            });
+        }
+
+        function phaseLabel(phase) {
+            return {
+                command: "Command",
+                movement: "Movement",
+                shooting: "Shooting",
+                charge: "Charge",
+                fight: "Fight",
+                opponent: "Opponent",
+                any: "Any Phase",
+            }[phase] || phase;
+        }
+
         function renderPointsTally(derived) {
             const battleSize = derived && derived.army ? derived.army.battleSize : Store.DEFAULT_BATTLE_SIZE;
             const pointsLimit = derived && typeof derived.pointsLimit === "number"
@@ -968,6 +1152,120 @@
             const totalPoints = derived && typeof derived.totalPoints === "number" ? derived.totalPoints : 0;
             els.totalPoints.textContent = `${totalPoints} / ${pointsLimit}`;
             els.pointsCaption.textContent = `${battleSizeLabel(battleSize)} cap`;
+        }
+
+        function renderArmyRulesPanel(derived) {
+            if (!derived || !state.catalog) {
+                els.armyRulesPanel.innerHTML = "";
+                return;
+            }
+            const armyRules = Array.isArray(derived.army.armyRules) ? derived.army.armyRules : [];
+            const activeDetachment = derived.army.activeDetachment || null;
+            const enhancementCount = derived.entries.filter((entry) => entry && entry.entry && entry.entry.enhancementId).length;
+            const keywordLookup = rosterKeywordLookup(derived);
+            const relevanceFilter = state.stratagemFilter && state.stratagemFilter.relevance ? state.stratagemFilter.relevance : "all";
+            const phaseFilter = state.stratagemFilter && state.stratagemFilter.phase ? state.stratagemFilter.phase : "all";
+            const allStratagems = Array.isArray(derived.army.stratagems) ? derived.army.stratagems : [];
+            const filteredStratagems = allStratagems.filter((stratagem) => {
+                const relevant = stratagemMatchesRoster(stratagem, keywordLookup);
+                const phaseTags = Array.isArray(stratagem.phaseTags) ? stratagem.phaseTags : ["any"];
+                if (relevanceFilter === "relevant" && !relevant) {
+                    return false;
+                }
+                if (phaseFilter !== "all" && !phaseTags.includes(phaseFilter)) {
+                    return false;
+                }
+                return true;
+            });
+            const groupedStratagems = filteredStratagems.reduce((groups, stratagem) => {
+                const tag = (Array.isArray(stratagem.phaseTags) && stratagem.phaseTags[0]) || "any";
+                if (!groups.has(tag)) {
+                    groups.set(tag, []);
+                }
+                groups.get(tag).push(stratagem);
+                return groups;
+            }, new Map());
+            const phaseOptions = ["all", "command", "movement", "shooting", "charge", "fight", "opponent", "any"];
+            const rulesWarningHtml = (state.catalog.build && Array.isArray(state.catalog.build.rulesWarnings) && state.catalog.build.rulesWarnings.length)
+                ? state.catalog.build.rulesWarnings.map((warning) => `<div class="inline-note inline-note-warning">${escapeHtml(warning)}</div>`).join("")
+                : "";
+
+            els.armyRulesPanel.innerHTML = `
+                <div class="section-heading">Army Rules</div>
+                ${rulesWarningHtml}
+                <div class="army-rules-grid">
+                    <div class="army-rules-block">
+                        <h3>Faction Rules</h3>
+                        <div class="army-rules-copy">
+                            ${armyRules.length
+                                ? armyRules.map((rule) => `<div><strong>${escapeHtml(rule.name)}</strong><div>${escapeHtml(rule.body)}</div></div>`).join("")
+                                : `<div class="inline-note">No faction rules were parsed for this catalog yet.</div>`}
+                        </div>
+                    </div>
+                    <div class="army-rules-block">
+                        <h3>Detachment</h3>
+                        <div class="army-rules-copy">
+                            ${activeDetachment
+                                ? `
+                                    <div><strong>${escapeHtml(activeDetachment.name)}</strong></div>
+                                    ${activeDetachment.summary ? `<div>${escapeHtml(activeDetachment.summary)}</div>` : ""}
+                                    <div><strong>${escapeHtml(activeDetachment.rule && activeDetachment.rule.name ? activeDetachment.rule.name : "Detachment Rule")}</strong></div>
+                                    <div>${escapeHtml(activeDetachment.rule && activeDetachment.rule.body ? activeDetachment.rule.body : "")}</div>
+                                    <div class="inline-note">Enhancements assigned: ${enhancementCount}/3</div>
+                                    ${(Array.isArray(activeDetachment.restrictionsText) && activeDetachment.restrictionsText.length)
+                                        ? activeDetachment.restrictionsText.map((text) => `<div class="inline-note">${escapeHtml(text)}</div>`).join("")
+                                        : ""}
+                                `
+                                : `<div class="inline-note inline-note-warning">Select a detachment to activate detachment rules, enhancements, and stratagems.</div>`}
+                        </div>
+                    </div>
+                </div>
+                <div class="army-rules-block">
+                    <h3>Stratagems</h3>
+                    ${activeDetachment ? `
+                        <div class="stratagem-toolbar">
+                            <button class="stratagem-chip ${relevanceFilter === "all" ? "is-active" : ""}" type="button" data-action="stratagem-filter-relevance" data-value="all">All</button>
+                            <button class="stratagem-chip ${relevanceFilter === "relevant" ? "is-active" : ""}" type="button" data-action="stratagem-filter-relevance" data-value="relevant">Relevant to roster</button>
+                            ${phaseOptions.map((phase) => `
+                                <button class="stratagem-chip ${phaseFilter === phase ? "is-active" : ""}" type="button" data-action="stratagem-filter-phase" data-value="${phase}">
+                                    ${phase === "all" ? "All phases" : phaseLabel(phase)}
+                                </button>
+                            `).join("")}
+                        </div>
+                        <div class="stratagem-groups">
+                            ${groupedStratagems.size
+                                ? Array.from(groupedStratagems.entries()).map(([phase, stratagems]) => `
+                                    <div class="stratagem-group">
+                                        <h4>${escapeHtml(phaseLabel(phase))}</h4>
+                                        <div class="stratagem-list">
+                                            ${stratagems.map((stratagem) => {
+                                                const relevant = stratagemMatchesRoster(stratagem, keywordLookup);
+                                                return `
+                                                    <div class="stratagem-card ${relevant ? "is-relevant" : ""}">
+                                                        <div class="stratagem-card-header">
+                                                            <div class="stratagem-card-title">${escapeHtml(stratagem.name)}</div>
+                                                            <div class="stratagem-meta">
+                                                                <span class="pill">${escapeHtml(String(stratagem.cp))} CP</span>
+                                                                <span class="pill">${escapeHtml(stratagem.kind || "unknown")}</span>
+                                                                ${relevant ? `<span class="pill">Relevant</span>` : ""}
+                                                            </div>
+                                                        </div>
+                                                        <div class="stratagem-body">
+                                                            ${stratagem.when ? `<div><strong>When:</strong> ${escapeHtml(stratagem.when)}</div>` : ""}
+                                                            ${stratagem.target ? `<div><strong>Target:</strong> ${escapeHtml(stratagem.target)}</div>` : ""}
+                                                            ${stratagem.effect ? `<div><strong>Effect:</strong> ${escapeHtml(stratagem.effect)}</div>` : ""}
+                                                        </div>
+                                                    </div>
+                                                `;
+                                            }).join("")}
+                                        </div>
+                                    </div>
+                                `).join("")
+                                : `<div class="inline-note">No stratagems match the current filter.</div>`}
+                        </div>
+                    ` : `<div class="inline-note">Stratagems unlock after selecting a detachment.</div>`}
+                </div>
+            `;
         }
 
         function renderLegalitySummary(derived) {
@@ -1143,6 +1441,7 @@
             els.unitSearch.disabled = factions.length === 0;
             els.rosterName.disabled = factions.length === 0;
             els.battleSizeSelect.disabled = factions.length === 0;
+            els.detachmentSelect.disabled = factions.length === 0;
             els.importRoster.disabled = factions.length === 0;
             els.exportRoster.disabled = factions.length === 0;
             els.newRoster.disabled = factions.length === 0;
@@ -1156,6 +1455,7 @@
             els.catalogUnitCount.textContent = String(catalog.faction.unitCount);
             els.catalogManualCount.textContent = String(catalog.build.manualSelectionUnits.length);
             els.catalogMissingCount.textContent = String(catalog.build.missingStats.length);
+            els.catalogDetachmentCount.textContent = String(catalogDetachments().length);
             els.factionSelect.value = state.factionSlug;
 
             const healthBits = [];
@@ -1256,6 +1556,17 @@
             if (els.battleSizeSelect.value !== battleSize) {
                 els.battleSizeSelect.value = battleSize;
             }
+            const detachments = catalogDetachments();
+            const detachmentId = state.army && state.army.detachmentId ? state.army.detachmentId : "";
+            els.detachmentSelect.disabled = !detachments.length;
+            els.detachmentSelect.innerHTML = [
+                `<option value="">${detachments.length ? "Select detachment" : "No detachments"}</option>`,
+                ...detachments.map((detachment) => `
+                    <option value="${detachment.id}" ${detachment.id === detachmentId ? "selected" : ""}>
+                        ${escapeHtml(detachment.name)}
+                    </option>
+                `),
+            ].join("");
             renderCatalogSummary();
         }
 
@@ -1366,6 +1677,7 @@
         function renderRoster() {
             const derived = deriveRoster();
             renderPointsTally(derived);
+            renderArmyRulesPanel(derived);
             renderLegalitySummary(derived);
             if (!state.catalog || !derived.entries.length) {
                 els.rosterBody.innerHTML = `<tr><td colspan="5" class="table-empty">No roster entries yet.</td></tr>`;
@@ -1389,8 +1701,10 @@
                 const issueText = entry.issues.map((issue) => `<div class="inline-note inline-note-warning">${issue}</div>`).join("");
                 const unitMissingStats = entry.unit ? missingStats(entry.unit) : [];
                 const isCharacter = Boolean(entry.unit && Array.isArray(entry.unit.keywords) && entry.unit.keywords.includes("CHARACTER"));
+                const isEpicHero = Boolean(entry.unit && Array.isArray(entry.unit.keywords) && entry.unit.keywords.includes("EPIC HERO"));
                 const isWarlord = Boolean(derived.army.warlordInstanceId && derived.army.warlordInstanceId === runtimeInstanceId);
                 const groups = entry.unit ? wargearGroups(entry.unit) : { simple: [], allocation: [], multi: [], manual: [] };
+                const availableEnhancements = Array.isArray(derived.army.availableEnhancements) ? derived.army.availableEnhancements : [];
                 const upgradeControls = (entry.upgradeOptions || []).map((upgrade) => {
                     const checked = (entry.selectedUpgrades || []).some((selected) => selected.id === upgrade.id);
                     return `
@@ -1561,12 +1875,28 @@
                         Warlord
                     </label>
                 ` : "";
+                const enhancementControl = isCharacter ? `
+                    <div>
+                        <div class="inline-note">Enhancement</div>
+                        ${isEpicHero ? `<div class="inline-note inline-note-warning">Epic Heroes cannot take enhancements.</div>` : ""}
+                        <select class="entry-subselect" data-action="enhancement-select" data-instance-id="${runtimeInstanceId}" ${!availableEnhancements.length || isEpicHero ? "disabled" : ""}>
+                            <option value="">No enhancement</option>
+                            ${availableEnhancements.map((enhancement) => `
+                                <option value="${enhancement.id}" ${entry.activeEnhancement && entry.activeEnhancement.id === enhancement.id ? "selected" : ""}>
+                                    ${escapeHtml(enhancement.name)} (+${escapeHtml(String(enhancement.points))} pts)
+                                </option>
+                            `).join("")}
+                        </select>
+                        ${entry.activeEnhancement ? `<div class="inline-note">${escapeHtml(entry.activeEnhancement.body)}</div>` : ""}
+                    </div>
+                ` : "";
 
                 return `
                     <tr class="roster-entry">
                         <td data-label="Unit">
                             <strong>${entry.displayName}</strong>
                             ${isWarlord ? `<div class="inline-note">Selected as Warlord.</div>` : ""}
+                            ${entry.activeEnhancement ? `<div class="inline-note">Enhancement: ${escapeHtml(entry.activeEnhancement.name)} (+${escapeHtml(String(entry.linePointsEnhancement || 0))} pts).</div>` : ""}
                             ${entry.unit && entry.unit.selectionMode === "manual" ? `<div class="inline-note inline-note-warning">Source labels are preserved verbatim for this unit.</div>` : ""}
                             ${unitMissingStats.length ? `<div class="inline-note inline-note-warning">Missing stats: ${unitMissingStats.join(", ")}.</div>` : ""}
                             ${relationshipNotes}
@@ -1581,6 +1911,7 @@
                                     ${warlordControl}
                                     ${attachmentControl}
                                     ${embarkControl}
+                                    ${enhancementControl}
                                     ${upgradeControls}
                                     ${wargearControls}
                                     ${allocationControls}
@@ -1600,7 +1931,10 @@
                                 data-instance-id="${runtimeInstanceId}"
                             >
                         </td>
-                        <td data-label="Line Pts"><strong>${entry.linePoints}</strong></td>
+                        <td data-label="Line Pts">
+                            <strong>${entry.linePoints}</strong>
+                            ${entry.linePointsEnhancement ? `<div class="inline-note">Base ${entry.linePointsBase} + enhancement ${entry.linePointsEnhancement}</div>` : ""}
+                        </td>
                         <td data-label="Action"><button class="btn btn-remove" data-action="remove-entry" data-instance-id="${runtimeInstanceId}">x</button></td>
                     </tr>
                 `;
@@ -1770,6 +2104,14 @@
             });
         });
 
+        els.detachmentSelect.addEventListener("change", (event) => {
+            interactionController.updateArmyDetachment(event.target.value);
+            state.army = Store.normalizeArmyState({
+                ...state.army,
+                detachmentId: event.target.value,
+            });
+        });
+
         els.saveRoster.addEventListener("click", () => {
             persistActiveRoster({ announce: true });
         });
@@ -1824,6 +2166,22 @@
 
         els.clearRoster.addEventListener("click", () => {
             interactionController.clearRoster();
+        });
+        els.armyRulesPanel.addEventListener("click", (event) => {
+            const target = event.target && typeof event.target.closest === "function"
+                ? event.target.closest("[data-action]")
+                : null;
+            if (!target) {
+                return;
+            }
+            if (target.dataset.action === "stratagem-filter-relevance") {
+                state.stratagemFilter.relevance = target.dataset.value || "all";
+                renderArmyRulesPanel(deriveRoster());
+            }
+            if (target.dataset.action === "stratagem-filter-phase") {
+                state.stratagemFilter.phase = target.dataset.value || "all";
+                renderArmyRulesPanel(deriveRoster());
+            }
         });
         els.previewToggle.addEventListener("click", () => {
             state.mobilePreviewVisible = !state.mobilePreviewVisible;
