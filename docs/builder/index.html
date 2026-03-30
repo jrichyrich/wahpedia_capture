@@ -74,6 +74,28 @@
             gap: 8px;
         }
 
+        .sidebar-filter-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 8px;
+        }
+
+        .toggle-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 10px;
+            border: 1.5px solid var(--ink);
+            background: var(--panel);
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .toggle-chip input {
+            margin: 0;
+        }
+
         .field-label,
         .section-heading,
         .sidebar-meta-label {
@@ -279,6 +301,10 @@
             letter-spacing: 0.08em;
         }
 
+        .roster-entry.is-selected {
+            background: #fff7f3;
+        }
+
         .roster-entry-label {
             display: none;
         }
@@ -426,6 +452,106 @@
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
+        }
+
+        .repair-panel,
+        .readiness-banner,
+        .entry-editor {
+            display: grid;
+            gap: 10px;
+            padding: 14px 16px;
+            border: 1px solid var(--line);
+            background: #fbf8f1;
+        }
+
+        .repair-panel {
+            background: #fff4e8;
+            border-color: #d8a866;
+        }
+
+        .readiness-banner.is-draft {
+            background: #f7ebe4;
+        }
+
+        .readiness-banner.is-playable {
+            background: #eef6ea;
+        }
+
+        .readiness-banner.is-partial {
+            background: #fff7ec;
+        }
+
+        .readiness-pill-row,
+        .repair-actions,
+        .issue-action-list,
+        .entry-actions,
+        .entry-summary-line {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .entry-editor {
+            margin-top: 18px;
+        }
+
+        .entry-editor-header {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            align-items: flex-start;
+        }
+
+        .entry-editor-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .entry-editor-block {
+            display: grid;
+            gap: 10px;
+            padding: 12px;
+            border: 1px solid var(--line);
+            background: var(--panel-2);
+        }
+
+        .entry-editor-block h3 {
+            margin: 0;
+            font-family: "Exo 2", sans-serif;
+            font-size: 16px;
+            text-transform: uppercase;
+        }
+
+        .entry-editor-stack {
+            display: grid;
+            gap: 10px;
+        }
+
+        .support-badge-ready {
+            background: #e7f4e6;
+            border-color: #7fa86d;
+        }
+
+        .support-badge-partial {
+            background: #fff2d9;
+            border-color: #d8a866;
+        }
+
+        .support-badge-incompatible {
+            background: #f7dfe0;
+            border-color: #bf7a80;
+        }
+
+        .catalog-role-chip {
+            display: inline-block;
+            padding: 4px 8px;
+            border: 1px solid var(--line);
+            background: #f4efe3;
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
         }
 
         .roster-status {
@@ -637,6 +763,10 @@
                 grid-template-columns: 1fr;
             }
 
+            .entry-editor-grid {
+                grid-template-columns: 1fr;
+            }
+
             .army-rules-grid {
                 grid-template-columns: 1fr;
             }
@@ -695,6 +825,10 @@
                 display: grid;
                 grid-template-columns: 1fr 1fr;
                 gap: 10px;
+            }
+
+            .sidebar-filter-grid {
+                grid-template-columns: 1fr 1fr;
             }
 
             .roster-manager-actions .btn,
@@ -781,6 +915,10 @@
             .roster-entry .inline-note {
                 font-size: 13px;
             }
+
+            .entry-editor-header {
+                flex-direction: column;
+            }
         }
 
         @media (max-width: 420px) {
@@ -834,7 +972,62 @@
                 <input id="unit-search" type="text" placeholder="Avatar, Custodian Guard, Ragnar..." disabled>
             </div>
 
+            <div class="field-group">
+                <label class="field-label" for="support-filter">Support</label>
+                <select id="support-filter" disabled>
+                    <option value="all">All units</option>
+                    <option value="full">Ready only</option>
+                    <option value="partial">Partial support</option>
+                    <option value="configured-only">Configured-only preview</option>
+                </select>
+            </div>
+
+            <div class="field-group">
+                <label class="field-label" for="role-filter">Role</label>
+                <select id="role-filter" disabled>
+                    <option value="all">All roles</option>
+                    <option value="character">Character</option>
+                    <option value="battleline">Battleline</option>
+                    <option value="transport">Transport</option>
+                    <option value="vehicle">Vehicle</option>
+                    <option value="monster">Monster</option>
+                    <option value="infantry">Infantry</option>
+                    <option value="aircraft">Aircraft</option>
+                </select>
+            </div>
+
+            <div class="field-group">
+                <label class="field-label" for="points-filter">Points Band</label>
+                <select id="points-filter" disabled>
+                    <option value="all">All points</option>
+                    <option value="0-100">0-100</option>
+                    <option value="101-200">101-200</option>
+                    <option value="201-300">201-300</option>
+                    <option value="301+">301+</option>
+                </select>
+            </div>
+
+            <div class="sidebar-filter-grid">
+                <label class="toggle-chip">
+                    <input id="filter-character" type="checkbox" disabled>
+                    <span>Characters</span>
+                </label>
+                <label class="toggle-chip">
+                    <input id="filter-transport" type="checkbox" disabled>
+                    <span>Transports</span>
+                </label>
+                <label class="toggle-chip">
+                    <input id="filter-epic-hero" type="checkbox" disabled>
+                    <span>Epic Heroes</span>
+                </label>
+                <label class="toggle-chip">
+                    <input id="filter-ready-only" type="checkbox" disabled>
+                    <span>Ready Only</span>
+                </label>
+            </div>
+
             <div id="status-box" class="status-box">Loading <code>./data/manifest.json</code>...</div>
+            <div id="data-confidence" class="status-box">Coverage summary will appear after the catalog loads.</div>
 
             <div class="sidebar-meta">
                 <div class="sidebar-meta-row">
@@ -906,8 +1099,11 @@
                         <button id="new-roster" class="btn">New roster</button>
                         <button id="import-roster" class="btn">Import JSON</button>
                         <button id="export-roster" class="btn">Export JSON</button>
+                        <button id="dedupe-rosters" class="btn">Clean duplicates</button>
                         <button id="delete-roster" class="btn">Delete roster</button>
                     </div>
+                    <div id="repair-panel" class="repair-panel" hidden></div>
+                    <div id="readiness-banner" class="readiness-banner"></div>
                     <div id="army-rules-panel" class="army-rules-panel"></div>
                     <div id="legality-summary" class="legality-summary"></div>
                     <div id="roster-status" class="roster-status"></div>
@@ -917,16 +1113,18 @@
                     <thead>
                         <tr>
                             <th>Unit</th>
-                            <th style="width: 280px;">Configuration</th>
+                            <th style="width: 360px;">Summary</th>
                             <th style="width: 90px;">Qty</th>
                             <th style="width: 120px;">Line Pts</th>
-                            <th style="width: 72px;"></th>
+                            <th style="width: 140px;">Actions</th>
                         </tr>
                     </thead>
                     <tbody id="roster-body">
                         <tr><td colspan="5" class="table-empty">No roster entries yet.</td></tr>
                     </tbody>
                 </table>
+
+                <section id="entry-editor" class="entry-editor" hidden></section>
 
                 <div class="roster-actions">
                     <button id="clear-roster" class="btn">Clear roster</button>
@@ -960,9 +1158,9 @@
 
     <input id="import-roster-file" type="file" accept=".json,application/json" hidden>
 
-    <script src="./card_renderer.js?v=20260330-army-layer-rules"></script>
-    <script src="./roster_store.js?v=20260330-army-layer-rules"></script>
-    <script src="./app.js?v=20260330-army-layer-rules"></script>
+    <script src="./card_renderer.js?v=20260330-builder-usability"></script>
+    <script src="./roster_store.js?v=20260330-builder-usability"></script>
+    <script src="./app.js?v=20260330-builder-usability"></script>
     <script>
         const Store = window.WahBuilderRosterStore;
         const BuilderApp = window.WahBuilderApp;
@@ -986,6 +1184,18 @@
             missingSourceCardLookup: new Set(),
             mobilePreviewVisible: false,
             wasMobileViewport: false,
+            activeEditorInstanceId: null,
+            repairState: null,
+            catalogFilters: {
+                search: "",
+                support: "all",
+                role: "all",
+                points: "all",
+                characterOnly: false,
+                transportOnly: false,
+                epicHeroOnly: false,
+                readyOnly: false,
+            },
             stratagemFilter: {
                 relevance: "all",
                 phase: "all",
@@ -995,8 +1205,16 @@
         const els = {
             factionSelect: document.getElementById("faction-select"),
             unitSearch: document.getElementById("unit-search"),
+            supportFilter: document.getElementById("support-filter"),
+            roleFilter: document.getElementById("role-filter"),
+            pointsFilter: document.getElementById("points-filter"),
+            filterCharacter: document.getElementById("filter-character"),
+            filterTransport: document.getElementById("filter-transport"),
+            filterEpicHero: document.getElementById("filter-epic-hero"),
+            filterReadyOnly: document.getElementById("filter-ready-only"),
             unitList: document.getElementById("unit-list"),
             statusBox: document.getElementById("status-box"),
+            dataConfidence: document.getElementById("data-confidence"),
             catalogUnitCount: document.getElementById("catalog-unit-count"),
             catalogManualCount: document.getElementById("catalog-manual-count"),
             catalogMissingCount: document.getElementById("catalog-missing-count"),
@@ -1022,11 +1240,15 @@
             newRoster: document.getElementById("new-roster"),
             importRoster: document.getElementById("import-roster"),
             exportRoster: document.getElementById("export-roster"),
+            dedupeRosters: document.getElementById("dedupe-rosters"),
             deleteRoster: document.getElementById("delete-roster"),
+            repairPanel: document.getElementById("repair-panel"),
+            readinessBanner: document.getElementById("readiness-banner"),
             armyRulesPanel: document.getElementById("army-rules-panel"),
             legalitySummary: document.getElementById("legality-summary"),
             rosterStatus: document.getElementById("roster-status"),
             importRosterFile: document.getElementById("import-roster-file"),
+            entryEditor: document.getElementById("entry-editor"),
         };
 
         function setStatus(message, isError) {
@@ -1082,6 +1304,12 @@
                 appVersion: appVersion(),
                 factionSlug: state.rosterFactionSlug || state.factionSlug,
                 name: state.rosterNameDraft,
+                builderSchemaVersion: state.manifest && Number.isInteger(state.manifest.schemaVersion)
+                    ? state.manifest.schemaVersion
+                    : null,
+                builderGeneratedAt: state.manifest && state.manifest.generatedAt
+                    ? state.manifest.generatedAt
+                    : null,
                 army: state.army,
                 entries: state.roster,
             });
@@ -1276,17 +1504,27 @@
 
             const armyIssueCount = derived.armyIssues.length;
             const entryIssueCount = derived.invalidEntries.length;
-            const warningCount = derived.armyWarnings.length;
+            const infoWarnings = derived.armyWarnings.filter((warning) => warning.level === "info");
+            const warningCount = infoWarnings.length;
             const totalIssueCount = armyIssueCount + entryIssueCount;
             const pills = [
                 `<div class="pill ${totalIssueCount ? "pill-danger" : ""}">${totalIssueCount ? `${totalIssueCount} issue(s)` : "Legal foundation checks passed"}</div>`,
                 `<div class="pill">${battleSizeLabel(derived.army.battleSize)} | ${derived.totalPoints}/${derived.pointsLimit} pts</div>`,
-                `<div class="pill ${warningCount ? "pill-warning" : ""}">${warningCount ? `${warningCount} warning(s)` : "No advisory warnings"}</div>`,
+                `<div class="pill ${warningCount ? "pill-warning" : ""}">${warningCount ? `${warningCount} not checked yet` : "No known model gaps"}</div>`,
             ];
             const lines = [
                 ...derived.armyIssues.map((issue) => `<div class="inline-note inline-note-error">${issue.message}</div>`),
-                ...(entryIssueCount ? [`<div class="inline-note inline-note-warning">${entryIssueCount} roster entr${entryIssueCount === 1 ? "y has" : "ies have"} unit-level issues. See the affected rows below.</div>`] : []),
-                ...derived.armyWarnings.map((warning) => `<div class="inline-note inline-note-warning">${warning.message}</div>`),
+                ...(entryIssueCount ? [`<div class="inline-note inline-note-warning">${entryIssueCount} roster entr${entryIssueCount === 1 ? "y has" : "ies have"} unit-level issues.</div>`] : []),
+                ...(entryIssueCount ? [`
+                    <div class="issue-action-list">
+                        ${derived.invalidEntries.slice(0, 4).map((entry) => `
+                            <button class="btn" type="button" data-action="open-entry-issue" data-instance-id="${entry.instanceId}">
+                                Open ${escapeHtml(entry.displayName)}
+                            </button>
+                        `).join("")}
+                    </div>
+                `] : []),
+                ...infoWarnings.map((warning) => `<div class="inline-note">${warning.message} <strong>Not checked yet.</strong></div>`),
             ];
             els.legalitySummary.innerHTML = `
                 <div class="legality-summary-pills">${pills.join("")}</div>
@@ -1299,11 +1537,24 @@
             renderSavedRosterOptions();
         }
 
+        function savedRosterCompatibilityLabel(roster) {
+            if (!state.manifest || !roster) {
+                return "review";
+            }
+            const schemaMatches = Number.isInteger(roster.builderSchemaVersion)
+                && roster.builderSchemaVersion === state.manifest.schemaVersion;
+            const generatedAtMatches = roster.builderGeneratedAt
+                && state.manifest.generatedAt
+                && roster.builderGeneratedAt === state.manifest.generatedAt;
+            return schemaMatches && generatedAtMatches ? "compatible" : "review";
+        }
+
         function renderSavedRosterOptions() {
             const hasStorage = Boolean(storageAdapter());
             const savedRosters = state.savedRosterList || [];
             els.savedRosterSelect.disabled = !hasStorage || savedRosters.length === 0;
             els.saveRoster.disabled = !hasStorage;
+            els.dedupeRosters.disabled = !hasStorage || savedRosters.length < 2;
             els.deleteRoster.disabled = !hasStorage || !state.activeRosterId;
 
             if (!savedRosters.length) {
@@ -1314,7 +1565,7 @@
             els.savedRosterSelect.replaceChildren(
                 ...savedRosters.map((roster) => optionNode(
                     roster.id,
-                    `${roster.name} | ${roster.factionSlug} | ${formatSavedAt(roster.savedAt)}`,
+                    `${roster.name} | ${roster.factionSlug} | ${savedRosterCompatibilityLabel(roster)} | ${formatSavedAt(roster.savedAt)}`,
                     roster.id === state.activeRosterId
                 ))
             );
@@ -1335,8 +1586,116 @@
             return ["M", "T", "Sv", "W", "Ld", "OC"].filter((stat) => !stats[stat]);
         }
 
+        function unitSupport(unit) {
+            const support = unit && unit.support && typeof unit.support === "object" ? unit.support : {};
+            const reasons = Array.isArray(support.supportReasons) ? support.supportReasons : [];
+            return {
+                supportLevel: support.supportLevel || (reasons.length ? "partial" : "full"),
+                supportReasons: reasons,
+                previewSupport: support.previewSupport || "configured-only",
+            };
+        }
+
+        function supportBadge(level) {
+            if (level === "incompatible") {
+                return `<span class="pill support-badge-incompatible">Needs repair</span>`;
+            }
+            if (level === "partial") {
+                return `<span class="pill support-badge-partial">Partial</span>`;
+            }
+            return `<span class="pill support-badge-ready">Ready</span>`;
+        }
+
+        function supportReasonLabel(reason) {
+            return {
+                missing_stats: "Missing stats",
+                manual_wargear: "Manual wargear",
+                manual_selection_labels: "Manual labels",
+                source_image_missing: "Source image missing",
+                missing_unit: "Missing from current catalog",
+            }[reason] || humanizeReason(reason);
+        }
+
+        function humanizeReason(reason) {
+            return String(reason || "")
+                .split(/[_-]+/)
+                .filter(Boolean)
+                .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+                .join(" ");
+        }
+
+        function unitPrimaryRole(unit) {
+            if (!unit) {
+                return "unit";
+            }
+            const keywords = Array.isArray(unit.keywords) ? unit.keywords : [];
+            if (keywords.includes("CHARACTER")) return "character";
+            if (keywords.includes("BATTLELINE")) return "battleline";
+            if (keywords.includes("DEDICATED TRANSPORT") || keywords.includes("TRANSPORT")) return "transport";
+            if (keywords.includes("AIRCRAFT")) return "aircraft";
+            if (keywords.includes("MONSTER")) return "monster";
+            if (keywords.includes("VEHICLE")) return "vehicle";
+            if (keywords.includes("INFANTRY")) return "infantry";
+            return "unit";
+        }
+
+        function unitMatchesFilters(unit) {
+            const filters = state.catalogFilters;
+            const support = unitSupport(unit);
+            const priceOption = window.WahBuilderCardRenderer.defaultPointsOption(unit);
+            const price = priceOption ? priceOption.points : null;
+            const query = String(filters.search || "").trim().toLowerCase();
+            if (query) {
+                const haystack = [
+                    unit.name,
+                    ...(unit.keywords || []),
+                    ...(unit.factionKeywords || []),
+                    unitPrimaryRole(unit),
+                ].join(" ").toLowerCase();
+                if (!haystack.includes(query)) {
+                    return false;
+                }
+            }
+            if (filters.readyOnly && support.supportLevel !== "full") {
+                return false;
+            }
+            if (filters.support === "full" && support.supportLevel !== "full") {
+                return false;
+            }
+            if (filters.support === "partial" && support.supportLevel !== "partial") {
+                return false;
+            }
+            if (filters.support === "configured-only" && support.previewSupport !== "configured-only") {
+                return false;
+            }
+            if (filters.role !== "all" && unitPrimaryRole(unit) !== filters.role) {
+                return false;
+            }
+            if (filters.characterOnly && !(unit.keywords || []).includes("CHARACTER")) {
+                return false;
+            }
+            if (filters.transportOnly && !((unit.keywords || []).includes("TRANSPORT") || (unit.keywords || []).includes("DEDICATED TRANSPORT"))) {
+                return false;
+            }
+            if (filters.epicHeroOnly && !(unit.keywords || []).includes("EPIC HERO")) {
+                return false;
+            }
+            if (filters.points !== "all" && price !== null) {
+                if (filters.points === "0-100" && !(price <= 100)) return false;
+                if (filters.points === "101-200" && !(price >= 101 && price <= 200)) return false;
+                if (filters.points === "201-300" && !(price >= 201 && price <= 300)) return false;
+                if (filters.points === "301+" && !(price >= 301)) return false;
+            }
+            return true;
+        }
+
         function qualityPills(unit) {
             const pills = [];
+            const support = unitSupport(unit);
+            pills.push(supportBadge(support.supportLevel));
+            if (support.previewSupport === "configured-only") {
+                pills.push(`<div class="pill pill-warning">Configured preview only</div>`);
+            }
             if (unit.selectionMode === "manual") {
                 pills.push(`<div class="pill">Manual option labels</div>`);
             }
@@ -1350,7 +1709,28 @@
             if (missing.length) {
                 pills.push(`<div class="pill pill-warning">Missing stats: ${missing.join(", ")}</div>`);
             }
+            pills.push(`<span class="catalog-role-chip">${escapeHtml(unitPrimaryRole(unit))}</span>`);
             return pills.join("");
+        }
+
+        function supportReasonSummary(unit) {
+            const support = unitSupport(unit);
+            const missing = missingStats(unit);
+            return support.supportReasons.filter((reason) => {
+                if (reason === "manual_selection_labels" && unit.selectionMode === "manual") {
+                    return false;
+                }
+                if (reason === "manual_wargear" && unit.quality && unit.quality.hasManualWargearOptions) {
+                    return false;
+                }
+                if (reason === "missing_stats" && missing.length) {
+                    return false;
+                }
+                if (reason === "source_image_missing" && support.previewSupport === "configured-only") {
+                    return false;
+                }
+                return true;
+            });
         }
 
         function pointsGroups(unit) {
@@ -1410,6 +1790,372 @@
             return resolveSelectionLimit(group.allocationLimit, entry);
         }
 
+        function selectedEntry(derived) {
+            if (!derived || !Array.isArray(derived.entries) || !derived.entries.length) {
+                return null;
+            }
+            if (!state.activeEditorInstanceId) {
+                return null;
+            }
+            return derived.entries.find((entry) => entry.instanceId === state.activeEditorInstanceId) || null;
+        }
+
+        function loadoutSummary(entry) {
+            if (!entry) {
+                return [];
+            }
+            const summary = [];
+            if (entry.selectedOption && entry.selectedOption.label) {
+                summary.push(entry.selectedOption.label);
+            }
+            (Array.isArray(entry.wargearSelections) ? entry.wargearSelections : []).forEach((selection) => {
+                if (!selection || !selection.group) {
+                    return;
+                }
+                if (selection.selectedChoice && selection.selectedChoice.label) {
+                    summary.push(selection.selectedChoice.label);
+                    return;
+                }
+                if (Array.isArray(selection.selectedChoices) && selection.selectedChoices.length) {
+                    summary.push(selection.selectedChoices.map((item) => {
+                        if (typeof item.count === "number" && item.count > 1) {
+                            return `${item.count}x ${item.choice.label}`;
+                        }
+                        return item.choice.label;
+                    }).join(", "));
+                }
+            });
+            if (entry.activeEnhancement) {
+                summary.push(`Enhancement: ${entry.activeEnhancement.name}`);
+            }
+            return summary.slice(0, 4);
+        }
+
+        function openEntryEditor(instanceId) {
+            state.activeEditorInstanceId = instanceId || null;
+            renderRoster();
+            if (instanceId && els.entryEditor && typeof els.entryEditor.scrollIntoView === "function") {
+                els.entryEditor.scrollIntoView({ block: "nearest", behavior: "smooth" });
+            }
+        }
+
+        function renderRepairPanel(derived) {
+            const compatibility = derived && derived.compatibility ? derived.compatibility : null;
+            const incompatibleEntries = compatibility && Array.isArray(compatibility.incompatibleEntries)
+                ? compatibility.incompatibleEntries
+                : [];
+            const shouldShow = Boolean(state.repairState || (compatibility && compatibility.needsReview && incompatibleEntries.length));
+            if (!shouldShow) {
+                state.repairState = null;
+                els.repairPanel.hidden = true;
+                els.repairPanel.innerHTML = "";
+                return;
+            }
+            state.repairState = state.repairState || {
+                rosterId: state.activeRosterId,
+                incompatibleEntryIds: incompatibleEntries.map((entry) => entry.instanceId),
+            };
+            els.repairPanel.hidden = false;
+            els.repairPanel.innerHTML = `
+                <div class="section-heading">Roster repair</div>
+                <div class="inline-note">
+                    This saved roster was built against older or different builder data and ${incompatibleEntries.length} entr${incompatibleEntries.length === 1 ? "y no longer resolves" : "ies no longer resolve"} cleanly.
+                </div>
+                <div class="repair-actions">
+                    <button class="btn" type="button" data-action="repair-keep">Keep unresolved</button>
+                    <button class="btn" type="button" data-action="repair-remove">Remove unresolved entries</button>
+                    <button class="btn btn-primary" type="button" data-action="repair-copy">Start repaired copy</button>
+                </div>
+            `;
+        }
+
+        function renderReadinessBanner(derived) {
+            if (!derived) {
+                els.readinessBanner.innerHTML = "";
+                els.readinessBanner.className = "readiness-banner";
+                return;
+            }
+            const readiness = derived.readiness || { state: "draft", label: "Draft" };
+            const compatibility = derived.compatibility || {};
+            const actionable = [];
+            if (derived.armyIssues.some((issue) => issue.code === "missing-detachment")) {
+                actionable.push(`<button class="btn" type="button" data-action="focus-detachment">Select detachment</button>`);
+            }
+            if (derived.armyIssues.some((issue) => issue.code === "missing-character")) {
+                actionable.push(`<button class="btn" type="button" data-action="focus-characters">Choose a Character</button>`);
+            }
+            if (derived.armyIssues.some((issue) => issue.code === "missing-warlord" || issue.code === "invalid-warlord")) {
+                actionable.push(`<button class="btn" type="button" data-action="focus-warlord">Choose Warlord</button>`);
+            }
+            if (compatibility.incompatibleEntries && compatibility.incompatibleEntries.length) {
+                actionable.push(`<button class="btn" type="button" data-action="focus-unsupported">Fix unsupported entries</button>`);
+            }
+            els.readinessBanner.className = `readiness-banner is-${readiness.state}`;
+            els.readinessBanner.innerHTML = `
+                <div class="readiness-pill-row">
+                    <span class="pill ${readiness.state === "playable" ? "support-badge-ready" : readiness.state === "partial" ? "support-badge-partial" : "pill-danger"}">${readiness.label}</span>
+                    <span class="pill">${battleSizeLabel(derived.army.battleSize)} | ${derived.totalPoints}/${derived.pointsLimit} pts</span>
+                    ${compatibility.needsReview ? `<span class="pill support-badge-partial">Review saved data</span>` : ""}
+                </div>
+                <div class="inline-note">
+                    ${readiness.state === "playable"
+                        ? "This roster meets the current builder foundation checks and has no unresolved support issues."
+                        : readiness.state === "partial"
+                            ? "This roster is usable, but some entries still depend on partial support or review."
+                            : "This roster still needs core setup before it is ready to play."}
+                </div>
+                ${actionable.length ? `<div class="issue-action-list">${actionable.join("")}</div>` : ""}
+            `;
+        }
+
+        function renderEntryEditor(derived) {
+            const entry = selectedEntry(derived);
+            state.activeEditorInstanceId = entry ? entry.instanceId : null;
+            if (!entry) {
+                els.entryEditor.hidden = true;
+                els.entryEditor.innerHTML = "";
+                return;
+            }
+
+            const runtimeInstanceId = entry.instanceId;
+            const issueText = entry.issues.map((issue) => `<div class="inline-note inline-note-warning">${escapeHtml(issue)}</div>`).join("");
+            const support = entry.support || { supportLevel: "full", supportReasons: [], previewSupport: "configured-only" };
+            const isCharacter = Boolean(entry.unit && Array.isArray(entry.unit.keywords) && entry.unit.keywords.includes("CHARACTER"));
+            const isEpicHero = Boolean(entry.unit && Array.isArray(entry.unit.keywords) && entry.unit.keywords.includes("EPIC HERO"));
+            const isWarlord = Boolean(derived.army.warlordInstanceId && derived.army.warlordInstanceId === runtimeInstanceId);
+            const groups = entry.unit ? wargearGroups(entry.unit) : { simple: [], allocation: [], multi: [], manual: [] };
+            const availableEnhancements = Array.isArray(derived.army.availableEnhancements) ? derived.army.availableEnhancements : [];
+            const relationship = entry.relationship || {};
+            const missingOptionRow = entry.unit && !entry.selectedOption
+                ? `<option value="-1" selected>Missing saved configuration</option>`
+                : "";
+            const optionsHtml = entry.unit
+                ? `${missingOptionRow}${entry.options.map((pointsOption, index) => `
+                    <option value="${index}" ${entry.selectedOption && pointsOption.id === entry.selectedOption.id ? "selected" : ""}>
+                        ${pointsOption.label} | ${pointsOption.points} pts
+                    </option>
+                `).join("")}`
+                : `<option value="-1">Unavailable</option>`;
+            const upgradeControls = (entry.upgradeOptions || []).map((upgrade) => {
+                const checked = (entry.selectedUpgrades || []).some((selected) => selected.id === upgrade.id);
+                return `
+                    <label class="inline-note">
+                        <input
+                            type="checkbox"
+                            data-action="upgrade-toggle"
+                            data-instance-id="${runtimeInstanceId}"
+                            data-option-id="${upgrade.id}"
+                            ${checked ? "checked" : ""}
+                        >
+                        ${upgrade.label} (+${upgrade.points} pts)
+                    </label>
+                `;
+            }).join("");
+            const wargearControls = groups.simple.map((group) => {
+                const selected = (entry.wargearSelections || []).find((item) => item.group && item.group.id === group.id);
+                const groupOptions = [
+                    `<option value="">Keep current wargear</option>`,
+                    ...group.choices.map((choice) => `
+                        <option value="${choice.id}" ${selected && selected.selectedChoice && selected.selectedChoice.id === choice.id ? "selected" : ""}>
+                            ${choice.label}
+                        </option>
+                    `),
+                ].join("");
+                return `
+                    <div>
+                        <div class="inline-note">${group.target || group.label}</div>
+                        ${group.eligibilityText ? `<div class="inline-note">${escapeHtml(group.eligibilityText)}</div>` : ""}
+                        <select class="entry-subselect" data-action="wargear-select" data-instance-id="${runtimeInstanceId}" data-group-id="${group.id}">
+                            ${groupOptions}
+                        </select>
+                    </div>
+                `;
+            }).join("");
+            const allocationControls = groups.allocation.map((group) => {
+                const selected = (entry.wargearSelections || []).find((item) => item.group && item.group.id === group.id);
+                const selectedCounts = selected && Array.isArray(selected.selectedChoices)
+                    ? Object.fromEntries(selected.selectedChoices.map((item) => [item.choice.id, item.count]))
+                    : {};
+                const selectedTotal = selected && typeof selected.totalSelected === "number" ? selected.totalSelected : 0;
+                const maxAllowed = selected && typeof selected.allocationMax === "number"
+                    ? selected.allocationMax
+                    : allocationLimit(group, entry);
+                return `
+                    <div>
+                        <div class="inline-note">${group.label}</div>
+                        <div class="inline-note">${maxAllowed !== null ? `Selected ${selectedTotal}/${maxAllowed}` : `Selected ${selectedTotal}`}</div>
+                        ${(group.choices || []).map((choice) => `
+                            <label class="inline-note">
+                                <span>${choice.label}</span>
+                                <input
+                                    class="entry-subselect"
+                                    type="number"
+                                    min="0"
+                                    step="1"
+                                    ${maxAllowed !== null ? `max="${maxAllowed}"` : ""}
+                                    value="${selectedCounts[choice.id] || 0}"
+                                    data-action="wargear-count"
+                                    data-instance-id="${runtimeInstanceId}"
+                                    data-group-id="${group.id}"
+                                    data-choice-id="${choice.id}"
+                                >
+                            </label>
+                        `).join("")}
+                    </div>
+                `;
+            }).join("");
+            const multiControls = groups.multi.map((group) => {
+                const selected = (entry.wargearSelections || []).find((item) => item.group && item.group.id === group.id);
+                const selectedIds = selected && Array.isArray(selected.selectedChoices)
+                    ? selected.selectedChoices.map((item) => item.choice.id)
+                    : [];
+                const totalSelected = selected && typeof selected.totalSelected === "number" ? selected.totalSelected : 0;
+                const maxAllowed = typeof group.pickCount === "number" ? group.pickCount : null;
+                return `
+                    <div>
+                        <div class="inline-note">${group.label}</div>
+                        <div class="inline-note">${maxAllowed !== null ? `Selected ${totalSelected}/${maxAllowed} picks` : `Selected ${totalSelected} picks`}${group.requireDistinct ? ". Choices must be different." : ""}</div>
+                        ${(group.choices || []).map((choice) => `
+                            <label class="inline-note">
+                                <input
+                                    type="checkbox"
+                                    data-action="wargear-multi-toggle"
+                                    data-instance-id="${runtimeInstanceId}"
+                                    data-group-id="${group.id}"
+                                    data-choice-id="${choice.id}"
+                                    ${selectedIds.includes(choice.id) ? "checked" : ""}
+                                >
+                                ${choice.label}
+                            </label>
+                        `).join("")}
+                    </div>
+                `;
+            }).join("");
+            const manualWargearNotes = groups.manual.map((group) => `
+                <div class="inline-note inline-note-warning">Manual choice required: ${group.label}</div>
+            `).join("");
+            const wargearManualComments = entry.unit && entry.unit.wargear && Array.isArray(entry.unit.wargear.manualNotes)
+                ? entry.unit.wargear.manualNotes.map((note) => `<div class="inline-note inline-note-warning">${escapeHtml(note)}</div>`).join("")
+                : "";
+            const attachmentControl = ((relationship.attachOptions && relationship.attachOptions.length) || relationship.attachedToInstanceId) ? `
+                <div>
+                    <div class="inline-note">Attach to</div>
+                    <select class="entry-subselect" data-action="attachment-select" data-instance-id="${runtimeInstanceId}">
+                        <option value="">Operate separately</option>
+                        ${(relationship.attachOptions || []).map((option) => `
+                            <option value="${option.instanceId}" ${relationship.attachedToInstanceId === option.instanceId ? "selected" : ""}>${escapeHtml(option.label)}</option>
+                        `).join("")}
+                    </select>
+                </div>
+            ` : "";
+            const embarkControl = !relationship.attachedToInstanceId && ((relationship.transportOptions && relationship.transportOptions.length) || relationship.embarkedInInstanceId) ? `
+                <div>
+                    <div class="inline-note">Embark in</div>
+                    <select class="entry-subselect" data-action="embark-select" data-instance-id="${runtimeInstanceId}">
+                        <option value="">Deploy separately</option>
+                        ${(relationship.transportOptions || []).map((option) => `
+                            <option value="${option.instanceId}" ${relationship.embarkedInInstanceId === option.instanceId ? "selected" : ""}>${escapeHtml(option.label)}</option>
+                        `).join("")}
+                    </select>
+                </div>
+            ` : "";
+
+            els.entryEditor.hidden = false;
+            els.entryEditor.innerHTML = `
+                <div class="entry-editor-header">
+                    <div>
+                        <div class="entry-summary-line">
+                            <h2 class="section-heading">${escapeHtml(entry.displayName)}</h2>
+                            ${supportBadge(support.supportLevel)}
+                            ${support.previewSupport === "configured-only" ? `<span class="pill pill-warning">Configured preview only</span>` : ""}
+                            ${entry.canRepair ? `<span class="pill support-badge-incompatible">Repairable</span>` : ""}
+                        </div>
+                        <div class="inline-note">${loadoutSummary(entry).length ? loadoutSummary(entry).join(" • ") : "No configuration selected yet."}</div>
+                        ${support.supportReasons.length ? `<div class="inline-note">${support.supportReasons.map((reason) => supportReasonLabel(reason)).join(" • ")}</div>` : ""}
+                    </div>
+                    <div class="entry-actions">
+                        <button class="btn" type="button" data-action="close-editor">Close</button>
+                    </div>
+                </div>
+                ${issueText}
+                <div class="entry-editor-grid">
+                    <div class="entry-editor-block">
+                        <h3>Configuration</h3>
+                        ${entry.unit ? `
+                            <div class="entry-editor-stack">
+                                <select data-action="option-select" data-instance-id="${runtimeInstanceId}">
+                                    ${optionsHtml}
+                                </select>
+                                <label class="inline-note">
+                                    Quantity
+                                    <input
+                                        type="number"
+                                        min="1"
+                                        step="1"
+                                        value="${entry.quantity}"
+                                        data-action="quantity-input"
+                                        data-instance-id="${runtimeInstanceId}"
+                                    >
+                                </label>
+                                ${attachmentControl}
+                                ${embarkControl}
+                            </div>
+                        ` : `<div class="inline-note inline-note-warning">This unit cannot be resolved in the current catalog.</div>`}
+                    </div>
+                    <div class="entry-editor-block">
+                        <h3>Command</h3>
+                        <div class="entry-editor-stack">
+                            ${isCharacter ? `
+                                <label class="inline-note">
+                                    <input
+                                        type="radio"
+                                        name="warlord-entry"
+                                        data-action="warlord-select"
+                                        data-instance-id="${runtimeInstanceId}"
+                                        ${isWarlord ? "checked" : ""}
+                                    >
+                                    Warlord
+                                </label>
+                            ` : `<div class="inline-note">Only Character units can be selected as Warlord.</div>`}
+                            ${isCharacter ? `
+                                <div>
+                                    <div class="inline-note">Enhancement</div>
+                                    <select class="entry-subselect" data-action="enhancement-select" data-instance-id="${runtimeInstanceId}" ${!availableEnhancements.length || isEpicHero ? "disabled" : ""}>
+                                        <option value="">No enhancement</option>
+                                        ${availableEnhancements.map((enhancement) => `
+                                            <option value="${enhancement.id}" ${entry.activeEnhancement && entry.activeEnhancement.id === enhancement.id ? "selected" : ""}>
+                                                ${escapeHtml(enhancement.name)} (+${escapeHtml(String(enhancement.points))} pts)
+                                            </option>
+                                        `).join("")}
+                                    </select>
+                                    ${entry.activeEnhancement ? `<div class="inline-note">${escapeHtml(entry.activeEnhancement.body)}</div>` : ""}
+                                    ${isEpicHero ? `<div class="inline-note inline-note-warning">Epic Heroes cannot take enhancements.</div>` : ""}
+                                </div>
+                            ` : ""}
+                            ${upgradeControls || `<div class="inline-note">No additive upgrades for this unit.</div>`}
+                        </div>
+                    </div>
+                    <div class="entry-editor-block">
+                        <h3>Wargear</h3>
+                        <div class="entry-editor-stack">
+                            ${wargearControls || allocationControls || multiControls || manualWargearNotes || wargearManualComments
+                                ? `${wargearControls}${allocationControls}${multiControls}${manualWargearNotes}${wargearManualComments}`
+                                : `<div class="inline-note">This unit has no configurable wargear in the current catalog.</div>`}
+                        </div>
+                    </div>
+                    <div class="entry-editor-block">
+                        <h3>Roster Impact</h3>
+                        <div class="entry-editor-stack">
+                            <div class="inline-note">Line points: <strong>${entry.linePoints}</strong></div>
+                            ${entry.linePointsEnhancement ? `<div class="inline-note">Base ${entry.linePointsBase} + enhancement ${entry.linePointsEnhancement}</div>` : ""}
+                            ${(relationship.relationshipNotes || []).map((note) => `<div class="inline-note">${escapeHtml(note.summary || note.text || "")}</div>`).join("")}
+                            ${entry.canRepair ? `<div class="inline-note inline-note-warning">This entry can be repaired automatically because it no longer resolves against the current catalog.</div>` : ""}
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
         function isMobileViewport() {
             return window.innerWidth <= 640;
         }
@@ -1439,12 +2185,20 @@
                 .join("");
             els.factionSelect.disabled = factions.length === 0;
             els.unitSearch.disabled = factions.length === 0;
+            els.supportFilter.disabled = factions.length === 0;
+            els.roleFilter.disabled = factions.length === 0;
+            els.pointsFilter.disabled = factions.length === 0;
+            els.filterCharacter.disabled = factions.length === 0;
+            els.filterTransport.disabled = factions.length === 0;
+            els.filterEpicHero.disabled = factions.length === 0;
+            els.filterReadyOnly.disabled = factions.length === 0;
             els.rosterName.disabled = factions.length === 0;
             els.battleSizeSelect.disabled = factions.length === 0;
             els.detachmentSelect.disabled = factions.length === 0;
             els.importRoster.disabled = factions.length === 0;
             els.exportRoster.disabled = factions.length === 0;
             els.newRoster.disabled = factions.length === 0;
+            els.dedupeRosters.disabled = !factions.length;
         }
 
         function renderCatalogSummary() {
@@ -1452,6 +2206,7 @@
                 return;
             }
             const catalog = state.catalog;
+            const supportSummary = catalog.build && catalog.build.supportSummary ? catalog.build.supportSummary : {};
             els.catalogUnitCount.textContent = String(catalog.faction.unitCount);
             els.catalogManualCount.textContent = String(catalog.build.manualSelectionUnits.length);
             els.catalogMissingCount.textContent = String(catalog.build.missingStats.length);
@@ -1473,17 +2228,27 @@
             els.rosterSubtitle.textContent = [
                 state.catalog.faction.name,
                 `${catalog.build.catalogUnitCount} units loaded`,
+                `${supportSummary.readyUnitCount || 0} ready`,
+                `${supportSummary.partialUnitCount || 0} partial`,
                 healthBits.length ? `Data health: ${healthBits.join(" | ")}` : "Data health: clean",
                 `Last saved: ${formatSavedAt(state.lastSavedAt)}`,
             ].join(" | ");
 
             const statusBits = [
                 `${catalog.faction.name}: ${catalog.faction.unitCount} units`,
+                `${supportSummary.readyUnitCount || 0} ready`,
+                `${supportSummary.partialUnitCount || 0} partial`,
                 `${catalog.build.manualSelectionUnits.length} manual selection labels`,
                 `${catalog.build.manualWargearUnits ? catalog.build.manualWargearUnits.length : 0} manual wargear units`,
                 `${catalog.build.missingStats.length} units with missing stats`,
             ];
             setStatus(statusBits.join(" | "), false);
+            els.dataConfidence.innerHTML = [
+                `<strong>Data confidence</strong>`,
+                `${supportSummary.readyUnitCount || 0}/${catalog.build.catalogUnitCount} units are ready with no known support gaps.`,
+                `${supportSummary.partialUnitCount || 0} unit(s) remain partial, and ${supportSummary.configuredOnlyPreviewCount || 0} unit(s) print from configured HTML instead of source images.`,
+                `<button class="btn" type="button" data-action="focus-ready-units">Show ready units only</button>`,
+            ].join("<br>");
         }
 
         async function setCatalog(factionSlug) {
@@ -1512,18 +2277,7 @@
                 els.unitList.innerHTML = "";
                 return;
             }
-            const query = els.unitSearch.value.trim().toLowerCase();
-            const units = state.catalog.units.filter((unit) => {
-                if (!query) {
-                    return true;
-                }
-                const haystack = [
-                    unit.name,
-                    ...(unit.keywords || []),
-                    ...(unit.factionKeywords || []),
-                ].join(" ").toLowerCase();
-                return haystack.includes(query);
-            });
+            const units = state.catalog.units.filter((unit) => unitMatchesFilters(unit));
 
             if (!units.length) {
                 els.unitList.innerHTML = `<div class="unit-row">No units match the current search.</div>`;
@@ -1533,14 +2287,19 @@
             els.unitList.innerHTML = units.map((unit) => {
                 const defaultOption = window.WahBuilderCardRenderer.defaultPointsOption(unit);
                 const price = defaultOption ? `${defaultOption.points} pts` : "No points";
+                const supportReasons = supportReasonSummary(unit);
                 return `
                     <div class="unit-row">
                         <div>
                             <p class="unit-name">${unit.name}</p>
-                            <div class="unit-meta">${price} | ${unit.factionKeywords.join(", ")}</div>
+                            <div class="unit-meta">${price} | ${unitPrimaryRole(unit)} | ${unit.factionKeywords.join(", ")}</div>
                             ${qualityPills(unit)}
+                            ${supportReasons.length ? `<div class="inline-note">${supportReasons.map((reason) => supportReasonLabel(reason)).join(" • ")}</div>` : ""}
                         </div>
-                        <button class="btn btn-primary" data-action="add-unit" data-unit-id="${unit.unitId}">Add</button>
+                        <div class="entry-actions">
+                            <button class="btn" data-action="focus-unit" data-unit-id="${unit.unitId}">Add + Edit</button>
+                            <button class="btn btn-primary" data-action="add-unit" data-unit-id="${unit.unitId}">Add</button>
+                        </div>
                     </div>
                 `;
             }).join("");
@@ -1580,6 +2339,8 @@
             state.roster = [];
             state.army = Store.normalizeArmyState({});
             state.lastSavedAt = null;
+            state.activeEditorInstanceId = null;
+            state.repairState = null;
             renderSavedRosterState();
             renderRoster();
             renderPreview();
@@ -1611,6 +2372,7 @@
             state.lastSavedAt = savedRoster.savedAt;
             state.roster = Store.createRuntimeEntries(savedRoster.entries);
             state.army = Store.normalizeArmyState(savedRoster.army);
+            state.activeEditorInstanceId = state.roster[0] ? state.roster[0].instanceId : null;
 
             const targetFaction = factions.includes(savedRoster.factionSlug) ? savedRoster.factionSlug : (factions[0] || "");
             if (targetFaction) {
@@ -1623,6 +2385,14 @@
             renderSavedRosterState();
             renderRoster();
             renderPreview();
+            const compatibility = deriveRoster().compatibility;
+            state.repairState = compatibility && compatibility.needsReview && compatibility.incompatibleEntries.length
+                ? {
+                    rosterId: savedRoster.id,
+                    incompatibleEntryIds: compatibility.incompatibleEntries.map((entry) => entry.instanceId),
+                }
+                : null;
+            renderRoster();
 
             if (!factions.includes(savedRoster.factionSlug)) {
                 setRosterStatus(
@@ -1677,10 +2447,13 @@
         function renderRoster() {
             const derived = deriveRoster();
             renderPointsTally(derived);
+            renderRepairPanel(derived);
+            renderReadinessBanner(derived);
             renderArmyRulesPanel(derived);
             renderLegalitySummary(derived);
             if (!state.catalog || !derived.entries.length) {
                 els.rosterBody.innerHTML = `<tr><td colspan="5" class="table-empty">No roster entries yet.</td></tr>`;
+                renderEntryEditor(derived);
                 return;
             }
 
@@ -1688,238 +2461,31 @@
                 const runtimeInstanceId = state.roster[index] && state.roster[index].instanceId
                     ? state.roster[index].instanceId
                     : entry.instanceId;
-                const missingOptionRow = entry.unit && !entry.selectedOption
-                    ? `<option value="-1" selected>Missing saved configuration</option>`
-                    : "";
-                const optionsHtml = entry.unit
-                    ? `${missingOptionRow}${entry.options.map((pointsOption, index) => `
-                        <option value="${index}" ${entry.selectedOption && pointsOption.id === entry.selectedOption.id ? "selected" : ""}>
-                            ${pointsOption.label} | ${pointsOption.points} pts
-                        </option>
-                    `).join("")}`
-                    : `<option value="-1">Unavailable</option>`;
-                const issueText = entry.issues.map((issue) => `<div class="inline-note inline-note-warning">${issue}</div>`).join("");
-                const unitMissingStats = entry.unit ? missingStats(entry.unit) : [];
-                const isCharacter = Boolean(entry.unit && Array.isArray(entry.unit.keywords) && entry.unit.keywords.includes("CHARACTER"));
-                const isEpicHero = Boolean(entry.unit && Array.isArray(entry.unit.keywords) && entry.unit.keywords.includes("EPIC HERO"));
-                const isWarlord = Boolean(derived.army.warlordInstanceId && derived.army.warlordInstanceId === runtimeInstanceId);
-                const groups = entry.unit ? wargearGroups(entry.unit) : { simple: [], allocation: [], multi: [], manual: [] };
-                const availableEnhancements = Array.isArray(derived.army.availableEnhancements) ? derived.army.availableEnhancements : [];
-                const upgradeControls = (entry.upgradeOptions || []).map((upgrade) => {
-                    const checked = (entry.selectedUpgrades || []).some((selected) => selected.id === upgrade.id);
-                    return `
-                        <label class="inline-note">
-                            <input
-                                type="checkbox"
-                                data-action="upgrade-toggle"
-                                data-instance-id="${runtimeInstanceId}"
-                                data-option-id="${upgrade.id}"
-                                ${checked ? "checked" : ""}
-                            >
-                            ${upgrade.label} (+${upgrade.points} pts)
-                        </label>
-                    `;
-                }).join("");
-                const wargearControls = groups.simple.map((group) => {
-                    const selected = (entry.wargearSelections || []).find((item) => item.group && item.group.id === group.id);
-                    const optionsHtml = [
-                        `<option value="">Keep current wargear</option>`,
-                        ...group.choices.map((choice) => `
-                            <option value="${choice.id}" ${selected && selected.selectedChoice && selected.selectedChoice.id === choice.id ? "selected" : ""}>
-                                ${choice.label}
-                            </option>
-                        `),
-                    ].join("");
-                    return `
-                        <div>
-                            <div class="inline-note">${group.target || group.label}</div>
-                            ${group.eligibilityText ? `<div class="inline-note">${escapeHtml(group.eligibilityText)}</div>` : ""}
-                            ${selected && selected.poolUsage && selected.poolUsage.used > 0 ? `<div class="inline-note">${typeof selected.poolUsage.max === "number" ? `Shared pool: ${selected.poolUsage.used}/${selected.poolUsage.max}` : `Shared pool usage: ${selected.poolUsage.used}`}</div>` : ""}
-                            <select class="entry-subselect" data-action="wargear-select" data-instance-id="${runtimeInstanceId}" data-group-id="${group.id}">
-                                ${optionsHtml}
-                            </select>
-                        </div>
-                    `;
-                }).join("");
-                const allocationControls = groups.allocation.map((group) => {
-                    const selected = (entry.wargearSelections || []).find((item) => item.group && item.group.id === group.id);
-                    const selectedCounts = selected && Array.isArray(selected.selectedChoices)
-                        ? Object.fromEntries(selected.selectedChoices.map((item) => [item.choice.id, item.count]))
-                        : {};
-                    const selectedTotal = selected && typeof selected.totalSelected === "number"
-                        ? selected.totalSelected
-                        : 0;
-                    const maxAllowed = selected && typeof selected.allocationMax === "number"
-                        ? selected.allocationMax
-                        : allocationLimit(group, entry);
-                    const choiceRows = group.choices.map((choice) => `
-                        <label class="inline-note">
-                            <span>${choice.label}</span>
-                            <input
-                                class="entry-subselect"
-                                type="number"
-                                min="0"
-                                step="1"
-                                ${maxAllowed !== null ? `max="${maxAllowed}"` : ""}
-                                value="${selectedCounts[choice.id] || 0}"
-                                data-action="wargear-count"
-                                data-instance-id="${runtimeInstanceId}"
-                                data-group-id="${group.id}"
-                                data-choice-id="${choice.id}"
-                            >
-                        </label>
-                    `).join("");
-                    return `
-                        <div>
-                            <div class="inline-note">${group.label}</div>
-                            <div class="inline-note">${group.target ? `Replaces ${group.target}` : "Allocate replacements across the unit."}</div>
-                            ${group.eligibilityText ? `<div class="inline-note">${escapeHtml(group.eligibilityText)}</div>` : ""}
-                            <div class="inline-note">${maxAllowed !== null ? `Selected ${selectedTotal}/${maxAllowed} model weapon swaps.` : `Selected ${selectedTotal} weapon swaps.`}</div>
-                            ${selected && selected.poolUsage && selected.poolUsage.used > 0 ? `<div class="inline-note">${typeof selected.poolUsage.max === "number" ? `Shared pool: ${selected.poolUsage.used}/${selected.poolUsage.max}` : `Shared pool usage: ${selected.poolUsage.used}`}</div>` : ""}
-                            ${choiceRows}
-                        </div>
-                    `;
-                }).join("");
-                const multiControls = groups.multi.map((group) => {
-                    const selected = (entry.wargearSelections || []).find((item) => item.group && item.group.id === group.id);
-                    const selectedIds = selected && Array.isArray(selected.selectedChoices)
-                        ? selected.selectedChoices.map((item) => item.choice.id)
-                        : [];
-                    const totalSelected = selected && typeof selected.totalSelected === "number"
-                        ? selected.totalSelected
-                        : 0;
-                    const maxAllowed = typeof group.pickCount === "number" ? group.pickCount : null;
-                    const choiceRows = group.choices.map((choice) => {
-                        const pickCost = Math.max(1, Number.parseInt(choice.pickCost, 10) || 1);
-                        return `
-                            <label class="inline-note">
-                                <input
-                                    type="checkbox"
-                                    data-action="wargear-multi-toggle"
-                                    data-instance-id="${runtimeInstanceId}"
-                                    data-group-id="${group.id}"
-                                    data-choice-id="${choice.id}"
-                                    ${selectedIds.includes(choice.id) ? "checked" : ""}
-                                >
-                                ${choice.label}${pickCost > 1 ? ` (${pickCost} picks)` : ""}
-                            </label>
-                        `;
-                    }).join("");
-                    return `
-                        <div>
-                            <div class="inline-note">${group.label}</div>
-                            ${group.eligibilityText ? `<div class="inline-note">${escapeHtml(group.eligibilityText)}</div>` : ""}
-                            <div class="inline-note">${maxAllowed !== null ? `Selected ${totalSelected}/${maxAllowed} picks.` : `Selected ${totalSelected} picks.`}${group.requireDistinct ? " Choices must be different." : ""}</div>
-                            ${selected && selected.poolUsage && selected.poolUsage.used > 0 ? `<div class="inline-note">${typeof selected.poolUsage.max === "number" ? `Shared pool: ${selected.poolUsage.used}/${selected.poolUsage.max}` : `Shared pool usage: ${selected.poolUsage.used}`}</div>` : ""}
-                            ${choiceRows}
-                        </div>
-                    `;
-                }).join("");
-                const manualWargearNotes = groups.manual.map((group) => `
-                    <div class="inline-note inline-note-warning">
-                        Manual wargear: ${group.label}
-                    </div>
-                `).join("");
-                const wargearManualComments = entry.unit && entry.unit.wargear && Array.isArray(entry.unit.wargear.manualNotes)
-                    ? entry.unit.wargear.manualNotes.map((note) => `<div class="inline-note inline-note-warning">${note}</div>`).join("")
-                    : "";
+                const support = entry.support || { supportLevel: "full", supportReasons: [], previewSupport: "configured-only" };
+                const loadout = loadoutSummary(entry);
                 const relationship = entry.relationship || {};
-                const attachmentControl = ((relationship.attachOptions && relationship.attachOptions.length) || relationship.attachedToInstanceId) ? `
-                    <div>
-                        <div class="inline-note">Attach to</div>
-                        <select class="entry-subselect" data-action="attachment-select" data-instance-id="${runtimeInstanceId}">
-                            <option value="">Operate separately</option>
-                            ${relationship.attachOptions.map((option) => `
-                                <option value="${option.instanceId}" ${relationship.attachedToInstanceId === option.instanceId ? "selected" : ""}>
-                                    ${escapeHtml(option.label)}
-                                </option>
-                            `).join("")}
-                        </select>
-                    </div>
-                ` : "";
-                const embarkControl = !relationship.attachedToInstanceId && ((relationship.transportOptions && relationship.transportOptions.length) || relationship.embarkedInInstanceId) ? `
-                    <div>
-                        <div class="inline-note">Embark in</div>
-                        <select class="entry-subselect" data-action="embark-select" data-instance-id="${runtimeInstanceId}">
-                            <option value="">Deploy separately</option>
-                            ${relationship.transportOptions.map((option) => `
-                                <option value="${option.instanceId}" ${relationship.embarkedInInstanceId === option.instanceId ? "selected" : ""}>
-                                    ${escapeHtml(option.label)}
-                                </option>
-                            `).join("")}
-                        </select>
-                    </div>
-                ` : "";
-                const relationshipNotes = [
-                    relationship.attachedToLabel ? `<div class="inline-note">Attached to ${escapeHtml(relationship.attachedToLabel)}.</div>` : "",
-                    relationship.inheritedEmbarkedInLabel ? `<div class="inline-note">Embarks with its unit in ${escapeHtml(relationship.inheritedEmbarkedInLabel)}.</div>` : "",
-                    relationship.embarkedInLabel ? `<div class="inline-note">Embarked in ${escapeHtml(relationship.embarkedInLabel)}.</div>` : "",
-                    relationship.attachedLeaderNames && relationship.attachedLeaderNames.length ? `<div class="inline-note">Attached Leaders: ${escapeHtml(relationship.attachedLeaderNames.join(", "))}.</div>` : "",
-                    relationship.embarkedUnitNames && relationship.embarkedUnitNames.length ? `<div class="inline-note">Embarked Units: ${escapeHtml(relationship.embarkedUnitNames.join(", "))}.</div>` : "",
-                    relationship.transportCapacity && relationship.transportCapacity.supported && typeof relationship.transportCapacity.max === "number"
-                        ? `<div class="inline-note">Transport capacity: ${relationship.transportCapacity.used}/${relationship.transportCapacity.max}.</div>`
-                        : "",
-                    relationship.transportCapacity && !relationship.transportCapacity.supported && relationship.transportCapacity.rawText
-                        ? `<div class="inline-note inline-note-warning">${escapeHtml(relationship.transportCapacity.rawText)}</div>`
-                        : "",
-                ].join("");
-                const warlordControl = isCharacter ? `
-                    <label class="inline-note">
-                        <input
-                            type="radio"
-                            name="warlord-entry"
-                            data-action="warlord-select"
-                            data-instance-id="${runtimeInstanceId}"
-                            ${isWarlord ? "checked" : ""}
-                        >
-                        Warlord
-                    </label>
-                ` : "";
-                const enhancementControl = isCharacter ? `
-                    <div>
-                        <div class="inline-note">Enhancement</div>
-                        ${isEpicHero ? `<div class="inline-note inline-note-warning">Epic Heroes cannot take enhancements.</div>` : ""}
-                        <select class="entry-subselect" data-action="enhancement-select" data-instance-id="${runtimeInstanceId}" ${!availableEnhancements.length || isEpicHero ? "disabled" : ""}>
-                            <option value="">No enhancement</option>
-                            ${availableEnhancements.map((enhancement) => `
-                                <option value="${enhancement.id}" ${entry.activeEnhancement && entry.activeEnhancement.id === enhancement.id ? "selected" : ""}>
-                                    ${escapeHtml(enhancement.name)} (+${escapeHtml(String(enhancement.points))} pts)
-                                </option>
-                            `).join("")}
-                        </select>
-                        ${entry.activeEnhancement ? `<div class="inline-note">${escapeHtml(entry.activeEnhancement.body)}</div>` : ""}
-                    </div>
-                ` : "";
+                const relationshipSummary = [
+                    relationship.attachedToLabel ? `Attached to ${relationship.attachedToLabel}` : "",
+                    relationship.embarkedInLabel ? `Embarked in ${relationship.embarkedInLabel}` : "",
+                    relationship.inheritedEmbarkedInLabel ? `Embarks with unit in ${relationship.inheritedEmbarkedInLabel}` : "",
+                ].filter(Boolean);
+                const selected = state.activeEditorInstanceId === runtimeInstanceId;
 
                 return `
-                    <tr class="roster-entry">
+                    <tr class="roster-entry ${selected ? "is-selected" : ""}">
                         <td data-label="Unit">
                             <strong>${entry.displayName}</strong>
-                            ${isWarlord ? `<div class="inline-note">Selected as Warlord.</div>` : ""}
-                            ${entry.activeEnhancement ? `<div class="inline-note">Enhancement: ${escapeHtml(entry.activeEnhancement.name)} (+${escapeHtml(String(entry.linePointsEnhancement || 0))} pts).</div>` : ""}
-                            ${entry.unit && entry.unit.selectionMode === "manual" ? `<div class="inline-note inline-note-warning">Source labels are preserved verbatim for this unit.</div>` : ""}
-                            ${unitMissingStats.length ? `<div class="inline-note inline-note-warning">Missing stats: ${unitMissingStats.join(", ")}.</div>` : ""}
-                            ${relationshipNotes}
-                            ${issueText}
+                            <div class="entry-summary-line">
+                                ${supportBadge(support.supportLevel)}
+                                ${support.supportReasons.includes("manual_wargear") ? `<span class="pill pill-warning">Manual choice required</span>` : ""}
+                                ${entry.canRepair ? `<span class="pill support-badge-incompatible">Needs repair</span>` : ""}
+                            </div>
                         </td>
-                        <td data-label="Configuration">
-                            ${entry.unit ? `
-                                <div class="entry-stack">
-                                    <select data-action="option-select" data-instance-id="${runtimeInstanceId}">
-                                        ${optionsHtml}
-                                    </select>
-                                    ${warlordControl}
-                                    ${attachmentControl}
-                                    ${embarkControl}
-                                    ${enhancementControl}
-                                    ${upgradeControls}
-                                    ${wargearControls}
-                                    ${allocationControls}
-                                    ${multiControls}
-                                    ${manualWargearNotes}
-                                    ${wargearManualComments}
-                                </div>
-                            ` : `<div class="inline-note inline-note-warning">This unit cannot be resolved in the current catalog.</div>`}
+                        <td data-label="Summary">
+                            <div class="inline-note">${loadout.length ? escapeHtml(loadout.join(" • ")) : "No loadout summary yet."}</div>
+                            ${relationshipSummary.length ? `<div class="inline-note">${escapeHtml(relationshipSummary.join(" • "))}</div>` : ""}
+                            ${entry.activeEnhancement ? `<div class="inline-note">Enhancement: ${escapeHtml(entry.activeEnhancement.name)}</div>` : ""}
+                            ${entry.issues.length ? `<div class="inline-note inline-note-warning">${escapeHtml(entry.issues[0])}</div>` : ""}
                         </td>
                         <td data-label="Qty">
                             <input
@@ -1935,10 +2501,16 @@
                             <strong>${entry.linePoints}</strong>
                             ${entry.linePointsEnhancement ? `<div class="inline-note">Base ${entry.linePointsBase} + enhancement ${entry.linePointsEnhancement}</div>` : ""}
                         </td>
-                        <td data-label="Action"><button class="btn btn-remove" data-action="remove-entry" data-instance-id="${runtimeInstanceId}">x</button></td>
+                        <td data-label="Actions">
+                            <div class="entry-actions">
+                                <button class="btn" data-action="edit-entry" data-instance-id="${runtimeInstanceId}">${selected ? "Editing" : "Edit"}</button>
+                                <button class="btn btn-remove" data-action="remove-entry" data-instance-id="${runtimeInstanceId}">Remove</button>
+                            </div>
+                        </td>
                     </tr>
                 `;
             }).join("");
+            renderEntryEditor(derived);
         }
 
         function renderPreview() {
@@ -1952,12 +2524,24 @@
                 return;
             }
 
-            els.previewBody.innerHTML = BuilderApp.renderPreviewEntries(renderableEntries, {
+            const detachment = derived.army.activeDetachment ? derived.army.activeDetachment.name : "No detachment selected";
+            const rosterSummary = `
+                <section class="entry-editor-block">
+                    <h3>Roster Summary</h3>
+                    <div class="inline-note">${escapeHtml(state.catalog.faction.name)} • ${escapeHtml(battleSizeLabel(derived.army.battleSize))} • ${escapeHtml(detachment)} • ${derived.totalPoints}/${derived.pointsLimit} pts</div>
+                    <div class="entry-editor-stack">
+                        ${renderableEntries.map((entry) => `
+                            <div class="inline-note"><strong>${escapeHtml(entry.displayName)}:</strong> ${escapeHtml(loadoutSummary(entry).join(" • ") || "Default loadout")}${entry.support.previewSupport === "configured-only" ? " • configured-only preview" : ""}</div>
+                        `).join("")}
+                    </div>
+                </section>
+            `;
+            els.previewBody.innerHTML = `${rosterSummary}${BuilderApp.renderPreviewEntries(renderableEntries, {
                 previewSourceMode: state.previewSourceMode,
                 previewRenderMode: state.previewRenderMode,
                 renderer: window.WahBuilderCardRenderer,
                 missingSourceCardLookup: state.missingSourceCardLookup,
-            });
+            })}`;
             renderPreviewVisibility();
         }
 
@@ -1986,6 +2570,62 @@
             anchor.remove();
             URL.revokeObjectURL(url);
             setRosterStatus(`Exported ${state.activeRosterName || "roster"} as JSON.`, false);
+        }
+
+        function focusCharacterCatalog() {
+            state.catalogFilters.characterOnly = true;
+            els.filterCharacter.checked = true;
+            renderUnitList();
+            if (typeof els.unitList.scrollIntoView === "function") {
+                els.unitList.scrollIntoView({ block: "nearest", behavior: "smooth" });
+            }
+        }
+
+        function focusWarlordChoice() {
+            const derived = deriveRoster();
+            const candidate = derived.entries.find((entry) => entry.unit && (entry.unit.keywords || []).includes("CHARACTER")) || null;
+            if (candidate) {
+                openEntryEditor(candidate.instanceId);
+                return;
+            }
+            focusCharacterCatalog();
+        }
+
+        function focusUnsupportedEntry() {
+            const derived = deriveRoster();
+            const target = derived.compatibility && derived.compatibility.incompatibleEntries && derived.compatibility.incompatibleEntries[0]
+                ? derived.compatibility.incompatibleEntries[0]
+                : derived.invalidEntries[0];
+            if (target) {
+                openEntryEditor(target.instanceId);
+            }
+        }
+
+        function applyRepairAction(mode) {
+            const derived = deriveRoster();
+            const incompatibleIds = new Set((derived.compatibility && derived.compatibility.incompatibleEntries
+                ? derived.compatibility.incompatibleEntries
+                : []).map((entry) => entry.instanceId));
+            if (mode === "keep") {
+                state.repairState = null;
+                renderRoster();
+                setRosterStatus("Keeping unresolved entries for manual review.", false);
+                return;
+            }
+
+            const keptEntries = state.roster.filter((entry) => !incompatibleIds.has(entry.instanceId));
+            if (mode === "copy") {
+                state.activeRosterId = Store.createRosterId();
+                state.activeRosterName = Store.normalizeName(`${state.activeRosterName} Repaired`, state.rosterFactionSlug || state.factionSlug);
+                state.rosterNameDraft = state.activeRosterName;
+            }
+            state.roster = keptEntries;
+            state.activeEditorInstanceId = state.roster[0] ? state.roster[0].instanceId : null;
+            state.repairState = null;
+            renderRoster();
+            renderPreview();
+            persistActiveRoster({ announce: false });
+            setRosterStatus(mode === "copy" ? "Started a repaired copy with compatible entries only." : "Removed unresolved entries from the active roster.", false);
         }
 
         async function restoreInitialRoster() {
@@ -2066,10 +2706,57 @@
             }
         });
 
-        els.unitSearch.addEventListener("input", renderUnitList);
+        els.unitSearch.addEventListener("input", (event) => {
+            state.catalogFilters.search = event.target.value || "";
+            renderUnitList();
+        });
+
+        els.supportFilter.addEventListener("change", (event) => {
+            state.catalogFilters.support = event.target.value || "all";
+            renderUnitList();
+        });
+        els.roleFilter.addEventListener("change", (event) => {
+            state.catalogFilters.role = event.target.value || "all";
+            renderUnitList();
+        });
+        els.pointsFilter.addEventListener("change", (event) => {
+            state.catalogFilters.points = event.target.value || "all";
+            renderUnitList();
+        });
+        els.filterCharacter.addEventListener("change", (event) => {
+            state.catalogFilters.characterOnly = Boolean(event.target.checked);
+            renderUnitList();
+        });
+        els.filterTransport.addEventListener("change", (event) => {
+            state.catalogFilters.transportOnly = Boolean(event.target.checked);
+            renderUnitList();
+        });
+        els.filterEpicHero.addEventListener("change", (event) => {
+            state.catalogFilters.epicHeroOnly = Boolean(event.target.checked);
+            renderUnitList();
+        });
+        els.filterReadyOnly.addEventListener("change", (event) => {
+            state.catalogFilters.readyOnly = Boolean(event.target.checked);
+            renderUnitList();
+        });
 
         els.unitList.addEventListener("click", (event) => {
-            interactionController.handleUnitListClick(event);
+            const target = event.target && typeof event.target.closest === "function"
+                ? event.target.closest("[data-action]")
+                : null;
+            if (target && target.dataset.action === "focus-unit") {
+                const added = interactionController.addToRoster(target.dataset.unitId);
+                if (added) {
+                    const nextEntry = state.roster[state.roster.length - 1];
+                    openEntryEditor(nextEntry ? nextEntry.instanceId : null);
+                }
+                return;
+            }
+            const added = interactionController.handleUnitListClick(event);
+            if (added) {
+                const nextEntry = state.roster[state.roster.length - 1];
+                openEntryEditor(nextEntry ? nextEntry.instanceId : null);
+            }
         });
 
         els.rosterBody.addEventListener("change", (event) => {
@@ -2077,7 +2764,31 @@
         });
 
         els.rosterBody.addEventListener("click", (event) => {
+            const target = event.target && typeof event.target.closest === "function"
+                ? event.target.closest("[data-action]")
+                : null;
+            if (target && target.dataset.action === "edit-entry") {
+                openEntryEditor(target.dataset.instanceId);
+                return;
+            }
             interactionController.handleRosterBodyClick(event);
+        });
+
+        els.entryEditor.addEventListener("change", (event) => {
+            interactionController.handleRosterBodyChange(event);
+        });
+        els.entryEditor.addEventListener("click", (event) => {
+            const target = event.target && typeof event.target.closest === "function"
+                ? event.target.closest("[data-action]")
+                : null;
+            if (!target) {
+                return;
+            }
+            if (target.dataset.action === "close-editor") {
+                state.activeEditorInstanceId = null;
+                renderRoster();
+                return;
+            }
         });
 
         els.savedRosterSelect.addEventListener("change", async (event) => {
@@ -2144,6 +2855,20 @@
             downloadActiveRoster();
         });
 
+        els.dedupeRosters.addEventListener("click", async () => {
+            const adapter = storageAdapter();
+            if (!adapter) {
+                return;
+            }
+            const result = Store.dedupeSavedRosters(adapter);
+            if (!result.ok) {
+                setRosterStatus("Unable to clean duplicate saved rosters.", true);
+                return;
+            }
+            refreshSavedRosterList();
+            setRosterStatus(result.removedCount ? `Removed ${result.removedCount} duplicate saved roster${result.removedCount === 1 ? "" : "s"}.` : "No duplicate saved rosters found.", false);
+        });
+
         els.deleteRoster.addEventListener("click", async () => {
             const adapter = storageAdapter();
             if (!adapter || !state.activeRosterId) {
@@ -2163,6 +2888,68 @@
             await createNewRoster(state.factionSlug || availableFactionSlugs()[0]);
             setRosterStatus(`Deleted ${deletedName}.`, false);
         });
+
+        els.dataConfidence.addEventListener("click", (event) => {
+            const target = event.target && typeof event.target.closest === "function"
+                ? event.target.closest("[data-action]")
+                : null;
+            if (target && target.dataset.action === "focus-ready-units") {
+                state.catalogFilters.readyOnly = true;
+                state.catalogFilters.support = "full";
+                els.filterReadyOnly.checked = true;
+                els.supportFilter.value = "full";
+                renderUnitList();
+            }
+        });
+
+        els.repairPanel.addEventListener("click", (event) => {
+            const target = event.target && typeof event.target.closest === "function"
+                ? event.target.closest("[data-action]")
+                : null;
+            if (!target) {
+                return;
+            }
+            if (target.dataset.action === "repair-keep") {
+                applyRepairAction("keep");
+            }
+            if (target.dataset.action === "repair-remove") {
+                applyRepairAction("remove");
+            }
+            if (target.dataset.action === "repair-copy") {
+                applyRepairAction("copy");
+            }
+        });
+
+        function handleIssueAction(event) {
+            const target = event.target && typeof event.target.closest === "function"
+                ? event.target.closest("[data-action]")
+                : null;
+            if (!target) {
+                return;
+            }
+            if (target.dataset.action === "focus-detachment") {
+                els.detachmentSelect.focus();
+                return;
+            }
+            if (target.dataset.action === "focus-characters") {
+                focusCharacterCatalog();
+                return;
+            }
+            if (target.dataset.action === "focus-warlord") {
+                focusWarlordChoice();
+                return;
+            }
+            if (target.dataset.action === "focus-unsupported") {
+                focusUnsupportedEntry();
+                return;
+            }
+            if (target.dataset.action === "open-entry-issue") {
+                openEntryEditor(target.dataset.instanceId);
+            }
+        }
+
+        els.readinessBanner.addEventListener("click", handleIssueAction);
+        els.legalitySummary.addEventListener("click", handleIssueAction);
 
         els.clearRoster.addEventListener("click", () => {
             interactionController.clearRoster();

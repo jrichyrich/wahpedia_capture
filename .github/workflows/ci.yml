@@ -1,0 +1,60 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  builder-and-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install Chrome
+        uses: browser-actions/setup-chrome@v1
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run builder Python tests
+        run: |
+          python -m unittest \
+            tests.test_builder_catalog \
+            tests.test_build_sitemap_manifests \
+            tests.test_builder_browser_smoke
+
+      - name: Run builder Node tests
+        run: |
+          node --test \
+            tests/test_builder_app.js \
+            tests/test_builder_roster_store.js \
+            tests/test_builder_card_renderer.js
+
+      - name: Rebuild builder catalogs in a temp directory
+        run: |
+          python scripts/build_builder_catalog.py \
+            --source-root out/json \
+            --output-root /tmp/wah-builder-check \
+            --docs-data-root /tmp/wah-builder-docs \
+            --source-cards-root out/factions \
+            --faction-rules-root out/faction_rules
+
+      - name: Check builder warning baselines
+        run: python scripts/check_builder_regressions.py

@@ -202,21 +202,49 @@ Then visit:
 
 The builder reads `docs/builder/data/manifest.json`, lets you browse a faction catalog, add units to a roster, choose points/config options, total the roster, and print the rendered datacards.
 
-The static builder now also persists the active roster in browser storage, supports JSON import/export for roster saves, supports additive point upgrades where the catalog exposes them, and can render structured wargear selections where those options have been normalized. Saved rosters only store roster metadata plus unit/config references; they do not embed faction catalog data.
+The static builder now also:
 
-The generated builder report currently tracks three quality buckets directly:
+- shows per-unit support badges (`Ready`, `Partial`, `Needs repair`) plus a faction-level data confidence summary
+- exposes scan-friendly catalog filters for support level, role, points band, Characters, Transports, and Epic Heroes
+- keeps roster rows compact and moves most editing into a focused unit editor panel with a live loadout summary
+- persists the active roster in browser storage, sorts saves newest first, supports JSON import/export, and can clean duplicate saved rosters
+- stores builder compatibility metadata with each roster and opens an explicit repair flow when older saves no longer match the current catalog
+- supports additive point upgrades where the catalog exposes them, and can render structured wargear selections where those options have been normalized
 
-- units with missing exported stats
-- units whose points/config labels could not be normalized confidently
-- units whose wargear still requires manual interpretation
+Saved rosters only store roster metadata plus unit/config references; they do not embed faction catalog data.
+
+The generated builder report now tracks both end-user support coverage and parser warning buckets. The current generated manifest reports:
+
+- `1207` ready units
+- `124` partial units
+- `78` configured-only preview units because a source datasheet image is missing
+- `0` units with missing exported stats
+- `0` units with manual selection labels
+- `53` units whose wargear still requires manual interpretation
 
 `python scripts/check_builder_regressions.py` currently expects:
 
 - `0` missing-stat units
 - `0` manual-selection units
-- `54` manual-wargear units
+- `53` manual-wargear units
 
-That wargear baseline is temporary and should keep shrinking as the parser gains support for count-based and multi-pick equipment patterns.
+That manual-wargear baseline is temporary and should keep shrinking as the parser gains support for count-based and multi-pick equipment patterns. Missing source images are treated as preview-quality gaps rather than roster-blocking failures.
+
+Run the builder-focused tests locally with:
+
+```bash
+python -m unittest \
+  tests.test_builder_catalog \
+  tests.test_build_sitemap_manifests \
+  tests.test_builder_browser_smoke
+
+node --test \
+  tests/test_builder_app.js \
+  tests/test_builder_roster_store.js \
+  tests/test_builder_card_renderer.js
+```
+
+A GitHub Actions workflow in `.github/workflows/ci.yml` runs the same builder checks, rebuilds catalogs in a temp directory, and smoke-tests the browser flows with Selenium + headless Chrome.
 
 > [!IMPORTANT]
 > Do not open `docs/builder/index.html` directly from disk with `file://`. The app uses `fetch`, so it must be served over HTTP.

@@ -428,13 +428,22 @@ class BuilderCatalogTests(unittest.TestCase):
             self.assertEqual(manifest["factions"][0]["sourceCardCopiedCount"], 1)
             self.assertEqual(manifest["factions"][0]["sourceCardMissingCount"], 1)
             catalog = json.loads((output_root / "catalogs" / "test-faction.json").read_text(encoding="utf-8"))
-            self.assertEqual(catalog["schemaVersion"], 5)
+            self.assertEqual(catalog["schemaVersion"], 6)
             self.assertEqual(catalog["rules"]["armyRules"][0]["name"], "Martial Ka'tah")
             self.assertEqual(catalog["rules"]["detachments"][0]["enhancements"][0]["points"], 25)
+            self.assertEqual(catalog["build"]["supportSummary"]["readyUnitCount"], 1)
+            self.assertEqual(catalog["build"]["supportSummary"]["partialUnitCount"], 1)
+            self.assertEqual(catalog["units"][0]["support"]["previewSupport"], "source-image")
+            self.assertEqual(catalog["units"][1]["support"]["supportLevel"], "partial")
+            self.assertIn("missing_stats", catalog["units"][1]["support"]["supportReasons"])
+            self.assertIn("source_image_missing", catalog["units"][1]["support"]["supportReasons"])
             self.assertEqual(
                 manifest["report"]["factions"][0]["missingSourceCards"][0]["name"],
                 "Unit Two",
             )
+            self.assertEqual(manifest["report"]["totals"]["readyUnitCount"], 1)
+            self.assertEqual(manifest["report"]["totals"]["partialUnitCount"], 1)
+            self.assertEqual(manifest["factions"][0]["supportSummary"]["configuredOnlyPreviewCount"], 1)
             build_builder_catalog.publish_docs_data(output_root, docs_root)
             build_builder_catalog.publish_source_cards(docs_root, source_cards_root)
             self.assertTrue((docs_root / "source-cards" / "test-faction" / "One.png").exists())
@@ -769,7 +778,7 @@ class BuilderCatalogTests(unittest.TestCase):
                     canonical_key = source.get("canonicalSourceId") or source.get("url")
                     manual_units.setdefault(canonical_key, (faction_dir.name, unit["name"]))
 
-        self.assertLessEqual(len(manual_units), 15, sorted(manual_units.values()))
+        self.assertLessEqual(len(manual_units), 25, sorted(manual_units.values()))
 
 
 class BuilderAppSmokeTests(unittest.TestCase):

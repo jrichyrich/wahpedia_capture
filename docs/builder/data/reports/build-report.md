@@ -1,6 +1,6 @@
 # Builder Catalog Build Report
 
-- Generated at: 2026-03-30T17:08:35+00:00
+- Generated at: 2026-03-30T19:34:30+00:00
 - Source root: `/Users/jasricha/Documents/Github_Personal/wahpedia_capture/out/json`
 - Factions imported: 11
 - Total units: 1331
@@ -9,6 +9,9 @@
 - Units with manual wargear: 53
 - Units with render issues: 0
 - Factions with rules warnings: 0
+- Ready units: 1207
+- Partial-support units: 124
+- Configured-only preview units: 78
 - Source cards copied: 1253
 - Source cards missing: 78
 
@@ -23,6 +26,9 @@
 - Manual wargear units: 0
 - Render issue units: 0
 - Rules warnings: 0
+- Ready units: 31
+- Partial-support units: 0
+- Configured-only preview units: 0
 - Source cards copied: 31
 - Source cards missing: 0
 
@@ -35,6 +41,9 @@
 - Manual wargear units: 1
 - Render issue units: 0
 - Rules warnings: 0
+- Ready units: 96
+- Partial-support units: 1
+- Configured-only preview units: 0
 - Source cards copied: 97
 - Source cards missing: 0
 
@@ -47,6 +56,9 @@
 - Manual wargear units: 0
 - Render issue units: 0
 - Rules warnings: 0
+- Ready units: 128
+- Partial-support units: 0
+- Configured-only preview units: 0
 - Source cards copied: 128
 - Source cards missing: 0
 
@@ -59,6 +71,9 @@
 - Manual wargear units: 9
 - Render issue units: 0
 - Rules warnings: 0
+- Ready units: 172
+- Partial-support units: 9
+- Configured-only preview units: 0
 - Source cards copied: 181
 - Source cards missing: 0
 
@@ -71,6 +86,9 @@
 - Manual wargear units: 8
 - Render issue units: 0
 - Rules warnings: 0
+- Ready units: 166
+- Partial-support units: 8
+- Configured-only preview units: 0
 - Source cards copied: 174
 - Source cards missing: 0
 
@@ -83,6 +101,9 @@
 - Manual wargear units: 0
 - Render issue units: 0
 - Rules warnings: 0
+- Ready units: 71
+- Partial-support units: 0
+- Configured-only preview units: 0
 - Source cards copied: 71
 - Source cards missing: 0
 
@@ -95,6 +116,9 @@
 - Manual wargear units: 1
 - Render issue units: 0
 - Rules warnings: 0
+- Ready units: 46
+- Partial-support units: 1
+- Configured-only preview units: 0
 - Source cards copied: 47
 - Source cards missing: 0
 
@@ -107,6 +131,9 @@
 - Manual wargear units: 7
 - Render issue units: 0
 - Rules warnings: 0
+- Ready units: 79
+- Partial-support units: 7
+- Configured-only preview units: 0
 - Source cards copied: 86
 - Source cards missing: 0
 
@@ -119,6 +146,9 @@
 - Manual wargear units: 8
 - Render issue units: 0
 - Rules warnings: 0
+- Ready units: 147
+- Partial-support units: 8
+- Configured-only preview units: 0
 - Source cards copied: 155
 - Source cards missing: 0
 
@@ -131,6 +161,9 @@
 - Manual wargear units: 11
 - Render issue units: 0
 - Rules warnings: 0
+- Ready units: 180
+- Partial-support units: 11
+- Configured-only preview units: 0
 - Source cards copied: 191
 - Source cards missing: 0
 
@@ -143,5 +176,8 @@
 - Manual wargear units: 8
 - Render issue units: 0
 - Rules warnings: 0
+- Ready units: 91
+- Partial-support units: 79
+- Configured-only preview units: 78
 - Source cards copied: 92
 - Source cards missing: 78

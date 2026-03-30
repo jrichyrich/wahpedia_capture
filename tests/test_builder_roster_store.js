@@ -257,6 +257,8 @@ test("saveRosterToStorage persists payload and active id", () => {
         appVersion: "builder-catalog-v2",
         factionSlug: "aeldari",
         name: "Swordwind",
+        builderSchemaVersion: 6,
+        builderGeneratedAt: "2026-03-30T17:08:35+00:00",
         army: legalArmy(),
         entries: [
             {
@@ -305,6 +307,8 @@ test("saveRosterToStorage persists payload and active id", () => {
     assert.equal(loaded.army.battleSize, "strike-force");
     assert.equal(loaded.army.warlordInstanceId, "entry-1");
     assert.equal(loaded.army.detachmentId, "battle-host");
+    assert.equal(loaded.builderSchemaVersion, 6);
+    assert.equal(loaded.builderGeneratedAt, "2026-03-30T17:08:35+00:00");
     assert.equal(loaded.entries[0].embarkedInInstanceId, "entry-3");
     assert.equal(loaded.entries[1].attachedToInstanceId, "entry-1");
     assert.equal(loaded.entries[1].optionId, "1-model");
@@ -320,6 +324,8 @@ test("import/export round trips roster JSON", () => {
         appVersion: "builder-catalog-v2",
         factionSlug: "aeldari",
         name: "Imported Roster",
+        builderSchemaVersion: 6,
+        builderGeneratedAt: "2026-03-30T17:08:35+00:00",
         army: legalArmy(),
         entries: [{
             instanceId: "entry-1",
@@ -352,6 +358,8 @@ test("import/export round trips roster JSON", () => {
     const imported = Store.importRosterJson(json);
     assert.equal(imported.name, "Imported Roster");
     assert.equal(imported.factionSlug, "aeldari");
+    assert.equal(imported.builderSchemaVersion, 6);
+    assert.equal(imported.builderGeneratedAt, "2026-03-30T17:08:35+00:00");
     assert.equal(imported.army.battleSize, "strike-force");
     assert.equal(imported.army.warlordInstanceId, "entry-1");
     assert.equal(imported.army.detachmentId, "battle-host");
@@ -408,6 +416,9 @@ test("deriveResolvedRoster resolves by optionId and totals valid entries", () =>
     assert.equal(resolved.army.activeDetachment.id, "battle-host");
     assert.equal(resolved.army.availableEnhancements.length, 3);
     assert.equal(resolved.army.stratagems.length, 1);
+    assert.equal(resolved.compatibility.needsReview, true);
+    assert.equal(resolved.readiness.state, "playable");
+    assert.equal(resolved.entries[0].support.supportLevel, "full");
 });
 
 test("deriveResolvedRoster adds enhancement points and exposes enhancement metadata", () => {
@@ -531,6 +542,9 @@ test("deriveResolvedRoster degrades gracefully when faction, unit, or option is 
     assert.equal(resolved.validEntries.length, 0);
     assert.match(resolved.invalidEntries[0].issues[0], /Saved faction is not available/);
     assert.match(resolved.invalidEntries[0].issues.join(" "), /Unit not found/);
+    assert.equal(resolved.invalidEntries[0].support.supportLevel, "incompatible");
+    assert.equal(resolved.invalidEntries[0].canRepair, true);
+    assert.equal(resolved.compatibility.incompatibleEntries.length, 1);
 });
 
 test("migrateSavedRosterDocument defaults army state for legacy rosters", () => {
@@ -547,6 +561,39 @@ test("migrateSavedRosterDocument defaults army state for legacy rosters", () => 
     assert.equal(migrated.entries[0].attachedToInstanceId, null);
     assert.equal(migrated.entries[0].embarkedInInstanceId, null);
     assert.equal(migrated.entries[0].enhancementId, null);
+    assert.equal(migrated.builderSchemaVersion, null);
+    assert.equal(migrated.builderGeneratedAt, null);
+});
+
+test("dedupeSavedRosters keeps the newest save per roster name and faction", () => {
+    const storage = createMemoryStorage();
+    Store.saveRosterToStorage(storage, Store.serializeRuntimeRoster({
+        id: "roster-a",
+        appVersion: "builder-catalog-v2",
+        factionSlug: "aeldari",
+        name: "Swordwind",
+        builderSchemaVersion: 5,
+        builderGeneratedAt: "2026-03-20T10:00:00+00:00",
+        savedAt: "2026-03-20T10:00:00+00:00",
+        army: legalArmy(),
+        entries: [],
+    }));
+    Store.saveRosterToStorage(storage, Store.serializeRuntimeRoster({
+        id: "roster-b",
+        appVersion: "builder-catalog-v2",
+        factionSlug: "aeldari",
+        name: "Swordwind",
+        builderSchemaVersion: 6,
+        builderGeneratedAt: "2026-03-30T17:08:35+00:00",
+        savedAt: "2026-03-30T17:08:35+00:00",
+        army: legalArmy(),
+        entries: [],
+    }));
+
+    const result = Store.dedupeSavedRosters(storage);
+    assert.equal(result.ok, true);
+    assert.equal(result.removedCount, 1);
+    assert.deepEqual(Store.listSavedRosters(storage).map((item) => item.id), ["roster-b"]);
 });
 
 test("deriveResolvedRoster validates multi-pick limits and shared pools", () => {

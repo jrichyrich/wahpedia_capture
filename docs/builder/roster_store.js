@@ -7,7 +7,7 @@
 })(typeof globalThis !== "undefined" ? globalThis : this, function () {
     "use strict";
 
-    const ROSTER_SCHEMA_VERSION = 6;
+    const ROSTER_SCHEMA_VERSION = 7;
     const STORAGE_NAMESPACE = "wahpediaCapture.builder.v1";
     const INDEX_KEY = `${STORAGE_NAMESPACE}.savedRosters`;
     const ACTIVE_KEY = `${STORAGE_NAMESPACE}.activeRosterId`;
@@ -68,6 +68,18 @@
             battleSize,
             warlordInstanceId: normalizedWarlordId || null,
             detachmentId: normalizedDetachmentId || null,
+        };
+    }
+
+    function normalizeBuilderMetadata(payload) {
+        const source = payload && typeof payload === "object" ? payload : {};
+        const builderSchemaVersion = Number.isInteger(source.builderSchemaVersion)
+            ? source.builderSchemaVersion
+            : (Number.isInteger(source.builder_schema_version) ? source.builder_schema_version : null);
+        const builderGeneratedAt = source.builderGeneratedAt || source.builder_generated_at;
+        return {
+            builderSchemaVersion,
+            builderGeneratedAt: builderGeneratedAt ? String(builderGeneratedAt) : null,
         };
     }
 
@@ -189,6 +201,7 @@
             throw new Error("Saved roster is missing factionSlug.");
         }
         const entries = Array.isArray(payload.entries) ? payload.entries.map(normalizeSavedEntry) : [];
+        const builderMetadata = normalizeBuilderMetadata(payload);
         return {
             schemaVersion: ROSTER_SCHEMA_VERSION,
             id: payload.id ? String(payload.id).trim() : createRosterId(),
@@ -196,6 +209,8 @@
             appVersion: payload.appVersion ? String(payload.appVersion) : "builder-catalog-unknown",
             factionSlug,
             name: normalizeName(payload.name, factionSlug),
+            builderSchemaVersion: builderMetadata.builderSchemaVersion,
+            builderGeneratedAt: builderMetadata.builderGeneratedAt,
             army: normalizeArmyState(payload.army),
             entries,
         };
@@ -210,6 +225,8 @@
             appVersion: options && options.appVersion ? options.appVersion : "builder-catalog-unknown",
             factionSlug,
             name: options && options.name ? options.name : normalizeName("", factionSlug),
+            builderSchemaVersion: options && Number.isInteger(options.builderSchemaVersion) ? options.builderSchemaVersion : null,
+            builderGeneratedAt: options && options.builderGeneratedAt ? String(options.builderGeneratedAt) : null,
             army: normalizeArmyState(options && options.army),
             entries: [],
         });
@@ -256,6 +273,8 @@
             appVersion: options.appVersion,
             factionSlug: options.factionSlug,
             name: options.name,
+            builderSchemaVersion: Number.isInteger(options.builderSchemaVersion) ? options.builderSchemaVersion : null,
+            builderGeneratedAt: options.builderGeneratedAt ? String(options.builderGeneratedAt) : null,
             army: normalizeArmyState(options.army),
             entries: (options.entries || []).map(serializeRuntimeEntry),
         });
@@ -660,13 +679,21 @@
         return 3;
     }
 
+    function compareSavedAtDescending(left, right) {
+        const leftTime = Date.parse(left && left.savedAt ? left.savedAt : "") || 0;
+        const rightTime = Date.parse(right && right.savedAt ? right.savedAt : "") || 0;
+        return rightTime - leftTime;
+    }
+
     function listSavedRosters(storage) {
         const adapter = createStorageAdapter(storage);
         const raw = readJson(adapter, INDEX_KEY, []);
         if (!Array.isArray(raw)) {
             return [];
         }
-        return raw.filter((item) => item && typeof item === "object" && item.id);
+        return raw
+            .filter((item) => item && typeof item === "object" && item.id)
+            .sort(compareSavedAtDescending);
     }
 
     function getActiveRosterId(storage) {
@@ -724,7 +751,10 @@
             name: savedRoster.name,
             factionSlug: savedRoster.factionSlug,
             savedAt: savedRoster.savedAt,
+            builderSchemaVersion: savedRoster.builderSchemaVersion,
+            builderGeneratedAt: savedRoster.builderGeneratedAt,
         });
+        index.sort(compareSavedAtDescending);
         writeJson(adapter, INDEX_KEY, index);
         setActiveRosterId(adapter, savedRoster.id);
         return { ok: true, roster: savedRoster, index };
@@ -742,6 +772,33 @@
             setActiveRosterId(adapter, index.length ? index[0].id : null);
         }
         return { ok: true, index };
+    }
+
+    function dedupeSavedRosters(storage) {
+        const adapter = createStorageAdapter(storage);
+        if (!adapter) {
+            return { ok: false, reason: "storage-unavailable" };
+        }
+        const index = listSavedRosters(adapter);
+        const keep = [];
+        const keepIds = new Set();
+        const seenKeys = new Set();
+        index.forEach((item) => {
+            const key = `${String(item.factionSlug || "").trim()}::${String(item.name || "").trim().toLowerCase()}`;
+            if (seenKeys.has(key)) {
+                adapter.removeItem(rosterKey(item.id));
+                return;
+            }
+            seenKeys.add(key);
+            keep.push(item);
+            keepIds.add(item.id);
+        });
+        writeJson(adapter, INDEX_KEY, keep);
+        const activeId = getActiveRosterId(adapter);
+        if (activeId && !keepIds.has(activeId)) {
+            setActiveRosterId(adapter, keep.length ? keep[0].id : null);
+        }
+        return { ok: true, index: keep, removedCount: index.length - keep.length };
     }
 
     function exportRosterJson(roster) {
@@ -1088,6 +1145,59 @@
             .join(" ");
     }
 
+    function normalizeSupportMetadata(unit) {
+        const support = unit && unit.support && typeof unit.support === "object" ? unit.support : {};
+        const supportReasons = Array.isArray(support.supportReasons)
+            ? support.supportReasons.map((value) => String(value || "").trim()).filter(Boolean)
+            : [];
+        const supportLevel = support.supportLevel ? String(support.supportLevel) : (supportReasons.length ? "partial" : "full");
+        return {
+            supportLevel,
+            supportReasons,
+            previewSupport: support.previewSupport ? String(support.previewSupport) : "configured-only",
+        };
+    }
+
+    function rosterCompatibility(roster, catalog, availableFactionSlugs, entries) {
+        const compatibleFaction = !availableFactionSlugs.length || availableFactionSlugs.includes(roster.factionSlug);
+        const schemaMatches = Boolean(
+            catalog
+            && Number.isInteger(roster.builderSchemaVersion)
+            && Number.isInteger(catalog.schemaVersion)
+            && roster.builderSchemaVersion === catalog.schemaVersion
+        );
+        const generatedAtMatches = Boolean(
+            catalog
+            && roster.builderGeneratedAt
+            && catalog.generatedAt
+            && String(roster.builderGeneratedAt) === String(catalog.generatedAt)
+        );
+        const missingMetadata = roster.builderSchemaVersion === null || roster.builderGeneratedAt === null;
+        const incompatibleEntries = (Array.isArray(entries) ? entries : []).filter((entry) => entry && entry.support.supportLevel === "incompatible");
+        return {
+            compatibleFaction,
+            schemaMatches,
+            generatedAtMatches,
+            missingMetadata,
+            needsReview: missingMetadata || !schemaMatches || !generatedAtMatches || incompatibleEntries.length > 0 || !compatibleFaction,
+            incompatibleEntries,
+        };
+    }
+
+    function rosterReadiness(armyIssues, invalidEntries, entries) {
+        if (!Array.isArray(entries) || !entries.length) {
+            return { state: "draft", label: "Draft" };
+        }
+        if ((Array.isArray(armyIssues) && armyIssues.length) || (Array.isArray(invalidEntries) && invalidEntries.length)) {
+            return { state: "draft", label: "Draft" };
+        }
+        const hasPartialSupport = entries.some((entry) => entry && entry.support && entry.support.supportLevel !== "full");
+        if (hasPartialSupport) {
+            return { state: "partial", label: "Partial" };
+        }
+        return { state: "playable", label: "Playable" };
+    }
+
     function deriveResolvedRoster(options) {
         const roster = migrateSavedRosterDocument(options.roster);
         const catalog = options.catalog || null;
@@ -1141,6 +1251,13 @@
             const unitPoints = unitPointsBase + unitPointsEnhancement;
             const linePoints = linePointsBase + linePointsEnhancement;
             totalPoints += linePoints;
+            const support = unit
+                ? normalizeSupportMetadata(unit)
+                : {
+                    supportLevel: "incompatible",
+                    supportReasons: ["missing_unit"],
+                    previewSupport: "configured-only",
+                };
 
             entries.push({
                 instanceId: entry.instanceId || `resolved-${index}`,
@@ -1156,6 +1273,8 @@
                 wargearSelections: wargearResolution.selections,
                 issues,
                 isValid: issues.length === 0,
+                canRepair: !unit || issues.some((issue) => /not found in current catalog|faction mismatch/i.test(issue)),
+                support,
                 unitPoints,
                 linePointsBase,
                 linePointsEnhancement,
@@ -1518,7 +1637,7 @@
         if (entries.length) {
             armyWarnings.push({
                 code: "strategic-reserves-not-modeled",
-                level: "warning",
+                level: "info",
                 message: "Strategic Reserves are not modeled yet, so the 25% reserves cap is not checked.",
             });
         }
@@ -1526,7 +1645,7 @@
         if (unsupportedTransportEntries.length) {
             armyWarnings.push({
                 code: "transport-rules-partial",
-                level: "warning",
+                level: "info",
                 message: "Some transport rules are too complex to validate fully, so transport capacity and compatibility checks are advisory for those units.",
             });
         }
@@ -1540,6 +1659,8 @@
         army.stratagems = stratagems;
         army.armyRules = rules.armyRules;
         army.detachments = rules.detachments;
+        const compatibility = rosterCompatibility(roster, catalog, availableFactionSlugs, entries);
+        const readiness = rosterReadiness(armyIssues, entries.filter((entry) => !entry.isValid), entries);
 
         return {
             roster,
@@ -1549,6 +1670,8 @@
             pointsLimit,
             armyIssues,
             armyWarnings,
+            compatibility,
+            readiness,
             validEntries: entries.filter((entry) => entry.isValid),
             invalidEntries: entries.filter((entry) => !entry.isValid),
         };
@@ -1566,6 +1689,7 @@
         createRosterId,
         createRuntimeEntries,
         createStorageAdapter,
+        dedupeSavedRosters,
         deleteRosterFromStorage,
         deriveResolvedRoster,
         exportRosterJson,

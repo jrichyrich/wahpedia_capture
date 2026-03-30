@@ -14,7 +14,7 @@ except ModuleNotFoundError:
     from datasheet_schema import EXPORT_SCHEMA_VERSION, PARSER_VERSION
 
 
-SCHEMA_VERSION = 5
+SCHEMA_VERSION = 6
 FACTION_RULES_SCHEMA_VERSION = 1
 STATS_ORDER = ("M", "T", "Sv", "W", "Ld", "OC")
 SECTION_EXCLUDES = {"ABILITIES", "UNIT COMPOSITION", "WARGEAR OPTIONS"}
@@ -85,6 +85,35 @@ def empty_rules() -> dict[str, object]:
     return {
         "armyRules": [],
         "detachments": [],
+    }
+
+
+def unique_strings(values: list[str]) -> list[str]:
+    seen: set[str] = set()
+    ordered: list[str] = []
+    for value in values:
+        normalized = str(value or "").strip()
+        if not normalized or normalized in seen:
+            continue
+        seen.add(normalized)
+        ordered.append(normalized)
+    return ordered
+
+
+def support_metadata_from_unit(unit: dict[str, object]) -> dict[str, object]:
+    quality = unit.get("quality", {}) if isinstance(unit, dict) else {}
+    support_reasons: list[str] = []
+    if quality.get("hasMissingStats"):
+        support_reasons.append("missing_stats")
+    if quality.get("hasManualSelectionLabels"):
+        support_reasons.append("manual_selection_labels")
+    if quality.get("hasManualWargearOptions"):
+        support_reasons.append("manual_wargear")
+
+    return {
+        "supportLevel": "partial" if support_reasons else "full",
+        "supportReasons": support_reasons,
+        "previewSupport": "configured-only",
     }
 
 
@@ -1312,6 +1341,7 @@ def normalize_card(faction_slug: str, card: dict[str, object]) -> tuple[dict[str
         stat for stat in STATS_ORDER if not normalized["stats"].get(stat)
     ]
     normalized["quality"]["hasMissingStats"] = bool(normalized["quality"]["missingStats"])
+    normalized["support"] = support_metadata_from_unit(normalized)
     render_issues = validate_render_section_coverage(card, normalized)
 
     diagnostics = {
@@ -1368,6 +1398,13 @@ def build_faction_catalog(
     manual_units: list[dict[str, object]] = []
     manual_wargear_units: list[dict[str, object]] = []
     render_issue_units: list[dict[str, object]] = []
+    support_summary = {
+        "readyUnitCount": 0,
+        "partialUnitCount": 0,
+        "incompatibleUnitCount": 0,
+        "configuredOnlyPreviewCount": 0,
+        "sourceImagePreviewCount": 0,
+    }
     rules, rules_warnings = load_faction_rules(faction_slug, faction_rules_root)
 
     for card in cards:
@@ -1404,6 +1441,21 @@ def build_faction_catalog(
                 }
             )
 
+        support = unit.get("support", {}) if isinstance(unit, dict) else {}
+        support_level = str(support.get("supportLevel") or "full")
+        preview_support = str(support.get("previewSupport") or "configured-only")
+        if support_level == "partial":
+            support_summary["partialUnitCount"] += 1
+        elif support_level == "incompatible":
+            support_summary["incompatibleUnitCount"] += 1
+        else:
+            support_summary["readyUnitCount"] += 1
+
+        if preview_support == "source-image":
+            support_summary["sourceImagePreviewCount"] += 1
+        else:
+            support_summary["configuredOnlyPreviewCount"] += 1
+
     units.sort(key=lambda unit: str(unit.get("name", "")))
     catalog = {
         "schemaVersion": SCHEMA_VERSION,
@@ -1421,6 +1473,7 @@ def build_faction_catalog(
             "manualWargearUnits": manual_wargear_units,
             "renderIssueUnits": render_issue_units,
             "rulesWarnings": rules_warnings,
+            "supportSummary": support_summary,
         },
         "rules": rules,
         "units": units,
@@ -1449,6 +1502,9 @@ def write_report(output_root: Path, manifest: dict[str, object]) -> None:
         f"- Units with manual wargear: {manifest['report']['totals']['manualWargearCount']}",
         f"- Units with render issues: {manifest['report']['totals']['renderIssueCount']}",
         f"- Factions with rules warnings: {manifest['report']['totals']['rulesWarningFactionCount']}",
+        f"- Ready units: {manifest['report']['totals']['readyUnitCount']}",
+        f"- Partial-support units: {manifest['report']['totals']['partialUnitCount']}",
+        f"- Configured-only preview units: {manifest['report']['totals']['configuredOnlyPreviewCount']}",
         f"- Source cards copied: {manifest['report']['totals']['sourceCardCopiedCount']}",
         f"- Source cards missing: {manifest['report']['totals']['sourceCardMissingCount']}",
         "",
@@ -1468,6 +1524,9 @@ def write_report(output_root: Path, manifest: dict[str, object]) -> None:
                 f"- Manual wargear units: {faction['manualWargearCount']}",
                 f"- Render issue units: {faction['renderIssueCount']}",
                 f"- Rules warnings: {faction['rulesWarningCount']}",
+                f"- Ready units: {faction['supportSummary']['readyUnitCount']}",
+                f"- Partial-support units: {faction['supportSummary']['partialUnitCount']}",
+                f"- Configured-only preview units: {faction['supportSummary']['configuredOnlyPreviewCount']}",
                 f"- Source cards copied: {faction['sourceCardCopiedCount']}",
                 f"- Source cards missing: {faction['sourceCardMissingCount']}",
                 "",
@@ -1512,6 +1571,8 @@ def collect_source_card_report(
                     {
                         "name": str(unit.get("name", unit.get("unitId", "Unknown unit"))),
                         "reason": "missing-datasheet-slug",
+                        "outputSlug": output_slug,
+                        "datasheetSlug": datasheet_slug,
                     }
                 )
                 continue
@@ -1523,6 +1584,8 @@ def collect_source_card_report(
                     {
                         "name": str(unit.get("name", datasheet_slug)),
                         "reason": f"missing-file:{candidate_path}",
+                        "outputSlug": output_slug,
+                        "datasheetSlug": datasheet_slug,
                     }
                 )
                 continue
@@ -1605,6 +1668,11 @@ def build_all(
     total_manual_wargear = 0
     total_render_issues = 0
     rules_warning_faction_count = 0
+    total_ready_units = 0
+    total_partial_units = 0
+    total_incompatible_units = 0
+    total_configured_only_preview = 0
+    total_source_image_preview = 0
 
     for faction_slug in target_factions:
         index_path = source_root / faction_slug / "index.json"
@@ -1659,16 +1727,78 @@ def build_all(
 
     source_card_report = collect_source_card_report(source_cards_root, built_catalogs)
 
+    for catalog in built_catalogs:
+        faction_slug = str(catalog["faction"]["slug"])
+        missing_source_keys = {
+            f"{str(item.get('outputSlug') or faction_slug)}::{str(item.get('datasheetSlug') or '').strip()}"
+            for item in source_card_report["factions"].get(faction_slug, {}).get("missingUnits", [])
+            if str(item.get("datasheetSlug") or "").strip()
+        }
+        ready_count = 0
+        partial_count = 0
+        incompatible_count = 0
+        configured_only_count = 0
+        source_image_count = 0
+
+        for unit in catalog.get("units", []):
+            support = dict(unit.get("support", {})) if isinstance(unit, dict) else {}
+            support_reasons = unique_strings(list(support.get("supportReasons", [])))
+            source = unit.get("source", {}) if isinstance(unit, dict) else {}
+            source_key = f"{str(source.get('outputSlug') or faction_slug)}::{str(source.get('datasheetSlug') or '').strip()}"
+            has_source_image = bool(str(source.get("datasheetSlug") or "").strip()) and source_key not in missing_source_keys
+            if has_source_image:
+                support["previewSupport"] = "source-image"
+                source_image_count += 1
+            else:
+                support["previewSupport"] = "configured-only"
+                configured_only_count += 1
+                support_reasons.append("source_image_missing")
+
+            support_level = str(support.get("supportLevel") or "full")
+            if support_level == "full" and support_reasons:
+                support_level = "partial"
+            support["supportLevel"] = support_level
+            support["supportReasons"] = unique_strings(support_reasons)
+            unit["support"] = support
+
+            if support_level == "partial":
+                partial_count += 1
+            elif support_level == "incompatible":
+                incompatible_count += 1
+            else:
+                ready_count += 1
+
+        catalog["build"]["supportSummary"] = {
+            "readyUnitCount": ready_count,
+            "partialUnitCount": partial_count,
+            "incompatibleUnitCount": incompatible_count,
+            "configuredOnlyPreviewCount": configured_only_count,
+            "sourceImagePreviewCount": source_image_count,
+        }
+
+        catalog_path = catalog_dir / f"{faction_slug}.json"
+        catalog_path.write_text(json.dumps(catalog, indent=2), encoding="utf-8")
+
     for faction in manifest_factions:
         source_info = source_card_report["factions"].get(faction["slug"], {})
         faction["sourceCardCopiedCount"] = source_info.get("copiedCount", 0)
         faction["sourceCardMissingCount"] = source_info.get("missingCount", 0)
+        catalog = next((item for item in built_catalogs if item["faction"]["slug"] == faction["slug"]), None)
+        support_summary = catalog.get("build", {}).get("supportSummary", {}) if catalog else {}
+        faction["supportSummary"] = support_summary
+        total_ready_units += int(support_summary.get("readyUnitCount", 0) or 0)
+        total_partial_units += int(support_summary.get("partialUnitCount", 0) or 0)
+        total_incompatible_units += int(support_summary.get("incompatibleUnitCount", 0) or 0)
+        total_configured_only_preview += int(support_summary.get("configuredOnlyPreviewCount", 0) or 0)
+        total_source_image_preview += int(support_summary.get("sourceImagePreviewCount", 0) or 0)
 
     for faction in report_factions:
         source_info = source_card_report["factions"].get(faction["slug"], {})
         faction["sourceCardCopiedCount"] = source_info.get("copiedCount", 0)
         faction["sourceCardMissingCount"] = source_info.get("missingCount", 0)
         faction["missingSourceCards"] = source_info.get("missingUnits", [])
+        catalog = next((item for item in built_catalogs if item["faction"]["slug"] == faction["slug"]), None)
+        faction["supportSummary"] = catalog.get("build", {}).get("supportSummary", {}) if catalog else {}
 
     manifest = {
         "schemaVersion": SCHEMA_VERSION,
@@ -1690,6 +1820,11 @@ def build_all(
                 "rulesWarningFactionCount": rules_warning_faction_count,
                 "sourceCardCopiedCount": source_card_report["copiedCount"],
                 "sourceCardMissingCount": source_card_report["missingCount"],
+                "readyUnitCount": total_ready_units,
+                "partialUnitCount": total_partial_units,
+                "incompatibleUnitCount": total_incompatible_units,
+                "configuredOnlyPreviewCount": total_configured_only_preview,
+                "sourceImagePreviewCount": total_source_image_preview,
             },
             "factions": report_factions,
         },

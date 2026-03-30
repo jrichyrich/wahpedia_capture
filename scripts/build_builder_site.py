@@ -128,14 +128,21 @@ def render_all_examples() -> None:
 
 def main() -> None:
     args = parse_args()
+    refresh_sitemap_manifest = getattr(args, "refresh_sitemap_manifest", [])
+    export_output_slugs = getattr(args, "export_output_slug", [])
+    export_faction_rules = getattr(args, "export_faction_rules", [])
+    build_factions = getattr(args, "build_faction", [])
+    render_example_html = bool(getattr(args, "render_example_html", False))
+    clean = bool(getattr(args, "clean", False))
+    export_workers = int(getattr(args, "export_workers", 4))
 
-    if args.refresh_sitemap_manifest:
+    if refresh_sitemap_manifest:
         command = [PYTHON, "scripts/build_sitemap_manifests.py"]
-        for slug in args.refresh_sitemap_manifest:
+        for slug in refresh_sitemap_manifest:
             command.extend(["--output-slug", slug])
         run_command(command)
 
-    export_slugs = discover_impacted_output_slugs(args.export_output_slug)
+    export_slugs = discover_impacted_output_slugs(export_output_slugs)
     for slug in export_slugs:
         run_command(
             [
@@ -144,15 +151,15 @@ def main() -> None:
                 "--output-slug",
                 slug,
                 "--workers",
-                str(max(1, args.export_workers)),
+                str(max(1, export_workers)),
             ]
         )
 
     run_command([PYTHON, "scripts/export_datasheet_json.py", "--sync-duplicates"])
 
     faction_rules_targets = sorted({
-        *discover_impacted_output_slugs(args.export_faction_rules),
-        *(args.build_faction or export_slugs),
+        *discover_impacted_output_slugs(export_faction_rules),
+        *(build_factions or export_slugs),
     })
     if faction_rules_targets:
         command = [PYTHON, "scripts/export_faction_rules.py"]
@@ -160,19 +167,19 @@ def main() -> None:
             command.extend(["--output-slug", slug])
         run_command(command)
 
-    if args.render_example_html:
+    if render_example_html:
         render_all_examples()
 
     validation_command = [PYTHON, "scripts/validate_datasheet_exports.py", "--local-only", "--strict"]
-    validation_targets = args.build_faction or export_slugs
+    validation_targets = build_factions or export_slugs
     for faction in validation_targets:
         validation_command.extend(["--output-slug", faction])
     run_command(validation_command)
 
     command = [PYTHON, "scripts/build_builder_catalog.py"]
-    if args.clean:
+    if clean:
         command.append("--clean")
-    for faction in args.build_faction:
+    for faction in build_factions:
         command.extend(["--faction", faction])
     run_command(command)
 
