@@ -80,6 +80,11 @@
             gap: 8px;
         }
 
+        .sidebar-actions {
+            display: grid;
+            gap: 8px;
+        }
+
         .toggle-chip {
             display: inline-flex;
             align-items: center;
@@ -452,6 +457,10 @@
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
+        }
+
+        .saved-roster-meta {
+            margin-top: 10px;
         }
 
         .repair-panel,
@@ -1026,6 +1035,10 @@
                 </label>
             </div>
 
+            <div class="sidebar-actions">
+                <button id="reset-filters" class="btn" type="button">Reset filters</button>
+            </div>
+
             <div id="status-box" class="status-box">Loading <code>./data/manifest.json</code>...</div>
             <div id="data-confidence" class="status-box">Coverage summary will appear after the catalog loads.</div>
 
@@ -1096,12 +1109,14 @@
                     </div>
                     <div class="roster-manager-actions">
                         <button id="save-roster" class="btn">Save roster</button>
+                        <button id="save-roster-copy" class="btn">Save copy</button>
                         <button id="new-roster" class="btn">New roster</button>
                         <button id="import-roster" class="btn">Import JSON</button>
                         <button id="export-roster" class="btn">Export JSON</button>
                         <button id="dedupe-rosters" class="btn">Clean duplicates</button>
                         <button id="delete-roster" class="btn">Delete roster</button>
                     </div>
+                    <div id="saved-roster-meta" class="saved-roster-meta inline-note"></div>
                     <div id="repair-panel" class="repair-panel" hidden></div>
                     <div id="readiness-banner" class="readiness-banner"></div>
                     <div id="army-rules-panel" class="army-rules-panel"></div>
@@ -1186,16 +1201,7 @@
             wasMobileViewport: false,
             activeEditorInstanceId: null,
             repairState: null,
-            catalogFilters: {
-                search: "",
-                support: "all",
-                role: "all",
-                points: "all",
-                characterOnly: false,
-                transportOnly: false,
-                epicHeroOnly: false,
-                readyOnly: false,
-            },
+            catalogFilters: defaultCatalogFilters(),
             stratagemFilter: {
                 relevance: "all",
                 phase: "all",
@@ -1212,6 +1218,7 @@
             filterTransport: document.getElementById("filter-transport"),
             filterEpicHero: document.getElementById("filter-epic-hero"),
             filterReadyOnly: document.getElementById("filter-ready-only"),
+            resetFilters: document.getElementById("reset-filters"),
             unitList: document.getElementById("unit-list"),
             statusBox: document.getElementById("status-box"),
             dataConfidence: document.getElementById("data-confidence"),
@@ -1237,11 +1244,13 @@
             detachmentSelect: document.getElementById("detachment-select"),
             savedRosterSelect: document.getElementById("saved-roster-select"),
             saveRoster: document.getElementById("save-roster"),
+            saveRosterCopy: document.getElementById("save-roster-copy"),
             newRoster: document.getElementById("new-roster"),
             importRoster: document.getElementById("import-roster"),
             exportRoster: document.getElementById("export-roster"),
             dedupeRosters: document.getElementById("dedupe-rosters"),
             deleteRoster: document.getElementById("delete-roster"),
+            savedRosterMeta: document.getElementById("saved-roster-meta"),
             repairPanel: document.getElementById("repair-panel"),
             readinessBanner: document.getElementById("readiness-banner"),
             armyRulesPanel: document.getElementById("army-rules-panel"),
@@ -1257,6 +1266,30 @@
 
         function setRosterStatus(message, isError) {
             els.rosterStatus.innerHTML = isError ? `<span class="status-error">${message}</span>` : (message || "");
+        }
+
+        function defaultCatalogFilters() {
+            return {
+                search: "",
+                support: "all",
+                role: "all",
+                points: "all",
+                characterOnly: false,
+                transportOnly: false,
+                epicHeroOnly: false,
+                readyOnly: false,
+            };
+        }
+
+        function syncCatalogFilterControls() {
+            els.unitSearch.value = state.catalogFilters.search || "";
+            els.supportFilter.value = state.catalogFilters.support || "all";
+            els.roleFilter.value = state.catalogFilters.role || "all";
+            els.pointsFilter.value = state.catalogFilters.points || "all";
+            els.filterCharacter.checked = Boolean(state.catalogFilters.characterOnly);
+            els.filterTransport.checked = Boolean(state.catalogFilters.transportOnly);
+            els.filterEpicHero.checked = Boolean(state.catalogFilters.epicHeroOnly);
+            els.filterReadyOnly.checked = Boolean(state.catalogFilters.readyOnly);
         }
 
         async function fetchJson(path) {
@@ -1321,6 +1354,46 @@
                 "strike-force": "Strike Force",
                 onslaught: "Onslaught",
             }[battleSize] || "Strike Force";
+        }
+
+        function previewSourceModeLabel(previewSourceMode) {
+            return previewSourceMode === "source-image" ? "Original Wahapedia" : "Configured card";
+        }
+
+        function duplicateSavedRosterCount(savedRosters) {
+            const seen = new Set();
+            let duplicates = 0;
+            (Array.isArray(savedRosters) ? savedRosters : []).forEach((roster) => {
+                const key = `${String(roster && roster.factionSlug ? roster.factionSlug : "").trim()}::${String(roster && roster.name ? roster.name : "").trim().toLowerCase()}`;
+                if (!key || key === "::") {
+                    return;
+                }
+                if (seen.has(key)) {
+                    duplicates += 1;
+                    return;
+                }
+                seen.add(key);
+            });
+            return duplicates;
+        }
+
+        function nextSavedRosterCopyName(baseName) {
+            const normalizedBase = Store.normalizeName(baseName || `${state.activeRosterName || state.rosterNameDraft || "Roster"} Copy`, state.rosterFactionSlug || state.factionSlug);
+            const existing = new Set(
+                (state.savedRosterList || [])
+                    .filter((roster) => roster && roster.factionSlug === (state.rosterFactionSlug || state.factionSlug))
+                    .map((roster) => String(roster.name || "").trim().toLowerCase())
+            );
+            if (!existing.has(normalizedBase.toLowerCase())) {
+                return normalizedBase;
+            }
+            for (let index = 2; index < 1000; index += 1) {
+                const candidate = Store.normalizeName(`${normalizedBase} ${index}`, state.rosterFactionSlug || state.factionSlug);
+                if (!existing.has(candidate.toLowerCase())) {
+                    return candidate;
+                }
+            }
+            return Store.normalizeName(`${normalizedBase} ${Date.now()}`, state.rosterFactionSlug || state.factionSlug);
         }
 
         function catalogDetachments() {
@@ -1554,11 +1627,15 @@
             const savedRosters = state.savedRosterList || [];
             els.savedRosterSelect.disabled = !hasStorage || savedRosters.length === 0;
             els.saveRoster.disabled = !hasStorage;
+            els.saveRosterCopy.disabled = !hasStorage;
             els.dedupeRosters.disabled = !hasStorage || savedRosters.length < 2;
             els.deleteRoster.disabled = !hasStorage || !state.activeRosterId;
 
             if (!savedRosters.length) {
                 els.savedRosterSelect.replaceChildren(optionNode("", "No saved rosters", true));
+                els.savedRosterMeta.textContent = hasStorage
+                    ? "No saved rosters yet. Save the current roster or create a snapshot copy."
+                    : "Browser storage is unavailable. Use JSON export if you want a portable save.";
                 return;
             }
 
@@ -1569,6 +1646,14 @@
                     roster.id === state.activeRosterId
                 ))
             );
+            const reviewCount = savedRosters.filter((roster) => savedRosterCompatibilityLabel(roster) === "review").length;
+            const duplicateCount = duplicateSavedRosterCount(savedRosters);
+            const summaryBits = [
+                `${savedRosters.length} saved`,
+                reviewCount ? `${reviewCount} need review` : "all compatible",
+                duplicateCount ? `${duplicateCount} duplicate ${duplicateCount === 1 ? "copy" : "copies"}` : "no duplicate names",
+            ];
+            els.savedRosterMeta.textContent = summaryBits.join(" • ");
         }
 
         function catalogUnitById(unitId) {
@@ -2178,6 +2263,16 @@
                 : "Original Wahapedia mode prints source images when available and falls back to configured HTML cards when an image capture is missing.";
         }
 
+        function resetCatalogFilters(options = {}) {
+            const nextFilters = defaultCatalogFilters();
+            if (options.preserveSearch) {
+                nextFilters.search = state.catalogFilters.search || "";
+            }
+            state.catalogFilters = nextFilters;
+            syncCatalogFilterControls();
+            renderUnitList();
+        }
+
         function renderFactionOptions() {
             const factions = state.manifest && state.manifest.factions ? state.manifest.factions : [];
             els.factionSelect.innerHTML = factions
@@ -2192,6 +2287,7 @@
             els.filterTransport.disabled = factions.length === 0;
             els.filterEpicHero.disabled = factions.length === 0;
             els.filterReadyOnly.disabled = factions.length === 0;
+            els.resetFilters.disabled = factions.length === 0;
             els.rosterName.disabled = factions.length === 0;
             els.battleSizeSelect.disabled = factions.length === 0;
             els.detachmentSelect.disabled = factions.length === 0;
@@ -2199,6 +2295,7 @@
             els.exportRoster.disabled = factions.length === 0;
             els.newRoster.disabled = factions.length === 0;
             els.dedupeRosters.disabled = !factions.length;
+            syncCatalogFilterControls();
         }
 
         function renderCatalogSummary() {
@@ -2525,10 +2622,25 @@
             }
 
             const detachment = derived.army.activeDetachment ? derived.army.activeDetachment.name : "No detachment selected";
+            const hiddenEntryCount = Math.max(0, derived.entries.length - renderableEntries.length);
+            const configuredOnlyCount = renderableEntries.filter((entry) => entry.support && entry.support.previewSupport === "configured-only").length;
+            const previewMode = previewSourceModeLabel(state.previewSourceMode);
+            const previewStatusBits = [
+                `${renderableEntries.length} printable ${renderableEntries.length === 1 ? "card" : "cards"}`,
+                `${previewMode} mode`,
+            ];
+            if (state.previewSourceMode === "source-image" && configuredOnlyCount) {
+                previewStatusBits.push(`${configuredOnlyCount} configured-only fallback${configuredOnlyCount === 1 ? "" : "s"}`);
+            }
+            if (hiddenEntryCount) {
+                previewStatusBits.push(`${hiddenEntryCount} hidden unresolved entr${hiddenEntryCount === 1 ? "y" : "ies"}`);
+            }
             const rosterSummary = `
                 <section class="entry-editor-block">
-                    <h3>Roster Summary</h3>
+                    <h3>Print Summary</h3>
+                    <div class="inline-note"><strong>${escapeHtml(state.activeRosterName || Store.normalizeName("", state.rosterFactionSlug || state.factionSlug))}</strong></div>
                     <div class="inline-note">${escapeHtml(state.catalog.faction.name)} • ${escapeHtml(battleSizeLabel(derived.army.battleSize))} • ${escapeHtml(detachment)} • ${derived.totalPoints}/${derived.pointsLimit} pts</div>
+                    <div class="inline-note">${escapeHtml(previewStatusBits.join(" • "))}</div>
                     <div class="entry-editor-stack">
                         ${renderableEntries.map((entry) => `
                             <div class="inline-note"><strong>${escapeHtml(entry.displayName)}:</strong> ${escapeHtml(loadoutSummary(entry).join(" • ") || "Default loadout")}${entry.support.previewSupport === "configured-only" ? " • configured-only preview" : ""}</div>
@@ -2570,6 +2682,25 @@
             anchor.remove();
             URL.revokeObjectURL(url);
             setRosterStatus(`Exported ${state.activeRosterName || "roster"} as JSON.`, false);
+        }
+
+        function saveRosterCopy() {
+            const adapter = storageAdapter();
+            if (!adapter) {
+                setRosterStatus("Browser storage is unavailable. Unable to save a roster copy.", true);
+                return null;
+            }
+            refreshSavedRosterList();
+            state.activeRosterId = Store.createRosterId();
+            state.activeRosterName = nextSavedRosterCopyName(`${state.activeRosterName || state.rosterNameDraft || "Roster"} Copy`);
+            state.rosterNameDraft = state.activeRosterName;
+            renderSavedRosterState();
+            renderPreview();
+            const saved = persistActiveRoster({ announce: false });
+            if (saved) {
+                setRosterStatus(`Saved ${saved.name} as a new copy.`, false);
+            }
+            return saved;
         }
 
         function focusCharacterCatalog() {
@@ -2739,6 +2870,9 @@
             state.catalogFilters.readyOnly = Boolean(event.target.checked);
             renderUnitList();
         });
+        els.resetFilters.addEventListener("click", () => {
+            resetCatalogFilters();
+        });
 
         els.unitList.addEventListener("click", (event) => {
             const target = event.target && typeof event.target.closest === "function"
@@ -2825,6 +2959,9 @@
 
         els.saveRoster.addEventListener("click", () => {
             persistActiveRoster({ announce: true });
+        });
+        els.saveRosterCopy.addEventListener("click", () => {
+            saveRosterCopy();
         });
 
         els.newRoster.addEventListener("click", async () => {
