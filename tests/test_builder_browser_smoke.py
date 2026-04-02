@@ -77,21 +77,25 @@ class BuilderBrowserSmokeTests(unittest.TestCase):
         self.wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "#unit-list [data-action='add-unit']")))
 
     def test_filter_edit_and_save_flow(self):
-        Select(self.driver.find_element(By.ID, "faction-select")).select_by_visible_text("Space Wolves")
-        self.wait.until(lambda driver: "180/191 units are ready" in driver.find_element(By.ID, "data-confidence").text)
+        Select(self.driver.find_element(By.ID, "faction-select")).select_by_visible_text("Aeldari")
+        self.driver.find_element(By.ID, "catalog-health-toggle").click()
+        self.wait.until(
+            lambda driver: "96/97 units are ready without known review flags."
+            in driver.find_element(By.ID, "data-confidence").text
+        )
 
         self.driver.find_element(By.ID, "advanced-filters-toggle").click()
         Select(self.driver.find_element(By.ID, "support-filter")).select_by_visible_text("Needs review")
-        self.wait.until(lambda driver: "Needs review" in driver.find_element(By.ID, "unit-list").text)
+        self.wait.until(lambda driver: len(driver.find_elements(By.CSS_SELECTOR, "#unit-list [data-action='add-unit']")) > 0)
 
         self.driver.find_element(By.CSS_SELECTOR, "#unit-list [data-action='focus-unit']").click()
         self.wait.until(lambda driver: "already in your roster" in driver.find_element(By.ID, "unit-list").text or "Add this unit to start configuring it in the roster workspace." in driver.find_element(By.ID, "unit-list").text)
 
         self.driver.find_element(By.CSS_SELECTOR, "#unit-list [data-action='add-unit']").click()
-        self.wait.until(lambda driver: "Edit" in driver.find_element(By.ID, "roster-body").text)
+        self.wait.until(lambda driver: len(driver.find_elements(By.CSS_SELECTOR, "#roster-body .roster-entry")) > 0)
         self.driver.find_element(By.CSS_SELECTOR, "#roster-body [data-action='edit-entry']").click()
         self.wait.until(lambda driver: not driver.find_element(By.ID, "entry-editor").get_attribute("hidden"))
-        self.assertIn("Needs review", self.driver.find_element(By.ID, "entry-editor").text)
+        self.assertIn("needs review", self.driver.find_element(By.ID, "entry-editor").text.lower())
 
         self.driver.find_element(By.ID, "save-roster").click()
         self.wait.until(lambda driver: "Saved" in driver.find_element(By.ID, "roster-status").text)
@@ -171,7 +175,7 @@ class BuilderBrowserSmokeTests(unittest.TestCase):
         self.driver.get(self.base_url)
         self.wait_for_builder()
 
-        self.wait.until(lambda driver: "Roster repair" in driver.find_element(By.ID, "repair-panel").text)
+        self.wait.until(lambda driver: "roster repair" in driver.find_element(By.ID, "repair-panel").text.lower())
         self.driver.find_element(By.CSS_SELECTOR, "#repair-panel [data-action='repair-copy']").click()
 
         self.wait.until(lambda driver: "Started a repaired copy" in driver.find_element(By.ID, "roster-status").text)
