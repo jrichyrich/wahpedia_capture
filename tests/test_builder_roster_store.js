@@ -45,22 +45,25 @@ function sampleCatalog() {
                             id: "phoenix-gem",
                             name: "Phoenix Gem",
                             points: 35,
-                            body: "Character model only.",
-                            eligibilityText: "Character model only.",
+                            body: "AELDARI CHARACTER model only.",
+                            eligibilityText: "AELDARI CHARACTER model only.",
+                            keywordHints: ["AELDARI CHARACTER"],
                         },
                         {
                             id: "fates-messenger",
                             name: "Fate's Messenger",
                             points: 15,
-                            body: "Character model only.",
-                            eligibilityText: "Character model only.",
+                            body: "AELDARI INFANTRY CHARACTER model only.",
+                            eligibilityText: "AELDARI INFANTRY CHARACTER model only.",
+                            keywordHints: ["AELDARI INFANTRY CHARACTER"],
                         },
                         {
                             id: "reader-of-the-runes",
                             name: "Reader of the Runes",
                             points: 20,
-                            body: "Character model only.",
-                            eligibilityText: "Character model only.",
+                            body: "AELDARI PSYKER model only.",
+                            eligibilityText: "AELDARI PSYKER model only.",
+                            keywordHints: ["AELDARI PSYKER"],
                         },
                     ],
                     stratagems: [
@@ -84,7 +87,7 @@ function sampleCatalog() {
                 unitId: "avatar-of-khaine",
                 name: "Avatar of Khaine",
                 keywords: ["MONSTER", "CHARACTER"],
-                factionKeywords: ["AELDARI"],
+                factionKeywords: ["AELDARI", "ASURYANI"],
                 pointsOptions: [
                     { id: "1-model", label: "1 model", points: 280, selectionKind: "models" },
                     { id: "2-models", label: "2 models", points: 560, selectionKind: "models" },
@@ -160,7 +163,7 @@ function sampleCatalog() {
                 unitId: "guardian-defenders",
                 name: "Guardian Defenders",
                 keywords: ["INFANTRY", "BATTLELINE"],
-                factionKeywords: ["AELDARI"],
+                factionKeywords: ["AELDARI", "ASURYANI"],
                 pointsOptions: [
                     { id: "10-models", label: "10 models", points: 100, selectionKind: "models", modelCount: 10 },
                 ],
@@ -174,7 +177,7 @@ function sampleCatalog() {
                 unitId: "troupe",
                 name: "Troupe",
                 keywords: ["INFANTRY"],
-                factionKeywords: ["AELDARI"],
+                factionKeywords: ["AELDARI", "ASURYANI"],
                 pointsOptions: [
                     { id: "5-models", label: "5 models", points: 85, selectionKind: "models", modelCount: 5 },
                     { id: "11-models", label: "11 models", points: 190, selectionKind: "models", modelCount: 11 },
@@ -221,7 +224,7 @@ function sampleCatalog() {
                 unitId: "autarch",
                 name: "Autarch",
                 keywords: ["INFANTRY", "CHARACTER"],
-                factionKeywords: ["AELDARI"],
+                factionKeywords: ["AELDARI", "ASURYANI"],
                 pointsOptions: [
                     { id: "1-model", label: "1 model", points: 90, selectionKind: "models", modelCount: 1 },
                 ],
@@ -241,7 +244,7 @@ function sampleCatalog() {
                 unitId: "wave-serpent",
                 name: "Wave Serpent",
                 keywords: ["VEHICLE", "TRANSPORT", "DEDICATED TRANSPORT"],
-                factionKeywords: ["AELDARI"],
+                factionKeywords: ["AELDARI", "ASURYANI"],
                 pointsOptions: [
                     { id: "1-model", label: "1 model", points: 120, selectionKind: "models", modelCount: 1 },
                 ],
@@ -261,7 +264,7 @@ function sampleCatalog() {
                 unitId: "prince-yriel",
                 name: "Prince Yriel",
                 keywords: ["INFANTRY", "CHARACTER", "EPIC HERO"],
-                factionKeywords: ["AELDARI"],
+                factionKeywords: ["AELDARI", "ASURYANI"],
                 pointsOptions: [
                     { id: "1-model", label: "1 model", points: 100, selectionKind: "models", modelCount: 1 },
                 ],
@@ -275,7 +278,7 @@ function sampleCatalog() {
                 unitId: "fire-prism",
                 name: "Fire Prism",
                 keywords: ["VEHICLE"],
-                factionKeywords: ["AELDARI"],
+                factionKeywords: ["AELDARI", "ASURYANI"],
                 pointsOptions: [
                     { id: "1-model", label: "1 model", points: 180, selectionKind: "models", modelCount: 1 },
                 ],
@@ -284,6 +287,216 @@ function sampleCatalog() {
                     modelCountOptions: [{ label: "1 Fire Prism", minModels: 1, maxModels: 1 }],
                     statements: [],
                 },
+            },
+        ],
+    };
+}
+
+function spaceMarineLeaderCatalog() {
+    return {
+        faction: { slug: "space-marines", name: "Space Marines" },
+        rules: { armyRules: [], detachments: [] },
+        units: [
+            {
+                unitId: "intercessor-squad",
+                name: "Intercessor Squad",
+                keywords: ["INFANTRY", "BATTLELINE"],
+                factionKeywords: ["ADEPTUS ASTARTES"],
+                pointsOptions: [{ id: "5-models", label: "5 models", points: 80, selectionKind: "models", modelCount: 5 }],
+                wargear: { options: [] },
+                composition: { modelCountOptions: [{ label: "5 Intercessors", minModels: 5, maxModels: 5 }], statements: [] },
+            },
+            {
+                unitId: "company-heroes",
+                name: "Company Heroes",
+                keywords: ["INFANTRY"],
+                factionKeywords: ["ADEPTUS ASTARTES"],
+                pointsOptions: [{ id: "4-models", label: "4 models", points: 95, selectionKind: "models", modelCount: 4 }],
+                wargear: { options: [] },
+                renderBlocks: [
+                    {
+                        title: "SPECIAL",
+                        entries: [{ type: "text", text: "You must attach one CAPTAIN or CHAPTER MASTER model to this unit. If this is not possible, this unit does not take part in the battle and counts as having been destroyed." }],
+                    },
+                ],
+                composition: { modelCountOptions: [{ label: "4 Company Heroes", minModels: 4, maxModels: 4 }], statements: [] },
+            },
+            {
+                unitId: "captain",
+                name: "Captain",
+                keywords: ["INFANTRY", "CHARACTER", "CAPTAIN"],
+                factionKeywords: ["ADEPTUS ASTARTES"],
+                pointsOptions: [{ id: "1-model", label: "1 model", points: 80, selectionKind: "models", modelCount: 1 }],
+                wargear: { options: [] },
+                renderBlocks: [
+                    {
+                        title: "LEADER",
+                        entries: [{ type: "list", items: ["Intercessor Squad", "Company Heroes", "Grey Hunters"] }],
+                    },
+                ],
+                composition: { modelCountOptions: [{ label: "1 Captain", minModels: 1, maxModels: 1 }], statements: [] },
+            },
+            {
+                unitId: "lieutenant",
+                name: "Lieutenant",
+                keywords: ["INFANTRY", "CHARACTER", "LIEUTENANT"],
+                factionKeywords: ["ADEPTUS ASTARTES"],
+                pointsOptions: [{ id: "1-model", label: "1 model", points: 65, selectionKind: "models", modelCount: 1 }],
+                wargear: { options: [] },
+                renderBlocks: [
+                    {
+                        title: "LEADER",
+                        entries: [
+                            { type: "list", items: ["Intercessor Squad", "Company Heroes"] },
+                            { type: "text", text: "You can attach this model to a unit it can lead even if one CAPTAIN or CHAPTER MASTER model has already been attached to it." },
+                        ],
+                    },
+                ],
+                composition: { modelCountOptions: [{ label: "1 Lieutenant", minModels: 1, maxModels: 1 }], statements: [] },
+            },
+            {
+                unitId: "apothecary",
+                name: "Apothecary",
+                keywords: ["INFANTRY", "CHARACTER", "APOTHECARY"],
+                factionKeywords: ["ADEPTUS ASTARTES"],
+                pointsOptions: [{ id: "1-model", label: "1 model", points: 50, selectionKind: "models", modelCount: 1 }],
+                wargear: { options: [] },
+                renderBlocks: [
+                    {
+                        title: "LEADER",
+                        entries: [
+                            { type: "list", items: ["Intercessor Squad"] },
+                            { type: "text", text: "You can attach this model to one of the above units even if one CAPTAIN, CHAPTER MASTER or LIEUTENANT model has already been attached to it." },
+                        ],
+                    },
+                ],
+                composition: { modelCountOptions: [{ label: "1 Apothecary", minModels: 1, maxModels: 1 }], statements: [] },
+            },
+            {
+                unitId: "grey-hunters",
+                name: "Grey Hunters",
+                keywords: ["INFANTRY"],
+                factionKeywords: ["ADEPTUS ASTARTES", "SPACE WOLVES"],
+                pointsOptions: [{ id: "5-models", label: "5 models", points: 85, selectionKind: "models", modelCount: 5 }],
+                wargear: { options: [] },
+                composition: { modelCountOptions: [{ label: "5 Grey Hunters", minModels: 5, maxModels: 5 }], statements: [] },
+            },
+            {
+                unitId: "wolf-lord",
+                name: "Wolf Lord",
+                keywords: ["INFANTRY", "CHARACTER"],
+                factionKeywords: ["ADEPTUS ASTARTES", "SPACE WOLVES"],
+                pointsOptions: [{ id: "1-model", label: "1 model", points: 80, selectionKind: "models", modelCount: 1 }],
+                wargear: { options: [] },
+                renderBlocks: [
+                    {
+                        title: "LEADER",
+                        entries: [{ type: "list", items: ["Grey Hunters"] }],
+                    },
+                ],
+                composition: { modelCountOptions: [{ label: "1 Wolf Lord", minModels: 1, maxModels: 1 }], statements: [] },
+            },
+            {
+                unitId: "wolf-guard-pack-leader",
+                name: "Wolf Guard Pack Leader",
+                keywords: ["INFANTRY", "CHARACTER", "PACK LEADER"],
+                factionKeywords: ["ADEPTUS ASTARTES", "SPACE WOLVES"],
+                pointsOptions: [{ id: "1-model", label: "1 model", points: 30, selectionKind: "models", modelCount: 1 }],
+                wargear: { options: [] },
+                renderBlocks: [
+                    {
+                        title: "LEADER",
+                        entries: [
+                            { type: "list", items: ["Grey Hunters"] },
+                            { type: "text", text: "You must attach this model to one of the above units, and can do so even if one or more CHARACTER units have already been attached to that unit, but a unit can never include more than one PACK LEADER model." },
+                        ],
+                    },
+                ],
+                composition: { modelCountOptions: [{ label: "1 Wolf Guard Pack Leader", minModels: 1, maxModels: 1 }], statements: [] },
+            },
+        ],
+    };
+}
+
+function transportEdgeCatalog() {
+    return {
+        faction: { slug: "mixed", name: "Mixed" },
+        rules: { armyRules: [], detachments: [] },
+        units: [
+            {
+                unitId: "valkyrie-sky-talon",
+                name: "Valkyrie Sky Talon",
+                keywords: ["VEHICLE", "TRANSPORT"],
+                factionKeywords: ["ASTRA MILITARUM"],
+                pointsOptions: [{ id: "1-model", label: "1 model", points: 140, selectionKind: "models", modelCount: 1 }],
+                wargear: { options: [] },
+                renderBlocks: [
+                    {
+                        title: "TRANSPORT",
+                        entries: [{ type: "text", text: "This model has a transport capacity of 1 TAUROS model or 2 ASTRA MILITARUM WALKER models." }],
+                    },
+                ],
+                composition: { modelCountOptions: [{ label: "1 Valkyrie Sky Talon", minModels: 1, maxModels: 1 }], statements: [] },
+            },
+            {
+                unitId: "tauros",
+                name: "Tauros",
+                keywords: ["VEHICLE", "TAUROS"],
+                factionKeywords: ["ASTRA MILITARUM"],
+                pointsOptions: [{ id: "1-model", label: "1 model", points: 55, selectionKind: "models", modelCount: 1 }],
+                wargear: { options: [] },
+                composition: { modelCountOptions: [{ label: "1 Tauros", minModels: 1, maxModels: 1 }], statements: [] },
+            },
+            {
+                unitId: "sentinel",
+                name: "Scout Sentinel",
+                keywords: ["VEHICLE", "WALKER"],
+                factionKeywords: ["ASTRA MILITARUM"],
+                pointsOptions: [{ id: "1-model", label: "1 model", points: 60, selectionKind: "models", modelCount: 1 }],
+                wargear: { options: [] },
+                composition: { modelCountOptions: [{ label: "1 Scout Sentinel", minModels: 1, maxModels: 1 }], statements: [] },
+            },
+            {
+                unitId: "ynnari-raider",
+                name: "Ynnari Raider",
+                keywords: ["VEHICLE", "TRANSPORT"],
+                factionKeywords: ["YNNARI"],
+                pointsOptions: [{ id: "1-model", label: "1 model", points: 80, selectionKind: "models", modelCount: 1 }],
+                wargear: { options: [] },
+                renderBlocks: [
+                    {
+                        title: "TRANSPORT",
+                        entries: [{ type: "text", text: "This model has a transport capacity of 11 models from the following units: THE VISARCH, YNNARI ARCHON, YNNARI INCUBI, YNNARI KABALITE WARRIORS, YNNARI SUCCUBUS, YNNARI WYCHES, YVRAINE" }],
+                    },
+                ],
+                composition: { modelCountOptions: [{ label: "1 Ynnari Raider", minModels: 1, maxModels: 1 }], statements: [] },
+            },
+            {
+                unitId: "yvraine",
+                name: "Yvraine",
+                keywords: ["INFANTRY", "CHARACTER"],
+                factionKeywords: ["YNNARI"],
+                pointsOptions: [{ id: "1-model", label: "1 model", points: 125, selectionKind: "models", modelCount: 1 }],
+                wargear: { options: [] },
+                composition: { modelCountOptions: [{ label: "1 Yvraine", minModels: 1, maxModels: 1 }], statements: [] },
+            },
+            {
+                unitId: "ynnari-wyches",
+                name: "Ynnari Wyches",
+                keywords: ["INFANTRY"],
+                factionKeywords: ["YNNARI"],
+                pointsOptions: [{ id: "10-models", label: "10 models", points: 90, selectionKind: "models", modelCount: 10 }],
+                wargear: { options: [] },
+                composition: { modelCountOptions: [{ label: "10 Ynnari Wyches", minModels: 10, maxModels: 10 }], statements: [] },
+            },
+            {
+                unitId: "guardian-defenders",
+                name: "Guardian Defenders",
+                keywords: ["INFANTRY"],
+                factionKeywords: ["AELDARI"],
+                pointsOptions: [{ id: "10-models", label: "10 models", points: 100, selectionKind: "models", modelCount: 10 }],
+                wargear: { options: [] },
+                composition: { modelCountOptions: [{ label: "10 Guardians", minModels: 10, maxModels: 10 }], statements: [] },
             },
         ],
     };
@@ -525,7 +738,7 @@ test("deriveResolvedRoster rejects illegal enhancement assignments", () => {
             army: legalArmy("entry-1"),
             entries: [
                 { instanceId: "entry-1", unitId: "autarch", optionId: "1-model", quantity: 1, enhancementId: "phoenix-gem", wargearSelections: {} },
-                { instanceId: "entry-2", unitId: "guardian-defenders", optionId: "10-models", quantity: 1, enhancementId: "fates-messenger", wargearSelections: {} },
+                { instanceId: "entry-2", unitId: "avatar-of-khaine", optionId: "1-model", quantity: 1, enhancementId: "fates-messenger", wargearSelections: {} },
                 { instanceId: "entry-3", unitId: "prince-yriel", optionId: "1-model", quantity: 1, enhancementId: "reader-of-the-runes", wargearSelections: {} },
                 { instanceId: "entry-4", unitId: "avatar-of-khaine", optionId: "1-model", quantity: 1, enhancementId: "phoenix-gem", wargearSelections: {} },
             ],
@@ -534,7 +747,7 @@ test("deriveResolvedRoster rejects illegal enhancement assignments", () => {
         availableFactionSlugs: ["aeldari"],
     });
 
-    assert.match(resolved.entries[1].issues.join(" "), /Character units/i);
+    assert.match(resolved.entries[1].issues.join(" "), /requires AELDARI INFANTRY CHARACTER/i);
     assert.match(resolved.entries[2].issues.join(" "), /Epic Heroes cannot take enhancements/i);
     assert.match(resolved.entries[0].issues.join(" "), /only be selected once per roster/i);
     assert.match(resolved.entries[3].issues.join(" "), /only be selected once per roster/i);
@@ -786,6 +999,192 @@ test("deriveResolvedRoster flags invalid attachment and transport assignments", 
 
     assert.match(hero.issues.join(" "), /cannot attach to Fire Prism/i);
     assert.match(transport.issues.join(" "), /uses 20\/12 transport capacity/i);
+});
+
+test("deriveResolvedRoster supports two-leader bodyguards and required leader targets", () => {
+    const valid = Store.deriveResolvedRoster({
+        roster: {
+            id: "roster-two-leader-valid",
+            factionSlug: "space-marines",
+            name: "Two Leaders",
+            army: { battleSize: "strike-force", warlordInstanceId: "captain", detachmentId: null },
+            entries: [
+                { instanceId: "bodyguard", unitId: "intercessor-squad", optionId: "5-models", quantity: 1, wargearSelections: {} },
+                { instanceId: "captain", unitId: "captain", optionId: "1-model", quantity: 1, wargearSelections: {}, attachedToInstanceId: "bodyguard" },
+                { instanceId: "lieutenant", unitId: "lieutenant", optionId: "1-model", quantity: 1, wargearSelections: {}, attachedToInstanceId: "bodyguard" },
+            ],
+        },
+        catalog: spaceMarineLeaderCatalog(),
+        availableFactionSlugs: ["space-marines"],
+    });
+
+    const invalidTriple = Store.deriveResolvedRoster({
+        roster: {
+            id: "roster-three-leader-invalid",
+            factionSlug: "space-marines",
+            name: "Three Leaders",
+            army: { battleSize: "strike-force", warlordInstanceId: "captain", detachmentId: null },
+            entries: [
+                { instanceId: "bodyguard", unitId: "intercessor-squad", optionId: "5-models", quantity: 1, wargearSelections: {} },
+                { instanceId: "captain", unitId: "captain", optionId: "1-model", quantity: 1, wargearSelections: {}, attachedToInstanceId: "bodyguard" },
+                { instanceId: "lieutenant", unitId: "lieutenant", optionId: "1-model", quantity: 1, wargearSelections: {}, attachedToInstanceId: "bodyguard" },
+                { instanceId: "apothecary", unitId: "apothecary", optionId: "1-model", quantity: 1, wargearSelections: {}, attachedToInstanceId: "bodyguard" },
+            ],
+        },
+        catalog: spaceMarineLeaderCatalog(),
+        availableFactionSlugs: ["space-marines"],
+    });
+
+    const companyHeroes = Store.deriveResolvedRoster({
+        roster: {
+            id: "roster-company-heroes",
+            factionSlug: "space-marines",
+            name: "Company Heroes",
+            army: { battleSize: "strike-force", warlordInstanceId: "lieutenant", detachmentId: null },
+            entries: [
+                { instanceId: "heroes", unitId: "company-heroes", optionId: "4-models", quantity: 1, wargearSelections: {} },
+                { instanceId: "lieutenant", unitId: "lieutenant", optionId: "1-model", quantity: 1, wargearSelections: {}, attachedToInstanceId: "heroes" },
+            ],
+        },
+        catalog: spaceMarineLeaderCatalog(),
+        availableFactionSlugs: ["space-marines"],
+    });
+
+    assert.equal(valid.invalidEntries.length, 0);
+    assert.deepEqual(
+        valid.entries.find((entry) => entry.instanceId === "bodyguard").relationship.attachedLeaderNames.sort(),
+        ["Captain", "Lieutenant"]
+    );
+    assert.match(invalidTriple.entries.find((entry) => entry.instanceId === "apothecary").issues.join(" "), /cannot attach to Intercessor Squad/i);
+    assert.match(companyHeroes.entries.find((entry) => entry.instanceId === "lieutenant").issues.join(" "), /cannot attach to Company Heroes/i);
+    assert.match(companyHeroes.entries.find((entry) => entry.instanceId === "heroes").issues.join(" "), /requires an attached CAPTAIN or CHAPTER MASTER Leader/i);
+});
+
+test("deriveResolvedRoster enforces pack leader attachment and subtype caps", () => {
+    const unattached = Store.deriveResolvedRoster({
+        roster: {
+            id: "roster-pack-leader-unattached",
+            factionSlug: "space-marines",
+            name: "Pack Leader Unattached",
+            army: { battleSize: "strike-force", warlordInstanceId: "wolf-lord", detachmentId: null },
+            entries: [
+                { instanceId: "wolf-lord", unitId: "wolf-lord", optionId: "1-model", quantity: 1, wargearSelections: {} },
+                { instanceId: "pack-leader", unitId: "wolf-guard-pack-leader", optionId: "1-model", quantity: 1, wargearSelections: {} },
+            ],
+        },
+        catalog: spaceMarineLeaderCatalog(),
+        availableFactionSlugs: ["space-marines"],
+    });
+
+    const valid = Store.deriveResolvedRoster({
+        roster: {
+            id: "roster-pack-leader-valid",
+            factionSlug: "space-marines",
+            name: "Pack Leader Valid",
+            army: { battleSize: "strike-force", warlordInstanceId: "wolf-lord", detachmentId: null },
+            entries: [
+                { instanceId: "grey-hunters", unitId: "grey-hunters", optionId: "5-models", quantity: 1, wargearSelections: {} },
+                { instanceId: "wolf-lord", unitId: "wolf-lord", optionId: "1-model", quantity: 1, wargearSelections: {}, attachedToInstanceId: "grey-hunters" },
+                { instanceId: "pack-leader", unitId: "wolf-guard-pack-leader", optionId: "1-model", quantity: 1, wargearSelections: {}, attachedToInstanceId: "grey-hunters" },
+            ],
+        },
+        catalog: spaceMarineLeaderCatalog(),
+        availableFactionSlugs: ["space-marines"],
+    });
+
+    const invalidSubtypeCap = Store.deriveResolvedRoster({
+        roster: {
+            id: "roster-pack-leader-cap",
+            factionSlug: "space-marines",
+            name: "Pack Leader Cap",
+            army: { battleSize: "strike-force", warlordInstanceId: "wolf-lord", detachmentId: null },
+            entries: [
+                { instanceId: "grey-hunters", unitId: "grey-hunters", optionId: "5-models", quantity: 1, wargearSelections: {} },
+                { instanceId: "wolf-lord", unitId: "wolf-lord", optionId: "1-model", quantity: 1, wargearSelections: {}, attachedToInstanceId: "grey-hunters" },
+                { instanceId: "pack-leader-1", unitId: "wolf-guard-pack-leader", optionId: "1-model", quantity: 1, wargearSelections: {}, attachedToInstanceId: "grey-hunters" },
+                { instanceId: "pack-leader-2", unitId: "wolf-guard-pack-leader", optionId: "1-model", quantity: 1, wargearSelections: {}, attachedToInstanceId: "grey-hunters" },
+            ],
+        },
+        catalog: spaceMarineLeaderCatalog(),
+        availableFactionSlugs: ["space-marines"],
+    });
+
+    assert.match(unattached.entries.find((entry) => entry.instanceId === "pack-leader").issues.join(" "), /must be attached to an eligible unit/i);
+    assert.equal(valid.invalidEntries.length, 0);
+    assert.match(invalidSubtypeCap.entries.find((entry) => entry.instanceId === "pack-leader-2").issues.join(" "), /cannot attach to Grey Hunters/i);
+});
+
+test("deriveResolvedRoster validates alternative transport pools and named allowlists", () => {
+    const altValid = Store.deriveResolvedRoster({
+        roster: {
+            id: "roster-transport-pool-valid",
+            factionSlug: "mixed",
+            name: "Transport Pool Valid",
+            army: { battleSize: "strike-force", warlordInstanceId: "sentinel-1", detachmentId: null },
+            entries: [
+                { instanceId: "sentinel-1", unitId: "sentinel", optionId: "1-model", quantity: 1, wargearSelections: {}, embarkedInInstanceId: "transport" },
+                { instanceId: "sentinel-2", unitId: "sentinel", optionId: "1-model", quantity: 1, wargearSelections: {}, embarkedInInstanceId: "transport" },
+                { instanceId: "transport", unitId: "valkyrie-sky-talon", optionId: "1-model", quantity: 1, wargearSelections: {} },
+            ],
+        },
+        catalog: transportEdgeCatalog(),
+        availableFactionSlugs: ["mixed"],
+    });
+
+    const altMixed = Store.deriveResolvedRoster({
+        roster: {
+            id: "roster-transport-pool-mixed",
+            factionSlug: "mixed",
+            name: "Transport Pool Mixed",
+            army: { battleSize: "strike-force", warlordInstanceId: "tauros", detachmentId: null },
+            entries: [
+                { instanceId: "tauros", unitId: "tauros", optionId: "1-model", quantity: 1, wargearSelections: {}, embarkedInInstanceId: "transport" },
+                { instanceId: "sentinel", unitId: "sentinel", optionId: "1-model", quantity: 1, wargearSelections: {}, embarkedInInstanceId: "transport" },
+                { instanceId: "transport", unitId: "valkyrie-sky-talon", optionId: "1-model", quantity: 1, wargearSelections: {} },
+            ],
+        },
+        catalog: transportEdgeCatalog(),
+        availableFactionSlugs: ["mixed"],
+    });
+
+    const allowlistValid = Store.deriveResolvedRoster({
+        roster: {
+            id: "roster-transport-allowlist-valid",
+            factionSlug: "mixed",
+            name: "Allowlist Valid",
+            army: { battleSize: "strike-force", warlordInstanceId: "yvraine", detachmentId: null },
+            entries: [
+                { instanceId: "yvraine", unitId: "yvraine", optionId: "1-model", quantity: 1, wargearSelections: {}, embarkedInInstanceId: "raider" },
+                { instanceId: "wyches", unitId: "ynnari-wyches", optionId: "10-models", quantity: 1, wargearSelections: {}, embarkedInInstanceId: "raider" },
+                { instanceId: "raider", unitId: "ynnari-raider", optionId: "1-model", quantity: 1, wargearSelections: {} },
+            ],
+        },
+        catalog: transportEdgeCatalog(),
+        availableFactionSlugs: ["mixed"],
+    });
+
+    const allowlistInvalid = Store.deriveResolvedRoster({
+        roster: {
+            id: "roster-transport-allowlist-invalid",
+            factionSlug: "mixed",
+            name: "Allowlist Invalid",
+            army: { battleSize: "strike-force", warlordInstanceId: "guardian", detachmentId: null },
+            entries: [
+                { instanceId: "guardian", unitId: "guardian-defenders", optionId: "10-models", quantity: 1, wargearSelections: {}, embarkedInInstanceId: "raider" },
+                { instanceId: "raider", unitId: "ynnari-raider", optionId: "1-model", quantity: 1, wargearSelections: {} },
+            ],
+        },
+        catalog: transportEdgeCatalog(),
+        availableFactionSlugs: ["mixed"],
+    });
+
+    assert.equal(altValid.entries.find((entry) => entry.instanceId === "transport").relationship.transportCapacity.used, 2);
+    assert.equal(altValid.entries.find((entry) => entry.instanceId === "transport").relationship.transportCapacity.max, 2);
+    assert.equal(altValid.invalidEntries.length, 0);
+    assert.match(altMixed.entries.find((entry) => entry.instanceId === "transport").issues.join(" "), /mixes incompatible transport pool assignments/i);
+    assert.equal(allowlistValid.entries.find((entry) => entry.instanceId === "raider").relationship.transportCapacity.used, 11);
+    assert.equal(allowlistValid.entries.find((entry) => entry.instanceId === "raider").relationship.transportCapacity.max, 11);
+    assert.match(allowlistInvalid.entries.find((entry) => entry.instanceId === "guardian").issues.join(" "), /cannot embark in Ynnari Raider/i);
 });
 
 test("deriveResolvedRoster flags empty Dedicated Transports", () => {

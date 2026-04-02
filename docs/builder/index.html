@@ -2081,13 +2081,13 @@
             const warningCount = infoWarnings.length;
             const totalIssueCount = armyIssueCount + entryIssueCount;
             const pills = [
-                `<div class="pill ${totalIssueCount ? "pill-danger" : ""}">${totalIssueCount ? `${totalIssueCount} issue(s)` : "Legal foundation checks passed"}</div>`,
+                `<div class="pill ${totalIssueCount ? "pill-danger" : ""}">${totalIssueCount ? `${totalIssueCount} issue(s)` : "Configured legality checks passed"}</div>`,
                 `<div class="pill">${battleSizeLabel(derived.army.battleSize)} | ${derived.totalPoints}/${derived.pointsLimit} pts</div>`,
                 `<div class="pill ${warningCount ? "pill-warning" : ""}">${warningCount ? `${warningCount} not checked yet` : "No known model gaps"}</div>`,
             ];
             const lines = [
                 ...derived.armyIssues.map((issue) => `<div class="inline-note inline-note-error">${issue.message}</div>`),
-                ...(entryIssueCount ? [`<div class="inline-note inline-note-warning">${entryIssueCount} roster entr${entryIssueCount === 1 ? "y has" : "ies have"} unit-level issues.</div>`] : []),
+                ...(entryIssueCount ? [`<div class="inline-note inline-note-warning">${entryIssueCount} roster entr${entryIssueCount === 1 ? "y has" : "ies have"} configured unit legality issues.</div>`] : []),
                 ...(entryIssueCount ? [`
                     <div class="issue-action-list">
                         ${derived.invalidEntries.slice(0, 4).map((entry) => `
@@ -2097,7 +2097,7 @@
                         `).join("")}
                     </div>
                 `] : []),
-                ...infoWarnings.map((warning) => `<div class="inline-note">${warning.message} <strong>Not checked yet.</strong></div>`),
+                ...infoWarnings.map((warning) => `<div class="inline-note">${warning.message} <strong>Still advisory.</strong></div>`),
             ];
             els.legalitySummary.innerHTML = `
                 <div class="legality-summary-pills">${pills.join("")}</div>

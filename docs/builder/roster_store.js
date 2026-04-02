@@ -400,6 +400,29 @@
         }[normalized] || null;
     }
 
+    function uniqueNormalizedRefs(values) {
+        const seen = new Set();
+        const refs = [];
+        (Array.isArray(values) ? values : []).forEach((value) => {
+            const normalized = normalizeRuleReference(value);
+            if (!normalized || seen.has(normalized)) {
+                return;
+            }
+            seen.add(normalized);
+            refs.push(normalized);
+        });
+        return refs;
+    }
+
+    function parseReferenceParts(value) {
+        return uniqueNormalizedRefs(
+            String(value || "")
+                .split(/\s*,\s*|\s+or\s+/i)
+                .flatMap((part) => referenceVariants(part))
+                .filter(Boolean)
+        );
+    }
+
     function isCharacterOrLeaderUnit(unit) {
         return unitHasKeyword(unit, "CHARACTER") || Boolean(leaderMetadataForUnit(unit).targetRefs.length);
     }
@@ -407,6 +430,10 @@
     function leaderMetadataForUnit(unit) {
         const targetRefs = [];
         const texts = unitRuleText(unit);
+        const additionalLeaderRefs = [];
+        let allowsAdditionalLeaderWithCharacter = false;
+        let requiresAttachment = false;
+        let subtypeCap = null;
         (Array.isArray(unit.renderBlocks) ? unit.renderBlocks : [])
             .filter((block) => block && block.title === "LEADER")
             .forEach((block) => {
@@ -441,9 +468,44 @@
                     }
                 });
             }
+            if (/must attach this model|must join one/i.test(text)) {
+                requiresAttachment = true;
+            }
+            [
+                /even if one(?: or more)?\s+(.+?)\s+(?:model|models|unit|units)\s+have already been attached/i,
+                /even if one(?: or more)?\s+(.+?)\s+(?:model|models|unit|units)\s+has already been attached/i,
+                /even if\s+(.+?)\s+has already been attached/i,
+                /even if\s+(.+?)\s+has been attached/i,
+            ].forEach((pattern) => {
+                const additionalMatch = text.match(pattern);
+                if (!additionalMatch) {
+                    return;
+                }
+                const refs = parseReferenceParts(additionalMatch[1]);
+                if (refs.includes("CHARACTER")) {
+                    allowsAdditionalLeaderWithCharacter = true;
+                }
+                refs.forEach((ref) => {
+                    if (ref !== "CHARACTER" && !additionalLeaderRefs.includes(ref)) {
+                        additionalLeaderRefs.push(ref);
+                    }
+                });
+            });
+            const subtypeCapMatch = text.match(/never include more than one\s+(.+?)\s+model/i);
+            if (subtypeCapMatch) {
+                subtypeCap = {
+                    refs: parseReferenceParts(subtypeCapMatch[1]),
+                    max: 1,
+                    label: String(subtypeCapMatch[1] || "").replace(/\s+/g, " ").trim(),
+                };
+            }
         });
         return {
             targetRefs,
+            additionalLeaderRefs,
+            allowsAdditionalLeaderWithCharacter,
+            requiresAttachment,
+            subtypeCap,
         };
     }
 
@@ -451,8 +513,8 @@
         const texts = unitRuleText(unit);
         const aliasRefs = [];
         let maxLeaders = 1;
-        let maxCommandSquads = null;
         let requiredLeaderKeywordRefs = [];
+        const leaderSubtypeCaps = [];
 
         texts.forEach((text) => {
             const aliasMatch = text.match(/can be attached to\s+(?:an?|the)\s+(.+?)\s*,\s*it can also be attached to this unit/i);
@@ -471,14 +533,15 @@
                 }
             }
             if (/no more than one of those units is a COMMAND SQUAD unit/i.test(text)) {
-                maxCommandSquads = 1;
+                leaderSubtypeCaps.push({
+                    refs: ["COMMAND SQUAD"],
+                    max: 1,
+                    label: "Command Squad",
+                });
             }
             const requiredMatch = text.match(/must attach one\s+(.+?)\s+model to this unit/i);
             if (requiredMatch) {
-                requiredLeaderKeywordRefs = requiredMatch[1]
-                    .split(/\s+or\s+/i)
-                    .flatMap((part) => referenceVariants(part))
-                    .filter(Boolean);
+                requiredLeaderKeywordRefs = parseReferenceParts(requiredMatch[1]);
             }
         });
 
@@ -486,7 +549,7 @@
             nameRef: normalizeRuleReference(unit && unit.name),
             aliasRefs,
             maxLeaders,
-            maxCommandSquads,
+            leaderSubtypeCaps,
             requiredLeaderKeywordRefs,
             requiresLeader: requiredLeaderKeywordRefs.length > 0,
         };
@@ -500,6 +563,28 @@
         ]
             .map((value) => normalizeRuleReference(value))
             .filter(Boolean);
+    }
+
+    function normalizedHintWords(value) {
+        return normalizeRuleReference(value)
+            .split(" ")
+            .filter((word) => word && !["MODEL", "MODELS", "ONLY", "OR", "AND"].includes(word));
+    }
+
+    function unitMatchesRuleHint(unit, hint) {
+        const normalizedHint = normalizeRuleReference(hint);
+        if (!unit || !normalizedHint) {
+            return false;
+        }
+        const haystack = allUnitKeywords(unit);
+        if (haystack.some((value) => value === normalizedHint || value.includes(normalizedHint))) {
+            return true;
+        }
+        const words = normalizedHintWords(hint);
+        if (!words.length) {
+            return false;
+        }
+        return words.every((word) => haystack.some((value) => value === word || value.includes(word)));
     }
 
     function entryModelCount(entry) {
@@ -525,8 +610,27 @@
         if (!unit || !normalizedReference) {
             return false;
         }
-        const haystack = allUnitKeywords(unit);
-        return haystack.some((value) => value === normalizedReference || value.includes(normalizedReference) || normalizedReference.includes(value));
+        return unitMatchesRuleHint(unit, normalizedReference);
+    }
+
+    function formatEligibilityRequirement(value) {
+        return String(value || "").replace(/\bmodel only\.?$/i, "").replace(/\s+/g, " ").trim() || "the required keywords";
+    }
+
+    function enhancementEligibilityMismatch(enhancement, unit) {
+        const keywordHints = Array.isArray(enhancement && enhancement.keywordHints)
+            ? enhancement.keywordHints.filter(Boolean)
+            : [];
+        if (!keywordHints.length) {
+            return null;
+        }
+        if (keywordHints.some((hint) => unitMatchesRuleHint(unit, hint))) {
+            return null;
+        }
+        const requirement = enhancement.eligibilityText
+            ? formatEligibilityRequirement(enhancement.eligibilityText)
+            : keywordHints.join(" or ");
+        return `${enhancement.name} requires ${requirement}.`;
     }
 
     function transportMetadataForUnit(unit) {
@@ -537,7 +641,7 @@
         if (!text) {
             return null;
         }
-        const capacityMatch = text.match(/transport capacity of\s+(\d+)\s+(.+?)\./i);
+        const capacityMatch = text.match(/transport capacity of\s+(\d+)\s+(.+?)(?:\.|$)/i);
         if (!capacityMatch) {
             return {
                 rawText: text,
@@ -546,13 +650,39 @@
         }
         const capacity = Number.parseInt(capacityMatch[1], 10);
         const allowedClause = String(capacityMatch[2] || "").trim();
-        if (!capacity || /\bor\s+\d+\s+[A-Z]/i.test(allowedClause)) {
+        if (!capacity) {
             return {
                 rawText: text,
                 supported: false,
                 capacity,
             };
         }
+        const alternativePoolRegex = /^(.+?)\s+model\s+or\s+(\d+)\s+(.+?)\s+models?$/i;
+        const alternativePoolMatch = allowedClause.match(alternativePoolRegex);
+        if (alternativePoolMatch) {
+            return {
+                rawText: text,
+                supported: true,
+                mode: "alternativePools",
+                capacity: null,
+                allowedClause,
+                pools: [
+                    {
+                        capacity,
+                        refs: parseReferenceParts(alternativePoolMatch[1]),
+                        label: String(alternativePoolMatch[1] || "").replace(/\s+/g, " ").trim(),
+                    },
+                    {
+                        capacity: Number.parseInt(alternativePoolMatch[2], 10) || 0,
+                        refs: parseReferenceParts(alternativePoolMatch[3]),
+                        label: String(alternativePoolMatch[3] || "").replace(/\s+/g, " ").trim(),
+                    },
+                ],
+                disallowedKeywords: [],
+                slotModifiers: [],
+            };
+        }
+        const allowlistMatch = allowedClause.match(/^models from the following units:\s+(.+)$/i);
         const disallowedKeywords = [];
         const disallowedMatch = text.match(/It cannot transport\s+(.+?)\s+models?\./i);
         if (disallowedMatch) {
@@ -582,8 +712,10 @@
         return {
             rawText: text,
             supported: true,
+            mode: allowlistMatch ? "namedUnitAllowlist" : "standard",
             capacity,
             allowedClause,
+            allowedUnitRefs: allowlistMatch ? parseReferenceParts(allowlistMatch[1]) : [],
             disallowedKeywords,
             slotModifiers,
         };
@@ -593,27 +725,43 @@
         if (!transportMeta || !transportMeta.supported || !unit) {
             return null;
         }
-        const normalizedAllowed = normalizeRuleReference(transportMeta.allowedClause);
-        if (!normalizedAllowed) {
-            return true;
-        }
         const unitKeywords = allUnitKeywords(unit);
         if (transportMeta.disallowedKeywords.some((ref) => unitKeywords.some((keyword) => keyword === ref || keyword.includes(ref) || ref.includes(keyword)))) {
-            return false;
+            return { allowed: false, mode: transportMeta.mode || "standard" };
+        }
+        if (transportMeta.mode === "namedUnitAllowlist") {
+            const allowed = transportMeta.allowedUnitRefs.some((ref) => unitKeywords.some((keyword) => keyword === ref || keyword.includes(ref) || ref.includes(keyword)));
+            return { allowed, mode: "namedUnitAllowlist" };
+        }
+        if (transportMeta.mode === "alternativePools") {
+            const poolIndex = transportMeta.pools.findIndex((pool) => pool.refs.some((ref) => unitKeywords.some((keyword) => keyword === ref || keyword.includes(ref) || ref.includes(keyword))));
+            return {
+                allowed: poolIndex !== -1,
+                mode: "alternativePools",
+                poolIndex,
+                pool: poolIndex === -1 ? null : transportMeta.pools[poolIndex],
+            };
+        }
+        const normalizedAllowed = normalizeRuleReference(transportMeta.allowedClause);
+        if (!normalizedAllowed) {
+            return { allowed: true, mode: "standard" };
         }
         const alternatives = transportMeta.allowedClause
             .split(/\s+or\s+/i)
             .map((value) => normalizeRuleReference(value))
             .filter(Boolean);
         if (!alternatives.length) {
-            return true;
+            return { allowed: true, mode: "standard" };
         }
-        return alternatives.some((alternative) => {
+        return {
+            allowed: alternatives.some((alternative) => {
             const words = alternative
                 .split(" ")
                 .filter((word) => word && word !== "MODEL" && word !== "MODELS");
             return words.every((word) => unitKeywords.some((keyword) => keyword === word || keyword.includes(word) || word.includes(keyword)));
-        });
+            }),
+            mode: "standard",
+        };
     }
 
     function transportSeatMultiplier(transportMeta, unit) {
@@ -651,7 +799,42 @@
         return metadataById;
     }
 
-    function canLeaderAttachToTarget(leaderEntry, targetEntry, relationshipMetadata) {
+    function entryMatchesAnyRef(entry, refs) {
+        return (Array.isArray(refs) ? refs : []).some((ref) => unitMatchesReference(entry && entry.unit, ref));
+    }
+
+    function leaderProvidesAdditionalSlot(leaderEntry, otherLeaderEntries, relationshipMetadata) {
+        const leaderMeta = relationshipMetadata.get(leaderEntry.instanceId).leaderMeta;
+        if (!leaderMeta) {
+            return false;
+        }
+        if (leaderMeta.allowsAdditionalLeaderWithCharacter && otherLeaderEntries.some((entry) => unitHasKeyword(entry.unit, "CHARACTER"))) {
+            return true;
+        }
+        return leaderMeta.additionalLeaderRefs.length > 0 && otherLeaderEntries.some((entry) => entryMatchesAnyRef(entry, leaderMeta.additionalLeaderRefs));
+    }
+
+    function validateLeaderSubtypeCaps(targetEntry, leaderEntries, relationshipMetadata) {
+        const targetMeta = relationshipMetadata.get(targetEntry.instanceId).targetMeta;
+        const caps = [...(Array.isArray(targetMeta.leaderSubtypeCaps) ? targetMeta.leaderSubtypeCaps : [])];
+        leaderEntries.forEach((leaderEntry) => {
+            const leaderMeta = relationshipMetadata.get(leaderEntry.instanceId).leaderMeta;
+            if (leaderMeta && leaderMeta.subtypeCap && Array.isArray(leaderMeta.subtypeCap.refs) && leaderMeta.subtypeCap.refs.length) {
+                caps.push(leaderMeta.subtypeCap);
+            }
+        });
+        return caps
+            .map((cap) => {
+                const matches = leaderEntries.filter((leaderEntry) => entryMatchesAnyRef(leaderEntry, cap.refs));
+                if (matches.length <= cap.max) {
+                    return null;
+                }
+                return `${targetEntry.displayName} cannot have more than ${cap.max} attached ${cap.label} unit${cap.max === 1 ? "" : "s"}.`;
+            })
+            .filter(Boolean);
+    }
+
+    function canLeaderAttachToTarget(leaderEntry, targetEntry, relationshipMetadata, attachedLeaderEntries) {
         const leaderMeta = relationshipMetadata.get(leaderEntry.instanceId).leaderMeta;
         const targetMeta = relationshipMetadata.get(targetEntry.instanceId).targetMeta;
         if (!leaderMeta.targetRefs.length) {
@@ -664,9 +847,23 @@
         }
         if (targetMeta.requiredLeaderKeywordRefs.length) {
             const keywords = allUnitKeywords(leaderEntry.unit);
-            return targetMeta.requiredLeaderKeywordRefs.some((ref) => keywords.some((keyword) => keyword === ref || keyword.includes(ref) || ref.includes(keyword)));
+            if (!targetMeta.requiredLeaderKeywordRefs.some((ref) => keywords.some((keyword) => keyword === ref || keyword.includes(ref) || ref.includes(keyword)))) {
+                return false;
+            }
         }
-        return true;
+        const otherLeaderEntries = Array.isArray(attachedLeaderEntries) ? attachedLeaderEntries.filter((entry) => entry && entry.instanceId !== leaderEntry.instanceId) : [];
+        const proposedLeaderEntries = [...otherLeaderEntries, leaderEntry];
+        if (proposedLeaderEntries.length > targetMeta.maxLeaders) {
+            const extraSlotAllowed = proposedLeaderEntries.length === (targetMeta.maxLeaders + 1)
+                && proposedLeaderEntries.some((entry) => {
+                    const others = proposedLeaderEntries.filter((otherEntry) => otherEntry.instanceId !== entry.instanceId);
+                    return leaderProvidesAdditionalSlot(entry, others, relationshipMetadata);
+                });
+            if (!extraSlotAllowed) {
+                return false;
+            }
+        }
+        return !validateLeaderSubtypeCaps(targetEntry, proposedLeaderEntries, relationshipMetadata).length;
     }
 
     function duplicateCapForUnit(unit) {
@@ -1382,8 +1579,10 @@
         const entriesById = new Map(entries.map((entry) => [entry.instanceId, entry]));
         const relationshipMetadata = buildRelationshipMetadata(resolvedEntries);
         const attachedLeaderIdsByTarget = new Map();
+        const requestedAttachedLeaderIdsByTarget = new Map();
         const embarkedUnitIdsByTransport = new Map();
         const transportSeatUsageByTransport = new Map();
+        const transportPoolUsageByTransport = new Map();
         const unsupportedTransportEntries = [];
 
         if (rules.detachments.length && !army.detachmentId) {
@@ -1399,6 +1598,15 @@
                 message: "Selected detachment is not available in the current catalog.",
             });
         }
+
+        resolvedEntries.forEach((entry) => {
+            if (entry.entry.attachedToInstanceId) {
+                if (!requestedAttachedLeaderIdsByTarget.has(entry.entry.attachedToInstanceId)) {
+                    requestedAttachedLeaderIdsByTarget.set(entry.entry.attachedToInstanceId, []);
+                }
+                requestedAttachedLeaderIdsByTarget.get(entry.entry.attachedToInstanceId).push(entry.instanceId);
+            }
+        });
 
         resolvedEntries.forEach((entry) => {
             const datasheetName = entry.unit && entry.unit.name ? entry.unit.name : entry.displayName;
@@ -1441,6 +1649,11 @@
             }
             if (unitHasKeyword(entry.unit, "EPIC HERO")) {
                 entry.issues.push("Epic Heroes cannot take enhancements.");
+                return;
+            }
+            const enhancementEligibilityIssue = enhancementEligibilityMismatch(entry.activeEnhancement, entry.unit);
+            if (enhancementEligibilityIssue) {
+                entry.issues.push(enhancementEligibilityIssue);
                 return;
             }
             enhancementEntries.push(entry);
@@ -1488,7 +1701,16 @@
                 return;
             }
             entry.relationship.attachOptions = resolvedEntries
-                .filter((targetEntry) => targetEntry.instanceId !== entry.instanceId && canLeaderAttachToTarget(entry, targetEntry, relationshipMetadata))
+                .filter((targetEntry) => {
+                    if (targetEntry.instanceId === entry.instanceId) {
+                        return false;
+                    }
+                    const attachedLeaderEntries = (requestedAttachedLeaderIdsByTarget.get(targetEntry.instanceId) || [])
+                        .filter((instanceId) => instanceId !== entry.instanceId)
+                        .map((instanceId) => entriesById.get(instanceId))
+                        .filter(Boolean);
+                    return canLeaderAttachToTarget(entry, targetEntry, relationshipMetadata, attachedLeaderEntries);
+                })
                 .map((targetEntry) => ({
                     instanceId: targetEntry.instanceId,
                     label: targetEntry.displayName,
@@ -1508,7 +1730,11 @@
                 entry.issues.push("A unit cannot be attached to itself.");
                 return;
             }
-            if (!canLeaderAttachToTarget(entry, targetEntry, relationshipMetadata)) {
+            const attachedLeaderEntries = (requestedAttachedLeaderIdsByTarget.get(targetEntry.instanceId) || [])
+                .filter((instanceId) => instanceId !== entry.instanceId)
+                .map((instanceId) => entriesById.get(instanceId))
+                .filter(Boolean);
+            if (!canLeaderAttachToTarget(entry, targetEntry, relationshipMetadata, attachedLeaderEntries)) {
                 entry.issues.push(`This unit cannot attach to ${targetEntry.displayName}.`);
                 return;
             }
@@ -1526,13 +1752,20 @@
         });
 
         resolvedEntries.forEach((entry) => {
+            const leaderMeta = relationshipMetadata.get(entry.instanceId).leaderMeta;
+            if (leaderMeta.requiresAttachment && !entry.relationship.attachedToInstanceId) {
+                entry.issues.push(`${entry.displayName} must be attached to an eligible unit.`);
+            }
+        });
+
+        resolvedEntries.forEach((entry) => {
             const targetMeta = relationshipMetadata.get(entry.instanceId).targetMeta;
             const attachedLeaderIds = attachedLeaderIdsByTarget.get(entry.instanceId) || [];
-            entry.relationship.attachedLeaderIds = [...attachedLeaderIds];
-            entry.relationship.attachedLeaderNames = attachedLeaderIds
+            const attachedLeaderEntries = attachedLeaderIds
                 .map((instanceId) => entriesById.get(instanceId))
-                .filter(Boolean)
-                .map((leaderEntry) => leaderEntry.displayName);
+                .filter(Boolean);
+            entry.relationship.attachedLeaderIds = [...attachedLeaderIds];
+            entry.relationship.attachedLeaderNames = attachedLeaderEntries.map((leaderEntry) => leaderEntry.displayName);
             if (attachedLeaderIds.length) {
                 entry.relationship.relationshipNotes.push(
                     relationshipSummaryEntry(
@@ -1544,17 +1777,19 @@
                     )
                 );
             }
-            if (attachedLeaderIds.length > targetMeta.maxLeaders) {
-                entry.issues.push(`${entry.displayName} has ${attachedLeaderIds.length} attached Leaders, exceeding its limit of ${targetMeta.maxLeaders}.`);
-            }
-            if (targetMeta.maxCommandSquads !== null) {
-                const commandSquadLeaders = attachedLeaderIds
-                    .map((instanceId) => entriesById.get(instanceId))
-                    .filter((leaderEntry) => leaderEntry && /COMMAND SQUAD/i.test(leaderEntry.displayName));
-                if (commandSquadLeaders.length > targetMeta.maxCommandSquads) {
-                    entry.issues.push(`${entry.displayName} cannot have more than ${targetMeta.maxCommandSquads} attached Command Squad unit.`);
+            if (attachedLeaderEntries.length > targetMeta.maxLeaders) {
+                const extraSlotAllowed = attachedLeaderEntries.length === (targetMeta.maxLeaders + 1)
+                    && attachedLeaderEntries.some((leaderEntry) => {
+                        const otherLeaderEntries = attachedLeaderEntries.filter((otherEntry) => otherEntry.instanceId !== leaderEntry.instanceId);
+                        return leaderProvidesAdditionalSlot(leaderEntry, otherLeaderEntries, relationshipMetadata);
+                    });
+                if (!extraSlotAllowed) {
+                    entry.issues.push(`${entry.displayName} has ${attachedLeaderEntries.length} attached Leaders, exceeding its limit of ${targetMeta.maxLeaders}.`);
                 }
             }
+            validateLeaderSubtypeCaps(entry, attachedLeaderEntries, relationshipMetadata).forEach((issue) => {
+                entry.issues.push(issue);
+            });
             if (targetMeta.requiresLeader && !attachedLeaderIds.length) {
                 entry.issues.push(`${entry.displayName} requires an attached ${targetMeta.requiredLeaderKeywordRefs.join(" or ")} Leader.`);
             }
@@ -1594,7 +1829,7 @@
 
             const transportMeta = relationshipMetadata.get(transportEntry.instanceId).transportMeta;
             const compatibility = transportSupportsUnit(transportMeta, entry.unit);
-            if (compatibility === false) {
+            if (compatibility && compatibility.allowed === false) {
                 entry.issues.push(`${entry.displayName} cannot embark in ${transportEntry.displayName}.`);
             }
             entry.relationship.embarkedInLabel = transportEntry.displayName;
@@ -1606,7 +1841,9 @@
             }
             embarkedUnitIdsByTransport.get(transportEntry.instanceId).push(entry.instanceId);
 
-            const ownSeats = entryModelCount(entry) * transportSeatMultiplier(transportMeta, entry.unit);
+            const ownSeats = compatibility && compatibility.mode === "alternativePools"
+                ? Math.max(1, entry.quantity || 1)
+                : entryModelCount(entry) * transportSeatMultiplier(transportMeta, entry.unit);
             const attachedLeaderIds = attachedLeaderIdsByTarget.get(entry.instanceId) || [];
             const attachedSeats = attachedLeaderIds.reduce((sum, leaderId) => {
                 const leaderEntry = entriesById.get(leaderId);
@@ -1618,12 +1855,24 @@
                 leaderEntry.relationship.relationshipNotes.push(
                     relationshipSummaryEntry("transport", `Embarked with ${entry.displayName} in ${transportEntry.displayName}`, "Transport assignment")
                 );
-                return sum + (entryModelCount(leaderEntry) * transportSeatMultiplier(transportMeta, leaderEntry.unit));
+                return sum + (
+                    compatibility && compatibility.mode === "alternativePools"
+                        ? Math.max(1, leaderEntry.quantity || 1)
+                        : (entryModelCount(leaderEntry) * transportSeatMultiplier(transportMeta, leaderEntry.unit))
+                );
             }, 0);
-            transportSeatUsageByTransport.set(
-                transportEntry.instanceId,
-                (transportSeatUsageByTransport.get(transportEntry.instanceId) || 0) + ownSeats + attachedSeats
-            );
+            if (compatibility && compatibility.mode === "alternativePools" && compatibility.poolIndex !== -1) {
+                if (!transportPoolUsageByTransport.has(transportEntry.instanceId)) {
+                    transportPoolUsageByTransport.set(transportEntry.instanceId, new Map());
+                }
+                const poolUsage = transportPoolUsageByTransport.get(transportEntry.instanceId);
+                poolUsage.set(compatibility.poolIndex, (poolUsage.get(compatibility.poolIndex) || 0) + ownSeats + attachedSeats);
+            } else {
+                transportSeatUsageByTransport.set(
+                    transportEntry.instanceId,
+                    (transportSeatUsageByTransport.get(transportEntry.instanceId) || 0) + ownSeats + attachedSeats
+                );
+            }
         });
 
         transportEntries.forEach((transportEntry) => {
@@ -1634,7 +1883,21 @@
                 .filter(Boolean)
                 .map((entry) => entry.displayName);
             if (transportEntry.relationship.transportCapacity) {
-                transportEntry.relationship.transportCapacity.used = transportSeatUsageByTransport.get(transportEntry.instanceId) || 0;
+                const transportMeta = relationshipMetadata.get(transportEntry.instanceId).transportMeta;
+                if (transportMeta && transportMeta.mode === "alternativePools") {
+                    const poolUsage = transportPoolUsageByTransport.get(transportEntry.instanceId) || new Map();
+                    const activePools = [...poolUsage.entries()].filter(([, used]) => used > 0);
+                    if (activePools.length === 1) {
+                        const [poolIndex, used] = activePools[0];
+                        const pool = transportMeta.pools[poolIndex];
+                        transportEntry.relationship.transportCapacity.max = pool.capacity;
+                        transportEntry.relationship.transportCapacity.used = used;
+                    } else {
+                        transportEntry.relationship.transportCapacity.used = activePools.reduce((sum, [, used]) => sum + used, 0);
+                    }
+                } else {
+                    transportEntry.relationship.transportCapacity.used = transportSeatUsageByTransport.get(transportEntry.instanceId) || 0;
+                }
             }
             if (transportEntry.relationship.embarkedUnitNames.length) {
                 transportEntry.relationship.relationshipNotes.push(
@@ -1650,7 +1913,22 @@
             if (unitHasKeyword(transportEntry.unit, "DEDICATED TRANSPORT") && !embarkedUnitIds.length) {
                 transportEntry.issues.push("Dedicated Transport has no embarked units assigned.");
             }
-            if (
+            const transportMeta = relationshipMetadata.get(transportEntry.instanceId).transportMeta;
+            if (transportMeta && transportMeta.mode === "alternativePools") {
+                const poolUsage = transportPoolUsageByTransport.get(transportEntry.instanceId) || new Map();
+                const activePools = [...poolUsage.entries()].filter(([, used]) => used > 0);
+                if (activePools.length > 1) {
+                    transportEntry.issues.push(`${transportEntry.displayName} mixes incompatible transport pool assignments.`);
+                } else if (activePools.length === 1) {
+                    const [poolIndex, used] = activePools[0];
+                    const pool = transportMeta.pools[poolIndex];
+                    if (used > pool.capacity) {
+                        transportEntry.issues.push(
+                            `${transportEntry.displayName} uses ${used}/${pool.capacity} ${pool.label} transport capacity.`
+                        );
+                    }
+                }
+            } else if (
                 transportEntry.relationship.transportCapacity
                 && transportEntry.relationship.transportCapacity.supported
                 && typeof transportEntry.relationship.transportCapacity.max === "number"

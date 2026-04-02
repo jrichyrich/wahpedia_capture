@@ -660,8 +660,6 @@ def parse_faction_page_html(html: str, *, source_url: str) -> dict[str, object]:
         if not detachment:
             continue
         detachment["id"] = unique_slug(slugify(detachment["name"]), seen_detachment_ids)
-        for enhancement in detachment["enhancements"]:
-            enhancement.pop("keywordHints", None)
         rules["detachments"].append(detachment)
 
     for title, nodes in sections:
@@ -673,8 +671,6 @@ def parse_faction_page_html(html: str, *, source_url: str) -> dict[str, object]:
         if not detachment:
             continue
         detachment["id"] = unique_slug(slugify(detachment["name"]), seen_detachment_ids)
-        for enhancement in detachment["enhancements"]:
-            enhancement.pop("keywordHints", None)
         rules["detachments"].append(detachment)
 
     return rules

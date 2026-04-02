@@ -486,6 +486,7 @@ class BuilderCatalogTests(unittest.TestCase):
                                             "points": 25,
                                             "body": "Example enhancement.",
                                             "eligibilityText": "Adeptus Custodes model only.",
+                                            "keywordHints": ["ADEPTUS CUSTODES"],
                                         }
                                     ],
                                     "stratagems": [
@@ -535,6 +536,7 @@ class BuilderCatalogTests(unittest.TestCase):
             self.assertEqual(catalog["schemaVersion"], 6)
             self.assertEqual(catalog["rules"]["armyRules"][0]["name"], "Martial Ka'tah")
             self.assertEqual(catalog["rules"]["detachments"][0]["enhancements"][0]["points"], 25)
+            self.assertEqual(catalog["rules"]["detachments"][0]["enhancements"][0]["keywordHints"], ["ADEPTUS CUSTODES"])
             self.assertEqual(catalog["build"]["supportSummary"]["readyUnitCount"], 1)
             self.assertEqual(catalog["build"]["supportSummary"]["partialUnitCount"], 1)
             self.assertEqual(catalog["units"][0]["support"]["previewSupport"], "source-image")
@@ -962,7 +964,7 @@ class BuilderAppSmokeTests(unittest.TestCase):
         self.assertIn('data-action="attachment-select"', html)
         self.assertIn('data-action="embark-select"', html)
         self.assertIn('data-action="wargear-multi-toggle"', html)
-        self.assertIn("Legal foundation checks passed", html)
+        self.assertIn("Configured legality checks passed", html)
         self.assertIn('window.location.protocol === "file:"', html)
         self.assertIn("Original Wahapedia", html)
         self.assertIn("manifest.reportFile", html)

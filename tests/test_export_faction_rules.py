@@ -14,7 +14,13 @@ assert spec.loader is not None
 spec.loader.exec_module(export_faction_rules)
 
 
-def faction_fixture(detachment_name: str, army_rule_name: str, enhancement_name: str, stratagem_name: str) -> str:
+def faction_fixture(
+    detachment_name: str,
+    army_rule_name: str,
+    enhancement_name: str,
+    stratagem_name: str,
+    enhancement_body: str = "CHARACTER model only. Gain a bonus.",
+) -> str:
     return f"""
     <html>
       <body>
@@ -33,7 +39,7 @@ def faction_fixture(detachment_name: str, army_rule_name: str, enhancement_name:
           <div>Detachment rule body text.</div>
           <h3>Enhancements</h3>
           <table>
-            <tr><td>{enhancement_name}</td><td>25 pts</td><td>Character model only. Gain a bonus.</td></tr>
+            <tr><td>{enhancement_name}</td><td>25 pts</td><td>{enhancement_body}</td></tr>
           </table>
         </div>
         <div class="BreakInsideAvoid">
@@ -116,8 +122,41 @@ class ExportFactionRulesTests(unittest.TestCase):
             source_url="http://example/drukhari",
         )
         self.assertEqual(rules["armyRules"][0]["sourceUrl"], "http://example/drukhari")
-        self.assertEqual(rules["detachments"][0]["enhancements"][0]["eligibilityText"], "Character model only.")
+        self.assertEqual(rules["detachments"][0]["enhancements"][0]["eligibilityText"], "CHARACTER model only.")
         self.assertEqual(rules["detachments"][0]["stratagems"][0]["target"], "One CHARACTER unit from your army.")
+        self.assertEqual(rules["detachments"][0]["enhancements"][0]["keywordHints"], ["CHARACTER"])
+
+    def test_parse_enhancement_keyword_hints_for_specific_role_eligibility(self):
+        rules = export_faction_rules.parse_faction_page_html(
+            faction_fixture(
+                "Champions of Fenris",
+                "Oath of Moment",
+                "Black Death",
+                "Pack Hunters",
+                enhancement_body="CAPTAIN, CHAPLAIN or LIEUTENANT model only. Gain a bonus.",
+            ),
+            source_url="http://example/space-wolves",
+        )
+        self.assertEqual(
+            rules["detachments"][0]["enhancements"][0]["keywordHints"],
+            ["CAPTAIN", "CHAPLAIN", "LIEUTENANT"],
+        )
+
+    def test_parse_enhancement_keyword_hints_for_multi_keyword_restrictions(self):
+        rules = export_faction_rules.parse_faction_page_html(
+            faction_fixture(
+                "Shield Host",
+                "Martial Ka'tah",
+                "From the Hall of Armouries",
+                "Arcane Genetic Alchemy",
+                enhancement_body="ADEPTUS CUSTODES INFANTRY model only. Gain a bonus.",
+            ),
+            source_url="http://example/adeptus-custodes",
+        )
+        self.assertEqual(
+            rules["detachments"][0]["enhancements"][0]["keywordHints"],
+            ["ADEPTUS CUSTODES INFANTRY"],
+        )
 
     def test_parse_wahapedia_markup_stratagem_name_from_wrapper(self):
         soup = BeautifulSoup(wahapedia_markup_fixture(), "html.parser")
