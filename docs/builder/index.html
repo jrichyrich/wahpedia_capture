@@ -22,6 +22,11 @@
 
         * { box-sizing: border-box; }
 
+        :focus-visible {
+            outline: 3px solid rgba(140, 47, 57, 0.55);
+            outline-offset: 2px;
+        }
+
         body {
             margin: 0;
             min-height: 100vh;
@@ -36,6 +41,16 @@
             display: grid;
             grid-template-columns: 360px minmax(0, 1fr);
             min-height: 100vh;
+        }
+
+        .mobile-workspace-bar {
+            display: none;
+        }
+
+        .mobile-workspace-bar[hidden],
+        .sidebar-disclosure[hidden],
+        .roster-maintenance-panel[hidden] {
+            display: none !important;
         }
 
         .sidebar {
@@ -74,6 +89,12 @@
             gap: 8px;
         }
 
+        .quick-filter-row {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 8px;
+        }
+
         .sidebar-filter-grid {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -83,6 +104,14 @@
         .sidebar-actions {
             display: grid;
             gap: 8px;
+        }
+
+        .sidebar-disclosure {
+            display: grid;
+            gap: 12px;
+            padding: 14px 16px;
+            background: rgba(255, 255, 255, 0.55);
+            border: 1px solid var(--line);
         }
 
         .toggle-chip {
@@ -135,6 +164,8 @@
             padding: 14px 16px;
             font-size: 14px;
             line-height: 1.45;
+            box-shadow: none;
+            background: rgba(255, 255, 255, 0.72);
         }
 
         .sidebar-meta {
@@ -163,14 +194,34 @@
         .unit-row {
             padding: 14px 16px;
             border-bottom: 1px solid var(--line);
-            display: flex;
-            justify-content: space-between;
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
             gap: 12px;
             align-items: flex-start;
         }
 
         .unit-row:last-child {
             border-bottom: 0;
+        }
+
+        .unit-row.is-selected {
+            background: #fffaf4;
+        }
+
+        .unit-row-main {
+            appearance: none;
+            border: 0;
+            background: transparent;
+            text-align: left;
+            padding: 0;
+            margin: 0;
+            cursor: pointer;
+            color: inherit;
+            font: inherit;
+        }
+
+        .unit-row-main:hover .unit-name {
+            color: var(--accent);
         }
 
         .unit-name {
@@ -208,6 +259,11 @@
             border-color: #bf7a80;
         }
 
+        .pill-subtle {
+            background: #f4efe3;
+            border-color: var(--line);
+        }
+
         .btn {
             border: 1.5px solid var(--ink);
             background: var(--panel-2);
@@ -233,6 +289,15 @@
             border-color: var(--accent);
         }
 
+        .btn-quiet {
+            background: transparent;
+        }
+
+        .btn-danger {
+            border-color: #8c2f39;
+            color: #8c2f39;
+        }
+
         .btn-remove {
             padding: 8px 10px;
             line-height: 1;
@@ -249,6 +314,14 @@
         .roster-card,
         .preview-card {
             padding: 20px;
+        }
+
+        .preview-card {
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+        }
+
+        .preview-card.is-muted {
+            opacity: 0.88;
         }
 
         .roster-header {
@@ -517,6 +590,15 @@
             gap: 10px;
         }
 
+        .roster-maintenance-panel {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 12px;
+            border: 1px dashed var(--line);
+            background: rgba(255, 255, 255, 0.65);
+        }
+
         .saved-roster-meta {
             margin-top: 10px;
         }
@@ -706,10 +788,6 @@
             margin: 0;
         }
 
-        .preview-toggle-btn {
-            display: none;
-        }
-
         .preview-body.preview-body-hidden {
             display: none;
         }
@@ -717,6 +795,50 @@
         .preview-body {
             display: grid;
             gap: 24px;
+        }
+
+        .catalog-section {
+            display: grid;
+            gap: 10px;
+            min-height: 0;
+        }
+
+        .section-heading-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            align-items: baseline;
+        }
+
+        .section-count {
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: #5d5448;
+        }
+
+        .unit-row-detail {
+            grid-column: 1 / -1;
+            padding-top: 4px;
+            border-top: 1px dashed rgba(49, 34, 18, 0.14);
+        }
+
+        .unit-row-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 8px;
+        }
+
+        .unit-row-actions {
+            display: grid;
+            gap: 8px;
+            justify-items: stretch;
+        }
+
+        .workspace-hidden {
+            display: none !important;
         }
 
         .source-card {
@@ -840,6 +962,73 @@
         }
 
         @media (max-width: 640px) {
+            body {
+                padding-top: 108px;
+            }
+
+            .mobile-workspace-bar {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: 20;
+                display: grid;
+                gap: 10px;
+                padding: 12px 14px;
+                background: rgba(248, 245, 235, 0.97);
+                border-bottom: 1.5px solid var(--ink);
+                backdrop-filter: blur(10px);
+            }
+
+            .mobile-workspace-summary {
+                display: flex;
+                justify-content: space-between;
+                gap: 12px;
+                align-items: baseline;
+            }
+
+            .mobile-workspace-points {
+                display: grid;
+                gap: 2px;
+            }
+
+            .mobile-workspace-points span:first-child {
+                font-family: "Exo 2", sans-serif;
+                font-size: 20px;
+                font-weight: 900;
+                line-height: 1;
+                color: var(--accent);
+            }
+
+            .mobile-workspace-points span:last-child,
+            .mobile-workspace-issues {
+                font-size: 11px;
+                font-weight: 900;
+                letter-spacing: 0.08em;
+                text-transform: uppercase;
+            }
+
+            .mobile-workspace-tabs {
+                display: grid;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 8px;
+            }
+
+            .mobile-workspace-tab {
+                border: 1.5px solid var(--ink);
+                background: white;
+                min-height: 40px;
+                font: inherit;
+                font-weight: 900;
+                text-transform: uppercase;
+            }
+
+            .mobile-workspace-tab.is-active {
+                background: var(--accent);
+                color: white;
+                border-color: var(--accent);
+            }
+
             .sidebar,
             .main {
                 padding: 14px;
@@ -851,14 +1040,15 @@
             }
 
             .unit-list {
-                max-height: min(42vh, 360px);
+                max-height: none;
             }
 
             .unit-row {
-                flex-direction: column;
+                grid-template-columns: 1fr;
             }
 
-            .unit-row .btn {
+            .unit-row .btn,
+            .unit-row-actions {
                 width: 100%;
             }
 
@@ -895,7 +1085,11 @@
             }
 
             .sidebar-filter-grid {
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: 1fr;
+            }
+
+            .quick-filter-row {
+                grid-template-columns: 1fr 1fr 1fr;
             }
 
             .roster-manager-actions .btn,
@@ -909,11 +1103,6 @@
             }
 
             .preview-mode-toggle {
-                width: 100%;
-            }
-
-            .preview-toggle-btn {
-                display: inline-flex;
                 width: 100%;
             }
 
@@ -995,10 +1184,10 @@
         }
 
         @media print {
+            .mobile-workspace-bar,
             .sidebar,
             .roster-card,
             .preview-header .btn,
-            .preview-toggle-btn,
             .source-card-actions {
                 display: none !important;
             }
@@ -1020,11 +1209,25 @@
     </style>
 </head>
 <body>
+    <div id="mobile-workspace-bar" class="mobile-workspace-bar" hidden>
+        <div class="mobile-workspace-summary">
+            <div class="mobile-workspace-points">
+                <span id="mobile-summary-points">0 / 2000</span>
+                <span id="mobile-summary-caption">Strike Force</span>
+            </div>
+            <div id="mobile-summary-issues" class="mobile-workspace-issues">No issues</div>
+        </div>
+        <div class="mobile-workspace-tabs" role="tablist" aria-label="Builder workspace">
+            <button id="mobile-tab-browse" class="mobile-workspace-tab is-active" type="button" aria-pressed="true">Browse</button>
+            <button id="mobile-tab-roster" class="mobile-workspace-tab" type="button" aria-pressed="false">Roster</button>
+            <button id="mobile-tab-cards" class="mobile-workspace-tab" type="button" aria-pressed="false">Cards</button>
+        </div>
+    </div>
     <div class="app-shell">
-        <aside class="sidebar">
+        <aside id="browse-panel" class="sidebar">
             <div class="brand">
                 <h1>Wahpedia Capture</h1>
-                <p>Roster builder and printable datasheets built from the exported faction JSON in this repo.</p>
+                <p>Browse units, build a roster, and print cleaner datasheets from the exported faction catalogs in this repo.</p>
             </div>
 
             <div class="field-group">
@@ -1039,43 +1242,11 @@
                 <input id="unit-search" type="text" placeholder="Avatar, Custodian Guard, Ragnar..." disabled>
             </div>
 
-            <div class="field-group">
-                <label class="field-label" for="support-filter">Support</label>
-                <select id="support-filter" disabled>
-                    <option value="all">All units</option>
-                    <option value="full">Ready only</option>
-                    <option value="partial">Partial support</option>
-                    <option value="configured-only">Configured-only preview</option>
-                </select>
-            </div>
-
-            <div class="field-group">
-                <label class="field-label" for="role-filter">Role</label>
-                <select id="role-filter" disabled>
-                    <option value="all">All roles</option>
-                    <option value="character">Character</option>
-                    <option value="battleline">Battleline</option>
-                    <option value="mounted">Mounted</option>
-                    <option value="transport">Transport</option>
-                    <option value="vehicle">Vehicle</option>
-                    <option value="monster">Monster</option>
-                    <option value="infantry">Infantry</option>
-                    <option value="aircraft">Aircraft</option>
-                </select>
-            </div>
-
-            <div class="field-group">
-                <label class="field-label" for="points-filter">Points Band</label>
-                <select id="points-filter" disabled>
-                    <option value="all">All points</option>
-                    <option value="0-100">0-100</option>
-                    <option value="101-200">101-200</option>
-                    <option value="201-300">201-300</option>
-                    <option value="301+">301+</option>
-                </select>
-            </div>
-
-            <div class="sidebar-filter-grid">
+            <div class="quick-filter-row">
+                <label class="toggle-chip">
+                    <input id="filter-ready-only" type="checkbox" disabled>
+                    <span>Ready Only</span>
+                </label>
                 <label class="toggle-chip">
                     <input id="filter-character" type="checkbox" disabled>
                     <span>Characters</span>
@@ -1084,54 +1255,101 @@
                     <input id="filter-transport" type="checkbox" disabled>
                     <span>Transports</span>
                 </label>
-                <label class="toggle-chip">
-                    <input id="filter-epic-hero" type="checkbox" disabled>
-                    <span>Epic Heroes</span>
-                </label>
-                <label class="toggle-chip">
-                    <input id="filter-ready-only" type="checkbox" disabled>
-                    <span>Ready Only</span>
-                </label>
             </div>
 
             <div class="sidebar-actions">
                 <button id="reset-filters" class="btn" type="button">Reset filters</button>
+                <button id="advanced-filters-toggle" class="btn btn-quiet" type="button" aria-expanded="false">Advanced filters</button>
             </div>
 
-            <div id="status-box" class="status-box">Loading <code>./data/manifest.json</code>...</div>
-            <div id="data-confidence" class="status-box">Coverage summary will appear after the catalog loads.</div>
+            <div id="advanced-filters-panel" class="sidebar-disclosure" hidden>
+                <div class="field-group">
+                    <label class="field-label" for="support-filter">Support</label>
+                    <select id="support-filter" disabled>
+                        <option value="all">All units</option>
+                        <option value="full">Ready only</option>
+                        <option value="partial">Needs review</option>
+                        <option value="configured-only">Image fallback</option>
+                    </select>
+                </div>
 
-            <div class="sidebar-meta">
-                <div class="sidebar-meta-row">
-                    <span class="sidebar-meta-label">Units</span>
-                    <span id="catalog-unit-count" class="sidebar-meta-value">0</span>
+                <div class="field-group">
+                    <label class="field-label" for="role-filter">Role</label>
+                    <select id="role-filter" disabled>
+                        <option value="all">All roles</option>
+                        <option value="character">Character</option>
+                        <option value="battleline">Battleline</option>
+                        <option value="mounted">Mounted</option>
+                        <option value="transport">Transport</option>
+                        <option value="vehicle">Vehicle</option>
+                        <option value="monster">Monster</option>
+                        <option value="infantry">Infantry</option>
+                        <option value="aircraft">Aircraft</option>
+                    </select>
                 </div>
-                <div class="sidebar-meta-row">
-                    <span class="sidebar-meta-label">Manual Labels</span>
-                    <span id="catalog-manual-count" class="sidebar-meta-value">0</span>
+
+                <div class="field-group">
+                    <label class="field-label" for="points-filter">Points Band</label>
+                    <select id="points-filter" disabled>
+                        <option value="all">All points</option>
+                        <option value="0-100">0-100</option>
+                        <option value="101-200">101-200</option>
+                        <option value="201-300">201-300</option>
+                        <option value="301+">301+</option>
+                    </select>
                 </div>
-                <div class="sidebar-meta-row">
-                    <span class="sidebar-meta-label">Missing Stats</span>
-                    <span id="catalog-missing-count" class="sidebar-meta-value">0</span>
-                </div>
-                <div class="sidebar-meta-row">
-                    <span class="sidebar-meta-label">Detachments</span>
-                    <span id="catalog-detachment-count" class="sidebar-meta-value">0</span>
+
+                <div class="sidebar-filter-grid">
+                    <label class="toggle-chip">
+                        <input id="filter-epic-hero" type="checkbox" disabled>
+                        <span>Epic Heroes</span>
+                    </label>
                 </div>
             </div>
 
-            <div>
-                <div class="section-heading">Catalog Units</div>
+            <div class="sidebar-actions">
+                <button id="catalog-health-toggle" class="btn btn-quiet" type="button" aria-expanded="false">Catalog health</button>
+            </div>
+
+            <div id="catalog-health-panel" class="sidebar-disclosure sidebar-health-panel" hidden>
+                <div id="status-box" class="status-box">Loading <code>./data/manifest.json</code>...</div>
+                <div id="data-confidence" class="status-box">Coverage summary will appear after the catalog loads.</div>
+
+                <div class="sidebar-meta">
+                    <div class="sidebar-meta-row">
+                        <span class="sidebar-meta-label">Ready Units</span>
+                        <span id="catalog-unit-count" class="sidebar-meta-value">0</span>
+                    </div>
+                    <div class="sidebar-meta-row">
+                        <span class="sidebar-meta-label">Needs Review</span>
+                        <span id="catalog-manual-count" class="sidebar-meta-value">0</span>
+                    </div>
+                    <div class="sidebar-meta-row">
+                        <span class="sidebar-meta-label">Image Fallbacks</span>
+                        <span id="catalog-missing-count" class="sidebar-meta-value">0</span>
+                    </div>
+                    <div class="sidebar-meta-row">
+                        <span class="sidebar-meta-label">Detachments</span>
+                        <span id="catalog-detachment-count" class="sidebar-meta-value">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="catalog-section">
+                <div class="section-heading-row">
+                    <div class="section-heading">Browse Units</div>
+                    <div id="catalog-visible-count" class="section-count">0 shown</div>
+                </div>
                 <div id="unit-list" class="unit-list"></div>
             </div>
         </aside>
 
         <main class="main">
-            <section class="roster-card">
+            <section id="roster-panel" class="roster-card">
                 <div class="roster-header">
                     <div>
                         <h2 id="roster-title">No faction loaded</h2>
-                        <div id="roster-subtitle" class="roster-subtitle">Build `out/builder` first, then serve the repo over HTTP so the browser can fetch the generated catalogs.</div>
+                        <div id="roster-subtitle" class="roster-subtitle">Load a faction, add units, and keep your roster tuned for print.</div>
                     </div>
                     <div>
                         <div id="total-points" class="points-tally">0</div>
@@ -1167,13 +1385,16 @@
                         </div>
                     </div>
                     <div class="roster-manager-actions">
-                        <button id="save-roster" class="btn">Save roster</button>
-                        <button id="save-roster-copy" class="btn">Save copy</button>
+                        <button id="save-roster" class="btn btn-primary">Save roster</button>
+                        <button id="save-roster-copy" class="btn">Duplicate</button>
                         <button id="new-roster" class="btn">New roster</button>
                         <button id="import-roster" class="btn">Import JSON</button>
                         <button id="export-roster" class="btn">Export JSON</button>
+                        <button id="roster-actions-toggle" class="btn btn-quiet" type="button" aria-expanded="false">More actions</button>
+                    </div>
+                    <div id="roster-maintenance-panel" class="roster-maintenance-panel" hidden>
                         <button id="dedupe-rosters" class="btn">Clean duplicates</button>
-                        <button id="delete-roster" class="btn">Delete roster</button>
+                        <button id="delete-roster" class="btn btn-danger">Delete roster</button>
                     </div>
                     <div id="saved-roster-meta" class="saved-roster-meta inline-note"></div>
                     <div id="repair-panel" class="repair-panel" hidden></div>
@@ -1201,16 +1422,16 @@
                 <section id="entry-editor" class="entry-editor" hidden></section>
 
                 <div class="roster-actions">
-                    <button id="clear-roster" class="btn">Clear roster</button>
+                    <button id="clear-roster" class="btn btn-quiet">Clear roster</button>
                     <button id="print-roster" class="btn btn-primary">Print preview cards</button>
                 </div>
             </section>
 
-            <section class="preview-card">
+            <section id="preview-panel" class="preview-card">
                 <div class="preview-header">
                     <div>
-                        <h2 class="section-heading">Card Preview</h2>
-                        <div class="inline-note">Cards render directly from the normalized builder catalog and the current roster selections.</div>
+                        <h2 class="section-heading">Review &amp; Print Cards</h2>
+                        <div class="inline-note">Preview only the cards that can print from your current roster and source captures.</div>
                         <div id="preview-mode-note" class="inline-note"></div>
                     </div>
                     <div class="preview-controls">
@@ -1224,7 +1445,6 @@
                         </label>
                     </div>
                 </div>
-                <button id="preview-toggle" class="btn preview-toggle-btn" type="button" aria-expanded="false">Show cards</button>
                 <div id="preview-body" class="preview-body"></div>
             </section>
         </main>
@@ -1256,8 +1476,12 @@
             previewRenderMode: "default",
             previewSourceMode: "configured",
             missingSourceCardLookup: new Set(),
-            mobilePreviewVisible: false,
             wasMobileViewport: false,
+            activeMobileTab: "browse",
+            advancedFiltersExpanded: false,
+            catalogHealthExpanded: false,
+            selectedCatalogUnitId: null,
+            rosterActionsMenuOpen: false,
             activeEditorInstanceId: null,
             repairState: null,
             catalogFilters: defaultCatalogFilters(),
@@ -1269,6 +1493,14 @@
         };
 
         const els = {
+            mobileWorkspaceBar: document.getElementById("mobile-workspace-bar"),
+            mobileTabBrowse: document.getElementById("mobile-tab-browse"),
+            mobileTabRoster: document.getElementById("mobile-tab-roster"),
+            mobileTabCards: document.getElementById("mobile-tab-cards"),
+            mobileSummaryPoints: document.getElementById("mobile-summary-points"),
+            mobileSummaryCaption: document.getElementById("mobile-summary-caption"),
+            mobileSummaryIssues: document.getElementById("mobile-summary-issues"),
+            sidebar: document.getElementById("browse-panel"),
             factionSelect: document.getElementById("faction-select"),
             unitSearch: document.getElementById("unit-search"),
             supportFilter: document.getElementById("support-filter"),
@@ -1279,20 +1511,26 @@
             filterEpicHero: document.getElementById("filter-epic-hero"),
             filterReadyOnly: document.getElementById("filter-ready-only"),
             resetFilters: document.getElementById("reset-filters"),
+            advancedFiltersToggle: document.getElementById("advanced-filters-toggle"),
+            advancedFiltersPanel: document.getElementById("advanced-filters-panel"),
+            catalogHealthToggle: document.getElementById("catalog-health-toggle"),
+            catalogHealthPanel: document.getElementById("catalog-health-panel"),
             unitList: document.getElementById("unit-list"),
+            catalogVisibleCount: document.getElementById("catalog-visible-count"),
             statusBox: document.getElementById("status-box"),
             dataConfidence: document.getElementById("data-confidence"),
             catalogUnitCount: document.getElementById("catalog-unit-count"),
             catalogManualCount: document.getElementById("catalog-manual-count"),
             catalogMissingCount: document.getElementById("catalog-missing-count"),
             catalogDetachmentCount: document.getElementById("catalog-detachment-count"),
+            rosterCard: document.getElementById("roster-panel"),
             rosterTitle: document.getElementById("roster-title"),
             rosterSubtitle: document.getElementById("roster-subtitle"),
             rosterBody: document.getElementById("roster-body"),
             totalPoints: document.getElementById("total-points"),
             pointsCaption: document.getElementById("points-caption"),
+            previewCard: document.getElementById("preview-panel"),
             previewBody: document.getElementById("preview-body"),
-            previewToggle: document.getElementById("preview-toggle"),
             previewModeConfigured: document.getElementById("preview-mode-configured"),
             previewModeSource: document.getElementById("preview-mode-source"),
             previewModeNote: document.getElementById("preview-mode-note"),
@@ -1308,6 +1546,8 @@
             newRoster: document.getElementById("new-roster"),
             importRoster: document.getElementById("import-roster"),
             exportRoster: document.getElementById("export-roster"),
+            rosterActionsToggle: document.getElementById("roster-actions-toggle"),
+            rosterMaintenancePanel: document.getElementById("roster-maintenance-panel"),
             dedupeRosters: document.getElementById("dedupe-rosters"),
             deleteRoster: document.getElementById("delete-roster"),
             savedRosterMeta: document.getElementById("saved-roster-meta"),
@@ -1350,6 +1590,34 @@
             els.filterTransport.checked = Boolean(state.catalogFilters.transportOnly);
             els.filterEpicHero.checked = Boolean(state.catalogFilters.epicHeroOnly);
             els.filterReadyOnly.checked = Boolean(state.catalogFilters.readyOnly);
+        }
+
+        function applyDisclosureState(button, panel, expanded) {
+            if (!button || !panel) {
+                return;
+            }
+            button.setAttribute("aria-expanded", expanded ? "true" : "false");
+            panel.hidden = !expanded;
+        }
+
+        function renderSidebarDisclosures() {
+            applyDisclosureState(els.advancedFiltersToggle, els.advancedFiltersPanel, state.advancedFiltersExpanded);
+            applyDisclosureState(els.catalogHealthToggle, els.catalogHealthPanel, state.catalogHealthExpanded);
+            if (els.advancedFiltersToggle) {
+                els.advancedFiltersToggle.textContent = state.advancedFiltersExpanded ? "Hide filters" : "Advanced filters";
+            }
+            if (els.catalogHealthToggle) {
+                els.catalogHealthToggle.textContent = state.catalogHealthExpanded ? "Hide health" : "Catalog health";
+            }
+        }
+
+        function renderRosterActionMenu() {
+            if (!els.rosterActionsToggle || !els.rosterMaintenancePanel) {
+                return;
+            }
+            els.rosterActionsToggle.setAttribute("aria-expanded", state.rosterActionsMenuOpen ? "true" : "false");
+            els.rosterActionsToggle.textContent = state.rosterActionsMenuOpen ? "Hide actions" : "More actions";
+            els.rosterMaintenancePanel.hidden = !state.rosterActionsMenuOpen;
         }
 
         async function fetchJson(path) {
@@ -1585,6 +1853,66 @@
             }[phase] || phase;
         }
 
+        function mobileIssueSummary(derived) {
+            if (!derived) {
+                return "No issues";
+            }
+            const issueCount = (derived.armyIssues || []).length + (derived.invalidEntries || []).length;
+            if (!issueCount) {
+                return "No issues";
+            }
+            return `${issueCount} issue${issueCount === 1 ? "" : "s"}`;
+        }
+
+        function setActiveMobileTab(tab) {
+            state.activeMobileTab = tab || "browse";
+            renderWorkspaceVisibility(deriveRoster());
+        }
+
+        function renderMobileSummary(derived) {
+            if (!els.mobileSummaryPoints || !els.mobileSummaryCaption || !els.mobileSummaryIssues) {
+                return;
+            }
+            const battleSize = derived && derived.army ? derived.army.battleSize : Store.DEFAULT_BATTLE_SIZE;
+            const pointsLimit = derived && typeof derived.pointsLimit === "number"
+                ? derived.pointsLimit
+                : Store.battleSizePoints(battleSize);
+            const totalPoints = derived && typeof derived.totalPoints === "number" ? derived.totalPoints : 0;
+            els.mobileSummaryPoints.textContent = `${totalPoints} / ${pointsLimit}`;
+            els.mobileSummaryCaption.textContent = battleSizeLabel(battleSize);
+            els.mobileSummaryIssues.textContent = mobileIssueSummary(derived);
+        }
+
+        function renderWorkspaceVisibility(derived) {
+            const isMobile = isMobileViewport();
+            if (els.mobileWorkspaceBar) {
+                els.mobileWorkspaceBar.hidden = !isMobile;
+            }
+
+            const tab = state.activeMobileTab || "browse";
+            const showBrowse = !isMobile || tab === "browse";
+            const showRoster = !isMobile || tab === "roster";
+            const showCards = !isMobile || tab === "cards";
+
+            els.sidebar.classList.toggle("workspace-hidden", !showBrowse);
+            els.rosterCard.classList.toggle("workspace-hidden", !showRoster);
+            els.previewCard.classList.toggle("workspace-hidden", !showCards);
+
+            if (els.mobileTabBrowse) {
+                const browseActive = isMobile && tab === "browse";
+                const rosterActive = isMobile && tab === "roster";
+                const cardsActive = isMobile && tab === "cards";
+                els.mobileTabBrowse.classList.toggle("is-active", browseActive);
+                els.mobileTabRoster.classList.toggle("is-active", rosterActive);
+                els.mobileTabCards.classList.toggle("is-active", cardsActive);
+                els.mobileTabBrowse.setAttribute("aria-pressed", browseActive ? "true" : "false");
+                els.mobileTabRoster.setAttribute("aria-pressed", rosterActive ? "true" : "false");
+                els.mobileTabCards.setAttribute("aria-pressed", cardsActive ? "true" : "false");
+            }
+
+            renderMobileSummary(derived);
+        }
+
         function renderPointsTally(derived) {
             const battleSize = derived && derived.army ? derived.army.battleSize : Store.DEFAULT_BATTLE_SIZE;
             const pointsLimit = derived && typeof derived.pointsLimit === "number"
@@ -1800,6 +2128,7 @@
             els.savedRosterSelect.disabled = !hasStorage || savedRosters.length === 0;
             els.saveRoster.disabled = !hasStorage;
             els.saveRosterCopy.disabled = !hasStorage;
+            els.rosterActionsToggle.disabled = !hasStorage;
             els.dedupeRosters.disabled = !hasStorage || savedRosters.length < 2;
             els.deleteRoster.disabled = !hasStorage || !state.activeRosterId;
 
@@ -1858,7 +2187,7 @@
                 return `<span class="pill support-badge-incompatible">Needs repair</span>`;
             }
             if (level === "partial") {
-                return `<span class="pill support-badge-partial">Partial</span>`;
+                return `<span class="pill support-badge-partial">Needs review</span>`;
             }
             return `<span class="pill support-badge-ready">Ready</span>`;
         }
@@ -1866,11 +2195,20 @@
         function supportReasonLabel(reason) {
             return {
                 missing_stats: "Missing stats",
-                manual_wargear: "Manual wargear",
-                manual_selection_labels: "Manual labels",
-                source_image_missing: "Source image missing",
+                manual_wargear: "Manual loadout",
+                manual_selection_labels: "Manual loadout",
+                source_image_missing: "Image missing",
                 missing_unit: "Missing from current catalog",
             }[reason] || humanizeReason(reason);
+        }
+
+        function supportReasonBadge(reason) {
+            return {
+                missing_stats: "Missing stats",
+                manual_wargear: "Manual loadout",
+                manual_selection_labels: "Manual loadout",
+                source_image_missing: "Image missing",
+            }[reason] || supportReasonLabel(reason);
         }
 
         function humanizeReason(reason) {
@@ -1947,27 +2285,25 @@
             return true;
         }
 
-        function qualityPills(unit) {
+        function unitStatusBadges(unit) {
             const pills = [];
             const support = unitSupport(unit);
             pills.push(supportBadge(support.supportLevel));
-            if (support.previewSupport === "configured-only") {
-                pills.push(`<div class="pill pill-warning">Configured preview only</div>`);
-            }
-            if (unit.selectionMode === "manual") {
-                pills.push(`<div class="pill">Manual option labels</div>`);
-            }
-            if (unit.wargear && unit.wargear.options && unit.wargear.options.length) {
-                pills.push(`<div class="pill">Wargear options</div>`);
-            }
-            if (unit.quality && unit.quality.hasManualWargearOptions) {
-                pills.push(`<div class="pill pill-warning">Manual wargear</div>`);
-            }
             const missing = missingStats(unit);
-            if (missing.length) {
-                pills.push(`<div class="pill pill-warning">Missing stats: ${missing.join(", ")}</div>`);
+            const supportReasons = new Set(supportReasonSummary(unit));
+            if (support.previewSupport === "configured-only") {
+                supportReasons.add("source_image_missing");
             }
-            pills.push(`<span class="catalog-role-chip">${escapeHtml(unitPrimaryRole(unit))}</span>`);
+            if (unit.selectionMode === "manual" || (unit.quality && unit.quality.hasManualWargearOptions)) {
+                supportReasons.add("manual_wargear");
+            }
+            if (missing.length) {
+                supportReasons.add("missing_stats");
+            }
+
+            Array.from(supportReasons).slice(0, 2).forEach((reason) => {
+                pills.push(`<span class="pill pill-subtle">${escapeHtml(supportReasonBadge(reason))}</span>`);
+            });
             return pills.join("");
         }
 
@@ -2091,6 +2427,9 @@
 
         function openEntryEditor(instanceId) {
             state.activeEditorInstanceId = instanceId || null;
+            if (instanceId && isMobileViewport()) {
+                state.activeMobileTab = "roster";
+            }
             renderRoster();
             if (instanceId && els.entryEditor && typeof els.entryEditor.scrollIntoView === "function") {
                 els.entryEditor.scrollIntoView({ block: "nearest", behavior: "smooth" });
@@ -2325,7 +2664,7 @@
                         <div class="entry-summary-line">
                             <h2 class="section-heading">${escapeHtml(entry.displayName)}</h2>
                             ${supportBadge(support.supportLevel)}
-                            ${support.previewSupport === "configured-only" ? `<span class="pill pill-warning">Configured preview only</span>` : ""}
+                            ${support.previewSupport === "configured-only" ? `<span class="pill pill-warning">Image fallback</span>` : ""}
                             ${entry.canRepair ? `<span class="pill support-badge-incompatible">Repairable</span>` : ""}
                         </div>
                         <div class="inline-note">${loadoutSummary(entry).length ? loadoutSummary(entry).join(" • ") : "No configuration selected yet."}</div>
@@ -2419,12 +2758,6 @@
         }
 
         function renderPreviewVisibility() {
-            const isMobile = isMobileViewport();
-            const shouldShowPreview = isMobile ? state.mobilePreviewVisible : true;
-            els.previewToggle.hidden = !isMobile;
-            els.previewToggle.textContent = shouldShowPreview ? "Hide cards" : "Show cards";
-            els.previewToggle.setAttribute("aria-expanded", shouldShowPreview ? "true" : "false");
-            els.previewBody.classList.toggle("preview-body-hidden", !shouldShowPreview);
             const isConfigured = state.previewSourceMode === "configured";
             els.previewModeConfigured.classList.toggle("is-active", isConfigured);
             els.previewModeConfigured.setAttribute("aria-pressed", isConfigured ? "true" : "false");
@@ -2433,7 +2766,7 @@
             els.printCleanToggle.disabled = !isConfigured;
             els.previewModeNote.textContent = isConfigured
                 ? "Configured cards reflect your roster choices and print exactly as shown."
-                : "Original Wahapedia mode prints source images when available and falls back to configured HTML cards when an image capture is missing.";
+                : "Original Wahapedia mode prints source images when available and falls back to builder-rendered cards when a source image is missing.";
         }
 
         function resetCatalogFilters(options = {}) {
@@ -2469,6 +2802,8 @@
             els.newRoster.disabled = factions.length === 0;
             els.dedupeRosters.disabled = !factions.length;
             syncCatalogFilterControls();
+            renderSidebarDisclosures();
+            renderRosterActionMenu();
         }
 
         function renderCatalogSummary() {
@@ -2477,18 +2812,18 @@
             }
             const catalog = state.catalog;
             const supportSummary = catalog.build && catalog.build.supportSummary ? catalog.build.supportSummary : {};
-            els.catalogUnitCount.textContent = String(catalog.faction.unitCount);
-            els.catalogManualCount.textContent = String(catalog.build.manualSelectionUnits.length);
-            els.catalogMissingCount.textContent = String(catalog.build.missingStats.length);
+            els.catalogUnitCount.textContent = String(supportSummary.readyUnitCount || 0);
+            els.catalogManualCount.textContent = String(supportSummary.partialUnitCount || 0);
+            els.catalogMissingCount.textContent = String(supportSummary.configuredOnlyPreviewCount || 0);
             els.catalogDetachmentCount.textContent = String(catalogDetachments().length);
             els.factionSelect.value = state.factionSlug;
 
             const healthBits = [];
             if (catalog.build.manualSelectionUnits.length) {
-                healthBits.push(`${catalog.build.manualSelectionUnits.length} unit(s) still use source labels verbatim`);
+                healthBits.push(`${catalog.build.manualSelectionUnits.length} unit(s) still need manual labels reviewed`);
             }
             if (catalog.build.manualWargearUnits && catalog.build.manualWargearUnits.length) {
-                healthBits.push(`${catalog.build.manualWargearUnits.length} unit(s) still need manual wargear choices`);
+                healthBits.push(`${catalog.build.manualWargearUnits.length} unit(s) still need manual loadout checks`);
             }
             if (catalog.build.missingStats.length) {
                 healthBits.push(`${catalog.build.missingStats.length} unit(s) still have missing exported stats`);
@@ -2497,26 +2832,23 @@
             els.rosterTitle.textContent = state.activeRosterName || Store.normalizeName("", state.rosterFactionSlug || state.factionSlug);
             els.rosterSubtitle.textContent = [
                 state.catalog.faction.name,
-                `${catalog.build.catalogUnitCount} units loaded`,
-                `${supportSummary.readyUnitCount || 0} ready`,
-                `${supportSummary.partialUnitCount || 0} partial`,
-                healthBits.length ? `Data health: ${healthBits.join(" | ")}` : "Data health: clean",
+                `${catalog.build.catalogUnitCount} units available`,
+                `${supportSummary.readyUnitCount || 0} ready to use`,
+                `${supportSummary.partialUnitCount || 0} need review`,
+                healthBits.length ? `Catalog checks: ${healthBits.join(" | ")}` : "Catalog checks: clean",
                 `Last saved: ${formatSavedAt(state.lastSavedAt)}`,
             ].join(" | ");
 
             const statusBits = [
-                `${catalog.faction.name}: ${catalog.faction.unitCount} units`,
-                `${supportSummary.readyUnitCount || 0} ready`,
-                `${supportSummary.partialUnitCount || 0} partial`,
-                `${catalog.build.manualSelectionUnits.length} manual selection labels`,
-                `${catalog.build.manualWargearUnits ? catalog.build.manualWargearUnits.length : 0} manual wargear units`,
-                `${catalog.build.missingStats.length} units with missing stats`,
+                `${catalog.faction.name}: ${catalog.faction.unitCount} units available`,
+                `${supportSummary.readyUnitCount || 0} ready to build with`,
+                `${supportSummary.partialUnitCount || 0} flagged for review`,
             ];
             setStatus(statusBits.join(" | "), false);
             els.dataConfidence.innerHTML = [
-                `<strong>Data confidence</strong>`,
-                `${supportSummary.readyUnitCount || 0}/${catalog.build.catalogUnitCount} units are ready with no known support gaps.`,
-                `${supportSummary.partialUnitCount || 0} unit(s) remain partial, and ${supportSummary.configuredOnlyPreviewCount || 0} unit(s) print from configured HTML instead of source images.`,
+                `<strong>Catalog health</strong>`,
+                `${supportSummary.readyUnitCount || 0}/${catalog.build.catalogUnitCount} units are ready without known review flags.`,
+                `${supportSummary.partialUnitCount || 0} unit(s) still need review, and ${supportSummary.configuredOnlyPreviewCount || 0} print from builder-rendered cards because a source image is missing.`,
                 `<button class="btn" type="button" data-action="focus-ready-units">Show ready units only</button>`,
             ].join("<br>");
         }
@@ -2548,6 +2880,13 @@
                 return;
             }
             const units = state.catalog.units.filter((unit) => unitMatchesFilters(unit));
+            if (els.catalogVisibleCount) {
+                els.catalogVisibleCount.textContent = `${units.length} shown`;
+            }
+
+            if (state.selectedCatalogUnitId && !units.some((unit) => unit.unitId === state.selectedCatalogUnitId)) {
+                state.selectedCatalogUnitId = null;
+            }
 
             if (!units.length) {
                 els.unitList.innerHTML = `<div class="unit-row">No units match the current search.</div>`;
@@ -2558,18 +2897,26 @@
                 const defaultOption = window.WahBuilderCardRenderer.defaultPointsOption(unit);
                 const price = defaultOption ? `${defaultOption.points} pts` : "No points";
                 const supportReasons = supportReasonSummary(unit);
+                const isSelected = state.selectedCatalogUnitId === unit.unitId;
+                const inRosterCount = state.roster.filter((entry) => entry.unitId === unit.unitId).length;
                 return `
-                    <div class="unit-row">
-                        <div>
+                    <div class="unit-row ${isSelected ? "is-selected" : ""}">
+                        <button class="unit-row-main" type="button" data-action="focus-unit" data-unit-id="${unit.unitId}" aria-expanded="${isSelected ? "true" : "false"}">
                             <p class="unit-name">${unit.name}</p>
                             <div class="unit-meta">${price} | ${unitPrimaryRole(unit)} | ${unit.factionKeywords.join(", ")}</div>
-                            ${qualityPills(unit)}
-                            ${supportReasons.length ? `<div class="inline-note">${supportReasons.map((reason) => supportReasonLabel(reason)).join(" • ")}</div>` : ""}
-                        </div>
-                        <div class="entry-actions">
-                            <button class="btn" data-action="focus-unit" data-unit-id="${unit.unitId}">Add + Edit</button>
+                            <div class="unit-row-badges">${unitStatusBadges(unit)}</div>
+                        </button>
+                        <div class="unit-row-actions">
+                            <button class="btn btn-quiet" type="button" data-action="focus-unit" data-unit-id="${unit.unitId}" aria-expanded="${isSelected ? "true" : "false"}">${isSelected ? "Hide details" : "Details"}</button>
                             <button class="btn btn-primary" data-action="add-unit" data-unit-id="${unit.unitId}">Add</button>
                         </div>
+                        ${isSelected ? `
+                            <div class="unit-row-detail">
+                                ${supportReasons.length ? `<div class="inline-note">${supportReasons.map((reason) => supportReasonLabel(reason)).join(" • ")}</div>` : `<div class="inline-note">No extra review notes are attached to this unit right now.</div>`}
+                                ${(unit.wargear && unit.wargear.options && unit.wargear.options.length) ? `<div class="inline-note">This unit includes configurable wargear options in the current catalog.</div>` : ""}
+                                ${inRosterCount ? `<div class="inline-note">${inRosterCount} ${inRosterCount === 1 ? "copy is" : "copies are"} already in your roster.</div>` : `<div class="inline-note">Add this unit to start configuring it in the roster workspace.</div>`}
+                            </div>
+                        ` : ""}
                     </div>
                 `;
             }).join("");
@@ -2596,6 +2943,7 @@
                     </option>
                 `),
             ].join("");
+            renderRosterActionMenu();
             renderCatalogSummary();
         }
 
@@ -2609,6 +2957,8 @@
             state.roster = [];
             state.army = Store.normalizeArmyState({});
             state.lastSavedAt = null;
+            state.selectedCatalogUnitId = null;
+            state.rosterActionsMenuOpen = false;
             state.activeEditorInstanceId = null;
             state.repairState = null;
             renderSavedRosterState();
@@ -2642,6 +2992,8 @@
             state.lastSavedAt = savedRoster.savedAt;
             state.roster = Store.createRuntimeEntries(savedRoster.entries);
             state.army = Store.normalizeArmyState(savedRoster.army);
+            state.selectedCatalogUnitId = null;
+            state.rosterActionsMenuOpen = false;
             state.activeEditorInstanceId = state.roster[0] ? state.roster[0].instanceId : null;
 
             const targetFaction = factions.includes(savedRoster.factionSlug) ? savedRoster.factionSlug : (factions[0] || "");
@@ -2724,6 +3076,7 @@
             if (!state.catalog || !derived.entries.length) {
                 els.rosterBody.innerHTML = `<tr><td colspan="5" class="table-empty">No roster entries yet.</td></tr>`;
                 renderEntryEditor(derived);
+                renderWorkspaceVisibility(derived);
                 return;
             }
 
@@ -2781,6 +3134,7 @@
                 `;
             }).join("");
             renderEntryEditor(derived);
+            renderWorkspaceVisibility(derived);
         }
 
         function renderPreview() {
@@ -2788,9 +3142,11 @@
             const renderableEntries = derived.entries.filter((entry) => entry.unit && entry.selectedOption);
             if (!state.catalog || !renderableEntries.length) {
                 els.previewBody.innerHTML = derived.entries.length
-                    ? `<div class="inline-note">Only roster entries that can be resolved against the current catalog are shown in the preview. Legality warnings do not block card rendering.</div>`
-                    : `<div class="inline-note">Add one or more units to preview printable datacards.</div>`;
+                    ? `<div class="inline-note">Only roster entries that resolve cleanly in the current catalog appear here. Review flags do not block card rendering.</div>`
+                    : `<div class="inline-note">Add one or more units to review printable cards.</div>`;
+                els.previewCard.classList.add("is-muted");
                 renderPreviewVisibility();
+                renderWorkspaceVisibility(derived);
                 return;
             }
 
@@ -2816,7 +3172,7 @@
                     <div class="inline-note">${escapeHtml(previewStatusBits.join(" • "))}</div>
                     <div class="entry-editor-stack">
                         ${renderableEntries.map((entry) => `
-                            <div class="inline-note"><strong>${escapeHtml(entry.displayName)}:</strong> ${escapeHtml(loadoutSummary(entry).join(" • ") || "Default loadout")}${entry.support.previewSupport === "configured-only" ? " • configured-only preview" : ""}</div>
+                            <div class="inline-note"><strong>${escapeHtml(entry.displayName)}:</strong> ${escapeHtml(loadoutSummary(entry).join(" • ") || "Default loadout")}${entry.support.previewSupport === "configured-only" ? " • builder-rendered fallback" : ""}</div>
                         `).join("")}
                     </div>
                 </section>
@@ -2827,7 +3183,9 @@
                 renderer: window.WahBuilderCardRenderer,
                 missingSourceCardLookup: state.missingSourceCardLookup,
             })}`;
+            els.previewCard.classList.remove("is-muted");
             renderPreviewVisibility();
+            renderWorkspaceVisibility(derived);
         }
 
         const interactionController = BuilderApp.createInteractionController({
@@ -2867,6 +3225,7 @@
             state.activeRosterId = Store.createRosterId();
             state.activeRosterName = nextSavedRosterCopyName(`${state.activeRosterName || state.rosterNameDraft || "Roster"} Copy`);
             state.rosterNameDraft = state.activeRosterName;
+            state.rosterActionsMenuOpen = false;
             renderSavedRosterState();
             renderPreview();
             const saved = persistActiveRoster({ announce: false });
@@ -2879,6 +3238,7 @@
         function focusCharacterCatalog() {
             state.catalogFilters.characterOnly = true;
             els.filterCharacter.checked = true;
+            state.activeMobileTab = "browse";
             renderUnitList();
             if (typeof els.unitList.scrollIntoView === "function") {
                 els.unitList.scrollIntoView({ block: "nearest", behavior: "smooth" });
@@ -2971,7 +3331,7 @@
             }
             try {
                 state.wasMobileViewport = isMobileViewport();
-                state.mobilePreviewVisible = !state.wasMobileViewport;
+                state.activeMobileTab = state.wasMobileViewport ? "browse" : "roster";
                 state.storageAvailable = Boolean(storageAdapter());
                 await loadManifest();
                 await restoreInitialRoster();
@@ -3015,6 +3375,16 @@
             renderUnitList();
         });
 
+        els.advancedFiltersToggle.addEventListener("click", () => {
+            state.advancedFiltersExpanded = !state.advancedFiltersExpanded;
+            renderSidebarDisclosures();
+        });
+
+        els.catalogHealthToggle.addEventListener("click", () => {
+            state.catalogHealthExpanded = !state.catalogHealthExpanded;
+            renderSidebarDisclosures();
+        });
+
         els.supportFilter.addEventListener("change", (event) => {
             state.catalogFilters.support = event.target.value || "all";
             renderUnitList();
@@ -3052,17 +3422,14 @@
                 ? event.target.closest("[data-action]")
                 : null;
             if (target && target.dataset.action === "focus-unit") {
-                const added = interactionController.addToRoster(target.dataset.unitId);
-                if (added) {
-                    const nextEntry = state.roster[state.roster.length - 1];
-                    openEntryEditor(nextEntry ? nextEntry.instanceId : null);
-                }
+                state.selectedCatalogUnitId = state.selectedCatalogUnitId === target.dataset.unitId ? null : target.dataset.unitId;
+                renderUnitList();
                 return;
             }
             const added = interactionController.handleUnitListClick(event);
             if (added) {
-                const nextEntry = state.roster[state.roster.length - 1];
-                openEntryEditor(nextEntry ? nextEntry.instanceId : null);
+                state.selectedCatalogUnitId = target && target.dataset.unitId ? target.dataset.unitId : state.selectedCatalogUnitId;
+                renderUnitList();
             }
         });
 
@@ -3131,6 +3498,8 @@
         });
 
         els.saveRoster.addEventListener("click", () => {
+            state.rosterActionsMenuOpen = false;
+            renderRosterActionMenu();
             persistActiveRoster({ announce: true });
         });
         els.saveRosterCopy.addEventListener("click", () => {
@@ -3138,10 +3507,14 @@
         });
 
         els.newRoster.addEventListener("click", async () => {
+            state.rosterActionsMenuOpen = false;
+            renderRosterActionMenu();
             await createNewRoster(state.factionSlug || availableFactionSlugs()[0]);
         });
 
         els.importRoster.addEventListener("click", () => {
+            state.rosterActionsMenuOpen = false;
+            renderRosterActionMenu();
             els.importRosterFile.value = "";
             els.importRosterFile.click();
         });
@@ -3162,7 +3535,14 @@
         });
 
         els.exportRoster.addEventListener("click", () => {
+            state.rosterActionsMenuOpen = false;
+            renderRosterActionMenu();
             downloadActiveRoster();
+        });
+
+        els.rosterActionsToggle.addEventListener("click", () => {
+            state.rosterActionsMenuOpen = !state.rosterActionsMenuOpen;
+            renderRosterActionMenu();
         });
 
         els.dedupeRosters.addEventListener("click", async () => {
@@ -3170,6 +3550,8 @@
             if (!adapter) {
                 return;
             }
+            state.rosterActionsMenuOpen = false;
+            renderRosterActionMenu();
             const result = Store.dedupeSavedRosters(adapter);
             if (!result.ok) {
                 setRosterStatus("Unable to clean duplicate saved rosters.", true);
@@ -3184,6 +3566,8 @@
             if (!adapter || !state.activeRosterId) {
                 return;
             }
+            state.rosterActionsMenuOpen = false;
+            renderRosterActionMenu();
             const deletedName = state.activeRosterName;
             Store.deleteRosterFromStorage(adapter, state.activeRosterId);
             refreshSavedRosterList();
@@ -3238,6 +3622,10 @@
                 return;
             }
             if (target.dataset.action === "focus-detachment") {
+                if (isMobileViewport()) {
+                    state.activeMobileTab = "roster";
+                    renderWorkspaceVisibility(deriveRoster());
+                }
                 els.detachmentSelect.focus();
                 return;
             }
@@ -3288,19 +3676,30 @@
                 renderArmyRulesPanel(deriveRoster());
             }
         });
-        els.previewToggle.addEventListener("click", () => {
-            state.mobilePreviewVisible = !state.mobilePreviewVisible;
-            renderPreviewVisibility();
+        els.mobileTabBrowse.addEventListener("click", () => {
+            setActiveMobileTab("browse");
+        });
+        els.mobileTabRoster.addEventListener("click", () => {
+            setActiveMobileTab("roster");
+        });
+        els.mobileTabCards.addEventListener("click", () => {
+            setActiveMobileTab("cards");
         });
         els.previewModeConfigured.addEventListener("click", () => {
             if (state.previewSourceMode !== "configured") {
                 state.previewSourceMode = "configured";
+                if (isMobileViewport()) {
+                    state.activeMobileTab = "cards";
+                }
                 renderPreview();
             }
         });
         els.previewModeSource.addEventListener("click", () => {
             if (state.previewSourceMode !== "source-image") {
                 state.previewSourceMode = "source-image";
+                if (isMobileViewport()) {
+                    state.activeMobileTab = "cards";
+                }
                 renderPreview();
             }
         });
@@ -3311,14 +3710,18 @@
         window.addEventListener("resize", () => {
             const isMobile = isMobileViewport();
             if (isMobile !== state.wasMobileViewport) {
-                state.mobilePreviewVisible = !isMobile;
+                state.activeMobileTab = isMobile ? "browse" : "roster";
                 state.wasMobileViewport = isMobile;
             }
-            renderPreviewVisibility();
+            renderWorkspaceVisibility(deriveRoster());
         });
         els.printRoster.addEventListener("click", async () => {
             const derived = deriveRoster();
             const renderableEntries = derived.entries.filter((entry) => entry.unit && entry.selectedOption);
+            if (isMobileViewport()) {
+                state.activeMobileTab = "cards";
+                renderWorkspaceVisibility(derived);
+            }
             await BuilderApp.printPreviewCards({
                 renderableEntries,
                 previewSourceMode: state.previewSourceMode,

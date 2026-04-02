@@ -80,18 +80,42 @@ class BuilderBrowserSmokeTests(unittest.TestCase):
         Select(self.driver.find_element(By.ID, "faction-select")).select_by_visible_text("Space Wolves")
         self.wait.until(lambda driver: "180/191 units are ready" in driver.find_element(By.ID, "data-confidence").text)
 
-        Select(self.driver.find_element(By.ID, "support-filter")).select_by_visible_text("Partial support")
-        self.wait.until(lambda driver: "Partial" in driver.find_element(By.ID, "unit-list").text)
+        self.driver.find_element(By.ID, "advanced-filters-toggle").click()
+        Select(self.driver.find_element(By.ID, "support-filter")).select_by_visible_text("Needs review")
+        self.wait.until(lambda driver: "Needs review" in driver.find_element(By.ID, "unit-list").text)
 
         self.driver.find_element(By.CSS_SELECTOR, "#unit-list [data-action='focus-unit']").click()
+        self.wait.until(lambda driver: "already in your roster" in driver.find_element(By.ID, "unit-list").text or "Add this unit to start configuring it in the roster workspace." in driver.find_element(By.ID, "unit-list").text)
+
+        self.driver.find_element(By.CSS_SELECTOR, "#unit-list [data-action='add-unit']").click()
+        self.wait.until(lambda driver: "Edit" in driver.find_element(By.ID, "roster-body").text)
+        self.driver.find_element(By.CSS_SELECTOR, "#roster-body [data-action='edit-entry']").click()
         self.wait.until(lambda driver: not driver.find_element(By.ID, "entry-editor").get_attribute("hidden"))
-        self.assertIn("Partial", self.driver.find_element(By.ID, "entry-editor").text)
+        self.assertIn("Needs review", self.driver.find_element(By.ID, "entry-editor").text)
 
         self.driver.find_element(By.ID, "save-roster").click()
         self.wait.until(lambda driver: "Saved" in driver.find_element(By.ID, "roster-status").text)
         self.wait.until(
             lambda driver: "compatible" in driver.find_element(By.CSS_SELECTOR, "#saved-roster-select option").text
         )
+
+    def test_mobile_workspace_tabs_and_summary(self):
+        self.driver.set_window_size(430, 1200)
+        self.driver.get(self.base_url)
+        self.wait_for_builder()
+
+        self.wait.until(lambda driver: driver.find_element(By.ID, "mobile-workspace-bar").is_displayed())
+        self.assertTrue(self.driver.find_element(By.ID, "browse-panel").is_displayed())
+
+        starting_points = self.driver.find_element(By.ID, "mobile-summary-points").text
+        self.driver.find_element(By.CSS_SELECTOR, "#unit-list [data-action='add-unit']").click()
+        self.wait.until(lambda driver: driver.find_element(By.ID, "mobile-summary-points").text != starting_points)
+
+        self.driver.find_element(By.ID, "mobile-tab-roster").click()
+        self.wait.until(lambda driver: driver.find_element(By.ID, "roster-panel").is_displayed())
+
+        self.driver.find_element(By.ID, "mobile-tab-cards").click()
+        self.wait.until(lambda driver: driver.find_element(By.ID, "preview-panel").is_displayed())
 
     def test_stale_roster_repair_copy_flow(self):
         stale_roster = {
