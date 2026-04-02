@@ -797,6 +797,80 @@
             gap: 24px;
         }
 
+        .print-pack-status-line {
+            margin-top: 0;
+        }
+
+        .print-pack-summary {
+            display: grid;
+            gap: 14px;
+            padding: 18px;
+            border: 1.5px solid var(--ink);
+            background: var(--panel-2);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+            break-after: page;
+            page-break-after: always;
+        }
+
+        .print-pack-header {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            align-items: flex-start;
+            border-bottom: 2px solid var(--ink);
+            padding-bottom: 12px;
+        }
+
+        .print-pack-title {
+            margin: 0;
+            font-family: "Exo 2", sans-serif;
+            font-size: 24px;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .print-pack-meta {
+            margin-top: 6px;
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: #5d5448;
+            letter-spacing: 0.05em;
+        }
+
+        .print-pack-status {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: flex-end;
+        }
+
+        .print-pack-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .print-pack-table th,
+        .print-pack-table td {
+            padding: 10px 8px;
+            border-bottom: 1px solid var(--line);
+            text-align: left;
+            vertical-align: top;
+            font-size: 13px;
+        }
+
+        .print-pack-table th {
+            font-size: 11px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .print-pack-excluded {
+            font-size: 12px;
+            color: #5d5448;
+        }
+
         .catalog-section {
             display: grid;
             gap: 10px;
@@ -1187,7 +1261,8 @@
             .mobile-workspace-bar,
             .sidebar,
             .roster-card,
-            .preview-header .btn,
+            .preview-header,
+            .print-pack-status-line,
             .source-card-actions {
                 display: none !important;
             }
@@ -1200,6 +1275,38 @@
                 border: 0;
                 box-shadow: none;
                 background: white;
+            }
+
+            .preview-body {
+                gap: 16px;
+            }
+
+            .print-pack-summary {
+                padding: 0 0 18px;
+                margin: 0 0 18px;
+                border: 0;
+                box-shadow: none;
+                background: white;
+            }
+
+            .print-pack-header {
+                gap: 12px;
+            }
+
+            .print-pack-title {
+                font-size: 20px;
+            }
+
+            .print-pack-table th,
+            .print-pack-table td {
+                font-size: 11px;
+                padding: 6px 4px;
+            }
+
+            .source-card,
+            .datasheet-card {
+                break-inside: avoid-page;
+                page-break-inside: avoid;
             }
 
             body {
@@ -2092,7 +2199,7 @@
                     <div class="issue-action-list">
                         ${derived.invalidEntries.slice(0, 4).map((entry) => `
                             <button class="btn" type="button" data-action="open-entry-issue" data-instance-id="${entry.instanceId}">
-                                Open ${escapeHtml(entry.displayName)}
+                                Open ${escapeHtml(entry.displayName)}${primaryIssueText(entry) ? `: ${escapeHtml(primaryIssueText(entry))}` : ""}
                             </button>
                         `).join("")}
                     </div>
@@ -2445,6 +2552,35 @@
             return summary.slice(0, 4);
         }
 
+        function primaryIssueText(entry) {
+            return entry && entry.primaryIssue ? entry.primaryIssue : (entry && entry.issues && entry.issues[0] ? entry.issues[0] : "");
+        }
+
+        function issueList(entry) {
+            return Array.isArray(entry && entry.issues) ? entry.issues : [];
+        }
+
+        function printPackRows(entries) {
+            return (Array.isArray(entries) ? entries : []).map((entry) => {
+                const notes = [];
+                if (entry.support && entry.support.previewSupport === "configured-only") {
+                    notes.push("Builder fallback card");
+                }
+                const primaryIssue = primaryIssueText(entry);
+                if (primaryIssue && !entry.isValid) {
+                    notes.push(primaryIssue);
+                }
+                return {
+                    quantity: entry.quantity,
+                    displayName: entry.displayName,
+                    linePoints: entry.linePoints,
+                    enhancementName: entry.activeEnhancement ? entry.activeEnhancement.name : "",
+                    loadoutText: loadoutSummary(entry).join(" • ") || "Default loadout",
+                    noteText: notes.join(" • "),
+                };
+            });
+        }
+
         function openEntryEditor(instanceId) {
             state.activeEditorInstanceId = instanceId || null;
             if (instanceId && isMobileViewport()) {
@@ -2535,7 +2671,10 @@
             }
 
             const runtimeInstanceId = entry.instanceId;
-            const issueText = entry.issues.map((issue) => `<div class="inline-note inline-note-warning">${escapeHtml(issue)}</div>`).join("");
+            const orderedIssues = issueList(entry);
+            const issueText = orderedIssues.map((issue, index) => `
+                <div class="inline-note ${index === 0 ? "inline-note-warning" : ""}">${escapeHtml(issue)}</div>
+            `).join("");
             const support = entry.support || { supportLevel: "full", supportReasons: [], previewSupport: "configured-only" };
             const isCharacter = Boolean(entry.unit && Array.isArray(entry.unit.keywords) && entry.unit.keywords.includes("CHARACTER"));
             const isEpicHero = Boolean(entry.unit && Array.isArray(entry.unit.keywords) && entry.unit.keywords.includes("EPIC HERO"));
@@ -2788,8 +2927,8 @@
             els.previewModeSource.setAttribute("aria-pressed", !isConfigured ? "true" : "false");
             els.printCleanToggle.disabled = !isConfigured;
             els.previewModeNote.textContent = isConfigured
-                ? "Configured cards reflect your roster choices and print exactly as shown."
-                : "Original Wahapedia mode prints source images when available and falls back to builder-rendered cards when a source image is missing.";
+                ? "Configured mode prints a roster summary sheet first, then builder-rendered cards that reflect your roster choices. Print-clean trims replaced/default rows where possible."
+                : "Original Wahapedia mode prints a roster summary sheet first, then source images when available, with builder-rendered fallback cards when a source image is missing.";
         }
 
         function resetCatalogFilters(options = {}) {
@@ -3131,7 +3270,7 @@
                             <div class="inline-note">${loadout.length ? escapeHtml(loadout.join(" • ")) : "No loadout summary yet."}</div>
                             ${relationshipSummary.length ? `<div class="inline-note">${escapeHtml(relationshipSummary.join(" • "))}</div>` : ""}
                             ${entry.activeEnhancement ? `<div class="inline-note">Enhancement: ${escapeHtml(entry.activeEnhancement.name)}</div>` : ""}
-                            ${entry.issues.length ? `<div class="inline-note inline-note-warning">${escapeHtml(entry.issues[0])}</div>` : ""}
+                            ${primaryIssueText(entry) ? `<div class="inline-note inline-note-warning">${escapeHtml(primaryIssueText(entry))}</div>` : ""}
                         </td>
                         <td data-label="Qty">
                             <input
@@ -3163,6 +3302,7 @@
         function renderPreview() {
             const derived = deriveRoster();
             const renderableEntries = derived.entries.filter((entry) => entry.unit && entry.selectedOption);
+            const excludedEntries = derived.entries.filter((entry) => !(entry.unit && entry.selectedOption));
             if (!state.catalog || !renderableEntries.length) {
                 els.previewBody.innerHTML = derived.entries.length
                     ? `<div class="inline-note">Only roster entries that resolve cleanly in the current catalog appear here. Review flags do not block card rendering.</div>`
@@ -3174,38 +3314,42 @@
             }
 
             const detachment = derived.army.activeDetachment ? derived.army.activeDetachment.name : "No detachment selected";
-            const hiddenEntryCount = Math.max(0, derived.entries.length - renderableEntries.length);
+            const excludedEntryCount = excludedEntries.length;
             const configuredOnlyCount = renderableEntries.filter((entry) => entry.support && entry.support.previewSupport === "configured-only").length;
             const previewMode = previewSourceModeLabel(state.previewSourceMode);
             const previewStatusBits = [
                 `${renderableEntries.length} printable ${renderableEntries.length === 1 ? "card" : "cards"}`,
                 `${previewMode} mode`,
             ];
-            if (state.previewSourceMode === "source-image" && configuredOnlyCount) {
-                previewStatusBits.push(`${configuredOnlyCount} configured-only fallback${configuredOnlyCount === 1 ? "" : "s"}`);
+            if (configuredOnlyCount) {
+                previewStatusBits.push(`${configuredOnlyCount} builder fallback card${configuredOnlyCount === 1 ? "" : "s"}`);
             }
-            if (hiddenEntryCount) {
-                previewStatusBits.push(`${hiddenEntryCount} hidden unresolved entr${hiddenEntryCount === 1 ? "y" : "ies"}`);
+            if (excludedEntryCount) {
+                previewStatusBits.push(`${excludedEntryCount} unresolved entr${excludedEntryCount === 1 ? "y excluded" : "ies excluded"}`);
             }
-            const rosterSummary = `
-                <section class="entry-editor-block">
-                    <h3>Print Summary</h3>
-                    <div class="inline-note"><strong>${escapeHtml(state.activeRosterName || Store.normalizeName("", state.rosterFactionSlug || state.factionSlug))}</strong></div>
-                    <div class="inline-note">${escapeHtml(state.catalog.faction.name)} • ${escapeHtml(battleSizeLabel(derived.army.battleSize))} • ${escapeHtml(detachment)} • ${derived.totalPoints}/${derived.pointsLimit} pts</div>
-                    <div class="inline-note">${escapeHtml(previewStatusBits.join(" • "))}</div>
-                    <div class="entry-editor-stack">
-                        ${renderableEntries.map((entry) => `
-                            <div class="inline-note"><strong>${escapeHtml(entry.displayName)}:</strong> ${escapeHtml(loadoutSummary(entry).join(" • ") || "Default loadout")}${entry.support.previewSupport === "configured-only" ? " • builder-rendered fallback" : ""}</div>
-                        `).join("")}
-                    </div>
-                </section>
-            `;
-            els.previewBody.innerHTML = `${rosterSummary}${BuilderApp.renderPreviewEntries(renderableEntries, {
+            const rosterSummary = BuilderApp.renderPrintPackSummary({
+                rosterName: state.activeRosterName || Store.normalizeName("", state.rosterFactionSlug || state.factionSlug),
+                factionName: state.catalog.faction.name,
+                battleSizeLabel: battleSizeLabel(derived.army.battleSize),
+                detachmentName: detachment,
+                totalPoints: derived.totalPoints,
+                pointsLimit: derived.pointsLimit,
+                previewSourceMode: state.previewSourceMode,
+                printableCount: renderableEntries.length,
+                configuredFallbackCount: configuredOnlyCount,
+                excludedEntries: excludedEntries.map((entry) => entry.displayName),
+                rows: printPackRows(renderableEntries),
+            });
+            els.previewBody.innerHTML = `
+                <div class="print-pack-status-line inline-note">${escapeHtml(previewStatusBits.join(" • "))}</div>
+                ${rosterSummary}
+                ${BuilderApp.renderPreviewEntries(renderableEntries, {
                 previewSourceMode: state.previewSourceMode,
                 previewRenderMode: state.previewRenderMode,
                 renderer: window.WahBuilderCardRenderer,
                 missingSourceCardLookup: state.missingSourceCardLookup,
-            })}`;
+            })}
+            `;
             els.previewCard.classList.remove("is-muted");
             renderPreviewVisibility();
             renderWorkspaceVisibility(derived);

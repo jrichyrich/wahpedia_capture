@@ -800,7 +800,7 @@ test("deriveResolvedRoster degrades gracefully when faction, unit, or option is 
 
     assert.equal(resolved.totalPoints, 0);
     assert.equal(resolved.validEntries.length, 0);
-    assert.match(resolved.invalidEntries[0].issues[0], /Saved faction is not available/);
+    assert.match(resolved.invalidEntries[0].primaryIssue, /Saved faction is not available/);
     assert.match(resolved.invalidEntries[0].issues.join(" "), /Unit not found/);
     assert.equal(resolved.invalidEntries[0].support.supportLevel, "incompatible");
     assert.equal(resolved.invalidEntries[0].canRepair, true);
@@ -997,7 +997,7 @@ test("deriveResolvedRoster flags invalid attachment and transport assignments", 
     const hero = resolved.entries.find((entry) => entry.instanceId === "entry-hero");
     const transport = resolved.entries.find((entry) => entry.instanceId === "entry-transport");
 
-    assert.match(hero.issues.join(" "), /cannot attach to Fire Prism/i);
+    assert.match(hero.primaryIssue, /cannot join Fire Prism/i);
     assert.match(transport.issues.join(" "), /uses 20\/12 transport capacity/i);
 });
 
@@ -1055,8 +1055,8 @@ test("deriveResolvedRoster supports two-leader bodyguards and required leader ta
         valid.entries.find((entry) => entry.instanceId === "bodyguard").relationship.attachedLeaderNames.sort(),
         ["Captain", "Lieutenant"]
     );
-    assert.match(invalidTriple.entries.find((entry) => entry.instanceId === "apothecary").issues.join(" "), /cannot attach to Intercessor Squad/i);
-    assert.match(companyHeroes.entries.find((entry) => entry.instanceId === "lieutenant").issues.join(" "), /cannot attach to Company Heroes/i);
+    assert.match(invalidTriple.entries.find((entry) => entry.instanceId === "apothecary").primaryIssue, /allowed Leader combination/i);
+    assert.match(companyHeroes.entries.find((entry) => entry.instanceId === "lieutenant").primaryIssue, /required CAPTAIN or CHAPTER MASTER Leader slot/i);
     assert.match(companyHeroes.entries.find((entry) => entry.instanceId === "heroes").issues.join(" "), /requires an attached CAPTAIN or CHAPTER MASTER Leader/i);
 });
 
@@ -1111,7 +1111,7 @@ test("deriveResolvedRoster enforces pack leader attachment and subtype caps", ()
 
     assert.match(unattached.entries.find((entry) => entry.instanceId === "pack-leader").issues.join(" "), /must be attached to an eligible unit/i);
     assert.equal(valid.invalidEntries.length, 0);
-    assert.match(invalidSubtypeCap.entries.find((entry) => entry.instanceId === "pack-leader-2").issues.join(" "), /cannot attach to Grey Hunters/i);
+    assert.match(invalidSubtypeCap.entries.find((entry) => entry.instanceId === "pack-leader-2").primaryIssue, /allowed Leader combination/i);
 });
 
 test("deriveResolvedRoster validates alternative transport pools and named allowlists", () => {
@@ -1184,7 +1184,30 @@ test("deriveResolvedRoster validates alternative transport pools and named allow
     assert.match(altMixed.entries.find((entry) => entry.instanceId === "transport").issues.join(" "), /mixes incompatible transport pool assignments/i);
     assert.equal(allowlistValid.entries.find((entry) => entry.instanceId === "raider").relationship.transportCapacity.used, 11);
     assert.equal(allowlistValid.entries.find((entry) => entry.instanceId === "raider").relationship.transportCapacity.max, 11);
-    assert.match(allowlistInvalid.entries.find((entry) => entry.instanceId === "guardian").issues.join(" "), /cannot embark in Ynnari Raider/i);
+    assert.match(allowlistInvalid.entries.find((entry) => entry.instanceId === "guardian").primaryIssue, /named-unit allowlist/i);
+});
+
+test("deriveResolvedRoster ranks configured issues ahead of generic roster fallout", () => {
+    const resolved = Store.deriveResolvedRoster({
+        roster: {
+            id: "roster-issue-ranking",
+            factionSlug: "space-marines",
+            name: "Issue Ranking",
+            army: { battleSize: "strike-force", warlordInstanceId: "captain", detachmentId: null },
+            entries: [
+                { instanceId: "bodyguard", unitId: "intercessor-squad", optionId: "5-models", quantity: 4, wargearSelections: {} },
+                { instanceId: "captain", unitId: "captain", optionId: "1-model", quantity: 1, wargearSelections: {}, attachedToInstanceId: "bodyguard" },
+                { instanceId: "lieutenant", unitId: "lieutenant", optionId: "1-model", quantity: 1, wargearSelections: {}, attachedToInstanceId: "bodyguard" },
+                { instanceId: "apothecary", unitId: "apothecary", optionId: "1-model", quantity: 1, wargearSelections: {}, attachedToInstanceId: "bodyguard" },
+            ],
+        },
+        catalog: spaceMarineLeaderCatalog(),
+        availableFactionSlugs: ["space-marines"],
+    });
+
+    const apothecary = resolved.entries.find((entry) => entry.instanceId === "apothecary");
+    assert.match(apothecary.primaryIssue, /allowed Leader combination/i);
+    assert.match(resolved.invalidEntries[0].primaryIssue, /allowed Leader combination/i);
 });
 
 test("deriveResolvedRoster flags empty Dedicated Transports", () => {

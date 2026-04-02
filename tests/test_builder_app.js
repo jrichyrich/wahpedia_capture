@@ -601,6 +601,53 @@ test("renderPreviewEntries falls back to configured HTML cards when the source P
     assert.doesNotMatch(html, /source-card-image/);
 });
 
+test("renderPrintPackSummary renders a paper-first roster summary sheet", () => {
+    const html = App.renderPrintPackSummary({
+        rosterName: "Swordwind Strike",
+        factionName: "Aeldari",
+        battleSizeLabel: "Strike Force",
+        detachmentName: "Warhost",
+        totalPoints: 2000,
+        pointsLimit: 2000,
+        previewSourceMode: "configured",
+        printableCount: 2,
+        configuredFallbackCount: 1,
+        excludedEntries: ["Missing Unit"],
+        rows: [
+            {
+                quantity: 1,
+                displayName: "Autarch",
+                linePoints: 125,
+                enhancementName: "Phoenix Gem",
+                loadoutText: "1 model • Enhancement: Phoenix Gem",
+                noteText: "Builder fallback card",
+            },
+        ],
+    });
+
+    assert.match(html, /data-print-pack-summary/);
+    assert.match(html, /Swordwind Strike/);
+    assert.match(html, /Configured cards/);
+    assert.match(html, /Builder fallback card/);
+    assert.match(html, /Excluded from print:/);
+});
+
+test("renderPrintPackSummary preserves source-image mode labeling", () => {
+    const html = App.renderPrintPackSummary({
+        rosterName: "Source Pack",
+        factionName: "Aeldari",
+        battleSizeLabel: "Strike Force",
+        detachmentName: "Warhost",
+        totalPoints: 1000,
+        pointsLimit: 1000,
+        previewSourceMode: "source-image",
+        printableCount: 1,
+        rows: [],
+    });
+
+    assert.match(html, /Original Wahapedia cards/);
+});
+
 test("waitForPreviewImages resolves when source preview images finish loading", async () => {
     let loadHandler = null;
     let errorHandler = null;

@@ -197,6 +197,69 @@
         return renderableEntries.map((entry) => renderConfiguredPreviewCard(entry, options)).join("");
     }
 
+    function renderPrintPackSummary(options) {
+        const rows = Array.isArray(options && options.rows) ? options.rows : [];
+        const excludedEntries = Array.isArray(options && options.excludedEntries) ? options.excludedEntries : [];
+        const previewSourceMode = options && options.previewSourceMode ? options.previewSourceMode : "configured";
+        const configuredFallbackCount = Number.isFinite(options && options.configuredFallbackCount)
+            ? options.configuredFallbackCount
+            : 0;
+        const printableCount = Number.isFinite(options && options.printableCount)
+            ? options.printableCount
+            : rows.length;
+        const modeLabel = previewSourceMode === "source-image" ? "Original Wahapedia cards" : "Configured cards";
+        const statusBits = [
+            `${printableCount} printable ${printableCount === 1 ? "card" : "cards"}`,
+            modeLabel,
+        ];
+        if (configuredFallbackCount > 0) {
+            statusBits.push(`${configuredFallbackCount} builder fallback${configuredFallbackCount === 1 ? "" : "s"}`);
+        }
+        if (excludedEntries.length > 0) {
+            statusBits.push(`${excludedEntries.length} unresolved entr${excludedEntries.length === 1 ? "y excluded" : "ies excluded"}`);
+        }
+
+        return `
+            <section class="print-pack-summary" data-print-pack-summary>
+                <div class="print-pack-header">
+                    <div class="print-pack-title-block">
+                        <h3 class="print-pack-title">${escapeHtml(options && options.rosterName ? options.rosterName : "Roster Print Pack")}</h3>
+                        <div class="print-pack-meta">${escapeHtml(options && options.factionName ? options.factionName : "Unknown faction")} • ${escapeHtml(options && options.battleSizeLabel ? options.battleSizeLabel : "")} • ${escapeHtml(options && options.detachmentName ? options.detachmentName : "No detachment selected")}</div>
+                        <div class="print-pack-meta">${escapeHtml(String(options && typeof options.totalPoints === "number" ? options.totalPoints : 0))}/${escapeHtml(String(options && typeof options.pointsLimit === "number" ? options.pointsLimit : 0))} pts</div>
+                    </div>
+                    <div class="print-pack-status">
+                        ${statusBits.map((bit) => `<span class="pill pill-subtle">${escapeHtml(bit)}</span>`).join("")}
+                    </div>
+                </div>
+                <table class="print-pack-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Qty</th>
+                            <th scope="col">Unit</th>
+                            <th scope="col">Pts</th>
+                            <th scope="col">Enhancement</th>
+                            <th scope="col">Configured Loadout</th>
+                            <th scope="col">Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${rows.map((row) => `
+                            <tr>
+                                <td>${escapeHtml(String(row && row.quantity ? row.quantity : 1))}</td>
+                                <td><strong>${escapeHtml(row && row.displayName ? row.displayName : "Unknown unit")}</strong></td>
+                                <td>${escapeHtml(String(row && typeof row.linePoints === "number" ? row.linePoints : 0))}</td>
+                                <td>${escapeHtml(row && row.enhancementName ? row.enhancementName : "—")}</td>
+                                <td>${escapeHtml(row && row.loadoutText ? row.loadoutText : "Default loadout")}</td>
+                                <td>${escapeHtml(row && row.noteText ? row.noteText : "—")}</td>
+                            </tr>
+                        `).join("")}
+                    </tbody>
+                </table>
+                ${excludedEntries.length ? `<div class="print-pack-excluded"><strong>Excluded from print:</strong> ${escapeHtml(excludedEntries.join(", "))}</div>` : ""}
+            </section>
+        `;
+    }
+
     function waitForPreviewImages(previewRoot, timeoutMs) {
         if (!previewRoot || typeof previewRoot.querySelectorAll !== "function") {
             return Promise.resolve();
@@ -800,6 +863,7 @@
         escapeHtml,
         eventElementTarget,
         printPreviewCards,
+        renderPrintPackSummary,
         renderPreviewEntries,
         sourceCardLookupKey,
         sourceCardUrl,

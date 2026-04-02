@@ -1,5 +1,6 @@
 import functools
 import http.server
+import json
 import socketserver
 import threading
 import unittest
@@ -21,6 +22,9 @@ except ImportError:  # pragma: no cover - handled with a module-level skip
 
 
 ROOT = Path(__file__).resolve().parents[1]
+MANIFEST = json.loads((ROOT / "docs" / "builder" / "data" / "manifest.json").read_text(encoding="utf-8"))
+CURRENT_SCHEMA_VERSION = MANIFEST.get("schemaVersion")
+CURRENT_GENERATED_AT = MANIFEST.get("generatedAt")
 
 
 class QuietHandler(http.server.SimpleHTTPRequestHandler):
@@ -75,6 +79,33 @@ class BuilderBrowserSmokeTests(unittest.TestCase):
         self.wait.until(lambda driver: driver.find_element(By.ID, "faction-select").is_enabled())
         self.wait.until(lambda driver: "Coverage summary will appear" not in driver.find_element(By.ID, "data-confidence").text)
         self.wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "#unit-list [data-action='add-unit']")))
+
+    def seed_saved_roster(self, roster):
+        self.driver.execute_script(
+            """
+            const roster = arguments[0];
+            window.localStorage.clear();
+            window.localStorage.setItem(
+                "wahpediaCapture.builder.v1.savedRosters",
+                JSON.stringify([{
+                    id: roster.id,
+                    name: roster.name,
+                    factionSlug: roster.factionSlug,
+                    savedAt: roster.savedAt,
+                    builderSchemaVersion: roster.builderSchemaVersion,
+                    builderGeneratedAt: roster.builderGeneratedAt,
+                }])
+            );
+            window.localStorage.setItem("wahpediaCapture.builder.v1.activeRosterId", roster.id);
+            window.localStorage.setItem(
+                `wahpediaCapture.builder.v1.roster.${roster.id}`,
+                JSON.stringify(roster)
+            );
+            """,
+            roster,
+        )
+        self.driver.get(self.base_url)
+        self.wait_for_builder()
 
     def test_filter_edit_and_save_flow(self):
         Select(self.driver.find_element(By.ID, "faction-select")).select_by_visible_text("Aeldari")
@@ -183,6 +214,129 @@ class BuilderBrowserSmokeTests(unittest.TestCase):
         self.assertIn("Blade Champion", roster_body)
         self.assertNotIn("shield-captain-old", roster_body)
         self.assertIn("Repaired", self.driver.find_element(By.ID, "roster-name").get_attribute("value"))
+
+    def test_enhancement_mismatch_summary_focuses_invalid_entry(self):
+        roster = {
+            "schemaVersion": 6,
+            "id": "roster-enhancement-ui",
+            "savedAt": "2026-04-02T12:00:00.000Z",
+            "appVersion": "builder-catalog-v2",
+            "factionSlug": "aeldari",
+            "name": "Enhancement UI",
+            "builderSchemaVersion": CURRENT_SCHEMA_VERSION,
+            "builderGeneratedAt": CURRENT_GENERATED_AT,
+            "army": {"battleSize": "strike-force", "detachmentId": "warhost", "warlordInstanceId": "entry-autarch"},
+            "entries": [
+                {
+                    "instanceId": "entry-autarch",
+                    "unitId": "autarch",
+                    "optionId": "1-model",
+                    "quantity": 1,
+                    "enhancementId": "psychic-destroyer",
+                    "wargearSelections": {},
+                }
+            ],
+        }
+        self.seed_saved_roster(roster)
+
+        self.wait.until(
+            lambda driver: "psychic destroyer requires asuryani psyker"
+            in driver.find_element(By.ID, "legality-summary").text.lower()
+        )
+        self.driver.find_element(By.CSS_SELECTOR, "#legality-summary [data-action='open-entry-issue']").click()
+        self.wait.until(lambda driver: not driver.find_element(By.ID, "entry-editor").get_attribute("hidden"))
+        self.assertIn("Psychic Destroyer requires ASURYANI PSYKER", self.driver.find_element(By.ID, "entry-editor").text)
+        self.driver.find_element(By.ID, "save-roster").click()
+        self.wait.until(lambda driver: "Saved" in driver.find_element(By.ID, "roster-status").text)
+
+    def test_leader_composition_summary_surfaces_extra_leader_issue(self):
+        roster = {
+            "schemaVersion": 6,
+            "id": "roster-leader-ui",
+            "savedAt": "2026-04-02T12:05:00.000Z",
+            "appVersion": "builder-catalog-v2",
+            "factionSlug": "space-marines",
+            "name": "Leader UI",
+            "builderSchemaVersion": CURRENT_SCHEMA_VERSION,
+            "builderGeneratedAt": CURRENT_GENERATED_AT,
+            "army": {"battleSize": "strike-force", "detachmentId": "gladius-task-force", "warlordInstanceId": "entry-captain"},
+            "entries": [
+                {"instanceId": "entry-bodyguard", "unitId": "intercessor-squad", "optionId": "5-models", "quantity": 1, "wargearSelections": {}},
+                {"instanceId": "entry-captain", "unitId": "captain", "optionId": "1-model", "quantity": 1, "wargearSelections": {}, "attachedToInstanceId": "entry-bodyguard"},
+                {"instanceId": "entry-lieutenant", "unitId": "lieutenant", "optionId": "1-model", "quantity": 1, "wargearSelections": {}, "attachedToInstanceId": "entry-bodyguard"},
+                {"instanceId": "entry-apothecary", "unitId": "apothecary", "optionId": "1-model", "quantity": 1, "wargearSelections": {}, "attachedToInstanceId": "entry-bodyguard"},
+            ],
+        }
+        self.seed_saved_roster(roster)
+
+        self.wait.until(
+            lambda driver: "allowed leader combination" in driver.find_element(By.ID, "legality-summary").text.lower()
+        )
+        self.driver.find_element(By.CSS_SELECTOR, "#legality-summary [data-action='open-entry-issue']").click()
+        self.wait.until(lambda driver: "apothecary" in driver.find_element(By.ID, "entry-editor").text.lower())
+        self.assertIn("allowed Leader combination", self.driver.find_element(By.ID, "entry-editor").text)
+
+    def test_transport_assignment_summary_surfaces_allowlist_issue(self):
+        roster = {
+            "schemaVersion": 6,
+            "id": "roster-transport-ui",
+            "savedAt": "2026-04-02T12:10:00.000Z",
+            "appVersion": "builder-catalog-v2",
+            "factionSlug": "aeldari",
+            "name": "Transport UI",
+            "builderSchemaVersion": CURRENT_SCHEMA_VERSION,
+            "builderGeneratedAt": CURRENT_GENERATED_AT,
+            "army": {"battleSize": "strike-force", "detachmentId": "warhost", "warlordInstanceId": "entry-autarch"},
+            "entries": [
+                {"instanceId": "entry-autarch", "unitId": "autarch", "optionId": "1-model", "quantity": 1, "wargearSelections": {}},
+                {"instanceId": "entry-guardians", "unitId": "guardian-defenders", "optionId": "11-models", "quantity": 1, "wargearSelections": {}, "embarkedInInstanceId": "entry-raider"},
+                {"instanceId": "entry-raider", "unitId": "ynnari-raider", "optionId": "1-model", "quantity": 1, "wargearSelections": {}},
+            ],
+        }
+        self.seed_saved_roster(roster)
+
+        self.wait.until(
+            lambda driver: "named-unit allowlist" in driver.find_element(By.ID, "legality-summary").text.lower()
+        )
+        self.driver.find_element(By.CSS_SELECTOR, "#legality-summary [data-action='open-entry-issue']").click()
+        self.wait.until(lambda driver: "guardian defenders" in driver.find_element(By.ID, "entry-editor").text.lower())
+        self.assertIn("named-unit allowlist", self.driver.find_element(By.ID, "entry-editor").text)
+
+    def test_print_pack_summary_persists_across_preview_modes(self):
+        roster = {
+            "schemaVersion": 6,
+            "id": "roster-print-pack-ui",
+            "savedAt": "2026-04-02T12:30:00.000Z",
+            "appVersion": "builder-catalog-v2",
+            "factionSlug": "aeldari",
+            "name": "Print Pack UI",
+            "builderSchemaVersion": CURRENT_SCHEMA_VERSION,
+            "builderGeneratedAt": CURRENT_GENERATED_AT,
+            "army": {"battleSize": "strike-force", "detachmentId": "warhost", "warlordInstanceId": "entry-autarch"},
+            "entries": [
+                {"instanceId": "entry-autarch", "unitId": "autarch", "optionId": "1-model", "quantity": 1, "wargearSelections": {}},
+                {"instanceId": "entry-guardians", "unitId": "guardian-defenders", "optionId": "11-models", "quantity": 1, "wargearSelections": {}},
+            ],
+        }
+        self.seed_saved_roster(roster)
+
+        self.wait.until(
+            lambda driver: "print pack ui" in driver.find_element(By.CSS_SELECTOR, ".print-pack-summary").text.lower()
+        )
+        configured_status = self.driver.find_element(By.CSS_SELECTOR, ".print-pack-status-line").text
+        configured_summary = self.driver.find_element(By.CSS_SELECTOR, ".print-pack-summary").text
+        self.assertIn("Configured card mode", configured_status)
+        self.assertIn("Guardian Defenders", configured_summary)
+
+        self.driver.find_element(By.ID, "preview-mode-source").click()
+        self.wait.until(
+            lambda driver: "original wahapedia mode"
+            in driver.find_element(By.CSS_SELECTOR, ".print-pack-status-line").text.lower()
+        )
+        source_status = self.driver.find_element(By.CSS_SELECTOR, ".print-pack-status-line").text
+        source_summary = self.driver.find_element(By.CSS_SELECTOR, ".print-pack-summary").text
+        self.assertIn("Original Wahapedia mode", source_status)
+        self.assertIn("PRINT PACK UI", source_summary)
 
 
 if __name__ == "__main__":
