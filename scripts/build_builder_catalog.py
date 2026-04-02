@@ -472,6 +472,49 @@ def parse_number_token(value: str | None) -> int | None:
     return NUMBER_WORDS.get(normalized)
 
 
+def parse_model_count_availability(text: str) -> tuple[dict[str, object] | None, str]:
+    value = normalize_space(text)
+    patterns = [
+        (
+            rf"^If this unit contains only ({NUMBER_PATTERN}) models?(?:,|:)\s*(.*)$",
+            lambda match: {
+                "kind": "modelCountRange",
+                "minModels": parse_number_token(match.group(1)),
+                "maxModels": parse_number_token(match.group(1)),
+            },
+        ),
+        (
+            rf"^If this unit contains ({NUMBER_PATTERN}) models?(?:,|:)\s*(.*)$",
+            lambda match: {
+                "kind": "modelCountRange",
+                "minModels": parse_number_token(match.group(1)),
+                "maxModels": parse_number_token(match.group(1)),
+            },
+        ),
+        (
+            rf"^If this unit contains ({NUMBER_PATTERN}) or fewer models?(?:,|:)\s*(.*)$",
+            lambda match: {
+                "kind": "modelCountRange",
+                "minModels": None,
+                "maxModels": parse_number_token(match.group(1)),
+            },
+        ),
+        (
+            rf"^If this unit contains ({NUMBER_PATTERN}) or more models?(?:,|:)\s*(.*)$",
+            lambda match: {
+                "kind": "modelCountRange",
+                "minModels": parse_number_token(match.group(1)),
+                "maxModels": None,
+            },
+        ),
+    ]
+    for pattern, builder in patterns:
+        match = re.match(pattern, value, flags=re.IGNORECASE)
+        if match:
+            return builder(match), normalize_space(match.group(2))
+    return None, value
+
+
 def singularize_actor(label: str) -> str:
     value = normalize_space(label)
     if not value:
@@ -516,6 +559,7 @@ def infer_pool_key(actor: str | None, target: str | None, eligibility_text: str 
 def parse_wargear_prompt(text: str, items: list[str] | None = None) -> dict[str, object]:
     items = list(items or [])
     text = normalize_space(text)
+    availability, text = parse_model_count_availability(text)
     text = re.sub(r"\s+replaced one of the following", " replaced with one of the following", text, flags=re.IGNORECASE)
     text = re.sub(r"\s+can be replace with\s+", " can be replaced with ", text, flags=re.IGNORECASE)
     text = re.sub(r"\s+can replaced with\s+", " can be replaced with ", text, flags=re.IGNORECASE)
@@ -534,6 +578,7 @@ def parse_wargear_prompt(text: str, items: list[str] | None = None) -> dict[str,
         "poolLimit": None,
         "eligibilityText": None,
         "consumesPool": 1,
+        "availability": availability,
     }
 
     hybrid_multi_match = re.match(
@@ -652,6 +697,29 @@ def parse_wargear_prompt(text: str, items: list[str] | None = None) -> dict[str,
             }
         )
         return result
+
+    fixed_equip_match = re.match(
+        r"^(.*?) can be equipped with (.+?)(?: \(.*?\))?(?:\*|:|\.)*$",
+        text,
+        flags=re.IGNORECASE,
+    )
+    if fixed_equip_match:
+        actor = normalize_space(fixed_equip_match.group(1))
+        choice_label = normalize_space(fixed_equip_match.group(2))
+        if " equipped with " not in actor.lower():
+            actor_key = normalize_label_key(actor)
+            target = "unit" if actor_key in {"it", "this unit", "the unit", "unit"} else actor
+            result.update(
+                {
+                    "target": target,
+                    "actor": "unit" if target == "unit" else actor,
+                    "action": "equip",
+                    "selectionMode": "allocation",
+                    "choices": [normalize_wargear_choice(choice_label)],
+                    "allocationLimit": {"kind": "static", "max": 1},
+                }
+            )
+            return result
 
     # Each pattern is (regex, action, target_builder, choices_builder, selection_mode_builder, actor_builder, allocation_limit_builder)
     patterns = [
@@ -1244,6 +1312,32 @@ def build_wargear(card: dict[str, object]) -> dict[str, object]:
             label = normalize_space(entry.get("label"))
             parsed = parse_wargear_prompt(label, list(entry.get("items", [])))
             if parsed["selectionMode"] == "manual" and entry.get("items"):
+                if parsed.get("availability"):
+                    nested = [parse_wargear_prompt(str(item), []) for item in entry.get("items", [])]
+                    nested = [item for item in nested if item["selectionMode"] != "manual" and item["choices"]]
+                    if nested:
+                        first = nested[0]
+                        same_signature = all(
+                            item["action"] == first["action"]
+                            and item["target"] == first["target"]
+                            and item["actor"] == first["actor"]
+                            and item["selectionMode"] == first["selectionMode"]
+                            and item["allocationLimit"] == first["allocationLimit"]
+                            and item["pickCount"] == first["pickCount"]
+                            and bool(item["requireDistinct"]) == bool(first["requireDistinct"])
+                            and item["poolKey"] == first["poolKey"]
+                            and item["poolLimit"] == first["poolLimit"]
+                            and item["eligibilityText"] == first["eligibilityText"]
+                            and item["consumesPool"] == first["consumesPool"]
+                            and (item.get("availability") is None or item.get("availability") == parsed["availability"])
+                            for item in nested
+                        )
+                        if same_signature:
+                            parsed = {
+                                **first,
+                                "choices": [choice for item in nested for choice in item["choices"]],
+                                "availability": parsed["availability"],
+                            }
                 wrapper_match = re.match(
                     rf"^For every ({NUMBER_PATTERN}) models? in (?:this unit|the unit):$",
                     label,
@@ -1295,6 +1389,8 @@ def build_wargear(card: dict[str, object]) -> dict[str, object]:
                 option["pickCount"] = parsed["pickCount"]
             if parsed["requireDistinct"]:
                 option["requireDistinct"] = True
+            if parsed["availability"] is not None:
+                option["availability"] = parsed["availability"]
             if parsed["poolKey"]:
                 option["poolKey"] = parsed["poolKey"]
             if parsed["poolLimit"] is not None or parsed["poolKey"]:

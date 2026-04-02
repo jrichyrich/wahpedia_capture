@@ -262,6 +262,48 @@ class BuilderCatalogTests(unittest.TestCase):
         self.assertEqual(deffkopta["target"], "kopta rokkits")
         self.assertEqual(deffkopta["allocationLimit"], {"kind": "ratio", "perModels": 3, "maxPerStep": 1})
 
+    def test_parse_wargear_prompt_tracks_model_count_availability(self):
+        exact_count = build_builder_catalog.parse_wargear_prompt(
+            "If this unit contains 10 models, one model’s sniper rifle can be replaced with 1 tankstopper rifle."
+        )
+        self.assertEqual(exact_count["selectionMode"], "single")
+        self.assertEqual(exact_count["actor"], "model")
+        self.assertEqual(exact_count["target"], "sniper rifle")
+        self.assertEqual(
+            exact_count["availability"],
+            {"kind": "modelCountRange", "minModels": 10, "maxModels": 10},
+        )
+
+        only_count = build_builder_catalog.parse_wargear_prompt(
+            "If this unit contains only 3 models, 1 Blightlord Terminator’s combi-bolter and bubotic blade can be replaced with 1 plague spewer and 1 close combat weapon."
+        )
+        self.assertEqual(only_count["selectionMode"], "single")
+        self.assertEqual(only_count["actor"], "Blightlord Terminator")
+        self.assertEqual(
+            only_count["availability"],
+            {"kind": "modelCountRange", "minModels": 3, "maxModels": 3},
+        )
+
+        small_wrapper = build_builder_catalog.parse_wargear_prompt(
+            "If this unit contains 9 or fewer models:"
+        )
+        self.assertEqual(small_wrapper["selectionMode"], "manual")
+        self.assertEqual(
+            small_wrapper["availability"],
+            {"kind": "modelCountRange", "minModels": None, "maxModels": 9},
+        )
+
+        large_allocation = build_builder_catalog.parse_wargear_prompt(
+            "If this unit contains 10 or more models, up to 4 models can each have their shuriken pistol replaced with 1 fusion pistol."
+        )
+        self.assertEqual(large_allocation["selectionMode"], "allocation")
+        self.assertEqual(large_allocation["target"], "shuriken pistol")
+        self.assertEqual(large_allocation["allocationLimit"], {"kind": "static", "max": 4})
+        self.assertEqual(
+            large_allocation["availability"],
+            {"kind": "modelCountRange", "minModels": 10, "maxModels": None},
+        )
+
     def test_build_composition_parses_upgrade_point_labels(self):
         composition = build_builder_catalog.build_composition(
             [
@@ -824,6 +866,56 @@ class BuilderCatalogTests(unittest.TestCase):
             self.assertTrue(predicate(unit), filename)
             self.assertFalse(diagnostics["manualWargear"], filename)
 
+    def test_real_repo_conditional_wargear_uses_availability_metadata(self):
+        ratlings_card = json.loads((ROOT / "out" / "json" / "astra-militarum" / "Ratlings.json").read_text(encoding="utf-8"))
+        ratlings_unit, ratlings_diag = build_builder_catalog.normalize_card("astra-militarum", ratlings_card)
+        tankstopper = next(group for group in ratlings_unit["wargear"]["options"] if "tankstopper rifle" in group["label"].lower())
+        self.assertEqual(tankstopper["actor"], "model")
+        self.assertEqual(
+            tankstopper["availability"],
+            {"kind": "modelCountRange", "minModels": 10, "maxModels": 10},
+        )
+        self.assertFalse(ratlings_diag["manualWargear"])
+
+        blightlord_card = json.loads((ROOT / "out" / "json" / "death-guard" / "Blightlord-Terminators.json").read_text(encoding="utf-8"))
+        blightlord_unit, blightlord_diag = build_builder_catalog.normalize_card("death-guard", blightlord_card)
+        blightlord_group = next(group for group in blightlord_unit["wargear"]["options"] if group["label"].lower().startswith("if this unit contains only 3 models"))
+        self.assertEqual(
+            blightlord_group["availability"],
+            {"kind": "modelCountRange", "minModels": 3, "maxModels": 3},
+        )
+        self.assertFalse(blightlord_diag["manualWargear"])
+
+        voidreaver_card = json.loads((ROOT / "out" / "json" / "aeldari" / "Corsair-Voidreavers.json").read_text(encoding="utf-8"))
+        voidreaver_unit, voidreaver_diag = build_builder_catalog.normalize_card("aeldari", voidreaver_card)
+        voidreaver_group = next(group for group in voidreaver_unit["wargear"]["options"] if group["label"].lower().startswith("if this unit contains 10 models"))
+        self.assertEqual(voidreaver_group["actor"], "Corsair Voidreaver")
+        self.assertEqual(
+            voidreaver_group["availability"],
+            {"kind": "modelCountRange", "minModels": 10, "maxModels": 10},
+        )
+        self.assertFalse(voidreaver_diag["manualWargear"])
+
+    def test_real_repo_troupe_uses_structured_conditional_allocations(self):
+        for faction_slug in ("aeldari", "drukhari"):
+            card = json.loads((ROOT / "out" / "json" / faction_slug / "Troupe.json").read_text(encoding="utf-8"))
+            unit, diagnostics = build_builder_catalog.normalize_card(faction_slug, card)
+            conditional_groups = [group for group in unit["wargear"]["options"] if group["label"].lower().startswith("if this unit contains")]
+            self.assertEqual(len(conditional_groups), 2, faction_slug)
+            self.assertTrue(all(group["selectionMode"] == "allocation" for group in conditional_groups), faction_slug)
+            self.assertIn(
+                {"kind": "modelCountRange", "minModels": None, "maxModels": 9},
+                [group.get("availability") for group in conditional_groups],
+                faction_slug,
+            )
+            self.assertIn(
+                {"kind": "modelCountRange", "minModels": 10, "maxModels": None},
+                [group.get("availability") for group in conditional_groups],
+                faction_slug,
+            )
+            self.assertFalse(any(group["selectionMode"] == "manual" for group in unit["wargear"]["options"]), faction_slug)
+            self.assertFalse(diagnostics["manualWargear"], faction_slug)
+
     def test_real_repo_manual_wargear_residual_count_stays_bounded_by_canonical_source(self):
         manual_units: dict[str, tuple[str, str]] = {}
         for faction_dir in sorted((ROOT / "out" / "json").iterdir()):
@@ -840,7 +932,7 @@ class BuilderCatalogTests(unittest.TestCase):
                     canonical_key = source.get("canonicalSourceId") or source.get("url")
                     manual_units.setdefault(canonical_key, (faction_dir.name, unit["name"]))
 
-        self.assertLessEqual(len(manual_units), 2, sorted(manual_units.values()))
+        self.assertEqual(len(manual_units), 0, sorted(manual_units.values()))
 
 
 class BuilderAppSmokeTests(unittest.TestCase):

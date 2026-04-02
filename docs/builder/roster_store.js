@@ -966,10 +966,82 @@
         return Math.max(1, Number.parseInt(choice && choice.pickCost, 10) || 1);
     }
 
+    function availabilityMatchesModelCount(availability, modelCount) {
+        if (!availability || availability.kind !== "modelCountRange" || modelCount === null) {
+            return true;
+        }
+        const minModels = typeof availability.minModels === "number" ? availability.minModels : null;
+        const maxModels = typeof availability.maxModels === "number" ? availability.maxModels : null;
+        if (minModels !== null && modelCount < minModels) {
+            return false;
+        }
+        if (maxModels !== null && modelCount > maxModels) {
+            return false;
+        }
+        return true;
+    }
+
+    function describeModelCount(modelCount) {
+        return typeof modelCount === "number"
+            ? `${modelCount} model${modelCount === 1 ? "" : "s"}`
+            : "the current unit size";
+    }
+
+    function describeAvailability(availability) {
+        if (!availability || availability.kind !== "modelCountRange") {
+            return "a different unit size";
+        }
+        const minModels = typeof availability.minModels === "number" ? availability.minModels : null;
+        const maxModels = typeof availability.maxModels === "number" ? availability.maxModels : null;
+        if (minModels !== null && maxModels !== null && minModels === maxModels) {
+            return `${minModels} model${minModels === 1 ? "" : "s"}`;
+        }
+        if (minModels !== null && maxModels !== null) {
+            return `${minModels}-${maxModels} models`;
+        }
+        if (minModels !== null) {
+            return `${minModels}+ models`;
+        }
+        if (maxModels !== null) {
+            return `${maxModels} or fewer models`;
+        }
+        return "a different unit size";
+    }
+
+    function hasSavedWargearSelection(group, savedValue) {
+        if (!group) {
+            return false;
+        }
+        if (group.selectionMode === "allocation") {
+            if (typeof savedValue === "string") {
+                return Boolean(String(savedValue || "").trim());
+            }
+            const rawCounts = savedValue && typeof savedValue === "object"
+                ? (savedValue.mode === "allocation" && savedValue.counts && typeof savedValue.counts === "object"
+                    ? savedValue.counts
+                    : savedValue)
+                : null;
+            if (!rawCounts || typeof rawCounts !== "object") {
+                return false;
+            }
+            return Object.values(rawCounts).some((count) => Math.max(0, Number.parseInt(count, 10) || 0) > 0);
+        }
+        if (group.selectionMode === "multi") {
+            const rawChoiceIds = Array.isArray(savedValue)
+                ? savedValue
+                : (savedValue && typeof savedValue === "object" && Array.isArray(savedValue.choiceIds)
+                    ? savedValue.choiceIds
+                    : []);
+            return rawChoiceIds.some((choiceId) => Boolean(String(choiceId || "").trim()));
+        }
+        return typeof savedValue === "string" && Boolean(savedValue.trim());
+    }
+
     function resolveWargearSelections(unit, entry, selectedOption) {
         const groups = unit && unit.wargear && Array.isArray(unit.wargear.options) ? unit.wargear.options : [];
         const selections = [];
         const issues = [];
+        const inactiveSelections = [];
         const modelCount = selectedOption && typeof selectedOption.modelCount === "number"
             ? selectedOption.modelCount
             : null;
@@ -977,6 +1049,18 @@
 
         groups.forEach((group) => {
             const savedValue = entry.wargearSelections ? entry.wargearSelections[group.id] : null;
+            if (!availabilityMatchesModelCount(group.availability, modelCount)) {
+                if (hasSavedWargearSelection(group, savedValue)) {
+                    const message = `Saved wargear selection for ${groupLabel(group)} is inactive at ${describeModelCount(modelCount)}. It is available only at ${describeAvailability(group.availability)}.`;
+                    inactiveSelections.push({
+                        group,
+                        availability: group.availability || null,
+                        issue: message,
+                    });
+                    issues.push(message);
+                }
+                return;
+            }
             if (group.selectionMode === "allocation") {
                 const rawCounts = typeof savedValue === "string"
                     ? { [savedValue]: 1 }
@@ -1130,7 +1214,7 @@
             }
         });
 
-        return { selections, issues };
+        return { selections, issues, inactiveSelections };
     }
 
     function groupLabel(group) {
@@ -1271,6 +1355,7 @@
                 options: pointsResolution.options,
                 upgradeOptions: pointsResolution.upgradeOptions,
                 wargearSelections: wargearResolution.selections,
+                inactiveWargearSelections: wargearResolution.inactiveSelections,
                 issues,
                 isValid: issues.length === 0,
                 canRepair: !unit || issues.some((issue) => /not found in current catalog|faction mismatch/i.test(issue)),

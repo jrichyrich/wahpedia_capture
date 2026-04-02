@@ -2335,13 +2335,33 @@
             };
         }
 
-        function wargearGroups(unit) {
+        function groupMatchesEntryAvailability(group, entry) {
+            const availability = group && group.availability;
+            const modelCount = entry && entry.selectedOption && typeof entry.selectedOption.modelCount === "number"
+                ? entry.selectedOption.modelCount
+                : null;
+            if (!availability || availability.kind !== "modelCountRange" || modelCount === null) {
+                return true;
+            }
+            const minModels = typeof availability.minModels === "number" ? availability.minModels : null;
+            const maxModels = typeof availability.maxModels === "number" ? availability.maxModels : null;
+            if (minModels !== null && modelCount < minModels) {
+                return false;
+            }
+            if (maxModels !== null && modelCount > maxModels) {
+                return false;
+            }
+            return true;
+        }
+
+        function wargearGroups(unit, entry = null) {
             const groups = unit && unit.wargear && Array.isArray(unit.wargear.options) ? unit.wargear.options : [];
+            const visibleGroups = entry ? groups.filter((group) => groupMatchesEntryAvailability(group, entry)) : groups;
             return {
-                simple: groups.filter((group) => group.selectionMode === "single"),
-                allocation: groups.filter((group) => group.selectionMode === "allocation"),
-                multi: groups.filter((group) => group.selectionMode === "multi"),
-                manual: groups.filter((group) => group.selectionMode === "manual"),
+                simple: visibleGroups.filter((group) => group.selectionMode === "single"),
+                allocation: visibleGroups.filter((group) => group.selectionMode === "allocation"),
+                multi: visibleGroups.filter((group) => group.selectionMode === "multi"),
+                manual: visibleGroups.filter((group) => group.selectionMode === "manual"),
             };
         }
 
@@ -2520,9 +2540,12 @@
             const isCharacter = Boolean(entry.unit && Array.isArray(entry.unit.keywords) && entry.unit.keywords.includes("CHARACTER"));
             const isEpicHero = Boolean(entry.unit && Array.isArray(entry.unit.keywords) && entry.unit.keywords.includes("EPIC HERO"));
             const isWarlord = Boolean(derived.army.warlordInstanceId && derived.army.warlordInstanceId === runtimeInstanceId);
-            const groups = entry.unit ? wargearGroups(entry.unit) : { simple: [], allocation: [], multi: [], manual: [] };
+            const groups = entry.unit ? wargearGroups(entry.unit, entry) : { simple: [], allocation: [], multi: [], manual: [] };
             const availableEnhancements = Array.isArray(derived.army.availableEnhancements) ? derived.army.availableEnhancements : [];
             const relationship = entry.relationship || {};
+            const inactiveWargearNotes = Array.isArray(entry.inactiveWargearSelections)
+                ? entry.inactiveWargearSelections.map((selection) => `<div class="inline-note inline-note-warning">${escapeHtml(selection.issue)}</div>`).join("")
+                : "";
             const missingOptionRow = entry.unit && !entry.selectedOption
                 ? `<option value="-1" selected>Missing saved configuration</option>`
                 : "";
@@ -2632,7 +2655,7 @@
                 <div class="inline-note inline-note-warning">Manual choice required: ${group.label}</div>
             `).join("");
             const wargearManualComments = entry.unit && entry.unit.wargear && Array.isArray(entry.unit.wargear.manualNotes)
-                ? entry.unit.wargear.manualNotes.map((note) => `<div class="inline-note inline-note-warning">${escapeHtml(note)}</div>`).join("")
+                ? entry.unit.wargear.manualNotes.map((note) => `<div class="inline-note">${escapeHtml(note)}</div>`).join("")
                 : "";
             const attachmentControl = ((relationship.attachOptions && relationship.attachOptions.length) || relationship.attachedToInstanceId) ? `
                 <div>
@@ -2735,8 +2758,8 @@
                     <div class="entry-editor-block">
                         <h3>Wargear</h3>
                         <div class="entry-editor-stack">
-                            ${wargearControls || allocationControls || multiControls || manualWargearNotes || wargearManualComments
-                                ? `${wargearControls}${allocationControls}${multiControls}${manualWargearNotes}${wargearManualComments}`
+                            ${wargearControls || allocationControls || multiControls || manualWargearNotes || inactiveWargearNotes || wargearManualComments
+                                ? `${inactiveWargearNotes}${wargearControls}${allocationControls}${multiControls}${manualWargearNotes}${wargearManualComments}`
                                 : `<div class="inline-note">This unit has no configurable wargear in the current catalog.</div>`}
                         </div>
                     </div>

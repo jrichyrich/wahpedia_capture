@@ -171,6 +171,53 @@ function sampleCatalog() {
                 },
             },
             {
+                unitId: "troupe",
+                name: "Troupe",
+                keywords: ["INFANTRY"],
+                factionKeywords: ["AELDARI"],
+                pointsOptions: [
+                    { id: "5-models", label: "5 models", points: 85, selectionKind: "models", modelCount: 5 },
+                    { id: "11-models", label: "11 models", points: 190, selectionKind: "models", modelCount: 11 },
+                ],
+                wargear: {
+                    options: [
+                        {
+                            id: "pistol-upgrade-small",
+                            label: "If this unit contains 9 or fewer models:",
+                            target: "shuriken pistol",
+                            action: "replace",
+                            selectionMode: "allocation",
+                            allocationLimit: { kind: "static", max: 2 },
+                            availability: { kind: "modelCountRange", minModels: null, maxModels: 9 },
+                            choices: [
+                                { id: "neuro-disruptor", label: "1 neuro disruptor" },
+                                { id: "fusion-pistol", label: "1 fusion pistol" },
+                            ],
+                        },
+                        {
+                            id: "pistol-upgrade-large",
+                            label: "If this unit contains 10 or more models:",
+                            target: "shuriken pistol",
+                            action: "replace",
+                            selectionMode: "allocation",
+                            allocationLimit: { kind: "static", max: 4 },
+                            availability: { kind: "modelCountRange", minModels: 10, maxModels: null },
+                            choices: [
+                                { id: "neuro-disruptor", label: "1 neuro disruptor" },
+                                { id: "fusion-pistol", label: "1 fusion pistol" },
+                            ],
+                        },
+                    ],
+                },
+                composition: {
+                    modelCountOptions: [
+                        { label: "5 Troupe models", minModels: 5, maxModels: 5 },
+                        { label: "11 Troupe models", minModels: 11, maxModels: 11 },
+                    ],
+                    statements: [],
+                },
+            },
+            {
                 unitId: "autarch",
                 name: "Autarch",
                 keywords: ["INFANTRY", "CHARACTER"],
@@ -629,6 +676,60 @@ test("deriveResolvedRoster validates multi-pick limits and shared pools", () => 
     const poolSelection = resolved.entries[0].wargearSelections.find((item) => item.group.id === "marksman-rifle");
     assert.equal(poolSelection.poolUsage.used, 2);
     assert.equal(poolSelection.poolUsage.max, 1);
+});
+
+test("deriveResolvedRoster preserves inactive wargear selections across model-count changes", () => {
+    const baseRoster = {
+        id: "roster-conditional-wargear",
+        factionSlug: "aeldari",
+        name: "Conditional Wargear",
+        army: legalArmy(),
+        entries: [
+            {
+                instanceId: "entry-1",
+                unitId: "troupe",
+                optionId: "5-models",
+                quantity: 1,
+                wargearSelections: {
+                    "pistol-upgrade-large": { mode: "allocation", counts: { "fusion-pistol": 2 } },
+                },
+            },
+        ],
+    };
+
+    const inactive = Store.deriveResolvedRoster({
+        roster: baseRoster,
+        catalog: sampleCatalog(),
+        availableFactionSlugs: ["aeldari"],
+    });
+
+    assert.equal(
+        inactive.entries[0].wargearSelections.some((item) => item.group.id === "pistol-upgrade-large"),
+        false
+    );
+    assert.equal(inactive.entries[0].inactiveWargearSelections.length, 1);
+    assert.match(inactive.entries[0].issues.join(" "), /inactive at 5 models/i);
+    assert.match(inactive.entries[0].issues.join(" "), /10\+ models/i);
+
+    const reactivated = Store.deriveResolvedRoster({
+        roster: {
+            ...baseRoster,
+            entries: [
+                {
+                    ...baseRoster.entries[0],
+                    optionId: "11-models",
+                },
+            ],
+        },
+        catalog: sampleCatalog(),
+        availableFactionSlugs: ["aeldari"],
+    });
+
+    const selection = reactivated.entries[0].wargearSelections.find((item) => item.group.id === "pistol-upgrade-large");
+    assert.equal(reactivated.entries[0].inactiveWargearSelections.length, 0);
+    assert.equal(selection.selectedChoices[0].choice.id, "fusion-pistol");
+    assert.equal(selection.selectedChoices[0].count, 2);
+    assert.doesNotMatch(reactivated.entries[0].issues.join(" "), /inactive at/i);
 });
 
 test("deriveResolvedRoster resolves valid attachments and embarked units", () => {

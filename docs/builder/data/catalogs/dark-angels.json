@@ -1,6 +1,6 @@
 {
   "schemaVersion": 6,
-  "generatedAt": "2026-03-30T20:39:58+00:00",
+  "generatedAt": "2026-04-02T15:05:58+00:00",
   "faction": {
     "slug": "dark-angels",
     "name": "Dark Angels",
@@ -5712,18 +5712,20 @@
           {
             "id": "this-model-can-be-equipped-with-1-ironhail-heavy-stubber-3",
             "label": "This model can be equipped with 1 ironhail heavy stubber.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-ironhail-heavy-stubber",
                 "label": "1 ironhail heavy stubber"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -12152,11 +12154,15 @@
           {
             "id": "this-model-can-be-equipped-with-one-of-the-following-1",
             "label": "This model can be equipped with one of the following:",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
+              {
+                "id": "one-of-the-following",
+                "label": "one of the following"
+              },
               {
                 "id": "2-heavy-bolters",
                 "label": "2 heavy bolters"
@@ -12166,18 +12172,23 @@
                 "label": "2 lascannons"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount",
-            "eligibilityText": "equipped with of the following:"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "this-model-can-be-equipped-with-one-of-the-following-2",
             "label": "This model can be equipped with one of the following:",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
+              {
+                "id": "one-of-the-following",
+                "label": "one of the following"
+              },
               {
                 "id": "1-heavy-bolter",
                 "label": "1 heavy bolter"
@@ -12195,9 +12206,10 @@
                 "label": "1 storm bolter"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount",
-            "eligibilityText": "equipped with of the following:"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -16685,18 +16697,20 @@
           {
             "id": "this-unit-can-be-equipped-with-1-watcher-in-the-dark-5",
             "label": "This unit can be equipped with 1 Watcher in the Dark.*",
-            "target": "This unit",
-            "actor": null,
+            "target": "unit",
+            "actor": "unit",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-watcher-in-the-dark",
                 "label": "1 Watcher in the Dark"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [
@@ -17106,18 +17120,20 @@
           {
             "id": "this-unit-can-be-equipped-with-1-watcher-in-the-dark-3",
             "label": "This unit can be equipped with 1 Watcher in the Dark.",
-            "target": "This unit",
-            "actor": null,
+            "target": "unit",
+            "actor": "unit",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-watcher-in-the-dark",
                 "label": "1 Watcher in the Dark"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -17978,18 +17994,20 @@
           {
             "id": "this-unit-can-be-equipped-with-1-watcher-in-the-dark-3",
             "label": "This unit can be equipped with 1 Watcher in the Dark.",
-            "target": "This unit",
-            "actor": null,
+            "target": "unit",
+            "actor": "unit",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-watcher-in-the-dark",
                 "label": "1 Watcher in the Dark"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -18417,11 +18435,15 @@
           {
             "id": "this-model-can-be-equipped-with-one-of-the-following-2",
             "label": "This model can be equipped with one of the following:",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
+              {
+                "id": "one-of-the-following",
+                "label": "one of the following"
+              },
               {
                 "id": "2-heavy-bolters",
                 "label": "2 heavy bolters"
@@ -18435,41 +18457,46 @@
                 "label": "2 lascannons"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount",
-            "eligibilityText": "equipped with of the following:"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "this-model-can-be-equipped-with-1-storm-bolter-3",
             "label": "This model can be equipped with 1 storm bolter.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-storm-bolter",
                 "label": "1 storm bolter"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "this-model-can-be-equipped-with-1-hunter-killer-missile-4",
             "label": "This model can be equipped with 1 hunter-killer missile.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-hunter-killer-missile",
                 "label": "1 hunter-killer missile"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -18855,11 +18882,15 @@
           {
             "id": "this-model-can-be-equipped-with-one-of-the-following-3",
             "label": "This model can be equipped with one of the following:",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
+              {
+                "id": "one-of-the-following",
+                "label": "one of the following"
+              },
               {
                 "id": "1-aiolos-missile-launcher",
                 "label": "1 aiolos missile launcher"
@@ -18869,9 +18900,10 @@
                 "label": "1 boreas air defence missiles"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount",
-            "eligibilityText": "equipped with of the following:"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -21740,11 +21772,15 @@
           {
             "id": "this-model-can-be-equipped-with-one-of-the-following-3",
             "label": "This model can be equipped with one of the following:",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
+              {
+                "id": "one-of-the-following",
+                "label": "one of the following"
+              },
               {
                 "id": "1-heavy-bolter",
                 "label": "1 heavy bolter"
@@ -21762,9 +21798,10 @@
                 "label": "1 storm bolter"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount",
-            "eligibilityText": "equipped with of the following:"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -22208,27 +22245,33 @@
           {
             "id": "this-model-can-be-equipped-with-1-havoc-launcher-3",
             "label": "This model can be equipped with 1 havoc launcher.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-havoc-launcher",
                 "label": "1 havoc launcher"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "this-model-can-be-equipped-with-one-of-the-following-4",
             "label": "This model can be equipped with one of the following:",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
+              {
+                "id": "one-of-the-following",
+                "label": "one of the following"
+              },
               {
                 "id": "1-combi-weapon",
                 "label": "1 combi-weapon"
@@ -22250,9 +22293,10 @@
                 "label": "1 storm bolter"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount",
-            "eligibilityText": "equipped with of the following:"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -23384,34 +23428,38 @@
           {
             "id": "this-model-can-be-equipped-with-1-ironhail-heavy-stubber-2",
             "label": "This model can be equipped with 1 ironhail heavy stubber.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-ironhail-heavy-stubber",
                 "label": "1 ironhail heavy stubber"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "this-model-can-be-equipped-with-1-icarus-rocket-pod-3",
             "label": "This model can be equipped with 1 Icarus rocket pod.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-icarus-rocket-pod",
                 "label": "1 Icarus rocket pod"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -23679,34 +23727,38 @@
           {
             "id": "this-model-can-be-equipped-with-1-ironhail-heavy-stubber-1",
             "label": "This model can be equipped with 1 ironhail heavy stubber.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-ironhail-heavy-stubber",
                 "label": "1 ironhail heavy stubber"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "this-model-can-be-equipped-with-1-icarus-rocket-pod-2",
             "label": "This model can be equipped with 1 Icarus rocket pod.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-icarus-rocket-pod",
                 "label": "1 Icarus rocket pod"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -23968,34 +24020,38 @@
           {
             "id": "this-model-can-be-equipped-with-1-ironhail-heavy-stubber-1",
             "label": "This model can be equipped with 1 ironhail heavy stubber.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-ironhail-heavy-stubber",
                 "label": "1 ironhail heavy stubber"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "this-model-can-be-equipped-with-1-icarus-rocket-pod-2",
             "label": "This model can be equipped with 1 Icarus rocket pod.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-icarus-rocket-pod",
                 "label": "1 Icarus rocket pod"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -25089,34 +25145,38 @@
           {
             "id": "this-model-can-be-equipped-with-1-hunter-killer-missile-1",
             "label": "This model can be equipped with 1 hunter-killer missile.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-hunter-killer-missile",
                 "label": "1 hunter-killer missile"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "this-model-can-be-equipped-with-1-storm-bolter-2",
             "label": "This model can be equipped with 1 storm bolter.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-storm-bolter",
                 "label": "1 storm bolter"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -25704,18 +25764,20 @@
           {
             "id": "this-model-can-be-equipped-with-1-ironhail-heavy-stubber-1",
             "label": "This model can be equipped with 1 ironhail heavy stubber.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-ironhail-heavy-stubber",
                 "label": "1 ironhail heavy stubber"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "this-model-s-2-storm-bolters-can-be-replaced-with-2-fragstorm-grenade-launchers-2",
@@ -25737,11 +25799,15 @@
           {
             "id": "this-model-can-be-equipped-with-one-of-the-following-3",
             "label": "This model can be equipped with one of the following:",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
+              {
+                "id": "one-of-the-following",
+                "label": "one of the following"
+              },
               {
                 "id": "1-bellicatus-missile-array",
                 "label": "1 bellicatus missile array"
@@ -25759,9 +25825,10 @@
                 "label": "1 shield dome"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount",
-            "eligibilityText": "equipped with of the following:"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -26330,17 +26397,19 @@
             "id": "one-incursor-can-be-equipped-with-1-haywire-mine-1",
             "label": "One Incursor can be equipped with 1 haywire mine.",
             "target": "One Incursor",
-            "actor": null,
+            "actor": "One Incursor",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-haywire-mine",
                 "label": "1 haywire mine"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -26819,33 +26888,37 @@
             "id": "1-infiltrator-can-be-equipped-with-1-helix-gauntlet-1",
             "label": "1 Infiltrator can be equipped with 1 helix gauntlet.*",
             "target": "1 Infiltrator",
-            "actor": null,
+            "actor": "1 Infiltrator",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-helix-gauntlet",
                 "label": "1 helix gauntlet"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "1-infiltrator-can-be-equipped-with-1-infiltrator-comms-array-2",
             "label": "1 Infiltrator can be equipped with 1 Infiltrator comms array.*",
             "target": "1 Infiltrator",
-            "actor": null,
+            "actor": "1 Infiltrator",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-infiltrator-comms-array",
                 "label": "1 Infiltrator comms array"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [
@@ -28465,18 +28538,20 @@
           {
             "id": "this-model-can-be-equipped-with-1-ironclad-assault-launchers-6",
             "label": "This model can be equipped with 1 Ironclad assault launchers.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-ironclad-assault-launchers",
                 "label": "1 Ironclad assault launchers"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -29547,11 +29622,15 @@
           {
             "id": "this-model-can-be-equipped-with-one-of-the-following-4",
             "label": "This model can be equipped with one of the following:",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
+              {
+                "id": "one-of-the-following",
+                "label": "one of the following"
+              },
               {
                 "id": "1-combi-weapon",
                 "label": "1 combi-weapon"
@@ -29577,25 +29656,28 @@
                 "label": "1 twin boltgun"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount",
-            "eligibilityText": "equipped with of the following:"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "this-model-can-be-equipped-with-1-hunter-killer-missile-5",
             "label": "This model can be equipped with 1 hunter killer missile",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-hunter-killer-missile",
                 "label": "1 hunter killer missile"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -29900,50 +29982,56 @@
           {
             "id": "this-model-can-be-equipped-with-1-hunter-killer-missile-1",
             "label": "This model can be equipped with 1 hunter-killer missile.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-hunter-killer-missile",
                 "label": "1 hunter-killer missile"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "this-model-can-be-equipped-with-1-multi-melta-2",
             "label": "This model can be equipped with 1 multi-melta.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-multi-melta",
                 "label": "1 multi-melta"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "this-model-can-be-equipped-with-1-storm-bolter-3",
             "label": "This model can be equipped with 1 storm bolter.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-storm-bolter",
                 "label": "1 storm bolter"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -30274,34 +30362,38 @@
           {
             "id": "this-model-can-be-equipped-with-1-hunter-killer-missile-2",
             "label": "This model can be equipped with 1 hunter-killer missile.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-hunter-killer-missile",
                 "label": "1 hunter-killer missile"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "this-model-can-be-equipped-with-1-storm-bolter-3",
             "label": "This model can be equipped with 1 storm bolter.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-storm-bolter",
                 "label": "1 storm bolter"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -30602,50 +30694,56 @@
           {
             "id": "this-model-can-be-equipped-with-1-hunter-killer-missile-1",
             "label": "This model can be equipped with 1 hunter-killer missile.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-hunter-killer-missile",
                 "label": "1 hunter-killer missile"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "this-model-can-be-equipped-with-1-multi-melta-2",
             "label": "This model can be equipped with 1 multi-melta.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-multi-melta",
                 "label": "1 multi-melta"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "this-model-can-be-equipped-with-1-storm-bolter-3",
             "label": "This model can be equipped with 1 storm bolter.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-storm-bolter",
                 "label": "1 storm bolter"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -30965,66 +31063,74 @@
           {
             "id": "this-model-can-be-equipped-with-1-hunter-killer-missile-1",
             "label": "This model can be equipped with 1 hunter-killer missile.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-hunter-killer-missile",
                 "label": "1 hunter-killer missile"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "this-model-can-be-equipped-with-1-storm-bolter-2",
             "label": "This model can be equipped with 1 storm bolter.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-storm-bolter",
                 "label": "1 storm bolter"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "this-model-can-be-equipped-with-1-multi-melta-3",
             "label": "This model can be equipped with 1 multi-melta.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-multi-melta",
                 "label": "1 multi-melta"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "this-model-can-be-equipped-with-1-combi-weapon-4",
             "label": "This model can be equipped with 1 combi-weapon.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-combi-weapon",
                 "label": "1 combi-weapon"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -31318,34 +31424,38 @@
           {
             "id": "this-model-can-be-equipped-with-1-storm-bolter-1",
             "label": "This model can be equipped with 1 storm bolter.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-storm-bolter",
                 "label": "1 storm bolter"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "this-model-can-be-equipped-with-1-hunter-killer-missile-2",
             "label": "This model can be equipped with 1 hunter-killer missile.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-hunter-killer-missile",
                 "label": "1 hunter-killer missile"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -31627,50 +31737,56 @@
           {
             "id": "this-model-can-be-equipped-with-1-multi-melta-1",
             "label": "This model can be equipped with 1 multi-melta.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-multi-melta",
                 "label": "1 multi-melta"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "this-model-can-be-equipped-with-1-storm-bolter-2",
             "label": "This model can be equipped with 1 storm bolter.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-storm-bolter",
                 "label": "1 storm bolter"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "this-model-can-be-equipped-with-1-hunter-killer-missile-3",
             "label": "This model can be equipped with 1 hunter-killer missile.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-hunter-killer-missile",
                 "label": "1 hunter-killer missile"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -32004,11 +32120,15 @@
           {
             "id": "this-model-can-be-equipped-with-one-of-the-following-1",
             "label": "This model can be equipped with one of the following:",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
+              {
+                "id": "one-of-the-following",
+                "label": "one of the following"
+              },
               {
                 "id": "1-heavy-bolter",
                 "label": "1 heavy bolter"
@@ -32026,57 +32146,64 @@
                 "label": "1 twin heavy flamer"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount",
-            "eligibilityText": "equipped with of the following:"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "this-model-can-be-equipped-with-1-hunter-killer-missile-2",
             "label": "This model can be equipped with 1 hunter-killer missile.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-hunter-killer-missile",
                 "label": "1 hunter-killer missile"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "this-model-can-be-equipped-with-1-storm-bolter-3",
             "label": "This model can be equipped with 1 storm bolter.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-storm-bolter",
                 "label": "1 storm bolter"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "this-model-can-be-equipped-with-1-explorator-augury-web-4",
             "label": "This model can be equipped with 1 explorator augury web.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-explorator-augury-web",
                 "label": "1 explorator augury web"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -32409,50 +32536,56 @@
           {
             "id": "this-model-can-be-equipped-with-1-hunter-killer-missile-1",
             "label": "This model can be equipped with 1 hunter-killer missile.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-hunter-killer-missile",
                 "label": "1 hunter-killer missile"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "this-model-can-be-equipped-with-1-multi-melta-2",
             "label": "This model can be equipped with 1 multi-melta.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-multi-melta",
                 "label": "1 multi-melta"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "this-model-can-be-equipped-with-1-storm-bolter-3",
             "label": "This model can be equipped with 1 storm bolter.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-storm-bolter",
                 "label": "1 storm bolter"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -34567,18 +34700,20 @@
           {
             "id": "this-model-can-be-equipped-with-3-hunter-killer-missiles-3",
             "label": "This model can be equipped with 3 hunter-killer missiles.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "3-hunter-killer-missiles",
                 "label": "3 hunter-killer missiles"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -35424,11 +35559,15 @@
           {
             "id": "this-model-can-be-equipped-with-one-of-the-following-1",
             "label": "This model can be equipped with one of the following:",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
+              {
+                "id": "one-of-the-following",
+                "label": "one of the following"
+              },
               {
                 "id": "1-combi-weapon",
                 "label": "1 combi-weapon"
@@ -35438,9 +35577,10 @@
                 "label": "1 storm bolter"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount",
-            "eligibilityText": "equipped with of the following:"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -39414,11 +39554,15 @@
           {
             "id": "this-model-can-be-equipped-with-one-of-the-following-1",
             "label": "This model can be equipped with one of the following:",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
+              {
+                "id": "one-of-the-following",
+                "label": "one of the following"
+              },
               {
                 "id": "2-heavy-bolters",
                 "label": "2 heavy bolters"
@@ -39428,41 +39572,46 @@
                 "label": "2 lascannons"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount",
-            "eligibilityText": "equipped with of the following:"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "this-model-can-be-equipped-with-1-hunter-killer-missile-2",
             "label": "This model can be equipped with 1 hunter-killer missile.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-hunter-killer-missile",
                 "label": "1 hunter-killer missile"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "this-model-can-be-equipped-with-1-storm-bolter-3",
             "label": "This model can be equipped with 1 storm bolter.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-storm-bolter",
                 "label": "1 storm bolter"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -39741,11 +39890,15 @@
           {
             "id": "this-model-can-be-equipped-with-one-of-the-following-1",
             "label": "This model can be equipped with one of the following:",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
+              {
+                "id": "one-of-the-following",
+                "label": "one of the following"
+              },
               {
                 "id": "2-heavy-bolters",
                 "label": "2 heavy bolters"
@@ -39755,41 +39908,46 @@
                 "label": "2 lascannons"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount",
-            "eligibilityText": "equipped with of the following:"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "this-model-can-be-equipped-with-1-hunter-killer-missile-2",
             "label": "This model can be equipped with 1 hunter-killer missile.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-hunter-killer-missile",
                 "label": "1 hunter-killer missile"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "this-model-can-be-equipped-with-1-storm-bolter-3",
             "label": "This model can be equipped with 1 storm bolter.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-storm-bolter",
                 "label": "1 storm bolter"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -41967,34 +42125,38 @@
           {
             "id": "this-model-can-be-equipped-with-1-hunter-killer-missile-2",
             "label": "This model can be equipped with 1 hunter-killer missile.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-hunter-killer-missile",
                 "label": "1 hunter-killer missile"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "this-model-can-be-equipped-with-1-storm-bolter-3",
             "label": "This model can be equipped with 1 storm bolter.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-storm-bolter",
                 "label": "1 storm bolter"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -42319,18 +42481,20 @@
           {
             "id": "this-model-can-be-equipped-with-1-icarus-rocket-pod-1",
             "label": "This model can be equipped with 1 Icarus rocket pod.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-icarus-rocket-pod",
                 "label": "1 Icarus rocket pod"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "this-model-s-heavy-flamer-can-be-replaced-with-1-onslaught-gatling-cannon-2",
@@ -43286,18 +43450,20 @@
           {
             "id": "this-model-can-be-equipped-with-1-cyclone-missile-launcher-3",
             "label": "This model can be equipped with 1 cyclone missile launcher.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-cyclone-missile-launcher",
                 "label": "1 cyclone missile launcher"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -43610,34 +43776,38 @@
           {
             "id": "this-model-can-be-equipped-with-1-hunter-killer-missile-2",
             "label": "This model can be equipped with 1 hunter-killer missile.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-hunter-killer-missile",
                 "label": "1 hunter-killer missile"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "this-model-can-be-equipped-with-1-storm-bolter-3",
             "label": "This model can be equipped with 1 storm bolter.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-storm-bolter",
                 "label": "1 storm bolter"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -44046,8 +44216,8 @@
           {
             "id": "for-every-5-models-in-this-unit-1-model-can-be-equipped-with-1-grenade-harness-3",
             "label": "For every 5 models in this unit, 1 model can be equipped with 1 grenade harness.",
-            "target": "model",
-            "actor": "model",
+            "target": "For every 5 models in this unit, 1 model",
+            "actor": "For every 5 models in this unit, 1 model",
             "action": "equip",
             "selectionMode": "allocation",
             "choices": [
@@ -44057,12 +44227,9 @@
               }
             ],
             "allocationLimit": {
-              "kind": "ratio",
-              "perModels": 5,
-              "maxPerStep": 1
-            },
-            "poolKey": "model-model",
-            "poolLimit": null
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "any-number-of-models-can-each-have-their-power-fist-replaced-with-1-power-weapon-4",
@@ -44860,34 +45027,38 @@
           {
             "id": "this-model-can-be-equipped-with-1-ironhail-heavy-stubber-2",
             "label": "This model can be equipped with 1 ironhail heavy stubber.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-ironhail-heavy-stubber",
                 "label": "1 ironhail heavy stubber"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "this-model-can-be-equipped-with-1-icarus-rocket-pod-3",
             "label": "This model can be equipped with 1 Icarus rocket pod.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-icarus-rocket-pod",
                 "label": "1 Icarus rocket pod"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -45148,18 +45319,20 @@
           {
             "id": "this-model-can-be-equipped-with-1-hunter-killer-missile-1",
             "label": "This model can be equipped with 1 hunter-killer missile.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-hunter-killer-missile",
                 "label": "1 hunter-killer missile"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -45411,18 +45584,20 @@
           {
             "id": "this-model-can-be-equipped-with-1-hunter-killer-missile-1",
             "label": "This model can be equipped with 1 hunter-killer missile.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-hunter-killer-missile",
                 "label": "1 hunter-killer missile"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -47183,11 +47358,15 @@
           {
             "id": "this-model-can-be-equipped-with-one-of-the-following-1",
             "label": "This model can be equipped with one of the following:",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
+              {
+                "id": "one-of-the-following",
+                "label": "one of the following"
+              },
               {
                 "id": "2-heavy-bolters",
                 "label": "2 heavy bolters"
@@ -47197,41 +47376,46 @@
                 "label": "2 lascannons"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount",
-            "eligibilityText": "equipped with of the following:"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "this-model-can-be-equipped-with-1-hunter-killer-missile-2",
             "label": "This model can be equipped with 1 hunter-killer missile.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-hunter-killer-missile",
                 "label": "1 hunter-killer missile"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "this-model-can-be-equipped-with-1-storm-bolter-3",
             "label": "This model can be equipped with 1 storm bolter.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-storm-bolter",
                 "label": "1 storm bolter"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -47510,11 +47694,15 @@
           {
             "id": "this-model-can-be-equipped-with-one-of-the-following-1",
             "label": "This model can be equipped with one of the following:",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
+              {
+                "id": "one-of-the-following",
+                "label": "one of the following"
+              },
               {
                 "id": "2-heavy-bolters",
                 "label": "2 heavy bolters"
@@ -47524,41 +47712,46 @@
                 "label": "2 lascannons"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount",
-            "eligibilityText": "equipped with of the following:"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "this-model-can-be-equipped-with-1-hunter-killer-missile-2",
             "label": "This model can be equipped with 1 hunter-killer missile.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-hunter-killer-missile",
                 "label": "1 hunter-killer missile"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "this-model-can-be-equipped-with-1-storm-bolter-3",
             "label": "This model can be equipped with 1 storm bolter.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-storm-bolter",
                 "label": "1 storm bolter"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -47848,11 +48041,15 @@
           {
             "id": "this-model-can-be-equipped-with-one-of-the-following-1",
             "label": "This model can be equipped with one of the following:",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
+              {
+                "id": "one-of-the-following",
+                "label": "one of the following"
+              },
               {
                 "id": "2-heavy-bolters",
                 "label": "2 heavy bolters"
@@ -47862,41 +48059,46 @@
                 "label": "2 lascannons"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount",
-            "eligibilityText": "equipped with of the following:"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "this-model-can-be-equipped-with-1-hunter-killer-missile-2",
             "label": "This model can be equipped with 1 hunter-killer missile.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-hunter-killer-missile",
                 "label": "1 hunter-killer missile"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "this-model-can-be-equipped-with-1-storm-bolter-3",
             "label": "This model can be equipped with 1 storm bolter.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-storm-bolter",
                 "label": "1 storm bolter"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -48175,11 +48377,15 @@
           {
             "id": "this-model-can-be-equipped-with-one-of-the-following-1",
             "label": "This model can be equipped with one of the following:",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
+              {
+                "id": "one-of-the-following",
+                "label": "one of the following"
+              },
               {
                 "id": "2-heavy-bolters",
                 "label": "2 heavy bolters"
@@ -48189,41 +48395,46 @@
                 "label": "2 lascannons"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount",
-            "eligibilityText": "equipped with of the following:"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "this-model-can-be-equipped-with-1-hunter-killer-missile-2",
             "label": "This model can be equipped with 1 hunter-killer missile.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-hunter-killer-missile",
                 "label": "1 hunter-killer missile"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "this-model-can-be-equipped-with-1-storm-bolter-3",
             "label": "This model can be equipped with 1 storm bolter.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-storm-bolter",
                 "label": "1 storm bolter"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -48502,11 +48713,15 @@
           {
             "id": "this-model-can-be-equipped-with-one-of-the-following-1",
             "label": "This model can be equipped with one of the following:",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
+              {
+                "id": "one-of-the-following",
+                "label": "one of the following"
+              },
               {
                 "id": "2-heavy-bolters",
                 "label": "2 heavy bolters"
@@ -48516,41 +48731,46 @@
                 "label": "2 lascannons"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount",
-            "eligibilityText": "equipped with of the following:"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "this-model-can-be-equipped-with-1-hunter-killer-missile-2",
             "label": "This model can be equipped with 1 hunter-killer missile.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-hunter-killer-missile",
                 "label": "1 hunter-killer missile"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "this-model-can-be-equipped-with-1-storm-bolter-3",
             "label": "This model can be equipped with 1 storm bolter.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-storm-bolter",
                 "label": "1 storm bolter"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -49172,11 +49392,15 @@
           {
             "id": "this-model-can-be-equipped-with-one-of-the-following-3",
             "label": "This model can be equipped with one of the following:",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
+              {
+                "id": "one-of-the-following",
+                "label": "one of the following"
+              },
               {
                 "id": "1-heavy-bolter",
                 "label": "1 heavy bolter"
@@ -49194,9 +49418,10 @@
                 "label": "1 storm bolter"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount",
-            "eligibilityText": "equipped with of the following:"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -49474,34 +49699,38 @@
           {
             "id": "this-model-can-be-equipped-with-1-hunter-killer-missile-1",
             "label": "This model can be equipped with 1 hunter-killer missile.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-hunter-killer-missile",
                 "label": "1 hunter-killer missile"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "this-model-can-be-equipped-with-1-storm-bolter-2",
             "label": "This model can be equipped with 1 storm bolter.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-storm-bolter",
                 "label": "1 storm bolter"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -51603,18 +51832,20 @@
           {
             "id": "this-model-can-be-equipped-with-2-hurricane-bolters-3",
             "label": "This model can be equipped with 2 hurricane bolters.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "2-hurricane-bolters",
                 "label": "2 hurricane bolters"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -55037,50 +55268,56 @@
           {
             "id": "this-model-can-be-equipped-with-1-hunter-killer-missile-1",
             "label": "This model can be equipped with 1 hunter-killer missile.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-hunter-killer-missile",
                 "label": "1 hunter-killer missile"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "this-model-can-be-equipped-with-1-multi-melta-2",
             "label": "This model can be equipped with 1 multi-melta.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-multi-melta",
                 "label": "1 multi-melta"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "this-model-can-be-equipped-with-1-storm-bolter-3",
             "label": "This model can be equipped with 1 storm bolter.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-storm-bolter",
                 "label": "1 storm bolter"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -56549,11 +56786,15 @@
           {
             "id": "this-model-can-be-equipped-with-one-of-the-following-1",
             "label": "This model can be equipped with one of the following:",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
+              {
+                "id": "one-of-the-following",
+                "label": "one of the following"
+              },
               {
                 "id": "2-heavy-bolters",
                 "label": "2 heavy bolters"
@@ -56563,18 +56804,23 @@
                 "label": "2 lascannons"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount",
-            "eligibilityText": "equipped with of the following:"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "this-model-can-be-equipped-with-one-of-the-following-2",
             "label": "This model can be equipped with one of the following:",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
+              {
+                "id": "one-of-the-following",
+                "label": "one of the following"
+              },
               {
                 "id": "1-heavy-bolter",
                 "label": "1 heavy bolter"
@@ -56592,9 +56838,10 @@
                 "label": "1 storm bolter"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount",
-            "eligibilityText": "equipped with of the following:"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -58032,34 +58279,38 @@
           {
             "id": "this-model-can-be-equipped-with-1-hunter-killer-missile-1",
             "label": "This model can be equipped with 1 hunter-killer missile.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-hunter-killer-missile",
                 "label": "1 hunter-killer missile"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "this-model-can-be-equipped-with-1-storm-bolter-2",
             "label": "This model can be equipped with 1 storm bolter.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-storm-bolter",
                 "label": "1 storm bolter"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -58317,18 +58568,20 @@
           {
             "id": "this-model-can-be-equipped-with-1-hunter-killer-missile-1",
             "label": "This model can be equipped with 1 hunter-killer missile.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-hunter-killer-missile",
                 "label": "1 hunter-killer missile"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -58571,34 +58824,38 @@
           {
             "id": "this-model-can-be-equipped-with-1-hunter-killer-missile-1",
             "label": "This model can be equipped with 1 hunter-killer missile.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-hunter-killer-missile",
                 "label": "1 hunter-killer missile"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "this-model-can-be-equipped-with-1-storm-bolter-2",
             "label": "This model can be equipped with 1 storm bolter.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-storm-bolter",
                 "label": "1 storm bolter"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -58846,34 +59103,38 @@
           {
             "id": "this-model-can-be-equipped-with-1-hunter-killer-missile-1",
             "label": "This model can be equipped with 1 hunter-killer missile.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-hunter-killer-missile",
                 "label": "1 hunter-killer missile"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "this-model-can-be-equipped-with-1-storm-bolter-2",
             "label": "This model can be equipped with 1 storm bolter.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-storm-bolter",
                 "label": "1 storm bolter"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],

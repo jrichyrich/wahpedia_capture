@@ -1,16 +1,16 @@
 # Builder Catalog Build Report
 
-- Generated at: 2026-03-30T20:39:58+00:00
+- Generated at: 2026-04-02T15:05:58+00:00
 - Source root: `/Users/jasricha/Documents/Github_Personal/wahpedia_capture/out/json`
 - Factions imported: 11
 - Total units: 1331
 - Units with missing stats: 0
 - Manual selection units: 0
-- Units with manual wargear: 2
+- Units with manual wargear: 0
 - Units with render issues: 0
 - Factions with rules warnings: 0
-- Ready units: 1251
-- Partial-support units: 80
+- Ready units: 1253
+- Partial-support units: 78
 - Configured-only preview units: 78
 - Source cards copied: 1253
 - Source cards missing: 78
@@ -38,11 +38,11 @@
 - Units: 97
 - Missing stats: 0
 - Manual selection units: 0
-- Manual wargear units: 1
+- Manual wargear units: 0
 - Render issue units: 0
 - Rules warnings: 0
-- Ready units: 96
-- Partial-support units: 1
+- Ready units: 97
+- Partial-support units: 0
 - Configured-only preview units: 0
 - Source cards copied: 97
 - Source cards missing: 0
@@ -113,11 +113,11 @@
 - Units: 47
 - Missing stats: 0
 - Manual selection units: 0
-- Manual wargear units: 1
+- Manual wargear units: 0
 - Render issue units: 0
 - Rules warnings: 0
-- Ready units: 46
-- Partial-support units: 1
+- Ready units: 47
+- Partial-support units: 0
 - Configured-only preview units: 0
 - Source cards copied: 47
 - Source cards missing: 0

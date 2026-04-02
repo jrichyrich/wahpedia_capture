@@ -80,12 +80,12 @@ class BuilderBrowserSmokeTests(unittest.TestCase):
         Select(self.driver.find_element(By.ID, "faction-select")).select_by_visible_text("Aeldari")
         self.driver.find_element(By.ID, "catalog-health-toggle").click()
         self.wait.until(
-            lambda driver: "96/97 units are ready without known review flags."
+            lambda driver: "97/97 units are ready without known review flags."
             in driver.find_element(By.ID, "data-confidence").text
         )
 
         self.driver.find_element(By.ID, "advanced-filters-toggle").click()
-        Select(self.driver.find_element(By.ID, "support-filter")).select_by_visible_text("Needs review")
+        Select(self.driver.find_element(By.ID, "support-filter")).select_by_visible_text("Ready only")
         self.wait.until(lambda driver: len(driver.find_elements(By.CSS_SELECTOR, "#unit-list [data-action='add-unit']")) > 0)
 
         self.driver.find_element(By.CSS_SELECTOR, "#unit-list [data-action='focus-unit']").click()
@@ -95,7 +95,7 @@ class BuilderBrowserSmokeTests(unittest.TestCase):
         self.wait.until(lambda driver: len(driver.find_elements(By.CSS_SELECTOR, "#roster-body .roster-entry")) > 0)
         self.driver.find_element(By.CSS_SELECTOR, "#roster-body [data-action='edit-entry']").click()
         self.wait.until(lambda driver: not driver.find_element(By.ID, "entry-editor").get_attribute("hidden"))
-        self.assertIn("needs review", self.driver.find_element(By.ID, "entry-editor").text.lower())
+        self.assertIn("CONFIGURATION", self.driver.find_element(By.ID, "entry-editor").text)
 
         self.driver.find_element(By.ID, "save-roster").click()
         self.wait.until(lambda driver: "Saved" in driver.find_element(By.ID, "roster-status").text)

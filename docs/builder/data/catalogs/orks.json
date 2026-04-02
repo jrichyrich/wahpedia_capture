@@ -1,6 +1,6 @@
 {
   "schemaVersion": 6,
-  "generatedAt": "2026-03-30T20:39:58+00:00",
+  "generatedAt": "2026-04-02T15:05:58+00:00",
   "faction": {
     "slug": "orks",
     "name": "Orks",
@@ -1387,18 +1387,20 @@
           {
             "id": "this-model-can-be-equipped-with-1-wing-missiles-1",
             "label": "This model can be equipped with 1 wing missiles.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-wing-missiles",
                 "label": "1 wing missiles"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -1724,11 +1726,15 @@
           {
             "id": "this-model-can-be-equipped-with-one-of-the-following-1",
             "label": "This model can be equipped with one of the following:",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
+              {
+                "id": "one-of-the-following",
+                "label": "one of the following"
+              },
               {
                 "id": "1-kannon",
                 "label": "1 kannon"
@@ -1742,9 +1748,10 @@
                 "label": "1 zzap gun"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount",
-            "eligibilityText": "equipped with of the following:"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "this-model-can-be-equipped-with-2",
@@ -2671,18 +2678,20 @@
           {
             "id": "this-model-can-be-equipped-with-1-thump-gun-1",
             "label": "This model can be equipped with 1 thump gun.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-thump-gun",
                 "label": "1 thump gun"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -3612,11 +3621,15 @@
           {
             "id": "this-model-can-be-equipped-with-one-of-the-following-2",
             "label": "This model can be equipped with one of the following:",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
+              {
+                "id": "one-of-the-following",
+                "label": "one of the following"
+              },
               {
                 "id": "1-tellyport-blasta",
                 "label": "1 tellyport blasta"
@@ -3626,25 +3639,28 @@
                 "label": "1 kustom force field"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount",
-            "eligibilityText": "equipped with of the following:"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "this-model-can-be-equipped-with-1-grot-oiler-3",
             "label": "This model can be equipped with 1 grot oiler.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-grot-oiler",
                 "label": "1 grot oiler"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -4456,18 +4472,20 @@
           {
             "id": "this-model-can-be-equipped-with-1-grot-helper-1",
             "label": "This model can be equipped with 1 grot helper.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-grot-helper",
                 "label": "1 grot helper"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -4763,18 +4781,20 @@
           {
             "id": "this-model-can-be-equipped-with-1-grot-assistant-1",
             "label": "This model can be equipped with 1 grot assistant.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-grot-assistant",
                 "label": "1 grot assistant"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -5100,11 +5120,15 @@
           {
             "id": "this-model-can-be-equipped-with-one-of-the-following-1",
             "label": "This model can be equipped with one of the following:",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
+              {
+                "id": "one-of-the-following",
+                "label": "one of the following"
+              },
               {
                 "id": "1-kannon",
                 "label": "1 kannon"
@@ -5114,9 +5138,10 @@
                 "label": "1 supa-kannon"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount",
-            "eligibilityText": "equipped with of the following:"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -7632,18 +7657,20 @@
           {
             "id": "this-model-can-be-equipped-with-1-skorcha-missile-rack-1",
             "label": "This model can be equipped with 1 skorcha missile rack.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-skorcha-missile-rack",
                 "label": "1 skorcha missile rack"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -8664,18 +8691,20 @@
           {
             "id": "this-model-can-be-equipped-with-1-additional-twin-supa-shoota-1",
             "label": "This model can be equipped with 1 additional twin supa-shoota.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-additional-twin-supa-shoota",
                 "label": "1 additional twin supa-shoota"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -10478,11 +10507,15 @@
           {
             "id": "this-model-can-be-equipped-with-one-of-the-following-1",
             "label": "This model can be equipped with one of the following:",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
+              {
+                "id": "one-of-the-following",
+                "label": "one of the following"
+              },
               {
                 "id": "2-grot-guided-bomms",
                 "label": "2 Grot-guided bomms"
@@ -10496,9 +10529,10 @@
                 "label": "Small bomms"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount",
-            "eligibilityText": "equipped with of the following:"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -10766,18 +10800,20 @@
           {
             "id": "this-unit-can-be-equipped-with-1-ammo-runt-1",
             "label": "This unit can be equipped with 1 ammo runt.",
-            "target": "This unit",
-            "actor": null,
+            "target": "unit",
+            "actor": "unit",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-ammo-runt",
                 "label": "1 ammo runt"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -11051,11 +11087,15 @@
           {
             "id": "this-model-can-be-equipped-with-one-of-the-following-1",
             "label": "This model can be equipped with one of the following:",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
+              {
+                "id": "one-of-the-following",
+                "label": "one of the following"
+              },
               {
                 "id": "1-kannon",
                 "label": "1 kannon"
@@ -11065,9 +11105,10 @@
                 "label": "1 supa-kannon"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount",
-            "eligibilityText": "equipped with of the following:"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -12776,14 +12817,14 @@
           {
             "id": "for-every-four-models-in-this-unit-one-model-can-be-equipped-with-one-of-the-following-in-addition-to-any-other-weapons-2",
             "label": "For every four models in this unit, one model can be equipped with one of the following in addition to any other weapons:",
-            "target": "model",
-            "actor": "model",
+            "target": "For every four models in this unit, one model",
+            "actor": "For every four models in this unit, one model",
             "action": "equip",
             "selectionMode": "allocation",
             "choices": [
               {
-                "id": "of-the-following-in-addition-to-any-other-weapons",
-                "label": "of the following in addition to any other weapons"
+                "id": "one-of-the-following-in-addition-to-any-other-weapons",
+                "label": "one of the following in addition to any other weapons"
               },
               {
                 "id": "1-grot-tank-shoota",
@@ -12807,13 +12848,9 @@
               }
             ],
             "allocationLimit": {
-              "kind": "ratio",
-              "perModels": 4,
-              "maxPerStep": 1
-            },
-            "poolKey": "model-of-the-following-in-addition-to-any-other-weapons",
-            "poolLimit": null,
-            "eligibilityText": "equipped with of the following in addition to any other weapons:"
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -13886,11 +13923,15 @@
           {
             "id": "this-model-can-be-equipped-with-one-of-the-following-1",
             "label": "This model can be equipped with one of the following:",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
+              {
+                "id": "one-of-the-following",
+                "label": "one of the following"
+              },
               {
                 "id": "1-twin-big-shoota",
                 "label": "1 twin big shoota"
@@ -13904,18 +13945,23 @@
                 "label": "1 skorcha"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount",
-            "eligibilityText": "equipped with of the following:"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "this-model-can-be-equipped-with-one-of-the-following-2",
             "label": "This model can be equipped with one of the following:",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
+              {
+                "id": "one-of-the-following",
+                "label": "one of the following"
+              },
               {
                 "id": "1-twin-big-shoota",
                 "label": "1 twin big shoota"
@@ -13929,9 +13975,10 @@
                 "label": "1 skorcha"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount",
-            "eligibilityText": "equipped with of the following:"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -15251,34 +15298,38 @@
           {
             "id": "this-unit-can-be-equipped-with-1-bomb-squig-6",
             "label": "This unit can be equipped with 1 bomb squig.",
-            "target": "This unit",
-            "actor": null,
+            "target": "unit",
+            "actor": "unit",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-bomb-squig",
                 "label": "1 bomb squig"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "this-unit-can-be-equipped-with-1-distraction-grot-7",
             "label": "This unit can be equipped with 1 distraction grot.",
-            "target": "This unit",
-            "actor": null,
+            "target": "unit",
+            "actor": "unit",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-distraction-grot",
                 "label": "1 distraction grot"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -15876,43 +15927,51 @@
           {
             "id": "this-model-can-be-equipped-with-1-grabbin-klaw-2",
             "label": "This model can be equipped with 1 grabbin\u2019 klaw.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-grabbin-klaw",
                 "label": "1 grabbin\u2019 klaw"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "this-model-can-be-equipped-with-1-wreckin-ball-3",
             "label": "This model can be equipped with 1 wreckin\u2019 ball.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-wreckin-ball",
                 "label": "1 wreckin\u2019 ball"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "this-model-can-be-equipped-with-one-of-the-following-4",
             "label": "This model can be equipped with one of the following:",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
+              {
+                "id": "one-of-the-following",
+                "label": "one of the following"
+              },
               {
                 "id": "1-big-shoota",
                 "label": "1 big shoota"
@@ -15934,9 +15993,10 @@
                 "label": "2 rokkit launchas"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount",
-            "eligibilityText": "equipped with of the following:"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -19444,17 +19504,19 @@
             "id": "for-every-5-models-in-this-unit-this-unit-can-be-equipped-with-1-ammo-runt-3",
             "label": "For every 5 models in this unit, this unit can be equipped with 1 ammo runt.",
             "target": "For every 5 models in this unit, this unit",
-            "actor": null,
+            "actor": "For every 5 models in this unit, this unit",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-ammo-runt",
                 "label": "1 ammo runt"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -20042,18 +20104,20 @@
           {
             "id": "this-model-can-be-equipped-with-1-grot-orderly-1",
             "label": "This model can be equipped with 1 grot orderly.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-grot-orderly",
                 "label": "1 grot orderly"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -20337,18 +20401,20 @@
           {
             "id": "this-model-can-be-equipped-with-1-grot-orderly-1",
             "label": "This model can be equipped with 1 grot orderly.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-grot-orderly",
                 "label": "1 grot orderly"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -21549,18 +21615,20 @@
           {
             "id": "this-model-can-be-equipped-with-1-kannon-1",
             "label": "This model can be equipped with 1 kannon.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-kannon",
                 "label": "1 kannon"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -21886,17 +21954,19 @@
             "id": "for-every-3-models-in-this-unit-this-unit-can-be-equipped-with-1-bomb-squig-1",
             "label": "For every 3 models in this unit, this unit can be equipped with 1 bomb squig.",
             "target": "For every 3 models in this unit, this unit",
-            "actor": null,
+            "actor": "For every 3 models in this unit, this unit",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-bomb-squig",
                 "label": "1 bomb squig"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -22777,10 +22847,14 @@
             "id": "one-tankbusta-can-be-equipped-with-one-of-the-following-2",
             "label": "One Tankbusta can be equipped with one of the following:",
             "target": "One Tankbusta",
-            "actor": null,
+            "actor": "One Tankbusta",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
+              {
+                "id": "one-of-the-following",
+                "label": "one of the following"
+              },
               {
                 "id": "1-pulsa-rokkit",
                 "label": "1 pulsa rokkit"
@@ -22790,9 +22864,10 @@
                 "label": "1 additional rokkit launcha"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount",
-            "eligibilityText": "equipped with of the following:"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -23066,18 +23141,20 @@
           {
             "id": "this-model-can-be-equipped-with-1-wreckin-ball-1",
             "label": "This model can be equipped with 1 wreckin\u2019 ball.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-wreckin-ball",
                 "label": "1 wreckin\u2019 ball"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -23613,10 +23690,14 @@
             "id": "each-warbiker-can-be-equipped-with-one-of-the-following-1",
             "label": "Each Warbiker can be equipped with one of the following:",
             "target": "Each Warbiker",
-            "actor": null,
+            "actor": "Each Warbiker",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
+              {
+                "id": "one-of-the-following",
+                "label": "one of the following"
+              },
               {
                 "id": "1-slugga",
                 "label": "1 slugga"
@@ -23626,18 +23707,23 @@
                 "label": "1 choppa"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount",
-            "eligibilityText": "equipped with of the following:"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "the-boss-nob-on-warbike-can-be-equipped-with-one-of-the-following-2",
             "label": "The Boss Nob on Warbike can be equipped with one of the following:",
             "target": "The Boss Nob on Warbike",
-            "actor": null,
+            "actor": "The Boss Nob on Warbike",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
+              {
+                "id": "one-of-the-following",
+                "label": "one of the following"
+              },
               {
                 "id": "1-slugga",
                 "label": "1 slugga"
@@ -23651,9 +23737,10 @@
                 "label": "1 power klaw"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount",
-            "eligibilityText": "equipped with of the following:"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -23927,18 +24014,20 @@
           {
             "id": "this-model-can-be-equipped-with-1-attack-squig-2",
             "label": "This model can be equipped with 1 attack squig.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-attack-squig",
                 "label": "1 attack squig"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -25253,34 +25342,38 @@
           {
             "id": "this-model-can-be-equipped-with-1-blastajet-force-field-2",
             "label": "This model can be equipped with 1 blastajet force field.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-blastajet-force-field",
                 "label": "1 blastajet force field"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "this-model-can-be-equipped-with-1-twin-supa-shoota-3",
             "label": "This model can be equipped with 1 twin supa-shoota.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-twin-supa-shoota",
                 "label": "1 twin supa-shoota"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],

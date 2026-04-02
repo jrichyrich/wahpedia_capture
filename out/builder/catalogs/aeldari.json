@@ -1,6 +1,6 @@
 {
   "schemaVersion": 6,
-  "generatedAt": "2026-03-30T20:39:58+00:00",
+  "generatedAt": "2026-04-02T15:05:57+00:00",
   "faction": {
     "slug": "aeldari",
     "name": "Aeldari",
@@ -11,17 +11,12 @@
     "catalogUnitCount": 97,
     "missingStats": [],
     "manualSelectionUnits": [],
-    "manualWargearUnits": [
-      {
-        "unitId": "troupe",
-        "name": "Troupe"
-      }
-    ],
+    "manualWargearUnits": [],
     "renderIssueUnits": [],
     "rulesWarnings": [],
     "supportSummary": {
-      "readyUnitCount": 96,
-      "partialUnitCount": 1,
+      "readyUnitCount": 97,
+      "partialUnitCount": 0,
       "incompatibleUnitCount": 0,
       "configuredOnlyPreviewCount": 0,
       "sourceImagePreviewCount": 97
@@ -4521,10 +4516,14 @@
             "id": "the-cloud-dancer-felarch-can-be-equipped-with-one-of-the-following-2",
             "label": "The Cloud Dancer Felarch can be equipped with one of the following:",
             "target": "The Cloud Dancer Felarch",
-            "actor": null,
+            "actor": "The Cloud Dancer Felarch",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
+              {
+                "id": "one-of-the-following",
+                "label": "one of the following"
+              },
               {
                 "id": "1-dissonance-pistol",
                 "label": "1 dissonance pistol"
@@ -4534,9 +4533,10 @@
                 "label": "1 void sabre"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount",
-            "eligibilityText": "equipped with of the following:"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -5025,10 +5025,14 @@
             "id": "the-corsair-reaver-felarch-can-be-equipped-with-one-of-the-following-3",
             "label": "The Corsair Reaver Felarch can be equipped with one of the following:",
             "target": "The Corsair Reaver Felarch",
-            "actor": null,
+            "actor": "The Corsair Reaver Felarch",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
+              {
+                "id": "one-of-the-following",
+                "label": "one of the following"
+              },
               {
                 "id": "1-dissonance-pistol",
                 "label": "1 dissonance pistol"
@@ -5038,9 +5042,10 @@
                 "label": "1 void sabre"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount",
-            "eligibilityText": "equipped with of the following:"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -5590,10 +5595,14 @@
             "id": "the-corsair-skyreaver-felarch-can-be-equipped-with-one-of-the-following-3",
             "label": "The Corsair Skyreaver Felarch can be equipped with one of the following:",
             "target": "The Corsair Skyreaver Felarch",
-            "actor": null,
+            "actor": "The Corsair Skyreaver Felarch",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
+              {
+                "id": "one-of-the-following",
+                "label": "one of the following"
+              },
               {
                 "id": "1-dissonance-pistol",
                 "label": "1 dissonance pistol"
@@ -5603,9 +5612,10 @@
                 "label": "1 void sabre"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount",
-            "eligibilityText": "equipped with of the following:"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -6433,7 +6443,7 @@
             "id": "if-this-unit-contains-10-models-1-corsair-voidreaver-s-shuriken-rifle-can-be-replaced-with-one-of-the-following-5",
             "label": "If this unit contains 10 models, 1 Corsair Voidreaver\u2019s shuriken rifle can be replaced with one of the following:",
             "target": "shuriken rifle",
-            "actor": "If this unit contains 10 models, 1 Corsair Voidreaver",
+            "actor": "Corsair Voidreaver",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -6447,7 +6457,12 @@
               }
             ],
             "allocationLimit": null,
-            "poolKey": "if-this-unit-contains-10-models-1-corsair-voidreaver-shuriken-rifle",
+            "availability": {
+              "kind": "modelCountRange",
+              "minModels": 10,
+              "maxModels": 10
+            },
+            "poolKey": "corsair-voidreaver-shuriken-rifle",
             "poolLimit": "modelCount"
           }
         ],
@@ -6978,17 +6993,19 @@
             "id": "the-voidscarred-felarch-can-be-equipped-with-1-mistshield-3",
             "label": "The Voidscarred Felarch can be equipped with 1 mistshield.",
             "target": "The Voidscarred Felarch",
-            "actor": null,
+            "actor": "The Voidscarred Felarch",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-mistshield",
                 "label": "1 mistshield"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "for-every-5-models-in-this-unit-1-corsair-voidscarred-s-shuriken-rifle-can-be-replaced-with-one-of-the-following-4",
@@ -7027,7 +7044,7 @@
             "id": "if-this-unit-contains-10-models-1-corsair-voidscarred-s-shuriken-rifle-can-be-replaced-with-one-of-the-following-5",
             "label": "If this unit contains 10 models, 1 Corsair Voidscarred\u2019s shuriken rifle can be replaced with one of the following:",
             "target": "shuriken rifle",
-            "actor": "If this unit contains 10 models, 1 Corsair Voidscarred",
+            "actor": "Corsair Voidscarred",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -7041,14 +7058,19 @@
               }
             ],
             "allocationLimit": null,
-            "poolKey": "if-this-unit-contains-10-models-1-corsair-voidscarred-shuriken-rifle",
+            "availability": {
+              "kind": "modelCountRange",
+              "minModels": 10,
+              "maxModels": 10
+            },
+            "poolKey": "corsair-voidscarred-shuriken-rifle",
             "poolLimit": "modelCount"
           },
           {
             "id": "if-this-unit-contains-10-models-1-corsair-voidscarred-s-shuriken-rifle-can-be-replaced-with-1-long-rifle-6",
             "label": "If this unit contains 10 models, 1 Corsair Voidscarred\u2019s shuriken rifle can be replaced with 1 long rifle.",
             "target": "shuriken rifle",
-            "actor": "If this unit contains 10 models, 1 Corsair Voidscarred",
+            "actor": "Corsair Voidscarred",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -7058,14 +7080,19 @@
               }
             ],
             "allocationLimit": null,
-            "poolKey": "if-this-unit-contains-10-models-1-corsair-voidscarred-shuriken-rifle",
+            "availability": {
+              "kind": "modelCountRange",
+              "minModels": 10,
+              "maxModels": 10
+            },
+            "poolKey": "corsair-voidscarred-shuriken-rifle",
             "poolLimit": "modelCount"
           },
           {
             "id": "if-this-unit-contains-10-models-1-corsair-voidscarred-s-power-sword-can-be-replaced-with-1-fusion-pistol-7",
             "label": "If this unit contains 10 models, 1 Corsair Voidscarred\u2019s power sword can be replaced with 1 fusion pistol.",
             "target": "power sword",
-            "actor": "If this unit contains 10 models, 1 Corsair Voidscarred",
+            "actor": "Corsair Voidscarred",
             "action": "replace",
             "selectionMode": "single",
             "choices": [
@@ -7075,7 +7102,12 @@
               }
             ],
             "allocationLimit": null,
-            "poolKey": "if-this-unit-contains-10-models-1-corsair-voidscarred-power-sword",
+            "availability": {
+              "kind": "modelCountRange",
+              "minModels": 10,
+              "maxModels": 10
+            },
+            "poolKey": "corsair-voidscarred-power-sword",
             "poolLimit": "modelCount"
           },
           {
@@ -17909,17 +17941,19 @@
             "id": "the-shining-spear-exarch-can-be-equipped-with-1-shimmershield-3",
             "label": "The Shining Spear Exarch can be equipped with 1 shimmershield.",
             "target": "The Shining Spear Exarch",
-            "actor": null,
+            "actor": "The Shining Spear Exarch",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-shimmershield",
                 "label": "1 shimmershield"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -21679,11 +21713,19 @@
           {
             "id": "if-this-unit-contains-9-or-fewer-models-3",
             "label": "If this unit contains 9 or fewer models:",
-            "target": null,
-            "actor": null,
-            "action": null,
-            "selectionMode": "manual",
+            "target": "shuriken pistol",
+            "actor": "models",
+            "action": "replace",
+            "selectionMode": "allocation",
             "choices": [
+              {
+                "id": "1-neuro-disruptor",
+                "label": "1 neuro disruptor"
+              },
+              {
+                "id": "1-fusion-pistol",
+                "label": "1 fusion pistol"
+              },
               {
                 "id": "up-to-2-models-can-each-have-their-shuriken-pistol-replaced-with-1-neuro-disruptor",
                 "label": "Up to 2 models can each have their shuriken pistol replaced with 1 neuro disruptor"
@@ -21693,16 +21735,34 @@
                 "label": "Up to 2 models can each have their shuriken pistol replaced with 1 fusion pistol"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": {
+              "kind": "static",
+              "max": 2
+            },
+            "availability": {
+              "kind": "modelCountRange",
+              "minModels": null,
+              "maxModels": 9
+            },
+            "poolKey": "model-shuriken-pistol",
+            "poolLimit": null
           },
           {
             "id": "if-this-unit-contains-10-or-more-models-4",
             "label": "If this unit contains 10 or more models:",
-            "target": null,
-            "actor": null,
-            "action": null,
-            "selectionMode": "manual",
+            "target": "shuriken pistol",
+            "actor": "models",
+            "action": "replace",
+            "selectionMode": "allocation",
             "choices": [
+              {
+                "id": "1-neuro-disruptor",
+                "label": "1 neuro disruptor"
+              },
+              {
+                "id": "1-fusion-pistol",
+                "label": "1 fusion pistol"
+              },
               {
                 "id": "up-to-4-models-can-each-have-their-shuriken-pistol-replaced-with-1-neuro-disruptor",
                 "label": "Up to 4 models can each have their shuriken pistol replaced with 1 neuro disruptor"
@@ -21712,18 +21772,28 @@
                 "label": "Up to 4 models can each have their shuriken pistol replaced with 1 fusion pistol"
               }
             ],
-            "allocationLimit": null
+            "allocationLimit": {
+              "kind": "static",
+              "max": 4
+            },
+            "availability": {
+              "kind": "modelCountRange",
+              "minModels": 10,
+              "maxModels": null
+            },
+            "poolKey": "model-shuriken-pistol",
+            "poolLimit": null
           }
         ],
         "manualNotes": [],
-        "hasManualOptions": true
+        "hasManualOptions": false
       },
       "selectionMode": "parsed",
       "quality": {
         "missingStats": [],
         "hasMissingStats": false,
         "hasManualSelectionLabels": false,
-        "hasManualWargearOptions": true
+        "hasManualWargearOptions": false
       },
       "keywords": [
         "INFANTRY",
@@ -21863,10 +21933,8 @@
         }
       ],
       "support": {
-        "supportLevel": "partial",
-        "supportReasons": [
-          "manual_wargear"
-        ],
+        "supportLevel": "full",
+        "supportReasons": [],
         "previewSupport": "source-image"
       }
     },
@@ -27941,18 +28009,20 @@
           {
             "id": "this-model-can-be-equipped-with-1-ghostglaive-2",
             "label": "This model can be equipped with 1 ghostglaive.",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-ghostglaive",
                 "label": "1 ghostglaive"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "this-model-can-be-equipped-with-up-to-two-of-the-following-3",
@@ -28298,11 +28368,15 @@
           {
             "id": "this-model-can-be-equipped-with-one-of-the-following-1",
             "label": "This model can be equipped with one of the following:",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
+              {
+                "id": "one-of-the-following",
+                "label": "one of the following"
+              },
               {
                 "id": "1-aeldari-missile-launcher",
                 "label": "1 Aeldari missile launcher"
@@ -28328,9 +28402,10 @@
                 "label": "1 Wraithseer D-cannon"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount",
-            "eligibilityText": "equipped with of the following:"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -29192,17 +29267,19 @@
             "id": "the-sybarite-can-be-equipped-with-1-phantasm-grenade-launcher-2",
             "label": "The Sybarite can be equipped with 1 phantasm grenade launcher.",
             "target": "The Sybarite",
-            "actor": null,
+            "actor": "The Sybarite",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-phantasm-grenade-launcher",
                 "label": "1 phantasm grenade launcher"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "the-sybarite-s-splinter-rifle-can-be-replaced-with-one-of-the-following-3",
@@ -29863,17 +29940,19 @@
             "id": "the-arena-champion-can-be-equipped-with-1-agoniser-1",
             "label": "The Arena Champion can be equipped with 1 agoniser.",
             "target": "The Arena Champion",
-            "actor": null,
+            "actor": "The Arena Champion",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
               {
                 "id": "1-agoniser",
                 "label": "1 agoniser"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           },
           {
             "id": "for-every-3-models-in-this-unit-1-model-s-splinter-rifle-can-be-replaced-with-one-of-the-following-2",
@@ -29907,14 +29986,14 @@
           {
             "id": "for-every-3-models-in-this-unit-1-model-can-be-equipped-with-one-of-the-following-3",
             "label": "For every 3 models in this unit, 1 model can be equipped with one of the following:",
-            "target": "model",
-            "actor": "model",
+            "target": "For every 3 models in this unit, 1 model",
+            "actor": "For every 3 models in this unit, 1 model",
             "action": "equip",
             "selectionMode": "allocation",
             "choices": [
               {
-                "id": "of-the-following",
-                "label": "of the following"
+                "id": "one-of-the-following",
+                "label": "one of the following"
               },
               {
                 "id": "1-grav-talon",
@@ -29926,13 +30005,9 @@
               }
             ],
             "allocationLimit": {
-              "kind": "ratio",
-              "perModels": 3,
-              "maxPerStep": 1
-            },
-            "poolKey": "model-of-the-following",
-            "poolLimit": null,
-            "eligibilityText": "equipped with of the following:"
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
@@ -30203,11 +30278,15 @@
           {
             "id": "this-model-can-be-equipped-with-one-of-the-following-1",
             "label": "This model can be equipped with one of the following:",
-            "target": "model",
-            "actor": null,
+            "target": "This model",
+            "actor": "This model",
             "action": "equip",
-            "selectionMode": "single",
+            "selectionMode": "allocation",
             "choices": [
+              {
+                "id": "one-of-the-following",
+                "label": "one of the following"
+              },
               {
                 "id": "1-blast-pistol",
                 "label": "1 blast pistol"
@@ -30217,9 +30296,10 @@
                 "label": "1 splinter pistol"
               }
             ],
-            "allocationLimit": null,
-            "poolLimit": "modelCount",
-            "eligibilityText": "equipped with of the following:"
+            "allocationLimit": {
+              "kind": "static",
+              "max": 1
+            }
           }
         ],
         "manualNotes": [],
