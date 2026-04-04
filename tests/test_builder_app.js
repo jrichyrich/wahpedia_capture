@@ -86,7 +86,7 @@ function createDeps() {
             renderRoster: () => { calls.renderRoster += 1; },
             renderPreview: () => { calls.renderPreview += 1; },
             scheduleAutoSave: () => { calls.scheduleAutoSave += 1; },
-            setRosterStatus: (message, isError) => { calls.setRosterStatus.push({ message, isError }); },
+            setRosterStatus: (message, isError, undoAction) => { calls.setRosterStatus.push({ message, isError, undoAction }); },
         }),
     };
 }
@@ -152,6 +152,31 @@ test("handleRosterBodyChange updates structured wargear selection and rerenders"
     assert.equal(calls.renderRoster, 1);
     assert.equal(calls.renderPreview, 1);
     assert.equal(calls.scheduleAutoSave, 1);
+});
+
+test("updateRosterWargearInline updates the roster and exposes an undo action", () => {
+    const { controller, state, calls } = createDeps();
+
+    const handled = controller.updateRosterWargearInline(
+        "entry-1",
+        "iliastus-swap",
+        "1-twin-arachnus-heavy-blaze-cannon"
+    );
+
+    assert.equal(handled, true);
+    assert.equal(state.roster[0].wargearSelections["iliastus-swap"], "1-twin-arachnus-heavy-blaze-cannon");
+    assert.equal(calls.renderRoster, 1);
+    assert.equal(calls.renderPreview, 1);
+    assert.equal(calls.scheduleAutoSave, 1);
+    assert.equal(calls.setRosterStatus.length, 1);
+    assert.match(calls.setRosterStatus[0].message, /updated to 1 twin arachnus heavy blaze cannon/i);
+    assert.equal(typeof calls.setRosterStatus[0].undoAction.onClick, "function");
+
+    calls.setRosterStatus[0].undoAction.onClick();
+
+    assert.equal(Object.hasOwn(state.roster[0].wargearSelections, "iliastus-swap"), false);
+    assert.equal(calls.setRosterStatus.length, 2);
+    assert.match(calls.setRosterStatus[1].message, /reverted/i);
 });
 
 test("handleRosterBodyChange updates counted allocation wargear and clamps to model count", () => {

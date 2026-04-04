@@ -104,9 +104,12 @@
         return { rosterId: null, reason: "none" };
     }
 
-    function buildRendererOptions(entry, previewRenderMode) {
+    function buildRendererOptions(entry, options) {
         const unit = entry && entry.unit ? entry.unit : null;
+        const previewSourceMode = options && options.previewSourceMode ? options.previewSourceMode : "configured";
+        const previewRenderMode = options && options.previewRenderMode ? options.previewRenderMode : "default";
         return {
+            instanceId: entry ? entry.instanceId : null,
             selectedOption: entry ? entry.selectedOption : null,
             selectedUpgrades: entry ? entry.selectedUpgrades : [],
             selectedEnhancement: entry ? entry.activeEnhancement : null,
@@ -114,10 +117,16 @@
             quantity: entry ? entry.quantity : 1,
             renderMode: previewRenderMode || "default",
             selectedWargear: entry ? entry.wargearSelections : [],
+            interactiveInlineSelection: Boolean(
+                entry
+                && unit
+                && Array.isArray(unit.wargear && unit.wargear.options)
+                && previewSourceMode === "configured"
+            ),
             relationshipNotes: entry && entry.relationship && Array.isArray(entry.relationship.relationshipNotes)
                 ? entry.relationship.relationshipNotes
                 : [],
-            manualWargearGroups: unit && unit.wargear
+            manualWargearGroups: unit && unit.wargear && Array.isArray(unit.wargear.options)
                 ? unit.wargear.options.filter((group) => group.selectionMode === "manual")
                 : [],
         };
@@ -129,7 +138,7 @@
         if (!renderer || !unit || typeof renderer.renderCard !== "function") {
             return "";
         }
-        return renderer.renderCard(unit, buildRendererOptions(entry, options.previewRenderMode));
+        return renderer.renderCard(unit, buildRendererOptions(entry, options));
     }
 
     function renderSourcePreviewCard(entry, options) {
@@ -533,6 +542,58 @@
             return true;
         }
 
+        function updateRosterWargearInline(instanceId, groupId, choiceId) {
+            const entry = state.roster.find((item) => item.instanceId === instanceId);
+            if (!entry) {
+                return false;
+            }
+            const unit = catalogUnitById(entry.unitId);
+            const group = unit && unit.wargear && Array.isArray(unit.wargear.options)
+                ? unit.wargear.options.find((option) => option.id === groupId)
+                : null;
+            if (!group || group.selectionMode !== "single") {
+                return false;
+            }
+            const selectedChoice = (group.choices || []).find((choice) => choice.id === choiceId) || null;
+            if (!selectedChoice) {
+                return false;
+            }
+
+            const currentValue = entry.wargearSelections && typeof entry.wargearSelections[groupId] === "string"
+                ? entry.wargearSelections[groupId]
+                : null;
+            if (currentValue === choiceId) {
+                return true;
+            }
+
+            const applied = updateRosterWargear(instanceId, groupId, choiceId);
+            if (!applied) {
+                return false;
+            }
+
+            if (setRosterStatus) {
+                const entryLabel = entry.displayName || (unit && unit.name) || "Unit";
+                const previousLabel = currentValue
+                    ? ((group.choices || []).find((choice) => choice.id === currentValue) || {}).label || "the previous choice"
+                    : "the default selection";
+                setRosterStatus(
+                    `${entryLabel} updated to ${selectedChoice.label}.`,
+                    false,
+                    {
+                        label: "Undo",
+                        onClick: () => {
+                            updateRosterWargear(instanceId, groupId, currentValue);
+                            setRosterStatus(
+                                `${entryLabel} reverted to ${previousLabel}.`,
+                                false
+                            );
+                        },
+                    }
+                );
+            }
+            return true;
+        }
+
         function updateRosterWargearAllocation(instanceId, groupId, choiceId, countValue) {
             const entry = state.roster.find((item) => item.instanceId === instanceId);
             if (!entry) {
@@ -840,6 +901,7 @@
             updateRosterUpgrade,
             updateRosterQuantity,
             updateRosterWargear,
+            updateRosterWargearInline,
             updateRosterWargearAllocation,
             updateRosterWargearMulti,
             updateRosterEnhancement,

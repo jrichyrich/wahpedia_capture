@@ -62,6 +62,81 @@ test("renderCard shows current loadout chips and weapon highlight badges", () =>
     assert.match(html, /Witchblade/);
 });
 
+test("renderCard renders inline quick-swap controls only for simple single-choice wargear", () => {
+    const renderer = loadRenderer();
+    const unit = {
+        name: "Allarus Custodians",
+        stats: { M: '5"', T: "7", Sv: "2+", W: "4", Ld: "6+", OC: "2" },
+        quality: { missingStats: [] },
+        selectionMode: "parsed",
+        pointsOptions: [{ id: "3-models", label: "3 models", points: 165, selectionKind: "models", modelCount: 3 }],
+        wargear: {
+            options: [
+                {
+                    id: "spear-swap",
+                    label: "This model’s guardian spear can be replaced with 1 castellan axe.",
+                    target: "guardian spear",
+                    selectionMode: "single",
+                    choices: [{ id: "castellan-axe", label: "1 castellan axe" }],
+                },
+                {
+                    id: "catapult-allocation",
+                    label: "Any number of models can each have their twin shuriken catapult replaced with one of the following:",
+                    target: "twin shuriken catapult",
+                    selectionMode: "allocation",
+                    choices: [{ id: "shield-blade", label: "1 shield blade" }],
+                },
+                {
+                    id: "sergeant-armory",
+                    label: "Two different options can be selected.",
+                    target: "armory",
+                    selectionMode: "multi",
+                    choices: [{ id: "weapon-a", label: "1 weapon a" }],
+                },
+                {
+                    id: "exarch-conditional",
+                    label: "If this unit’s Dire Avenger Exarch is equipped with 1 Avenger shuriken catapult, it can be equipped with 1 additional Avenger shuriken catapult.",
+                    target: "If this unit’s Dire Avenger Exarch is equipped with 1 Avenger shuriken catapult, it",
+                    selectionMode: "single",
+                    choices: [{ id: "extra-catapult", label: "1 additional Avenger shuriken catapult" }],
+                },
+            ],
+        },
+        weapons: { ranged: [], melee: [] },
+        abilities: { core: [], faction: [], datasheet: [], other: [] },
+        renderBlocks: [],
+        composition: { rawLines: ["3 Allarus Custodians"] },
+        keywords: ["INFANTRY"],
+        factionKeywords: ["ADEPTUS CUSTODES"],
+    };
+
+    const html = renderer.renderCard(unit, {
+        instanceId: "entry-1",
+        interactiveInlineSelection: true,
+        selectedOption: unit.pointsOptions[0],
+        selectedWargear: [
+            {
+                group: unit.wargear.options[0],
+                selectedChoice: { id: "castellan-axe", label: "1 castellan axe" },
+            },
+        ],
+        manualWargearGroups: [],
+    });
+
+    assert.match(html, /Quick swaps/);
+    assert.match(html, /data-action="card-inline-select"/);
+    assert.match(html, /data-group-id="spear-swap"/);
+    assert.match(html, /aria-pressed="true"/);
+    assert.match(html, /Full configuration/);
+    assert.match(html, /guardian spear/);
+    assert.match(html, /Swap/);
+    assert.doesNotMatch(html, /catapult-allocation/);
+    assert.doesNotMatch(html, /wargear-count/);
+    assert.doesNotMatch(html, /wargear-multi-toggle/);
+    assert.doesNotMatch(html, /Dire Avenger Exarch/);
+    assert.doesNotMatch(html, /extra-catapult/);
+});
+
 test("renderCard includes selected enhancement in header and current loadout", () => {
     const renderer = loadRenderer();
     const unit = {

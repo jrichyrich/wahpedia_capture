@@ -178,6 +178,134 @@
         };
     }
 
+    function selectedChoiceForGroup(selectedWargear, groupId) {
+        if (!Array.isArray(selectedWargear) || !groupId) {
+            return null;
+        }
+        const selection = selectedWargear.find((item) => item && item.group && item.group.id === groupId) || null;
+        if (!selection || !selection.selectedChoice) {
+            return null;
+        }
+        return selection.selectedChoice;
+    }
+
+    function inlineGroupTitle(group) {
+        return String(group && (group.target || group.label) ? (group.target || group.label) : "Quick swap").trim();
+    }
+
+    function inlineGroupKicker(group) {
+        if (group && group.action === "equip") {
+            return "Add";
+        }
+        return "Swap";
+    }
+
+    function inlineChoiceLabel(choice) {
+        return String(choice && choice.label ? choice.label : "")
+            .replace(/^\s*\d+\s+/, "")
+            .replace(/\s+/g, " ")
+            .trim();
+    }
+
+    function isInlineCardEligible(group) {
+        if (!group || group.selectionMode !== "single" || !Array.isArray(group.choices) || !group.choices.length) {
+            return false;
+        }
+
+        const title = inlineGroupTitle(group).replace(/\s+/g, " ").trim();
+        if (!title || title.length > 42) {
+            return false;
+        }
+        if (/[.:]/.test(title)) {
+            return false;
+        }
+        if (/\b(if|when|while|after|before|for every|up to|any number|each|either|different|additional|equipped|replace its|can do one of the following)\b/i.test(title)) {
+            return false;
+        }
+        if (/\b(this model|sergeant|exarch|felarch|squad|unit|bearer|operator|champion)\b/i.test(title)) {
+            return false;
+        }
+        if (group.choices.length > 4) {
+            return false;
+        }
+
+        return group.choices.every((choice) => {
+            const label = inlineChoiceLabel(choice);
+            if (!label || label.length > 40) {
+                return false;
+            }
+            if (/[\(\)\[\]:]/.test(label)) {
+                return false;
+            }
+            return !/\b(or|different|additional|equipped|replace|replaced|cannot|can be|and 1)\b/i.test(label);
+        });
+    }
+
+    function renderInlineWargearControls(unit, options, loadoutState) {
+        if (!options || !options.interactiveInlineSelection) {
+            return "";
+        }
+        const groups = unit && unit.wargear && Array.isArray(unit.wargear.options)
+            ? unit.wargear.options.filter((group) => isInlineCardEligible(group))
+            : [];
+        if (!groups.length) {
+            return "";
+        }
+
+        const selectedWargear = Array.isArray(options.selectedWargear) ? options.selectedWargear : [];
+        const instanceId = options.instanceId ? String(options.instanceId) : "";
+        const simpleGroups = groups.map((group) => {
+            const selectedChoice = selectedChoiceForGroup(selectedWargear, group.id);
+            const groupState = selectedChoice ? "is-selected" : "is-unset";
+            return `
+                <div class="datasheet-inline-group ${groupState}">
+                    <div class="datasheet-inline-group-head">
+                        <div>
+                            <div class="datasheet-inline-group-kicker">${escapeHtml(inlineGroupKicker(group))}</div>
+                            <div class="datasheet-inline-group-label">${escapeHtml(inlineGroupTitle(group))}</div>
+                            ${group.eligibilityText ? `<div class="datasheet-inline-group-help">${escapeHtml(group.eligibilityText)}</div>` : ""}
+                        </div>
+                    </div>
+                    <div class="datasheet-inline-chip-row" role="group" aria-label="${escapeHtml(inlineGroupTitle(group))}" data-inline-group="${escapeHtml(group.id)}">
+                        ${(group.choices || []).map((choice) => {
+                            const isActive = Boolean(selectedChoice && selectedChoice.id === choice.id);
+                            return `
+                                <button
+                                    class="datasheet-inline-chip ${isActive ? "is-active" : ""}"
+                                    type="button"
+                                    data-action="card-inline-select"
+                                    data-instance-id="${escapeHtml(instanceId)}"
+                                    data-group-id="${escapeHtml(group.id)}"
+                                    data-choice-id="${escapeHtml(choice.id)}"
+                                    aria-pressed="${isActive ? "true" : "false"}"
+                                >
+                                    ${escapeHtml(choice.label)}
+                                </button>
+                            `;
+                        }).join("")}
+                    </div>
+                </div>
+            `;
+        }).join("");
+
+        return `
+            <section class="datasheet-inline-section" aria-label="Inline configuration">
+                <div class="datasheet-inline-help">Quick swaps</div>
+                <div class="datasheet-inline-grid">${simpleGroups}</div>
+                <div class="datasheet-inline-footer">
+                    <button
+                        class="datasheet-inline-open-editor"
+                        type="button"
+                        data-action="open-entry-editor"
+                        data-instance-id="${escapeHtml(instanceId)}"
+                    >
+                        Full configuration
+                    </button>
+                </div>
+            </section>
+        `;
+    }
+
     function renderEntry(entry) {
         if (!entry || !entry.type) {
             return "";
@@ -510,6 +638,7 @@
         const selectedOption = opts.selectedOption || defaultPointsOption(unit);
         const selectedUpgrades = Array.isArray(opts.selectedUpgrades) ? opts.selectedUpgrades : [];
         const loadoutState = buildLoadoutState(unit, opts);
+        const inlineWargearControls = renderInlineWargearControls(unit, opts, loadoutState);
         const quantity = opts.quantity || 1;
         const meta = [];
         if (selectedOption && selectedOption.label) {
@@ -536,6 +665,7 @@
                     ${meta.length ? `<div class="datasheet-meta">${escapeHtml(meta.join(" | "))}</div>` : ""}
                 </header>
                 ${renderConfigurationStrip(unit, opts, loadoutState)}
+                ${inlineWargearControls}
                 ${unitMissingStats.length || unit.selectionMode === "manual" ? `
                     <div class="datasheet-quality">
                         ${unitMissingStats.length ? `<div class="datasheet-quality-row"><strong>Missing stats:</strong> ${escapeHtml(unitMissingStats.join(", "))}</div>` : ""}
