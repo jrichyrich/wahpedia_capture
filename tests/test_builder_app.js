@@ -86,7 +86,7 @@ function createDeps() {
             renderRoster: () => { calls.renderRoster += 1; },
             renderPreview: () => { calls.renderPreview += 1; },
             scheduleAutoSave: () => { calls.scheduleAutoSave += 1; },
-            setRosterStatus: (message, isError, undoAction) => { calls.setRosterStatus.push({ message, isError, undoAction }); },
+            setRosterStatus: (message, isError, undoAction, options) => { calls.setRosterStatus.push({ message, isError, undoAction, options }); },
         }),
     };
 }
@@ -100,6 +100,7 @@ function samplePreviewEntry(overrides = {}) {
         },
     };
     return {
+        instanceId: "preview-entry-1",
         displayName: unit.name,
         unit,
         selectedOption: unit.pointsOptions[0],
@@ -171,12 +172,15 @@ test("updateRosterWargearInline updates the roster and exposes an undo action", 
     assert.equal(calls.setRosterStatus.length, 1);
     assert.match(calls.setRosterStatus[0].message, /updated to 1 twin arachnus heavy blaze cannon/i);
     assert.equal(typeof calls.setRosterStatus[0].undoAction.onClick, "function");
+    assert.equal(calls.setRosterStatus[0].undoAction.previewInstanceId, "entry-1");
+    assert.deepEqual(calls.setRosterStatus[0].options, { previewInstanceId: "entry-1" });
 
     calls.setRosterStatus[0].undoAction.onClick();
 
     assert.equal(Object.hasOwn(state.roster[0].wargearSelections, "iliastus-swap"), false);
     assert.equal(calls.setRosterStatus.length, 2);
     assert.match(calls.setRosterStatus[1].message, /reverted/i);
+    assert.deepEqual(calls.setRosterStatus[1].options, { previewInstanceId: "entry-1" });
 });
 
 test("handleRosterBodyChange updates counted allocation wargear and clamps to model count", () => {
@@ -544,7 +548,33 @@ test("renderPreviewEntries renders configured HTML cards in configured mode", ()
     });
 
     assert.match(html, /datasheet-card/);
+    assert.match(html, /data-preview-entry/);
+    assert.match(html, /data-instance-id="preview-entry-1"/);
     assert.doesNotMatch(html, /source-card-image/);
+});
+
+test("renderPreviewEntries disables inline quick-swap controls in print-clean mode", () => {
+    const entry = samplePreviewEntry({
+        instanceId: "entry-inline",
+    });
+    const renderer = {
+        renderCard(unit, options) {
+            return options && options.interactiveInlineSelection
+                ? `<article class="datasheet-card"><button data-action="card-inline-select">Quick swaps</button></article>`
+                : `<article class="datasheet-card">${unit.name}</article>`;
+        },
+    };
+
+    const html = App.renderPreviewEntries([entry], {
+        previewSourceMode: "configured",
+        previewRenderMode: "print-clean",
+        renderer,
+        missingSourceCardLookup: new Set(),
+    });
+
+    assert.match(html, /data-preview-entry/);
+    assert.doesNotMatch(html, /data-action="card-inline-select"/);
+    assert.doesNotMatch(html, /Quick swaps/);
 });
 
 test("chooseRestorableRoster prefers the active roster when its faction is available", () => {

@@ -807,6 +807,39 @@
             gap: 24px;
         }
 
+        .preview-entry {
+            display: grid;
+            gap: 12px;
+        }
+
+        .preview-inline-status {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 12px;
+            border: 1px solid #b8b09f;
+            background: rgba(255, 255, 255, 0.88);
+        }
+
+        .preview-inline-status.is-error {
+            border-color: #bf7a80;
+            background: #f7dfe0;
+        }
+
+        .preview-inline-status-copy {
+            color: #534c41;
+            font-size: 13px;
+            line-height: 1.35;
+        }
+
+        .preview-inline-status .btn {
+            min-height: 0;
+            padding: 6px 10px;
+            white-space: nowrap;
+        }
+
         .print-pack-status-line {
             margin-top: 0;
         }
@@ -1602,6 +1635,7 @@
             activeEditorInstanceId: null,
             repairState: null,
             rosterStatusUndo: null,
+            previewInlineStatus: null,
             catalogFilters: defaultCatalogFilters(),
             stratagemFilter: {
                 relevance: "all",
@@ -1682,8 +1716,58 @@
             els.statusBox.innerHTML = isError ? `<span class="status-error">${message}</span>` : message;
         }
 
-        function setRosterStatus(message, isError, undoAction = null) {
+        function escapeAttributeSelector(value) {
+            return String(value || "").replace(/\\/g, "\\\\").replace(/"/g, '\\"');
+        }
+
+        function previewInlineStatusMarkup(status) {
+            if (!status || !status.instanceId || !status.message) {
+                return "";
+            }
+            const undoMarkup = status.undoAction
+                ? `<button class="btn btn-quiet" type="button" data-action="undo-inline-selection">${escapeHtml(status.undoAction.label || "Undo")}</button>`
+                : "";
+            return `
+                <div class="preview-inline-status ${status.isError ? "is-error" : ""}" data-preview-inline-status>
+                    <div class="preview-inline-status-copy">${escapeHtml(status.message)}</div>
+                    ${undoMarkup}
+                </div>
+            `;
+        }
+
+        function renderPreviewInlineStatus() {
+            if (!els.previewBody) {
+                return;
+            }
+            els.previewBody.querySelectorAll("[data-preview-inline-status]").forEach((node) => node.remove());
+            if (!state.previewInlineStatus || !state.previewInlineStatus.instanceId || !state.previewInlineStatus.message) {
+                return;
+            }
+            const selector = `[data-preview-entry][data-instance-id="${escapeAttributeSelector(state.previewInlineStatus.instanceId)}"]`;
+            const target = els.previewBody.querySelector(selector);
+            if (!target) {
+                return;
+            }
+            target.insertAdjacentHTML("afterbegin", previewInlineStatusMarkup(state.previewInlineStatus));
+        }
+
+        function setRosterStatus(message, isError, undoAction = null, options = null) {
             state.rosterStatusUndo = undoAction && typeof undoAction.onClick === "function" ? undoAction : null;
+            const previewInstanceId = options && options.previewInstanceId
+                ? String(options.previewInstanceId)
+                : (state.rosterStatusUndo && state.rosterStatusUndo.previewInstanceId
+                    ? String(state.rosterStatusUndo.previewInstanceId)
+                    : "");
+            state.previewInlineStatus = previewInstanceId
+                ? {
+                    instanceId: previewInstanceId,
+                    message: message || "",
+                    isError: Boolean(isError),
+                    undoAction: state.rosterStatusUndo && String(state.rosterStatusUndo.previewInstanceId || "") === previewInstanceId
+                        ? state.rosterStatusUndo
+                        : null,
+                }
+                : null;
             const safeMessage = escapeHtml(message || "");
             const undoMarkup = state.rosterStatusUndo
                 ? ` <button class="btn btn-quiet roster-status-undo" type="button" data-action="undo-inline-selection">${escapeHtml(state.rosterStatusUndo.label || "Undo")}</button>`
@@ -1691,6 +1775,17 @@
             els.rosterStatus.innerHTML = isError
                 ? `<span class="status-error">${safeMessage}</span>${undoMarkup}`
                 : `${safeMessage}${undoMarkup}`;
+            renderPreviewInlineStatus();
+        }
+
+        function runRosterStatusUndo() {
+            if (!state.rosterStatusUndo || typeof state.rosterStatusUndo.onClick !== "function") {
+                return false;
+            }
+            const undoAction = state.rosterStatusUndo;
+            state.rosterStatusUndo = null;
+            undoAction.onClick();
+            return true;
         }
 
         function defaultCatalogFilters() {
@@ -3325,6 +3420,7 @@
                 els.previewBody.innerHTML = derived.entries.length
                     ? `<div class="inline-note">Only roster entries that resolve cleanly in the current catalog appear here. Review flags do not block card rendering.</div>`
                     : `<div class="inline-note">Add one or more units to review printable cards.</div>`;
+                renderPreviewInlineStatus();
                 els.previewCard.classList.add("is-muted");
                 renderPreviewVisibility();
                 renderWorkspaceVisibility(derived);
@@ -3368,6 +3464,7 @@
                 missingSourceCardLookup: state.missingSourceCardLookup,
             })}
             `;
+            renderPreviewInlineStatus();
             els.previewCard.classList.remove("is-muted");
             renderPreviewVisibility();
             renderWorkspaceVisibility(derived);
@@ -3657,6 +3754,10 @@
             if (!target) {
                 return;
             }
+            if (target.dataset.action === "undo-inline-selection") {
+                runRosterStatusUndo();
+                return;
+            }
             if (target.dataset.action === "card-inline-select") {
                 interactionController.updateRosterWargearInline(
                     target.dataset.instanceId,
@@ -3677,10 +3778,7 @@
             if (!target || target.dataset.action !== "undo-inline-selection") {
                 return;
             }
-            if (state.rosterStatusUndo && typeof state.rosterStatusUndo.onClick === "function") {
-                state.rosterStatusUndo.onClick();
-                state.rosterStatusUndo = null;
-            }
+            runRosterStatusUndo();
         });
 
         els.savedRosterSelect.addEventListener("change", async (event) => {

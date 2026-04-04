@@ -122,6 +122,7 @@
                 && unit
                 && Array.isArray(unit.wargear && unit.wargear.options)
                 && previewSourceMode === "configured"
+                && previewRenderMode !== "print-clean"
             ),
             relationshipNotes: entry && entry.relationship && Array.isArray(entry.relationship.relationshipNotes)
                 ? entry.relationship.relationshipNotes
@@ -200,10 +201,18 @@
     function renderPreviewEntries(entries, options) {
         const previewSourceMode = options && options.previewSourceMode ? options.previewSourceMode : "configured";
         const renderableEntries = Array.isArray(entries) ? entries : [];
-        if (previewSourceMode === "source-image") {
-            return renderableEntries.map((entry) => renderSourcePreviewCard(entry, options)).join("");
+        function wrapPreviewEntry(entry, markup) {
+            const instanceId = entry && entry.instanceId ? String(entry.instanceId) : "";
+            return `
+                <div class="preview-entry" data-preview-entry data-instance-id="${escapeHtml(instanceId)}">
+                    ${markup}
+                </div>
+            `;
         }
-        return renderableEntries.map((entry) => renderConfiguredPreviewCard(entry, options)).join("");
+        if (previewSourceMode === "source-image") {
+            return renderableEntries.map((entry) => wrapPreviewEntry(entry, renderSourcePreviewCard(entry, options))).join("");
+        }
+        return renderableEntries.map((entry) => wrapPreviewEntry(entry, renderConfiguredPreviewCard(entry, options))).join("");
     }
 
     function renderPrintPackSummary(options) {
@@ -581,14 +590,18 @@
                     false,
                     {
                         label: "Undo",
+                        previewInstanceId: instanceId,
                         onClick: () => {
                             updateRosterWargear(instanceId, groupId, currentValue);
                             setRosterStatus(
                                 `${entryLabel} reverted to ${previousLabel}.`,
-                                false
+                                false,
+                                null,
+                                { previewInstanceId: instanceId }
                             );
                         },
-                    }
+                    },
+                    { previewInstanceId: instanceId }
                 );
             }
             return true;

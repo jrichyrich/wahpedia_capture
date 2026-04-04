@@ -137,7 +137,7 @@ class BuilderBrowserSmokeTests(unittest.TestCase):
     def test_inline_card_selection_updates_roster_without_opening_editor(self):
         Select(self.driver.find_element(By.ID, "faction-select")).select_by_visible_text("Adeptus Custodes")
         self.driver.find_element(By.ID, "unit-search").clear()
-        self.driver.find_element(By.ID, "unit-search").send_keys("Allarus Custodians")
+        self.driver.find_element(By.ID, "unit-search").send_keys("Caladius Grav-tank")
         self.wait.until(lambda driver: len(driver.find_elements(By.CSS_SELECTOR, "#unit-list [data-action='add-unit']")) > 0)
 
         self.driver.find_element(By.CSS_SELECTOR, "#unit-list [data-action='add-unit']").click()
@@ -147,8 +147,12 @@ class BuilderBrowserSmokeTests(unittest.TestCase):
         self.wait.until(
             lambda driver: "updated to" in driver.find_element(By.ID, "roster-status").text.lower()
         )
-        self.assertIn("Undo", self.driver.find_element(By.ID, "roster-status").text)
-        self.assertIn("castellan axe", self.driver.find_element(By.ID, "roster-body").text.lower())
+        self.assertIn("undo", self.driver.find_element(By.ID, "roster-status").text.lower())
+        self.assertTrue(self.driver.find_element(By.ID, "entry-editor").get_attribute("hidden"))
+        self.wait.until(lambda driver: len(driver.find_elements(By.CSS_SELECTOR, "#preview-body [data-preview-inline-status]")) > 0)
+        preview_inline_status = self.driver.find_element(By.CSS_SELECTOR, "#preview-body [data-preview-inline-status]")
+        self.assertIn("updated to", preview_inline_status.text.lower())
+        self.assertIn("undo", preview_inline_status.text.lower())
         self.assertTrue(self.driver.find_element(By.ID, "entry-editor").get_attribute("hidden"))
 
         self.driver.find_element(By.CSS_SELECTOR, "#preview-body [data-action='open-entry-editor']").click()
