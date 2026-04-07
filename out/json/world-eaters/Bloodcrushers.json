@@ -1,0 +1,219 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/world-eaters/Bloodcrushers",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/world-eaters/Bloodcrushers",
+    "canonicalSourceId": "wahapedia:88543d9190bc911997f575b5e117a01f32628bde",
+    "faction_slug": "world-eaters",
+    "datasheet_slug": "Bloodcrushers",
+    "fetchedAt": "2026-04-07T01:08:08+00:00",
+    "contentHash": "b779af65f31c0aa324d361098df51ac798feb90e99851ed40652016f03dc67a6",
+    "output_slug": "world-eaters"
+  },
+  "name": "Bloodcrushers",
+  "base_size": "\u230090 x 52mm",
+  "characteristics": {
+    "M": "10\"",
+    "T": "7",
+    "Sv": "3+",
+    "W": "4",
+    "Ld": "7+",
+    "OC": "2",
+    "Invulnerable Save": "5+"
+  },
+  "weapons": {
+    "melee_weapons": [
+      {
+        "name": "Hellblade",
+        "abilities": [],
+        "range": "Melee",
+        "a": "2",
+        "ws": "3+",
+        "s": "5",
+        "ap": "-2",
+        "d": "2"
+      },
+      {
+        "name": "Bladed horn",
+        "abilities": [
+          "extra attacks",
+          "lance"
+        ],
+        "range": "Melee",
+        "a": "4",
+        "ws": "4+",
+        "s": "6",
+        "ap": "-1",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deep Strike"
+    ],
+    "faction": [
+      "Pact of Blood"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this unit ends a Charge move , select one enemy unit within Engagement Range of this unit and roll one D6 for each model in this unit: for each 4+, that enemy unit suffers D3 mortal wounds .",
+        "name": "Brass Stampede"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Bloodhunter"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "2-5 Bloodcrushers"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "hellblade; bladed horn.",
+      "label": "Every model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "3 models",
+          "points": "110"
+        },
+        {
+          "label": "6 models",
+          "points": "220"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "MOUNTED",
+    "CHAOS",
+    "DAEMON",
+    "KHORNE",
+    "SUMMONED",
+    "BLOODCRUSHERS"
+  ],
+  "faction_keywords": [
+    "BLOOD LEGIONS"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "1 Bloodcrusher that is not equipped with a daemonic icon can be equipped with 1 instrument of Chaos.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "1 Bloodcrusher that is not equipped with an instrument of Chaos can be equipped with 1 daemonic icon.",
+          "items": []
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deep Strike"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Pact of Blood"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this unit ends a Charge move , select one enemy unit within Engagement Range of this unit and roll one D6 for each model in this unit: for each 4+, that enemy unit suffers D3 mortal wounds .",
+          "name": "Brass Stampede"
+        }
+      ]
+    },
+    {
+      "title": "WARGEAR ABILITIES",
+      "entries": [
+        {
+          "type": "statement",
+          "text": "Models in the bearer\u2019s unit have a Leadership characteristic of 6+.",
+          "label": "Daemonic Icon"
+        },
+        {
+          "type": "statement",
+          "text": "Add 1 to Charge rolls made for the bearer\u2019s unit.",
+          "label": "Instrument of Chaos"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Bloodhunter"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "2-5 Bloodcrushers"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "hellblade; bladed horn.",
+          "label": "Every model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "3 models",
+              "points": "110"
+            },
+            {
+              "label": "6 models",
+              "points": "220"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

@@ -1,0 +1,295 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/world-eaters/Chaos-Terminators",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/world-eaters/Chaos-Terminators",
+    "canonicalSourceId": "wahapedia:9de79b58085feafb75895ff16166d4b91a358783",
+    "faction_slug": "world-eaters",
+    "datasheet_slug": "Chaos-Terminators",
+    "fetchedAt": "2026-04-07T01:08:11+00:00",
+    "contentHash": "e647a2fff54947e71855f54a1fbcf1dfc91ca524d38c047fdcb448684aa34c1b",
+    "output_slug": "world-eaters"
+  },
+  "name": "Chaos Terminators",
+  "base_size": "\u230040mm",
+  "characteristics": {
+    "M": "7\"",
+    "T": "5",
+    "Sv": "2+",
+    "W": "3",
+    "Ld": "6+",
+    "OC": "1",
+    "Invulnerable Save": "4+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Combi-bolter",
+        "abilities": [
+          "rapid fire 4"
+        ],
+        "range": "24\"",
+        "a": "2",
+        "bs": "4+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Combi-weapon",
+        "abilities": [
+          "anti-infantry 4+",
+          "devastating wounds",
+          "rapid fire 1"
+        ],
+        "range": "24\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Heavy flamer",
+        "abilities": [
+          "ignores cover",
+          "torrent"
+        ],
+        "range": "12\"",
+        "a": "D6",
+        "bs": "N/A",
+        "s": "5",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Reaper autocannon",
+        "abilities": [
+          "devastating wounds",
+          "rapid fire 2",
+          "sustained hits 1"
+        ],
+        "range": "36\"",
+        "a": "4",
+        "bs": "4+",
+        "s": "7",
+        "ap": "-1",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Accursed weapon",
+        "abilities": [],
+        "range": "Melee",
+        "a": "4",
+        "ws": "3+",
+        "s": "5",
+        "ap": "-2",
+        "d": "1"
+      },
+      {
+        "name": "Chainfist",
+        "abilities": [
+          "anti-vehicle 3+"
+        ],
+        "range": "Melee",
+        "a": "3",
+        "ws": "4+",
+        "s": "8",
+        "ap": "-3",
+        "d": "2"
+      },
+      {
+        "name": "Paired accursed weapons",
+        "abilities": [
+          "twin-linked"
+        ],
+        "range": "Melee",
+        "a": "5",
+        "ws": "3+",
+        "s": "5",
+        "ap": "-2",
+        "d": "1"
+      },
+      {
+        "name": "Power fist",
+        "abilities": [],
+        "range": "Melee",
+        "a": "3",
+        "ws": "3+",
+        "s": "8",
+        "ap": "-2",
+        "d": "2"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deep Strike"
+    ],
+    "faction": [
+      "Blessings of Khorne"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time a model in this unit makes a ranged attack that targets the closest enemy unit, you can re-roll the Hit roll . Each time this unit declares a charge that targets the closest eligible enemy unit, you can re-roll the Charge roll .",
+        "name": "Bloody Fury"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Terminator Champion"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "4-9 Chaos Terminators"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "combi-bolter; accursed weapon.",
+      "label": "Every model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "5 models",
+          "points": "175"
+        },
+        {
+          "label": "10 models",
+          "points": "350"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "CHAOS",
+    "KHORNE",
+    "TERMINATOR",
+    "TERMINATOR SQUAD"
+  ],
+  "faction_keywords": [
+    "WORLD EATERS"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "For every 5 models in this unit, 1 Chaos Terminator\u2019s combi-bolter can be replaced with one of the following:",
+          "items": [
+            "1 heavy flamer",
+            "1 reaper autocannon"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "Any number of models can each have their combi-bolter replaced with 1 combi-weapon.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "For every 5 models in this unit, 1 model\u2019s combi-bolter and accursed weapon can be replaced with 1 paired accursed weapons.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "For every 5 models in this unit, up to 3 models can each have their accursed weapon replaced with 1 power fist.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "For every 5 models in this unit, 1 model\u2019s accursed weapon can be replaced with 1 chainfist.",
+          "items": []
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deep Strike"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Blessings of Khorne"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time a model in this unit makes a ranged attack that targets the closest enemy unit, you can re-roll the Hit roll . Each time this unit declares a charge that targets the closest eligible enemy unit, you can re-roll the Charge roll .",
+          "name": "Bloody Fury"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Terminator Champion"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "4-9 Chaos Terminators"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "combi-bolter; accursed weapon.",
+          "label": "Every model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "5 models",
+              "points": "175"
+            },
+            {
+              "label": "10 models",
+              "points": "350"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

@@ -1,0 +1,257 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/world-eaters/Bloodthirster",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/world-eaters/Bloodthirster",
+    "canonicalSourceId": "wahapedia:c84c16b54dc725495e45298b7a93d807c09e17cb",
+    "faction_slug": "world-eaters",
+    "datasheet_slug": "Bloodthirster",
+    "fetchedAt": "2026-04-07T01:08:08+00:00",
+    "contentHash": "31cc08eea495e686c2202525c5f7860ef0488e359877b3efbbaecd983fc31cb8",
+    "output_slug": "world-eaters"
+  },
+  "name": "Bloodthirster",
+  "base_size": "\u2300120 x 92mm",
+  "characteristics": {
+    "M": "12\"",
+    "T": "11",
+    "Sv": "3+",
+    "W": "18",
+    "Ld": "6+",
+    "OC": "5",
+    "Invulnerable Save": "4+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Bloodflail",
+        "abilities": [
+          "devastating wounds"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "2+",
+        "s": "16",
+        "ap": "-3",
+        "d": "D6+1"
+      },
+      {
+        "name": "Hellfire breath",
+        "abilities": [
+          "ignores cover",
+          "torrent"
+        ],
+        "range": "12\"",
+        "a": "D6",
+        "bs": "N/A",
+        "s": "5",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Lash of Khorne",
+        "abilities": [],
+        "range": "12\"",
+        "a": "9",
+        "bs": "2+",
+        "s": "8",
+        "ap": "-1",
+        "d": "2"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Axe of Khorne \u2013 strike",
+        "abilities": [],
+        "range": "Melee",
+        "a": "8",
+        "ws": "2+",
+        "s": "14",
+        "ap": "-4",
+        "d": "D3+1"
+      },
+      {
+        "name": "Axe of Khorne \u2013 sweep",
+        "abilities": [],
+        "range": "Melee",
+        "a": "16",
+        "ws": "2+",
+        "s": "8",
+        "ap": "-2",
+        "d": "1"
+      },
+      {
+        "name": "Great axe of Khorne \u2013 strike",
+        "abilities": [],
+        "range": "Melee",
+        "a": "7",
+        "ws": "2+",
+        "s": "16",
+        "ap": "-4",
+        "d": "D6+2"
+      },
+      {
+        "name": "Great axe of Khorne \u2013 sweep",
+        "abilities": [],
+        "range": "Melee",
+        "a": "14",
+        "ws": "2+",
+        "s": "10",
+        "ap": "-2",
+        "d": "2"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise D6 , Deep Strike"
+    ],
+    "faction": [
+      "Pact of Blood"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While a friendly BLOOD LEGIONS unit is within 6\" of this model, each time a model in that unit makes a melee attack, add 1 to the Hit roll .",
+        "name": "Daemon Lord of Khorne (Aura)"
+      },
+      {
+        "type": "rule",
+        "text": "At the end of the Fight phase , you can select one enemy unit within Engagement Range of this model and roll eight D6: for each 4+, that enemy unit suffers 1 mortal wound .",
+        "name": "Relentless Carnage"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Bloodthirster"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "hellfire breath; great axe of Khorne",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "305"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "MONSTER",
+    "CHARACTER",
+    "FLY",
+    "CHAOS",
+    "DAEMON",
+    "KHORNE",
+    "SUMMONED",
+    "BLOODTHIRSTER"
+  ],
+  "faction_keywords": [
+    "BLOOD LEGIONS"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s great axe of Khorne can be replaced with 1 axe of Khorne and one of the following:",
+          "items": [
+            "1 bloodflail",
+            "1 lash of Khorne"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise D6 , Deep Strike"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Pact of Blood"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While a friendly BLOOD LEGIONS unit is within 6\" of this model, each time a model in that unit makes a melee attack, add 1 to the Hit roll .",
+          "name": "Daemon Lord of Khorne (Aura)"
+        },
+        {
+          "type": "rule",
+          "text": "At the end of the Fight phase , you can select one enemy unit within Engagement Range of this model and roll eight D6: for each 4+, that enemy unit suffers 1 mortal wound .",
+          "name": "Relentless Carnage"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Bloodthirster"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "hellfire breath; great axe of Khorne",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "305"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DAMAGED: 1-6 WOUNDS REMAINING",
+      "entries": [
+        {
+          "type": "text",
+          "text": "While this model has 1-6 wounds remaining, each time this model makes an attack, subtract 1 from the Hit roll ."
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-6 WOUNDS REMAINING"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-6 WOUNDS REMAINING"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

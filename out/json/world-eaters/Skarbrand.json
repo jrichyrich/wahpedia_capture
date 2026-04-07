@@ -1,0 +1,200 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/world-eaters/Skarbrand",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/world-eaters/Skarbrand",
+    "canonicalSourceId": "wahapedia:3c0304ec0082e68af1def84cde3f164f52c4038c",
+    "faction_slug": "world-eaters",
+    "datasheet_slug": "Skarbrand",
+    "fetchedAt": "2026-04-07T01:08:18+00:00",
+    "contentHash": "ecca712ee3b9d16f07e1f5af516fb6aed4d002ce2474ce1bd2ce7f9b70deabb9",
+    "output_slug": "world-eaters"
+  },
+  "name": "Skarbrand",
+  "base_size": "\u2300100mm",
+  "characteristics": {
+    "M": "10\"",
+    "T": "11",
+    "Sv": "3+",
+    "W": "20",
+    "Ld": "6+",
+    "OC": "5",
+    "Invulnerable Save": "4+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Bellow of endless fury",
+        "abilities": [
+          "ignores cover",
+          "torrent"
+        ],
+        "range": "12\"",
+        "a": "2D6",
+        "bs": "N/A",
+        "s": "8",
+        "ap": "-1",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Slaughter and Carnage \u2013 strike",
+        "abilities": [],
+        "range": "Melee",
+        "a": "8",
+        "ws": "2+",
+        "s": "16",
+        "ap": "-4",
+        "d": "6"
+      },
+      {
+        "name": "Slaughter and Carnage \u2013 sweep",
+        "abilities": [],
+        "range": "Melee",
+        "a": "16",
+        "ws": "2+",
+        "s": "8",
+        "ap": "-2",
+        "d": "2"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise D6 , Deep Strike"
+    ],
+    "faction": [
+      "Pact of Blood"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While a friendly BLOOD LEGIONS unit is within 6\" of this model, add 1 to the Attacks characteristic of melee weapons equipped by models in that unit.",
+        "name": "Rage Embodied (Aura)"
+      },
+      {
+        "type": "rule",
+        "text": "This unit is eligible to declare a charge in a turn in which it Advanced .",
+        "name": "Murderlust"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Skarbrand \u2013 EPIC HERO"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "bellow of endless fury; Slaughter and Carnage.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "305"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "MONSTER",
+    "CHARACTER",
+    "EPIC HERO",
+    "CHAOS",
+    "KHORNE",
+    "DAEMON",
+    "SUMMONED",
+    "SKARBRAND"
+  ],
+  "faction_keywords": [
+    "BLOOD LEGIONS"
+  ],
+  "sections": [
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise D6 , Deep Strike"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Pact of Blood"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While a friendly BLOOD LEGIONS unit is within 6\" of this model, add 1 to the Attacks characteristic of melee weapons equipped by models in that unit.",
+          "name": "Rage Embodied (Aura)"
+        },
+        {
+          "type": "rule",
+          "text": "This unit is eligible to declare a charge in a turn in which it Advanced .",
+          "name": "Murderlust"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Skarbrand \u2013 EPIC HERO"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "bellow of endless fury; Slaughter and Carnage.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "305"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DAMAGED: 1-7 WOUNDS REMAINING",
+      "entries": [
+        {
+          "type": "text",
+          "text": "While this model has 1-7 wounds remaining, add 2 to the Attacks characteristic of this model\u2019s melee weapons."
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-7 WOUNDS REMAINING"
+    ],
+    "exportedSectionTitles": [
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-7 WOUNDS REMAINING"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

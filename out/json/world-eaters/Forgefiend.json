@@ -1,0 +1,217 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/world-eaters/Forgefiend",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/world-eaters/Forgefiend",
+    "canonicalSourceId": "wahapedia:464336b412699d34c9d25fae442d8d2e8ab60998",
+    "faction_slug": "world-eaters",
+    "datasheet_slug": "Forgefiend",
+    "fetchedAt": "2026-04-07T01:08:14+00:00",
+    "contentHash": "b56ec067bedf3adcb0e62f667b6b36df991d4f4e8e81216ff79a684e2478299e",
+    "output_slug": "world-eaters"
+  },
+  "name": "Forgefiend",
+  "base_size": "\u2300120 x 92mm",
+  "characteristics": {
+    "M": "10\"",
+    "T": "10",
+    "Sv": "3+",
+    "W": "12",
+    "Ld": "6+",
+    "OC": "3",
+    "Invulnerable Save": "5+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Ectoplasma cannon",
+        "abilities": [
+          "blast",
+          "rapid fire 1"
+        ],
+        "range": "36\"",
+        "a": "D3",
+        "bs": "4+",
+        "s": "10",
+        "ap": "-3",
+        "d": "3"
+      },
+      {
+        "name": "Hades autocannon",
+        "abilities": [
+          "rapid fire 4"
+        ],
+        "range": "36\"",
+        "a": "6",
+        "bs": "4+",
+        "s": "8",
+        "ap": "-1",
+        "d": "2"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Forgefiend claws",
+        "abilities": [],
+        "range": "Melee",
+        "a": "6",
+        "ws": "3+",
+        "s": "6",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Forgefiend jaws",
+        "abilities": [],
+        "range": "Melee",
+        "a": "8",
+        "ws": "3+",
+        "s": "7",
+        "ap": "-1",
+        "d": "2"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise D3"
+    ],
+    "faction": [
+      "Blessings of Khorne"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this model makes a ranged attack that targets the closest eligible target within 18\", you can re-roll the Hit roll .",
+        "name": "Furious Onslaught"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Forgefiend"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "2 Hades autocannons; 1 Forgefiend jaws.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "165"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "VEHICLE",
+    "WALKER",
+    "CHAOS",
+    "KHORNE",
+    "DAEMON",
+    "FORGEFIEND"
+  ],
+  "faction_keywords": [
+    "WORLD EATERS"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s 2 Hades autocannons can be replaced with 2 ectoplasma cannons.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "This model\u2019s Forgefiend jaws can be replaced with 1 ectoplasma cannon and 1 Forgefiend claws.",
+          "items": []
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise D3"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Blessings of Khorne"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model makes a ranged attack that targets the closest eligible target within 18\", you can re-roll the Hit roll .",
+          "name": "Furious Onslaught"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Forgefiend"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "2 Hades autocannons; 1 Forgefiend jaws.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "165"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DAMAGED: 1-4 WOUNDS REMAINING",
+      "entries": [
+        {
+          "type": "text",
+          "text": "While this model has 1-4 wounds remaining, each time this model makes an attack, subtract 1 from the Hit roll ."
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-4 WOUNDS REMAINING"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-4 WOUNDS REMAINING"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

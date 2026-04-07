@@ -1,0 +1,344 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/world-eaters/Helbrute",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/world-eaters/Helbrute",
+    "canonicalSourceId": "wahapedia:68db3fc8c381cc76240010cc1db3d16bb9b1a324",
+    "faction_slug": "world-eaters",
+    "datasheet_slug": "Helbrute",
+    "fetchedAt": "2026-04-07T01:08:14+00:00",
+    "contentHash": "01080e9bf955fc0709bc2bd68fde4fdf5d0036802a4ee90cbcd15a2644e13538",
+    "output_slug": "world-eaters"
+  },
+  "name": "Helbrute",
+  "base_size": "\u230060mm",
+  "characteristics": {
+    "M": "9\"",
+    "T": "9",
+    "Sv": "2+",
+    "W": "8",
+    "Ld": "6+",
+    "OC": "3"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Combi-bolter",
+        "abilities": [
+          "rapid fire 4"
+        ],
+        "range": "24\"",
+        "a": "2",
+        "bs": "4+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Heavy flamer",
+        "abilities": [
+          "ignores cover",
+          "torrent"
+        ],
+        "range": "12\"",
+        "a": "D6",
+        "bs": "N/A",
+        "s": "5",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Plasma cannon",
+        "abilities": [
+          "blast",
+          "hazardous",
+          "rapid fire D3"
+        ],
+        "range": "36\"",
+        "a": "D3",
+        "bs": "4+",
+        "s": "8",
+        "ap": "-3",
+        "d": "3"
+      },
+      {
+        "name": "Missile launcher \u2013 frag",
+        "abilities": [
+          "blast",
+          "rapid fire 3"
+        ],
+        "range": "48\"",
+        "a": "D6",
+        "bs": "4+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Missile launcher \u2013 krak",
+        "abilities": [
+          "rapid fire 1"
+        ],
+        "range": "48\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "9",
+        "ap": "-2",
+        "d": "D6"
+      },
+      {
+        "name": "Multi-melta",
+        "abilities": [
+          "melta 2",
+          "rapid fire 1"
+        ],
+        "range": "18\"",
+        "a": "2",
+        "bs": "4+",
+        "s": "9",
+        "ap": "-4",
+        "d": "D6"
+      },
+      {
+        "name": "Twin autocannon",
+        "abilities": [
+          "rapid fire 2",
+          "twin-linked"
+        ],
+        "range": "48\"",
+        "a": "2",
+        "bs": "4+",
+        "s": "9",
+        "ap": "-1",
+        "d": "3"
+      },
+      {
+        "name": "Twin heavy bolter",
+        "abilities": [
+          "rapid fire 2",
+          "sustained hits 1",
+          "twin-linked"
+        ],
+        "range": "36\"",
+        "a": "3",
+        "bs": "4+",
+        "s": "5",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Twin lascannon",
+        "abilities": [
+          "rapid fire 1",
+          "twin-linked"
+        ],
+        "range": "48\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "12",
+        "ap": "-3",
+        "d": "D6+1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Close combat weapon",
+        "abilities": [],
+        "range": "Melee",
+        "a": "6",
+        "ws": "3+",
+        "s": "6",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Helbrute fist",
+        "abilities": [],
+        "range": "Melee",
+        "a": "6",
+        "ws": "3+",
+        "s": "12",
+        "ap": "-2",
+        "d": "3"
+      },
+      {
+        "name": "Helbrute hammer",
+        "abilities": [],
+        "range": "Melee",
+        "a": "6",
+        "ws": "4+",
+        "s": "14",
+        "ap": "-3",
+        "d": "D6+1"
+      },
+      {
+        "name": "Power scourge",
+        "abilities": [],
+        "range": "Melee",
+        "a": "10",
+        "ws": "3+",
+        "s": "7",
+        "ap": "-1",
+        "d": "2"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise 1"
+    ],
+    "faction": [
+      "Blessings of Khorne"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "If this model is equipped with two melee weapons in addition to its close combat weapon, add 2 to the Attacks characteristic of those two weapons.",
+        "name": "Devoted to Destruction"
+      },
+      {
+        "type": "rule",
+        "text": "In your opponent\u2019s Shooting phase , and in the Fight phase , each time an enemy unit targets this model, after that unit has finished making its attacks, this model can either shoot or fight, but when resolving those attacks it can only target that enemy unit (and only if it is an eligible target).",
+        "name": "Frenzy"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Helbrute"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "missile launcher; multi-melta; close combat weapon.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "120"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "VEHICLE",
+    "WALKER",
+    "CHAOS",
+    "KHORNE",
+    "HELBRUTE"
+  ],
+  "faction_keywords": [
+    "WORLD EATERS"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s multi-melta can be replaced with one of the following:",
+          "items": [
+            "1 plasma cannon",
+            "1 twin autocannon",
+            "1 twin heavy bolter",
+            "1 twin lascannon",
+            "1 Helbrute fist"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "This model\u2019s missile launcher can be replaced with one of the following:",
+          "items": [
+            "1 Helbrute fist",
+            "1 Helbrute hammer",
+            "1 power scourge"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "For each Helbrute fist this model is equipped with, it can be equipped with one of the following:",
+          "items": [
+            "1 combi-bolter",
+            "1 heavy flamer"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise 1"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Blessings of Khorne"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "If this model is equipped with two melee weapons in addition to its close combat weapon, add 2 to the Attacks characteristic of those two weapons.",
+          "name": "Devoted to Destruction"
+        },
+        {
+          "type": "rule",
+          "text": "In your opponent\u2019s Shooting phase , and in the Fight phase , each time an enemy unit targets this model, after that unit has finished making its attacks, this model can either shoot or fight, but when resolving those attacks it can only target that enemy unit (and only if it is an eligible target).",
+          "name": "Frenzy"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Helbrute"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "missile launcher; multi-melta; close combat weapon.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "120"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

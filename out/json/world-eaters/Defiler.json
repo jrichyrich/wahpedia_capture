@@ -1,0 +1,363 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/world-eaters/Defiler",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/world-eaters/Defiler",
+    "canonicalSourceId": "wahapedia:e9dc0909aa13d52b919eb90645508a76764ea2ce",
+    "faction_slug": "world-eaters",
+    "datasheet_slug": "Defiler",
+    "fetchedAt": "2026-04-07T01:08:12+00:00",
+    "contentHash": "7f5a5cbfa50750f47d40d77eedc8db1bee0aa27052bffe7df29efa928de0b7ca",
+    "output_slug": "world-eaters"
+  },
+  "name": "Defiler",
+  "base_size": "\u2300160mm",
+  "characteristics": {
+    "M": "14\"",
+    "T": "11",
+    "Sv": "3+",
+    "W": "18",
+    "Ld": "6+",
+    "OC": "5",
+    "Invulnerable Save": "5+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Ectoplasma destructor",
+        "abilities": [
+          "blast",
+          "rapid fire 2"
+        ],
+        "range": "36\"",
+        "a": "D6",
+        "bs": "4+",
+        "s": "12",
+        "ap": "-3",
+        "d": "3"
+      },
+      {
+        "name": "Excruciator cannon",
+        "abilities": [
+          "rapid fire 3"
+        ],
+        "range": "36\"",
+        "a": "6",
+        "bs": "4+",
+        "s": "6",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Heavy baleflamer",
+        "abilities": [
+          "ignores cover",
+          "torrent"
+        ],
+        "range": "12\"",
+        "a": "D6+3",
+        "bs": "N/A",
+        "s": "7",
+        "ap": "-2",
+        "d": "2"
+      },
+      {
+        "name": "Hades battle cannon",
+        "abilities": [
+          "blast",
+          "rapid fire 3"
+        ],
+        "range": "48\"",
+        "a": "D6+3",
+        "bs": "4+",
+        "s": "10",
+        "ap": "-1",
+        "d": "3"
+      },
+      {
+        "name": "Hades lascannon",
+        "abilities": [
+          "rapid fire 1"
+        ],
+        "range": "48\"",
+        "a": "2",
+        "bs": "4+",
+        "s": "12",
+        "ap": "-3",
+        "d": "D6+1"
+      },
+      {
+        "name": "Heavy missile launcher \u2013 krak",
+        "abilities": [
+          "rapid fire 1"
+        ],
+        "range": "48\"",
+        "a": "2",
+        "bs": "4+",
+        "s": "10",
+        "ap": "-2",
+        "d": "D6+1"
+      },
+      {
+        "name": "Heavy missile launcher \u2013 frag",
+        "abilities": [
+          "blast",
+          "rapid fire 3"
+        ],
+        "range": "48\"",
+        "a": "2D6",
+        "bs": "4+",
+        "s": "5",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Heavy reaper autocannon",
+        "abilities": [
+          "devastating wounds",
+          "rapid fire 2",
+          "sustained hits 1"
+        ],
+        "range": "48\"",
+        "a": "4",
+        "bs": "4+",
+        "s": "9",
+        "ap": "-1",
+        "d": "3"
+      },
+      {
+        "name": "Magma cutters",
+        "abilities": [
+          "melta 2",
+          "rapid fire 1"
+        ],
+        "range": "12\"",
+        "a": "2",
+        "bs": "4+",
+        "s": "9",
+        "ap": "-4",
+        "d": "D6"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Electroscourge",
+        "abilities": [
+          "extra attacks",
+          "sustained hits 2"
+        ],
+        "range": "Melee",
+        "a": "7",
+        "ws": "3+",
+        "s": "12",
+        "ap": "-2",
+        "d": "2"
+      },
+      {
+        "name": "Shearing claws \u2013 strike",
+        "abilities": [],
+        "range": "Melee",
+        "a": "6",
+        "ws": "3+",
+        "s": "16",
+        "ap": "-3",
+        "d": "D6+1"
+      },
+      {
+        "name": "Shearing claws \u2013 sweep",
+        "abilities": [],
+        "range": "Melee",
+        "a": "12",
+        "ws": "3+",
+        "s": "6",
+        "ap": "-2",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise D6"
+    ],
+    "faction": [
+      "Blessings of Khorne"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this unit makes a Normal , Advance or Fall Back move , it can move through models (excluding TITANIC models) and terrain features . When doing so, it can move within Engagement Range of enemy models, but cannot end that move within Engagement Range of them, and any Desperate Escape test is automatically passed.",
+        "name": "Scuttling Walker"
+      },
+      {
+        "type": "rule",
+        "text": "At the end of your opponent\u2019s Movement phase , you can select one enemy unit that was set up on the battlefield within 12\" of this model; this model can then either:",
+        "name": "Unleash Wrath"
+      }
+    ],
+    "other": [
+      {
+        "type": "list",
+        "items": [
+          "Shoot at that unit, but only if it is an eligible target.",
+          "Declare a charge against that unit (note that even if this charge is successful, this model does not receive any Charge bonus this turn)."
+        ]
+      }
+    ]
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Defiler"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "1 Hades battle cannon; 2 excruciator cannons; 1 heavy missile launcher; 1 heavy baleflamer; 1 shearing claws.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "250"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "VEHICLE",
+    "WALKER",
+    "CHAOS",
+    "KHORNE",
+    "DAEMON",
+    "DEFILER"
+  ],
+  "faction_keywords": [
+    "WORLD EATERS"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s Hades battle cannon can be replaced with 1 ectoplasma destructor.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "This model\u2019s excruciator cannons can be replaced with 2 magma cutters.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "This model\u2019s heavy baleflamer can be replaced with one of the following:",
+          "items": [
+            "1 Hades lascannon",
+            "1 heavy reaper autocannon",
+            "1 electroscourge (a model cannot be equipped with more than one electroscourge)"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "This model\u2019s heavy missile launcher can be replaced with one of the following:",
+          "items": [
+            "1 Hades lascannon",
+            "1 heavy reaper autocannon",
+            "1 electroscourge (a model cannot be equipped with more than one electroscourge)"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise D6"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Blessings of Khorne"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this unit makes a Normal , Advance or Fall Back move , it can move through models (excluding TITANIC models) and terrain features . When doing so, it can move within Engagement Range of enemy models, but cannot end that move within Engagement Range of them, and any Desperate Escape test is automatically passed.",
+          "name": "Scuttling Walker"
+        },
+        {
+          "type": "rule",
+          "text": "At the end of your opponent\u2019s Movement phase , you can select one enemy unit that was set up on the battlefield within 12\" of this model; this model can then either:",
+          "name": "Unleash Wrath"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Shoot at that unit, but only if it is an eligible target.",
+            "Declare a charge against that unit (note that even if this charge is successful, this model does not receive any Charge bonus this turn)."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Defiler"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "1 Hades battle cannon; 2 excruciator cannons; 1 heavy missile launcher; 1 heavy baleflamer; 1 shearing claws.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "250"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DAMAGED: 1-6 WOUNDS REMAINING",
+      "entries": [
+        {
+          "type": "text",
+          "text": "While this model has 1-6 wounds remaining, each time this model makes an attack, subtract 1 from the Hit roll ."
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-6 WOUNDS REMAINING"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-6 WOUNDS REMAINING"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

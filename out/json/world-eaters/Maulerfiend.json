@@ -1,0 +1,212 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/world-eaters/Maulerfiend",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/world-eaters/Maulerfiend",
+    "canonicalSourceId": "wahapedia:28638751f939e7746514c09f18ae86932dbd12c6",
+    "faction_slug": "world-eaters",
+    "datasheet_slug": "Maulerfiend",
+    "fetchedAt": "2026-04-07T01:08:17+00:00",
+    "contentHash": "342dc7f40e629937cbe7677c12a2ef20fa3e5a69dcde287f2c5d461389f652ad",
+    "output_slug": "world-eaters"
+  },
+  "name": "Maulerfiend",
+  "base_size": "\u2300120 x 92mm",
+  "characteristics": {
+    "M": "12\"",
+    "T": "10",
+    "Sv": "3+",
+    "W": "12",
+    "Ld": "6+",
+    "OC": "3",
+    "Invulnerable Save": "5+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Magma cutter",
+        "abilities": [
+          "melta 2",
+          "rapid fire 1"
+        ],
+        "range": "6\"",
+        "a": "2",
+        "bs": "4+",
+        "s": "9",
+        "ap": "-4",
+        "d": "D6"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Lasher tendrils",
+        "abilities": [
+          "extra attacks"
+        ],
+        "range": "Melee",
+        "a": "6",
+        "ws": "3+",
+        "s": "7",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Maulerfiend fists",
+        "abilities": [],
+        "range": "Melee",
+        "a": "8",
+        "ws": "3+",
+        "s": "14",
+        "ap": "-2",
+        "d": "D6+1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise D3"
+    ],
+    "faction": [
+      "Blessings of Khorne"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this model declares a charge that targets one or more units below Starting Strength , add 1 to the Charge roll . If one or more of the targets of that charge are Below Half-strength , add 2 to the Charge roll instead.",
+        "name": "The Scent of Blood"
+      },
+      {
+        "type": "rule",
+        "text": "Each time this model makes a melee attack that targets an enemy unit that is below its Starting Strength , add 1 to the Hit roll and, if that attack targets an enemy unit that is Below Half-strength , add 1 to the Wound roll as well.",
+        "name": "Savage Exaltation"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Maulerfiend"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "lasher tendrils; Maulerfiend fists.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "150"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "VEHICLE",
+    "WALKER",
+    "CHAOS",
+    "KHORNE",
+    "DAEMON",
+    "MAULERFIEND"
+  ],
+  "faction_keywords": [
+    "WORLD EATERS"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s lasher tendrils can be replaced with 2 magma cutters.",
+          "items": []
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise D3"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Blessings of Khorne"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model declares a charge that targets one or more units below Starting Strength , add 1 to the Charge roll . If one or more of the targets of that charge are Below Half-strength , add 2 to the Charge roll instead.",
+          "name": "The Scent of Blood"
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model makes a melee attack that targets an enemy unit that is below its Starting Strength , add 1 to the Hit roll and, if that attack targets an enemy unit that is Below Half-strength , add 1 to the Wound roll as well.",
+          "name": "Savage Exaltation"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Maulerfiend"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "lasher tendrils; Maulerfiend fists.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "150"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DAMAGED: 1-4 WOUNDS REMAINING",
+      "entries": [
+        {
+          "type": "text",
+          "text": "While this model has 1-4 wounds remaining, each time this model makes an attack, subtract 1 from the Hit roll ."
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-4 WOUNDS REMAINING"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-4 WOUNDS REMAINING"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

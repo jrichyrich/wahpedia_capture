@@ -1,0 +1,206 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/world-eaters/Heldrake",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/world-eaters/Heldrake",
+    "canonicalSourceId": "wahapedia:3ecf76688dea951d80c7ed244f9888586afb7c0f",
+    "faction_slug": "world-eaters",
+    "datasheet_slug": "Heldrake",
+    "fetchedAt": "2026-04-07T01:08:14+00:00",
+    "contentHash": "9b43b5c08c40312ccebc25a01a0a77935a91b1966087cdcd46d45acd309433a7",
+    "output_slug": "world-eaters"
+  },
+  "name": "Heldrake",
+  "base_size": "\u2300120 x 92mm flying base",
+  "characteristics": {
+    "M": "20+\"",
+    "T": "9",
+    "Sv": "3+",
+    "W": "12",
+    "Ld": "6+",
+    "OC": "0",
+    "Invulnerable Save": "5+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Baleflamer",
+        "abilities": [
+          "ignores cover",
+          "torrent"
+        ],
+        "range": "12\"",
+        "a": "D6+3",
+        "bs": "N/A",
+        "s": "6",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Hades autocannon",
+        "abilities": [
+          "rapid fire 4"
+        ],
+        "range": "36\"",
+        "a": "6",
+        "bs": "4+",
+        "s": "8",
+        "ap": "-1",
+        "d": "2"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Heldrake claws",
+        "abilities": [
+          "anti-fly 2+",
+          "devastating wounds"
+        ],
+        "range": "Melee",
+        "a": "6",
+        "ws": "3+",
+        "s": "7",
+        "ap": "-1",
+        "d": "2"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise D3 , Hover"
+    ],
+    "faction": [
+      "Blessings of Khorne"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this model makes an attack that targets a unit that can FLY , add 1 to the Hit roll .",
+        "name": "Airborne Predator"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Heldrake"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "Hades autocannon; Heldrake claws.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "200"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "VEHICLE",
+    "FLY",
+    "AIRCRAFT",
+    "CHAOS",
+    "KHORNE",
+    "DAEMON",
+    "HELDRAKE"
+  ],
+  "faction_keywords": [
+    "WORLD EATERS"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s Hades autocannon can be replaced with 1 baleflamer.",
+          "items": []
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise D3 , Hover"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Blessings of Khorne"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model makes an attack that targets a unit that can FLY , add 1 to the Hit roll .",
+          "name": "Airborne Predator"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Heldrake"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "Hades autocannon; Heldrake claws.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "200"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DAMAGED: 1-4 WOUNDS REMAINING",
+      "entries": [
+        {
+          "type": "text",
+          "text": "While this model has 1-4 wounds remaining, each time this model makes an attack, subtract 1 from the Hit roll ."
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-4 WOUNDS REMAINING"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-4 WOUNDS REMAINING"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

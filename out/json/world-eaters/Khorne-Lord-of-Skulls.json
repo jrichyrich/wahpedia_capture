@@ -1,0 +1,270 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/world-eaters/Khorne-Lord-of-Skulls",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/world-eaters/Khorne-Lord-of-Skulls",
+    "canonicalSourceId": "wahapedia:746aa7995f2b2e79fcde3ebaa086301d967af830",
+    "faction_slug": "world-eaters",
+    "datasheet_slug": "Khorne-Lord-of-Skulls",
+    "fetchedAt": "2026-04-07T01:08:15+00:00",
+    "contentHash": "f9ca6fcd335a2e7bf246e2a780b5fcfb939af5b0fce8f9f800ef98ffbfaa88f7",
+    "output_slug": "world-eaters"
+  },
+  "name": "Khorne Lord of Skulls",
+  "base_size": "\u2300Use model",
+  "characteristics": {
+    "M": "12\"",
+    "T": "13",
+    "Sv": "3+",
+    "W": "24",
+    "Ld": "6+",
+    "OC": "8",
+    "Invulnerable Save": "5+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Daemongore cannon",
+        "abilities": [
+          "blast",
+          "rapid fire 3"
+        ],
+        "range": "18\"",
+        "a": "D6",
+        "bs": "4+",
+        "s": "14",
+        "ap": "-4",
+        "d": "D6+2"
+      },
+      {
+        "name": "Gorestorm cannon",
+        "abilities": [
+          "blast",
+          "rapid fire 3"
+        ],
+        "range": "24\"",
+        "a": "D6+3",
+        "bs": "4+",
+        "s": "10",
+        "ap": "-2",
+        "d": "3"
+      },
+      {
+        "name": "Hades gatling cannon",
+        "abilities": [
+          "rapid fire 6",
+          "sustained hits 1"
+        ],
+        "range": "48\"",
+        "a": "12",
+        "bs": "4+",
+        "s": "8",
+        "ap": "-2",
+        "d": "2"
+      },
+      {
+        "name": "Ichor cannon",
+        "abilities": [
+          "blast",
+          "rapid fire 4"
+        ],
+        "range": "48\"",
+        "a": "2D6",
+        "bs": "4+",
+        "s": "7",
+        "ap": "-2",
+        "d": "2"
+      },
+      {
+        "name": "Skullhurler",
+        "abilities": [
+          "rapid fire 3"
+        ],
+        "range": "60\"",
+        "a": "2D6",
+        "bs": "4+",
+        "s": "14",
+        "ap": "-3",
+        "d": "3"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Great cleaver of Khorne \u2013 strike",
+        "abilities": [],
+        "range": "Melee",
+        "a": "6",
+        "ws": "3+",
+        "s": "16",
+        "ap": "-4",
+        "d": "8"
+      },
+      {
+        "name": "Great cleaver of Khorne \u2013 sweep",
+        "abilities": [],
+        "range": "Melee",
+        "a": "18",
+        "ws": "3+",
+        "s": "8",
+        "ap": "-2",
+        "d": "2"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise D6+2"
+    ],
+    "faction": [
+      "Blessings of Khorne"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "At the start of the battle round , if this model is on the battlefield, when you make a Blessings of Khorne roll , roll one additional D6.",
+        "name": "Idol of Blessed Blood"
+      },
+      {
+        "type": "rule",
+        "text": "Each time this model makes a Normal , Advance or Fall Back move , it can move through models (excluding TITANIC models) and sections of terrain features that are 4\" or less in height. When doing so it can move within Engagement Range of enemy models, but cannot end that move within Engagement Range of them. It can also move through sections of terrain features that are more than 4\" in height, but if it does, after it has moved, roll one D6: on a roll of 1, this model is Battle-shocked .",
+        "name": "Super-heavy War Engine"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Khorne Lord of Skulls"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "gorestorm cannon; Hades gatling cannon; great cleaver of Khorne.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "505"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "VEHICLE",
+    "TITANIC",
+    "TOWERING",
+    "CHAOS",
+    "KHORNE",
+    "DAEMON",
+    "LORD OF SKULLS"
+  ],
+  "faction_keywords": [
+    "WORLD EATERS"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s gorestorm cannon can be replaced with one of the following:",
+          "items": [
+            "1 daemongore cannon",
+            "1 ichor cannon"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "This model\u2019s Hades gatling cannon can be replaced with 1 skullhurler.",
+          "items": []
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise D6+2"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Blessings of Khorne"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "At the start of the battle round , if this model is on the battlefield, when you make a Blessings of Khorne roll , roll one additional D6.",
+          "name": "Idol of Blessed Blood"
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model makes a Normal , Advance or Fall Back move , it can move through models (excluding TITANIC models) and sections of terrain features that are 4\" or less in height. When doing so it can move within Engagement Range of enemy models, but cannot end that move within Engagement Range of them. It can also move through sections of terrain features that are more than 4\" in height, but if it does, after it has moved, roll one D6: on a roll of 1, this model is Battle-shocked .",
+          "name": "Super-heavy War Engine"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Khorne Lord of Skulls"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "gorestorm cannon; Hades gatling cannon; great cleaver of Khorne.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "505"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DAMAGED: 1-8 WOUNDS REMAINING",
+      "entries": [
+        {
+          "type": "text",
+          "text": "While this model has 1-8 wounds remaining, subtract 4 from this model\u2019s Objective Control characteristic and each time this model makes an attack, subtract 1 from the Hit roll ."
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-8 WOUNDS REMAINING"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-8 WOUNDS REMAINING"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

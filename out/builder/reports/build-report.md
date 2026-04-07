@@ -1,18 +1,18 @@
 # Builder Catalog Build Report
 
-- Generated at: 2026-04-02T16:00:54+00:00
+- Generated at: 2026-04-07T01:08:38+00:00
 - Source root: `/Users/jasricha/Documents/Github_Personal/wahpedia_capture/out/json`
-- Factions imported: 11
-- Total units: 1331
+- Factions imported: 12
+- Total units: 1361
 - Units with missing stats: 0
 - Manual selection units: 0
 - Units with manual wargear: 0
 - Units with render issues: 0
 - Factions with rules warnings: 0
-- Ready units: 1253
+- Ready units: 1283
 - Partial-support units: 78
 - Configured-only preview units: 78
-- Source cards copied: 1253
+- Source cards copied: 1283
 - Source cards missing: 78
 
 ## Factions
@@ -181,3 +181,18 @@
 - Configured-only preview units: 78
 - Source cards copied: 92
 - Source cards missing: 78
+
+### World Eaters
+
+- Catalog: `catalogs/world-eaters.json`
+- Units: 30
+- Missing stats: 0
+- Manual selection units: 0
+- Manual wargear units: 0
+- Render issue units: 0
+- Rules warnings: 0
+- Ready units: 30
+- Partial-support units: 0
+- Configured-only preview units: 0
+- Source cards copied: 30
+- Source cards missing: 0
