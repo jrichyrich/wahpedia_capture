@@ -215,7 +215,7 @@ Saved rosters only store roster metadata plus unit/config references; they do no
 
 The generated builder report now tracks both end-user support coverage and parser warning buckets. The current generated manifest reports:
 
-- `1283` ready units
+- `1287` ready units
 - `78` partial units
 - `78` configured-only preview units because a source datasheet image is missing
 - `0` units with missing exported stats
