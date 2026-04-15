@@ -230,6 +230,8 @@ The generated builder report now tracks both end-user support coverage and parse
 
 Missing source images are treated as preview-quality gaps rather than roster-blocking failures.
 
+Officio Assassinorum is represented as a 4-unit subset in the builder; its detachment and faction rules are exported separately under `imperial-agents`.
+
 Run the builder-focused tests locally with:
 
 ```bash
