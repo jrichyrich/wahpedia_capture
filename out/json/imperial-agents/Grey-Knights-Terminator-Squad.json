@@ -1,0 +1,286 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/imperial-agents/Grey-Knights-Terminator-Squad",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/imperial-agents/Grey-Knights-Terminator-Squad",
+    "canonicalSourceId": "wahapedia:f3347db67247cfeb30fabe887a92519a1a99f3b2",
+    "faction_slug": "imperial-agents",
+    "datasheet_slug": "Grey-Knights-Terminator-Squad",
+    "fetchedAt": "2026-04-15T16:23:36+00:00",
+    "contentHash": "8d510e552d02611cea662058f24c580191af5b6bb9b12b241e561f12ac25bfb1",
+    "output_slug": "imperial-agents"
+  },
+  "name": "Grey Knights Terminator Squad",
+  "base_size": "\u230040mm",
+  "characteristics": {
+    "M": "5\"",
+    "T": "5",
+    "Sv": "2+",
+    "W": "3",
+    "Ld": "6+",
+    "OC": "2",
+    "Invulnerable Save": "4+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Incinerator",
+        "abilities": [
+          "ignores cover",
+          "torrent"
+        ],
+        "range": "12\"",
+        "a": "D6",
+        "bs": "N/A",
+        "s": "6",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Psilencer",
+        "abilities": [
+          "psychic",
+          "sustained hits 1"
+        ],
+        "range": "24\"",
+        "a": "6",
+        "bs": "3+",
+        "s": "5",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Psycannon",
+        "abilities": [
+          "psychic"
+        ],
+        "range": "24\"",
+        "a": "3",
+        "bs": "3+",
+        "s": "8",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Storm bolter",
+        "abilities": [
+          "rapid fire 2"
+        ],
+        "range": "24\"",
+        "a": "2",
+        "bs": "3+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Nemesis force weapon",
+        "abilities": [
+          "psychic"
+        ],
+        "range": "Melee",
+        "a": "4",
+        "ws": "3+",
+        "s": "6",
+        "ap": "-2",
+        "d": "2"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deep Strike"
+    ],
+    "faction": [
+      "Assigned Agents"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time a model in this unit makes a Charge move , until the end of the turn, melee weapons equipped by models in this unit have the [LETHAL HITS] ability.",
+        "name": "Hammerhand (Psychic)"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Terminator Justicar"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "4 Grey Knights Terminators"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "storm bolter; Nemesis force weapon.",
+      "label": "Every model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "5 models ( AGENTS OF THE IMPERIUM Detachment)",
+          "points": "190"
+        },
+        {
+          "label": "5 models (Assigned Agent)",
+          "points": "210"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "PSYKER",
+    "TERMINATOR",
+    "GRENADES",
+    "IMPERIUM",
+    "ORDO MALLEUS",
+    "REQUISITIONED",
+    "GREY KNIGHTS TERMINATOR SQUAD"
+  ],
+  "faction_keywords": [
+    "AGENTS OF THE IMPERIUM"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "For every 5 models in this unit, 1 Grey Knights Terminator's storm bolter can be replaced with one of the following:",
+          "items": [
+            "1 incinerator",
+            "1 psilencer",
+            "1 psycannon"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "1 Grey Knights Terminator equipped with a storm bolter can be equipped with 1 Ancient\u2019s banner.*",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "1 Grey Knights Terminator can have its storm bolter replaced with 1 narthecium.*",
+          "items": []
+        },
+        {
+          "type": "text",
+          "text": "* You cannot select both of these options for the same model."
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deep Strike"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Assigned Agents"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time a model in this unit makes a Charge move , until the end of the turn, melee weapons equipped by models in this unit have the [LETHAL HITS] ability.",
+          "name": "Hammerhand (Psychic)"
+        }
+      ]
+    },
+    {
+      "title": "WARGEAR ABILITIES",
+      "entries": [
+        {
+          "type": "statement",
+          "text": "Add 1 to the Objective Control characteristic of models in the bearer\u2019s unit.",
+          "label": "Ancient\u2019s Banner"
+        },
+        {
+          "type": "statement",
+          "text": "In your Command phase , you can return 1 destroyed model (excluding CHARACTERS ) to the bearer\u2019s unit.",
+          "label": "Narthecium"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Terminator Justicar"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "4 Grey Knights Terminators"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "storm bolter; Nemesis force weapon.",
+          "label": "Every model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "5 models ( AGENTS OF THE IMPERIUM Detachment)",
+              "points": "190"
+            },
+            {
+              "label": "5 models (Assigned Agent)",
+              "points": "210"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Rites of Teleportation",
+      "entries": [
+        {
+          "type": "text",
+          "text": "If one or more INQUISITOR units are attached to this unit during the Declare Battle formations step, models in those units have the Deep Strike ability."
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "Rites of Teleportation"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "Rites of Teleportation"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

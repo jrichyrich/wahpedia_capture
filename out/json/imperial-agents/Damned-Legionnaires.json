@@ -1,0 +1,353 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/imperial-agents/Damned-Legionnaires",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/imperial-agents/Damned-Legionnaires",
+    "canonicalSourceId": "wahapedia:3e4a7c9a6f13082880ca58a7d4d8ce4ab90ce2a3",
+    "faction_slug": "imperial-agents",
+    "datasheet_slug": "Damned-Legionnaires",
+    "fetchedAt": "2026-04-15T16:24:03+00:00",
+    "contentHash": "74281a3d9efff3efb36cd91b8def3dc8ce38cf0695d43667a7fa6801ca22184c",
+    "output_slug": "imperial-agents"
+  },
+  "name": "Damned Legionnaires",
+  "base_size": "\u230025mm",
+  "characteristics": {
+    "M": "6\"",
+    "T": "4",
+    "Sv": "3+",
+    "W": "2",
+    "Ld": "6+",
+    "OC": "1",
+    "Invulnerable Save": "4+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Bolt pistol",
+        "abilities": [
+          "ignores cover",
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Boltgun",
+        "abilities": [
+          "ignores cover"
+        ],
+        "range": "24\"",
+        "a": "2",
+        "bs": "3+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Flamer",
+        "abilities": [
+          "ignores cover",
+          "torrent"
+        ],
+        "range": "12\"",
+        "a": "D6",
+        "bs": "N/A",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Heavy flamer",
+        "abilities": [
+          "ignores cover",
+          "torrent"
+        ],
+        "range": "12\"",
+        "a": "D6",
+        "bs": "N/A",
+        "s": "5",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Meltagun",
+        "abilities": [
+          "melta 2"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "9",
+        "ap": "-4",
+        "d": "D6"
+      },
+      {
+        "name": "Multi-melta",
+        "abilities": [
+          "heavy",
+          "melta 2"
+        ],
+        "range": "18\"",
+        "a": "2",
+        "bs": "4+",
+        "s": "9",
+        "ap": "-4",
+        "d": "D6"
+      },
+      {
+        "name": "Plasma gun \u2013 standard",
+        "abilities": [
+          "rapid fire 1"
+        ],
+        "range": "24\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "7",
+        "ap": "-2",
+        "d": "1"
+      },
+      {
+        "name": "Plasma gun \u2013 supercharge",
+        "abilities": [
+          "hazardous",
+          "rapid fire 1"
+        ],
+        "range": "24\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "8",
+        "ap": "-3",
+        "d": "2"
+      },
+      {
+        "name": "Plasma pistol \u2013 standard",
+        "abilities": [
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "7",
+        "ap": "-2",
+        "d": "1"
+      },
+      {
+        "name": "Plasma pistol \u2013 supercharge",
+        "abilities": [
+          "hazardous",
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "8",
+        "ap": "-3",
+        "d": "2"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Astartes chainsword",
+        "abilities": [],
+        "range": "Melee",
+        "a": "5",
+        "ws": "3+",
+        "s": "4",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Close combat weapon",
+        "abilities": [],
+        "range": "Melee",
+        "a": "3",
+        "ws": "3+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Power weapon",
+        "abilities": [],
+        "range": "Melee",
+        "a": "3",
+        "ws": "3+",
+        "s": "5",
+        "ap": "-2",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deep Strike"
+    ],
+    "faction": [
+      "Assigned Agents"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "In your Shooting phase , after this unit has shot, select one enemy unit hit by one or more of those attacks. That enemy unit must take a Battle-shock test , subtracting 1 from the result when doing so.",
+        "name": "Grim Spectres"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Legionnaire Sergeant"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "4-9 Legionnaires"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "boltgun; close combat weapon.",
+      "label": "Every model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "5 models",
+          "points": "90"
+        },
+        {
+          "label": "10 models",
+          "points": "180"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "GRENADES",
+    "IMPERIUM",
+    "RETINUE",
+    "DAMNED LEGIONNAIRES"
+  ],
+  "faction_keywords": [
+    "AGENTS OF THE IMPERIUM"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "The Legionnaire Sergeant\u2019s boltgun can be replaced with one of the following:",
+          "items": [
+            "1 bolt pistol and 1 power weapon",
+            "1 plasma pistol and 1 power weapon",
+            "1 bolt pistol and 1 Astartes chainsword",
+            "1 plasma pistol and 1 Astartes chainsword"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "One Legionnaire\u2019s boltgun can be replaced with one of the following:",
+          "items": [
+            "1 heavy flamer",
+            "1 multi-melta"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "One Legionnaire\u2019s boltgun can be replaced with one of the following:",
+          "items": [
+            "1 flamer",
+            "1 meltagun",
+            "1 plasma gun"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deep Strike"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Assigned Agents"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "In your Shooting phase , after this unit has shot, select one enemy unit hit by one or more of those attacks. That enemy unit must take a Battle-shock test , subtracting 1 from the result when doing so.",
+          "name": "Grim Spectres"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Legionnaire Sergeant"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "4-9 Legionnaires"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "boltgun; close combat weapon.",
+          "label": "Every model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "5 models",
+              "points": "90"
+            },
+            {
+              "label": "10 models",
+              "points": "180"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

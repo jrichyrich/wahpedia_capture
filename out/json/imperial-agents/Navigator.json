@@ -1,0 +1,204 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/imperial-agents/Navigator",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/imperial-agents/Navigator",
+    "canonicalSourceId": "wahapedia:eff51d61c74cfa5efdcb39210c716431b8acac59",
+    "faction_slug": "imperial-agents",
+    "datasheet_slug": "Navigator",
+    "fetchedAt": "2026-04-15T16:22:07+00:00",
+    "contentHash": "89eb5bdca09a33e431a382af579789ca93a568875d39e8ec6758cd7bc6c391e5",
+    "output_slug": "imperial-agents"
+  },
+  "name": "Navigator",
+  "base_size": "\u230032mm",
+  "characteristics": {
+    "M": "6\"",
+    "T": "3",
+    "Sv": "5+",
+    "W": "3",
+    "Ld": "7+",
+    "OC": "1",
+    "Invulnerable Save": "4+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Laspistol",
+        "abilities": [
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "3",
+        "ap": "0",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Force-orb cane",
+        "abilities": [
+          "psychic"
+        ],
+        "range": "Melee",
+        "a": "3",
+        "ws": "4+",
+        "s": "6",
+        "ap": "-1",
+        "d": "D3"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Leader"
+    ],
+    "faction": [
+      "Assigned Agents"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Enemy units that are set up on the battlefield as Reinforcements cannot be set up within 12\" of this model.",
+        "name": "Gaze into the Empyrean (Psychic)"
+      },
+      {
+        "type": "rule",
+        "text": "At the start of your Shooting phase , select one enemy unit within 12\" of and visible to this model. That unit must take a Battle-shock test , subtracting 2 from the result if it is an INFANTRY unit. If the test is failed, that enemy unit suffers 3 mortal wounds .",
+        "name": "Third Eye (Psychic)"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Navigator"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "laspistol; force-orb cane.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model ( AGENTS OF THE IMPERIUM Detachment)",
+          "points": "60"
+        },
+        {
+          "label": "1 model (Assigned Agent)",
+          "points": "75"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "CHARACTER",
+    "PSYKER",
+    "IMPERIUM",
+    "VOIDFARERS",
+    "NAVIGATOR"
+  ],
+  "faction_keywords": [
+    "AGENTS OF THE IMPERIUM"
+  ],
+  "sections": [
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Leader"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Assigned Agents"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Enemy units that are set up on the battlefield as Reinforcements cannot be set up within 12\" of this model.",
+          "name": "Gaze into the Empyrean (Psychic)"
+        },
+        {
+          "type": "rule",
+          "text": "At the start of your Shooting phase , select one enemy unit within 12\" of and visible to this model. That unit must take a Battle-shock test , subtracting 2 from the result if it is an INFANTRY unit. If the test is failed, that enemy unit suffers 3 mortal wounds .",
+          "name": "Third Eye (Psychic)"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Navigator"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "laspistol; force-orb cane.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model ( AGENTS OF THE IMPERIUM Detachment)",
+              "points": "60"
+            },
+            {
+              "label": "1 model (Assigned Agent)",
+              "points": "75"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "LEADER",
+      "entries": [
+        {
+          "type": "text",
+          "text": "This model can be attached to the following units:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Imperial Navy Breachers",
+            "Voidsmen-at-arms"
+          ]
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "exportedSectionTitles": [
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

@@ -1,0 +1,409 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/imperial-agents/Imperial-Navy-Breachers",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/imperial-agents/Imperial-Navy-Breachers",
+    "canonicalSourceId": "wahapedia:befc07e21f061994284363c29d371afc64fa6a54",
+    "faction_slug": "imperial-agents",
+    "datasheet_slug": "Imperial-Navy-Breachers",
+    "fetchedAt": "2026-04-15T16:23:06+00:00",
+    "contentHash": "85f034dfac37119debb37471da384ffbde26906ec62f4bfb887b7a2ac622b242",
+    "output_slug": "imperial-agents"
+  },
+  "name": "Imperial Navy Breachers",
+  "base_size": "\u230025mm Navis Armsman 28mm if armed with meltagun or plasmagun",
+  "characteristics": {
+    "M": "6\"",
+    "T": "3",
+    "Sv": "4+",
+    "W": "1",
+    "Ld": "7+",
+    "OC": "2"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Autopistol",
+        "abilities": [
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "3",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Bolt pistol",
+        "abilities": [
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Demolition charge",
+        "abilities": [
+          "assault",
+          "blast",
+          "hazardous"
+        ],
+        "range": "6\"",
+        "a": "D6",
+        "bs": "5+",
+        "s": "9",
+        "ap": "-2",
+        "d": "2"
+      },
+      {
+        "name": "Meltagun",
+        "abilities": [
+          "melta 2"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "9",
+        "ap": "-4",
+        "d": "D6"
+      },
+      {
+        "name": "Navis heavy shotgun",
+        "abilities": [
+          "assault"
+        ],
+        "range": "12\"",
+        "a": "4",
+        "bs": "4+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Navis las-volley",
+        "abilities": [],
+        "range": "18\"",
+        "a": "4",
+        "bs": "4+",
+        "s": "6",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Navis shotgun",
+        "abilities": [
+          "assault"
+        ],
+        "range": "12\"",
+        "a": "2",
+        "bs": "4+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Plasma gun \u2013 standard",
+        "abilities": [
+          "rapid fire 1"
+        ],
+        "range": "24\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "7",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Plasma gun \u2013 supercharge",
+        "abilities": [
+          "hazardous",
+          "rapid fire 1"
+        ],
+        "range": "24\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "8",
+        "ap": "-2",
+        "d": "2"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Chainfist",
+        "abilities": [
+          "anti-vehicle 3+"
+        ],
+        "range": "Melee",
+        "a": "1",
+        "ws": "5+",
+        "s": "6",
+        "ap": "-2",
+        "d": "2"
+      },
+      {
+        "name": "Chainsword",
+        "abilities": [],
+        "range": "Melee",
+        "a": "3",
+        "ws": "4+",
+        "s": "3",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Close combat weapon",
+        "abilities": [],
+        "range": "Melee",
+        "a": "1",
+        "ws": "4+",
+        "s": "3",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Power weapon",
+        "abilities": [],
+        "range": "Melee",
+        "a": "2",
+        "ws": "4+",
+        "s": "4",
+        "ap": "-2",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [],
+    "faction": [
+      "Assigned Agents"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time a model in this unit makes an attack, re-roll a Wound roll of 1. If the target is within range of an objective marker , you can re-roll the Wound roll instead.",
+        "name": "Breaching Team"
+      },
+      {
+        "type": "rule",
+        "text": "Once per battle, when you select this unit as the target of the Grenade Stratagem, you can target one enemy unit visible to and within 18\" of this unit that is not within Engagement Range of any units from your army, instead of one within 8\".",
+        "name": "Gheistskull"
+      },
+      {
+        "type": "rule",
+        "text": "Once per battle, when this unit is selected to shoot, until the end of the phase, ranged weapons equipped by models in this unit gain the [IGNORES COVER] ability.",
+        "name": "CAT Unit"
+      },
+      {
+        "type": "rule",
+        "text": "Place one Gheistskull and one CAT Unit token next to this unit, removing each token once the relevant ability has been used.",
+        "name": "Designer\u2019s Note"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Navis Sergeant-at-Arms"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "9 Navis Armsmen"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "Navis shotgun; close combat weapon.",
+      "label": "The Navis Sergeant-at-Arms is equipped with"
+    },
+    {
+      "type": "statement",
+      "text": "Navis las-volley; close combat weapon.",
+      "label": "One Navis Armsman is equipped with"
+    },
+    {
+      "type": "statement",
+      "text": "Navis heavy shotgun; close combat weapon; endurant shield.",
+      "label": "One other Navis Armsman is equipped with"
+    },
+    {
+      "type": "statement",
+      "text": "Navis shotgun; close combat weapon.",
+      "label": "Every other model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "10 models",
+          "points": "90"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "BATTLELINE",
+    "GRENADES",
+    "SMOKE",
+    "IMPERIUM",
+    "VOIDFARERS",
+    "RETINUE",
+    "IMPERIAL NAVY BREACHERS"
+  ],
+  "faction_keywords": [
+    "AGENTS OF THE IMPERIUM"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "The Navis Sergeant-at-Arms\u2019 Navis shotgun can be replaced with one of the following:",
+          "items": [
+            "1 autopistol and 1 chainsword",
+            "1 bolt pistol and 1 power weapon"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "1 Navis Armsman\u2019s Navis las-volley can be replaced with one of the following:",
+          "items": [
+            "1 meltagun",
+            "1 plasma gun"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "1 Navis Armsman's Navis shotgun can be replaced with 1 autopistol and 1 power weapon.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "1 Navis Armsman\u2019s Navis shotgun can be replaced with 1 autopistol and 1 chainfist.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "1 Navis Armsman can be equipped with 1 demolition charge.",
+          "items": []
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Assigned Agents"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time a model in this unit makes an attack, re-roll a Wound roll of 1. If the target is within range of an objective marker , you can re-roll the Wound roll instead.",
+          "name": "Breaching Team"
+        },
+        {
+          "type": "rule",
+          "text": "Once per battle, when you select this unit as the target of the Grenade Stratagem, you can target one enemy unit visible to and within 18\" of this unit that is not within Engagement Range of any units from your army, instead of one within 8\".",
+          "name": "Gheistskull"
+        },
+        {
+          "type": "rule",
+          "text": "Once per battle, when this unit is selected to shoot, until the end of the phase, ranged weapons equipped by models in this unit gain the [IGNORES COVER] ability.",
+          "name": "CAT Unit"
+        },
+        {
+          "type": "rule",
+          "text": "Place one Gheistskull and one CAT Unit token next to this unit, removing each token once the relevant ability has been used.",
+          "name": "Designer\u2019s Note"
+        }
+      ]
+    },
+    {
+      "title": "WARGEAR ABILITIES",
+      "entries": [
+        {
+          "type": "statement",
+          "text": "The bearer has a 4+ invulnerable save .",
+          "label": "Endurant Shield"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Navis Sergeant-at-Arms"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "9 Navis Armsmen"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "Navis shotgun; close combat weapon.",
+          "label": "The Navis Sergeant-at-Arms is equipped with"
+        },
+        {
+          "type": "statement",
+          "text": "Navis las-volley; close combat weapon.",
+          "label": "One Navis Armsman is equipped with"
+        },
+        {
+          "type": "statement",
+          "text": "Navis heavy shotgun; close combat weapon; endurant shield.",
+          "label": "One other Navis Armsman is equipped with"
+        },
+        {
+          "type": "statement",
+          "text": "Navis shotgun; close combat weapon.",
+          "label": "Every other model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "10 models",
+              "points": "90"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

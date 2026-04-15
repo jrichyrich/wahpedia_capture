@@ -1,0 +1,285 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/imperial-agents/Corvus-Blackstar",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/imperial-agents/Corvus-Blackstar",
+    "canonicalSourceId": "wahapedia:ac513546f28365a922c4f90b2ffb21087d4ddfed",
+    "faction_slug": "imperial-agents",
+    "datasheet_slug": "Corvus-Blackstar",
+    "fetchedAt": "2026-04-15T16:23:26+00:00",
+    "contentHash": "30e6e601aa985a6f34e54e46a0c47beaa32b107c7b32d807b02e0afe149ac144",
+    "output_slug": "imperial-agents"
+  },
+  "name": "Corvus Blackstar",
+  "base_size": "\u2300120 x 92mm flying base",
+  "characteristics": {
+    "M": "20+\"",
+    "T": "10",
+    "Sv": "3+",
+    "W": "14",
+    "Ld": "6+",
+    "OC": "0"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Blackstar rocket launcher",
+        "abilities": [
+          "blast"
+        ],
+        "range": "30\"",
+        "a": "D6+1",
+        "bs": "3+",
+        "s": "5",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Hurricane bolter",
+        "abilities": [
+          "rapid fire 6",
+          "twin-linked"
+        ],
+        "range": "24\"",
+        "a": "6",
+        "bs": "3+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Stormstrike missile launcher",
+        "abilities": [],
+        "range": "48\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "10",
+        "ap": "-2",
+        "d": "3"
+      },
+      {
+        "name": "Twin assault cannon",
+        "abilities": [
+          "devastating wounds",
+          "twin-linked"
+        ],
+        "range": "24\"",
+        "a": "6",
+        "bs": "3+",
+        "s": "6",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Twin lascannon",
+        "abilities": [
+          "twin-linked"
+        ],
+        "range": "48\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "12",
+        "ap": "-3",
+        "d": "D6+1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Armoured hull",
+        "abilities": [],
+        "range": "Melee",
+        "a": "3",
+        "ws": "4+",
+        "s": "6",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise D6 , Hover , Stealth"
+    ],
+    "faction": [
+      "Assigned Agents"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this model ends a Normal move , you can select one enemy unit it moved over during that move and roll six D6: for each 5+, that unit suffers 1 mortal wound .",
+        "name": "Blackstar Cluster Launcher"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Corvus Blackstar"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "2 Blackstar rocket launchers; twin assault cannon; armoured hull.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "180"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "VEHICLE",
+    "AIRCRAFT",
+    "FLY",
+    "TRANSPORT",
+    "IMPERIUM",
+    "ORDO XENOS",
+    "RETINUE",
+    "DEATHWATCH",
+    "CORVUS BLACKSTAR"
+  ],
+  "faction_keywords": [
+    "AGENTS OF THE IMPERIUM"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s twin assault cannon can be replaced with 1 twin lascannon.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "This model\u2019s 2 Blackstar rocket launchers can be replaced with 2 stormstrike missile launchers.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "This model can be equipped with 1 hurricane bolter.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "This model can be equipped with one of the following:",
+          "items": [
+            "1 auspex array",
+            "1 infernum halo-launcher"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise D6 , Hover , Stealth"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Assigned Agents"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model ends a Normal move , you can select one enemy unit it moved over during that move and roll six D6: for each 5+, that unit suffers 1 mortal wound .",
+          "name": "Blackstar Cluster Launcher"
+        }
+      ]
+    },
+    {
+      "title": "WARGEAR ABILITIES",
+      "entries": [
+        {
+          "type": "statement",
+          "text": "Ranged weapons equipped by the bearer have the [IGNORES COVER] ability.",
+          "label": "Auspex Array"
+        },
+        {
+          "type": "statement",
+          "text": "The bearer has the Smoke keyword.",
+          "label": "Infernum Halo-launcher"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Corvus Blackstar"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "2 Blackstar rocket launchers; twin assault cannon; armoured hull.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "180"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DAMAGED: 1-5 WOUNDS REMAINING",
+      "entries": [
+        {
+          "type": "text",
+          "text": "While this model has 1-5 wounds remaining, each time this model makes an attack, subtract 1 from the Hit roll ."
+        }
+      ]
+    },
+    {
+      "title": "TRANSPORT",
+      "entries": [
+        {
+          "type": "text",
+          "text": "This model has a transport capacity of 12 DEATHWATCH INFANTRY models."
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-5 WOUNDS REMAINING",
+      "TRANSPORT"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-5 WOUNDS REMAINING",
+      "TRANSPORT"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

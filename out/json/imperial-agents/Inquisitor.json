@@ -1,0 +1,291 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/imperial-agents/Inquisitor",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/imperial-agents/Inquisitor",
+    "canonicalSourceId": "wahapedia:06d6cfb559adcee060e44adff0e66dc9fab06e51",
+    "faction_slug": "imperial-agents",
+    "datasheet_slug": "Inquisitor",
+    "fetchedAt": "2026-04-15T16:21:43+00:00",
+    "contentHash": "a4ad7c6be9516145c63b7adc24f4a7a6a9b8573fbb7213945a5919d3b26a168d",
+    "output_slug": "imperial-agents"
+  },
+  "name": "Inquisitor",
+  "base_size": "\u230032mm",
+  "characteristics": {
+    "M": "6\"",
+    "T": "3",
+    "Sv": "4+",
+    "W": "4",
+    "Ld": "6+",
+    "OC": "1",
+    "Invulnerable Save": "5+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Bolt pistol",
+        "abilities": [
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Combi-weapon",
+        "abilities": [
+          "anti-infantry 4+",
+          "devastating wounds",
+          "rapid fire 1"
+        ],
+        "range": "24\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "4",
+        "ap": "-2",
+        "d": "1"
+      },
+      {
+        "name": "Psychic Shock Wave",
+        "abilities": [
+          "devastating wounds",
+          "psychic",
+          "torrent"
+        ],
+        "range": "18\"",
+        "a": "2D6",
+        "bs": "N/A",
+        "s": "3",
+        "ap": "-2",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Inquisitorial melee weapon",
+        "abilities": [],
+        "range": "Melee",
+        "a": "5",
+        "ws": "3+",
+        "s": "4",
+        "ap": "-2",
+        "d": "1"
+      },
+      {
+        "name": "Force weapon",
+        "abilities": [
+          "psychic"
+        ],
+        "range": "Melee",
+        "a": "4",
+        "ws": "3+",
+        "s": "5",
+        "ap": "-2",
+        "d": "D3"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Leader"
+    ],
+    "faction": [
+      "Assigned Agents"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, it can embark within any Transport that its Bodyguard unit can embark within.",
+        "name": "Authority of the Inquisition"
+      },
+      {
+        "type": "rule",
+        "text": "Each time you target this model\u2019s unit with a Stratagem , roll one D6: on a 3+, you gain 1CP.",
+        "name": "Power of the Rosette"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Inquisitor"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "bolt pistol; Inquisitorial melee weapon; blessed wardings.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model ( AGENTS OF THE IMPERIUM Detachment)",
+          "points": "55"
+        },
+        {
+          "label": "1 model (Assigned Agent)",
+          "points": "65"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "CHARACTER",
+    "GRENADES",
+    "IMPERIUM",
+    "INQUISITOR"
+  ],
+  "faction_keywords": [
+    "AGENTS OF THE IMPERIUM"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s bolt pistol can be replaced with 1 combi-weapon.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "This model\u2019s blessed wardings can be replaced with 1 psychic gifts and 1 Psychic Shock Wave.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "If this model is equipped with 1 psychic gifts, its Inquisitorial melee weapon can be replaced with 1 force weapon.",
+          "items": []
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Leader"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Assigned Agents"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, it can embark within any Transport that its Bodyguard unit can embark within.",
+          "name": "Authority of the Inquisition"
+        },
+        {
+          "type": "rule",
+          "text": "Each time you target this model\u2019s unit with a Stratagem , roll one D6: on a 3+, you gain 1CP.",
+          "name": "Power of the Rosette"
+        }
+      ]
+    },
+    {
+      "title": "WARGEAR ABILITIES",
+      "entries": [
+        {
+          "type": "statement",
+          "text": "While this model is leading a unit, models in that unit have the 6+ invulnerable save .",
+          "label": "Blessed Wardings"
+        },
+        {
+          "type": "statement",
+          "text": "The bearer has the PSYKER keyword.",
+          "label": "Psychic Gifts"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Inquisitor"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "bolt pistol; Inquisitorial melee weapon; blessed wardings.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model ( AGENTS OF THE IMPERIUM Detachment)",
+              "points": "55"
+            },
+            {
+              "label": "1 model (Assigned Agent)",
+              "points": "65"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "LEADER",
+      "entries": [
+        {
+          "type": "text",
+          "text": "This model can be attached to the following units:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Exaction Squad",
+            "Grey Knights Terminator Squad",
+            "Imperial Navy Breachers",
+            "Inquisitorial Agents",
+            "Sanctifiers",
+            "Sisters of Battle Squad",
+            "Subductor Squad",
+            "Vigilant Squad",
+            "Deathwatch Terminator Squad",
+            "Fortis Kill Team",
+            "Proteus Kill Team",
+            "Spectrus Kill Team",
+            "IMPERIUM BATTLELINE INFANTRY"
+          ]
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

@@ -1,0 +1,282 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/imperial-agents/Inquisitorial-Chimera",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/imperial-agents/Inquisitorial-Chimera",
+    "canonicalSourceId": "wahapedia:dd52281be2abd4978a8882a54fe073f98114d6a1",
+    "faction_slug": "imperial-agents",
+    "datasheet_slug": "Inquisitorial-Chimera",
+    "fetchedAt": "2026-04-15T16:23:18+00:00",
+    "contentHash": "afad14cbe2fdd4dfce2944829b2d5d75008a9a45b9e23082a2fcc9c086755c66",
+    "output_slug": "imperial-agents"
+  },
+  "name": "Inquisitorial Chimera",
+  "base_size": "\u2300Use model",
+  "characteristics": {
+    "M": "10\"",
+    "T": "9",
+    "Sv": "3+",
+    "W": "11",
+    "Ld": "7+",
+    "OC": "2"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Heavy bolter",
+        "abilities": [
+          "sustained hits 1"
+        ],
+        "range": "36\"",
+        "a": "3",
+        "bs": "4+",
+        "s": "5",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Heavy flamer",
+        "abilities": [
+          "ignores cover",
+          "torrent"
+        ],
+        "range": "12\"",
+        "a": "D6",
+        "bs": "N/A",
+        "s": "5",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Heavy stubber",
+        "abilities": [
+          "rapid fire 3"
+        ],
+        "range": "36\"",
+        "a": "3",
+        "bs": "4+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Hunter-killer missile one shot",
+        "abilities": [],
+        "range": "48\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "14",
+        "ap": "-3",
+        "d": "D6"
+      },
+      {
+        "name": "Lasgun array",
+        "abilities": [
+          "rapid fire 6"
+        ],
+        "range": "24\"",
+        "a": "6",
+        "bs": "4+",
+        "s": "3",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Multi-laser",
+        "abilities": [],
+        "range": "36\"",
+        "a": "4",
+        "bs": "4+",
+        "s": "6",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Storm bolter",
+        "abilities": [
+          "rapid fire 2"
+        ],
+        "range": "24\"",
+        "a": "2",
+        "bs": "4+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Armoured tracks",
+        "abilities": [],
+        "range": "Melee",
+        "a": "3",
+        "ws": "4+",
+        "s": "6",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise D3 , Firing Deck 2"
+    ],
+    "faction": [
+      "Assigned Agents"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Units can disembark from this TRANSPORT after it has Advanced . Units that do so count as having made a Normal move that phase, and cannot declare a charge in the same turn, but can otherwise act normally.",
+        "name": "Rapid Deployment"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Inquisitorial Chimera"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "multi-laser; heavy bolter; lasgun array; armoured tracks.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "70"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "VEHICLE",
+    "SMOKE",
+    "TRANSPORT",
+    "DEDICATED TRANSPORT",
+    "IMPERIUM",
+    "INQUISITORIAL CHIMERA"
+  ],
+  "faction_keywords": [
+    "AGENTS OF THE IMPERIUM"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s heavy bolter can be replaced with 1 heavy flamer.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "This model\u2019s multi-laser can be replaced with one of the following:",
+          "items": [
+            "1 Heavy bolter*",
+            "1 Heavy flamer*"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "This model can be equipped with one of the following:",
+          "items": [
+            "1 heavy stubber",
+            "1 storm bolter"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "This model can be equipped with 1 hunter-killer missile.",
+          "items": []
+        },
+        {
+          "type": "text",
+          "text": "This weapon cannot be replaced."
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise D3 , Firing Deck 2"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Assigned Agents"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Units can disembark from this TRANSPORT after it has Advanced . Units that do so count as having made a Normal move that phase, and cannot declare a charge in the same turn, but can otherwise act normally.",
+          "name": "Rapid Deployment"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Inquisitorial Chimera"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "multi-laser; heavy bolter; lasgun array; armoured tracks.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "70"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "TRANSPORT",
+      "entries": [
+        {
+          "type": "text",
+          "text": "This model has a transport capacity of 13 INQUISITOR INFANTRY and INQUISITORIAL AGENT models. It cannot transport TERMINATOR models."
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "TRANSPORT"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "TRANSPORT"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

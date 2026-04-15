@@ -1,0 +1,227 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/imperial-agents/Jokaero-Weaponsmith",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/imperial-agents/Jokaero-Weaponsmith",
+    "canonicalSourceId": "wahapedia:9153ef482694fde28475c89055ea905153fcbbe5",
+    "faction_slug": "imperial-agents",
+    "datasheet_slug": "Jokaero-Weaponsmith",
+    "fetchedAt": "2026-04-15T16:22:46+00:00",
+    "contentHash": "a2d1e61d56d3aaf18b208305ebd21bebea3e01fac52da62f7d43475b935df07d",
+    "output_slug": "imperial-agents"
+  },
+  "name": "Jokaero Weaponsmith",
+  "base_size": "\u230025mm",
+  "characteristics": {
+    "M": "6\"",
+    "T": "3",
+    "Sv": "5+",
+    "W": "2",
+    "Ld": "7+",
+    "OC": "0",
+    "Invulnerable Save": "4+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Jokaero weapons \u2013 scattered",
+        "abilities": [
+          "TORRENT"
+        ],
+        "range": "12\"",
+        "a": "D6",
+        "bs": "N/A",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Jokaero weapons \u2013 focused",
+        "abilities": [],
+        "range": "24\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "10",
+        "ap": "-1",
+        "d": "3"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Close combat weapon",
+        "abilities": [],
+        "range": "Melee",
+        "a": "2",
+        "ws": "5+",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Leader"
+    ],
+    "faction": [
+      "Assigned Agents"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this model is leading a unit, ranged weapons equipped by models in that unit have the [LETHAL HITS] ability.",
+        "name": "Inconceivable Augmentation"
+      },
+      {
+        "type": "rule",
+        "text": "This model cannot be selected to be your WARLORD . While an INQUISITOR model is leading a unit that includes one or more JOKAERO WEAPONSMITH models, the Objective Control characteristic of JOKAERO WEAPONSMITH models in that unit is 1.",
+        "name": "A Weaponsmith, Not a Warlord"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Jokaero Weaponsmith"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "Jokaero weapons; close combat weapon.",
+      "label": "Every model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "30"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "IMPERIUM",
+    "CHARACTER",
+    "JOKAERO WEAPONSMITH"
+  ],
+  "faction_keywords": [
+    "AGENTS OF THE IMPERIUM"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "text",
+          "text": "None"
+        }
+      ]
+    },
+    {
+      "title": "INQUISITORIAL AGENT",
+      "entries": [
+        {
+          "type": "text",
+          "text": "If your Army Faction is not AGENTS OF THE IMPERIUM , then for each unique pairing of 1 INQUISITORIAL AGENTS unit and 1 JOKAERO WEAPONSMITH unit occuring in your army, increase the maximum number of CHARACTER units permitted in your army by 1."
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Leader"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Assigned Agents"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is leading a unit, ranged weapons equipped by models in that unit have the [LETHAL HITS] ability.",
+          "name": "Inconceivable Augmentation"
+        },
+        {
+          "type": "rule",
+          "text": "This model cannot be selected to be your WARLORD . While an INQUISITOR model is leading a unit that includes one or more JOKAERO WEAPONSMITH models, the Objective Control characteristic of JOKAERO WEAPONSMITH models in that unit is 1.",
+          "name": "A Weaponsmith, Not a Warlord"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Jokaero Weaponsmith"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "Jokaero weapons; close combat weapon.",
+          "label": "Every model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "30"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "LEADER",
+      "entries": [
+        {
+          "type": "text",
+          "text": "This model can be attached to the following unit:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Inquisitorial Agents"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "You can attach this model to an INQUISITORIAL AGENTS unit, even if one INQUISITOR unit has already been attached to it. If you do, and that Bodyguard unit is destroyed , the Leader units attached to it become separate units, with their original Starting Strengths ."
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "INQUISITORIAL AGENT",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "INQUISITORIAL AGENT",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "LEADER"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

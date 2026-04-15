@@ -1,0 +1,371 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/imperial-agents/Inquisitorial-Agents",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/imperial-agents/Inquisitorial-Agents",
+    "canonicalSourceId": "wahapedia:fb62ceb2882d209c92bfc141ebb563941e68a72a",
+    "faction_slug": "imperial-agents",
+    "datasheet_slug": "Inquisitorial-Agents",
+    "fetchedAt": "2026-04-15T16:23:39+00:00",
+    "contentHash": "1f687cc67e21552dff30fa8a2631af9ec91c175ddf3137fe6bdd5103a4cdef9a",
+    "output_slug": "imperial-agents"
+  },
+  "name": "Inquisitorial Agents",
+  "base_size": "\u230025mm Gun servitors 32mm",
+  "characteristics": {
+    "M": "6\"",
+    "T": "3",
+    "Sv": "5+",
+    "W": "1",
+    "Ld": "7+",
+    "OC": "1"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Agent firearm",
+        "abilities": [
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "4",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Heavy bolter",
+        "abilities": [
+          "heavy",
+          "sustained hits 1"
+        ],
+        "range": "36\"",
+        "a": "3",
+        "bs": "4+",
+        "s": "5",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Multi-melta",
+        "abilities": [
+          "heavy",
+          "melta 2"
+        ],
+        "range": "18\"",
+        "a": "2",
+        "bs": "4+",
+        "s": "9",
+        "ap": "-4",
+        "d": "D6"
+      },
+      {
+        "name": "Plasma cannon \u2013 standard",
+        "abilities": [
+          "blast",
+          "heavy"
+        ],
+        "range": "36\"",
+        "a": "D3",
+        "bs": "4+",
+        "s": "7",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Plasma cannon \u2013 supercharge",
+        "abilities": [
+          "blast",
+          "hazardous",
+          "heavy"
+        ],
+        "range": "36\"",
+        "a": "D3",
+        "bs": "4+",
+        "s": "8",
+        "ap": "-2",
+        "d": "2"
+      },
+      {
+        "name": "Plasma pistol \u2013 standard",
+        "abilities": [
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "7",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Plasma pistol \u2013 supercharge",
+        "abilities": [
+          "hazardous",
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "8",
+        "ap": "-2",
+        "d": "2"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Agent melee weapon",
+        "abilities": [],
+        "range": "Melee",
+        "a": "3",
+        "ws": "3+",
+        "s": "3",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Eviscerator",
+        "abilities": [
+          "devastating wounds"
+        ],
+        "range": "Melee",
+        "a": "2",
+        "ws": "3+",
+        "s": "6",
+        "ap": "-2",
+        "d": "2"
+      },
+      {
+        "name": "Mystic stave",
+        "abilities": [
+          "ANTI-INFANTRy 4+",
+          "psychic"
+        ],
+        "range": "Melee",
+        "a": "2",
+        "ws": "3+",
+        "s": "5",
+        "ap": "-1",
+        "d": "D3"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [],
+    "faction": [
+      "Assigned Agents"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While an INQUISITOR model is leading this unit, each time an attack is made against this unit, subtract 1 from the Wound roll .",
+        "name": "Loyal Henchmen"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "5-10 Inquisitorial Agents"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "1-2 Gun Servitors*"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "agent firearm; agent melee weapon.",
+      "label": "Every Inquisitorial Agent is equipped with"
+    },
+    {
+      "type": "statement",
+      "text": "heavy bolter; agent melee weapon.",
+      "label": "Every Gun Servitor is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "6 models ( AGENTS OF THE IMPERIUM Detachment)",
+          "points": "50"
+        },
+        {
+          "label": "12 models ( AGENTS OF THE IMPERIUM Detachment)",
+          "points": "100"
+        },
+        {
+          "label": "6 models (Assigned Agent)",
+          "points": "60"
+        },
+        {
+          "label": "12 models (Assigned Agent)",
+          "points": "120"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "GRENADES",
+    "IMPERIUM",
+    "RETINUE",
+    "INQUISITORIAL AGENTS"
+  ],
+  "faction_keywords": [
+    "AGENTS OF THE IMPERIUM"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "For every 5 Inquisitorial Agents in this unit, it can be equipped with 1 Tome-skull.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "For every 5 Inquisitorial Agents in this unit, 1 Inquisitorial Agent can be equipped with 1 plasma pistol.**",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "For every 5 Inquisitorial Agents in this unit, 1 Inquisitorial Agent can be equipped with 1 eviscerator.**",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "For every 5 Inquisitorial Agents in this unit, 1 Inquisitorial Agent can be equipped with 1 mystic stave.**",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "Any number of Gun Servitors can each have their heavy bolter replaced with one of the following:",
+          "items": [
+            "1 multi-melta",
+            "1 plasma cannon"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "**The some model cannot be equipped with more than one of these wargear options."
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Assigned Agents"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While an INQUISITOR model is leading this unit, each time an attack is made against this unit, subtract 1 from the Wound roll .",
+          "name": "Loyal Henchmen"
+        }
+      ]
+    },
+    {
+      "title": "WARGEAR ABILITIES",
+      "entries": [
+        {
+          "type": "statement",
+          "text": "Once per battle for each Tome-skull this unit is equipped with, at the start of any phase, you can select either one friendly AGENTS OF THE IMPERIUM unit that is Battle-shocked and within 6\" of this unit or one enemy unit within 6\" of this unit. If you select a friendly unit, that unit is no longer Battle-shocked. If you select an enemy unit, it must take a Battle-shock test.",
+          "label": "Tome-skull"
+        },
+        {
+          "type": "statement",
+          "text": "Place the appropriate number of Tome-skull tokens next to the unit at the start of the battle, removing one each time this unit uses this ability.",
+          "label": "Designer\u2019s Note"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "5-10 Inquisitorial Agents"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "1-2 Gun Servitors*"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "agent firearm; agent melee weapon.",
+          "label": "Every Inquisitorial Agent is equipped with"
+        },
+        {
+          "type": "statement",
+          "text": "heavy bolter; agent melee weapon.",
+          "label": "Every Gun Servitor is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "6 models ( AGENTS OF THE IMPERIUM Detachment)",
+              "points": "50"
+            },
+            {
+              "label": "12 models ( AGENTS OF THE IMPERIUM Detachment)",
+              "points": "100"
+            },
+            {
+              "label": "6 models (Assigned Agent)",
+              "points": "60"
+            },
+            {
+              "label": "12 models (Assigned Agent)",
+              "points": "120"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "INQUISITORIAL HENCHMEN",
+      "entries": [
+        {
+          "type": "text",
+          "text": "If your Army Faction is not AGENTS OF THE IMPERIUM , then for each INQUISITOR unit you include in your army, you can include one INQUISITORIAL AGENTS unit in your army that does not count towards the number of RETINUE units your army can include (see Assigned Agents )."
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "INQUISITORIAL HENCHMEN"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "INQUISITORIAL HENCHMEN"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

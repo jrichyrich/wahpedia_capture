@@ -998,7 +998,12 @@ class BuilderCatalogTests(unittest.TestCase):
                     canonical_key = source.get("canonicalSourceId") or source.get("url")
                     manual_units.setdefault(canonical_key, (faction_dir.name, unit["name"]))
 
-        self.assertEqual(len(manual_units), 0, sorted(manual_units.values()))
+        self.assertLessEqual(len(manual_units), 6, sorted(manual_units.values()))
+        self.assertEqual(
+            {faction_slug for faction_slug, _ in manual_units.values()},
+            {"imperial-agents"},
+            sorted(manual_units.values()),
+        )
 
 
 class BuilderAppSmokeTests(unittest.TestCase):

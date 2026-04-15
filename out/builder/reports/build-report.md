@@ -1,18 +1,18 @@
 # Builder Catalog Build Report
 
-- Generated at: 2026-04-15T15:46:14+00:00
+- Generated at: 2026-04-15T16:24:33+00:00
 - Source root: `/Users/jasricha/Documents/Github_Personal/wahpedia_capture/out/json`
-- Factions imported: 13
-- Total units: 1365
+- Factions imported: 14
+- Total units: 1410
 - Units with missing stats: 0
 - Manual selection units: 0
-- Units with manual wargear: 0
+- Units with manual wargear: 6
 - Units with render issues: 0
 - Factions with rules warnings: 0
-- Ready units: 1287
-- Partial-support units: 78
+- Ready units: 1326
+- Partial-support units: 84
 - Configured-only preview units: 78
-- Source cards copied: 1287
+- Source cards copied: 1332
 - Source cards missing: 78
 
 ## Factions
@@ -122,6 +122,21 @@
 - Partial-support units: 0
 - Configured-only preview units: 0
 - Source cards copied: 47
+- Source cards missing: 0
+
+### Imperial Agents
+
+- Catalog: `catalogs/imperial-agents.json`
+- Units: 45
+- Missing stats: 0
+- Manual selection units: 0
+- Manual wargear units: 6
+- Render issue units: 0
+- Rules warnings: 0
+- Ready units: 39
+- Partial-support units: 6
+- Configured-only preview units: 0
+- Source cards copied: 45
 - Source cards missing: 0
 
 ### Officio Assassinorum
