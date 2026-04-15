@@ -68,6 +68,29 @@ def slug_to_title(slug: str) -> str:
     return slug.replace("-", " ").title()
 
 
+def parent_faction_slug(cards: list[dict[str, object]], faction_slug: str) -> str:
+    source_slugs: set[str] = set()
+    for card in cards:
+        source = card.get("source", {}) if isinstance(card, dict) else {}
+        source_slug = str(
+            source.get("faction_slug")
+            or source.get("factionSlug")
+            or source.get("output_slug")
+            or source.get("outputSlug")
+            or ""
+        ).strip()
+        if source_slug:
+            source_slugs.add(source_slug)
+
+    if len(source_slugs) != 1:
+        return ""
+
+    source_slug = next(iter(source_slugs))
+    if source_slug == faction_slug:
+        return ""
+    return source_slug
+
+
 def slugify(text: str) -> str:
     value = re.sub(r"[^a-z0-9]+", "-", (text or "").lower()).strip("-")
     return value or "option"
@@ -1658,6 +1681,7 @@ def build_faction_catalog(
             support_summary["configuredOnlyPreviewCount"] += 1
 
     units.sort(key=lambda unit: str(unit.get("name", "")))
+    source_parent_slug = parent_faction_slug(cards, faction_slug)
     catalog = {
         "schemaVersion": SCHEMA_VERSION,
         "generatedAt": utc_now(),
@@ -1679,6 +1703,9 @@ def build_faction_catalog(
         "rules": rules,
         "units": units,
     }
+    if source_parent_slug:
+        catalog["faction"]["parentSlug"] = source_parent_slug
+        catalog["faction"]["parentName"] = slug_to_title(source_parent_slug)
     output_path.write_text(json.dumps(catalog, indent=2), encoding="utf-8")
     return catalog
 
@@ -1714,11 +1741,13 @@ def write_report(output_root: Path, manifest: dict[str, object]) -> None:
     ]
 
     for faction in manifest["factions"]:
+        parent_name = faction.get("parentName")
         lines.extend(
             [
                 f"### {faction['name']}",
                 "",
                 f"- Catalog: `{faction['catalogFile']}`",
+                *( [f"- Subset of: {parent_name}"] if parent_name else [] ),
                 f"- Units: {faction['unitCount']}",
                 f"- Missing stats: {faction['missingStatsCount']}",
                 f"- Manual selection units: {faction['manualSelectionCount']}",
@@ -1906,6 +1935,14 @@ def build_all(
                 "manualWargearCount": len(build_info["manualWargearUnits"]),
                 "renderIssueCount": len(build_info["renderIssueUnits"]),
                 "rulesWarningCount": rules_warning_count,
+                **(
+                    {
+                        "parentSlug": catalog["faction"].get("parentSlug"),
+                        "parentName": catalog["faction"].get("parentName"),
+                    }
+                    if catalog["faction"].get("parentSlug")
+                    else {}
+                ),
             }
         )
         report_factions.append(

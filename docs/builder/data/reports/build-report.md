@@ -1,6 +1,6 @@
 # Builder Catalog Build Report
 
-- Generated at: 2026-04-14T02:28:16+00:00
+- Generated at: 2026-04-15T15:46:14+00:00
 - Source root: `/Users/jasricha/Documents/Github_Personal/wahpedia_capture/out/json`
 - Factions imported: 13
 - Total units: 1365
@@ -65,6 +65,7 @@
 ### Blood Angels
 
 - Catalog: `catalogs/blood-angels.json`
+- Subset of: Space Marines
 - Units: 181
 - Missing stats: 0
 - Manual selection units: 0
@@ -80,6 +81,7 @@
 ### Dark Angels
 
 - Catalog: `catalogs/dark-angels.json`
+- Subset of: Space Marines
 - Units: 174
 - Missing stats: 0
 - Manual selection units: 0
@@ -125,6 +127,7 @@
 ### Officio Assassinorum
 
 - Catalog: `catalogs/officio-assassinorum.json`
+- Subset of: Imperial Agents
 - Units: 4
 - Missing stats: 0
 - Manual selection units: 0
@@ -170,6 +173,7 @@
 ### Space Wolves
 
 - Catalog: `catalogs/space-wolves.json`
+- Subset of: Space Marines
 - Units: 191
 - Missing stats: 0
 - Manual selection units: 0
@@ -185,6 +189,7 @@
 ### Ultramarines
 
 - Catalog: `catalogs/ultramarines.json`
+- Subset of: Space Marines
 - Units: 170
 - Missing stats: 0
 - Manual selection units: 0

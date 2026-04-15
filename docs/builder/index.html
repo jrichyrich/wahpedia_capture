@@ -1856,6 +1856,69 @@
             return (state.manifest && state.manifest.factions ? state.manifest.factions : []).map((entry) => entry.slug);
         }
 
+        function factionDisplayName(slug) {
+            return String(slug || "").replace(/-/g, " ").replace(/\b\w/g, (char) => char.toUpperCase());
+        }
+
+        function sortedFactionEntries(entries) {
+            return (Array.isArray(entries) ? entries : []).slice().sort((left, right) => {
+                const leftName = String(left && left.name ? left.name : "");
+                const rightName = String(right && right.name ? right.name : "");
+                return leftName.localeCompare(rightName);
+            });
+        }
+
+        function factionSelectGroups() {
+            const factions = state.manifest && Array.isArray(state.manifest.factions) ? state.manifest.factions : [];
+            const roots = [];
+            const childrenByParent = new Map();
+
+            factions.forEach((entry) => {
+                const parentSlug = String(entry && entry.parentSlug ? entry.parentSlug : "").trim();
+                if (!parentSlug) {
+                    roots.push(entry);
+                    return;
+                }
+                if (!childrenByParent.has(parentSlug)) {
+                    childrenByParent.set(parentSlug, {
+                        slug: parentSlug,
+                        name: String(entry && entry.parentName ? entry.parentName : factionDisplayName(parentSlug)),
+                        children: [],
+                    });
+                }
+                childrenByParent.get(parentSlug).children.push(entry);
+            });
+
+            const groups = [];
+            const renderedParents = new Set();
+
+            sortedFactionEntries(roots).forEach((entry) => {
+                groups.push({ type: "option", entry });
+                const childGroup = childrenByParent.get(entry.slug);
+                if (childGroup && childGroup.children.length) {
+                    groups.push({
+                        type: "group",
+                        label: String(entry.name || factionDisplayName(entry.slug)),
+                        children: sortedFactionEntries(childGroup.children),
+                    });
+                    renderedParents.add(entry.slug);
+                }
+            });
+
+            Array.from(childrenByParent.values()).forEach((group) => {
+                if (renderedParents.has(group.slug)) {
+                    return;
+                }
+                groups.push({
+                    type: "group",
+                    label: String(group.name || factionDisplayName(group.slug)),
+                    children: sortedFactionEntries(group.children),
+                });
+            });
+
+            return groups;
+        }
+
         function appVersion() {
             return state.manifest ? `builder-catalog-v${state.manifest.schemaVersion}` : "builder-catalog-unknown";
         }
@@ -3056,9 +3119,17 @@
 
         function renderFactionOptions() {
             const factions = state.manifest && state.manifest.factions ? state.manifest.factions : [];
-            els.factionSelect.innerHTML = factions
-                .map((entry) => `<option value="${entry.slug}">${entry.name}</option>`)
-                .join("");
+            const options = factionSelectGroups().map((group) => {
+                if (group.type === "option") {
+                    return `<option value="${group.entry.slug}">${escapeHtml(group.entry.name)}</option>`;
+                }
+                return `
+                    <optgroup label="${escapeHtml(group.label)}">
+                        ${group.children.map((entry) => `<option value="${entry.slug}">${escapeHtml(entry.name)}</option>`).join("")}
+                    </optgroup>
+                `;
+            });
+            els.factionSelect.innerHTML = options.join("");
             els.factionSelect.disabled = factions.length === 0;
             els.unitSearch.disabled = factions.length === 0;
             els.supportFilter.disabled = factions.length === 0;
@@ -3086,6 +3157,9 @@
                 return;
             }
             const catalog = state.catalog;
+            const factionLabel = catalog.faction && catalog.faction.parentName
+                ? `${catalog.faction.name} (subset of ${catalog.faction.parentName})`
+                : catalog.faction.name;
             const supportSummary = catalog.build && catalog.build.supportSummary ? catalog.build.supportSummary : {};
             els.catalogUnitCount.textContent = String(supportSummary.readyUnitCount || 0);
             els.catalogManualCount.textContent = String(supportSummary.partialUnitCount || 0);
@@ -3106,7 +3180,7 @@
 
             els.rosterTitle.textContent = state.activeRosterName || Store.normalizeName("", state.rosterFactionSlug || state.factionSlug);
             els.rosterSubtitle.textContent = [
-                state.catalog.faction.name,
+                factionLabel,
                 `${catalog.build.catalogUnitCount} units available`,
                 `${supportSummary.readyUnitCount || 0} ready to use`,
                 `${supportSummary.partialUnitCount || 0} need review`,
@@ -3115,7 +3189,7 @@
             ].join(" | ");
 
             const statusBits = [
-                `${catalog.faction.name}: ${catalog.faction.unitCount} units available`,
+                `${factionLabel}: ${catalog.faction.unitCount} units available`,
                 `${supportSummary.readyUnitCount || 0} ready to build with`,
                 `${supportSummary.partialUnitCount || 0} flagged for review`,
             ];

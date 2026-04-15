@@ -554,6 +554,70 @@ class BuilderCatalogTests(unittest.TestCase):
             build_builder_catalog.publish_source_cards(docs_root, source_cards_root)
             self.assertTrue((docs_root / "source-cards" / "test-faction" / "One.png").exists())
 
+    def test_build_all_infers_subset_parent_slug_from_source_cards(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            source_root = Path(tmpdir) / "source"
+            output_root = Path(tmpdir) / "out"
+            source_cards_root = Path(tmpdir) / "cards"
+            faction_dir = source_root / "officio-assassinorum"
+            faction_dir.mkdir(parents=True)
+            source_cards_root.mkdir(parents=True)
+
+            card = {
+                "exportSchemaVersion": 1,
+                "parserVersion": "2026-03-20-builder-fidelity-v2",
+                "source": {
+                    "url": "http://example/Assassin",
+                    "normalizedUrl": "http://example/Assassin",
+                    "canonicalSourceId": "wahapedia:assassin",
+                    "faction_slug": "imperial-agents",
+                    "datasheet_slug": "Callidus-Assassin",
+                    "output_slug": "officio-assassinorum",
+                },
+                "name": "Callidus Assassin",
+                "characteristics": {"M": '7"', "T": "3", "Sv": "4+", "W": "4", "Ld": "6+", "OC": "1"},
+                "weapons": {"ranged_weapons": [], "melee_weapons": []},
+                "abilities": {"core": [], "faction": [], "datasheet": [], "other": []},
+                "unit_composition": [{"type": "list", "items": ["1 Callidus Assassin"]}],
+                "keywords": ["INFANTRY"],
+                "faction_keywords": ["IMPERIAL AGENTS"],
+                "sections": [],
+            }
+            (faction_dir / "index.json").write_text(json.dumps([card]), encoding="utf-8")
+            (source_root / "export-manifest.json").write_text(
+                json.dumps(
+                    {
+                        "exportSchemaVersion": 1,
+                        "parserVersion": "2026-03-20-builder-fidelity-v2",
+                        "records": [
+                            {
+                                "outputSlug": "officio-assassinorum",
+                                "datasheetSlug": "Callidus-Assassin",
+                                "canonicalSourceId": "wahapedia:assassin",
+                                "normalizedSourceUrl": "http://example/Assassin",
+                                "exportSchemaVersion": 1,
+                                "parserVersion": "2026-03-20-builder-fidelity-v2",
+                                "sharedCoreHash": "hash-assassin",
+                            }
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+
+            manifest = build_builder_catalog.build_all(
+                source_root,
+                output_root,
+                source_cards_root=source_cards_root,
+                clean=True,
+            )
+
+            self.assertEqual(manifest["factions"][0]["parentSlug"], "imperial-agents")
+            self.assertEqual(manifest["factions"][0]["parentName"], "Imperial Agents")
+            catalog = json.loads((output_root / "catalogs" / "officio-assassinorum.json").read_text(encoding="utf-8"))
+            self.assertEqual(catalog["faction"]["parentSlug"], "imperial-agents")
+            self.assertEqual(catalog["faction"]["parentName"], "Imperial Agents")
+
     def test_build_all_uses_empty_rules_and_warning_when_rules_export_is_missing(self):
         with tempfile.TemporaryDirectory() as tmpdir:
             source_root = Path(tmpdir) / "source"
