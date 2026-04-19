@@ -645,6 +645,31 @@
             margin-top: 18px;
         }
 
+        .entry-detail-preview {
+            padding: 16px;
+            border: 1px solid var(--line);
+            background: rgba(255, 255, 255, 0.72);
+        }
+
+        .entry-detail-keywords {
+            display: grid;
+            gap: 8px;
+        }
+
+        .entry-detail-list {
+            display: grid;
+            gap: 6px;
+            font-size: 14px;
+            line-height: 1.45;
+        }
+
+        .entry-detail-list strong {
+            font-family: "Exo 2", sans-serif;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 0.04em;
+        }
+
         .entry-editor-header {
             display: flex;
             justify-content: space-between;
@@ -2697,6 +2722,125 @@
             return derived.entries.find((entry) => entry.instanceId === state.activeEditorInstanceId) || null;
         }
 
+        function selectedCatalogPreviewEntry() {
+            if (!state.selectedCatalogUnitId) {
+                return null;
+            }
+            const unit = catalogUnitById(state.selectedCatalogUnitId);
+            if (!unit) {
+                return null;
+            }
+            return BuilderApp.createCatalogPreviewEntry(unit, {
+                instanceId: `catalog-preview-${unit.unitId}`,
+                renderer: window.WahBuilderCardRenderer,
+                pointsGroups,
+                support: unitSupport(unit),
+            });
+        }
+
+        function detailPreviewMarkup(entry) {
+            if (!entry || !entry.unit) {
+                return `<div class="inline-note">No preview is available for this unit.</div>`;
+            }
+            return BuilderApp.renderPreviewEntry(entry, {
+                previewSourceMode: state.previewSourceMode,
+                previewRenderMode: "print-clean",
+                renderer: window.WahBuilderCardRenderer,
+                missingSourceCardLookup: state.missingSourceCardLookup,
+            });
+        }
+
+        function detailKeywordsMarkup(unit) {
+            if (!unit) {
+                return "";
+            }
+            const rows = [];
+            if (Array.isArray(unit.keywords) && unit.keywords.length) {
+                rows.push(`<div class="inline-note"><strong>Keywords:</strong> ${escapeHtml(unit.keywords.join(", "))}</div>`);
+            }
+            if (Array.isArray(unit.factionKeywords) && unit.factionKeywords.length) {
+                rows.push(`<div class="inline-note"><strong>Faction:</strong> ${escapeHtml(unit.factionKeywords.join(", "))}</div>`);
+            }
+            return rows.length ? `<div class="entry-detail-keywords">${rows.join("")}</div>` : `<div class="inline-note">No keyword data is available for this unit.</div>`;
+        }
+
+        function detailReadOnlyConfigurationMarkup(entry) {
+            if (!entry || !entry.unit) {
+                return `<div class="inline-note inline-note-warning">This unit cannot be resolved in the current catalog.</div>`;
+            }
+            const baseOptions = Array.isArray(entry.options) ? entry.options : [];
+            const upgradeOptions = Array.isArray(entry.upgradeOptions) ? entry.upgradeOptions : [];
+            const optionRows = baseOptions.length
+                ? baseOptions.map((pointsOption) => `<div class="inline-note">${escapeHtml(pointsOption.label)} | ${escapeHtml(String(pointsOption.points))} pts</div>`).join("")
+                : `<div class="inline-note">No points options are available for this unit.</div>`;
+            const upgradeRows = upgradeOptions.length
+                ? upgradeOptions.map((upgrade) => `<div class="inline-note">${escapeHtml(upgrade.label)} (+${escapeHtml(String(upgrade.points))} pts)</div>`).join("")
+                : `<div class="inline-note">No additive upgrades for this unit.</div>`;
+            return `
+                <div class="entry-editor-stack">
+                    <div class="inline-note"><strong>Default selection:</strong> ${escapeHtml(entry.selectedOption && entry.selectedOption.label ? entry.selectedOption.label : "None")}</div>
+                    ${optionRows}
+                    <div class="inline-note"><strong>Upgrades</strong></div>
+                    ${upgradeRows}
+                </div>
+            `;
+        }
+
+        function detailReadOnlyWargearMarkup(entry) {
+            if (!entry || !entry.unit) {
+                return `<div class="inline-note">This unit has no configurable wargear in the current catalog.</div>`;
+            }
+            const groups = wargearGroups(entry.unit, entry);
+            const sections = [];
+
+            groups.simple.forEach((group) => {
+                sections.push(`
+                    <div class="entry-detail-list">
+                        <strong>${escapeHtml(group.target || group.label)}</strong>
+                        ${group.eligibilityText ? `<div class="inline-note">${escapeHtml(group.eligibilityText)}</div>` : ""}
+                        <div class="inline-note">${escapeHtml((group.choices || []).map((choice) => choice.label).join(", ") || "No choices listed.")}</div>
+                    </div>
+                `);
+            });
+            groups.allocation.forEach((group) => {
+                const maxAllowed = allocationLimit(group, entry);
+                sections.push(`
+                    <div class="entry-detail-list">
+                        <strong>${escapeHtml(group.label)}</strong>
+                        <div class="inline-note">${maxAllowed !== null ? `Up to ${maxAllowed} selections at the default size.` : "Selection count depends on roster configuration."}</div>
+                        <div class="inline-note">${escapeHtml((group.choices || []).map((choice) => choice.label).join(", ") || "No choices listed.")}</div>
+                    </div>
+                `);
+            });
+            groups.multi.forEach((group) => {
+                sections.push(`
+                    <div class="entry-detail-list">
+                        <strong>${escapeHtml(group.label)}</strong>
+                        <div class="inline-note">${typeof group.pickCount === "number" ? `Choose up to ${group.pickCount} pick${group.pickCount === 1 ? "" : "s"}.` : "Multiple selections allowed."}${group.requireDistinct ? " Choices must be different." : ""}</div>
+                        <div class="inline-note">${escapeHtml((group.choices || []).map((choice) => choice.label).join(", ") || "No choices listed.")}</div>
+                    </div>
+                `);
+            });
+            groups.manual.forEach((group) => {
+                sections.push(`
+                    <div class="entry-detail-list">
+                        <strong>${escapeHtml(group.label)}</strong>
+                        <div class="inline-note inline-note-warning">Manual choice required in the current catalog.</div>
+                    </div>
+                `);
+            });
+
+            if (entry.unit.wargear && Array.isArray(entry.unit.wargear.manualNotes)) {
+                entry.unit.wargear.manualNotes.forEach((note) => {
+                    sections.push(`<div class="inline-note">${escapeHtml(note)}</div>`);
+                });
+            }
+
+            return sections.length
+                ? `<div class="entry-editor-stack">${sections.join("")}</div>`
+                : `<div class="inline-note">This unit has no configurable wargear in the current catalog.</div>`;
+        }
+
         function loadoutSummary(entry) {
             if (!entry) {
                 return [];
@@ -2838,9 +2982,12 @@
         }
 
         function renderEntryEditor(derived) {
-            const entry = selectedEntry(derived);
-            state.activeEditorInstanceId = entry ? entry.instanceId : null;
-            if (!entry) {
+            const rosterEntry = selectedEntry(derived);
+            const catalogEntry = rosterEntry ? null : selectedCatalogPreviewEntry();
+            const entry = rosterEntry || catalogEntry;
+            const mode = rosterEntry ? "roster" : (catalogEntry ? "catalog" : null);
+            state.activeEditorInstanceId = rosterEntry ? rosterEntry.instanceId : null;
+            if (!entry || !mode) {
                 els.entryEditor.hidden = true;
                 els.entryEditor.innerHTML = "";
                 return;
@@ -2994,6 +3141,61 @@
                     </select>
                 </div>
             ` : "";
+            const closeAction = mode === "catalog" ? "close-catalog-detail" : "close-editor";
+            const previewMarkup = detailPreviewMarkup(entry);
+            const supportSummary = support.supportReasons.length
+                ? `<div class="inline-note">${support.supportReasons.map((reason) => supportReasonLabel(reason)).join(" • ")}</div>`
+                : `<div class="inline-note">No extra review notes are attached to this unit right now.</div>`;
+            const loadoutText = loadoutSummary(entry).length ? loadoutSummary(entry).join(" • ") : "No configuration selected yet.";
+
+            if (mode === "catalog") {
+                els.entryEditor.hidden = false;
+                els.entryEditor.innerHTML = `
+                    <div class="entry-editor-header">
+                        <div>
+                            <div class="entry-summary-line">
+                                <h2 class="section-heading">${escapeHtml(entry.displayName)}</h2>
+                                ${supportBadge(support.supportLevel)}
+                                ${support.previewSupport === "configured-only" ? `<span class="pill pill-warning">Image fallback</span>` : ""}
+                                <span class="pill pill-subtle">Browse only</span>
+                            </div>
+                            <div class="inline-note">${escapeHtml(loadoutText)}</div>
+                            <div class="inline-note">${escapeHtml((entry.selectedOption && typeof entry.selectedOption.points === "number") ? `${entry.selectedOption.points} pts default` : "No default points option")}</div>
+                        </div>
+                        <div class="entry-actions">
+                            <button class="btn btn-primary" type="button" data-action="add-unit" data-unit-id="${entry.unitId}">Add to roster</button>
+                            <button class="btn" type="button" data-action="${closeAction}">Close</button>
+                        </div>
+                    </div>
+                    <div class="entry-detail-preview">${previewMarkup}</div>
+                    <div class="entry-editor-grid">
+                        <div class="entry-editor-block">
+                            <h3>Datasheet</h3>
+                            <div class="entry-editor-stack">
+                                ${detailKeywordsMarkup(entry.unit)}
+                                ${supportSummary}
+                            </div>
+                        </div>
+                        <div class="entry-editor-block">
+                            <h3>Configuration</h3>
+                            ${detailReadOnlyConfigurationMarkup(entry)}
+                        </div>
+                        <div class="entry-editor-block">
+                            <h3>Wargear</h3>
+                            ${detailReadOnlyWargearMarkup(entry)}
+                        </div>
+                        <div class="entry-editor-block">
+                            <h3>Roster Impact</h3>
+                            <div class="entry-editor-stack">
+                                <div class="inline-note">This is a browse-only unit preview. No roster entry has been created yet.</div>
+                                <div class="inline-note">Use <strong>Add to roster</strong> to start configuring quantity, enhancements, relationships, and legal loadout choices.</div>
+                                ${entry.support && entry.support.previewSupport === "configured-only" ? `<div class="inline-note inline-note-warning">Original Wahapedia imagery is unavailable for this unit, so the builder-rendered card is used as the fallback preview.</div>` : ""}
+                            </div>
+                        </div>
+                    </div>
+                `;
+                return;
+            }
 
             els.entryEditor.hidden = false;
             els.entryEditor.innerHTML = `
@@ -3009,10 +3211,11 @@
                         ${support.supportReasons.length ? `<div class="inline-note">${support.supportReasons.map((reason) => supportReasonLabel(reason)).join(" • ")}</div>` : ""}
                     </div>
                     <div class="entry-actions">
-                        <button class="btn" type="button" data-action="close-editor">Close</button>
+                        <button class="btn" type="button" data-action="${closeAction}">Close</button>
                     </div>
                 </div>
                 ${issueText}
+                <div class="entry-detail-preview">${previewMarkup}</div>
                 <div class="entry-editor-grid">
                     <div class="entry-editor-block">
                         <h3>Configuration</h3>
@@ -3229,16 +3432,21 @@
                 return;
             }
             const units = state.catalog.units.filter((unit) => unitMatchesFilters(unit));
+            let selectionChanged = false;
             if (els.catalogVisibleCount) {
                 els.catalogVisibleCount.textContent = `${units.length} shown`;
             }
 
             if (state.selectedCatalogUnitId && !units.some((unit) => unit.unitId === state.selectedCatalogUnitId)) {
                 state.selectedCatalogUnitId = null;
+                selectionChanged = true;
             }
 
             if (!units.length) {
                 els.unitList.innerHTML = `<div class="unit-row">No units match the current search.</div>`;
+                if (selectionChanged) {
+                    renderRoster();
+                }
                 return;
             }
 
@@ -3263,12 +3471,16 @@
                             <div class="unit-row-detail">
                                 ${supportReasons.length ? `<div class="inline-note">${supportReasons.map((reason) => supportReasonLabel(reason)).join(" • ")}</div>` : `<div class="inline-note">No extra review notes are attached to this unit right now.</div>`}
                                 ${(unit.wargear && unit.wargear.options && unit.wargear.options.length) ? `<div class="inline-note">This unit includes configurable wargear options in the current catalog.</div>` : ""}
+                                <div class="inline-note">Full unit details are shown in the main workspace below.</div>
                                 ${inRosterCount ? `<div class="inline-note">${inRosterCount} ${inRosterCount === 1 ? "copy is" : "copies are"} already in your roster.</div>` : `<div class="inline-note">Add this unit to start configuring it in the roster workspace.</div>`}
                             </div>
                         ` : ""}
                     </div>
                 `;
             }).join("");
+            if (selectionChanged) {
+                renderRoster();
+            }
         }
 
         function renderSavedRosterState() {
@@ -3780,6 +3992,11 @@
             if (target && target.dataset.action === "focus-unit") {
                 state.selectedCatalogUnitId = state.selectedCatalogUnitId === target.dataset.unitId ? null : target.dataset.unitId;
                 renderUnitList();
+                renderRoster();
+                if (state.selectedCatalogUnitId && isMobileViewport()) {
+                    state.activeMobileTab = "roster";
+                    renderWorkspaceVisibility(deriveRoster());
+                }
                 return;
             }
             const added = interactionController.handleUnitListClick(event);
@@ -3818,6 +4035,18 @@
                 state.activeEditorInstanceId = null;
                 renderRoster();
                 return;
+            }
+            if (target.dataset.action === "close-catalog-detail") {
+                state.selectedCatalogUnitId = null;
+                renderUnitList();
+                renderRoster();
+                return;
+            }
+            if (target.dataset.action === "add-unit") {
+                const added = interactionController.addToRoster(target.dataset.unitId);
+                if (added) {
+                    renderUnitList();
+                }
             }
         });
 

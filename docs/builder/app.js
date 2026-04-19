@@ -104,6 +104,66 @@
         return { rosterId: null, reason: "none" };
     }
 
+    function createCatalogPreviewEntry(unit, options) {
+        const previewUnit = unit && typeof unit === "object" ? unit : null;
+        const renderer = options && options.renderer;
+        const support = options && options.support && typeof options.support === "object"
+            ? options.support
+            : {};
+        const defaultPointsOption = previewUnit && renderer && typeof renderer.defaultPointsOption === "function"
+            ? renderer.defaultPointsOption(previewUnit)
+            : null;
+        const pointsGroups = options && typeof options.pointsGroups === "function"
+            ? options.pointsGroups(previewUnit)
+            : { base: [], upgrades: [] };
+        const baseOptions = Array.isArray(pointsGroups.base) ? pointsGroups.base : [];
+        const upgradeOptions = Array.isArray(pointsGroups.upgrades) ? pointsGroups.upgrades : [];
+        const optionIndex = defaultPointsOption && Array.isArray(previewUnit && previewUnit.pointsOptions)
+            ? previewUnit.pointsOptions.indexOf(defaultPointsOption)
+            : null;
+        const linePoints = defaultPointsOption && typeof defaultPointsOption.points === "number"
+            ? defaultPointsOption.points
+            : 0;
+
+        return {
+            instanceId: options && options.instanceId ? String(options.instanceId) : "__catalog-preview__",
+            unit: previewUnit,
+            unitId: previewUnit && previewUnit.unitId ? previewUnit.unitId : null,
+            displayName: previewUnit && previewUnit.name ? previewUnit.name : "Unknown unit",
+            selectedOption: defaultPointsOption,
+            optionId: defaultPointsOption ? defaultPointsOption.id : null,
+            optionIndex: Number.isInteger(optionIndex) && optionIndex >= 0 ? optionIndex : null,
+            options: baseOptions,
+            upgradeOptions,
+            selectedUpgrades: [],
+            upgradeOptionIds: [],
+            activeEnhancement: null,
+            enhancementId: null,
+            linePoints,
+            linePointsBase: linePoints,
+            linePointsEnhancement: 0,
+            quantity: 1,
+            wargearSelections: [],
+            inactiveWargearSelections: [],
+            support: {
+                supportLevel: support.supportLevel || "full",
+                supportReasons: Array.isArray(support.supportReasons) ? support.supportReasons : [],
+                previewSupport: support.previewSupport || "configured-only",
+            },
+            issues: [],
+            primaryIssue: "",
+            isValid: true,
+            canRepair: false,
+            relationship: {
+                relationshipNotes: [],
+                attachOptions: [],
+                attachedToInstanceId: null,
+                transportOptions: [],
+                embarkedInInstanceId: null,
+            },
+        };
+    }
+
     function buildRendererOptions(entry, options) {
         const unit = entry && entry.unit ? entry.unit : null;
         const previewSourceMode = options && options.previewSourceMode ? options.previewSourceMode : "configured";
@@ -213,6 +273,10 @@
             return renderableEntries.map((entry) => wrapPreviewEntry(entry, renderSourcePreviewCard(entry, options))).join("");
         }
         return renderableEntries.map((entry) => wrapPreviewEntry(entry, renderConfiguredPreviewCard(entry, options))).join("");
+    }
+
+    function renderPreviewEntry(entry, options) {
+        return renderPreviewEntries(entry ? [entry] : [], options);
     }
 
     function renderPrintPackSummary(options) {
@@ -933,11 +997,13 @@
 
     return {
         buildMissingSourceCardLookup,
+        createCatalogPreviewEntry,
         chooseRestorableRoster,
         createInteractionController,
         escapeHtml,
         eventElementTarget,
         printPreviewCards,
+        renderPreviewEntry,
         renderPrintPackSummary,
         renderPreviewEntries,
         sourceCardLookupKey,

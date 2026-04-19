@@ -134,6 +134,25 @@ class BuilderBrowserSmokeTests(unittest.TestCase):
             lambda driver: "compatible" in driver.find_element(By.CSS_SELECTOR, "#saved-roster-select option").text
         )
 
+    def test_catalog_details_open_without_mutating_roster(self):
+        Select(self.driver.find_element(By.ID, "faction-select")).select_by_visible_text("Aeldari")
+        starting_points = self.driver.find_element(By.ID, "total-points").text
+        self.assertIn("No roster entries yet.", self.driver.find_element(By.ID, "roster-body").text)
+
+        self.driver.find_element(By.CSS_SELECTOR, "#unit-list [data-action='focus-unit']").click()
+        self.wait.until(lambda driver: not driver.find_element(By.ID, "entry-editor").get_attribute("hidden"))
+        self.assertIn("Browse only", self.driver.find_element(By.ID, "entry-editor").text)
+        self.assertIn("Add to roster", self.driver.find_element(By.ID, "entry-editor").text)
+        self.assertIn("datasheet-card", self.driver.find_element(By.ID, "entry-editor").get_attribute("innerHTML"))
+        self.assertEqual([], self.driver.find_elements(By.CSS_SELECTOR, "#entry-editor [data-action='option-select']"))
+        self.assertEqual([], self.driver.find_elements(By.CSS_SELECTOR, "#entry-editor [data-action='warlord-select']"))
+        self.assertEqual(starting_points, self.driver.find_element(By.ID, "total-points").text)
+        self.assertIn("No roster entries yet.", self.driver.find_element(By.ID, "roster-body").text)
+
+        self.driver.find_element(By.CSS_SELECTOR, "#entry-editor [data-action='add-unit']").click()
+        self.wait.until(lambda driver: len(driver.find_elements(By.CSS_SELECTOR, "#roster-body .roster-entry")) == 1)
+        self.assertNotIn("No roster entries yet.", self.driver.find_element(By.ID, "roster-body").text)
+
     def test_inline_card_selection_updates_roster_without_opening_editor(self):
         Select(self.driver.find_element(By.ID, "faction-select")).select_by_visible_text("Adeptus Custodes")
         self.driver.find_element(By.ID, "unit-search").clear()

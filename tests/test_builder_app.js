@@ -553,6 +553,62 @@ test("renderPreviewEntries renders configured HTML cards in configured mode", ()
     assert.doesNotMatch(html, /source-card-image/);
 });
 
+test("createCatalogPreviewEntry derives a read-only preview model from a catalog unit", () => {
+    const unit = sampleUnit();
+    unit.support = {
+        supportLevel: "partial",
+        supportReasons: ["manual_wargear"],
+        previewSupport: "configured-only",
+    };
+    const entry = App.createCatalogPreviewEntry(unit, {
+        renderer: {
+            defaultPointsOption(value) {
+                return value.pointsOptions[1];
+            },
+        },
+        pointsGroups: (value) => ({
+            base: value.pointsOptions.filter((option) => option.selectionKind !== "upgrade"),
+            upgrades: value.pointsOptions.filter((option) => option.selectionKind === "upgrade"),
+        }),
+        support: unit.support,
+    });
+
+    assert.equal(entry.unitId, unit.unitId);
+    assert.equal(entry.displayName, unit.name);
+    assert.equal(entry.selectedOption.id, "3-models");
+    assert.equal(entry.optionId, "3-models");
+    assert.equal(entry.optionIndex, 1);
+    assert.equal(entry.linePoints, 300);
+    assert.equal(entry.quantity, 1);
+    assert.deepEqual(entry.selectedUpgrades, []);
+    assert.deepEqual(entry.wargearSelections, []);
+    assert.equal(entry.activeEnhancement, null);
+    assert.equal(entry.relationship.attachedToInstanceId, null);
+    assert.deepEqual(entry.support, unit.support);
+    assert.equal(entry.canRepair, false);
+});
+
+test("renderPreviewEntry renders a single synthetic catalog preview card", () => {
+    const entry = samplePreviewEntry({
+        instanceId: "__catalog-preview__",
+    });
+    const renderer = {
+        renderCard(unit) {
+            return `<article class="datasheet-card">${unit.name}</article>`;
+        },
+    };
+
+    const html = App.renderPreviewEntry(entry, {
+        previewSourceMode: "configured",
+        previewRenderMode: "default",
+        renderer,
+        missingSourceCardLookup: new Set(),
+    });
+
+    assert.match(html, /datasheet-card/);
+    assert.match(html, /data-instance-id="__catalog-preview__"/);
+});
+
 test("renderPreviewEntries disables inline quick-swap controls in print-clean mode", () => {
     const entry = samplePreviewEntry({
         instanceId: "entry-inline",
