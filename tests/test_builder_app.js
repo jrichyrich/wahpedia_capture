@@ -609,6 +609,49 @@ test("renderPreviewEntry renders a single synthetic catalog preview card", () =>
     assert.match(html, /data-instance-id="__catalog-preview__"/);
 });
 
+test("renderPreviewEntry renders a browse-only catalog card in source-image mode", () => {
+    const unit = {
+        ...sampleUnit(),
+        source: {
+            outputSlug: "adeptus-custodes",
+            datasheetSlug: "Caladius-Grav-tank",
+        },
+    };
+    const entry = App.createCatalogPreviewEntry(unit, {
+        instanceId: "catalog-preview-caladius",
+        renderer: {
+            defaultPointsOption(value) {
+                return value.pointsOptions[0] || null;
+            },
+        },
+        pointsGroups: (value) => ({
+            base: value.pointsOptions.filter((option) => option.selectionKind !== "upgrade"),
+            upgrades: value.pointsOptions.filter((option) => option.selectionKind === "upgrade"),
+        }),
+        support: {
+            supportLevel: "full",
+            supportReasons: [],
+            previewSupport: "source-image",
+        },
+    });
+    const renderer = {
+        renderCard(value) {
+            return `<article class="datasheet-card">${value.name}</article>`;
+        },
+    };
+
+    const html = App.renderPreviewEntry(entry, {
+        previewSourceMode: "source-image",
+        previewRenderMode: "print-clean",
+        renderer,
+        missingSourceCardLookup: new Set(),
+    });
+
+    assert.match(html, /data-source-card-mode="image"/);
+    assert.match(html, /Original Wahapedia source card/);
+    assert.match(html, /data-instance-id="catalog-preview-caladius"/);
+});
+
 test("renderPreviewEntries disables inline quick-swap controls in print-clean mode", () => {
     const entry = samplePreviewEntry({
         instanceId: "entry-inline",
