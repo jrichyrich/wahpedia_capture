@@ -1,0 +1,305 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/t-au-empire/Ta-unar-Supremacy-Armour",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/t-au-empire/Ta-unar-Supremacy-Armour",
+    "canonicalSourceId": "wahapedia:fcf111c4e27ca0be08f8a731a2a80046e4f6f32a",
+    "faction_slug": "t-au-empire",
+    "datasheet_slug": "Ta-unar-Supremacy-Armour",
+    "fetchedAt": "2026-04-20T20:50:07+00:00",
+    "contentHash": "e29fa8042e60f964c4606dce6b2144ae227680d8ff442c81ad5dbfe0aafbcb57",
+    "output_slug": "t-au-empire"
+  },
+  "name": "Ta\u2019unar Supremacy Armour",
+  "base_size": "\u2300160mm",
+  "characteristics": {
+    "M": "8\"",
+    "T": "13",
+    "Sv": "2+",
+    "W": "30",
+    "Ld": "7+",
+    "OC": "10",
+    "Invulnerable Save": "5+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Burst cannon",
+        "abilities": [],
+        "range": "18\"",
+        "a": "4",
+        "bs": "4+",
+        "s": "5",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Fragmentation cluster shell launcher",
+        "abilities": [
+          "blast"
+        ],
+        "range": "24\"",
+        "a": "2D6+6",
+        "bs": "4+",
+        "s": "6",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Fusion eradicator",
+        "abilities": [
+          "melta 3"
+        ],
+        "range": "24\"",
+        "a": "5",
+        "bs": "4+",
+        "s": "10",
+        "ap": "-4",
+        "d": "D6"
+      },
+      {
+        "name": "Heavy rail cannon array",
+        "abilities": [
+          "devastating wounds",
+          "heavy"
+        ],
+        "range": "120\"",
+        "a": "2",
+        "bs": "4+",
+        "s": "26",
+        "ap": "-5",
+        "d": "16"
+      },
+      {
+        "name": "Nexus missile launcher",
+        "abilities": [],
+        "range": "36\"",
+        "a": "8",
+        "bs": "4+",
+        "s": "8",
+        "ap": "-3",
+        "d": "2"
+      },
+      {
+        "name": "Pulse ordnance driver",
+        "abilities": [
+          "anti-infantry 2+"
+        ],
+        "range": "60\"",
+        "a": "8",
+        "bs": "4+",
+        "s": "5",
+        "ap": "-1",
+        "d": "3"
+      },
+      {
+        "name": "Smart missile system",
+        "abilities": [
+          "indirect fire"
+        ],
+        "range": "30\"",
+        "a": "3",
+        "bs": "4+",
+        "s": "5",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Tri-axis ion cannon \u2013 standard",
+        "abilities": [
+          "blast"
+        ],
+        "range": "36\"",
+        "a": "D6+3",
+        "bs": "4+",
+        "s": "8",
+        "ap": "-2",
+        "d": "2"
+      },
+      {
+        "name": "Tri-axis ion cannon \u2013 supercharge",
+        "abilities": [
+          "blast",
+          "hazardous"
+        ],
+        "range": "36\"",
+        "a": "D6+3",
+        "bs": "4+",
+        "s": "9",
+        "ap": "-3",
+        "d": "3"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Crushing feet",
+        "abilities": [],
+        "range": "Melee",
+        "a": "6",
+        "ws": "5+",
+        "s": "8",
+        "ap": "-1",
+        "d": "2"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise D6+3"
+    ],
+    "faction": [
+      "For the Greater Good"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While this model is a Guided unit , each time it makes an attack that targets its Spotted unit , re-roll a Hit roll of 1.",
+        "name": "Coordinated Strike"
+      },
+      {
+        "type": "rule",
+        "text": "Each time this model makes a Normal , Advance or Fall Back move, it can move over models (excluding TITANIC models) and terrain features that are 4\" or less in height as if they were not there.",
+        "name": "Super-heavy Walker"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Ta\u2019unar Supremacy Armour"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "4 burst cannons; fusion eradicator; 3 pulse ordnance drivers; 4 smart missile systems; tri-axis ion cannon; crushing feet.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "790"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "VEHICLE",
+    "WALKER",
+    "TITANIC",
+    "TOWERING",
+    "TA\u2019UNAR SUPREMACY ARMOUR"
+  ],
+  "faction_keywords": [
+    "T\u2019AU EMPIRE"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s tri-axis ion cannon can be replaced with 1 fusion eradicator.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "This model\u2019s fusion eradicator can be replaced with 1 tri-axis ion cannon.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "This model\u2019s 3 pulse ordnance drivers can be replaced with one of the following:",
+          "items": [
+            "2 nexus missile launchers",
+            "1 heavy rail cannon array and 1 fragmentation cluster shell launcher"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise D6+3"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "For the Greater Good"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While this model is a Guided unit , each time it makes an attack that targets its Spotted unit , re-roll a Hit roll of 1.",
+          "name": "Coordinated Strike"
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model makes a Normal , Advance or Fall Back move, it can move over models (excluding TITANIC models) and terrain features that are 4\" or less in height as if they were not there.",
+          "name": "Super-heavy Walker"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Ta\u2019unar Supremacy Armour"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "4 burst cannons; fusion eradicator; 3 pulse ordnance drivers; 4 smart missile systems; tri-axis ion cannon; crushing feet.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "790"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DAMAGED: 1-10 WOUNDS REMAINING",
+      "entries": [
+        {
+          "type": "text",
+          "text": "While this model has 1-10 wounds remaining, subtract 5 from this model\u2019s Objective Control characteristic and each time this model makes an attack, subtract 1 from the Hit roll ."
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-10 WOUNDS REMAINING"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-10 WOUNDS REMAINING"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

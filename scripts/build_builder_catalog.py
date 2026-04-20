@@ -65,6 +65,8 @@ def default_faction_rules_root() -> Path:
 
 
 def slug_to_title(slug: str) -> str:
+    if slug == "t-au-empire":
+        return "T'au Empire"
     return slug.replace("-", " ").title()
 
 
@@ -583,11 +585,28 @@ def parse_wargear_prompt(text: str, items: list[str] | None = None) -> dict[str,
     items = list(items or [])
     text = normalize_space(text)
     availability, text = parse_model_count_availability(text)
+    if text.lower() in {"none", "none."}:
+        return {
+            "target": None,
+            "actor": None,
+            "action": None,
+            "selectionMode": "manual",
+            "choices": [],
+            "allocationLimit": None,
+            "pickCount": None,
+            "requireDistinct": False,
+            "poolKey": None,
+            "poolLimit": None,
+            "eligibilityText": None,
+            "consumesPool": 1,
+            "availability": availability,
+        }
     text = re.sub(r"\s+replaced one of the following", " replaced with one of the following", text, flags=re.IGNORECASE)
     text = re.sub(r"\s+can be replace with\s+", " can be replaced with ", text, flags=re.IGNORECASE)
     text = re.sub(r"\s+can replaced with\s+", " can be replaced with ", text, flags=re.IGNORECASE)
     text = re.sub(r"\s+replaced with equipped with\s+", " replaced with ", text, flags=re.IGNORECASE)
     text = re.sub(r"\s+replaced with with\s+", " replaced with ", text, flags=re.IGNORECASE)
+    text = re.sub(r"(have their .+?) can be replaced with", r"\1 replaced with", text, flags=re.IGNORECASE)
     result = {
         "target": None,
         "actor": None,
@@ -717,6 +736,45 @@ def parse_wargear_prompt(text: str, items: list[str] | None = None) -> dict[str,
                 "choices": choices,
                 "pickCount": len(choices),
                 "requireDistinct": True,
+            }
+        )
+        return result
+
+    capped_allocation_items_match = re.match(
+        rf"^Any number of (models|.+?) can (?:each )?be equipped with up to ({NUMBER_PATTERN}) of the following, (?:but cannot take duplicates|and can take duplicates)(?:\*|:|\.)*$",
+        text,
+        flags=re.IGNORECASE,
+    )
+    if capped_allocation_items_match and items:
+        max_count = parse_number_token(capped_allocation_items_match.group(2))
+        result.update(
+            {
+                "target": normalize_space(capped_allocation_items_match.group(1)),
+                "actor": normalize_space(f"Any number of {capped_allocation_items_match.group(1)}"),
+                "action": "equip",
+                "selectionMode": "allocation",
+                "choices": [normalize_wargear_choice(item) for item in items if normalize_space(item)],
+                "allocationLimit": {"kind": "modelCount", "multiplier": max_count},
+            }
+        )
+        return result
+
+    capped_allocation_inline_match = re.match(
+        rf"^Any number of (models|.+?) can (?:each )?be equipped with up to ({NUMBER_PATTERN}) (.+?)(?:\*|:|\.)*$",
+        text,
+        flags=re.IGNORECASE,
+    )
+    if capped_allocation_inline_match:
+        max_count = parse_number_token(capped_allocation_inline_match.group(2))
+        choice_label = singularize_actor(capped_allocation_inline_match.group(3))
+        result.update(
+            {
+                "target": normalize_space(capped_allocation_inline_match.group(1)),
+                "actor": normalize_space(f"Any number of {capped_allocation_inline_match.group(1)}"),
+                "action": "equip",
+                "selectionMode": "allocation",
+                "choices": [normalize_inline_choice(f"1 {choice_label}")],
+                "allocationLimit": {"kind": "modelCount", "multiplier": max_count},
             }
         )
         return result
@@ -971,6 +1029,15 @@ def parse_wargear_prompt(text: str, items: list[str] | None = None) -> dict[str,
             lambda _match: "allocation",
             lambda match: normalize_space(f"Any number of {match.group(1)}"),
             lambda _match: {"kind": "modelCount"},
+        ),
+        (
+            rf"^({NUMBER_PATTERN}) models? can (?:each )?have their (.+?) replaced with ((?:{NUMBER_PATTERN}) .+?)(?:\*|:|\.)*$",
+            "replace",
+            lambda match: normalize_space(match.group(2)),
+            lambda match: [normalize_inline_choice(match.group(3))],
+            lambda _match: "allocation",
+            lambda _match: "models",
+            lambda match: {"kind": "static", "max": parse_number_token(match.group(1))},
         ),
         (
             rf"^Up to ({NUMBER_PATTERN}) (models|.+?) can (?:each )?have their (.+?) replaced with ((?:{NUMBER_PATTERN}) .+?)(?:\*|:|\.)*$",
@@ -1329,11 +1396,53 @@ def build_wargear(card: dict[str, object]) -> dict[str, object]:
     manual_notes = []
     has_manual_options = False
 
+    def append_option(label: str, parsed: dict[str, object], raw_items: list[str]) -> None:
+        nonlocal has_manual_options
+        item_choices = [normalize_wargear_choice(item) for item in raw_items if normalize_space(item)]
+        choices = []
+        for choice in [*(parsed["choices"] or []), *item_choices]:
+            if not choice or not choice.get("id"):
+                continue
+            if any(existing["id"] == choice["id"] for existing in choices):
+                continue
+            choices.append(dict(choice))
+        if normalize_space(label).lower().rstrip(".") == "none" and not choices:
+            return
+        option_id = slugify(f"{label}-{len(options) + 1}")
+        option = {
+            "id": option_id,
+            "label": label,
+            "target": parsed["target"],
+            "actor": parsed["actor"],
+            "action": parsed["action"],
+            "selectionMode": parsed["selectionMode"],
+            "choices": choices,
+            "allocationLimit": parsed["allocationLimit"],
+        }
+        if parsed["pickCount"] is not None:
+            option["pickCount"] = parsed["pickCount"]
+        if parsed["requireDistinct"]:
+            option["requireDistinct"] = True
+        if parsed["availability"] is not None:
+            option["availability"] = parsed["availability"]
+        if parsed["poolKey"]:
+            option["poolKey"] = parsed["poolKey"]
+        if parsed["poolLimit"] is not None or parsed["poolKey"]:
+            option["poolLimit"] = parsed["poolLimit"]
+        if parsed["eligibilityText"]:
+            option["eligibilityText"] = parsed["eligibilityText"]
+        if parsed["consumesPool"] != 1:
+            option["consumesPool"] = parsed["consumesPool"]
+        if parsed["selectionMode"] == "manual":
+            has_manual_options = True
+        options.append(option)
+
     for entry in option_entries:
         entry_type = entry.get("type")
         if entry_type == "option_group":
             label = normalize_space(entry.get("label"))
             parsed = parse_wargear_prompt(label, list(entry.get("items", [])))
+            appended_nested = False
             if parsed["selectionMode"] == "manual" and entry.get("items"):
                 if parsed.get("availability"):
                     nested = [parse_wargear_prompt(str(item), []) for item in entry.get("items", [])]
@@ -1361,6 +1470,14 @@ def build_wargear(card: dict[str, object]) -> dict[str, object]:
                                 "choices": [choice for item in nested for choice in item["choices"]],
                                 "availability": parsed["availability"],
                             }
+                        else:
+                            for item, raw_label in zip(nested, entry.get("items", []), strict=False):
+                                nested_parsed = {
+                                    **item,
+                                    "availability": parsed["availability"],
+                                }
+                                append_option(normalize_space(str(raw_label)), nested_parsed, [])
+                            appended_nested = True
                 wrapper_match = re.match(
                     rf"^For every ({NUMBER_PATTERN}) models? in (?:this unit|the unit):$",
                     label,
@@ -1387,44 +1504,9 @@ def build_wargear(card: dict[str, object]) -> dict[str, object]:
                                     "maxPerStep": 1,
                                 },
                             }
-            item_choices = [normalize_wargear_choice(item) for item in entry.get("items", []) if normalize_space(item)]
-            choices = []
-            for choice in [*(parsed["choices"] or []), *item_choices]:
-                if not choice or not choice.get("id"):
-                    continue
-                if any(existing["id"] == choice["id"] for existing in choices):
-                    continue
-                choices.append(dict(choice))
-            if label == "None" and not choices:
+            if appended_nested:
                 continue
-            option_id = slugify(f"{label}-{len(options) + 1}")
-            option = {
-                "id": option_id,
-                "label": label,
-                "target": parsed["target"],
-                "actor": parsed["actor"],
-                "action": parsed["action"],
-                "selectionMode": parsed["selectionMode"],
-                "choices": choices,
-                "allocationLimit": parsed["allocationLimit"],
-            }
-            if parsed["pickCount"] is not None:
-                option["pickCount"] = parsed["pickCount"]
-            if parsed["requireDistinct"]:
-                option["requireDistinct"] = True
-            if parsed["availability"] is not None:
-                option["availability"] = parsed["availability"]
-            if parsed["poolKey"]:
-                option["poolKey"] = parsed["poolKey"]
-            if parsed["poolLimit"] is not None or parsed["poolKey"]:
-                option["poolLimit"] = parsed["poolLimit"]
-            if parsed["eligibilityText"]:
-                option["eligibilityText"] = parsed["eligibilityText"]
-            if parsed["consumesPool"] != 1:
-                option["consumesPool"] = parsed["consumesPool"]
-            if parsed["selectionMode"] == "manual":
-                has_manual_options = True
-            options.append(option)
+            append_option(label, parsed, list(entry.get("items", [])))
             continue
 
         text = normalize_space(entry.get("text"))

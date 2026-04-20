@@ -1,0 +1,191 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/t-au-empire/Tidewall-Gunrig",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/t-au-empire/Tidewall-Gunrig",
+    "canonicalSourceId": "wahapedia:512b34cca2388e1f9b9844c1db1c30236a8c77cb",
+    "faction_slug": "t-au-empire",
+    "datasheet_slug": "Tidewall-Gunrig",
+    "fetchedAt": "2026-04-20T20:50:13+00:00",
+    "contentHash": "fb8a92a289970736323f089b80557c6a1ba206022ca76523d45ebf019a4a708d",
+    "output_slug": "t-au-empire"
+  },
+  "name": "Tidewall Gunrig",
+  "base_size": "\u2300Use model",
+  "characteristics": {
+    "M": "4\"",
+    "T": "8",
+    "Sv": "3+",
+    "W": "14",
+    "Ld": "7+",
+    "OC": "0"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Supremacy railgun",
+        "abilities": [
+          "devastating wounds",
+          "twin-linked"
+        ],
+        "range": "72\"",
+        "a": "1",
+        "bs": "5+",
+        "s": "20",
+        "ap": "-5",
+        "d": "D6+6"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise D3 , Firing Deck 11"
+    ],
+    "faction": [],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "While an enemy unit is only within Engagement Range of one or more FORTIFICATIONS from your army:",
+        "name": "Fortification"
+      },
+      {
+        "type": "rule",
+        "text": "Each time a ranged attack is allocated to a model, if that model is not fully visible to every model in the attacking unit because of this FORTIFICATION , that model has the Benefit of Cover against that attack.",
+        "name": "Tidewall Cover"
+      }
+    ],
+    "other": [
+      {
+        "type": "list",
+        "items": [
+          "That unit can still be selected as the target of ranged attacks, but each time such an attack is made, unless it is made with a Pistol , subtract 1 from the Hit roll .",
+          "Models in that unit do not need to take Desperate Escape tests due to Falling Back while Battle-shocked , except for those that will move over enemy models when doing so."
+        ]
+      }
+    ]
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Tidewall Gunrig"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "supremacy railgun.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "90"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "FORTIFICATION",
+    "VEHICLE",
+    "TRANSPORT",
+    "FLY",
+    "TIDEWALL GUNRIG"
+  ],
+  "faction_keywords": [
+    "T\u2019AU EMPIRE"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "text",
+          "text": "None"
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise D3 , Firing Deck 11"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "While an enemy unit is only within Engagement Range of one or more FORTIFICATIONS from your army:",
+          "name": "Fortification"
+        },
+        {
+          "type": "list",
+          "items": [
+            "That unit can still be selected as the target of ranged attacks, but each time such an attack is made, unless it is made with a Pistol , subtract 1 from the Hit roll .",
+            "Models in that unit do not need to take Desperate Escape tests due to Falling Back while Battle-shocked , except for those that will move over enemy models when doing so."
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time a ranged attack is allocated to a model, if that model is not fully visible to every model in the attacking unit because of this FORTIFICATION , that model has the Benefit of Cover against that attack.",
+          "name": "Tidewall Cover"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Tidewall Gunrig"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "supremacy railgun.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "90"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "TRANSPORT",
+      "entries": [
+        {
+          "type": "text",
+          "text": "This model has a transport capacity of 11 T\u2019AU EMPIRE INFANTRY models. It cannot transport BATTLESUIT , KROOT or VESPID STINGWINGS models."
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "TRANSPORT"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "TRANSPORT"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

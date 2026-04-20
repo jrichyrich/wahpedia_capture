@@ -262,6 +262,29 @@ class BuilderCatalogTests(unittest.TestCase):
         self.assertEqual(deffkopta["target"], "kopta rokkits")
         self.assertEqual(deffkopta["allocationLimit"], {"kind": "ratio", "perModels": 3, "maxPerStep": 1})
 
+        seeker_missiles = build_builder_catalog.parse_wargear_prompt(
+            "Any number of models can each be equipped with up to 2 seeker missiles."
+        )
+        self.assertEqual(seeker_missiles["selectionMode"], "allocation")
+        self.assertEqual(seeker_missiles["action"], "equip")
+        self.assertEqual(seeker_missiles["allocationLimit"], {"kind": "modelCount", "multiplier": 2})
+        self.assertEqual(seeker_missiles["choices"][0]["label"], "1 seeker missile")
+
+        crisis_support = build_builder_catalog.parse_wargear_prompt(
+            "Any number of models can each be equipped with up to three of the following, and can take duplicates**:",
+            ["1 burst cannon", "1 plasma rifle"],
+        )
+        self.assertEqual(crisis_support["selectionMode"], "allocation")
+        self.assertEqual(crisis_support["allocationLimit"], {"kind": "modelCount", "multiplier": 3})
+        self.assertEqual([choice["label"] for choice in crisis_support["choices"]], ["1 burst cannon", "1 plasma rifle"])
+
+        counted_replace = build_builder_catalog.parse_wargear_prompt(
+            "2 models can each have their burst cannon replaced with 1 fusion blaster."
+        )
+        self.assertEqual(counted_replace["selectionMode"], "allocation")
+        self.assertEqual(counted_replace["allocationLimit"], {"kind": "static", "max": 2})
+        self.assertEqual(counted_replace["target"], "burst cannon")
+
     def test_parse_wargear_prompt_tracks_model_count_availability(self):
         exact_count = build_builder_catalog.parse_wargear_prompt(
             "If this unit contains 10 models, one model’s sniper rifle can be replaced with 1 tankstopper rifle."
@@ -292,6 +315,35 @@ class BuilderCatalogTests(unittest.TestCase):
             small_wrapper["availability"],
             {"kind": "modelCountRange", "minModels": None, "maxModels": 9},
         )
+
+    def test_build_wargear_splits_conditional_wrapper_items(self):
+        wargear = build_builder_catalog.build_wargear(
+            {
+                "sections": [
+                    {
+                        "title": "WARGEAR OPTIONS",
+                        "entries": [
+                            {
+                                "type": "option_group",
+                                "label": "If this unit contains 10 models:",
+                                "items": [
+                                    "The Vespid Strain Leader can be equipped with 1 Oversight Drone.",
+                                    "1 Vespid Stingwing can replace its neutron blaster with 1 T’au flamer.",
+                                ],
+                            }
+                        ],
+                    }
+                ]
+            }
+        )
+
+        self.assertFalse(wargear["hasManualOptions"])
+        self.assertEqual(len(wargear["options"]), 2)
+        self.assertEqual(
+            wargear["options"][0]["availability"],
+            {"kind": "modelCountRange", "minModels": 10, "maxModels": 10},
+        )
+        self.assertEqual(wargear["options"][1]["action"], "replace")
 
         large_allocation = build_builder_catalog.parse_wargear_prompt(
             "If this unit contains 10 or more models, up to 4 models can each have their shuriken pistol replaced with 1 fusion pistol."

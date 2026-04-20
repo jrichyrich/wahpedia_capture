@@ -1,0 +1,317 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/t-au-empire/Tiger-Shark",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/t-au-empire/Tiger-Shark",
+    "canonicalSourceId": "wahapedia:7c78fc7a7f681b49ab5ddfcdd2d9d8d656a88d07",
+    "faction_slug": "t-au-empire",
+    "datasheet_slug": "Tiger-Shark",
+    "fetchedAt": "2026-04-20T20:50:15+00:00",
+    "contentHash": "1b991640bce8553b4e97236e8dc0c1eb2fc44421919129cc5de4c5178fc1da99",
+    "output_slug": "t-au-empire"
+  },
+  "name": "Tiger Shark",
+  "base_size": "\u2300160mm",
+  "characteristics": {
+    "M": "20+\"",
+    "T": "11",
+    "Sv": "3+",
+    "W": "18",
+    "Ld": "7+",
+    "OC": "0",
+    "Invulnerable Save": "5+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Burst cannon",
+        "abilities": [],
+        "range": "18\"",
+        "a": "4",
+        "bs": "4+",
+        "s": "5",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Cyclic ion blaster \u2013 standard",
+        "abilities": [],
+        "range": "18\"",
+        "a": "3",
+        "bs": "4+",
+        "s": "7",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Cyclic ion blaster \u2013 overcharge",
+        "abilities": [
+          "hazardous"
+        ],
+        "range": "18\"",
+        "a": "3",
+        "bs": "4+",
+        "s": "8",
+        "ap": "-2",
+        "d": "2"
+      },
+      {
+        "name": "Ion cannon \u2013 standard",
+        "abilities": [
+          "blast"
+        ],
+        "range": "60\"",
+        "a": "D6+3",
+        "bs": "4+",
+        "s": "7",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Ion cannon \u2013 overcharge",
+        "abilities": [
+          "blast",
+          "hazardous"
+        ],
+        "range": "60\"",
+        "a": "D6+3",
+        "bs": "4+",
+        "s": "8",
+        "ap": "-2",
+        "d": "3"
+      },
+      {
+        "name": "Missile pod",
+        "abilities": [],
+        "range": "30\"",
+        "a": "2",
+        "bs": "4+",
+        "s": "7",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Seeker missile one shot",
+        "abilities": [],
+        "range": "48\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "14",
+        "ap": "-3",
+        "d": "D6+1"
+      },
+      {
+        "name": "Skyspear missile rack",
+        "abilities": [
+          "anti-fly 3+",
+          "blast"
+        ],
+        "range": "72\"",
+        "a": "D6+1",
+        "bs": "4+",
+        "s": "6",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Swiftstrike burst cannon",
+        "abilities": [],
+        "range": "36\"",
+        "a": "16",
+        "bs": "4+",
+        "s": "6",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Swiftstrike railgun",
+        "abilities": [
+          "devastating wounds"
+        ],
+        "range": "72\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "20",
+        "ap": "-5",
+        "d": "D6+6"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Armoured hull",
+        "abilities": [],
+        "range": "Melee",
+        "a": "3",
+        "ws": "5+",
+        "s": "6",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise D6+2"
+    ],
+    "faction": [
+      "For the Greater Good"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "In your Shooting phase , after this model has shot, select one enemy unit hit by one or more of those attacks that cannot FLY . That enemy unit must take a Battle-shock test .",
+        "name": "Strafing Run"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Tiger Shark"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "2 burst cannons; 2 ion cannons; 2 missile pods; armoured hull; transport bay.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "325"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "VEHICLE",
+    "AIRCRAFT",
+    "FLY",
+    "TIGER SHARK"
+  ],
+  "faction_keywords": [
+    "T\u2019AU EMPIRE"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s 2 burst cannons can be replaced with 2 cyclic ion blasters.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "This model\u2019s 2 ion cannons can be replaced with one of the following:",
+          "items": [
+            "2 swiftstrike burst cannons",
+            "2 swiftstrike railguns"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "This model can be equipped with up to 6 seeker missiles.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "This model\u2019s transport bay can be replaced with 2 skyspear missile racks.",
+          "items": []
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise D6+2"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "For the Greater Good"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "In your Shooting phase , after this model has shot, select one enemy unit hit by one or more of those attacks that cannot FLY . That enemy unit must take a Battle-shock test .",
+          "name": "Strafing Run"
+        }
+      ]
+    },
+    {
+      "title": "WARGEAR ABILITIES",
+      "entries": [
+        {
+          "type": "statement",
+          "text": "The bearer has the TRANSPORT keyword and has a transport capacity of 12 TACTICAL DRONES models.",
+          "label": "Transport Bay"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Tiger Shark"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "2 burst cannons; 2 ion cannons; 2 missile pods; armoured hull; transport bay.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "325"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DAMAGED: 1-6 WOUNDS REMAINING",
+      "entries": [
+        {
+          "type": "text",
+          "text": "While this model has 1-6 wounds remaining, each time this model makes an attack, subtract 1 from the Hit roll ."
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-6 WOUNDS REMAINING"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-6 WOUNDS REMAINING"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

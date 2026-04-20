@@ -1,0 +1,231 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/t-au-empire/Sun-Shark-Bomber",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/t-au-empire/Sun-Shark-Bomber",
+    "canonicalSourceId": "wahapedia:8a47b4a6dcb09fe2500724a61504ce3ba1b6f534",
+    "faction_slug": "t-au-empire",
+    "datasheet_slug": "Sun-Shark-Bomber",
+    "fetchedAt": "2026-04-20T20:50:07+00:00",
+    "contentHash": "0442f1d089ddd68493e4ec9a95196b163f671589318fcf3b5afbc60696a5e886",
+    "output_slug": "t-au-empire"
+  },
+  "name": "Sun Shark Bomber",
+  "base_size": "\u2300120 x 92mm flying base",
+  "characteristics": {
+    "M": "20+\"",
+    "T": "9",
+    "Sv": "3+",
+    "W": "12",
+    "Ld": "7+",
+    "OC": "0"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Missile pod",
+        "abilities": [],
+        "range": "30\"",
+        "a": "2",
+        "bs": "4+",
+        "s": "7",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Twin missile pod",
+        "abilities": [
+          "twin-linked"
+        ],
+        "range": "30\"",
+        "a": "2",
+        "bs": "4+",
+        "s": "7",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Seeker missile one shot",
+        "abilities": [],
+        "range": "48\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "14",
+        "ap": "-3",
+        "d": "D6+1"
+      },
+      {
+        "name": "Twin ion rifle \u2013 standard",
+        "abilities": [
+          "twin-linked"
+        ],
+        "range": "30\"",
+        "a": "3",
+        "bs": "4+",
+        "s": "7",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Twin ion rifle \u2013 overcharge",
+        "abilities": [
+          "hazardous",
+          "twin-linked"
+        ],
+        "range": "30\"",
+        "a": "3",
+        "bs": "4+",
+        "s": "8",
+        "ap": "-2",
+        "d": "2"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Armoured hull",
+        "abilities": [],
+        "range": "Melee",
+        "a": "3",
+        "ws": "5+",
+        "s": "6",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise D3"
+    ],
+    "faction": [
+      "For the Greater Good"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this model ends a Normal move , you can select one enemy unit it moved over during that move and roll six D6: for each 4+, that unit suffers 1 mortal wound .",
+        "name": "Pulse Bombs"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Sun Shark Bomber"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "missile pod; 2 seeker missiles; 2 twin ion rifles; armoured hull.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "160"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "VEHICLE",
+    "AIRCRAFT",
+    "FLY",
+    "SUN SHARK BOMBER"
+  ],
+  "faction_keywords": [
+    "T\u2019AU EMPIRE"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s missile pod can be replaced with 1 twin missile pod.",
+          "items": []
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise D3"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "For the Greater Good"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model ends a Normal move , you can select one enemy unit it moved over during that move and roll six D6: for each 4+, that unit suffers 1 mortal wound .",
+          "name": "Pulse Bombs"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Sun Shark Bomber"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "missile pod; 2 seeker missiles; 2 twin ion rifles; armoured hull.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "160"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DAMAGED: 1-4 WOUNDS REMAINING",
+      "entries": [
+        {
+          "type": "text",
+          "text": "While this model has 1-4 wounds remaining, each time this model makes an attack, subtract 1 from the Hit roll ."
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-4 WOUNDS REMAINING"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-4 WOUNDS REMAINING"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

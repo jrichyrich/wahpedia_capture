@@ -1,0 +1,291 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/t-au-empire/Longstrike",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/t-au-empire/Longstrike",
+    "canonicalSourceId": "wahapedia:9a6c4a575650e4c67dcfd96b4d45a401a491a7d2",
+    "faction_slug": "t-au-empire",
+    "datasheet_slug": "Longstrike",
+    "fetchedAt": "2026-04-20T20:49:52+00:00",
+    "contentHash": "1245a5b28aedaa63e540b126870d36280b681893c9933a16db7cb0ac87af9230",
+    "output_slug": "t-au-empire"
+  },
+  "name": "Longstrike",
+  "base_size": "\u230060mm flying base",
+  "characteristics": {
+    "M": "10\"",
+    "T": "10",
+    "Sv": "3+",
+    "W": "14",
+    "Ld": "7+",
+    "OC": "3"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Accelerator burst cannon",
+        "abilities": [],
+        "range": "18\"",
+        "a": "4",
+        "bs": "4+",
+        "s": "6",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Ion cannon \u2013 standard",
+        "abilities": [
+          "blast"
+        ],
+        "range": "60\"",
+        "a": "D6+3",
+        "bs": "3+",
+        "s": "7",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Ion cannon \u2013 overcharge",
+        "abilities": [
+          "blast",
+          "hazardous"
+        ],
+        "range": "60\"",
+        "a": "D6+3",
+        "bs": "3+",
+        "s": "8",
+        "ap": "-2",
+        "d": "3"
+      },
+      {
+        "name": "Railgun",
+        "abilities": [
+          "devastating wounds",
+          "heavy"
+        ],
+        "range": "72\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "20",
+        "ap": "-5",
+        "d": "D6+6"
+      },
+      {
+        "name": "Seeker missile one shot",
+        "abilities": [],
+        "range": "48\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "14",
+        "ap": "-3",
+        "d": "D6+1"
+      },
+      {
+        "name": "Twin pulse carbine",
+        "abilities": [
+          "assault",
+          "twin-linked"
+        ],
+        "range": "20\"",
+        "a": "2",
+        "bs": "4+",
+        "s": "5",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Smart missile system",
+        "abilities": [
+          "indirect fire"
+        ],
+        "range": "30\"",
+        "a": "3",
+        "bs": "4+",
+        "s": "5",
+        "ap": "0",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Armoured hull",
+        "abilities": [],
+        "range": "Melee",
+        "a": "3",
+        "ws": "5+",
+        "s": "6",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise D3"
+    ],
+    "faction": [
+      "For the Greater Good"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time this model makes an attack that targets a MONSTER or VEHICLE , add 1 to the Hit roll .",
+        "name": "Armour Hunter"
+      },
+      {
+        "type": "rule",
+        "text": "Each time this model is selected to shoot, you can re-roll one Hit roll or you can re-roll one Wound roll when resolving its attacks.",
+        "name": "Targeting Array"
+      },
+      {
+        "type": "rule",
+        "text": "In your Command phase , you can select one friendly HAMMERHEAD GUNSHIP unit within 12\". Until the start of your next Command phase, ranged weapons equipped by models in that unit have the [LETHAL HITS] ability.",
+        "name": "XV02 Pilot Battlesuit"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Longstrike \u2013 EPIC HERO"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "2 twin pulse carbines; railgun; armoured hull.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "140"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "VEHICLE",
+    "FLY",
+    "CHARACTER",
+    "EPIC HERO",
+    "LONGSTRIKE"
+  ],
+  "faction_keywords": [
+    "T\u2019AU EMPIRE"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s railgun can be replaced with 1 ion cannon.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "This model\u2019s 2 twin pulse carbines can be replaced with one of the following:",
+          "items": [
+            "2 accelerator burst cannons",
+            "2 smart missile systems"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "This model can be equipped with up to 2 seeker missiles.",
+          "items": []
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise D3"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "For the Greater Good"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model makes an attack that targets a MONSTER or VEHICLE , add 1 to the Hit roll .",
+          "name": "Armour Hunter"
+        },
+        {
+          "type": "rule",
+          "text": "Each time this model is selected to shoot, you can re-roll one Hit roll or you can re-roll one Wound roll when resolving its attacks.",
+          "name": "Targeting Array"
+        },
+        {
+          "type": "rule",
+          "text": "In your Command phase , you can select one friendly HAMMERHEAD GUNSHIP unit within 12\". Until the start of your next Command phase, ranged weapons equipped by models in that unit have the [LETHAL HITS] ability.",
+          "name": "XV02 Pilot Battlesuit"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Longstrike \u2013 EPIC HERO"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "2 twin pulse carbines; railgun; armoured hull.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "140"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DAMAGED: 1-5 WOUNDS REMAINING",
+      "entries": [
+        {
+          "type": "text",
+          "text": "While this model has 1-5 wounds remaining, each time this model makes an attack, subtract 1 from the Hit roll ."
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-5 WOUNDS REMAINING"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-5 WOUNDS REMAINING"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

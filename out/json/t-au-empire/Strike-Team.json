@@ -1,0 +1,245 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/t-au-empire/Strike-Team",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/t-au-empire/Strike-Team",
+    "canonicalSourceId": "wahapedia:657785cc55f345056c70986fd9c91c863d795d6f",
+    "faction_slug": "t-au-empire",
+    "datasheet_slug": "Strike-Team",
+    "fetchedAt": "2026-04-20T20:50:08+00:00",
+    "contentHash": "0f7083f0c668a1e289e64eb28a3406dab164cc7ed1c887c87284432bd0706860",
+    "output_slug": "t-au-empire"
+  },
+  "name": "Strike Team",
+  "base_size": "\u230025mm",
+  "characteristics": {
+    "M": "6\"",
+    "T": "3",
+    "Sv": "4+",
+    "W": "1",
+    "Ld": "7+",
+    "OC": "2"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Pulse carbine",
+        "abilities": [],
+        "range": "20\"",
+        "a": "2",
+        "bs": "4+",
+        "s": "5",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Pulse pistol",
+        "abilities": [
+          "pistol"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "5",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Pulse rifle",
+        "abilities": [
+          "rapid fire 1"
+        ],
+        "range": "30\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "5",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Support turret",
+        "abilities": [
+          "indirect fire",
+          "twin-linked"
+        ],
+        "range": "30\"",
+        "a": "2",
+        "bs": "5+",
+        "s": "5",
+        "ap": "0",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Close combat weapon",
+        "abilities": [],
+        "range": "Melee",
+        "a": "1",
+        "ws": "5+",
+        "s": "3",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [],
+    "faction": [
+      "For the Greater Good"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "In your Shooting phase , after this unit has shot, select one enemy INFANTRY unit hit by one or more of those attacks. Until the start of your next turn, while this unit is on the battlefield, that enemy unit is suppressed. While a unit is suppressed, each time a model in that unit makes an attack, subtract 1 from the Hit roll .",
+        "name": "Suppression Volley"
+      },
+      {
+        "type": "rule",
+        "text": "In your Movement phase , if this unit Remains Stationary , until the start of your next Movement phase, its Fire Warrior Shas\u2019ui model is equipped with the support turret missile system weapon.",
+        "name": "DS8 Support Turret"
+      },
+      {
+        "type": "rule",
+        "text": "Place a Support Turret token next to this unit to remind you.",
+        "name": "Designer\u2019s Note"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Fire Warrior Shas\u2019ui"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "9 Fire Warriors"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "pulse pistol; pulse rifle; close combat weapon.",
+      "label": "Every model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "10 models",
+          "points": "70"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "INFANTRY",
+    "BATTLELINE",
+    "GRENADES",
+    "MARKERLIGHT",
+    "FIRE WARRIOR",
+    "STRIKE TEAM"
+  ],
+  "faction_keywords": [
+    "T\u2019AU EMPIRE"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "The Fire Warrior Shas\u2019ui can be equipped with up to two of the following, and can take duplicates:",
+          "items": [
+            "1 guardian drone (it cannot take duplicates of this piece of wargear)",
+            "1 gun drone",
+            "1 marker drone",
+            "1 shield drone"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "Any number of Fire Warrior models can each have their pulse rifle replaced with 1 pulse carbine.",
+          "items": []
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "For the Greater Good"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "In your Shooting phase , after this unit has shot, select one enemy INFANTRY unit hit by one or more of those attacks. Until the start of your next turn, while this unit is on the battlefield, that enemy unit is suppressed. While a unit is suppressed, each time a model in that unit makes an attack, subtract 1 from the Hit roll .",
+          "name": "Suppression Volley"
+        },
+        {
+          "type": "rule",
+          "text": "In your Movement phase , if this unit Remains Stationary , until the start of your next Movement phase, its Fire Warrior Shas\u2019ui model is equipped with the support turret missile system weapon.",
+          "name": "DS8 Support Turret"
+        },
+        {
+          "type": "rule",
+          "text": "Place a Support Turret token next to this unit to remind you.",
+          "name": "Designer\u2019s Note"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Fire Warrior Shas\u2019ui"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "9 Fire Warriors"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "pulse pistol; pulse rifle; close combat weapon.",
+          "label": "Every model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "10 models",
+              "points": "70"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

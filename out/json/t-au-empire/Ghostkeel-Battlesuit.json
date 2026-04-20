@@ -1,0 +1,284 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/t-au-empire/Ghostkeel-Battlesuit",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/t-au-empire/Ghostkeel-Battlesuit",
+    "canonicalSourceId": "wahapedia:cef7bcdb967737e3e57b79dec8550ce10a7cd60e",
+    "faction_slug": "t-au-empire",
+    "datasheet_slug": "Ghostkeel-Battlesuit",
+    "fetchedAt": "2026-04-20T20:49:34+00:00",
+    "contentHash": "db7010fca186fa6718875beceb25b075478b4ef94e164cccf4039d4143aadd76",
+    "output_slug": "t-au-empire"
+  },
+  "name": "Ghostkeel Battlesuit",
+  "base_size": "\u2300105 x 70mm",
+  "characteristics": {
+    "M": "10\"",
+    "T": "8",
+    "Sv": "2+",
+    "W": "12",
+    "Ld": "7+",
+    "OC": "3"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Cyclic ion raker \u2013 standard",
+        "abilities": [],
+        "range": "36\"",
+        "a": "6",
+        "bs": "4+",
+        "s": "7",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Cyclic ion raker \u2013 overcharge",
+        "abilities": [
+          "hazardous"
+        ],
+        "range": "36\"",
+        "a": "6",
+        "bs": "4+",
+        "s": "8",
+        "ap": "-2",
+        "d": "3"
+      },
+      {
+        "name": "Fusion collider",
+        "abilities": [
+          "melta 2"
+        ],
+        "range": "18\"",
+        "a": "2",
+        "bs": "4+",
+        "s": "12",
+        "ap": "-4",
+        "d": "D6"
+      },
+      {
+        "name": "Twin burst cannon",
+        "abilities": [
+          "twin-linked"
+        ],
+        "range": "18\"",
+        "a": "4",
+        "bs": "4+",
+        "s": "5",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Twin fusion blaster",
+        "abilities": [
+          "melta 2",
+          "twin-linked"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "9",
+        "ap": "-4",
+        "d": "D6"
+      },
+      {
+        "name": "Twin T\u2019au flamer",
+        "abilities": [
+          "ignores cover",
+          "torrent",
+          "twin-linked"
+        ],
+        "range": "12\"",
+        "a": "D6",
+        "bs": "N/A",
+        "s": "4",
+        "ap": "0",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Ghostkeel fists",
+        "abilities": [],
+        "range": "Melee",
+        "a": "3",
+        "ws": "5+",
+        "s": "6",
+        "ap": "0",
+        "d": "2"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise D3 , Infiltrators , Lone Operative , Stealth"
+    ],
+    "faction": [
+      "For the Greater Good"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Twice per battle, after an attack has been allocated to this model, you can change the Damage characteristic of that attack to 0.",
+        "name": "Stealth Drones"
+      },
+      {
+        "type": "rule",
+        "text": "Place two Stealth Drone tokens next to the unit, removing one each time this ability has been used.",
+        "name": "Designer\u2019s Note"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Ghostkeel Battlesuit"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "fusion collider; twin T\u2019au flamer; Ghostkeel fists.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "160"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "VEHICLE",
+    "WALKER",
+    "FLY",
+    "SMOKE",
+    "BATTLESUIT",
+    "GHOSTKEEL"
+  ],
+  "faction_keywords": [
+    "T\u2019AU EMPIRE"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s fusion collider can be replaced with 1 cyclic ion raker.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "This model\u2019s twin T\u2019au flamer can be replaced with one of the following:",
+          "items": [
+            "1 twin fusion blaster",
+            "1 twin burst cannon"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "This model can be equipped with one battlesuit support system.",
+          "items": []
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise D3 , Infiltrators , Lone Operative , Stealth"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "For the Greater Good"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Twice per battle, after an attack has been allocated to this model, you can change the Damage characteristic of that attack to 0.",
+          "name": "Stealth Drones"
+        },
+        {
+          "type": "rule",
+          "text": "Place two Stealth Drone tokens next to the unit, removing one each time this ability has been used.",
+          "name": "Designer\u2019s Note"
+        }
+      ]
+    },
+    {
+      "title": "WARGEAR ABILITIES",
+      "entries": [
+        {
+          "type": "statement",
+          "text": "The bearer is eligible to shoot in a turn in which it Fell Back but it loses the SMOKE keyword.",
+          "label": "Battlesuit Support System"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Ghostkeel Battlesuit"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "fusion collider; twin T\u2019au flamer; Ghostkeel fists.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "160"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DAMAGED: 1-4 WOUNDS REMAINING",
+      "entries": [
+        {
+          "type": "text",
+          "text": "While this model has 1-4 wounds remaining, each time this model makes an attack, subtract 1 from the Hit roll ."
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-4 WOUNDS REMAINING"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: 1-4 WOUNDS REMAINING"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

@@ -494,6 +494,13 @@
             }
             if (typeof limitSpec === "object") {
                 if (limitSpec.kind === "modelCount") {
+                    if (modelCount === null) {
+                        return null;
+                    }
+                    const multiplier = Number(limitSpec.multiplier);
+                    if (Number.isFinite(multiplier) && multiplier > 0) {
+                        return modelCount * multiplier;
+                    }
                     return modelCount;
                 }
                 if (limitSpec.kind === "static") {

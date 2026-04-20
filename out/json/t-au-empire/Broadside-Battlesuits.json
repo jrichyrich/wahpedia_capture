@@ -1,0 +1,278 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/t-au-empire/Broadside-Battlesuits",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/t-au-empire/Broadside-Battlesuits",
+    "canonicalSourceId": "wahapedia:51395d8ec2d2ad67e2f577b54879b2a8c127fee4",
+    "faction_slug": "t-au-empire",
+    "datasheet_slug": "Broadside-Battlesuits",
+    "fetchedAt": "2026-04-20T20:49:18+00:00",
+    "contentHash": "5594ac881e732c63536eec613e24f12548876cb97b792489da2dc945217a7f94",
+    "output_slug": "t-au-empire"
+  },
+  "name": "Broadside Battlesuits",
+  "base_size": "\u230060mm",
+  "characteristics": {
+    "M": "5\"",
+    "T": "6",
+    "Sv": "2+",
+    "W": "8",
+    "Ld": "7+",
+    "OC": "2"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Heavy rail rifle",
+        "abilities": [
+          "heavy",
+          "devastating wounds"
+        ],
+        "range": "60\"",
+        "a": "2",
+        "bs": "4+",
+        "s": "12",
+        "ap": "-4",
+        "d": "D6+1"
+      },
+      {
+        "name": "High-yield missile pods",
+        "abilities": [
+          "twin-linked"
+        ],
+        "range": "30\"",
+        "a": "6",
+        "bs": "4+",
+        "s": "7",
+        "ap": "-1",
+        "d": "2"
+      },
+      {
+        "name": "Seeker missile one shot",
+        "abilities": [],
+        "range": "48\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "14",
+        "ap": "-3",
+        "d": "D6+1"
+      },
+      {
+        "name": "Twin plasma rifle",
+        "abilities": [
+          "twin-linked"
+        ],
+        "range": "18\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "8",
+        "ap": "-3",
+        "d": "3"
+      },
+      {
+        "name": "Twin smart missile system",
+        "abilities": [
+          "indirect fire",
+          "twin-linked"
+        ],
+        "range": "30\"",
+        "a": "4",
+        "bs": "4+",
+        "s": "5",
+        "ap": "0",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Crushing bulk",
+        "abilities": [],
+        "range": "Melee",
+        "a": "3",
+        "ws": "5+",
+        "s": "6",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [],
+    "faction": [
+      "For the Greater Good"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Models in this unit have the Feel No Pain 4+ ability against mortal wounds .",
+        "name": "Advanced Armour"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Broadside Shas\u2019vre"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "0-2 Broadside Shas\u2019ui"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "heavy rail rifle; crushing bulk.",
+      "label": "Every model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "80"
+        },
+        {
+          "label": "2 models",
+          "points": "170"
+        },
+        {
+          "label": "3 models",
+          "points": "270"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "VEHICLE",
+    "WALKER",
+    "BATTLESUIT",
+    "BROADSIDE"
+  ],
+  "faction_keywords": [
+    "T\u2019AU EMPIRE"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "Any number of models can each have their heavy rail rifle replaced with 1 high-yield missile pods.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "Any number of models can each be equipped with up to two of the following, but cannot take duplicates:",
+          "items": [
+            "1 seeker missile",
+            "1 twin plasma rifle*",
+            "1 twin smart missile system*",
+            "1 weapon support system"
+          ]
+        },
+        {
+          "type": "option_group",
+          "label": "Any number of models can each be equipped with up to two of the following, and can take duplicates:",
+          "items": [
+            "1 gun drone",
+            "1 marker drone",
+            "1 missile drone",
+            "1 shield drone"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "* No model can be equipped with both a twin plasma rifle and twin smart missile system at the same time."
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "For the Greater Good"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Models in this unit have the Feel No Pain 4+ ability against mortal wounds .",
+          "name": "Advanced Armour"
+        }
+      ]
+    },
+    {
+      "title": "WARGEAR ABILITIES",
+      "entries": [
+        {
+          "type": "statement",
+          "text": "Each time the bearer makes a ranged attack, you can ignore any or all modifiers to the Hit roll .",
+          "label": "Weapon Support System"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Broadside Shas\u2019vre"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "0-2 Broadside Shas\u2019ui"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "heavy rail rifle; crushing bulk.",
+          "label": "Every model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "80"
+            },
+            {
+              "label": "2 models",
+              "points": "170"
+            },
+            {
+              "label": "3 models",
+              "points": "270"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

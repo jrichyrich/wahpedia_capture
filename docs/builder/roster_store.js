@@ -1258,6 +1258,12 @@
             return null;
         }
         if (limitSpec === "modelCount" || (typeof limitSpec === "object" && limitSpec.kind === "modelCount")) {
+            if (typeof limitSpec === "object" && limitSpec.kind === "modelCount" && modelCount !== null) {
+                const multiplier = Number(limitSpec.multiplier);
+                if (Number.isFinite(multiplier) && multiplier > 0) {
+                    return modelCount * multiplier;
+                }
+            }
             return modelCount;
         }
         if (typeof limitSpec === "object") {

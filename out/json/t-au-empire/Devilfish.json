@@ -1,0 +1,225 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/t-au-empire/Devilfish",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/t-au-empire/Devilfish",
+    "canonicalSourceId": "wahapedia:2f4677d07eb20202ac8201a959800e799bb3d4ff",
+    "faction_slug": "t-au-empire",
+    "datasheet_slug": "Devilfish",
+    "fetchedAt": "2026-04-20T20:49:29+00:00",
+    "contentHash": "f964c818c3cde33e54a07828ce8ce3ea48541664422115efe17bbd0f6c94ae17",
+    "output_slug": "t-au-empire"
+  },
+  "name": "Devilfish",
+  "base_size": "\u230060mm flying base",
+  "characteristics": {
+    "M": "12\"",
+    "T": "9",
+    "Sv": "3+",
+    "W": "13",
+    "Ld": "7+",
+    "OC": "2"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Accelerator burst cannon",
+        "abilities": [],
+        "range": "18\"",
+        "a": "4",
+        "bs": "4+",
+        "s": "6",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "Seeker missile one shot",
+        "abilities": [],
+        "range": "48\"",
+        "a": "1",
+        "bs": "4+",
+        "s": "14",
+        "ap": "-3",
+        "d": "D6+1"
+      },
+      {
+        "name": "Twin pulse carbine",
+        "abilities": [
+          "assault",
+          "twin-linked"
+        ],
+        "range": "20\"",
+        "a": "2",
+        "bs": "4+",
+        "s": "5",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Smart missile system",
+        "abilities": [
+          "indirect fire"
+        ],
+        "range": "30\"",
+        "a": "3",
+        "bs": "4+",
+        "s": "5",
+        "ap": "0",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Armoured hull",
+        "abilities": [],
+        "range": "Melee",
+        "a": "3",
+        "ws": "5+",
+        "s": "6",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise D3"
+    ],
+    "faction": [
+      "For the Greater Good"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Units can disembark from this TRANSPORT after it has Advanced . Units that do so count as having made a Normal move that phase, and cannot declare a charge in the same turn, but can otherwise act normally in the remainder of the turn.",
+        "name": "Rapid Deployment"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Devilfish"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "accelerator burst cannon; 2 twin pulse carbines; armoured hull.",
+      "label": "This model is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "85"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "VEHICLE",
+    "FLY",
+    "TRANSPORT",
+    "DEDICATED TRANSPORT",
+    "DEVILFISH"
+  ],
+  "faction_keywords": [
+    "T\u2019AU EMPIRE"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "This model\u2019s 2 twin pulse carbines can be replaced with 2 smart missile systems.",
+          "items": []
+        },
+        {
+          "type": "option_group",
+          "label": "This model can be equipped with up to 2 seeker missiles.",
+          "items": []
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise D3"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "For the Greater Good"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Units can disembark from this TRANSPORT after it has Advanced . Units that do so count as having made a Normal move that phase, and cannot declare a charge in the same turn, but can otherwise act normally in the remainder of the turn.",
+          "name": "Rapid Deployment"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Devilfish"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "accelerator burst cannon; 2 twin pulse carbines; armoured hull.",
+          "label": "This model is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "85"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "TRANSPORT",
+      "entries": [
+        {
+          "type": "text",
+          "text": "This model has a transport capacity of 12 T\u2019AU EMPIRE INFANTRY models. It cannot transport BATTLESUIT , KROOT or VESPID STINGWINGS models."
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "TRANSPORT"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "TRANSPORT"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

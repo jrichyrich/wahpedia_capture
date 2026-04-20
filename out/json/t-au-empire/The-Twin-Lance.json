@@ -1,0 +1,319 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/t-au-empire/The-Twin-Lance",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/t-au-empire/The-Twin-Lance",
+    "canonicalSourceId": "wahapedia:5ed20ced367cb2ac422a03a2d164db0160a41ca6",
+    "faction_slug": "t-au-empire",
+    "datasheet_slug": "The-Twin-Lance",
+    "fetchedAt": "2026-04-20T20:50:11+00:00",
+    "contentHash": "e20847dcffb17179bdc9ce6cfa7a41293ea2acc7ff051c888f00d71b5392c55e",
+    "output_slug": "t-au-empire"
+  },
+  "name": "The Twin Lance",
+  "base_size": "\u230060mm",
+  "characteristics": {
+    "M": "10\"",
+    "T": "6",
+    "Sv": "2+",
+    "W": "8",
+    "Ld": "6+",
+    "OC": "2",
+    "Invulnerable Save": "4+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Fusion eliminator",
+        "abilities": [
+          "melta 2"
+        ],
+        "range": "18\"",
+        "a": "2",
+        "bs": "2+",
+        "s": "10",
+        "ap": "-4",
+        "d": "D6"
+      },
+      {
+        "name": "Ion scattercannon \u2013 standard",
+        "abilities": [
+          "rapid fire 2"
+        ],
+        "range": "18\"",
+        "a": "4",
+        "bs": "2+",
+        "s": "7",
+        "ap": "-2",
+        "d": "2"
+      },
+      {
+        "name": "Ion scattercannon \u2013 overcharge",
+        "abilities": [
+          "hazardous",
+          "rapid fire 2"
+        ],
+        "range": "18\"",
+        "a": "4",
+        "bs": "2+",
+        "s": "8",
+        "ap": "-3",
+        "d": "3"
+      },
+      {
+        "name": "Shardstorm burst system",
+        "abilities": [
+          "pistol"
+        ],
+        "range": "18\"",
+        "a": "D6",
+        "bs": "2+",
+        "s": "5",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Twin pulse blaster",
+        "abilities": [
+          "assault",
+          "twin-linked"
+        ],
+        "range": "10\"",
+        "a": "2",
+        "bs": "5+",
+        "s": "6",
+        "ap": "-1",
+        "d": "1"
+      },
+      {
+        "name": "XV pulse pistol",
+        "abilities": [
+          "rapid fire 2"
+        ],
+        "range": "12\"",
+        "a": "2",
+        "bs": "2+",
+        "s": "6",
+        "ap": "-1",
+        "d": "2"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Fusion eliminator",
+        "abilities": [
+          "extra attacks"
+        ],
+        "range": "Melee",
+        "a": "1",
+        "ws": "4+",
+        "s": "10",
+        "ap": "-4",
+        "d": "D6+2"
+      },
+      {
+        "name": "Ion scattercannon",
+        "abilities": [
+          "extra attacks"
+        ],
+        "range": "Melee",
+        "a": "3",
+        "ws": "4+",
+        "s": "7",
+        "ap": "-2",
+        "d": "2"
+      },
+      {
+        "name": "XV pulse pistol",
+        "abilities": [],
+        "range": "Melee",
+        "a": "4",
+        "ws": "3+",
+        "s": "6",
+        "ap": "-1",
+        "d": "2"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deep Strike , Scouts 8\""
+    ],
+    "faction": [
+      "For the Greater Good"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "text": "Each time a model in this unit makes a ranged attack that targets the closest eligible target, that attack has the [SUSTAINED HITS 1] and [IGNORES COVER] abilities.",
+        "name": "Exemplars of Mont\u2019ka"
+      },
+      {
+        "type": "rule",
+        "text": "At the start of your opponent\u2019s Charge phase , you can select one enemy unit (excluding MONSTER and VEHICLE units) within 12\" of this unit. That unit must take a Battle-shock test and, until the end of the turn, subtract 1 from Charge rolls made for that unit.",
+        "name": "Neocapacitor Shields"
+      },
+      {
+        "type": "rule",
+        "text": "At the end of the Fight phase , if this unit was eligible to fight this phase, this unit can either make a Normal move of up to 6\" or a Fall Back move .",
+        "name": "Retro-thrusters"
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Ri\u2019Lantar \u2013 EPIC HERO"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "1 Ri\u2019Locai \u2013 EPIC HERO"
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "1 fusion eliminator; 1 XV pulse pistol; 1 shardstorm burst system; 1 MV15 gun drone.",
+      "label": "Ri\u2019Lantar is equipped with"
+    },
+    {
+      "type": "statement",
+      "text": "1 ion scattercannon; 1 XV pulse pistol; 1 shardstorm burst system; 1 MV15 gun drone.",
+      "label": "Ri\u2019Locai is equipped with"
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "2 models",
+          "points": "185"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "VEHICLE",
+    "WALKER",
+    "FLY",
+    "CHARACTER",
+    "EPIC HERO",
+    "BATTLESUIT",
+    "THE TWIN LANCE"
+  ],
+  "faction_keywords": [
+    "T\u2019AU EMPIRE"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "option_group",
+          "label": "None.",
+          "items": []
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deep Strike , Scouts 8\""
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "For the Greater Good"
+          ]
+        },
+        {
+          "type": "rule",
+          "text": "Each time a model in this unit makes a ranged attack that targets the closest eligible target, that attack has the [SUSTAINED HITS 1] and [IGNORES COVER] abilities.",
+          "name": "Exemplars of Mont\u2019ka"
+        },
+        {
+          "type": "rule",
+          "text": "At the start of your opponent\u2019s Charge phase , you can select one enemy unit (excluding MONSTER and VEHICLE units) within 12\" of this unit. That unit must take a Battle-shock test and, until the end of the turn, subtract 1 from Charge rolls made for that unit.",
+          "name": "Neocapacitor Shields"
+        },
+        {
+          "type": "rule",
+          "text": "At the end of the Fight phase , if this unit was eligible to fight this phase, this unit can either make a Normal move of up to 6\" or a Fall Back move .",
+          "name": "Retro-thrusters"
+        }
+      ]
+    },
+    {
+      "title": "WARGEAR ABILITIES",
+      "entries": [
+        {
+          "type": "statement",
+          "text": "The bearer is equipped with 1 twin pulse blaster.",
+          "label": "MV15 Gun Drone"
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Ri\u2019Lantar \u2013 EPIC HERO"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "1 Ri\u2019Locai \u2013 EPIC HERO"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "1 fusion eliminator; 1 XV pulse pistol; 1 shardstorm burst system; 1 MV15 gun drone.",
+          "label": "Ri\u2019Lantar is equipped with"
+        },
+        {
+          "type": "statement",
+          "text": "1 ion scattercannon; 1 XV pulse pistol; 1 shardstorm burst system; 1 MV15 gun drone.",
+          "label": "Ri\u2019Locai is equipped with"
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "2 models",
+              "points": "185"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "WARGEAR ABILITIES",
+      "UNIT COMPOSITION"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [],
+    "keywordColumnCount": 2
+  }
+}

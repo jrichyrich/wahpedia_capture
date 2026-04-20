@@ -1,18 +1,18 @@
 # Builder Catalog Build Report
 
-- Generated at: 2026-04-15T16:24:33+00:00
+- Generated at: 2026-04-20T21:28:25+00:00
 - Source root: `/Users/jasricha/Documents/Github_Personal/wahpedia_capture/out/json`
-- Factions imported: 14
-- Total units: 1410
+- Factions imported: 15
+- Total units: 1473
 - Units with missing stats: 0
 - Manual selection units: 0
 - Units with manual wargear: 6
 - Units with render issues: 0
 - Factions with rules warnings: 0
-- Ready units: 1326
+- Ready units: 1389
 - Partial-support units: 84
 - Configured-only preview units: 78
-- Source cards copied: 1332
+- Source cards copied: 1395
 - Source cards missing: 78
 
 ## Factions
@@ -199,6 +199,21 @@
 - Partial-support units: 0
 - Configured-only preview units: 0
 - Source cards copied: 191
+- Source cards missing: 0
+
+### T'au Empire
+
+- Catalog: `catalogs/t-au-empire.json`
+- Units: 63
+- Missing stats: 0
+- Manual selection units: 0
+- Manual wargear units: 0
+- Render issue units: 0
+- Rules warnings: 0
+- Ready units: 63
+- Partial-support units: 0
+- Configured-only preview units: 0
+- Source cards copied: 63
 - Source cards missing: 0
 
 ### Ultramarines
