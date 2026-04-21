@@ -43,6 +43,75 @@
             min-height: 100vh;
         }
 
+        .workspace-stepper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+            margin-bottom: 6px;
+        }
+
+        .workspace-overview {
+            display: grid;
+            gap: 10px;
+            padding: 16px 18px;
+            border: 1.5px solid var(--ink);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.82) 0%, rgba(247, 242, 232, 0.94) 100%);
+            box-shadow: var(--shadow);
+        }
+
+        .workspace-step {
+            appearance: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            border: 1.5px solid var(--ink);
+            background: rgba(255, 255, 255, 0.72);
+            font-size: 12px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            cursor: pointer;
+            color: inherit;
+            font: inherit;
+            transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
+        }
+
+        .workspace-step:hover {
+            transform: translateY(-1px);
+            background: rgba(255, 255, 255, 0.94);
+        }
+
+        .workspace-step span:first-child {
+            display: inline-grid;
+            place-items: center;
+            width: 22px;
+            height: 22px;
+            border: 1px solid currentColor;
+            border-radius: 999px;
+            font-size: 11px;
+        }
+
+        .workspace-step.is-active {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: white;
+        }
+
+        .workspace-step-copy {
+            color: #5d5448;
+            font-size: 13px;
+            line-height: 1.4;
+            margin-bottom: 18px;
+        }
+
+        .workspace-step-copy strong {
+            font-family: "Exo 2", sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
         .mobile-workspace-bar {
             display: none;
         }
@@ -387,7 +456,21 @@
         }
 
         .roster-entry.is-selected {
-            background: #fff7f3;
+            background: linear-gradient(90deg, rgba(140, 47, 57, 0.12) 0, rgba(140, 47, 57, 0.12) 6px, #fff7f3 6px, #fff7f3 100%);
+        }
+
+        .roster-entry:hover {
+            background-color: rgba(255, 255, 255, 0.75);
+        }
+
+        .roster-entry td[data-label="Unit"] strong {
+            display: block;
+            margin-bottom: 6px;
+            font-family: "Exo 2", sans-serif;
+            font-size: 18px;
+            font-weight: 900;
+            text-transform: uppercase;
+            line-height: 1.05;
         }
 
         .roster-entry-label {
@@ -414,10 +497,29 @@
             border-bottom: 1px solid var(--line);
         }
 
+        .roster-summary-strip {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: center;
+            margin-top: 12px;
+            padding: 10px 12px;
+            border: 1px solid rgba(49, 34, 18, 0.12);
+            background: rgba(255, 255, 255, 0.55);
+        }
+
         .roster-manager-grid {
             display: grid;
             grid-template-columns: minmax(0, 220px) minmax(0, 1fr) minmax(0, 220px) minmax(0, 220px);
             gap: 12px;
+        }
+
+        .roster-secondary-panels {
+            display: grid;
+            gap: 14px;
+            padding: 14px;
+            border: 1px solid rgba(49, 34, 18, 0.12);
+            background: rgba(255, 255, 255, 0.38);
         }
 
         .army-rules-panel {
@@ -597,13 +699,18 @@
             gap: 10px;
         }
 
+        .roster-manager-actions .btn-primary,
+        .preview-actions .btn-primary {
+            box-shadow: 0 8px 18px rgba(140, 47, 57, 0.18);
+        }
+
         .roster-maintenance-panel {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
             padding: 12px;
             border: 1px dashed var(--line);
-            background: rgba(255, 255, 255, 0.65);
+            background: rgba(255, 255, 255, 0.72);
         }
 
         .saved-roster-meta {
@@ -650,6 +757,31 @@
 
         .entry-editor {
             margin-top: 18px;
+        }
+
+        .entry-editor.is-mirror {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+        }
+
+        .entry-editor-inline-row td {
+            padding: 0;
+            border-bottom: 0;
+            background: transparent;
+        }
+
+        .entry-editor-inline-shell {
+            margin: 0 0 18px;
+            padding: 16px;
+            border: 1.5px solid var(--ink);
+            background: #fffaf4;
+            box-shadow: var(--shadow);
         }
 
         .entry-detail-preview {
@@ -786,6 +918,13 @@
             justify-content: flex-end;
         }
 
+        .preview-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: flex-end;
+        }
+
         .preview-mode-group {
             display: inline-flex;
             border: 1.5px solid var(--ink);
@@ -855,6 +994,11 @@
             background: rgba(255, 255, 255, 0.72);
         }
 
+        .browser-preview-toolbar,
+        .preview-print-summary {
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+        }
+
         .browser-preview-toolbar .entry-actions {
             display: flex;
             flex-wrap: wrap;
@@ -864,6 +1008,42 @@
         .browser-preview-summary {
             display: grid;
             gap: 4px;
+        }
+
+        .preview-print-summary {
+            display: grid;
+            gap: 8px;
+            padding: 12px 14px;
+            border: 1px solid var(--line);
+            background: rgba(255, 255, 255, 0.72);
+        }
+
+        .preview-print-summary-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 10px;
+        }
+
+        .preview-print-summary-item {
+            display: grid;
+            gap: 4px;
+            padding: 10px;
+            border: 1px solid var(--line);
+            background: var(--panel-2);
+        }
+
+        .preview-print-summary-item strong {
+            font-family: "Exo 2", sans-serif;
+            font-size: 18px;
+            line-height: 1;
+        }
+
+        .preview-print-summary-item span {
+            font-size: 11px;
+            font-weight: 900;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #5d5448;
         }
 
         .preview-entry {
@@ -1017,6 +1197,14 @@
             display: none !important;
         }
 
+        .empty-state {
+            display: grid;
+            gap: 10px;
+            padding: 16px;
+            border: 1px dashed var(--line);
+            background: rgba(255, 255, 255, 0.72);
+        }
+
         .source-card {
             background: var(--panel);
             border: 1.5px solid var(--ink);
@@ -1138,15 +1326,9 @@
         }
 
         @media (max-width: 640px) {
-            body {
-                padding-top: 108px;
-            }
-
             .mobile-workspace-bar {
-                position: fixed;
+                position: sticky;
                 top: 0;
-                left: 0;
-                right: 0;
                 z-index: 20;
                 display: grid;
                 gap: 10px;
@@ -1241,6 +1423,10 @@
                 align-items: stretch;
             }
 
+            .preview-actions {
+                width: 100%;
+            }
+
             .preview-mode-group {
                 width: 100%;
             }
@@ -1256,7 +1442,7 @@
 
             .roster-manager-actions {
                 display: grid;
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: 1fr;
                 gap: 10px;
             }
 
@@ -1265,7 +1451,11 @@
             }
 
             .quick-filter-row {
-                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .preview-print-summary-grid {
+                grid-template-columns: 1fr 1fr;
             }
 
             .roster-manager-actions .btn,
@@ -1351,10 +1541,19 @@
             .entry-editor-header {
                 flex-direction: column;
             }
+
+            .entry-editor-inline-shell {
+                padding: 14px;
+            }
         }
 
         @media (max-width: 420px) {
             .roster-manager-actions {
+                grid-template-columns: 1fr;
+            }
+
+            .quick-filter-row,
+            .preview-print-summary-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -1427,13 +1626,13 @@
             <div id="mobile-summary-issues" class="mobile-workspace-issues">No issues</div>
         </div>
         <div class="mobile-workspace-tabs" role="tablist" aria-label="Builder workspace">
-            <button id="mobile-tab-browse" class="mobile-workspace-tab is-active" type="button" aria-pressed="true">Browse</button>
-            <button id="mobile-tab-roster" class="mobile-workspace-tab" type="button" aria-pressed="false">Roster</button>
-            <button id="mobile-tab-cards" class="mobile-workspace-tab" type="button" aria-pressed="false">Cards</button>
+            <button id="mobile-tab-browse" class="mobile-workspace-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="browse-panel">Browse units</button>
+            <button id="mobile-tab-roster" class="mobile-workspace-tab" type="button" role="tab" aria-selected="false" aria-controls="roster-panel">Roster editor</button>
+            <button id="mobile-tab-cards" class="mobile-workspace-tab" type="button" role="tab" aria-selected="false" aria-controls="preview-panel">Review cards</button>
         </div>
     </div>
     <div class="app-shell">
-        <aside id="browse-panel" class="sidebar">
+        <aside id="browse-panel" class="sidebar" role="tabpanel" aria-labelledby="mobile-tab-browse">
             <div class="brand">
                 <h1>Wahpedia Capture</h1>
                 <p>Browse units, build a roster, and print cleaner datasheets from the exported faction catalogs in this repo.</p>
@@ -1557,11 +1756,17 @@
         </aside>
 
         <main class="main">
-            <section id="roster-panel" class="roster-card">
+            <section class="workspace-overview" aria-label="Builder workflow">
+                <div id="workspace-stepper" class="workspace-stepper"></div>
+                <div id="workspace-step-copy" class="workspace-step-copy"></div>
+            </section>
+
+            <section id="roster-panel" class="roster-card" role="tabpanel" aria-labelledby="mobile-tab-roster">
                 <div class="roster-header">
                     <div>
-                        <h2 id="roster-title">No faction loaded</h2>
+                        <h2 id="roster-title">Roster editor</h2>
                         <div id="roster-subtitle" class="roster-subtitle">Load a faction, add units, and keep your roster tuned for print.</div>
+                        <div id="roster-summary-strip" class="roster-summary-strip"></div>
                     </div>
                     <div>
                         <div id="total-points" class="points-tally">0</div>
@@ -1600,19 +1805,24 @@
                         <button id="save-roster" class="btn btn-primary">Save roster</button>
                         <button id="save-roster-copy" class="btn">Duplicate</button>
                         <button id="new-roster" class="btn">New roster</button>
-                        <button id="import-roster" class="btn">Import JSON</button>
-                        <button id="export-roster" class="btn">Export JSON</button>
                         <button id="roster-actions-toggle" class="btn btn-quiet" type="button" aria-expanded="false">More actions</button>
                     </div>
                     <div id="roster-maintenance-panel" class="roster-maintenance-panel" hidden>
+                        <button id="import-roster" class="btn">Import JSON</button>
+                        <button id="export-roster" class="btn">Export JSON</button>
                         <button id="dedupe-rosters" class="btn">Clean duplicates</button>
                         <button id="delete-roster" class="btn btn-danger">Delete roster</button>
                     </div>
-                    <div id="saved-roster-meta" class="saved-roster-meta inline-note"></div>
-                    <div id="repair-panel" class="repair-panel" hidden></div>
-                    <div id="readiness-banner" class="readiness-banner"></div>
-                    <div id="army-rules-panel" class="army-rules-panel"></div>
-                    <div id="legality-summary" class="legality-summary"></div>
+                    <div class="sidebar-actions">
+                        <button id="roster-details-toggle" class="btn btn-quiet" type="button" aria-expanded="false">Build details</button>
+                    </div>
+                    <div id="roster-secondary-panels" class="roster-secondary-panels" hidden>
+                        <div id="saved-roster-meta" class="saved-roster-meta inline-note"></div>
+                        <div id="repair-panel" class="repair-panel" hidden></div>
+                        <div id="readiness-banner" class="readiness-banner"></div>
+                        <div id="army-rules-panel" class="army-rules-panel"></div>
+                        <div id="legality-summary" class="legality-summary"></div>
+                    </div>
                     <div id="roster-status" class="roster-status"></div>
                 </div>
 
@@ -1635,26 +1845,29 @@
 
                 <div class="roster-actions">
                     <button id="clear-roster" class="btn btn-quiet">Clear roster</button>
-                    <button id="print-roster" class="btn btn-primary">Print preview cards</button>
+                    <button id="print-roster" class="btn btn-primary">Open print preview</button>
                 </div>
             </section>
 
-            <section id="preview-panel" class="preview-card">
+            <section id="preview-panel" class="preview-card" role="tabpanel" aria-labelledby="mobile-tab-cards">
                 <div class="preview-header">
                     <div>
-                        <h2 id="preview-title" class="section-heading">Review &amp; Print Cards</h2>
-                        <div id="preview-intro" class="inline-note">Preview only the cards that can print from your current roster and source captures.</div>
+                        <h2 id="preview-title" class="section-heading">Review cards</h2>
+                        <div id="preview-intro" class="inline-note">Review exactly what will print from your current roster before opening the print dialog.</div>
                         <div id="preview-mode-note" class="inline-note"></div>
                     </div>
                     <div class="preview-controls">
                         <div class="preview-mode-group" role="group" aria-label="Preview source mode">
-                            <button id="preview-mode-configured" class="preview-mode-btn is-active" type="button" aria-pressed="true">Configured card</button>
-                            <button id="preview-mode-source" class="preview-mode-btn" type="button" aria-pressed="false">Original Wahapedia</button>
+                            <button id="preview-mode-configured" class="preview-mode-btn is-active" type="button" aria-pressed="true">Builder card</button>
+                            <button id="preview-mode-source" class="preview-mode-btn" type="button" aria-pressed="false">Source image</button>
                         </div>
                         <label class="preview-mode-toggle">
                             <input id="print-clean-toggle" type="checkbox">
                             <span>Print-clean mode</span>
                         </label>
+                        <div class="preview-actions">
+                            <button id="preview-open-print" class="btn btn-primary" type="button">Open print dialog</button>
+                        </div>
                     </div>
                 </div>
                 <div id="preview-body" class="preview-body"></div>
@@ -1690,9 +1903,10 @@
             browserPreviewSourceMode: "source-image",
             missingSourceCardLookup: new Set(),
             wasMobileViewport: false,
-            activeMobileTab: "browse",
+            activeWorkspace: "browse",
             advancedFiltersExpanded: false,
             catalogHealthExpanded: false,
+            rosterDetailsExpanded: false,
             selectedCatalogUnitId: null,
             rosterActionsMenuOpen: false,
             activeEditorInstanceId: null,
@@ -1712,6 +1926,8 @@
             mobileTabBrowse: document.getElementById("mobile-tab-browse"),
             mobileTabRoster: document.getElementById("mobile-tab-roster"),
             mobileTabCards: document.getElementById("mobile-tab-cards"),
+            workspaceStepper: document.getElementById("workspace-stepper"),
+            workspaceStepCopy: document.getElementById("workspace-step-copy"),
             mobileSummaryPoints: document.getElementById("mobile-summary-points"),
             mobileSummaryCaption: document.getElementById("mobile-summary-caption"),
             mobileSummaryIssues: document.getElementById("mobile-summary-issues"),
@@ -1741,6 +1957,7 @@
             rosterCard: document.getElementById("roster-panel"),
             rosterTitle: document.getElementById("roster-title"),
             rosterSubtitle: document.getElementById("roster-subtitle"),
+            rosterSummaryStrip: document.getElementById("roster-summary-strip"),
             rosterBody: document.getElementById("roster-body"),
             totalPoints: document.getElementById("total-points"),
             pointsCaption: document.getElementById("points-caption"),
@@ -1752,6 +1969,7 @@
             previewModeSource: document.getElementById("preview-mode-source"),
             previewModeNote: document.getElementById("preview-mode-note"),
             printCleanToggle: document.getElementById("print-clean-toggle"),
+            previewOpenPrint: document.getElementById("preview-open-print"),
             clearRoster: document.getElementById("clear-roster"),
             printRoster: document.getElementById("print-roster"),
             rosterName: document.getElementById("roster-name"),
@@ -1764,7 +1982,9 @@
             importRoster: document.getElementById("import-roster"),
             exportRoster: document.getElementById("export-roster"),
             rosterActionsToggle: document.getElementById("roster-actions-toggle"),
+            rosterDetailsToggle: document.getElementById("roster-details-toggle"),
             rosterMaintenancePanel: document.getElementById("roster-maintenance-panel"),
+            rosterSecondaryPanels: document.getElementById("roster-secondary-panels"),
             dedupeRosters: document.getElementById("dedupe-rosters"),
             deleteRoster: document.getElementById("delete-roster"),
             savedRosterMeta: document.getElementById("saved-roster-meta"),
@@ -1903,6 +2123,51 @@
             els.rosterActionsToggle.setAttribute("aria-expanded", state.rosterActionsMenuOpen ? "true" : "false");
             els.rosterActionsToggle.textContent = state.rosterActionsMenuOpen ? "Hide actions" : "More actions";
             els.rosterMaintenancePanel.hidden = !state.rosterActionsMenuOpen;
+        }
+
+        function renderRosterDetailsPanel() {
+            if (!els.rosterDetailsToggle || !els.rosterSecondaryPanels) {
+                return;
+            }
+            const derived = state.catalog ? deriveRoster() : null;
+            const armyIssues = derived && Array.isArray(derived.armyIssues) ? derived.armyIssues.length : 0;
+            const invalidEntries = derived && Array.isArray(derived.invalidEntries) ? derived.invalidEntries.length : 0;
+            const compatibilityIssues = derived && derived.compatibility && Array.isArray(derived.compatibility.incompatibleEntries)
+                ? derived.compatibility.incompatibleEntries.length
+                : 0;
+            const detailCount = armyIssues + invalidEntries + compatibilityIssues;
+            els.rosterDetailsToggle.setAttribute("aria-expanded", state.rosterDetailsExpanded ? "true" : "false");
+            els.rosterDetailsToggle.textContent = state.rosterDetailsExpanded
+                ? "Hide build details"
+                : `Build details${detailCount ? ` (${detailCount})` : ""}`;
+            els.rosterSecondaryPanels.hidden = !state.rosterDetailsExpanded;
+        }
+
+        function syncInlineEntryEditor() {
+            if (!els.rosterBody) {
+                return;
+            }
+            const existing = els.rosterBody.querySelector(".entry-editor-inline-row");
+            if (existing) {
+                existing.remove();
+            }
+            if (els.entryEditor.hidden || !state.activeEditorInstanceId) {
+                return;
+            }
+            const activeRow = els.rosterBody.querySelector(`[data-instance-id="${escapeAttributeSelector(state.activeEditorInstanceId)}"]`);
+            if (!activeRow) {
+                return;
+            }
+            const inlineRow = document.createElement("tr");
+            inlineRow.className = "entry-editor-inline-row";
+            inlineRow.innerHTML = `
+                <td colspan="5">
+                    <div class="entry-editor-inline-shell">
+                        ${els.entryEditor.innerHTML}
+                    </div>
+                </td>
+            `;
+            activeRow.insertAdjacentElement("afterend", inlineRow);
         }
 
         async function fetchJson(path) {
@@ -2113,7 +2378,7 @@
         }
 
         function previewSourceModeLabel(previewSourceMode) {
-            return previewSourceMode === "source-image" ? "Original Wahapedia" : "Configured card";
+            return previewSourceMode === "source-image" ? "Source image" : "Builder card";
         }
 
         function duplicateSavedRosterCount(savedRosters) {
@@ -2212,9 +2477,47 @@
             return `${issueCount} issue${issueCount === 1 ? "" : "s"}`;
         }
 
-        function setActiveMobileTab(tab) {
-            state.activeMobileTab = tab || "browse";
+        function setActiveWorkspace(tab) {
+            state.activeWorkspace = tab || "browse";
             renderWorkspaceVisibility(deriveRoster());
+        }
+
+        function renderWorkspaceStepper() {
+            const steps = [
+                { key: "browse", label: "Browse units", copy: "Search the faction catalog, compare units, and inspect a unit preview before adding it." },
+                { key: "roster", label: "Roster editor", copy: "Tune quantity, command choices, detachment, enhancements, and legality from one editing workspace." },
+                { key: "cards", label: "Review cards", copy: "Confirm the print pack, preview card source mode, and open print only when the output looks right." },
+            ];
+            const activeKey = state.activeWorkspace || "browse";
+            if (els.workspaceStepper) {
+                els.workspaceStepper.innerHTML = steps.map((step, index) => `
+                    <button class="workspace-step ${step.key === activeKey ? "is-active" : ""}" type="button" data-action="go-workspace" data-workspace="${step.key}" aria-pressed="${step.key === activeKey ? "true" : "false"}">
+                        <span>${index + 1}</span>
+                        <span>${escapeHtml(step.label)}</span>
+                    </button>
+                `).join("");
+            }
+            if (els.workspaceStepCopy) {
+                const activeStep = steps.find((step) => step.key === activeKey) || steps[0];
+                els.workspaceStepCopy.innerHTML = `<strong>${escapeHtml(activeStep.label)}</strong> • ${escapeHtml(activeStep.copy)}`;
+            }
+        }
+
+        function renderRosterSummaryStrip(derived) {
+            if (!els.rosterSummaryStrip) {
+                return;
+            }
+            const readiness = derived && derived.readiness ? derived.readiness : { state: "draft", label: "Draft" };
+            const compatibility = derived && derived.compatibility ? derived.compatibility : {};
+            const invalidEntries = derived && Array.isArray(derived.invalidEntries) ? derived.invalidEntries.length : 0;
+            const armyIssues = derived && Array.isArray(derived.armyIssues) ? derived.armyIssues.length : 0;
+            const detailsCount = invalidEntries + armyIssues;
+            const pills = [
+                `<span class="pill ${readiness.state === "playable" ? "support-badge-ready" : readiness.state === "partial" ? "support-badge-partial" : "pill-danger"}">${escapeHtml(readiness.label)}</span>`,
+                compatibility.needsReview ? `<span class="pill support-badge-partial">Saved data review</span>` : `<span class="pill pill-subtle">Catalog aligned</span>`,
+                detailsCount ? `<span class="pill pill-warning">${detailsCount} build ${detailsCount === 1 ? "issue" : "issues"}</span>` : `<span class="pill pill-subtle">No build blockers</span>`,
+            ].filter(Boolean);
+            els.rosterSummaryStrip.innerHTML = pills.join("");
         }
 
         function renderMobileSummary(derived) {
@@ -2237,7 +2540,7 @@
                 els.mobileWorkspaceBar.hidden = !isMobile;
             }
 
-            const tab = state.activeMobileTab || "browse";
+            const tab = state.activeWorkspace || "browse";
             const showBrowse = !isMobile || tab === "browse";
             const showRoster = !isMobile || tab === "roster";
             const showCards = !isMobile || tab === "cards";
@@ -2253,12 +2556,13 @@
                 els.mobileTabBrowse.classList.toggle("is-active", browseActive);
                 els.mobileTabRoster.classList.toggle("is-active", rosterActive);
                 els.mobileTabCards.classList.toggle("is-active", cardsActive);
-                els.mobileTabBrowse.setAttribute("aria-pressed", browseActive ? "true" : "false");
-                els.mobileTabRoster.setAttribute("aria-pressed", rosterActive ? "true" : "false");
-                els.mobileTabCards.setAttribute("aria-pressed", cardsActive ? "true" : "false");
+                els.mobileTabBrowse.setAttribute("aria-selected", browseActive ? "true" : "false");
+                els.mobileTabRoster.setAttribute("aria-selected", rosterActive ? "true" : "false");
+                els.mobileTabCards.setAttribute("aria-selected", cardsActive ? "true" : "false");
             }
 
             renderMobileSummary(derived);
+            renderWorkspaceStepper();
         }
 
         function renderPointsTally(derived) {
@@ -2995,12 +3299,12 @@
 
         function openEntryEditor(instanceId) {
             state.activeEditorInstanceId = instanceId || null;
-            if (instanceId && isMobileViewport()) {
-                state.activeMobileTab = "roster";
-            }
             renderRoster();
-            if (instanceId && els.entryEditor && typeof els.entryEditor.scrollIntoView === "function") {
-                els.entryEditor.scrollIntoView({ block: "nearest", behavior: "smooth" });
+            const activeRow = instanceId && els.rosterBody
+                ? els.rosterBody.querySelector(`[data-instance-id="${escapeAttributeSelector(instanceId)}"]`)
+                : null;
+            if (activeRow && typeof activeRow.scrollIntoView === "function") {
+                activeRow.scrollIntoView({ block: "nearest", behavior: "smooth" });
             }
         }
 
@@ -3081,6 +3385,7 @@
             state.activeEditorInstanceId = rosterEntry ? rosterEntry.instanceId : null;
             if (!entry || !mode) {
                 els.entryEditor.hidden = true;
+                els.entryEditor.classList.remove("is-mirror");
                 els.entryEditor.innerHTML = "";
                 return;
             }
@@ -3242,6 +3547,7 @@
 
             if (mode === "catalog") {
                 els.entryEditor.hidden = false;
+                els.entryEditor.classList.remove("is-mirror");
                 els.entryEditor.innerHTML = `
                     <div class="entry-editor-header">
                         <div>
@@ -3249,7 +3555,7 @@
                                 <h2 class="section-heading">${escapeHtml(entry.displayName)}</h2>
                                 ${supportBadge(support.supportLevel)}
                                 ${support.previewSupport === "configured-only" ? `<span class="pill pill-warning">Image fallback</span>` : ""}
-                                <span class="pill pill-subtle">Browse only</span>
+                                <span class="pill pill-subtle">Unit preview</span>
                             </div>
                             <div class="inline-note">${escapeHtml(loadoutText)}</div>
                             <div class="inline-note">${escapeHtml((entry.selectedOption && typeof entry.selectedOption.points === "number") ? `${entry.selectedOption.points} pts default` : "No default points option")}</div>
@@ -3279,9 +3585,9 @@
                         <div class="entry-editor-block">
                             <h3>Roster Impact</h3>
                             <div class="entry-editor-stack">
-                                <div class="inline-note">This is a browse-only unit preview. No roster entry has been created yet.</div>
+                                <div class="inline-note">This is a read-only unit preview. No roster entry has been created yet.</div>
                                 <div class="inline-note">Use <strong>Add to roster</strong> to start configuring quantity, enhancements, relationships, and legal loadout choices.</div>
-                                ${entry.support && entry.support.previewSupport === "configured-only" ? `<div class="inline-note inline-note-warning">Original Wahapedia imagery is unavailable for this unit, so the builder-rendered card is used as the fallback preview.</div>` : ""}
+                                ${entry.support && entry.support.previewSupport === "configured-only" ? `<div class="inline-note inline-note-warning">Source image unavailable for this unit, so the builder card is used as the fallback preview.</div>` : ""}
                             </div>
                         </div>
                     </div>
@@ -3290,6 +3596,7 @@
             }
 
             els.entryEditor.hidden = false;
+            els.entryEditor.classList.add("is-mirror");
             els.entryEditor.innerHTML = `
                 <div class="entry-editor-header">
                     <div>
@@ -3400,20 +3707,24 @@
             els.previewModeSource.setAttribute("aria-pressed", !isConfigured ? "true" : "false");
             els.printCleanToggle.disabled = !isConfigured;
             if (els.previewTitle) {
-                els.previewTitle.textContent = browsingCatalog ? "Selected Card" : "Review & Print Cards";
+                els.previewTitle.textContent = browsingCatalog ? "Unit preview" : "Review cards";
             }
             if (els.previewIntro) {
                 els.previewIntro.textContent = browsingCatalog
-                    ? "Browse faction datasheets by name without creating a roster entry. Add a unit from here whenever you want."
-                    : "Preview only the cards that can print from your current roster and source captures.";
+                    ? "Preview a unit without changing your roster. Add it when you are ready to configure it in the roster editor."
+                    : "Review exactly what will print from your current roster before opening the print dialog.";
             }
             els.previewModeNote.textContent = browsingCatalog
                 ? (isConfigured
-                    ? "Configured mode shows the builder-rendered card for the selected datasheet. Print-clean trims replaced/default rows where possible."
-                    : "Original Wahapedia mode shows the source image for the selected datasheet when available, with a builder-rendered fallback card when the source image is missing.")
+                    ? "Builder card mode shows the builder-rendered version of the selected datasheet. Print-clean trims replaced and default rows where possible."
+                    : "Source image mode shows the captured Wahapedia image when available, with a builder-card fallback when the source image is missing.")
                 : (isConfigured
-                    ? "Configured mode prints a roster summary sheet first, then builder-rendered cards that reflect your roster choices. Print-clean trims replaced/default rows where possible."
-                    : "Original Wahapedia mode prints a roster summary sheet first, then source images when available, with builder-rendered fallback cards when a source image is missing.");
+                    ? "Builder card mode prints a roster summary sheet first, then cards that reflect your current roster choices. Print-clean trims replaced and default rows where possible."
+                    : "Source image mode prints a roster summary sheet first, then source images when available, with builder-card fallbacks when a source image is missing.");
+            if (els.previewOpenPrint) {
+                els.previewOpenPrint.disabled = browsingCatalog;
+                els.previewOpenPrint.textContent = browsingCatalog ? "Preview only" : "Open print dialog";
+            }
         }
 
         function resetCatalogFilters(options = {}) {
@@ -3459,6 +3770,7 @@
             syncCatalogFilterControls();
             renderSidebarDisclosures();
             renderRosterActionMenu();
+            renderRosterDetailsPanel();
         }
 
         function renderCatalogSummary() {
@@ -3549,7 +3861,13 @@
             }
 
             if (!units.length) {
-                els.unitList.innerHTML = `<div class="unit-row">No units match the current search.</div>`;
+                els.unitList.innerHTML = `
+                    <div class="empty-state">
+                        <div>No units match the current search.</div>
+                        <div class="inline-note">Reset filters or adjust the search term to get back to a unit list you can browse.</div>
+                        <div><button class="btn" type="button" data-action="reset-filters">Reset filters</button></div>
+                    </div>
+                `;
                 if (selectionChanged) {
                     renderRoster();
                     renderPreview();
@@ -3571,14 +3889,14 @@
                             <div class="unit-row-badges">${unitStatusBadges(unit)}</div>
                         </button>
                         <div class="unit-row-actions">
-                            <button class="btn btn-quiet" type="button" data-action="focus-unit" data-unit-id="${unit.unitId}" aria-expanded="${isSelected ? "true" : "false"}">${isSelected ? "Hide card" : "Browse card"}</button>
+                            <button class="btn btn-quiet" type="button" data-action="focus-unit" data-unit-id="${unit.unitId}" aria-expanded="${isSelected ? "true" : "false"}">${isSelected ? "Hide preview" : "Preview unit"}</button>
                             <button class="btn btn-primary" data-action="add-unit" data-unit-id="${unit.unitId}">Add</button>
                         </div>
                         ${isSelected ? `
                             <div class="unit-row-detail">
                                 ${supportReasons.length ? `<div class="inline-note">${supportReasons.map((reason) => supportReasonLabel(reason)).join(" • ")}</div>` : `<div class="inline-note">No extra review notes are attached to this unit right now.</div>`}
                                 ${(unit.wargear && unit.wargear.options && unit.wargear.options.length) ? `<div class="inline-note">This unit includes configurable wargear options in the current catalog.</div>` : ""}
-                                <div class="inline-note">The selected card is shown in the card browser panel.</div>
+                                <div class="inline-note">The selected unit preview is shown in Review cards without changing your current workspace.</div>
                                 ${inRosterCount ? `<div class="inline-note">${inRosterCount} ${inRosterCount === 1 ? "copy is" : "copies are"} already in your roster.</div>` : `<div class="inline-note">Add this unit to start configuring it in the roster workspace.</div>`}
                             </div>
                         ` : ""}
@@ -3740,13 +4058,25 @@
         function renderRoster() {
             const derived = deriveRoster();
             renderPointsTally(derived);
+            renderRosterSummaryStrip(derived);
             renderRepairPanel(derived);
             renderReadinessBanner(derived);
             renderArmyRulesPanel(derived);
             renderLegalitySummary(derived);
             if (!state.catalog || !derived.entries.length) {
-                els.rosterBody.innerHTML = `<tr><td colspan="5" class="table-empty">No roster entries yet.</td></tr>`;
+                els.rosterBody.innerHTML = `
+                    <tr>
+                        <td colspan="5" class="table-empty">
+                            <div class="empty-state">
+                                <div>No roster entries yet.</div>
+                                <div class="inline-note">Add your first unit from Browse units, then return here to edit loadout, command choices, and relationships.</div>
+                                <div><button class="btn btn-primary" type="button" data-action="go-workspace" data-workspace="browse">Add your first unit</button></div>
+                            </div>
+                        </td>
+                    </tr>
+                `;
                 renderEntryEditor(derived);
+                syncInlineEntryEditor();
                 renderWorkspaceVisibility(derived);
                 return;
             }
@@ -3766,7 +4096,7 @@
                 const selected = state.activeEditorInstanceId === runtimeInstanceId;
 
                 return `
-                    <tr class="roster-entry ${selected ? "is-selected" : ""}">
+                    <tr class="roster-entry ${selected ? "is-selected" : ""}" data-instance-id="${runtimeInstanceId}">
                         <td data-label="Unit">
                             <strong>${entry.displayName}</strong>
                             <div class="entry-summary-line">
@@ -3805,6 +4135,7 @@
                 `;
             }).join("");
             renderEntryEditor(derived);
+            syncInlineEntryEditor();
             renderWorkspaceVisibility(derived);
         }
 
@@ -3819,7 +4150,7 @@
                     ? support.supportReasons.map((reason) => supportReasonLabel(reason)).join(" • ")
                     : "No extra review notes are attached to this unit right now.";
                 const fallbackNote = support.previewSupport === "configured-only"
-                    ? `<div class="inline-note inline-note-warning">Original Wahapedia imagery is unavailable for this unit, so the builder-rendered card is shown as the fallback.</div>`
+                    ? `<div class="inline-note inline-note-warning">Source image unavailable for this unit, so the builder card is shown as the fallback.</div>`
                     : "";
                 els.previewBody.innerHTML = `
                     <section class="browser-preview-shell" data-browser-preview>
@@ -3827,13 +4158,14 @@
                             <div class="browser-preview-summary">
                                 <div class="inline-note"><strong>${escapeHtml(catalogEntry.displayName)}</strong> • ${navigation.index + 1}/${navigation.units.length} in the current faction view • ${escapeHtml(previewMode)} mode</div>
                                 <div class="inline-note">${escapeHtml(supportReasons)}</div>
+                                <div class="inline-note">Read-only unit preview. Add the unit to open it in the roster editor.</div>
                                 ${fallbackNote}
                             </div>
                             <div class="entry-actions">
                                 <button class="btn" type="button" data-action="browse-prev" ${navigation.previous ? "" : "disabled"}>Previous</button>
                                 <button class="btn" type="button" data-action="browse-next" ${navigation.next ? "" : "disabled"}>Next</button>
                                 <button class="btn btn-primary" type="button" data-action="add-unit" data-unit-id="${catalogEntry.unitId}">Add to roster</button>
-                                <button class="btn" type="button" data-action="close-catalog-browser">Back to roster cards</button>
+                                <button class="btn" type="button" data-action="close-catalog-browser">Back to review cards</button>
                             </div>
                         </div>
                         ${BuilderApp.renderPreviewEntry(catalogEntry, {
@@ -3854,8 +4186,20 @@
             const excludedEntries = derived.entries.filter((entry) => !(entry.unit && entry.selectedOption));
             if (!state.catalog || !renderableEntries.length) {
                 els.previewBody.innerHTML = derived.entries.length
-                    ? `<div class="inline-note">Only roster entries that resolve cleanly in the current catalog appear here. Review flags do not block card rendering.</div>`
-                    : `<div class="inline-note">Add one or more units to review printable cards.</div>`;
+                    ? `
+                        <div class="empty-state">
+                            <div>Nothing is ready to print yet.</div>
+                            <div class="inline-note">Only roster entries that resolve cleanly in the current catalog appear here. Review flags do not block card rendering, but unresolved entries are excluded.</div>
+                            <div><button class="btn" type="button" data-action="go-workspace" data-workspace="roster">Go to roster editor</button></div>
+                        </div>
+                    `
+                    : `
+                        <div class="empty-state">
+                            <div>No cards to review yet.</div>
+                            <div class="inline-note">Add one or more units, then come back here to confirm the print pack.</div>
+                            <div><button class="btn btn-primary" type="button" data-action="go-workspace" data-workspace="browse">Add units</button></div>
+                        </div>
+                    `;
                 renderPreviewInlineStatus();
                 els.previewCard.classList.add("is-muted");
                 renderPreviewVisibility();
@@ -3891,7 +4235,27 @@
                 rows: printPackRows(renderableEntries),
             });
             els.previewBody.innerHTML = `
-                <div class="print-pack-status-line inline-note">${escapeHtml(previewStatusBits.join(" • "))}</div>
+                <section class="preview-print-summary">
+                    <div class="inline-note"><strong>What will print</strong> • ${escapeHtml(previewStatusBits.join(" • "))}</div>
+                    <div class="preview-print-summary-grid">
+                        <div class="preview-print-summary-item">
+                            <strong>${renderableEntries.length}</strong>
+                            <span>Printable cards</span>
+                        </div>
+                        <div class="preview-print-summary-item">
+                            <strong>${escapeHtml(previewMode)}</strong>
+                            <span>Card source</span>
+                        </div>
+                        <div class="preview-print-summary-item">
+                            <strong>${configuredOnlyCount}</strong>
+                            <span>Fallback cards</span>
+                        </div>
+                        <div class="preview-print-summary-item">
+                            <strong>${excludedEntryCount}</strong>
+                            <span>Excluded entries</span>
+                        </div>
+                    </div>
+                </section>
                 ${rosterSummary}
                 ${BuilderApp.renderPreviewEntries(renderableEntries, {
                 previewSourceMode: activePreviewSourceMode(),
@@ -3933,6 +4297,20 @@
             setRosterStatus(`Exported ${state.activeRosterName || "roster"} as JSON.`, false);
         }
 
+        async function openPrintPreview() {
+            const derived = deriveRoster();
+            const renderableEntries = derived.entries.filter((entry) => entry.unit && entry.selectedOption);
+            setActiveWorkspace("cards");
+            renderWorkspaceVisibility(derived);
+            await BuilderApp.printPreviewCards({
+                renderableEntries,
+                previewSourceMode: state.previewSourceMode,
+                previewRoot: els.previewBody,
+                alertFn: (message) => alert(message),
+                printFn: () => window.print(),
+            });
+        }
+
         function saveRosterCopy() {
             const adapter = storageAdapter();
             if (!adapter) {
@@ -3956,7 +4334,7 @@
         function focusCharacterCatalog() {
             state.catalogFilters.characterOnly = true;
             els.filterCharacter.checked = true;
-            state.activeMobileTab = "browse";
+            state.activeWorkspace = "browse";
             renderUnitList();
             if (typeof els.unitList.scrollIntoView === "function") {
                 els.unitList.scrollIntoView({ block: "nearest", behavior: "smooth" });
@@ -3967,6 +4345,7 @@
             const derived = deriveRoster();
             const candidate = derived.entries.find((entry) => entry.unit && (entry.unit.keywords || []).includes("CHARACTER")) || null;
             if (candidate) {
+                state.activeWorkspace = "roster";
                 openEntryEditor(candidate.instanceId);
                 return;
             }
@@ -3979,6 +4358,7 @@
                 ? derived.compatibility.incompatibleEntries[0]
                 : derived.invalidEntries[0];
             if (target) {
+                state.activeWorkspace = "roster";
                 openEntryEditor(target.instanceId);
             }
         }
@@ -4049,7 +4429,7 @@
             }
             try {
                 state.wasMobileViewport = isMobileViewport();
-                state.activeMobileTab = state.wasMobileViewport ? "browse" : "roster";
+                state.activeWorkspace = "browse";
                 state.storageAvailable = Boolean(storageAdapter());
                 await loadManifest();
                 await restoreInitialRoster();
@@ -4135,10 +4515,24 @@
             resetCatalogFilters();
         });
 
+        els.workspaceStepper.addEventListener("click", (event) => {
+            const target = event.target && typeof event.target.closest === "function"
+                ? event.target.closest("[data-action='go-workspace']")
+                : null;
+            if (!target) {
+                return;
+            }
+            setActiveWorkspace(target.dataset.workspace || "browse");
+        });
+
         els.unitList.addEventListener("click", (event) => {
             const target = event.target && typeof event.target.closest === "function"
                 ? event.target.closest("[data-action]")
                 : null;
+            if (target && target.dataset.action === "reset-filters") {
+                resetCatalogFilters();
+                return;
+            }
             if (target && target.dataset.action === "focus-unit") {
                 state.selectedCatalogUnitId = state.selectedCatalogUnitId === target.dataset.unitId ? null : target.dataset.unitId;
                 if (state.selectedCatalogUnitId) {
@@ -4147,10 +4541,6 @@
                 renderUnitList();
                 renderRoster();
                 renderPreview();
-                if (state.selectedCatalogUnitId && isMobileViewport()) {
-                    state.activeMobileTab = "cards";
-                    renderWorkspaceVisibility(deriveRoster());
-                }
                 return;
             }
             const added = interactionController.handleUnitListClick(event);
@@ -4170,6 +4560,15 @@
                 : null;
             if (target && target.dataset.action === "edit-entry") {
                 openEntryEditor(target.dataset.instanceId);
+                return;
+            }
+            if (target && target.dataset.action === "close-editor") {
+                state.activeEditorInstanceId = null;
+                renderRoster();
+                return;
+            }
+            if (target && target.dataset.action === "go-workspace") {
+                setActiveWorkspace(target.dataset.workspace || "browse");
                 return;
             }
             interactionController.handleRosterBodyClick(event);
@@ -4242,6 +4641,10 @@
                 renderPreview();
                 return;
             }
+            if (target.dataset.action === "go-workspace") {
+                setActiveWorkspace(target.dataset.workspace || "browse");
+                return;
+            }
             if (target.dataset.action === "add-unit" && target.dataset.unitId) {
                 const added = interactionController.addToRoster(target.dataset.unitId);
                 if (added) {
@@ -4250,6 +4653,7 @@
                 return;
             }
             if (target.dataset.action === "open-entry-editor") {
+                setActiveWorkspace("roster");
                 openEntryEditor(target.dataset.instanceId);
             }
         });
@@ -4344,6 +4748,11 @@
             renderRosterActionMenu();
         });
 
+        els.rosterDetailsToggle.addEventListener("click", () => {
+            state.rosterDetailsExpanded = !state.rosterDetailsExpanded;
+            renderRosterDetailsPanel();
+        });
+
         els.dedupeRosters.addEventListener("click", async () => {
             const adapter = storageAdapter();
             if (!adapter) {
@@ -4421,10 +4830,7 @@
                 return;
             }
             if (target.dataset.action === "focus-detachment") {
-                if (isMobileViewport()) {
-                    state.activeMobileTab = "roster";
-                    renderWorkspaceVisibility(deriveRoster());
-                }
+                setActiveWorkspace("roster");
                 els.detachmentSelect.focus();
                 return;
             }
@@ -4476,29 +4882,25 @@
             }
         });
         els.mobileTabBrowse.addEventListener("click", () => {
-            setActiveMobileTab("browse");
+            setActiveWorkspace("browse");
         });
         els.mobileTabRoster.addEventListener("click", () => {
-            setActiveMobileTab("roster");
+            setActiveWorkspace("roster");
         });
         els.mobileTabCards.addEventListener("click", () => {
-            setActiveMobileTab("cards");
+            setActiveWorkspace("cards");
         });
         els.previewModeConfigured.addEventListener("click", () => {
             if (activePreviewSourceMode() !== "configured") {
                 setPreviewSourceMode("configured");
-                if (isMobileViewport()) {
-                    state.activeMobileTab = "cards";
-                }
+                setActiveWorkspace("cards");
                 renderPreview();
             }
         });
         els.previewModeSource.addEventListener("click", () => {
             if (activePreviewSourceMode() !== "source-image") {
                 setPreviewSourceMode("source-image");
-                if (isMobileViewport()) {
-                    state.activeMobileTab = "cards";
-                }
+                setActiveWorkspace("cards");
                 renderPreview();
             }
         });
@@ -4508,27 +4910,11 @@
         });
         window.addEventListener("resize", () => {
             const isMobile = isMobileViewport();
-            if (isMobile !== state.wasMobileViewport) {
-                state.activeMobileTab = isMobile ? "browse" : "roster";
-                state.wasMobileViewport = isMobile;
-            }
+            state.wasMobileViewport = isMobile;
             renderWorkspaceVisibility(deriveRoster());
         });
-        els.printRoster.addEventListener("click", async () => {
-            const derived = deriveRoster();
-            const renderableEntries = derived.entries.filter((entry) => entry.unit && entry.selectedOption);
-            if (isMobileViewport()) {
-                state.activeMobileTab = "cards";
-                renderWorkspaceVisibility(derived);
-            }
-            await BuilderApp.printPreviewCards({
-                renderableEntries,
-                previewSourceMode: state.previewSourceMode,
-                previewRoot: els.previewBody,
-                alertFn: (message) => alert(message),
-                printFn: () => window.print(),
-            });
-        });
+        els.printRoster.addEventListener("click", openPrintPreview);
+        els.previewOpenPrint.addEventListener("click", openPrintPreview);
 
         init();
     </script>
