@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wahpedia Capture Faction Browser</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@700;900&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./card_renderer.css?v=20260330-army-layer-rules">
+    <style>
+        :root {
+            --screen-bg: #d8d3c7;
+            --panel: #f8f5eb;
+            --panel-2: #ffffff;
+            --ink: #171717;
+            --line: #cfc8b9;
+            --accent: #8c2f39;
+            --accent-soft: #f6e4df;
+            --shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at top left, rgba(140, 47, 57, 0.08), transparent 28%),
+                linear-gradient(180deg, #e6e1d6 0%, var(--screen-bg) 100%);
+            color: var(--ink);
+            font-family: "Roboto Condensed", sans-serif;
+        }
+
+        :focus-visible {
+            outline: 3px solid rgba(140, 47, 57, 0.55);
+            outline-offset: 2px;
+        }
+
+        .app-shell {
+            display: grid;
+            grid-template-columns: 340px minmax(0, 1fr);
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            border-right: 2px solid var(--ink);
+            background: linear-gradient(180deg, #faf7f0 0%, #efe9db 100%);
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            min-width: 0;
+        }
+
+        .brand h1,
+        .section-heading {
+            margin: 0;
+            font-family: "Exo 2", sans-serif;
+            text-transform: uppercase;
+        }
+
+        .brand h1 {
+            font-size: 28px;
+            font-weight: 900;
+            letter-spacing: 0.04em;
+        }
+
+        .brand p {
+            margin: 8px 0 0;
+            color: #5c5348;
+            font-size: 14px;
+        }
+
+        .brand-actions,
+        .browser-actions,
+        .preview-controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .field-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .field-label,
+        .section-heading {
+            font-size: 12px;
+            font-weight: 900;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        select,
+        input[type="text"] {
+            width: 100%;
+            border: 1.5px solid var(--ink);
+            border-radius: 0;
+            padding: 10px 12px;
+            font: inherit;
+            background: var(--panel-2);
+            color: var(--ink);
+        }
+
+        .btn {
+            border: 1.5px solid var(--ink);
+            background: var(--panel-2);
+            color: var(--ink);
+            padding: 10px 12px;
+            font: inherit;
+            font-weight: 900;
+            text-transform: uppercase;
+            cursor: pointer;
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background: #f0ece3;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        .btn[disabled] {
+            opacity: 0.45;
+            cursor: not-allowed;
+        }
+
+        .status-box,
+        .unit-list,
+        .browser-panel {
+            background: var(--panel);
+            border: 1.5px solid var(--ink);
+            box-shadow: var(--shadow);
+        }
+
+        .status-box {
+            padding: 14px 16px;
+            font-size: 14px;
+            line-height: 1.45;
+            box-shadow: none;
+            background: rgba(255, 255, 255, 0.72);
+        }
+
+        .catalog-section {
+            display: grid;
+            gap: 12px;
+            min-height: 0;
+            flex: 1;
+        }
+
+        .section-heading-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            align-items: baseline;
+        }
+
+        .section-count,
+        .inline-note {
+            color: #5d5448;
+            font-size: 13px;
+            line-height: 1.4;
+        }
+
+        .unit-list {
+            min-height: 320px;
+            max-height: calc(100vh - 320px);
+            overflow: auto;
+        }
+
+        .unit-row {
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--line);
+            display: grid;
+            gap: 10px;
+        }
+
+        .unit-row:last-child {
+            border-bottom: 0;
+        }
+
+        .unit-row.is-selected {
+            background: #fffaf4;
+        }
+
+        .unit-row-main {
+            appearance: none;
+            border: 0;
+            background: transparent;
+            text-align: left;
+            padding: 0;
+            margin: 0;
+            cursor: pointer;
+            color: inherit;
+            font: inherit;
+            width: 100%;
+        }
+
+        .unit-name {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 900;
+        }
+
+        .unit-meta {
+            margin-top: 4px;
+            color: #5d5448;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .pill {
+            display: inline-block;
+            padding: 4px 8px;
+            background: #f4efe3;
+            border: 1px solid var(--line);
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .pill-warning {
+            background: #fdebd2;
+            border-color: #d8a866;
+        }
+
+        .main {
+            padding: 24px;
+            min-width: 0;
+        }
+
+        .browser-panel {
+            padding: 20px;
+            display: grid;
+            gap: 18px;
+        }
+
+        .browser-header {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .browser-title {
+            margin: 0;
+            font-family: "Exo 2", sans-serif;
+            font-size: 28px;
+            text-transform: uppercase;
+        }
+
+        .browser-summary {
+            display: grid;
+            gap: 6px;
+        }
+
+        .preview-mode-group {
+            display: inline-flex;
+            border: 1.5px solid var(--ink);
+            background: var(--panel-2);
+        }
+
+        .preview-mode-btn {
+            border: 0;
+            border-right: 1.5px solid var(--ink);
+            background: transparent;
+            color: var(--ink);
+            min-height: 40px;
+            padding: 8px 12px;
+            font: inherit;
+            font-weight: 900;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+        .preview-mode-btn:last-child {
+            border-right: 0;
+        }
+
+        .preview-mode-btn.is-active {
+            background: var(--accent);
+            color: white;
+        }
+
+        .preview-body {
+            display: grid;
+            gap: 20px;
+        }
+
+        .empty-state {
+            padding: 28px;
+            border: 1px dashed #9f9483;
+            background: rgba(255, 255, 255, 0.65);
+        }
+
+        @media (max-width: 900px) {
+            .app-shell {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                border-right: 0;
+                border-bottom: 2px solid var(--ink);
+            }
+
+            .unit-list {
+                max-height: 320px;
+            }
+
+            .main {
+                padding: 16px;
+            }
+
+            .browser-header {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-shell">
+        <aside class="sidebar">
+            <div class="brand">
+                <h1>Faction Browser</h1>
+                <p>Browse Wahapedia faction datasheets by name without opening the roster builder first.</p>
+                <div class="brand-actions">
+                    <a class="btn" href="./index.html">Open Main Builder</a>
+                </div>
+            </div>
+
+            <div class="field-group">
+                <label class="field-label" for="faction-select">Faction</label>
+                <select id="faction-select" disabled>
+                    <option>Loading manifest...</option>
+                </select>
+            </div>
+
+            <div class="field-group">
+                <label class="field-label" for="unit-search">Search Units</label>
+                <input id="unit-search" type="text" placeholder="Avatar, Crisis, Ragnar..." disabled>
+            </div>
+
+            <div id="status-box" class="status-box">Loading <code>./data/manifest.json</code>...</div>
+
+            <div class="catalog-section">
+                <div class="section-heading-row">
+                    <div class="section-heading">Faction Units</div>
+                    <div id="catalog-visible-count" class="section-count">0 shown</div>
+                </div>
+                <div id="unit-list" class="unit-list"></div>
+            </div>
+        </aside>
+
+        <main class="main">
+            <section class="browser-panel">
+                <div class="browser-header">
+                    <div class="browser-summary">
+                        <h2 id="browser-title" class="browser-title">Select a faction</h2>
+                        <div id="browser-subtitle" class="inline-note">Choose a faction and unit to start browsing original Wahapedia cards.</div>
+                        <div id="browser-status" class="inline-note"></div>
+                    </div>
+                    <div class="preview-controls">
+                        <div class="preview-mode-group" role="group" aria-label="Card source mode">
+                            <button id="preview-mode-source" class="preview-mode-btn is-active" type="button" aria-pressed="true">Original Wahapedia</button>
+                            <button id="preview-mode-configured" class="preview-mode-btn" type="button" aria-pressed="false">Configured card</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="browser-actions">
+                    <button id="browse-prev" class="btn" type="button" disabled>Previous</button>
+                    <button id="browse-next" class="btn" type="button" disabled>Next</button>
+                    <a id="open-builder-link" class="btn btn-primary" href="./index.html">Open Main Builder</a>
+                </div>
+
+                <div id="preview-body" class="preview-body">
+                    <div class="empty-state inline-note">Faction data will appear here once the manifest finishes loading.</div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="./card_renderer.js?v=20260330-builder-usability"></script>
+    <script src="./app.js?v=20260330-builder-usability"></script>
+    <script>
+        const BuilderApp = window.WahBuilderApp;
+        const Renderer = window.WahBuilderCardRenderer;
+
+        const state = {
+            manifest: null,
+            catalog: null,
+            factionSlug: "",
+            selectedUnitId: "",
+            previewSourceMode: "source-image",
+            missingSourceCardLookup: new Set(),
+            filters: {
+                search: "",
+            },
+        };
+
+        const els = {
+            factionSelect: document.getElementById("faction-select"),
+            unitSearch: document.getElementById("unit-search"),
+            statusBox: document.getElementById("status-box"),
+            catalogVisibleCount: document.getElementById("catalog-visible-count"),
+            unitList: document.getElementById("unit-list"),
+            browserTitle: document.getElementById("browser-title"),
+            browserSubtitle: document.getElementById("browser-subtitle"),
+            browserStatus: document.getElementById("browser-status"),
+            previewModeSource: document.getElementById("preview-mode-source"),
+            previewModeConfigured: document.getElementById("preview-mode-configured"),
+            browsePrev: document.getElementById("browse-prev"),
+            browseNext: document.getElementById("browse-next"),
+            openBuilderLink: document.getElementById("open-builder-link"),
+            previewBody: document.getElementById("preview-body"),
+        };
+
+        function fetchJson(url) {
+            return fetch(url).then((response) => {
+                if (!response.ok) {
+                    throw new Error(`Request failed for ${url}: ${response.status}`);
+                }
+                return response.json();
+            });
+        }
+
+        function escapeHtml(value) {
+            return BuilderApp.escapeHtml(value);
+        }
+
+        function setStatus(message, isError = false) {
+            els.statusBox.innerHTML = isError ? `<span class="status-error">${message}</span>` : message;
+        }
+
+        function slugToTitle(slug) {
+            if (slug === "t-au-empire") {
+                return "T'au Empire";
+            }
+            return String(slug || "").replace(/-/g, " ").replace(/\b\w/g, (value) => value.toUpperCase());
+        }
+
+        function defaultPointsOption(unit) {
+            return Renderer && typeof Renderer.defaultPointsOption === "function"
+                ? Renderer.defaultPointsOption(unit)
+                : ((unit && Array.isArray(unit.pointsOptions)) ? unit.pointsOptions[0] || null : null);
+        }
+
+        function factionSelectGroups() {
+            const factions = state.manifest && Array.isArray(state.manifest.factions) ? state.manifest.factions : [];
+            const grouped = new Map();
+            const topLevel = [];
+            factions.forEach((entry) => {
+                const parentSlug = String(entry.parentSlug || "").trim();
+                if (!parentSlug) {
+                    topLevel.push(entry);
+                    return;
+                }
+                if (!grouped.has(parentSlug)) {
+                    grouped.set(parentSlug, []);
+                }
+                grouped.get(parentSlug).push(entry);
+            });
+
+            const ordered = [];
+            topLevel.forEach((entry) => {
+                ordered.push({ type: "option", entry });
+                const children = grouped.get(entry.slug) || [];
+                if (children.length) {
+                    ordered.push({
+                        type: "group",
+                        label: `${entry.name} Subsets`,
+                        children,
+                    });
+                }
+            });
+            return ordered;
+        }
+
+        function renderFactionOptions() {
+            const groups = factionSelectGroups();
+            els.factionSelect.innerHTML = groups.map((group) => {
+                if (group.type === "option") {
+                    return `<option value="${group.entry.slug}">${escapeHtml(group.entry.name)}</option>`;
+                }
+                return `
+                    <optgroup label="${escapeHtml(group.label)}">
+                        ${group.children.map((entry) => `<option value="${entry.slug}">${escapeHtml(entry.name)}</option>`).join("")}
+                    </optgroup>
+                `;
+            }).join("");
+            els.factionSelect.disabled = groups.length === 0;
+            els.unitSearch.disabled = groups.length === 0;
+        }
+
+        function unitSupport(unit) {
+            const support = unit && typeof unit.support === "object" ? unit.support : {};
+            return {
+                supportLevel: support.supportLevel || "full",
+                supportReasons: Array.isArray(support.supportReasons) ? support.supportReasons : [],
+                previewSupport: support.previewSupport || "configured-only",
+            };
+        }
+
+        function supportBadge(level) {
+            if (level === "partial") {
+                return `<span class="pill pill-warning">Needs review</span>`;
+            }
+            if (level === "incompatible") {
+                return `<span class="pill pill-warning">Needs repair</span>`;
+            }
+            return `<span class="pill">Ready</span>`;
+        }
+
+        function filteredUnits() {
+            const units = state.catalog && Array.isArray(state.catalog.units) ? state.catalog.units : [];
+            const search = String(state.filters.search || "").trim().toLowerCase();
+            if (!search) {
+                return units;
+            }
+            return units.filter((unit) => {
+                const haystack = [
+                    unit.name,
+                    ...(Array.isArray(unit.keywords) ? unit.keywords : []),
+                    ...(Array.isArray(unit.factionKeywords) ? unit.factionKeywords : []),
+                ].join(" ").toLowerCase();
+                return haystack.includes(search);
+            });
+        }
+
+        function selectedUnitNavigation() {
+            const units = filteredUnits();
+            const index = units.findIndex((unit) => unit.unitId === state.selectedUnitId);
+            return {
+                units,
+                index,
+                current: index >= 0 ? units[index] : null,
+                previous: index > 0 ? units[index - 1] : null,
+                next: index >= 0 && index < units.length - 1 ? units[index + 1] : null,
+            };
+        }
+
+        function ensureSelection() {
+            const units = filteredUnits();
+            if (!units.length) {
+                state.selectedUnitId = "";
+                return null;
+            }
+            if (!state.selectedUnitId || !units.some((unit) => unit.unitId === state.selectedUnitId)) {
+                state.selectedUnitId = units[0].unitId;
+            }
+            return units.find((unit) => unit.unitId === state.selectedUnitId) || null;
+        }
+
+        function syncPreviewModeControls() {
+            const sourceActive = state.previewSourceMode === "source-image";
+            els.previewModeSource.classList.toggle("is-active", sourceActive);
+            els.previewModeSource.setAttribute("aria-pressed", sourceActive ? "true" : "false");
+            els.previewModeConfigured.classList.toggle("is-active", !sourceActive);
+            els.previewModeConfigured.setAttribute("aria-pressed", !sourceActive ? "true" : "false");
+        }
+
+        function renderUnitList() {
+            const units = filteredUnits();
+            els.catalogVisibleCount.textContent = `${units.length} shown`;
+            if (!units.length) {
+                els.unitList.innerHTML = `<div class="unit-row"><div class="inline-note">No units match the current search.</div></div>`;
+                return;
+            }
+            els.unitList.innerHTML = units.map((unit) => {
+                const points = defaultPointsOption(unit);
+                const isSelected = unit.unitId === state.selectedUnitId;
+                return `
+                    <div class="unit-row ${isSelected ? "is-selected" : ""}">
+                        <button class="unit-row-main" type="button" data-action="select-unit" data-unit-id="${unit.unitId}">
+                            <p class="unit-name">${escapeHtml(unit.name)}</p>
+                            <div class="unit-meta">${escapeHtml(points && typeof points.points === "number" ? `${points.points} pts` : "No points")} | ${escapeHtml((unit.factionKeywords || []).join(", "))}</div>
+                        </button>
+                        <div class="browser-actions">
+                            ${supportBadge(unitSupport(unit).supportLevel)}
+                        </div>
+                    </div>
+                `;
+            }).join("");
+        }
+
+        function updateBuilderLink() {
+            const params = new URLSearchParams();
+            if (state.factionSlug) {
+                params.set("faction", state.factionSlug);
+            }
+            if (state.selectedUnitId) {
+                params.set("unit", state.selectedUnitId);
+            }
+            els.openBuilderLink.href = `./index.html${params.toString() ? `?${params.toString()}` : ""}`;
+        }
+
+        function renderSelectedCard() {
+            const navigation = selectedUnitNavigation();
+            const unit = navigation.current;
+            syncPreviewModeControls();
+            els.browsePrev.disabled = !navigation.previous;
+            els.browseNext.disabled = !navigation.next;
+            updateBuilderLink();
+
+            if (!unit) {
+                els.browserTitle.textContent = state.catalog ? state.catalog.faction.name : "Select a faction";
+                els.browserSubtitle.textContent = "Choose a unit from the list to browse its datasheet.";
+                els.browserStatus.textContent = "";
+                els.previewBody.innerHTML = `<div class="empty-state inline-note">No browsable unit is selected yet.</div>`;
+                return;
+            }
+
+            const support = unitSupport(unit);
+            const entry = BuilderApp.createCatalogPreviewEntry(unit, {
+                instanceId: `browser-preview-${unit.unitId}`,
+                renderer: Renderer,
+                pointsGroups(value) {
+                    const options = Array.isArray(value && value.pointsOptions) ? value.pointsOptions : [];
+                    return {
+                        base: options.filter((option) => option.selectionKind !== "upgrade"),
+                        upgrades: options.filter((option) => option.selectionKind === "upgrade"),
+                    };
+                },
+                support,
+            });
+            const points = defaultPointsOption(unit);
+            const modeLabel = state.previewSourceMode === "source-image" ? "Original Wahapedia" : "Configured card";
+            const supportText = support.supportReasons.length
+                ? support.supportReasons.join(" • ")
+                : "No extra review notes are attached to this unit right now.";
+
+            els.browserTitle.textContent = unit.name;
+            els.browserSubtitle.textContent = `${state.catalog.faction.name} • ${navigation.index + 1}/${navigation.units.length} in the current view`;
+            els.browserStatus.textContent = `${modeLabel} • ${points && typeof points.points === "number" ? `${points.points} pts default` : "No default points"} • ${supportText}`;
+            els.previewBody.innerHTML = BuilderApp.renderPreviewEntry(entry, {
+                previewSourceMode: state.previewSourceMode,
+                previewRenderMode: "print-clean",
+                renderer: Renderer,
+                missingSourceCardLookup: state.missingSourceCardLookup,
+            });
+        }
+
+        function renderCatalog() {
+            ensureSelection();
+            renderUnitList();
+            renderSelectedCard();
+        }
+
+        async function setCatalog(factionSlug) {
+            const manifestEntry = (state.manifest && Array.isArray(state.manifest.factions) ? state.manifest.factions : [])
+                .find((entry) => entry.slug === factionSlug);
+            if (!manifestEntry) {
+                throw new Error(`Unknown faction: ${factionSlug}`);
+            }
+            state.catalog = await fetchJson(`./data/${manifestEntry.catalogFile}`);
+            state.factionSlug = manifestEntry.slug;
+            els.factionSelect.value = manifestEntry.slug;
+            setStatus(`${manifestEntry.name}: ${manifestEntry.unitCount} units available.`);
+            renderCatalog();
+        }
+
+        function queryParams() {
+            return new URLSearchParams(window.location.search);
+        }
+
+        async function init() {
+            if (window.location.protocol === "file:") {
+                setStatus("This page cannot load builder data over file://. Serve the repo over HTTP.", true);
+                els.previewBody.innerHTML = `<div class="empty-state inline-note">Open this page through a local web server instead of double-clicking the HTML file.</div>`;
+                return;
+            }
+
+            try {
+                const manifest = await fetchJson("./data/manifest.json");
+                state.manifest = manifest;
+                try {
+                    const report = manifest && manifest.reportFile ? await fetchJson(`./data/${manifest.reportFile}`) : null;
+                    state.missingSourceCardLookup = BuilderApp.buildMissingSourceCardLookup(report);
+                } catch (_error) {
+                    state.missingSourceCardLookup = new Set();
+                }
+
+                renderFactionOptions();
+                const params = queryParams();
+                const requestedFaction = params.get("faction");
+                const fallbackFaction = manifest && Array.isArray(manifest.factions) && manifest.factions[0]
+                    ? manifest.factions[0].slug
+                    : "";
+                await setCatalog(requestedFaction || fallbackFaction);
+
+                const requestedUnit = params.get("unit");
+                if (requestedUnit && filteredUnits().some((unit) => unit.unitId === requestedUnit)) {
+                    state.selectedUnitId = requestedUnit;
+                    renderCatalog();
+                }
+            } catch (error) {
+                setStatus(`Unable to load the faction browser data.<br><br>${escapeHtml(error.message)}`, true);
+                els.previewBody.innerHTML = `<div class="empty-state inline-note">Faction browser data is not available.</div>`;
+            }
+        }
+
+        els.factionSelect.addEventListener("change", async (event) => {
+            const nextFaction = event.target.value;
+            if (!nextFaction) {
+                return;
+            }
+            state.selectedUnitId = "";
+            state.filters.search = "";
+            els.unitSearch.value = "";
+            await setCatalog(nextFaction);
+        });
+
+        els.unitSearch.addEventListener("input", (event) => {
+            state.filters.search = event.target.value || "";
+            renderCatalog();
+        });
+
+        els.unitList.addEventListener("click", (event) => {
+            const target = event.target && typeof event.target.closest === "function"
+                ? event.target.closest("[data-action]")
+                : null;
+            if (!target || target.dataset.action !== "select-unit") {
+                return;
+            }
+            state.selectedUnitId = target.dataset.unitId || "";
+            renderCatalog();
+        });
+
+        els.previewModeSource.addEventListener("click", () => {
+            if (state.previewSourceMode !== "source-image") {
+                state.previewSourceMode = "source-image";
+                renderSelectedCard();
+            }
+        });
+
+        els.previewModeConfigured.addEventListener("click", () => {
+            if (state.previewSourceMode !== "configured") {
+                state.previewSourceMode = "configured";
+                renderSelectedCard();
+            }
+        });
+
+        els.browsePrev.addEventListener("click", () => {
+            const previous = selectedUnitNavigation().previous;
+            if (previous) {
+                state.selectedUnitId = previous.unitId;
+                renderCatalog();
+            }
+        });
+
+        els.browseNext.addEventListener("click", () => {
+            const next = selectedUnitNavigation().next;
+            if (next) {
+                state.selectedUnitId = next.unitId;
+                renderCatalog();
+            }
+        });
+
+        init();
+    </script>
+</body>
+</html>
