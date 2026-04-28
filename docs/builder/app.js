@@ -413,6 +413,102 @@
         };
     }
 
+    function summarizeWorkflow(options) {
+        const derived = options && options.derived ? options.derived : {};
+        const entries = Array.isArray(derived.entries) ? derived.entries : [];
+        const armyIssues = Array.isArray(derived.armyIssues) ? derived.armyIssues : [];
+        const invalidEntries = Array.isArray(derived.invalidEntries) ? derived.invalidEntries : [];
+        const compatibility = derived.compatibility && typeof derived.compatibility === "object"
+            ? derived.compatibility
+            : {};
+        const incompatibleEntries = Array.isArray(compatibility.incompatibleEntries)
+            ? compatibility.incompatibleEntries
+            : [];
+        const renderableEntries = entries.filter((entry) => entry && entry.unit && entry.selectedOption);
+        const excludedEntries = entries.filter((entry) => !(entry && entry.unit && entry.selectedOption));
+        const hasIssue = (code) => armyIssues.some((issue) => issue && issue.code === code);
+        const missingDetachment = hasIssue("missing-detachment");
+        const missingCharacter = hasIssue("missing-character");
+        const warlordIssue = hasIssue("missing-warlord") || hasIssue("invalid-warlord");
+        const unitIssueCount = invalidEntries.length + incompatibleEntries.length;
+        const readiness = derived.readiness || { state: "draft", label: "Draft" };
+        const totalPoints = typeof derived.totalPoints === "number" ? derived.totalPoints : 0;
+        const pointsLimit = typeof derived.pointsLimit === "number" ? derived.pointsLimit : 0;
+        const saveState = options && options.storageAvailable === false
+            ? "Storage unavailable"
+            : (options && options.lastSavedAt ? `Autosaved ${options.lastSavedAt}` : "Autosave ready");
+
+        const checklist = [
+            {
+                key: "detachment",
+                label: "Detachment",
+                detail: missingDetachment ? "Select a detachment to unlock rules and roster validation." : "Detachment ready.",
+                state: missingDetachment ? "action" : "done",
+                action: missingDetachment ? "focus-detachment" : "",
+                actionLabel: "Select detachment",
+            },
+            {
+                key: "warlord",
+                label: "Warlord",
+                detail: missingCharacter
+                    ? "Add a Character before choosing a Warlord."
+                    : (warlordIssue ? "Choose a valid Character as Warlord." : "Command setup ready."),
+                state: missingCharacter || warlordIssue ? "action" : "done",
+                action: missingCharacter ? "focus-characters" : (warlordIssue ? "focus-warlord" : ""),
+                actionLabel: missingCharacter ? "Find Characters" : "Choose Warlord",
+            },
+            {
+                key: "units",
+                label: "Unit issues",
+                detail: unitIssueCount ? `${unitIssueCount} roster ${unitIssueCount === 1 ? "entry needs" : "entries need"} attention.` : "No unit blockers.",
+                state: unitIssueCount ? "action" : "done",
+                action: unitIssueCount ? "focus-unsupported" : "",
+                actionLabel: "Review units",
+            },
+            {
+                key: "print",
+                label: "Print pack",
+                detail: renderableEntries.length
+                    ? `${renderableEntries.length} printable ${renderableEntries.length === 1 ? "card" : "cards"}${excludedEntries.length ? `, ${excludedEntries.length} excluded` : ""}.`
+                    : "Add a resolved unit before printing.",
+                state: renderableEntries.length && !excludedEntries.length ? "done" : (renderableEntries.length ? "warning" : "action"),
+                action: renderableEntries.length ? "go-cards" : "go-browse",
+                actionLabel: renderableEntries.length ? "Review cards" : "Add units",
+            },
+        ];
+
+        let primaryAction = { action: "go-browse", label: "Add units" };
+        if (entries.length) {
+            if (missingDetachment) {
+                primaryAction = { action: "focus-detachment", label: "Select detachment" };
+            } else if (missingCharacter) {
+                primaryAction = { action: "focus-characters", label: "Add Character" };
+            } else if (warlordIssue) {
+                primaryAction = { action: "focus-warlord", label: "Choose Warlord" };
+            } else if (unitIssueCount) {
+                primaryAction = { action: "focus-unsupported", label: "Review issues" };
+            } else if (renderableEntries.length) {
+                primaryAction = { action: "print-roster", label: "Print roster" };
+            } else {
+                primaryAction = { action: "go-cards", label: "Review cards" };
+            }
+        }
+
+        return {
+            rosterName: options && options.rosterName ? String(options.rosterName) : "Roster",
+            readinessLabel: readiness.label || "Draft",
+            readinessState: readiness.state || "draft",
+            totalPoints,
+            pointsLimit,
+            issueCount: armyIssues.length + invalidEntries.length + incompatibleEntries.length + excludedEntries.length,
+            printableCount: renderableEntries.length,
+            excludedCount: excludedEntries.length,
+            saveState,
+            checklist,
+            primaryAction,
+        };
+    }
+
     function createInteractionController(deps) {
         const {
             state,
@@ -1028,6 +1124,7 @@
         renderPreviewEntries,
         sourceCardLookupKey,
         sourceCardUrl,
+        summarizeWorkflow,
         waitForPreviewImages,
     };
 });

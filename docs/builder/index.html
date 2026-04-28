@@ -106,6 +106,123 @@
             margin-bottom: 18px;
         }
 
+        .workflow-command-bar {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            display: grid;
+            grid-template-columns: minmax(0, 1.25fr) auto;
+            gap: 16px;
+            align-items: center;
+            padding: 14px 18px;
+            border: 2px solid var(--ink);
+            background: rgba(248, 245, 235, 0.96);
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(8px);
+        }
+
+        .workflow-command-main {
+            min-width: 0;
+        }
+
+        .workflow-command-kicker,
+        .workflow-checklist-label {
+            font-size: 11px;
+            font-weight: 900;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #5d5448;
+        }
+
+        .workflow-command-title {
+            margin-top: 3px;
+            font-family: "Exo 2", sans-serif;
+            font-size: 22px;
+            font-weight: 900;
+            text-transform: uppercase;
+            line-height: 1.05;
+        }
+
+        .workflow-command-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: center;
+            margin-top: 8px;
+        }
+
+        .workflow-command-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .workflow-checklist {
+            display: grid;
+            gap: 8px;
+            padding: 14px 16px;
+            border: 1px solid var(--line);
+            background: rgba(255, 255, 255, 0.58);
+        }
+
+        .workflow-checklist-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 8px;
+        }
+
+        .workflow-check-item {
+            display: grid;
+            gap: 6px;
+            min-width: 0;
+            padding: 10px;
+            border: 1px solid var(--line);
+            background: var(--panel-2);
+        }
+
+        .workflow-check-item.is-action {
+            border-color: #d8a866;
+            background: #fff8ec;
+        }
+
+        .workflow-check-item.is-warning {
+            border-color: #bf7a80;
+            background: #fff4f3;
+        }
+
+        .workflow-check-heading {
+            display: flex;
+            justify-content: space-between;
+            gap: 8px;
+            align-items: center;
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 12px;
+        }
+
+        .workflow-check-state {
+            padding: 2px 6px;
+            border: 1px solid var(--line);
+            background: #f4efe3;
+            font-size: 10px;
+            white-space: nowrap;
+        }
+
+        .workflow-check-copy {
+            color: #5d5448;
+            font-size: 12px;
+            line-height: 1.35;
+        }
+
+        .workflow-check-item .btn {
+            justify-self: flex-start;
+            min-height: 0;
+            padding: 7px 9px;
+            font-size: 12px;
+        }
+
         .workspace-step-copy strong {
             font-family: "Exo 2", sans-serif;
             text-transform: uppercase;
@@ -118,7 +235,9 @@
 
         .mobile-workspace-bar[hidden],
         .sidebar-disclosure[hidden],
-        .roster-maintenance-panel[hidden] {
+        .roster-maintenance-panel[hidden],
+        .repair-panel[hidden],
+        .readiness-banner[hidden] {
             display: none !important;
         }
 
@@ -1323,6 +1442,14 @@
             .army-rules-grid {
                 grid-template-columns: 1fr;
             }
+
+            .workflow-command-bar {
+                grid-template-columns: 1fr;
+            }
+
+            .workflow-checklist-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
         }
 
         @media (max-width: 640px) {
@@ -1364,6 +1491,22 @@
                 font-weight: 900;
                 letter-spacing: 0.08em;
                 text-transform: uppercase;
+            }
+
+            .mobile-workspace-issues {
+                border: 0;
+                padding: 0;
+                background: transparent;
+                color: var(--ink);
+                font: inherit;
+                cursor: pointer;
+                text-align: right;
+            }
+
+            .mobile-workspace-issues.has-issues {
+                color: var(--accent);
+                text-decoration: underline;
+                text-underline-offset: 3px;
             }
 
             .mobile-workspace-tabs {
@@ -1416,6 +1559,10 @@
                 align-items: flex-start;
             }
 
+            .workflow-command-bar {
+                display: none;
+            }
+
             .preview-controls {
                 width: 100%;
                 justify-content: stretch;
@@ -1458,8 +1605,13 @@
                 grid-template-columns: 1fr 1fr;
             }
 
+            .workflow-checklist-grid {
+                grid-template-columns: 1fr;
+            }
+
             .roster-manager-actions .btn,
-            .roster-actions .btn {
+            .roster-actions .btn,
+            .workflow-command-actions .btn {
                 width: 100%;
             }
 
@@ -1560,6 +1712,8 @@
 
         @media print {
             .mobile-workspace-bar,
+            .workflow-command-bar,
+            .workspace-overview,
             .sidebar,
             .roster-card,
             .preview-header,
@@ -1623,7 +1777,7 @@
                 <span id="mobile-summary-points">0 / 2000</span>
                 <span id="mobile-summary-caption">Strike Force</span>
             </div>
-            <div id="mobile-summary-issues" class="mobile-workspace-issues">No issues</div>
+            <button id="mobile-summary-issues" class="mobile-workspace-issues" type="button">No issues</button>
         </div>
         <div class="mobile-workspace-tabs" role="tablist" aria-label="Builder workspace">
             <button id="mobile-tab-browse" class="mobile-workspace-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="browse-panel">Browse units</button>
@@ -1756,6 +1910,8 @@
         </aside>
 
         <main class="main">
+            <section id="workflow-command-bar" class="workflow-command-bar" aria-label="Roster command center"></section>
+
             <section class="workspace-overview" aria-label="Builder workflow">
                 <div id="workspace-stepper" class="workspace-stepper"></div>
                 <div id="workspace-step-copy" class="workspace-step-copy"></div>
@@ -1802,7 +1958,7 @@
                         </div>
                     </div>
                     <div class="roster-manager-actions">
-                        <button id="save-roster" class="btn btn-primary">Save roster</button>
+                        <button id="save-roster" class="btn btn-quiet">Save now</button>
                         <button id="save-roster-copy" class="btn">Duplicate</button>
                         <button id="new-roster" class="btn">New roster</button>
                         <button id="roster-actions-toggle" class="btn btn-quiet" type="button" aria-expanded="false">More actions</button>
@@ -1819,6 +1975,7 @@
                     <div id="roster-secondary-panels" class="roster-secondary-panels" hidden>
                         <div id="saved-roster-meta" class="saved-roster-meta inline-note"></div>
                         <div id="repair-panel" class="repair-panel" hidden></div>
+                        <div id="workflow-checklist" class="workflow-checklist"></div>
                         <div id="readiness-banner" class="readiness-banner"></div>
                         <div id="army-rules-panel" class="army-rules-panel"></div>
                         <div id="legality-summary" class="legality-summary"></div>
@@ -1845,7 +2002,7 @@
 
                 <div class="roster-actions">
                     <button id="clear-roster" class="btn btn-quiet">Clear roster</button>
-                    <button id="print-roster" class="btn btn-primary">Open print preview</button>
+                    <button id="print-roster" class="btn btn-primary">Print roster</button>
                 </div>
             </section>
 
@@ -1863,10 +2020,10 @@
                         </div>
                         <label class="preview-mode-toggle">
                             <input id="print-clean-toggle" type="checkbox">
-                            <span>Print-clean mode</span>
+                            <span>Clean print layout</span>
                         </label>
                         <div class="preview-actions">
-                            <button id="preview-open-print" class="btn btn-primary" type="button">Open print dialog</button>
+                            <button id="preview-open-print" class="btn btn-primary" type="button">Print roster</button>
                         </div>
                     </div>
                 </div>
@@ -1926,6 +2083,8 @@
             mobileTabBrowse: document.getElementById("mobile-tab-browse"),
             mobileTabRoster: document.getElementById("mobile-tab-roster"),
             mobileTabCards: document.getElementById("mobile-tab-cards"),
+            workflowCommandBar: document.getElementById("workflow-command-bar"),
+            workflowChecklist: document.getElementById("workflow-checklist"),
             workspaceStepper: document.getElementById("workspace-stepper"),
             workspaceStepCopy: document.getElementById("workspace-step-copy"),
             mobileSummaryPoints: document.getElementById("mobile-summary-points"),
@@ -2470,7 +2629,10 @@
             if (!derived) {
                 return "No issues";
             }
-            const issueCount = (derived.armyIssues || []).length + (derived.invalidEntries || []).length;
+            const compatibilityIssues = derived.compatibility && Array.isArray(derived.compatibility.incompatibleEntries)
+                ? derived.compatibility.incompatibleEntries.length
+                : 0;
+            const issueCount = (derived.armyIssues || []).length + (derived.invalidEntries || []).length + compatibilityIssues;
             if (!issueCount) {
                 return "No issues";
             }
@@ -2532,6 +2694,71 @@
             els.mobileSummaryPoints.textContent = `${totalPoints} / ${pointsLimit}`;
             els.mobileSummaryCaption.textContent = battleSizeLabel(battleSize);
             els.mobileSummaryIssues.textContent = mobileIssueSummary(derived);
+            const compatibilityIssues = derived && derived.compatibility && Array.isArray(derived.compatibility.incompatibleEntries)
+                ? derived.compatibility.incompatibleEntries.length
+                : 0;
+            const hasIssues = Boolean(derived && ((derived.armyIssues || []).length || (derived.invalidEntries || []).length || compatibilityIssues));
+            els.mobileSummaryIssues.classList.toggle("has-issues", hasIssues);
+            els.mobileSummaryIssues.disabled = !hasIssues;
+        }
+
+        function workflowSummary(derived) {
+            return BuilderApp.summarizeWorkflow({
+                derived,
+                rosterName: state.activeRosterName || Store.normalizeName("", state.rosterFactionSlug || state.factionSlug),
+                storageAvailable: state.storageAvailable,
+                lastSavedAt: state.lastSavedAt ? formatSavedAt(state.lastSavedAt) : "",
+            });
+        }
+
+        function workflowActionButton(action, label, primary = false) {
+            if (!action || !label) {
+                return "";
+            }
+            const buttonClass = primary ? "btn btn-primary" : "btn";
+            return `<button class="${buttonClass}" type="button" data-action="${escapeHtml(action)}">${escapeHtml(label)}</button>`;
+        }
+
+        function renderWorkflowSurfaces(derived) {
+            const summary = workflowSummary(derived);
+            const readinessClass = summary.readinessState === "playable"
+                ? "support-badge-ready"
+                : (summary.readinessState === "partial" ? "support-badge-partial" : "pill-danger");
+            if (els.workflowCommandBar) {
+                els.workflowCommandBar.innerHTML = `
+                    <div class="workflow-command-main">
+                        <div class="workflow-command-kicker">Roster command center</div>
+                        <div class="workflow-command-title">${escapeHtml(summary.rosterName)}</div>
+                        <div class="workflow-command-meta">
+                            <span class="pill ${readinessClass}">${escapeHtml(summary.readinessLabel)}</span>
+                            <span class="pill">${escapeHtml(String(summary.totalPoints))}/${escapeHtml(String(summary.pointsLimit))} pts</span>
+                            <span class="pill ${summary.issueCount ? "pill-warning" : "pill-subtle"}">${summary.issueCount ? `${summary.issueCount} issue${summary.issueCount === 1 ? "" : "s"}` : "No issues"}</span>
+                            <span class="pill pill-subtle">${escapeHtml(summary.saveState)}</span>
+                        </div>
+                    </div>
+                    <div class="workflow-command-actions">
+                        ${workflowActionButton("go-roster", "Roster editor", false)}
+                        ${workflowActionButton(summary.primaryAction.action, summary.primaryAction.label, true)}
+                    </div>
+                `;
+            }
+            if (els.workflowChecklist) {
+                els.workflowChecklist.innerHTML = `
+                    <div class="workflow-checklist-label">Roster readiness</div>
+                    <div class="workflow-checklist-grid">
+                        ${summary.checklist.map((item) => `
+                            <div class="workflow-check-item is-${escapeHtml(item.state)}">
+                                <div class="workflow-check-heading">
+                                    <span>${escapeHtml(item.label)}</span>
+                                    <span class="workflow-check-state">${item.state === "done" ? "Ready" : item.state === "warning" ? "Review" : "Fix"}</span>
+                                </div>
+                                <div class="workflow-check-copy">${escapeHtml(item.detail)}</div>
+                                ${item.action ? workflowActionButton(item.action, item.actionLabel, false) : ""}
+                            </div>
+                        `).join("")}
+                    </div>
+                `;
+            }
         }
 
         function renderWorkspaceVisibility(derived) {
@@ -2562,6 +2789,7 @@
             }
 
             renderMobileSummary(derived);
+            renderWorkflowSurfaces(derived);
             renderWorkspaceStepper();
         }
 
@@ -3339,42 +3567,8 @@
         }
 
         function renderReadinessBanner(derived) {
-            if (!derived) {
-                els.readinessBanner.innerHTML = "";
-                els.readinessBanner.className = "readiness-banner";
-                return;
-            }
-            const readiness = derived.readiness || { state: "draft", label: "Draft" };
-            const compatibility = derived.compatibility || {};
-            const actionable = [];
-            if (derived.armyIssues.some((issue) => issue.code === "missing-detachment")) {
-                actionable.push(`<button class="btn" type="button" data-action="focus-detachment">Select detachment</button>`);
-            }
-            if (derived.armyIssues.some((issue) => issue.code === "missing-character")) {
-                actionable.push(`<button class="btn" type="button" data-action="focus-characters">Choose a Character</button>`);
-            }
-            if (derived.armyIssues.some((issue) => issue.code === "missing-warlord" || issue.code === "invalid-warlord")) {
-                actionable.push(`<button class="btn" type="button" data-action="focus-warlord">Choose Warlord</button>`);
-            }
-            if (compatibility.incompatibleEntries && compatibility.incompatibleEntries.length) {
-                actionable.push(`<button class="btn" type="button" data-action="focus-unsupported">Fix unsupported entries</button>`);
-            }
-            els.readinessBanner.className = `readiness-banner is-${readiness.state}`;
-            els.readinessBanner.innerHTML = `
-                <div class="readiness-pill-row">
-                    <span class="pill ${readiness.state === "playable" ? "support-badge-ready" : readiness.state === "partial" ? "support-badge-partial" : "pill-danger"}">${readiness.label}</span>
-                    <span class="pill">${battleSizeLabel(derived.army.battleSize)} | ${derived.totalPoints}/${derived.pointsLimit} pts</span>
-                    ${compatibility.needsReview ? `<span class="pill support-badge-partial">Review saved data</span>` : ""}
-                </div>
-                <div class="inline-note">
-                    ${readiness.state === "playable"
-                        ? "This roster meets the current builder foundation checks and has no unresolved support issues."
-                        : readiness.state === "partial"
-                            ? "This roster is usable, but some entries still depend on partial support or review."
-                            : "This roster still needs core setup before it is ready to play."}
-                </div>
-                ${actionable.length ? `<div class="issue-action-list">${actionable.join("")}</div>` : ""}
-            `;
+            els.readinessBanner.hidden = true;
+            els.readinessBanner.innerHTML = "";
         }
 
         function renderEntryEditor(derived) {
@@ -3712,18 +3906,18 @@
             if (els.previewIntro) {
                 els.previewIntro.textContent = browsingCatalog
                     ? "Preview a unit without changing your roster. Add it when you are ready to configure it in the roster editor."
-                    : "Review exactly what will print from your current roster before opening the print dialog.";
+                    : "Review the roster summary sheet, printable cards, fallbacks, and exclusions before printing.";
             }
             els.previewModeNote.textContent = browsingCatalog
                 ? (isConfigured
-                    ? "Builder card mode shows the builder-rendered version of the selected datasheet. Print-clean trims replaced and default rows where possible."
+                    ? "Builder card mode shows the builder-rendered version of the selected datasheet. Clean print layout trims replaced and default rows where possible."
                     : "Source image mode shows the captured Wahapedia image when available, with a builder-card fallback when the source image is missing.")
                 : (isConfigured
-                    ? "Builder card mode prints a roster summary sheet first, then cards that reflect your current roster choices. Print-clean trims replaced and default rows where possible."
+                    ? "Builder card mode prints a roster summary sheet first, then cards that reflect your current roster choices. Clean print layout trims replaced and default rows where possible."
                     : "Source image mode prints a roster summary sheet first, then source images when available, with builder-card fallbacks when a source image is missing.");
             if (els.previewOpenPrint) {
                 els.previewOpenPrint.disabled = browsingCatalog;
-                els.previewOpenPrint.textContent = browsingCatalog ? "Preview only" : "Open print dialog";
+                els.previewOpenPrint.textContent = browsingCatalog ? "Preview only" : "Print roster";
             }
         }
 
@@ -3890,7 +4084,7 @@
                         </button>
                         <div class="unit-row-actions">
                             <button class="btn btn-quiet" type="button" data-action="focus-unit" data-unit-id="${unit.unitId}" aria-expanded="${isSelected ? "true" : "false"}">${isSelected ? "Hide preview" : "Preview unit"}</button>
-                            <button class="btn btn-primary" data-action="add-unit" data-unit-id="${unit.unitId}">Add</button>
+                            <button class="btn btn-primary" data-action="add-unit" data-unit-id="${unit.unitId}">Add to roster</button>
                         </div>
                         ${isSelected ? `
                             <div class="unit-row-detail">
@@ -4312,6 +4506,20 @@
             });
         }
 
+        function routeToNewRosterEntry() {
+            const latestEntry = state.roster[state.roster.length - 1] || null;
+            if (!latestEntry || !latestEntry.instanceId) {
+                return;
+            }
+            state.selectedCatalogUnitId = null;
+            state.activeEditorInstanceId = latestEntry.instanceId;
+            setActiveWorkspace("roster");
+            renderUnitList();
+            renderRoster();
+            renderPreview();
+            setRosterStatus("Added unit. Configure loadout, command choices, and relationships in the roster editor.", false);
+        }
+
         function saveRosterCopy() {
             const adapter = storageAdapter();
             if (!adapter) {
@@ -4361,6 +4569,59 @@
             if (target) {
                 state.activeWorkspace = "roster";
                 openEntryEditor(target.instanceId);
+            }
+        }
+
+        function focusDetachmentChoice() {
+            setActiveWorkspace("roster");
+            if (els.detachmentSelect && typeof els.detachmentSelect.focus === "function") {
+                els.detachmentSelect.focus();
+            }
+        }
+
+        function handleWorkflowAction(action) {
+            if (action === "go-browse") {
+                setActiveWorkspace("browse");
+                return true;
+            }
+            if (action === "go-roster") {
+                setActiveWorkspace("roster");
+                return true;
+            }
+            if (action === "go-cards") {
+                setActiveWorkspace("cards");
+                return true;
+            }
+            if (action === "print-roster") {
+                openPrintPreview();
+                return true;
+            }
+            if (action === "focus-detachment") {
+                focusDetachmentChoice();
+                return true;
+            }
+            if (action === "focus-characters") {
+                focusCharacterCatalog();
+                return true;
+            }
+            if (action === "focus-warlord") {
+                focusWarlordChoice();
+                return true;
+            }
+            if (action === "focus-unsupported") {
+                focusUnsupportedEntry();
+                return true;
+            }
+            return false;
+        }
+
+        function openMobileReadiness() {
+            state.activeWorkspace = "roster";
+            state.rosterDetailsExpanded = true;
+            renderWorkspaceVisibility(deriveRoster());
+            renderRosterDetailsPanel();
+            if (els.workflowChecklist && typeof els.workflowChecklist.scrollIntoView === "function") {
+                els.workflowChecklist.scrollIntoView({ block: "start", behavior: "smooth" });
             }
         }
 
@@ -4516,6 +4777,20 @@
             resetCatalogFilters();
         });
 
+        [els.workflowCommandBar, els.workflowChecklist].forEach((container) => {
+            if (!container) {
+                return;
+            }
+            container.addEventListener("click", (event) => {
+                const target = event.target && typeof event.target.closest === "function"
+                    ? event.target.closest("[data-action]")
+                    : null;
+                if (target) {
+                    handleWorkflowAction(target.dataset.action || "");
+                }
+            });
+        });
+
         els.workspaceStepper.addEventListener("click", (event) => {
             const target = event.target && typeof event.target.closest === "function"
                 ? event.target.closest("[data-action='go-workspace']")
@@ -4546,8 +4821,7 @@
             }
             const added = interactionController.handleUnitListClick(event);
             if (added) {
-                state.selectedCatalogUnitId = target && target.dataset.unitId ? target.dataset.unitId : state.selectedCatalogUnitId;
-                renderUnitList();
+                routeToNewRosterEntry();
             }
         });
 
@@ -4600,7 +4874,7 @@
             if (target.dataset.action === "add-unit") {
                 const added = interactionController.addToRoster(target.dataset.unitId);
                 if (added) {
-                    renderUnitList();
+                    routeToNewRosterEntry();
                 }
             }
         });
@@ -4649,7 +4923,7 @@
             if (target.dataset.action === "add-unit" && target.dataset.unitId) {
                 const added = interactionController.addToRoster(target.dataset.unitId);
                 if (added) {
-                    renderUnitList();
+                    routeToNewRosterEntry();
                 }
                 return;
             }
@@ -4831,8 +5105,7 @@
                 return;
             }
             if (target.dataset.action === "focus-detachment") {
-                setActiveWorkspace("roster");
-                els.detachmentSelect.focus();
+                focusDetachmentChoice();
                 return;
             }
             if (target.dataset.action === "focus-characters") {
@@ -4890,6 +5163,9 @@
         });
         els.mobileTabCards.addEventListener("click", () => {
             setActiveWorkspace("cards");
+        });
+        els.mobileSummaryIssues.addEventListener("click", () => {
+            openMobileReadiness();
         });
         els.previewModeConfigured.addEventListener("click", () => {
             if (activePreviewSourceMode() !== "configured") {

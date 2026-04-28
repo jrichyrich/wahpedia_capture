@@ -884,6 +884,51 @@ test("prepareRosterPrintState clears catalog preview before roster printing", ()
     assert.equal(state.selectedCatalogUnitId, null);
 });
 
+test("summarizeWorkflow chooses actionable readiness and print actions", () => {
+    const derived = {
+        readiness: { state: "draft", label: "Needs setup" },
+        entries: [samplePreviewEntry()],
+        armyIssues: [{ code: "missing-detachment", message: "Select a detachment." }],
+        invalidEntries: [],
+        compatibility: { incompatibleEntries: [] },
+        totalPoints: 215,
+        pointsLimit: 2000,
+    };
+
+    const summary = App.summarizeWorkflow({
+        derived,
+        rosterName: "Swordwind",
+        storageAvailable: true,
+        lastSavedAt: "today",
+    });
+
+    assert.equal(summary.rosterName, "Swordwind");
+    assert.equal(summary.primaryAction.action, "focus-detachment");
+    assert.equal(summary.printableCount, 1);
+    assert.equal(summary.saveState, "Autosaved today");
+    assert.equal(summary.checklist.find((item) => item.key === "detachment").state, "action");
+    assert.equal(summary.checklist.find((item) => item.key === "print").state, "done");
+});
+
+test("summarizeWorkflow points empty rosters toward adding units", () => {
+    const summary = App.summarizeWorkflow({
+        derived: {
+            readiness: { state: "draft", label: "Draft" },
+            entries: [],
+            armyIssues: [],
+            invalidEntries: [],
+            compatibility: { incompatibleEntries: [] },
+            totalPoints: 0,
+            pointsLimit: 1000,
+        },
+        storageAvailable: false,
+    });
+
+    assert.equal(summary.primaryAction.action, "go-browse");
+    assert.equal(summary.checklist.find((item) => item.key === "print").action, "go-browse");
+    assert.equal(summary.saveState, "Storage unavailable");
+});
+
 test("printPreviewCards alerts when there are no renderable entries", async () => {
     const calls = { print: 0, alert: 0 };
 
