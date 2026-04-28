@@ -4298,13 +4298,14 @@
         }
 
         async function openPrintPreview() {
+            const printState = BuilderApp.prepareRosterPrintState(state);
             const derived = deriveRoster();
             const renderableEntries = derived.entries.filter((entry) => entry.unit && entry.selectedOption);
             setActiveWorkspace("cards");
-            renderWorkspaceVisibility(derived);
+            renderPreview();
             await BuilderApp.printPreviewCards({
                 renderableEntries,
-                previewSourceMode: state.previewSourceMode,
+                previewSourceMode: printState.previewSourceMode,
                 previewRoot: els.previewBody,
                 alertFn: (message) => alert(message),
                 printFn: () => window.print(),

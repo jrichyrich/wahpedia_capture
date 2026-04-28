@@ -401,6 +401,18 @@
         return { printed: true, previewSourceMode };
     }
 
+    function prepareRosterPrintState(state) {
+        if (!state || typeof state !== "object") {
+            return { clearedCatalogPreview: false, previewSourceMode: "configured" };
+        }
+        const clearedCatalogPreview = Boolean(state.selectedCatalogUnitId);
+        state.selectedCatalogUnitId = null;
+        return {
+            clearedCatalogPreview,
+            previewSourceMode: state.previewSourceMode || "configured",
+        };
+    }
+
     function createInteractionController(deps) {
         const {
             state,
@@ -1009,6 +1021,7 @@
         createInteractionController,
         escapeHtml,
         eventElementTarget,
+        prepareRosterPrintState,
         printPreviewCards,
         renderPreviewEntry,
         renderPrintPackSummary,

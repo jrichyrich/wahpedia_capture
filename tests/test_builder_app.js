@@ -871,6 +871,19 @@ test("printPreviewCards prints the current preview mode without forcing configur
     assert.equal(calls.alert, 0);
 });
 
+test("prepareRosterPrintState clears catalog preview before roster printing", () => {
+    const state = {
+        selectedCatalogUnitId: "caladius-grav-tank",
+        previewSourceMode: "source-image",
+    };
+
+    const result = App.prepareRosterPrintState(state);
+
+    assert.equal(result.clearedCatalogPreview, true);
+    assert.equal(result.previewSourceMode, "source-image");
+    assert.equal(state.selectedCatalogUnitId, null);
+});
+
 test("printPreviewCards alerts when there are no renderable entries", async () => {
     const calls = { print: 0, alert: 0 };
 
