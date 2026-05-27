@@ -190,6 +190,25 @@ python scripts/build_builder_site.py \
   --clean
 ```
 
+When direct Wahapedia requests are unreliable, use the auto fetch backend. It probes direct requests first, falls back to browser fetching, and can use a reader-proxy fallback for the structured JSON import when the site resets the local connection:
+
+```bash
+python scripts/build_builder_site.py \
+  --fetch-backend auto \
+  --refresh-sitemap-manifest imperial-knights \
+  --export-output-slug imperial-knights \
+  --export-faction-rules imperial-knights \
+  --build-faction imperial-knights
+```
+
+Repeat that command with `chaos-knights` for Chaos Knights. If live Wahapedia screenshot capture is unavailable, render local PNG source cards from the exported JSON and rebuild the full builder data:
+
+```bash
+python scripts/render_datasheet_pngs.py --output-slug imperial-knights
+python scripts/render_datasheet_pngs.py --output-slug chaos-knights
+python scripts/build_builder_catalog.py
+```
+
 Serve the repo over HTTP and open the builder:
 
 ```bash
@@ -235,9 +254,15 @@ Officio Assassinorum is represented as a 4-unit subset in the builder; its detac
 Run the builder-focused tests locally with:
 
 ```bash
+python -m pytest \
+  tests/test_build_sitemap_manifests.py \
+  tests/test_export_datasheet_json.py
+
 python -m unittest \
   tests.test_builder_catalog \
   tests.test_build_sitemap_manifests \
+  tests.test_export_datasheet_json \
+  tests.test_export_faction_rules \
   tests.test_builder_browser_smoke
 
 node --test \

@@ -3,6 +3,7 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 from bs4 import BeautifulSoup
 
@@ -26,6 +27,23 @@ validate_spec.loader.exec_module(validate_datasheet_exports)
 
 
 class ExportDatasheetTests(unittest.TestCase):
+    def test_fetch_html_passes_browser_backend_without_launching_firefox(self):
+        with mock.patch.object(
+            export_datasheet_json,
+            "fetch_wahapedia_html",
+            return_value=("http://wahapedia.ru/wh40k10ed/factions/imperial-knights/Canis-Rex", "<html></html>"),
+        ) as fetch_wahapedia_html:
+            resolved_url, html = export_datasheet_json.fetch_html(
+                "https://wahapedia.ru/wh40k10ed/factions/imperial-knights/Canis-Rex",
+                fetch_backend="browser",
+                browser_session=object(),
+            )
+
+        self.assertEqual(resolved_url, "http://wahapedia.ru/wh40k10ed/factions/imperial-knights/Canis-Rex")
+        self.assertEqual(html, "<html></html>")
+        self.assertEqual(fetch_wahapedia_html.call_args.kwargs["backend"], "browser")
+        self.assertEqual(fetch_wahapedia_html.call_args.kwargs["wait_css"], "div.dsOuterFrame.datasheet")
+
     def test_parse_characteristics_supports_ds_char_wrap_m(self):
         soup = BeautifulSoup(
             """

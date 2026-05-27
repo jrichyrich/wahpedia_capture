@@ -1,0 +1,214 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/imperial-knights/Armiger-Helverin",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/imperial-knights/Armiger-Helverin",
+    "canonicalSourceId": "wahapedia:5fca0183cc1cbfc0301ede6263ae9e318213db62",
+    "faction_slug": "imperial-knights",
+    "datasheet_slug": "Armiger-Helverin",
+    "fetchedAt": "2026-05-27T17:55:38+00:00",
+    "contentHash": "cfccd6915375a174c73b1c76c52ba2f9ebe4fd05472fc5c59adb610b35535476",
+    "output_slug": "imperial-knights"
+  },
+  "name": "Armiger Helverin",
+  "base_size": "\u2300100mm",
+  "characteristics": {
+    "M": "12\"",
+    "T": "9",
+    "Sv": "3+",
+    "W": "14",
+    "Ld": "7+",
+    "OC": "6",
+    "Invulnerable Save": "5+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Armiger autocannon",
+        "abilities": [],
+        "range": "48\"",
+        "a": "4",
+        "bs": "3+",
+        "s": "9",
+        "ap": "-1",
+        "d": "3"
+      },
+      {
+        "name": "Meltagun",
+        "abilities": [
+          "melta",
+          "2"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "9",
+        "ap": "-4",
+        "d": "D6"
+      },
+      {
+        "name": "Questoris heavy stubber",
+        "abilities": [
+          "rapid",
+          "fire",
+          "3"
+        ],
+        "range": "36\"",
+        "a": "3",
+        "bs": "3+",
+        "s": "4",
+        "ap": "-1",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Armoured feet",
+        "abilities": [],
+        "range": "Melee",
+        "a": "4",
+        "ws": "3+",
+        "s": "6",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise D3"
+    ],
+    "faction": [
+      "Code Chivalric"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "name": "Suppression Protocols",
+        "text": "In your Shooting phase, after this model has shot, select one enemy unit (excluding MONSTERS and VEHICLES) hit by one or more of those attacks made with an Armiger autocannon. Until the start of your next turn, that enemy unit is suppressed. While a unit is suppressed, each time a model in that unit makes an attack, subtract 1 from the Hit roll."
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 Armiger Helverin"
+      ]
+    },
+    {
+      "type": "statement",
+      "label": "This model is equipped with",
+      "text": "2 Armiger autocannons; Questoris heavy stubber; armoured feet."
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "135"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "VEHICLE",
+    "WALKER",
+    "IMPERIUM",
+    "ARMIGER",
+    "HELVERIN"
+  ],
+  "faction_keywords": [
+    "IMPERIAL KNIGHTS"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "text",
+          "text": "This model\u2019s Questoris heavy stubber can be replaced with 1 meltagun."
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise D3"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Code Chivalric"
+          ]
+        },
+        {
+          "type": "rule",
+          "name": "Suppression Protocols",
+          "text": "In your Shooting phase, after this model has shot, select one enemy unit (excluding MONSTERS and VEHICLES) hit by one or more of those attacks made with an Armiger autocannon. Until the start of your next turn, that enemy unit is suppressed. While a unit is suppressed, each time a model in that unit makes an attack, subtract 1 from the Hit roll."
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 Armiger Helverin"
+          ]
+        },
+        {
+          "type": "statement",
+          "label": "This model is equipped with",
+          "text": "2 Armiger autocannons; Questoris heavy stubber; armoured feet."
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "135"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DAMAGED: WOUNDS REMAINING",
+      "entries": [
+        {
+          "type": "text",
+          "text": "While this model has 1-5 wounds remaining, subtract 3 from this model\u2019s Objective Control characteristic and each time this model makes an attack, subtract 1 from the Hit roll."
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: WOUNDS REMAINING"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: WOUNDS REMAINING"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [
+      "reader-markdown-fallback"
+    ],
+    "keywordColumnCount": 2
+  }
+}

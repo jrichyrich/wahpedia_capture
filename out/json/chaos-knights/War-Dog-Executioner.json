@@ -1,0 +1,214 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/chaos-knights/War-Dog-Executioner",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/chaos-knights/War-Dog-Executioner",
+    "canonicalSourceId": "wahapedia:fcfdd31f8bcbe254de4accc84f96dd85f457c35a",
+    "faction_slug": "chaos-knights",
+    "datasheet_slug": "War-Dog-Executioner",
+    "fetchedAt": "2026-05-27T18:15:33+00:00",
+    "contentHash": "8c73d0ca5a98d811a283b83d5d0cbe410f0489bc8ff241f9ba925cb9d018a210",
+    "output_slug": "chaos-knights"
+  },
+  "name": "War Dog Executioner",
+  "base_size": "\u2300100mm",
+  "characteristics": {
+    "M": "12\"",
+    "T": "9",
+    "Sv": "3+",
+    "W": "14",
+    "Ld": "7+",
+    "OC": "6",
+    "Invulnerable Save": "5+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Daemonbreath meltagun",
+        "abilities": [
+          "melta",
+          "2"
+        ],
+        "range": "12\"",
+        "a": "1",
+        "bs": "3+",
+        "s": "9",
+        "ap": "-4",
+        "d": "D6"
+      },
+      {
+        "name": "Diabolus heavy stubber",
+        "abilities": [
+          "rapid",
+          "fire",
+          "3"
+        ],
+        "range": "36\"",
+        "a": "3",
+        "bs": "3+",
+        "s": "5",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "War Dog autocannon",
+        "abilities": [],
+        "range": "48\"",
+        "a": "4",
+        "bs": "3+",
+        "s": "9",
+        "ap": "-1",
+        "d": "3"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Armoured feet",
+        "abilities": [],
+        "range": "Melee",
+        "a": "4",
+        "ws": "3+",
+        "s": "6",
+        "ap": "0",
+        "d": "1"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise D3"
+    ],
+    "faction": [
+      "Harbingers of Dread"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "name": "Executioner",
+        "text": "Each time this model makes an attack that targets a unit Below Half-strength, add 1 to the Hit roll. Each time an enemy unit is destroyed as the result of this model\u2019s attacks, before removing the last model in that unit from the battlefield, each unit from your opponent\u2019s army that is within 3\" of it must take a Battle-shock test."
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 War Dog Executioner"
+      ]
+    },
+    {
+      "type": "statement",
+      "label": "This model is equipped with",
+      "text": "diabolus heavy stubber; 2 War Dog autocannons; armoured feet."
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "130"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "VEHICLE",
+    "WALKER",
+    "CHAOS",
+    "WAR DOG",
+    "EXECUTIONER"
+  ],
+  "faction_keywords": [
+    "CHAOS KNIGHTS"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "text",
+          "text": "This model\u2019s diabolus heavy stubber can be replaced with 1 daemonbreath meltagun."
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise D3"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Harbingers of Dread"
+          ]
+        },
+        {
+          "type": "rule",
+          "name": "Executioner",
+          "text": "Each time this model makes an attack that targets a unit Below Half-strength, add 1 to the Hit roll. Each time an enemy unit is destroyed as the result of this model\u2019s attacks, before removing the last model in that unit from the battlefield, each unit from your opponent\u2019s army that is within 3\" of it must take a Battle-shock test."
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 War Dog Executioner"
+          ]
+        },
+        {
+          "type": "statement",
+          "label": "This model is equipped with",
+          "text": "diabolus heavy stubber; 2 War Dog autocannons; armoured feet."
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "130"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DAMAGED: WOUNDS REMAINING",
+      "entries": [
+        {
+          "type": "text",
+          "text": "While this model has 1-5 wounds remaining, subtract 3 from this model\u2019s Objective Control characteristic and each time this model makes an attack, subtract 1 from the Hit roll."
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: WOUNDS REMAINING"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: WOUNDS REMAINING"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [
+      "reader-markdown-fallback"
+    ],
+    "keywordColumnCount": 2
+  }
+}

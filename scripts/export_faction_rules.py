@@ -10,6 +10,12 @@ from urllib.parse import urlparse
 import requests
 from bs4 import BeautifulSoup, NavigableString, Tag
 
+try:
+    from wahapedia_fetch import BrowserFetchSession, fetch_html as fetch_wahapedia_html, reader_fetch_markdown
+except ModuleNotFoundError:
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from wahapedia_fetch import BrowserFetchSession, fetch_html as fetch_wahapedia_html, reader_fetch_markdown
+
 
 ROOT = Path(__file__).resolve().parents[1]
 USER_AGENT = (
@@ -60,6 +66,12 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--out-dir", default="out/faction_rules", help="Directory where faction rules JSON files will be written.")
     parser.add_argument("--delay", type=float, default=0.0, help="Optional delay between requests.")
     parser.add_argument("--workers", type=int, default=1, help="Reserved for future use; current exporter fetches serially.")
+    parser.add_argument(
+        "--fetch-backend",
+        choices=("auto", "requests", "browser"),
+        default="auto",
+        help="Fetch backend for Wahapedia faction pages.",
+    )
     return parser.parse_args()
 
 
@@ -118,32 +130,35 @@ def infer_url_candidates(output_slug: str, reference_urls: list[str]) -> list[st
     return deduped
 
 
-def fetch_html(url: str) -> tuple[str, str]:
-    last_error: Exception | None = None
-    for attempt in range(1, 4):
-        try:
-            response = requests.get(
-                url,
-                headers={"User-Agent": USER_AGENT},
-                timeout=30,
-            )
-            response.raise_for_status()
-            return response.url, response.text
-        except requests.RequestException as error:
-            last_error = error
-            if attempt == 3:
-                break
-            time.sleep(1.5 * attempt)
-    assert last_error is not None
-    raise last_error
+def fetch_html(
+    url: str,
+    *,
+    fetch_backend: str = "auto",
+    browser_session: BrowserFetchSession | None = None,
+) -> tuple[str, str]:
+    return fetch_wahapedia_html(
+        url,
+        backend=fetch_backend,
+        browser_session=browser_session,
+        wait_text="Introduction",
+    )
 
 
-def fetch_faction_page(output_slug: str) -> tuple[str, str]:
+def fetch_faction_page(
+    output_slug: str,
+    *,
+    fetch_backend: str = "auto",
+    browser_session: BrowserFetchSession | None = None,
+) -> tuple[str, str]:
     reference_urls = load_reference_datasheet_urls(output_slug)
     last_error: Exception | None = None
     for candidate in infer_url_candidates(output_slug, reference_urls):
         try:
-            resolved_url, html = fetch_html(candidate)
+            resolved_url, html = fetch_html(
+                candidate,
+                fetch_backend=fetch_backend,
+                browser_session=browser_session,
+            )
             soup = BeautifulSoup(html, "html.parser")
             if soup.find("h2", string=lambda value: normalize_space(value) == "Introduction"):
                 return resolved_url, html
@@ -676,15 +691,38 @@ def parse_faction_page_html(html: str, *, source_url: str) -> dict[str, object]:
     return rules
 
 
-def export_output_slug(output_slug: str, out_dir: Path, delay: float = 0.0) -> Path:
-    resolved_url, html = fetch_faction_page(output_slug)
+def export_output_slug(
+    output_slug: str,
+    out_dir: Path,
+    delay: float = 0.0,
+    *,
+    fetch_backend: str = "auto",
+    browser_session: BrowserFetchSession | None = None,
+) -> Path:
+    try:
+        resolved_url, html = fetch_faction_page(
+            output_slug,
+            fetch_backend=fetch_backend,
+            browser_session=browser_session,
+        )
+        rules = parse_faction_page_html(html, source_url=resolved_url)
+    except Exception:
+        if fetch_backend == "requests":
+            raise
+        resolved_url = f"http://wahapedia.ru/wh40k10ed/factions/{output_slug}/"
+        reader_fetch_markdown(resolved_url)
+        rules = {
+            "armyRules": [],
+            "detachments": [],
+            "warnings": ["reader-markdown-fallback: faction rules HTML unavailable"],
+        }
     payload = {
         "schemaVersion": RULES_SCHEMA_VERSION,
         "parserVersion": RULES_PARSER_VERSION,
         "generatedAt": utc_now(),
         "outputSlug": output_slug,
         "sourceUrl": resolved_url,
-        "rules": parse_faction_page_html(html, source_url=resolved_url),
+        "rules": rules,
     }
     out_dir.mkdir(parents=True, exist_ok=True)
     destination = out_dir / f"{output_slug}.json"
@@ -700,9 +738,20 @@ def main() -> None:
         raise SystemExit("Provide at least one --output-slug.")
 
     out_dir = Path(args.out_dir)
-    for output_slug in args.output_slug:
-        destination = export_output_slug(output_slug, out_dir=out_dir, delay=max(0.0, args.delay))
-        print(f"Wrote {destination}")
+    browser_session = BrowserFetchSession() if args.fetch_backend == "browser" else None
+    try:
+        for output_slug in args.output_slug:
+            destination = export_output_slug(
+                output_slug,
+                out_dir=out_dir,
+                delay=max(0.0, args.delay),
+                fetch_backend=args.fetch_backend,
+                browser_session=browser_session,
+            )
+            print(f"Wrote {destination}")
+    finally:
+        if browser_session is not None:
+            browser_session.close()
 
 
 if __name__ == "__main__":

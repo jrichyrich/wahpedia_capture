@@ -24,6 +24,7 @@ try:
         stable_json_hash,
         text_content_hash,
     )
+    from wahapedia_fetch import BrowserFetchSession, fetch_html as fetch_wahapedia_html, reader_fetch_markdown
 except ModuleNotFoundError:
     sys.path.insert(0, str(Path(__file__).resolve().parent))
     from datasheet_schema import (
@@ -37,6 +38,7 @@ except ModuleNotFoundError:
         stable_json_hash,
         text_content_hash,
     )
+    from wahapedia_fetch import BrowserFetchSession, fetch_html as fetch_wahapedia_html, reader_fetch_markdown
 
 
 USER_AGENT = (
@@ -103,6 +105,12 @@ def parse_args() -> argparse.Namespace:
         "--sync-duplicates",
         action="store_true",
         help="Synchronize duplicate canonical-source exports so shared-core content matches across output slugs.",
+    )
+    parser.add_argument(
+        "--fetch-backend",
+        choices=("auto", "requests", "browser"),
+        default="auto",
+        help="Fetch backend for Wahapedia pages.",
     )
     return parser.parse_args()
 
@@ -190,29 +198,28 @@ def split_title_and_base_size(value: str) -> tuple[str, str | None]:
     return normalize_space(match.group(1)), normalize_space(match.group(2))
 
 
-def fetch_html(url: str) -> tuple[str, str]:
+def fetch_html(
+    url: str,
+    *,
+    fetch_backend: str = "auto",
+    browser_session: BrowserFetchSession | None = None,
+) -> tuple[str, str]:
     url = normalize_wahapedia_url(url)
-    last_error: Exception | None = None
-    for attempt in range(1, 4):
-        try:
-            response = requests.get(
-                url,
-                headers={"User-Agent": USER_AGENT},
-                timeout=30,
-            )
-            response.raise_for_status()
-            return url, response.text
-        except requests.RequestException as error:
-            last_error = error
-            if attempt == 3:
-                break
-            time.sleep(1.5 * attempt)
-    assert last_error is not None
-    raise last_error
+    return fetch_wahapedia_html(
+        url,
+        backend=fetch_backend,
+        browser_session=browser_session,
+        wait_css="div.dsOuterFrame.datasheet",
+    )
 
 
-def fetch_soup(url: str) -> BeautifulSoup:
-    _, html = fetch_html(url)
+def fetch_soup(
+    url: str,
+    *,
+    fetch_backend: str = "auto",
+    browser_session: BrowserFetchSession | None = None,
+) -> BeautifulSoup:
+    _, html = fetch_html(url, fetch_backend=fetch_backend, browser_session=browser_session)
     return BeautifulSoup(html, "html.parser")
 
 
@@ -838,8 +845,277 @@ def parse_datasheet_from_soup(
     return payload
 
 
-def parse_datasheet(url: str) -> dict[str, object]:
-    url, html = fetch_html(url)
+_READER_DATASHEETS_CACHE: dict[str, str] = {}
+
+
+def datasheets_url_for_faction(faction_slug: str) -> str:
+    return f"http://wahapedia.ru/wh40k10ed/factions/{faction_slug}/datasheets.html"
+
+
+def title_from_slug(slug: str) -> str:
+    return slug.replace("-", " ")
+
+
+def reader_block_headings(markdown_text: str) -> list[tuple[str, int]]:
+    lines = [line.strip() for line in markdown_text.splitlines()]
+    headings: list[tuple[str, int]] = []
+    section_labels = {
+        "RANGED WEAPONS",
+        "MELEE WEAPONS",
+        "WARGEAR OPTIONS",
+        "ABILITIES",
+        "UNIT COMPOSITION",
+        "KEYWORDS:",
+        "FACTION KEYWORDS:",
+        "STRATAGEMS",
+        "DETACHMENT ABILITY",
+        "ENHANCEMENTS",
+        "DAMAGED:",
+    }
+    for index, line in enumerate(lines):
+        if not line or line in section_labels or line.startswith("DAMAGED:"):
+            continue
+        if line.upper() != line:
+            continue
+        if index + 1 < len(lines) and re.match(r"^\(.+\)$", lines[index + 1]):
+            headings.append((line, index))
+    return headings
+
+
+def reader_markdown_for_faction(faction_slug: str) -> str:
+    if faction_slug not in _READER_DATASHEETS_CACHE:
+        _, markdown_text = reader_fetch_markdown(datasheets_url_for_faction(faction_slug))
+        _READER_DATASHEETS_CACHE[faction_slug] = markdown_text
+    return _READER_DATASHEETS_CACHE[faction_slug]
+
+
+def reader_markdown_block(url: str) -> tuple[str, list[str]]:
+    faction_slug = faction_from_url(url)
+    datasheet_slug = slug_from_url(url)
+    markdown_text = reader_markdown_for_faction(faction_slug)
+    lines = [line.strip() for line in markdown_text.splitlines()]
+    headings = reader_block_headings(markdown_text)
+    target_name = title_from_slug(datasheet_slug).upper()
+
+    for heading_index, (heading, line_index) in enumerate(headings):
+        if heading != target_name:
+            continue
+        next_index = headings[heading_index + 1][1] if heading_index + 1 < len(headings) else len(lines)
+        return heading.title(), lines[line_index:next_index]
+
+    raise ValueError(f"Reader markdown block not found for {url}")
+
+
+def nonempty(lines: list[str]) -> list[str]:
+    return [line.strip() for line in lines if line.strip()]
+
+
+def parse_reader_characteristics(block: list[str]) -> tuple[str | None, dict[str, str]]:
+    clean = nonempty(block)
+    base_size = None
+    characteristics: dict[str, str] = {}
+    if len(clean) > 1 and clean[1].startswith("(") and clean[1].endswith(")"):
+        base_size = clean[1].strip("()")
+
+    for index, line in enumerate(clean):
+        if line in {"M", "T", "Sv", "W", "Ld", "OC"} and index + 1 < len(clean):
+            characteristics[line] = clean[index + 1]
+        if line.startswith("INVULNERABLE SAVE") and index + 1 < len(clean):
+            characteristics["Invulnerable Save"] = clean[index + 1]
+    return base_size, characteristics
+
+
+def reader_slice(block: list[str], start_label: str, end_labels: tuple[str, ...]) -> list[str]:
+    start = None
+    for index, line in enumerate(block):
+        if line == start_label or line.startswith(start_label):
+            start = index + 1
+            break
+    if start is None:
+        return []
+    end = len(block)
+    for index in range(start, len(block)):
+        if any(block[index] == label or block[index].startswith(label) for label in end_labels):
+            end = index
+            break
+    return block[start:end]
+
+
+def split_weapon_name(value: str) -> tuple[str, list[str]]:
+    abilities = []
+    words = value.split()
+    while words and (words[-1].isupper() or re.fullmatch(r"\d\+?|D\d(?:\+\d)?", words[-1])):
+        abilities.insert(0, words.pop(-1).lower())
+    return normalize_space(" ".join(words) or value), abilities
+
+
+def parse_reader_weapons(block: list[str], label: str, skill_key: str) -> list[dict[str, object]]:
+    rows = nonempty(reader_slice(block, label, ("MELEE WEAPONS", "WARGEAR OPTIONS", "ABILITIES")))
+    weapons: list[dict[str, object]] = []
+    index = 0
+    while index < len(rows):
+        line = rows[index]
+        if line in {"RANGE", "A", "BS", "WS", "S", "AP", "D"} or line.startswith(label):
+            index += 1
+            continue
+        if index + 6 >= len(rows):
+            break
+        values = rows[index + 1 : index + 7]
+        if values[0] != "Melee" and not re.search(r'"$', values[0]):
+            index += 1
+            continue
+        name, abilities = split_weapon_name(line)
+        weapons.append(
+            {
+                "name": name,
+                "abilities": abilities,
+                "range": values[0],
+                "a": values[1],
+                skill_key: values[2],
+                "s": values[3],
+                "ap": values[4],
+                "d": values[5],
+            }
+        )
+        index += 7
+    return weapons
+
+
+def parse_reader_abilities(block: list[str]) -> tuple[dict[str, list[object]], list[dict[str, object]]]:
+    rows = nonempty(reader_slice(block, "ABILITIES", ("UNIT COMPOSITION",)))
+    core: list[str] = []
+    faction: list[str] = []
+    datasheet: list[dict[str, str]] = []
+    other: list[dict[str, str]] = []
+
+    for line in rows:
+        line = line.replace("**", "")
+        if line.startswith("CORE:"):
+            core = [normalize_space(item) for item in line.removeprefix("CORE:").split(",") if normalize_space(item)]
+        elif line.startswith("FACTION:"):
+            faction = [normalize_space(item) for item in line.removeprefix("FACTION:").split(",") if normalize_space(item)]
+        elif ":" in line:
+            name, text = line.split(":", 1)
+            datasheet.append({"type": "rule", "name": normalize_space(name), "text": normalize_space(text)})
+        else:
+            other.append({"type": "text", "text": normalize_space(line)})
+
+    entries: list[dict[str, object]] = []
+    if core:
+        entries.append({"type": "tagged_list", "label": "CORE", "items": core})
+    if faction:
+        entries.append({"type": "tagged_list", "label": "FACTION", "items": faction})
+    entries.extend(datasheet)
+    entries.extend(other)
+    return {"core": core, "faction": faction, "datasheet": datasheet, "other": other}, entries
+
+
+def parse_reader_unit_composition(block: list[str]) -> tuple[list[dict[str, object]], list[dict[str, object]]]:
+    rows = nonempty(reader_slice(block, "UNIT COMPOSITION", ("DAMAGED:", "KEYWORDS:")))
+    entries: list[dict[str, object]] = []
+    points_rows: list[dict[str, object]] = []
+    statements: list[dict[str, object]] = []
+    list_items: list[str] = []
+    for index, line in enumerate(rows):
+        if re.fullmatch(r"\d+\s+models?", line) and index + 1 < len(rows):
+            points_rows.append({"label": line, "points": rows[index + 1]})
+        elif ":" in line:
+            label, text = line.split(":", 1)
+            statements.append({"type": "statement", "label": normalize_space(label), "text": normalize_space(text)})
+        elif not re.fullmatch(r"\d+", line):
+            list_items.append(line)
+    if list_items:
+        entries.append({"type": "list", "items": list_items[:1]})
+    entries.extend(statements)
+    if points_rows:
+        entries.append({"type": "points", "rows": points_rows})
+    return entries, entries
+
+
+def parse_reader_keywords(block: list[str]) -> tuple[list[str], list[str]]:
+    rows = nonempty(block)
+    keywords: list[str] = []
+    faction_keywords: list[str] = []
+    for index, line in enumerate(rows):
+        if line.startswith("KEYWORDS:"):
+            keywords = [
+                normalize_space(item)
+                for item in line.removeprefix("KEYWORDS:").split(",")
+                if normalize_space(item)
+            ]
+        elif line.startswith("FACTION KEYWORDS:"):
+            for candidate in rows[index + 1 : index + 4]:
+                if candidate and not candidate.endswith(":"):
+                    faction_keywords = [normalize_space(item) for item in candidate.split(",") if normalize_space(item)]
+                    break
+    return keywords, faction_keywords
+
+
+def parse_datasheet_from_reader_markdown(url: str) -> dict[str, object]:
+    url = normalize_wahapedia_url(url)
+    name, block = reader_markdown_block(url)
+    base_size, characteristics = parse_reader_characteristics(block)
+    abilities, ability_entries = parse_reader_abilities(block)
+    unit_composition, unit_entries = parse_reader_unit_composition(block)
+    keywords, faction_keywords = parse_reader_keywords(block)
+    wargear_text = " ".join(nonempty(reader_slice(block, "WARGEAR OPTIONS", ("ABILITIES",))))
+    damaged_text = " ".join(nonempty(reader_slice(block, "DAMAGED:", ("KEYWORDS:",))))
+
+    sections = []
+    if wargear_text:
+        sections.append({"title": "WARGEAR OPTIONS", "entries": [{"type": "text", "text": wargear_text}]})
+    sections.append({"title": "ABILITIES", "entries": ability_entries})
+    sections.append({"title": "UNIT COMPOSITION", "entries": unit_entries})
+    if damaged_text:
+        sections.append({"title": "DAMAGED: WOUNDS REMAINING", "entries": [{"type": "text", "text": damaged_text}]})
+
+    normalized_url = normalize_wahapedia_url(url)
+    payload = {
+        "exportSchemaVersion": EXPORT_SCHEMA_VERSION,
+        "parserVersion": PARSER_VERSION,
+        "source": {
+            "url": url,
+            "normalizedUrl": normalized_url,
+            "canonicalSourceId": canonical_source_id(normalized_url),
+            "faction_slug": faction_from_url(url),
+            "datasheet_slug": slug_from_url(url),
+            "fetchedAt": utc_now(),
+            "contentHash": text_content_hash("\n".join(block)),
+        },
+        "name": name,
+        "base_size": base_size,
+        "characteristics": characteristics,
+        "weapons": {
+            "ranged_weapons": parse_reader_weapons(block, "RANGED WEAPONS", "bs"),
+            "melee_weapons": parse_reader_weapons(block, "MELEE WEAPONS", "ws"),
+        },
+        "abilities": abilities,
+        "unit_composition": unit_composition,
+        "keywords": keywords,
+        "faction_keywords": faction_keywords,
+        "sections": sections,
+    }
+    payload["quality"] = default_quality(
+        raw_titles=[section["title"] for section in sections],
+        exported_titles_list=exported_section_titles(payload),
+        warnings=["reader-markdown-fallback"],
+    )
+    payload["quality"]["keywordColumnCount"] = 2 if faction_keywords else 1
+    return payload
+
+
+def parse_datasheet(
+    url: str,
+    *,
+    fetch_backend: str = "auto",
+    browser_session: BrowserFetchSession | None = None,
+) -> dict[str, object]:
+    try:
+        url, html = fetch_html(url, fetch_backend=fetch_backend, browser_session=browser_session)
+    except Exception:
+        if fetch_backend == "requests":
+            raise
+        return parse_datasheet_from_reader_markdown(url)
     soup = BeautifulSoup(html, "html.parser")
     return parse_datasheet_from_soup(
         url,
@@ -1125,9 +1401,15 @@ def main() -> int:
 
     bundle = []
 
+    browser_session = BrowserFetchSession() if args.fetch_backend == "browser" else None
+
     def export_item(index: int, item: dict[str, str]) -> tuple[int, dict[str, object], Path]:
         url = item["href"]
-        payload = parse_datasheet(url)
+        payload = parse_datasheet(
+            url,
+            fetch_backend=args.fetch_backend,
+            browser_session=browser_session,
+        )
         target_slug = args.output_slug or payload["source"]["faction_slug"]
         payload["source"]["output_slug"] = target_slug
         faction_dir = out_root / target_slug
@@ -1137,22 +1419,26 @@ def main() -> int:
         return index, payload, destination
 
     indexed_results: list[tuple[int, dict[str, object], Path]] = []
-    workers = max(1, args.workers)
-    if workers == 1:
-        for index, item in enumerate(items, start=1):
-            indexed_results.append(export_item(index, item))
-            if args.delay and index < len(items):
-                time.sleep(args.delay)
-    else:
-        with concurrent.futures.ThreadPoolExecutor(max_workers=workers) as executor:
-            futures = {
-                executor.submit(export_item, index, item): index
-                for index, item in enumerate(items, start=1)
-            }
-            for future in concurrent.futures.as_completed(futures):
-                indexed_results.append(future.result())
-                if args.delay:
+    workers = 1 if args.fetch_backend == "browser" else max(1, args.workers)
+    try:
+        if workers == 1:
+            for index, item in enumerate(items, start=1):
+                indexed_results.append(export_item(index, item))
+                if args.delay and index < len(items):
                     time.sleep(args.delay)
+        else:
+            with concurrent.futures.ThreadPoolExecutor(max_workers=workers) as executor:
+                futures = {
+                    executor.submit(export_item, index, item): index
+                    for index, item in enumerate(items, start=1)
+                }
+                for future in concurrent.futures.as_completed(futures):
+                    indexed_results.append(future.result())
+                    if args.delay:
+                        time.sleep(args.delay)
+    finally:
+        if browser_session is not None:
+            browser_session.close()
 
     for index, payload, destination in sorted(indexed_results, key=lambda value: value[0]):
         bundle.append(payload)

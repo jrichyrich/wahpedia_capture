@@ -6,13 +6,16 @@ from pathlib import Path
 
 try:
     from datasheet_schema import normalize_source_url
+    from wahapedia_fetch import requests_fetch_html
 except ModuleNotFoundError:
     sys.path.insert(0, str(Path(__file__).resolve().parent))
     from datasheet_schema import normalize_source_url
+    from wahapedia_fetch import requests_fetch_html
 
 
 ROOT = Path(__file__).resolve().parents[1]
 PYTHON = sys.executable
+WAHAPEDIA_PROBE_URL = "https://wahapedia.ru/wh40k10ed/SiteMap.xml"
 
 
 def run_command(args: list[str]) -> None:
@@ -115,7 +118,23 @@ def parse_args() -> argparse.Namespace:
         default=4,
         help="Concurrent workers to use while refreshing exported datasheets.",
     )
+    parser.add_argument(
+        "--fetch-backend",
+        choices=("auto", "requests", "browser"),
+        default="auto",
+        help="Fetch backend for Wahapedia refresh/export scripts.",
+    )
     return parser.parse_args()
+
+
+def resolve_fetch_backend(requested_backend: str) -> str:
+    if requested_backend != "auto":
+        return requested_backend
+    try:
+        requests_fetch_html(WAHAPEDIA_PROBE_URL, attempts=1)
+        return "auto"
+    except Exception:
+        return "browser"
 
 
 def render_all_examples() -> None:
@@ -135,11 +154,14 @@ def main() -> None:
     render_example_html = bool(getattr(args, "render_example_html", False))
     clean = bool(getattr(args, "clean", False))
     export_workers = int(getattr(args, "export_workers", 4))
+    fetch_backend = resolve_fetch_backend(str(getattr(args, "fetch_backend", "auto")))
+    effective_export_workers = 1 if fetch_backend == "browser" else max(1, export_workers)
 
     if refresh_sitemap_manifest:
         command = [PYTHON, "scripts/build_sitemap_manifests.py"]
         for slug in refresh_sitemap_manifest:
             command.extend(["--output-slug", slug])
+        command.extend(["--fetch-backend", fetch_backend])
         run_command(command)
 
     export_slugs = discover_impacted_output_slugs(export_output_slugs)
@@ -151,7 +173,9 @@ def main() -> None:
                 "--output-slug",
                 slug,
                 "--workers",
-                str(max(1, export_workers)),
+                str(effective_export_workers),
+                "--fetch-backend",
+                fetch_backend,
             ]
         )
 
@@ -165,6 +189,7 @@ def main() -> None:
         command = [PYTHON, "scripts/export_faction_rules.py"]
         for slug in faction_rules_targets:
             command.extend(["--output-slug", slug])
+        command.extend(["--fetch-backend", fetch_backend])
         run_command(command)
 
     if render_example_html:

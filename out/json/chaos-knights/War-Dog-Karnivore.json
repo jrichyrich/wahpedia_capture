@@ -1,0 +1,223 @@
+{
+  "exportSchemaVersion": 1,
+  "parserVersion": "2026-03-20-builder-fidelity-v2",
+  "source": {
+    "url": "http://wahapedia.ru/wh40k10ed/factions/chaos-knights/War-Dog-Karnivore",
+    "normalizedUrl": "http://wahapedia.ru/wh40k10ed/factions/chaos-knights/War-Dog-Karnivore",
+    "canonicalSourceId": "wahapedia:39607a3ae6e42851ad8f27df574eb38b46abe363",
+    "faction_slug": "chaos-knights",
+    "datasheet_slug": "War-Dog-Karnivore",
+    "fetchedAt": "2026-05-27T18:15:33+00:00",
+    "contentHash": "3af82f87caad4e113b92121a50122c7e7fb1cce69efe3d5e8e07a0c1f3cae676",
+    "output_slug": "chaos-knights"
+  },
+  "name": "War Dog Karnivore",
+  "base_size": "\u2300100mm",
+  "characteristics": {
+    "M": "14\"",
+    "T": "9",
+    "Sv": "3+",
+    "W": "14",
+    "Ld": "7+",
+    "OC": "6",
+    "Invulnerable Save": "5+"
+  },
+  "weapons": {
+    "ranged_weapons": [
+      {
+        "name": "Diabolus heavy stubber",
+        "abilities": [
+          "rapid",
+          "fire",
+          "3"
+        ],
+        "range": "36\"",
+        "a": "3",
+        "bs": "3+",
+        "s": "5",
+        "ap": "0",
+        "d": "1"
+      },
+      {
+        "name": "Havoc multi-launcher",
+        "abilities": [
+          "blast",
+          "indirect",
+          "fire"
+        ],
+        "range": "48\"",
+        "a": "D6",
+        "bs": "3+",
+        "s": "5",
+        "ap": "0",
+        "d": "1"
+      }
+    ],
+    "melee_weapons": [
+      {
+        "name": "Reaper chaintalon",
+        "abilities": [
+          "sustained",
+          "hits",
+          "1"
+        ],
+        "range": "Melee",
+        "a": "12",
+        "ws": "3+",
+        "s": "8",
+        "ap": "-2",
+        "d": "1"
+      },
+      {
+        "name": "Slaughterclaw",
+        "abilities": [
+          "sustained",
+          "hits",
+          "1"
+        ],
+        "range": "Melee",
+        "a": "6",
+        "ws": "3+",
+        "s": "12",
+        "ap": "-3",
+        "d": "D6+2"
+      }
+    ]
+  },
+  "abilities": {
+    "core": [
+      "Deadly Demise D3"
+    ],
+    "faction": [
+      "Harbingers of Dread"
+    ],
+    "datasheet": [
+      {
+        "type": "rule",
+        "name": "Karnivore",
+        "text": "You can re-roll Advance and Charge rolls made for this model."
+      }
+    ],
+    "other": []
+  },
+  "unit_composition": [
+    {
+      "type": "list",
+      "items": [
+        "1 War Dog Karnivore"
+      ]
+    },
+    {
+      "type": "statement",
+      "label": "This model is equipped with",
+      "text": "diabolus heavy stubber; reaper chaintalon; slaughterclaw."
+    },
+    {
+      "type": "points",
+      "rows": [
+        {
+          "label": "1 model",
+          "points": "150"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "VEHICLE",
+    "WALKER",
+    "CHAOS",
+    "WAR DOG",
+    "KARNIVORE"
+  ],
+  "faction_keywords": [
+    "CHAOS KNIGHTS"
+  ],
+  "sections": [
+    {
+      "title": "WARGEAR OPTIONS",
+      "entries": [
+        {
+          "type": "text",
+          "text": "This model\u2019s diabolus heavy stubber can be replaced with 1 havoc multi-launcher."
+        }
+      ]
+    },
+    {
+      "title": "ABILITIES",
+      "entries": [
+        {
+          "type": "tagged_list",
+          "label": "CORE",
+          "items": [
+            "Deadly Demise D3"
+          ]
+        },
+        {
+          "type": "tagged_list",
+          "label": "FACTION",
+          "items": [
+            "Harbingers of Dread"
+          ]
+        },
+        {
+          "type": "rule",
+          "name": "Karnivore",
+          "text": "You can re-roll Advance and Charge rolls made for this model."
+        }
+      ]
+    },
+    {
+      "title": "UNIT COMPOSITION",
+      "entries": [
+        {
+          "type": "list",
+          "items": [
+            "1 War Dog Karnivore"
+          ]
+        },
+        {
+          "type": "statement",
+          "label": "This model is equipped with",
+          "text": "diabolus heavy stubber; reaper chaintalon; slaughterclaw."
+        },
+        {
+          "type": "points",
+          "rows": [
+            {
+              "label": "1 model",
+              "points": "150"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DAMAGED: WOUNDS REMAINING",
+      "entries": [
+        {
+          "type": "text",
+          "text": "While this model has 1-5 wounds remaining, subtract 3 from this model\u2019s Objective Control characteristic and each time this model makes an attack, subtract 1 from the Hit roll."
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "rawSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: WOUNDS REMAINING"
+    ],
+    "exportedSectionTitles": [
+      "WARGEAR OPTIONS",
+      "ABILITIES",
+      "UNIT COMPOSITION",
+      "DAMAGED: WOUNDS REMAINING"
+    ],
+    "missingExpectedSections": [],
+    "warnings": [
+      "reader-markdown-fallback"
+    ],
+    "keywordColumnCount": 2
+  }
+}

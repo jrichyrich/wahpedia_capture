@@ -109,15 +109,21 @@ class BuildBuilderSiteHookTests(unittest.TestCase):
             export_output_slug=[],
             refresh_sitemap_manifest=["aeldari", "adeptus-custodes"],
             build_faction=[],
+            export_faction_rules=[],
             clean=False,
             render_example_html=False,
             export_workers=4,
+            fetch_backend="requests",
         )
 
         with mock.patch.object(build_builder_site, "parse_args", return_value=args), mock.patch.object(
             build_builder_site,
             "discover_impacted_output_slugs",
             return_value=[],
+        ), mock.patch.object(
+            build_builder_site,
+            "resolve_fetch_backend",
+            return_value="requests",
         ), mock.patch.object(build_builder_site, "run_command") as run_command:
             build_builder_site.main()
 
@@ -130,6 +136,8 @@ class BuildBuilderSiteHookTests(unittest.TestCase):
                 "aeldari",
                 "--output-slug",
                 "adeptus-custodes",
+                "--fetch-backend",
+                "requests",
             ],
         )
 
@@ -138,15 +146,21 @@ class BuildBuilderSiteHookTests(unittest.TestCase):
             export_output_slug=["aeldari"],
             refresh_sitemap_manifest=[],
             build_faction=[],
+            export_faction_rules=[],
             clean=False,
             render_example_html=False,
             export_workers=4,
+            fetch_backend="auto",
         )
 
         with mock.patch.object(build_builder_site, "parse_args", return_value=args), mock.patch.object(
             build_builder_site,
             "discover_impacted_output_slugs",
             return_value=["aeldari"],
+        ), mock.patch.object(
+            build_builder_site,
+            "resolve_fetch_backend",
+            return_value="auto",
         ), mock.patch.object(build_builder_site, "run_command") as run_command:
             build_builder_site.main()
 
@@ -164,6 +178,86 @@ class BuildBuilderSiteHookTests(unittest.TestCase):
                 "aeldari",
                 "--workers",
                 "4",
+                "--fetch-backend",
+                "auto",
+            ],
+        )
+
+    def test_main_forces_browser_backend_and_one_worker_when_probe_fails(self):
+        args = SimpleNamespace(
+            export_output_slug=["imperial-knights"],
+            refresh_sitemap_manifest=["imperial-knights"],
+            export_faction_rules=["imperial-knights"],
+            build_faction=["imperial-knights"],
+            clean=False,
+            render_example_html=False,
+            export_workers=4,
+            fetch_backend="auto",
+        )
+
+        with mock.patch.object(build_builder_site, "parse_args", return_value=args), mock.patch.object(
+            build_builder_site,
+            "resolve_fetch_backend",
+            return_value="browser",
+        ), mock.patch.object(
+            build_builder_site,
+            "discover_impacted_output_slugs",
+            side_effect=[["imperial-knights"], ["imperial-knights"]],
+        ), mock.patch.object(build_builder_site, "run_command") as run_command:
+            build_builder_site.main()
+
+        called_commands = [call.args[0] for call in run_command.call_args_list]
+        self.assertIn(
+            [
+                build_builder_site.PYTHON,
+                "scripts/export_datasheet_json.py",
+                "--output-slug",
+                "imperial-knights",
+                "--workers",
+                "1",
+                "--fetch-backend",
+                "browser",
+            ],
+            called_commands,
+        )
+
+    def test_browser_fallback_builds_manifest_from_datasheets_page(self):
+        html = """
+        <div id="tooltip_contentArmyList">
+          <a href="/wh40k10ed/factions/imperial-knights/Canis-Rex">Canis Rex</a>
+          <a href="/wh40k10ed/factions/imperial-knights/Armiger-Helverin">Armiger Helverin</a>
+          <a href="/wh40k10ed/factions/imperial-knights/datasheets.html">Datasheets</a>
+        </div>
+        """
+
+        class FakeSession:
+            def __enter__(self):
+                return self
+
+            def __exit__(self, exc_type, exc, traceback):
+                return None
+
+        with mock.patch.object(build_sitemap_manifests, "BrowserFetchSession", return_value=FakeSession()), mock.patch.object(
+            build_sitemap_manifests,
+            "fetch_wahapedia_html",
+            return_value=("http://wahapedia.ru/wh40k10ed/factions/imperial-knights/datasheets.html", html),
+        ):
+            manifests = build_sitemap_manifests.fallback_manifests_from_datasheets_pages(
+                ["imperial-knights"],
+                fetch_backend="browser",
+            )
+
+        self.assertEqual(
+            manifests["imperial-knights"],
+            [
+                {
+                    "name": "",
+                    "href": "http://wahapedia.ru/wh40k10ed/factions/imperial-knights/Armiger-Helverin",
+                },
+                {
+                    "name": "",
+                    "href": "http://wahapedia.ru/wh40k10ed/factions/imperial-knights/Canis-Rex",
+                },
             ],
         )
 

@@ -1,18 +1,18 @@
 # Builder Catalog Build Report
 
-- Generated at: 2026-04-20T21:28:25+00:00
+- Generated at: 2026-05-27T18:16:12+00:00
 - Source root: `/Users/jasricha/Documents/Github_Personal/wahpedia_capture/out/json`
-- Factions imported: 15
-- Total units: 1473
+- Factions imported: 17
+- Total units: 1516
 - Units with missing stats: 0
-- Manual selection units: 0
+- Manual selection units: 1
 - Units with manual wargear: 6
 - Units with render issues: 0
 - Factions with rules warnings: 0
-- Ready units: 1389
-- Partial-support units: 84
+- Ready units: 1431
+- Partial-support units: 85
 - Configured-only preview units: 78
-- Source cards copied: 1395
+- Source cards copied: 1438
 - Source cards missing: 78
 
 ## Factions
@@ -78,6 +78,21 @@
 - Source cards copied: 181
 - Source cards missing: 0
 
+### Chaos Knights
+
+- Catalog: `catalogs/chaos-knights.json`
+- Units: 20
+- Missing stats: 0
+- Manual selection units: 0
+- Manual wargear units: 0
+- Render issue units: 0
+- Rules warnings: 0
+- Ready units: 20
+- Partial-support units: 0
+- Configured-only preview units: 0
+- Source cards copied: 20
+- Source cards missing: 0
+
 ### Dark Angels
 
 - Catalog: `catalogs/dark-angels.json`
@@ -137,6 +152,21 @@
 - Partial-support units: 6
 - Configured-only preview units: 0
 - Source cards copied: 45
+- Source cards missing: 0
+
+### Imperial Knights
+
+- Catalog: `catalogs/imperial-knights.json`
+- Units: 23
+- Missing stats: 0
+- Manual selection units: 1
+- Manual wargear units: 0
+- Render issue units: 0
+- Rules warnings: 0
+- Ready units: 22
+- Partial-support units: 1
+- Configured-only preview units: 0
+- Source cards copied: 23
 - Source cards missing: 0
 
 ### Officio Assassinorum
