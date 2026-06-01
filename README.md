@@ -209,6 +209,26 @@ python scripts/render_datasheet_pngs.py --output-slug chaos-knights
 python scripts/build_builder_catalog.py
 ```
 
+To capture live Wahapedia DOM screenshots when local Firefox cannot load Wahapedia directly, use the Jina Reader-backed capture path. It reads the existing `out/source/<slug>-links.json` manifest, requests a full-page browser `pageshot`, crops it to the datasheet card, and writes PNGs to `out/factions/<slug>/`:
+
+```bash
+python scripts/capture_wahapedia_dom_screenshots.py \
+  --output-slug imperial-knights \
+  --card-slug Canis-Rex \
+  --raw-dir out/raw-dom/imperial-knights
+```
+
+For a full retry after a partial capture, preserve already-captured cards and keep the slower default delay:
+
+```bash
+python scripts/capture_wahapedia_dom_screenshots.py \
+  --output-slug imperial-knights \
+  --raw-dir out/raw-dom/imperial-knights \
+  --skip-existing
+```
+
+Jina may temporarily return HTTP 451 if Wahapedia rate-limits anonymous proxy access. The script records those failures in `out/source/<slug>-dom-screenshot-failures.json` and stops on the first temporary block; wait for the reported cooldown before retrying a full faction.
+
 Serve the repo over HTTP and open the builder:
 
 ```bash
