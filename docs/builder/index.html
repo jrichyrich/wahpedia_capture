@@ -2063,7 +2063,7 @@
                             <th style="width: 360px;">Summary</th>
                             <th style="width: 90px;">Qty</th>
                             <th style="width: 120px;">Line Pts</th>
-                            <th style="width: 140px;">Actions</th>
+                            <th style="width: 230px;">Actions</th>
                         </tr>
                     </thead>
                     <tbody id="roster-body">
@@ -3855,6 +3855,12 @@
                 ? `<div class="inline-note">${support.supportReasons.map((reason) => supportReasonLabel(reason)).join(" • ")}</div>`
                 : `<div class="inline-note">No extra review notes are attached to this unit right now.</div>`;
             const loadoutText = loadoutSummary(entry).length ? loadoutSummary(entry).join(" • ") : "No configuration selected yet.";
+            const sourceImageUrl = BuilderApp.sourceCardAvailable(entry.unit, state.missingSourceCardLookup)
+                ? BuilderApp.sourceCardUrl(entry.unit)
+                : null;
+            const openSourceCardButton = sourceImageUrl
+                ? `<button class="btn" type="button" data-action="open-source-card" data-source-card-url="${sourceImageUrl}" data-source-card-name="${escapeHtml(entry.displayName)}">Open image card</button>`
+                : "";
 
             if (mode === "catalog") {
                 els.entryEditor.hidden = false;
@@ -3872,6 +3878,7 @@
                             <div class="inline-note">${escapeHtml((entry.selectedOption && typeof entry.selectedOption.points === "number") ? `${entry.selectedOption.points} pts default` : "No default points option")}</div>
                         </div>
                         <div class="entry-actions">
+                            ${openSourceCardButton}
                             <button class="btn btn-primary" type="button" data-action="add-unit" data-unit-id="${entry.unitId}">Add to roster</button>
                             <button class="btn" type="button" data-action="${closeAction}">Close</button>
                         </div>
@@ -3921,6 +3928,7 @@
                         ${support.supportReasons.length ? `<div class="inline-note">${support.supportReasons.map((reason) => supportReasonLabel(reason)).join(" • ")}</div>` : ""}
                     </div>
                     <div class="entry-actions">
+                        ${openSourceCardButton}
                         <button class="btn" type="button" data-action="${closeAction}">Close</button>
                     </div>
                 </div>
@@ -4409,6 +4417,9 @@
                     relationship.inheritedEmbarkedInLabel ? `Embarks with unit in ${relationship.inheritedEmbarkedInLabel}` : "",
                 ].filter(Boolean);
                 const selected = state.activeEditorInstanceId === runtimeInstanceId;
+                const sourceImageUrl = BuilderApp.sourceCardAvailable(entry.unit, state.missingSourceCardLookup)
+                    ? BuilderApp.sourceCardUrl(entry.unit)
+                    : null;
 
                 return `
                     <tr class="roster-entry ${selected ? "is-selected" : ""}" data-instance-id="${runtimeInstanceId}">
@@ -4443,6 +4454,7 @@
                         <td data-label="Actions">
                             <div class="entry-actions">
                                 <button class="btn" data-action="edit-entry" data-instance-id="${runtimeInstanceId}">${selected ? "Editing" : "Edit"}</button>
+                                ${sourceImageUrl ? `<button class="btn" type="button" data-action="open-source-card" data-source-card-url="${sourceImageUrl}" data-source-card-name="${escapeHtml(entry.displayName)}">Open image card</button>` : ""}
                                 <button class="btn btn-remove" data-action="remove-entry" data-instance-id="${runtimeInstanceId}">Remove</button>
                             </div>
                         </td>
@@ -4962,6 +4974,10 @@
             const target = event.target && typeof event.target.closest === "function"
                 ? event.target.closest("[data-action]")
                 : null;
+            if (target && target.dataset.action === "open-source-card") {
+                openSourceCardViewer(target.dataset.sourceCardUrl, target.dataset.sourceCardName);
+                return;
+            }
             if (target && target.dataset.action === "edit-entry") {
                 openEntryEditor(target.dataset.instanceId);
                 return;
