@@ -755,6 +755,18 @@ test("renderPreviewEntries falls back to configured HTML cards when the source P
     assert.doesNotMatch(html, /source-card-image/);
 });
 
+test("sourceCardAvailable respects source metadata and missing-card lookup", () => {
+    const entry = samplePreviewEntry();
+
+    assert.equal(App.sourceCardAvailable(entry.unit, new Set()), true);
+    assert.equal(
+        App.sourceCardUrl(entry.unit),
+        "./data/source-cards/aeldari/Avatar-of-Khaine.png"
+    );
+    assert.equal(App.sourceCardAvailable(entry.unit, new Set(["aeldari::Avatar-of-Khaine"])), false);
+    assert.equal(App.sourceCardAvailable({ ...entry.unit, source: null }, new Set()), false);
+});
+
 test("renderPrintPackSummary renders a paper-first roster summary sheet", () => {
     const html = App.renderPrintPackSummary({
         rosterName: "Swordwind Strike",

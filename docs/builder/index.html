@@ -37,6 +37,10 @@
             font-family: "Roboto Condensed", sans-serif;
         }
 
+        body.is-source-card-viewer-open {
+            overflow: hidden;
+        }
+
         .app-shell {
             display: grid;
             grid-template-columns: 360px minmax(0, 1fr);
@@ -472,6 +476,10 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
+        }
+
+        a.btn {
+            text-decoration: none;
         }
 
         .btn:hover {
@@ -1000,6 +1008,71 @@
             padding: 4px 8px;
             font-size: 11px;
             min-height: 0;
+        }
+
+        .source-card-viewer {
+            position: fixed;
+            inset: 0;
+            z-index: 80;
+            display: grid;
+            place-items: center;
+            padding: 24px;
+            background: rgba(23, 23, 23, 0.72);
+        }
+
+        .source-card-viewer[hidden] {
+            display: none !important;
+        }
+
+        .source-card-viewer-panel {
+            display: grid;
+            grid-template-rows: auto minmax(0, 1fr);
+            width: min(980px, 100%);
+            max-height: calc(100vh - 48px);
+            border: 2px solid var(--ink);
+            background: var(--panel);
+            box-shadow: var(--shadow);
+        }
+
+        .source-card-viewer-header {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            align-items: center;
+            padding: 12px 14px;
+            border-bottom: 1px solid var(--line);
+            background: #faf7f0;
+        }
+
+        .source-card-viewer-title {
+            margin: 0;
+            font-family: "Exo 2", sans-serif;
+            font-size: 18px;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .source-card-viewer-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: flex-end;
+        }
+
+        .source-card-viewer-body {
+            min-height: 0;
+            overflow: auto;
+            padding: 16px;
+            background: #f3efe4;
+        }
+
+        .source-card-viewer-image {
+            display: block;
+            width: min(100%, 900px);
+            height: auto;
+            margin: 0 auto;
+            border: 1.5px solid var(--ink);
+            background: white;
         }
 
         .legality-summary {
@@ -2032,6 +2105,21 @@
         </main>
     </div>
 
+    <div id="source-card-viewer" class="source-card-viewer" role="dialog" aria-modal="true" aria-labelledby="source-card-viewer-title" hidden>
+        <div class="source-card-viewer-panel">
+            <div class="source-card-viewer-header">
+                <h2 id="source-card-viewer-title" class="source-card-viewer-title">Image card</h2>
+                <div class="source-card-viewer-actions">
+                    <a id="source-card-viewer-open" class="btn" href="#" target="_blank" rel="noopener noreferrer">Open raw image</a>
+                    <button id="source-card-viewer-close" class="btn" type="button">Close</button>
+                </div>
+            </div>
+            <div class="source-card-viewer-body">
+                <img id="source-card-viewer-image" class="source-card-viewer-image" src="" alt="">
+            </div>
+        </div>
+    </div>
+
     <input id="import-roster-file" type="file" accept=".json,application/json" hidden>
 
     <script src="./card_renderer.js?v=20260330-builder-usability"></script>
@@ -2154,10 +2242,39 @@
             rosterStatus: document.getElementById("roster-status"),
             importRosterFile: document.getElementById("import-roster-file"),
             entryEditor: document.getElementById("entry-editor"),
+            sourceCardViewer: document.getElementById("source-card-viewer"),
+            sourceCardViewerTitle: document.getElementById("source-card-viewer-title"),
+            sourceCardViewerImage: document.getElementById("source-card-viewer-image"),
+            sourceCardViewerOpen: document.getElementById("source-card-viewer-open"),
+            sourceCardViewerClose: document.getElementById("source-card-viewer-close"),
         };
 
         function setStatus(message, isError) {
             els.statusBox.innerHTML = isError ? `<span class="status-error">${message}</span>` : message;
+        }
+
+        function openSourceCardViewer(url, unitName) {
+            if (!url || !els.sourceCardViewer) {
+                return;
+            }
+            const displayName = unitName || "Image card";
+            els.sourceCardViewerTitle.textContent = displayName;
+            els.sourceCardViewerImage.src = url;
+            els.sourceCardViewerImage.alt = `Image card for ${displayName}`;
+            els.sourceCardViewerOpen.href = url;
+            els.sourceCardViewer.hidden = false;
+            document.body.classList.add("is-source-card-viewer-open");
+        }
+
+        function closeSourceCardViewer() {
+            if (!els.sourceCardViewer) {
+                return;
+            }
+            els.sourceCardViewer.hidden = true;
+            els.sourceCardViewerImage.removeAttribute("src");
+            els.sourceCardViewerImage.alt = "";
+            els.sourceCardViewerOpen.href = "#";
+            document.body.classList.remove("is-source-card-viewer-open");
         }
 
         function escapeAttributeSelector(value) {
@@ -4075,6 +4192,9 @@
                 const supportReasons = supportReasonSummary(unit);
                 const isSelected = state.selectedCatalogUnitId === unit.unitId;
                 const inRosterCount = state.roster.filter((entry) => entry.unitId === unit.unitId).length;
+                const sourceImageUrl = BuilderApp.sourceCardAvailable(unit, state.missingSourceCardLookup)
+                    ? BuilderApp.sourceCardUrl(unit)
+                    : null;
                 return `
                     <div class="unit-row ${isSelected ? "is-selected" : ""}">
                         <button class="unit-row-main" type="button" data-action="focus-unit" data-unit-id="${unit.unitId}" aria-expanded="${isSelected ? "true" : "false"}">
@@ -4084,6 +4204,7 @@
                         </button>
                         <div class="unit-row-actions">
                             <button class="btn btn-quiet" type="button" data-action="focus-unit" data-unit-id="${unit.unitId}" aria-expanded="${isSelected ? "true" : "false"}">${isSelected ? "Hide preview" : "Preview unit"}</button>
+                            ${sourceImageUrl ? `<button class="btn" type="button" data-action="open-source-card" data-source-card-url="${sourceImageUrl}" data-source-card-name="${escapeHtml(unit.name)}">Open image card</button>` : ""}
                             <button class="btn btn-primary" data-action="add-unit" data-unit-id="${unit.unitId}">Add to roster</button>
                         </div>
                         ${isSelected ? `
@@ -4340,6 +4461,9 @@
                 const navigation = selectedCatalogNavigation();
                 const previewMode = previewSourceModeLabel(activePreviewSourceMode());
                 const support = catalogEntry.support || { supportLevel: "full", supportReasons: [], previewSupport: "configured-only" };
+                const sourceImageUrl = BuilderApp.sourceCardAvailable(catalogEntry.unit, state.missingSourceCardLookup)
+                    ? BuilderApp.sourceCardUrl(catalogEntry.unit)
+                    : null;
                 const supportReasons = support.supportReasons.length
                     ? support.supportReasons.map((reason) => supportReasonLabel(reason)).join(" • ")
                     : "No extra review notes are attached to this unit right now.";
@@ -4358,6 +4482,7 @@
                             <div class="entry-actions">
                                 <button class="btn" type="button" data-action="browse-prev" ${navigation.previous ? "" : "disabled"}>Previous</button>
                                 <button class="btn" type="button" data-action="browse-next" ${navigation.next ? "" : "disabled"}>Next</button>
+                                ${sourceImageUrl ? `<button class="btn" type="button" data-action="open-source-card" data-source-card-url="${sourceImageUrl}" data-source-card-name="${escapeHtml(catalogEntry.displayName)}">Open image card</button>` : ""}
                                 <button class="btn btn-primary" type="button" data-action="add-unit" data-unit-id="${catalogEntry.unitId}">Add to roster</button>
                                 <button class="btn" type="button" data-action="close-catalog-browser">Back to review cards</button>
                             </div>
@@ -4805,6 +4930,10 @@
             const target = event.target && typeof event.target.closest === "function"
                 ? event.target.closest("[data-action]")
                 : null;
+            if (target && target.dataset.action === "open-source-card") {
+                openSourceCardViewer(target.dataset.sourceCardUrl, target.dataset.sourceCardName);
+                return;
+            }
             if (target && target.dataset.action === "reset-filters") {
                 resetCatalogFilters();
                 return;
@@ -4859,6 +4988,10 @@
             if (!target) {
                 return;
             }
+            if (target.dataset.action === "open-source-card") {
+                openSourceCardViewer(target.dataset.sourceCardUrl, target.dataset.sourceCardName);
+                return;
+            }
             if (target.dataset.action === "close-editor") {
                 state.activeEditorInstanceId = null;
                 renderRoster();
@@ -4884,6 +5017,10 @@
                 ? event.target.closest("[data-action]")
                 : null;
             if (!target) {
+                return;
+            }
+            if (target.dataset.action === "open-source-card") {
+                openSourceCardViewer(target.dataset.sourceCardUrl, target.dataset.sourceCardName);
                 return;
             }
             if (target.dataset.action === "undo-inline-selection") {
@@ -5179,6 +5316,17 @@
                 setPreviewSourceMode("source-image");
                 setActiveWorkspace("cards");
                 renderPreview();
+            }
+        });
+        els.sourceCardViewerClose.addEventListener("click", closeSourceCardViewer);
+        els.sourceCardViewer.addEventListener("click", (event) => {
+            if (event.target === els.sourceCardViewer) {
+                closeSourceCardViewer();
+            }
+        });
+        window.addEventListener("keydown", (event) => {
+            if (event.key === "Escape" && !els.sourceCardViewer.hidden) {
+                closeSourceCardViewer();
             }
         });
         els.printCleanToggle.addEventListener("change", (event) => {

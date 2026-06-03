@@ -47,6 +47,17 @@
         return `./data/source-cards/${encodeURIComponent(source.outputSlug)}/${encodeURIComponent(source.datasheetSlug)}.png`;
     }
 
+    function sourceCardAvailable(unit, missingSourceCardLookup) {
+        const url = sourceCardUrl(unit);
+        if (!url) {
+            return false;
+        }
+        if (missingSourceCardLookup instanceof Set && missingSourceCardLookup.has(sourceCardLookupKey(unit))) {
+            return false;
+        }
+        return true;
+    }
+
     function buildMissingSourceCardLookup(report) {
         const lookup = new Set();
         if (!report || !Array.isArray(report.factions)) {
@@ -249,7 +260,7 @@
                     >
                 </div>
                 <div class="source-card-actions" data-source-card-actions>
-                    <a class="btn" href="${url}" target="_blank" rel="noopener noreferrer">Open source image</a>
+                    <button class="btn" type="button" data-action="open-source-card" data-source-card-url="${url}" data-source-card-name="${safeName}">Open source image</button>
                 </div>
                 <div class="source-card-fallback" data-source-card-fallback hidden>
                     ${fallbackCard}
@@ -1122,6 +1133,7 @@
         renderPreviewEntry,
         renderPrintPackSummary,
         renderPreviewEntries,
+        sourceCardAvailable,
         sourceCardLookupKey,
         sourceCardUrl,
         summarizeWorkflow,
